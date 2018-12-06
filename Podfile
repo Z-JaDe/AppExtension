@@ -7,11 +7,11 @@ use_frameworks!
 install! 'cocoapods', :deterministic_uuids => false
 
 abstract_target 'BaseCore' do
-    pod 'Validation', :path => '../wallet-ios/BaseSupport/Validation'
-    pod 'Encryption', :path => '../wallet-ios/BaseSupport/Encryption'
-    pod 'FunctionalSwift', :path => '../wallet-ios/BaseSupport/FunctionalSwift'
-    pod 'CocoaExtension', :path => '../wallet-ios/BaseSupport/CocoaExtension'
-    pod 'ModalManager', :path => '../wallet-ios/BaseSupport/ModalManager'
+    pod 'Validation', :path => '~/Desktop/wallet-ios/BaseSupport/Validation'
+    pod 'Encryption', :path => '~/Desktop/wallet-ios/BaseSupport/Encryption'
+    pod 'FunctionalSwift', :path => '~/Desktop/wallet-ios/BaseSupport/FunctionalSwift'
+    pod 'CocoaExtension', :path => '~/Desktop/wallet-ios/BaseSupport/CocoaExtension'
+    pod 'ModalManager', :path => '~/Desktop/wallet-ios/BaseSupport/ModalManager'
     
     target:'Core' do
     end
@@ -29,7 +29,7 @@ abstract_target 'BaseCore' do
         pod 'RxKeyboard'
 
         pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
-        pod 'Rx+Kingfisher', :path => '../wallet-ios/BaseSupport/RxKingfisher'
+        pod 'Rx+Kingfisher', :path => '~/Desktop/wallet-ios/BaseSupport/RxKingfisher'
         pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher'
         pod 'Result'
 

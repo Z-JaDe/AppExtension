@@ -47,15 +47,15 @@ PODS:
   - Validation (1.0.0)
 
 DEPENDENCIES:
-  - CocoaExtension (from `../wallet-ios/BaseSupport/CocoaExtension`)
+  - CocoaExtension (from `~/Desktop/wallet-ios/BaseSupport/CocoaExtension`)
   - DifferenceKit
-  - Encryption (from `../wallet-ios/BaseSupport/Encryption`)
-  - FunctionalSwift (from `../wallet-ios/BaseSupport/FunctionalSwift`)
+  - Encryption (from `~/Desktop/wallet-ios/BaseSupport/Encryption`)
+  - FunctionalSwift (from `~/Desktop/wallet-ios/BaseSupport/FunctionalSwift`)
   - Kingfisher (from `https://github.com/onevcat/Kingfisher`)
   - MJRefresh (from `https://github.com/CoderMJLee/MJRefresh`)
-  - ModalManager (from `../wallet-ios/BaseSupport/ModalManager`)
+  - ModalManager (from `~/Desktop/wallet-ios/BaseSupport/ModalManager`)
   - Result
-  - "Rx+Kingfisher (from `../wallet-ios/BaseSupport/RxKingfisher`)"
+  - "Rx+Kingfisher (from `~/Desktop/wallet-ios/BaseSupport/RxKingfisher`)"
   - RxAnimated
   - RxCocoa (from `https://github.com/ReactiveX/RxSwift`)
   - RxGesture
@@ -65,7 +65,7 @@ DEPENDENCIES:
   - RxSwiftExt
   - SnapKit (from `https://github.com/SnapKit/SnapKit`)
   - SwiftLint
-  - Validation (from `../wallet-ios/BaseSupport/Validation`)
+  - Validation (from `~/Desktop/wallet-ios/BaseSupport/Validation`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -80,19 +80,19 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   CocoaExtension:
-    :path: "../wallet-ios/BaseSupport/CocoaExtension"
+    :path: "~/Desktop/wallet-ios/BaseSupport/CocoaExtension"
   Encryption:
-    :path: "../wallet-ios/BaseSupport/Encryption"
+    :path: "~/Desktop/wallet-ios/BaseSupport/Encryption"
   FunctionalSwift:
-    :path: "../wallet-ios/BaseSupport/FunctionalSwift"
+    :path: "~/Desktop/wallet-ios/BaseSupport/FunctionalSwift"
   Kingfisher:
     :git: https://github.com/onevcat/Kingfisher
   MJRefresh:
     :git: https://github.com/CoderMJLee/MJRefresh
   ModalManager:
-    :path: "../wallet-ios/BaseSupport/ModalManager"
+    :path: "~/Desktop/wallet-ios/BaseSupport/ModalManager"
   "Rx+Kingfisher":
-    :path: "../wallet-ios/BaseSupport/RxKingfisher"
+    :path: "~/Desktop/wallet-ios/BaseSupport/RxKingfisher"
   RxCocoa:
     :git: https://github.com/ReactiveX/RxSwift
   RxSwift:
@@ -100,7 +100,7 @@ EXTERNAL SOURCES:
   SnapKit:
     :git: https://github.com/SnapKit/SnapKit
   Validation:
-    :path: "../wallet-ios/BaseSupport/Validation"
+    :path: "~/Desktop/wallet-ios/BaseSupport/Validation"
 
 CHECKOUT OPTIONS:
   Kingfisher:
@@ -140,6 +140,6 @@ SPEC CHECKSUMS:
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   Validation: b695c801939fdaa32b489dbf6e4a739538829a5a
 
-PODFILE CHECKSUM: c2a8367c2b99ad10c6438e6132406b0f90eb5769
+PODFILE CHECKSUM: 507026f8153389542db91926694f89f42814f9d1
 
 COCOAPODS: 1.5.0

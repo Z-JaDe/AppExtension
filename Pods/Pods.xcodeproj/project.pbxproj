@@ -2816,8 +2816,8 @@
 				000000000470 /* UIKit */,
 			);
 			name = CocoaExtension;
-			path = "../../wallet-ios/BaseSupport/CocoaExtension";
-			sourceTree = "<group>";
+			path = "/Users/zhengjunduo/Desktop/wallet-ios/BaseSupport/CocoaExtension";
+			sourceTree = "<absolute>";
 		};
 		0000000000B0 /* Encryption */ = {
 			isa = PBXGroup;
@@ -2834,8 +2834,8 @@
 				000000000BB0 /* Utilities */,
 			);
 			name = Encryption;
-			path = "../../wallet-ios/BaseSupport/Encryption";
-			sourceTree = "<group>";
+			path = "/Users/zhengjunduo/Desktop/wallet-ios/BaseSupport/Encryption";
+			sourceTree = "<absolute>";
 		};
 		0000000000C0 /* FunctionalSwift */ = {
 			isa = PBXGroup;
@@ -2850,8 +2850,8 @@
 				000000000C40 /* Swifter */,
 			);
 			name = FunctionalSwift;
-			path = "../../wallet-ios/BaseSupport/FunctionalSwift";
-			sourceTree = "<group>";
+			path = "/Users/zhengjunduo/Desktop/wallet-ios/BaseSupport/FunctionalSwift";
+			sourceTree = "<absolute>";
 		};
 		0000000000D0 /* ModalManager */ = {
 			isa = PBXGroup;
@@ -2864,8 +2864,8 @@
 				000000004140 /* Support Files */,
 			);
 			name = ModalManager;
-			path = "../../wallet-ios/BaseSupport/ModalManager";
-			sourceTree = "<group>";
+			path = "/Users/zhengjunduo/Desktop/wallet-ios/BaseSupport/ModalManager";
+			sourceTree = "<absolute>";
 		};
 		0000000000E0 /* Validation */ = {
 			isa = PBXGroup;
@@ -2877,8 +2877,8 @@
 				000000006550 /* Support Files */,
 			);
 			name = Validation;
-			path = "../../wallet-ios/BaseSupport/Validation";
-			sourceTree = "<group>";
+			path = "/Users/zhengjunduo/Desktop/wallet-ios/BaseSupport/Validation";
+			sourceTree = "<absolute>";
 		};
 		0000000000F0 /* SnapKit */ = {
 			isa = PBXGroup;
@@ -2976,8 +2976,8 @@
 				000000004430 /* Support Files */,
 			);
 			name = "Rx+Kingfisher";
-			path = "../../wallet-ios/BaseSupport/RxKingfisher";
-			sourceTree = "<group>";
+			path = "/Users/zhengjunduo/Desktop/wallet-ios/BaseSupport/RxKingfisher";
+			sourceTree = "<absolute>";
 		};
 		000000000130 /* RxAnimated */ = {
 			isa = PBXGroup;
@@ -3882,7 +3882,7 @@
 				000000002F00 /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../../../AppExtension/Pods/Target Support Files/CocoaExtension";
+			path = "../../../ios-tjs-rebuild/BaseSupport/AppExtension/Pods/Target Support Files/CocoaExtension";
 			sourceTree = "<group>";
 		};
 		000000003070 /* Support Files */ = {
@@ -3910,7 +3910,7 @@
 				0000000037E0 /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../../../AppExtension/Pods/Target Support Files/Encryption";
+			path = "../../../ios-tjs-rebuild/BaseSupport/AppExtension/Pods/Target Support Files/Encryption";
 			sourceTree = "<group>";
 		};
 		000000003940 /* Support Files */ = {
@@ -3924,7 +3924,7 @@
 				000000003990 /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../../../AppExtension/Pods/Target Support Files/FunctionalSwift";
+			path = "../../../ios-tjs-rebuild/BaseSupport/AppExtension/Pods/Target Support Files/FunctionalSwift";
 			sourceTree = "<group>";
 		};
 		000000003BF0 /* Support Files */ = {
@@ -3966,7 +3966,7 @@
 				000000004170 /* ModalManager-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../../../AppExtension/Pods/Target Support Files/ModalManager";
+			path = "../../../ios-tjs-rebuild/BaseSupport/AppExtension/Pods/Target Support Files/ModalManager";
 			sourceTree = "<group>";
 		};
 		000000004290 /* Support Files */ = {
@@ -3994,7 +3994,7 @@
 				000000004460 /* Rx+Kingfisher-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../../../AppExtension/Pods/Target Support Files/Rx+Kingfisher";
+			path = "../../../ios-tjs-rebuild/BaseSupport/AppExtension/Pods/Target Support Files/Rx+Kingfisher";
 			sourceTree = "<group>";
 		};
 		000000004590 /* Support Files */ = {
@@ -4120,7 +4120,7 @@
 				000000006580 /* Validation-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../../../AppExtension/Pods/Target Support Files/Validation";
+			path = "../../../ios-tjs-rebuild/BaseSupport/AppExtension/Pods/Target Support Files/Validation";
 			sourceTree = "<group>";
 		};
 		000000006680 /* Pods-AppExtensionTests */ = {
