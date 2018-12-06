@@ -1,0 +1,6 @@
+framework module Pods_BaseCore_CommonPods_Third {
+  umbrella header "Pods-BaseCore-CommonPods-Third-umbrella.h"
+
+  export *
+  module * { export * }
+}

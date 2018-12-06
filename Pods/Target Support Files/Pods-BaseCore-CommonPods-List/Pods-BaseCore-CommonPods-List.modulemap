@@ -1,0 +1,6 @@
+framework module Pods_BaseCore_CommonPods_List {
+  umbrella header "Pods-BaseCore-CommonPods-List-umbrella.h"
+
+  export *
+  module * { export * }
+}

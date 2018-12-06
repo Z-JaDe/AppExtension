@@ -1,0 +1,71 @@
+//
+//  StaticTableItemCell.swift
+//  SNKit_ZJMax
+//
+//  Created by 郑军铎 on 2018/5/17.
+//  Copyright © 2018年 syk. All rights reserved.
+//
+
+import UIKit
+
+open class StaticTableItemCell: TableItemCell, TableCellConfigProtocol, AdapterItemType {
+
+    open var canSelected: Bool = false
+    public func checkCanSelected(_ closure: @escaping (Bool) -> Void) {
+        closure(self.canSelected)
+    }
+    // MARK: -
+    open override func configInit() {
+        super.configInit()
+        self.highlightedAnimation = .zoom
+
+        self.didLayoutSubviewsClosure = { [weak self] (cell) -> Void in
+            guard let `self` = self else { return }
+            self.updateHeight(self, {
+
+            })
+        }
+    }
+    public private(set) var tempCellHeight: CGFloat = 0
+    public func changeTempCellHeight(_ newValue: CGFloat) {
+        self.tempCellHeight = newValue
+    }
+
+    public func createCell(isTemp: Bool) -> TableItemCell {
+        return self
+    }
+    public func getCell() -> TableItemCell? {
+        return self
+    }
+
+    public func createCell(in tableView: UITableView) -> UITableViewCell {
+        let reuseIdentifier: String = SNTableViewCell.reuseIdentifier
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? SNTableViewCell
+        //        let item = self.cell()
+        //        logDebug("\(item)创建一个cell")
+        /// ZJaDe: tableView弱引用
+        self._tableView = tableView
+        return cell!
+    }
+    public func willAppear(in cell: UITableViewCell) {
+        guard let cell = cell as? SNTableViewCell else {
+            return
+        }
+        cell.contentItem = self
+        self.willAppear()
+        //        logDebug("\(item)将要显示")
+    }
+    public func didDisappear(in cell: UITableViewCell) {
+        guard let cell = cell as? SNTableViewCell else {
+            return
+        }
+        self.didDisappear()
+        cell.contentItem = nil
+    }
+
+    // MARK: - CheckAndCatchParamsProtocol
+    public var key: String = ""
+    public var catchParamsErrorPrompt: String?
+    public var catchParamsClosure: CatchParamsClosure?
+    public var checkParamsClosure: CheckParamsClosure?
+}

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5Vw-rX-Ty7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="0iq-05-hsv">
+            <objects>
+                <navigationController id="5Vw-rX-Ty7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zf9-vz-ojn">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YW8-Tf-vIE" kind="relationship" relationship="rootViewController" id="OLd-3Q-R0Y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t18-X1-HkV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2344" y="226"/>
+        </scene>
+        <!--Stack View Controller Test-->
+        <scene sceneID="YyG-fa-Whk">
+            <objects>
+                <viewController id="YW8-Tf-vIE" customClass="StackViewControllerTest" customModule="AppExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5jL-5V-rK0"/>
+                        <viewControllerLayoutGuide type="bottom" id="eNx-CQ-wO9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0dr-dO-4Tb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wxH-Be-5GL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ybh-8h-wte">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caQ-Cz-YId">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                                <color key="backgroundColor" red="0.38636415619668041" green="1" blue="0.33358390648713376" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="SegmentScrollView">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pushSegment:" destination="YW8-Tf-vIE" eventType="touchUpInside" id="30I-WY-8ly"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bB-BS-Wtm">
+                                                <rect key="frame" x="0.0" y="65" width="375" height="60"/>
+                                                <color key="backgroundColor" red="0.38636415619999998" green="1" blue="0.33358390650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="CycleView">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pushCycleView:" destination="YW8-Tf-vIE" eventType="touchUpInside" id="2qD-YR-X4m"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zm7-ZZ-LFf">
+                                                <rect key="frame" x="0.0" y="130" width="375" height="60"/>
+                                                <color key="backgroundColor" red="0.38636415619999998" green="1" blue="0.33358390650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="PageViewCon">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pushPageView:" destination="YW8-Tf-vIE" eventType="touchUpInside" id="FMK-Or-cwm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ii-WF-31Q">
+                                                <rect key="frame" x="0.0" y="195" width="375" height="60"/>
+                                                <color key="backgroundColor" red="0.38636415619999998" green="1" blue="0.33358390650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="Font">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pushFont:" destination="YW8-Tf-vIE" eventType="touchUpInside" id="fF4-dO-6vG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79a-NX-sJf">
+                                                <rect key="frame" x="0.0" y="260" width="375" height="60"/>
+                                                <color key="backgroundColor" red="0.38636415619999998" green="1" blue="0.33358390650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="List">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pushList:" destination="YW8-Tf-vIE" eventType="touchUpInside" id="ibw-js-CFO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ybh-8h-wte" firstAttribute="centerX" secondItem="wxH-Be-5GL" secondAttribute="centerX" id="8Hh-y0-jig"/>
+                                    <constraint firstAttribute="trailing" secondItem="ybh-8h-wte" secondAttribute="trailing" id="KbX-qe-hZT"/>
+                                    <constraint firstAttribute="bottom" secondItem="ybh-8h-wte" secondAttribute="bottom" id="O2a-aT-QMA"/>
+                                    <constraint firstItem="ybh-8h-wte" firstAttribute="leading" secondItem="wxH-Be-5GL" secondAttribute="leading" id="Sf0-OQ-Sud"/>
+                                    <constraint firstItem="ybh-8h-wte" firstAttribute="top" secondItem="wxH-Be-5GL" secondAttribute="top" id="wQk-hv-wD1"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wxH-Be-5GL" firstAttribute="width" secondItem="0dr-dO-4Tb" secondAttribute="width" id="8lc-YA-BkP"/>
+                            <constraint firstItem="wxH-Be-5GL" firstAttribute="height" secondItem="0dr-dO-4Tb" secondAttribute="height" id="QqE-8M-6X3"/>
+                            <constraint firstItem="wxH-Be-5GL" firstAttribute="leading" secondItem="0dr-dO-4Tb" secondAttribute="leading" id="fZq-fT-0M0"/>
+                            <constraint firstItem="eNx-CQ-wO9" firstAttribute="top" secondItem="wxH-Be-5GL" secondAttribute="bottom" id="vyG-1g-OJV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JrU-aR-wpC"/>
+                    <connections>
+                        <outlet property="stackView" destination="ybh-8h-wte" id="o7C-tn-JN2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yn0-aM-raI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1410" y="225"/>
+        </scene>
+    </scenes>
+</document>

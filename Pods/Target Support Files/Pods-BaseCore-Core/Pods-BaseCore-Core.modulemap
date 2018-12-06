@@ -1,0 +1,6 @@
+framework module Pods_BaseCore_Core {
+  umbrella header "Pods-BaseCore-Core-umbrella.h"
+
+  export *
+  module * { export * }
+}

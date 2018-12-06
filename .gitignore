@@ -28,6 +28,8 @@ xcuserdata/
 *.dSYM.zip
 *.dSYM
 
+*.pyc
+
 ## Playgrounds
 timeline.xctimeline
 playground.xcworkspace

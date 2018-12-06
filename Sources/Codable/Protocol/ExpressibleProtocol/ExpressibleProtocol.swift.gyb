@@ -1,0 +1,48 @@
+%{
+import sys
+sys.path.append('..')
+from CodableTypes import literal_type
+
+expressible_type = {
+'integer': 'Int', 
+'string': 'String', 
+'float': 'Double', 
+'boolean': 'Bool', 
+}
+}%
+// ZJaDe: gyb自动生成
+
+public protocol ExpressibleValueProtocol:
+    % for key in expressible_type: 
+    ExpressibleBy${key.capitalize()}Literal,
+    % end
+    ExpressibleByNilLiteral {
+
+    % for key, value in expressible_type.items(): 
+    init(${key}Literal value: ${value})
+    % end
+    init(nilLiteral: ())
+}
+extension ExpressibleValueProtocol {
+    % for key, value in expressible_type.items(): 
+    public init(_ value: ${value}?) {
+        if let value = value {
+            self.init(${key}Literal: value)
+        } else {
+            self.init(nilLiteral: ())
+        }
+    }
+    % end
+}
+% for type in literal_type: 
+extension ${type}LiteralTypeValueProtocol where Self: ExpressibleValueProtocol {
+    % for key, value in expressible_type.items(): 
+    public init(${key}Literal value: ${value}) {
+        self.init(value: value.to${expressible_type.get(type.lower())})
+    }
+    % end
+    public init(nilLiteral: ()) {
+        self.init(value: nil)
+    }
+}
+% end

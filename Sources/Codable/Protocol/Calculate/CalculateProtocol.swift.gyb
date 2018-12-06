@@ -1,0 +1,39 @@
+%{
+calculatable_operator = {
+'Add': '+', 
+'Minus': '-'
+}
+}%
+// ZJaDe: gyb自动生成
+
+public typealias Calculatable = AddCalculatable & MinusCalculatable
+extension Int: Calculatable {}
+extension Double: Calculatable {}
+
+% for key, value in calculatable_operator.items(): 
+// ZJaDe: ${key}: ${value}
+public protocol ${key}Calculatable {
+    static func ${value}= (left: inout Self, right: Self)
+    static func ${value} (left: Self, right: Self) -> Self
+}
+public extension ${key}Calculatable where Self: ValueProtocol, Self.ValueType: ${key}Calculatable {
+    static func ${value}= (left: inout Self, right: Self) {
+        left = Self(value: left.value ${value} right.value)
+    }
+    static func ${value} (left: Self, right: Self) -> Self {
+        return Self(value: left.value ${value} right.value)
+    }
+}
+public extension Optional where Wrapped: ${key}Calculatable & ValueProtocol, Wrapped.ValueType: ${key}Calculatable {
+    public static func ${value}= (left: inout Wrapped?, right: Wrapped?) {
+        let leftValue = left?.value ?? Wrapped(value: nil).value
+        let rightValue = right?.value ?? Wrapped(value: nil).value
+        left = Wrapped(value: leftValue ${value} rightValue)
+    }
+    public static func ${value} (left: Wrapped?, right: Wrapped?) -> Wrapped {
+        let leftValue = left?.value ?? Wrapped(value: nil).value
+        let rightValue = right?.value ?? Wrapped(value: nil).value
+        return Wrapped(value: leftValue ${value} rightValue)
+    }
+}
+% end

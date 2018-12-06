@@ -1,0 +1,35 @@
+%{
+import sys
+sys.path.append('..')
+from CodableTypes import literal_type
+}%
+// ZJaDe: gyb自动生成
+
+public protocol ValueProtocol {
+    associatedtype ValueType
+    var value: ValueType {get}
+    init(value: ValueType?)
+}
+extension Comparable where Self: ValueProtocol, Self.ValueType: Comparable {
+    public static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.value == rhs.value
+    }
+    public static func < (lhs: Self, rhs: Self) -> Bool {
+        return lhs.value < rhs.value
+    }
+}
+extension CustomStringConvertible where Self: ValueProtocol, Self.ValueType: CustomStringConvertible {
+    public var description: String {
+        return "\(self.value)"
+    }
+}
+
+// MARK: -
+% for type in literal_type: 
+// ZJaDe: ${type}LiteralTypeValueProtocol
+public protocol ${type}LiteralTypeValueProtocol: ValueProtocol where ValueType == ${type}LiteralType {
+    % if type == 'Float': 
+    var positiveFormat: String {get}
+    % end
+}
+% end

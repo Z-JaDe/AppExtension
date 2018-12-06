@@ -1,0 +1,54 @@
+included: # 执行 linting 时包含的路径。如果出现这个 `--path` 会被忽略。
+  - Sources
+  - ../Sources/ModalManager/Sources
+  - ../Sources/JDEther/Sources
+  - ../Sources/FunctionalSwift/Sources
+  - ../Sources/CocoaExtension/Sources
+  - ../Sources/Validation/Sources
+  - ../Sources/Encryption/Sources
+  - ../Sources/RxKingfisher/Sources
+
+opt_in_rules: # 启用指定的规则
+  - file_length
+
+disabled_rules:
+  # - trailing_whitespae #空行中包含了空格
+  - line_length #一行字符长度
+  - type_name
+  - identifier_name
+
+line_length:
+  # warning: 110 # 表示单行字符数超过 110 时抛出警告，你也可以设置为其他的值。
+  ignores_function_declarations: true # 表示是否忽略检查函数定义的长度
+  ignores_comments: true # 设置是否忽略检查注释的长度
+
+cyclomatic_complexity:
+  - 11
+function_body_length:
+  - 40
+
+identifier_name:
+  min_length: 1
+  max_length: 40
+
+# 类型名称
+type_name:
+  min_length: 1 # 只设置 warning
+  max_length: # 同时设置warning和error
+  warning: 40
+  error: 50
+
+type_body_length:
+  - 300 # warning
+  - 400 # error
+# 文件长度
+file_length:
+  warning: 500
+  error: 1200
+
+# swiftlint
+# autocorrect  自动更正warnings和errors
+# help         查看帮助
+# lint         查看当前文件夹的文件中的warnings和errors，这是默认命令
+# rules        查看所有规则
+# version      查看SwiftLint的版本
