@@ -8,18 +8,17 @@
 
 import Foundation
 /** ZJaDe:
- 之前是用item来存储高度 现在改成用tableView根据indexPath来存储高度
+ 使用item来存储高度
+ 如果改成用tableView根据indexPath来存储高度，刷新时需要清空高度缓存，不可取
  */
-protocol TableCellHeightProtocol: TableCellConfigProtocol {
-    var indexPath: IndexPath {get}
-    func setNewIndexPath(_ newValue: IndexPath)
+protocol TableCellHeightProtocol: TableCellConfigProtocol, AssociatedObjectProtocol {
     func calculateCellHeight(_ tableView: UITableView, for indexPath: IndexPath, wait: Bool)
+    func updateHeight(_ closure: (() -> Void)?)
 }
 
 extension TableCellHeightProtocol {
     /// ZJaDe: 计算高度
     public func calculateCellHeight(_ tableView: UITableView, for indexPath: IndexPath, wait: Bool) {
-        setNewIndexPath(indexPath)
         let tableViewWidth = tableView.width
         if tableViewWidth <= 0 { return }
         /*************** 获取tempCell，并赋值 ***************/
@@ -27,7 +26,7 @@ extension TableCellHeightProtocol {
         let itemCellWidth = item.getItemCellWidth(tableView)
         /*************** 计算高度 ***************/
         let cellHeight = item.layoutHeight(itemCellWidth)
-        tableView.changeTempCellHeight(cellHeight + item.insetSpace(), for: indexPath)
+        tableView.changeTempCellHeight(cellHeight + item.insetSpace(), at: indexPath)
         /*************** cell回收 ***************/
         self.recycleCell(item)
     }

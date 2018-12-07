@@ -13,7 +13,7 @@ extension TableItemCell {
         get {return associatedObject(&isUpdatingKey, createIfNeed: false)}
         set {setAssociatedObject(&isUpdatingKey, newValue)}
     }
-    public func updateHeight(_ indexPath: IndexPath, _ closure: (() -> Void)?) {
+    func updateHeight(_ indexPath: IndexPath, _ closure: (() -> Void)?) {
         guard self.isUpdating == false else {
             return
         }
@@ -27,38 +27,32 @@ extension TableItemCell {
             logError("\(self)->tableView找不到")
             return
         }
-        if tableView.cellHeightLayoutType(for: indexPath) == .hasLayout {
-            let oldHeight = tableView.tempCellHeight(for: indexPath) - self.insetSpace()
+        if tableView.cellHeightLayoutType(at: indexPath) == .hasLayout {
+            let oldHeight = tableView.tempCellHeight(at: indexPath) - self.insetSpace()
             let height: CGFloat = self.height
             if abs(height - oldHeight) > 2 && height > 0 {
                 logDebug("updateHeight -> \(oldHeight) to \(height)")
-                self.setNeedResetCellHeight()
+                self.setNeedResetCellHeight(at: indexPath)
             }
         }
-        guard tableView.cellHeightLayoutType(for: indexPath) == .resetLayout else {
+        guard tableView.cellHeightLayoutType(at: indexPath) == .resetLayout else {
             return
         }
         self.setNeedUpdate()
         self.isUpdating = true
         UIView.animate(withDuration: 0.25) {
-            TableViewUpdating(tableView).performBatch(animated: true, updates: {[weak self] in
-                guard let `self` = self else { return }
+            TableViewUpdating(tableView).performBatch(animated: true, updates: {
                 closure?()
-                self.isUpdating = false
-                }, completion: {_ in })
+            }, completion: {[weak self] _ in
+                self?.isUpdating = false
+            })
         }
     }
-    public func setNeedResetCellHeight() {
+    func setNeedResetCellHeight(at indexPath: IndexPath) {
         guard let tableView = self.getTableView() else {
             return
         }
-        guard let cell = self.superView(UITableViewCell.self) else {
-            return
-        }
-        guard let indexPath = tableView.indexPath(for: cell) else {
-            return
-        }
-        tableView.changeTempCellHeight(-1, for: indexPath)
+        tableView.changeTempCellHeight(-1, at: indexPath)
     }
 }
 extension TableItemCell {

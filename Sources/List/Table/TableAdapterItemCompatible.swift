@@ -141,10 +141,13 @@ extension TableAdapterItemCompatible: TableCellConfigProtocol {
     }
 }
 extension TableAdapterItemCompatible: TableCellHeightProtocol {
-    public var indexPath: IndexPath {
+    var indexPath: IndexPath? {
         return value.indexPath
     }
     func setNewIndexPath(_ newValue: IndexPath) {
         value.setNewIndexPath(newValue)
+    }
+    func updateHeight(_ closure: (() -> Void)? = nil) {
+        self.value.updateHeight(closure)
     }
 }

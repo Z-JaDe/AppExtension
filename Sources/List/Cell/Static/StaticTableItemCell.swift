@@ -15,17 +15,14 @@ open class StaticTableItemCell: TableItemCell, AdapterItemType {
         closure(self.canSelected)
     }
 
-    private var _indexPath: IndexPath!
+    private var _indexPath: IndexPath?
     // MARK: -
     open override func configInit() {
         super.configInit()
         self.highlightedAnimation = .zoom
 
         self.didLayoutSubviewsClosure = { [weak self] (cell) -> Void in
-            guard let `self` = self else { return }
-            self.updateHeight(self.indexPath, {
-
-            })
+            self?.updateHeight()
         }
     }
 
@@ -68,10 +65,14 @@ extension StaticTableItemCell: TableCellConfigProtocol {
     }
 }
 extension StaticTableItemCell: TableCellHeightProtocol {
-    public var indexPath: IndexPath {
+    public var indexPath: IndexPath? {
         return _indexPath
     }
     func setNewIndexPath(_ newValue: IndexPath) {
         _indexPath = newValue
+    }
+    public func updateHeight(_ closure: (() -> Void)? = nil) {
+        guard let indexPath = self.indexPath else { return }
+        self.updateHeight(indexPath, closure)
     }
 }

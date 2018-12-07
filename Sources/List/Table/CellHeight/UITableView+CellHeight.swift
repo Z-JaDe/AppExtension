@@ -16,21 +16,16 @@ public enum CellHeightLayoutType {
         return self != .hasLayout
     }
 }
-
 private var cellHeightKey: UInt8 = 0
-extension UITableView {
-    var cellHeights: [IndexPath: CGFloat] {
-        get {return associatedObject(&cellHeightKey, createIfNeed: [:])}
-        set {setAssociatedObject(&cellHeightKey, newValue)}
+extension TableCellHeightProtocol {
+    var tempCellHeight: CGFloat {
+        return associatedObject(&cellHeightKey, createIfNeed: 0)
     }
-    func changeTempCellHeight(_ newValue: CGFloat, for indexPath: IndexPath) {
-        self.cellHeights[indexPath] = newValue
+    func changeTempCellHeight(_ newValue: CGFloat) {
+        setAssociatedObject(&cellHeightKey, newValue)
     }
-    func tempCellHeight(for indexPath: IndexPath) -> CGFloat {
-        return self.cellHeights[indexPath] ?? 0
-    }
-    func cellHeightLayoutType(for indexPath: IndexPath) -> CellHeightLayoutType {
-        switch self.tempCellHeight(for: indexPath) {
+    var cellHeightLayoutType: CellHeightLayoutType {
+        switch self.tempCellHeight {
         case 0:
             return .neverLayout
         case ..<0:

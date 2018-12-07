@@ -83,15 +83,18 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<SectionModelItem<Tabl
                 timer?.invalidate()
                 return
             }
-            modelTable.remove(item)
             guard let tableView = self.tableView else {
                 return
             }
             guard let heightItem = item as? TableCellHeightProtocol else {
                 return
             }
-            if tableView.cellHeightLayoutType(for: heightItem.indexPath).isNeedLayout {
-                heightItem.calculateCellHeight(tableView, for: heightItem.indexPath, wait: false)
+            guard let indexPath = heightItem.indexPath else {
+                return
+            }
+            modelTable.remove(item)
+            if tableView.cellHeightLayoutType(at: indexPath).isNeedLayout {
+                heightItem.calculateCellHeight(tableView, for: indexPath, wait: false)
             }
         }
     }
@@ -137,7 +140,7 @@ extension UITableAdapter {
 }
 extension UITableAdapter: TableAdapterDelegate {
     private func createCell(in tableView: UITableView, for indexPath: IndexPath, item: TableAdapterItemCompatible) -> UITableViewCell {
-        if tableView.cellHeightLayoutType(for: indexPath).isNeedLayout {
+        if tableView.cellHeightLayoutType(at: indexPath).isNeedLayout {
             item.calculateCellHeight(tableView, for: indexPath, wait: true)
         }
         return item.createCell(in: tableView, for: indexPath)
@@ -146,7 +149,7 @@ extension UITableAdapter: TableAdapterDelegate {
         guard dataController.indexPathCanBound(indexPath) else {
             return 0.1
         }
-        let height = tableView?.tempCellHeight(for: indexPath) ?? 0
+        let height = tableView?.tempCellHeight(at: indexPath) ?? 0
         return height > 0 ? height : Space.cellDefaultHeight
     }
     // MARK: -

@@ -16,7 +16,7 @@ open class TableItemModel: ListItemModel {
     // MARK: - cell
     public weak var bufferPool: BufferPool?
 
-    private var _indexPath: IndexPath!
+    private var _indexPath: IndexPath?
     /// ZJaDe: 手动释放
     private var _contentCell: DynamicTableItemCell? {
         didSet {
@@ -26,14 +26,7 @@ open class TableItemModel: ListItemModel {
             _contentCell.isEnabled = self.isEnabled
             _contentCell.isSelected = self.isSelected
             _contentCell.didLayoutSubviewsClosure = {[weak self] (cell) -> Void in
-                guard let `self` = self else { return }
-                guard let cell = cell as? TableItemCell else {return}
-                guard let cellState = try? cell.cellState.value() else {return}
-                switch cellState {
-                case .didAppear:
-                    cell.updateHeight(self.indexPath, {})
-                case .prepare, .willAppear, .didDisappear: break
-                }
+                self?.updateHeight()
             }
         }
     }
@@ -135,10 +128,14 @@ extension TableItemModel: TableCellConfigProtocol {
     }
 }
 extension TableItemModel: TableCellHeightProtocol {
-    public var indexPath: IndexPath {
+    public var indexPath: IndexPath? {
         return _indexPath
     }
     func setNewIndexPath(_ newValue: IndexPath) {
         _indexPath = newValue
+    }
+    public func updateHeight(_ closure: (() -> Void)? = nil) {
+        guard let indexPath = self.indexPath else { return }
+        self._contentCell?.updateHeight(indexPath, closure)
     }
 }
