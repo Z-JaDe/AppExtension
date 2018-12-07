@@ -24,7 +24,7 @@ extension TableItemCell {
             return
         }
         if item.cellHeightLayoutType == .hasLayout {
-            let oldHeight = item.tempCellHeight - self.insetSpace()
+            let oldHeight = item.tempCellHeight - self.insetVerticalSpace()
             let height: CGFloat = self.height
             if abs(height - oldHeight) > 2 && height > 0 {
                 logDebug("updateHeight -> \(oldHeight) to \(height)")

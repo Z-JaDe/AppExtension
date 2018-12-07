@@ -34,7 +34,7 @@ open class TableItemCell: ItemCell, WritableDefaultHeightProtocol, DefaultProper
         didSet {getSNCell()?.backgroundColor = self.cellBackgroundColor}
     }
     public var separatorLineHeight: CGFloat = 0.5 {
-        didSet {getSNCell()?.setNeedsUpdateLaytouts()}
+        didSet {getSNCell()?.updateSeparatorLineViewFrame()}
     }
     /** ZJaDe: 
      默认与UITableViewCell对齐 而不是和contentView对齐
@@ -45,13 +45,13 @@ open class TableItemCell: ItemCell, WritableDefaultHeightProtocol, DefaultProper
      目前系统的accessoryType右边的间距 默认为16
      */
     public var separatorLineInsets: (left: CGFloat?, right: CGFloat?) = (nil, nil) {
-        didSet {getSNCell()?.setNeedsUpdateLaytouts()}
+        didSet {getSNCell()?.updateSeparatorLineViewFrame()}
     }
     /// ZJaDe: 内容insets
     public var insets: UIEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16) {
-        didSet {getSNCell()?.setNeedsUpdateLaytouts()}
+        didSet {getSNCell()?.setNeedsUpdateLayouts()}
     }
-    public func insetSpace() -> CGFloat {
+    public func insetVerticalSpace() -> CGFloat {
         return insets.top + insets.bottom + separatorLineHeight
     }
 
@@ -65,7 +65,7 @@ open class TableItemCell: ItemCell, WritableDefaultHeightProtocol, DefaultProper
     public var accessoryView: UIView? {
         didSet {
             oldValue?.removeFromSuperview()
-            getSNCell()?.setNeedsUpdateLaytouts()
+            getSNCell()?.setNeedsUpdateLayouts()
         }
     }
     /// ZJaDe: 这个方法返回itemCell的高度，如果返回0 就采取自动布局的方式计算高度

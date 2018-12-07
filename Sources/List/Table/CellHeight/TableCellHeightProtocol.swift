@@ -26,7 +26,7 @@ extension TableCellHeightProtocol {
         let itemCellWidth = item.getItemCellWidth(tableView)
         /*************** 计算高度 ***************/
         let cellHeight = item.layoutHeight(itemCellWidth)
-        self.changeTempCellHeight(cellHeight + item.insetSpace())
+        self.changeTempCellHeight(cellHeight + item.insetVerticalSpace())
         /*************** cell回收 ***************/
         self.recycleCell(item)
     }

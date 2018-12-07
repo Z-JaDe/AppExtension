@@ -21,7 +21,8 @@ class SNTableViewCell: UITableViewCell {
         super.prepareForReuse()
         self.accessoryView = nil
     }
-    var contentItem: TableItemCell? {
+    typealias ContentItemType = TableItemCell
+    var contentItem: ContentItemType? {
         willSet {
             newValue?.getSNCell()?.contentItem = nil
         }
@@ -32,13 +33,13 @@ class SNTableViewCell: UITableViewCell {
                 contentItem.prepareForReuse()
                 self.contentView.addSubview(contentItem)
                 self.updateUI(contentItem)
-                self.setNeedsUpdateLaytouts()
+                self.setNeedsUpdateLayouts()
             }
         }
     }
 
     /// 设置contentItem属性后刷新这里触发SNTableCell
-    func updateUI(_ contentItem: TableItemCell) {
+    func updateUI(_ contentItem: ContentItemType) {
         self.separatorLineView.backgroundColor = contentItem.separatorLineColor
         self.accessoryType = contentItem.accessoryType
         contentItem.selectedBackgroundView.backgroundColor = contentItem.cellSelectedBackgroundColor
@@ -53,12 +54,13 @@ class SNTableViewCell: UITableViewCell {
         self.addSubview(self.separatorLineView)
     }
 
-    func setNeedsUpdateLaytouts() {
+    func setNeedsUpdateLayouts() {
         updateLayout()
     }
 
     open override func layoutSubviews() {
         super.layoutSubviews()
+        updateSeparatorLineViewFrame()
     }
     override func didTransition(to state: UITableViewCell.StateMask) {
         self.setNeedsLayout()
@@ -91,28 +93,34 @@ extension SNTableViewCell {
                 maker.leftSpace(contentItem).offset(8)
                 maker.centerY.equalTo(contentItem)
                 maker.top.greaterThanOrEqualTo(contentItem)
-                maker.bottom.lessThanOrEqualTo(contentItem)
             }
         } else {
             constraintArr += contentItem.snp.prepareConstraints { (maker) in
                 maker.right.equalTo(contentItem.insets)
             }
         }
+        /// ZJaDe: bottom优先级设置成999，一是为了不把contentItem高度固定，这样contentItem内容变化时就可以自动调用layoutSubviews，二是有时候计算出现误差，布局不会出现异常，只是隐藏了一部分或者有部分留白
         constraintArr += contentItem.snp.prepareConstraints { (maker) in
             maker.left.top.equalTo(contentItem.insets)
             maker.bottom.equalTo(-(contentItem.separatorLineHeight + contentItem.insets.bottom)).priority(999)
         }
-
-        let separatorLineInsets = getSeparatorLineInsets(contentItem)
-        constraintArr += self.separatorLineView.snp.prepareConstraints { (maker) in
-            maker.left.equalTo(self).offset(separatorLineInsets.left)
-            maker.right.equalTo(self).offset(-separatorLineInsets.right)
-            maker.bottom.equalTo(self)
-            maker.height.equalTo(contentItem.separatorLineHeight)
-        }
         self.updateLayouts(tag: "cellLayout", constraintArr)
     }
+    @available(iOS, unavailable, message: "使用自动布局")
     private func updateFrames() {
+        guard let contentItem = self.contentItem else {
+            return
+        }
+        /// ZJaDe: -------------------------------------------
+        contentItem.width = self.contentView.width - contentItem.insets.left - contentItem.insets.right
+        let space = contentItem.insetVerticalSpace()
+        contentItem.height = self.height - space
+
+        contentItem.top = contentItem.insets.top
+        contentItem.left = contentItem.insets.left
+    }
+    // MARK: -
+    func updateSeparatorLineViewFrame() {
         guard let contentItem = self.contentItem else {
             return
         }
@@ -122,16 +130,9 @@ extension SNTableViewCell {
 
         self.separatorLineView.bottom = self.height
         self.separatorLineView.left = separatorLineInsets.left
-        /// ZJaDe: -------------------------------------------
-        contentItem.width = self.contentView.width - contentItem.insets.left - contentItem.insets.right
-        let space = contentItem.insets.bottom
-        contentItem.height = self.separatorLineView.top - space - contentItem.insets.top
-
-        contentItem.top = contentItem.insets.top
-        contentItem.left = contentItem.insets.left
     }
 
-    private func getSeparatorLineInsets(_ contentItem: TableItemCell) -> (left: CGFloat, right: CGFloat) {
+    private func getSeparatorLineInsets(_ contentItem: ContentItemType) -> (left: CGFloat, right: CGFloat) {
         let left: CGFloat = contentItem.separatorLineInsets.left ??
             (contentItem.separatorLineHeight > 1 ? 0 : contentItem.insets.left)
         let right: CGFloat = contentItem.separatorLineInsets.right ?? 0
