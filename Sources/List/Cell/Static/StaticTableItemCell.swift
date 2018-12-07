@@ -34,18 +34,18 @@ open class StaticTableItemCell: TableItemCell, TableCellConfigProtocol, AdapterI
     public func createCell(isTemp: Bool) -> TableItemCell {
         return self
     }
+    public func recycleCell(_ cell: TableItemCell) {}
     public func getCell() -> TableItemCell? {
         return self
     }
 
-    public func createCell(in tableView: UITableView) -> UITableViewCell {
-        let reuseIdentifier: String = SNTableViewCell.reuseIdentifier
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? SNTableViewCell
+    public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
+        let cell = _createCell(in: tableView, for: indexPath)
         //        let item = self.cell()
         //        logDebug("\(item)创建一个cell")
         /// ZJaDe: tableView弱引用
         self._tableView = tableView
-        return cell!
+        return cell
     }
     public func willAppear(in cell: UITableViewCell) {
         guard let cell = cell as? SNTableViewCell else {

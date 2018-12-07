@@ -14,5 +14,6 @@ public protocol CollectionCellConfigProtocol: CellConfigProtocol {
     func didDisappear(in cell: UICollectionViewCell)
 
     func createCell() -> CollectionItemCell
+    func recycleCell(_ cell: CollectionItemCell)
     func getCell() -> CollectionItemCell?
 }

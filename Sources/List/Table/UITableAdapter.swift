@@ -19,7 +19,7 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<SectionModelItem<Tabl
 
     public func tableViewInit(_ tableView: UITableView) {
         self.tableView = tableView
-        // 注册的用的全部都是SNTableViewCell, 真正的cell是.contentItem
+        // 注册的用的全部都是SNTableViewCell, 真正的cell是SNTableViewCell.contentItem
         tableView.register(SNTableViewCell.self, forCellReuseIdentifier: SNTableViewCell.reuseIdentifier)
         //初始化数据源
         configDataSource(tableView)
@@ -60,8 +60,11 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<SectionModelItem<Tabl
     public var insertSecionModelsClosure: ((ListDataType) -> (ListDataType))?
     override func loadRxDataSource() -> DataSource {
         let dataSource = DataSource(dataController: DataController())
-        dataSource.configureCell = {(_, tableView, _, item) in
-            return item.createCell(in: tableView)
+        dataSource.configureCell = {[weak self] (_, tableView, indexPath, item) in
+            guard let `self` = self else {
+                return item.createCell(in: tableView, for: indexPath)
+            }
+            return self.createCell(in: tableView, for: indexPath, item: item)
         }
         return dataSource
     }
@@ -74,7 +77,7 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<SectionModelItem<Tabl
             .forEach(modelTable.add)
 
         self.timer?.invalidate()
-        self.timer = Timer.scheduleTimer(1) {[weak self] (timer) in
+        self.timer = Timer.scheduleTimer(0.01) {[weak self] (timer) in
             guard let `self` = self else { return }
             guard let item = modelTable.anyObject else {
                 timer?.invalidate()
@@ -91,9 +94,20 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<SectionModelItem<Tabl
 
     // MARK: -
     deinit {
+        cleanReference()
+    }
+}
+extension UITableAdapter {
+    func cleanReference() {
         self.dataArray.lazy
-            .flatMap({$0.items.compactMap({$0.model})})
+            .flatMap({$0.items})
+            .compactMap({$0.model})
             .forEach({$0.cleanReference()})
+    }
+    func addBufferPool(at data: [SectionModelItem<Section, Item>]) {
+        data.lazy.flatMap({$0.items}).compactMap({$0.model}).forEach({ (model) in
+            model.bufferPool = self.bufferPool
+        })
     }
 }
 extension UITableAdapter {
@@ -106,13 +120,7 @@ extension UITableAdapter {
             .do(onNext: { [weak self] (element) -> Void in
                 guard let `self` = self else {return}
                 self.updateItemsIfNeed()
-                element.data.forEach({ (sectionModel) in
-                    sectionModel.items.forEach({ (item) in
-                        if case .model(let model) = item {
-                            model.bufferPool = self.bufferPool
-                        }
-                    })
-                })
+                self.addBufferPool(at: element.data)
             })
             .bind(to: tableView.rx.items(dataSource: self.rxDataSource))
             .disposed(by: disposeBag)
@@ -124,14 +132,17 @@ extension UITableAdapter {
     }
 }
 extension UITableAdapter: TableAdapterDelegate {
+    private func createCell(in tableView: UITableView, for indexPath: IndexPath, item: TableAdapterItemCompatible) -> UITableViewCell {
+        if item.cellHeightLayoutType.isNeedLayout {
+            item.calculateCellHeight(tableView, wait: true)
+        }
+        return item.createCell(in: tableView, for: indexPath)
+    }
     public func heightForRow(at indexPath: IndexPath) -> CGFloat {
         guard dataController.indexPathCanBound(indexPath) else {
             return 0.1
         }
         let item = dataController[indexPath]
-        if item.cellHeightLayoutType.isNeedLayout {
-            item.calculateCellHeight(self.tableView!, wait: true)
-        }
         return item.tempCellHeight > 0 ? item.tempCellHeight : Space.cellDefaultHeight
     }
     // MARK: -

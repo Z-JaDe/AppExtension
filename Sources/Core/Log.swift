@@ -56,6 +56,8 @@ public func logTimer(_ closure: () -> Void) {
     let date = Date().timeIntervalSince1970
     closure()
     logDebug("结束计时\(date - Date().timeIntervalSince1970)")
+    #else
+    closure()
     #endif
 }
 // MARK: - 在 Relase 模式下，关闭后台打印

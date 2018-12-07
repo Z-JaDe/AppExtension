@@ -33,36 +33,39 @@ open class CollectionItemModel: ListItemModel, CollectionCellConfigProtocol {
         result._model = self
         return result
     }
+    public func recycleCell(_ cell: CollectionItemCell) {
+        bufferPool?.push(cell)
+    }
     public func getCell() -> CollectionItemCell? {
-        return _cell
+        return _contentCell
     }
     private func createCellIfNil() {
-        if _cell == nil {
+        if _contentCell == nil {
             let cell = createCell()
-            _cell = cell as? DynamicCollectionItemCell
+            _contentCell = cell as? DynamicCollectionItemCell
         }
     }
     /// ZJaDe: 手动释放
-    private var _cell: DynamicCollectionItemCell? {
+    private var _contentCell: DynamicCollectionItemCell? {
         didSet {
-            _cell?.isEnabled = self.isEnabled
+            _contentCell?.isEnabled = self.isEnabled
         }
     }
     open override var isEnabled: Bool? {
         didSet {
-            _cell?.isEnabled = self.isEnabled
+            _contentCell?.isEnabled = self.isEnabled
         }
     }
     public override var isSelected: Bool {
         didSet {
-            _cell?.isSelected = self.isSelected
+            _contentCell?.isSelected = self.isSelected
         }
     }
     public override func didSelectItem() {
-        _cell?.didSelectItem()
+        _contentCell?.didSelectItem()
     }
     open override func updateEnabledState(_ isEnabled: Bool) {
-        _cell?.refreshEnabledState(isEnabled)
+        _contentCell?.refreshEnabledState(isEnabled)
     }
 
     // MARK: -
@@ -78,10 +81,10 @@ open class CollectionItemModel: ListItemModel, CollectionCellConfigProtocol {
             return
         }
         createCellIfNil()
-        // ZJaDe: SNCollectionViewCell对_cell引用
-        cell.contentItem = _cell
-        _cell?.willAppear()
-        if _cell == nil {
+        // ZJaDe: SNCollectionViewCell对_contentCell引用
+        cell.contentItem = _contentCell
+        _contentCell?.willAppear()
+        if _contentCell == nil {
             logError("cell为空，需检查错误")
         }
     }
@@ -89,20 +92,20 @@ open class CollectionItemModel: ListItemModel, CollectionCellConfigProtocol {
         guard let cell = cell as? SNCollectionViewCell else {
             return
         }
-        _cell?.didDisappear()
-        // ZJaDe: 释放SNCollectionViewCell对_cell的持有
+        _contentCell?.didDisappear()
+        // ZJaDe: 释放SNCollectionViewCell对_contentCell的持有
         cell.contentItem = nil
         //讲contentCell加入到缓存池
-        if let item = _cell {
-            bufferPool?.push(item)
+        if let item = _contentCell {
+            recycleCell(item)
         }
 
         cleanReference()
     }
 
     func cleanReference() {
-        // ZJaDe: 释放model对_cell的持有
-        _cell?._model = nil
-        _cell = nil
+        // ZJaDe: 释放model对_contentCell的持有
+        _contentCell?._model = nil
+        _contentCell = nil
     }
 }

@@ -19,7 +19,7 @@ open class TableItemModel: ListItemModel, TableCellConfigProtocol {
     public func createCell(isTemp: Bool) -> TableItemCell {
         let result: DynamicTableItemCell
         let cellName = self.getCellClsName()
-        // 如果缓存池有, 就pop出来使用, 这个缓存池是单例, 针对所有的tableView
+        // 如果缓存池有, 就pop出来使用
         if let cell: DynamicTableItemCell = bufferPool?.pop(cellName) {
             result = cell
         } else {
@@ -32,25 +32,29 @@ open class TableItemModel: ListItemModel, TableCellConfigProtocol {
         result._model = self
         return result
     }
+    public func recycleCell(_ cell: TableItemCell) {
+        bufferPool?.push(cell)
+    }
     public func getCell() -> TableItemCell? {
-        return _cell
+        return _contentCell
     }
     private func createCellIfNil() {
-        if _cell == nil {
-            let cell = createCell(isTemp: false)
-            _cell = cell as? DynamicTableItemCell
+        guard _contentCell == nil else {
+            return
         }
+        let cell = createCell(isTemp: false)
+        _contentCell = cell as? DynamicTableItemCell
     }
     // MARK: -
     /// ZJaDe: 手动释放
-    private var _cell: DynamicTableItemCell? {
+    private var _contentCell: DynamicTableItemCell? {
         didSet {
-            guard let _cell = _cell else {
+            guard let _contentCell = _contentCell else {
                 return
             }
-            _cell.isEnabled = self.isEnabled
-            _cell.isSelected = self.isSelected
-            _cell.didLayoutSubviewsClosure = {[weak self] (cell) -> Void in
+            _contentCell.isEnabled = self.isEnabled
+            _contentCell.isSelected = self.isSelected
+            _contentCell.didLayoutSubviewsClosure = {[weak self] (cell) -> Void in
                 guard let `self` = self else { return }
                 guard let cell = cell as? TableItemCell else {return}
                 guard let cellState = try? cell.cellState.value() else {return}
@@ -64,16 +68,16 @@ open class TableItemModel: ListItemModel, TableCellConfigProtocol {
     }
     open override var isEnabled: Bool? {
         didSet {
-            _cell?.isEnabled = self.isEnabled
+            _contentCell?.isEnabled = self.isEnabled
         }
     }
     public override var isSelected: Bool {
         didSet {
-            _cell?.isSelected = self.isSelected
+            _contentCell?.isSelected = self.isSelected
         }
     }
     open override func checkCanSelected(_ closure: @escaping (Bool) -> Void) {
-        if let cell = _cell {
+        if let cell = _contentCell {
             cell.checkCanSelected({ (isCanSelected) in
                 if let result = isCanSelected {
                     closure(result)
@@ -86,10 +90,10 @@ open class TableItemModel: ListItemModel, TableCellConfigProtocol {
         }
     }
     public override func didSelectItem() {
-        _cell?.didSelectItem()
+        _contentCell?.didSelectItem()
     }
     open override func updateEnabledState(_ isEnabled: Bool) {
-        _cell?.refreshEnabledState(isEnabled)
+        _contentCell?.refreshEnabledState(isEnabled)
     }
     // MARK: -
     public private(set) var tempCellHeight: CGFloat = 0
@@ -97,23 +101,22 @@ open class TableItemModel: ListItemModel, TableCellConfigProtocol {
         self.tempCellHeight = newValue
     }
 
-    public func createCell(in tableView: UITableView) -> UITableViewCell {
-        let reuseIdentifier: String = SNTableViewCell.reuseIdentifier
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? SNTableViewCell
+    public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
+        let cell = _createCell(in: tableView, for: indexPath)
         //        logDebug("\(item)创建一个cell")
-        /// ZJaDe: 初始化_cell，并且_cell持有tableView弱引用
+        /// ZJaDe: 初始化_contentCell，并且_contentCell持有tableView弱引用
         createCellIfNil()
         self.getCell()!._tableView = tableView
-        return cell!
+        return cell
     }
     public func willAppear(in cell: UITableViewCell) {
         guard let cell = cell as? SNTableViewCell else {
             return
         }
-        // ZJaDe: SNTableViewCell对_cell引用
-        cell.contentItem = _cell
-        _cell?.willAppear()
-        if _cell == nil {
+        // ZJaDe: SNTableViewCell对_contentCell引用
+        cell.contentItem = _contentCell
+        _contentCell?.willAppear()
+        if _contentCell == nil {
             logError("cell为空，需检查错误")
         }
         //        logDebug("\(item)将要显示")
@@ -122,18 +125,18 @@ open class TableItemModel: ListItemModel, TableCellConfigProtocol {
         guard let cell = cell as? SNTableViewCell else {
             return
         }
-        _cell?.didDisappear()
-        // ZJaDe: 释放SNTableViewCell对_cell的持有
+        _contentCell?.didDisappear()
+        // ZJaDe: 释放SNTableViewCell对_contentCell的持有
         cell.contentItem = nil
         //讲contentCell加入到缓存池
-        if let item = _cell {
-            bufferPool?.push(item)
+        if let item = _contentCell {
+            recycleCell(item)
         }
         cleanReference()
     }
     func cleanReference() {
-        // ZJaDe: 释放model对_cell的持有
-        _cell?._model = nil
-        _cell = nil
+        // ZJaDe: 释放model对_contentCell的持有
+        _contentCell?._model = nil
+        _contentCell = nil
     }
 }

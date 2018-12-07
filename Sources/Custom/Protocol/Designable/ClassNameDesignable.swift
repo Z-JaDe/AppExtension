@@ -27,7 +27,7 @@ extension ClassNameDesignable {
         return type(of: self).className
     }
     public static var className: String {
-        return String(describing: self)
+        return String(classFullName.split(separator: ".").last ?? "")
     }
 }
 extension NSObject: ClassNameDesignable {}

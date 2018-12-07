@@ -46,7 +46,7 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<SectionMode
     // MARK: - EnabledStateProtocol
     open override func updateEnabledState(_ isEnabled: Bool) {
         super.updateEnabledState(isEnabled)
-        dataArray.flatMap({$0.1}).forEach { (item) in
+        dataArray.lazy.flatMap({$0.1}).forEach { (item) in
             item.refreshEnabledState(isEnabled)
         }
     }
@@ -60,11 +60,19 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<SectionMode
     }
     // MARK: -
     deinit {
-        self.dataArray.forEach { (sectionModel) in
-            sectionModel.1.forEach({ (item) in
-                item.cleanReference()
-            })
-        }
+        cleanReference()
+    }
+}
+extension UICollectionAdapter {
+    func cleanReference() {
+        self.dataArray.lazy
+            .flatMap({$0.items})
+            .forEach({$0.cleanReference()})
+    }
+    func addBufferPool(at data: [SectionModelItem<Section, Item>]) {
+        data.lazy.flatMap({$0.items}).forEach({ (model) in
+            model.bufferPool = self.bufferPool
+        })
     }
 }
 extension UICollectionAdapter {
@@ -72,11 +80,7 @@ extension UICollectionAdapter {
         dataArrayObservable().map({$0.map({$0.compactMap(UICollectionAdapter.compactMap)})})
             .do(onNext: {[weak self] (element) -> Void in
                 guard let `self` = self else {return}
-                element.data.forEach({ (sectionModel) in
-                    sectionModel.items.forEach({ (item) in
-                        item.bufferPool = self.bufferPool
-                    })
-                })
+                self.addBufferPool(at: element.data)
             })
             .bind(to: collectionView.rx.items(dataSource: self.rxDataSource))
             .disposed(by: disposeBag)

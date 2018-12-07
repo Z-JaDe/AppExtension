@@ -117,9 +117,8 @@ extension TableAdapterItemCompatible: CustomStringConvertible {
     }
 }
 extension TableAdapterItemCompatible: TableCellConfigProtocol {
-
-    public func createCell(in tableView: UITableView) -> UITableViewCell {
-        return value.createCell(in: tableView)
+    public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
+        return value.createCell(in: tableView, for: indexPath)
     }
 
     public func willAppear(in cell: UITableViewCell) {
@@ -132,6 +131,9 @@ extension TableAdapterItemCompatible: TableCellConfigProtocol {
 
     public func createCell(isTemp: Bool) -> TableItemCell {
         return value.createCell(isTemp: isTemp)
+    }
+    public func recycleCell(_ cell: TableItemCell) {
+        value.recycleCell(cell)
     }
 
     public func getCell() -> TableItemCell? {
