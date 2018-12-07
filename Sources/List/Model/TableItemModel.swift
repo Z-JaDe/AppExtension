@@ -8,13 +8,62 @@
 
 import UIKit
 
-open class TableItemModel: ListItemModel, TableCellConfigProtocol {
+open class TableItemModel: ListItemModel {
 
     open func getCellClsName() -> String {
         return self.cellFullName
     }
     // MARK: - cell
     public weak var bufferPool: BufferPool?
+
+    private var _indexPath: IndexPath!
+    /// ZJaDe: 手动释放
+    private var _contentCell: DynamicTableItemCell? {
+        didSet {
+            guard let _contentCell = _contentCell else {
+                return
+            }
+            _contentCell.isEnabled = self.isEnabled
+            _contentCell.isSelected = self.isSelected
+            _contentCell.didLayoutSubviewsClosure = {[weak self] (cell) -> Void in
+                guard let `self` = self else { return }
+                guard let cell = cell as? TableItemCell else {return}
+                guard let cellState = try? cell.cellState.value() else {return}
+                switch cellState {
+                case .didAppear:
+                    cell.updateHeight(self.indexPath, {})
+                case .prepare, .willAppear, .didDisappear: break
+                }
+            }
+        }
+    }
+    open override var isEnabled: Bool? {
+        didSet { _contentCell?.isEnabled = self.isEnabled }
+    }
+    public override var isSelected: Bool {
+        didSet { _contentCell?.isSelected = self.isSelected }
+    }
+    open override func checkCanSelected(_ closure: @escaping (Bool) -> Void) {
+        if let cell = _contentCell {
+            cell.checkCanSelected({ (isCanSelected) in
+                if let result = isCanSelected {
+                    closure(result)
+                } else {
+                    super.checkCanSelected(closure)
+                }
+            })
+        } else {
+            super.checkCanSelected(closure)
+        }
+    }
+    public override func didSelectItem() {
+        _contentCell?.didSelectItem()
+    }
+    open override func updateEnabledState(_ isEnabled: Bool) {
+        _contentCell?.refreshEnabledState(isEnabled)
+    }
+}
+extension TableItemModel: TableCellConfigProtocol {
     /// 这方法返回的是contentCell, 实际内容的cell
     public func createCell(isTemp: Bool) -> TableItemCell {
         let result: DynamicTableItemCell
@@ -44,61 +93,6 @@ open class TableItemModel: ListItemModel, TableCellConfigProtocol {
         }
         let cell = createCell(isTemp: false)
         _contentCell = cell as? DynamicTableItemCell
-    }
-    // MARK: -
-    /// ZJaDe: 手动释放
-    private var _contentCell: DynamicTableItemCell? {
-        didSet {
-            guard let _contentCell = _contentCell else {
-                return
-            }
-            _contentCell.isEnabled = self.isEnabled
-            _contentCell.isSelected = self.isSelected
-            _contentCell.didLayoutSubviewsClosure = {[weak self] (cell) -> Void in
-                guard let `self` = self else { return }
-                guard let cell = cell as? TableItemCell else {return}
-                guard let cellState = try? cell.cellState.value() else {return}
-                switch cellState {
-                case .didAppear:
-                    cell.updateHeight(self, {})
-                case .prepare, .willAppear, .didDisappear: break
-                }
-            }
-        }
-    }
-    open override var isEnabled: Bool? {
-        didSet {
-            _contentCell?.isEnabled = self.isEnabled
-        }
-    }
-    public override var isSelected: Bool {
-        didSet {
-            _contentCell?.isSelected = self.isSelected
-        }
-    }
-    open override func checkCanSelected(_ closure: @escaping (Bool) -> Void) {
-        if let cell = _contentCell {
-            cell.checkCanSelected({ (isCanSelected) in
-                if let result = isCanSelected {
-                    closure(result)
-                } else {
-                    super.checkCanSelected(closure)
-                }
-            })
-        } else {
-            super.checkCanSelected(closure)
-        }
-    }
-    public override func didSelectItem() {
-        _contentCell?.didSelectItem()
-    }
-    open override func updateEnabledState(_ isEnabled: Bool) {
-        _contentCell?.refreshEnabledState(isEnabled)
-    }
-    // MARK: -
-    public private(set) var tempCellHeight: CGFloat = 0
-    public func changeTempCellHeight(_ newValue: CGFloat) {
-        self.tempCellHeight = newValue
     }
 
     public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
@@ -138,5 +132,13 @@ open class TableItemModel: ListItemModel, TableCellConfigProtocol {
         // ZJaDe: 释放model对_contentCell的持有
         _contentCell?._model = nil
         _contentCell = nil
+    }
+}
+extension TableItemModel: TableCellHeightProtocol {
+    public var indexPath: IndexPath {
+        return _indexPath
+    }
+    func setNewIndexPath(_ newValue: IndexPath) {
+        _indexPath = newValue
     }
 }

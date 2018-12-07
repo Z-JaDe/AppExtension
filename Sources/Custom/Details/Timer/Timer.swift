@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 extension Timer {
     public typealias TimerExecuteClosure = (Timer?) -> Void
     @discardableResult

@@ -25,6 +25,9 @@
 		C90D85F420E2541500A4D0FD /* CycleViewViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90D85F320E2541500A4D0FD /* CycleViewViewControllerTest.swift */; };
 		C90D85FA20E26B8F00A4D0FD /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90D85F920E26B8F00A4D0FD /* ItemViewController.swift */; };
 		C90E082E21BA339F00A59AD6 /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E082D21BA339F00A59AD6 /* TimerTests.swift */; };
+		C90E083121BA6F0F00A59AD6 /* TableCellHeightProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E082F21BA6F0000A59AD6 /* TableCellHeightProtocol.swift */; };
+		C90E083521BA717000A59AD6 /* TableItemCell+Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E083321BA716900A59AD6 /* TableItemCell+Height.swift */; };
+		C90E083821BA720300A59AD6 /* UITableView+CellHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E083621BA71FE00A59AD6 /* UITableView+CellHeight.swift */; };
 		C91055B121A8298200F87515 /* UserNotificationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C91055AF21A8298200F87515 /* UserNotificationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C91055B421A8298200F87515 /* UserNotificationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91055AD21A8298200F87515 /* UserNotificationManager.framework */; };
 		C91055B521A8298200F87515 /* UserNotificationManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C91055AD21A8298200F87515 /* UserNotificationManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -567,6 +570,9 @@
 		C90D85F320E2541500A4D0FD /* CycleViewViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleViewViewControllerTest.swift; sourceTree = "<group>"; };
 		C90D85F920E26B8F00A4D0FD /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		C90E082D21BA339F00A59AD6 /* TimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
+		C90E082F21BA6F0000A59AD6 /* TableCellHeightProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellHeightProtocol.swift; sourceTree = "<group>"; };
+		C90E083321BA716900A59AD6 /* TableItemCell+Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableItemCell+Height.swift"; sourceTree = "<group>"; };
+		C90E083621BA71FE00A59AD6 /* UITableView+CellHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+CellHeight.swift"; sourceTree = "<group>"; };
 		C91055AD21A8298200F87515 /* UserNotificationManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserNotificationManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C91055AF21A8298200F87515 /* UserNotificationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserNotificationManager.h; sourceTree = "<group>"; };
 		C91055B021A8298200F87515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1117,6 +1123,16 @@
 				C90A1C2A21B01EB6007D573C /* DataController+Update.swift */,
 			);
 			path = DataController;
+			sourceTree = "<group>";
+		};
+		C90E083221BA714F00A59AD6 /* CellHeight */ = {
+			isa = PBXGroup;
+			children = (
+				C90E082F21BA6F0000A59AD6 /* TableCellHeightProtocol.swift */,
+				C90E083321BA716900A59AD6 /* TableItemCell+Height.swift */,
+				C90E083621BA71FE00A59AD6 /* UITableView+CellHeight.swift */,
+			);
+			path = CellHeight;
 			sourceTree = "<group>";
 		};
 		C91055AE21A8298200F87515 /* UserNotificationManager */ = {
@@ -1709,6 +1725,7 @@
 		C932F9FA21006ED100B8DF84 /* Table */ = {
 			isa = PBXGroup;
 			children = (
+				C90E083221BA714F00A59AD6 /* CellHeight */,
 				C932FA1321006ED100B8DF84 /* TableViewDataSource.swift */,
 				C932FA4B21006ED200B8DF84 /* TableCellConfigProtocol.swift */,
 				C9140BEA21B6777000CBA642 /* TableAdapterDelegate.swift */,
@@ -3226,6 +3243,7 @@
 				C918DF0521B52299000F2AAC /* ListDataUpdateProtocol.swift in Sources */,
 				C932FA8721006ED200B8DF84 /* TextFieldCell.swift in Sources */,
 				C932FA5821006ED200B8DF84 /* TableViewHeaderFooterView.swift in Sources */,
+				C90E083521BA717000A59AD6 /* TableItemCell+Height.swift in Sources */,
 				C90A1C2D21B01EBC007D573C /* DataController+Update.swift in Sources */,
 				C962C58320CE1A060061FC20 /* ListSection.swift in Sources */,
 				C910E64721AEAF940067B51B /* SectionedDataSource.swift in Sources */,
@@ -3240,6 +3258,7 @@
 				C918DF0621B52299000F2AAC /* ListDataUpdateProtocol+map.swift in Sources */,
 				C932FA8D21006ED200B8DF84 /* TableItemModel.swift in Sources */,
 				C918DF0421B52299000F2AAC /* ListData+EditItems.swift in Sources */,
+				C90E083121BA6F0F00A59AD6 /* TableCellHeightProtocol.swift in Sources */,
 				C932FA9921006ED200B8DF84 /* ListDelegate.swift in Sources */,
 				C932FA7D21006ED200B8DF84 /* TableModelCell.swift in Sources */,
 				C932FA9621006ED200B8DF84 /* NeedUpdateProtocol.swift in Sources */,
@@ -3251,6 +3270,7 @@
 				C932FA6621006ED200B8DF84 /* TableViewDataSource.swift in Sources */,
 				C962C58C20CE1A060061FC20 /* List.swift in Sources */,
 				C910E63C21AE8A950067B51B /* TableViewUpdating.swift in Sources */,
+				C90E083821BA720300A59AD6 /* UITableView+CellHeight.swift in Sources */,
 				C932FA8621006ED200B8DF84 /* TitleCell.swift in Sources */,
 				C9B17600213045260095DC35 /* CollectionViewDataSource.swift in Sources */,
 				C932FA7E21006ED200B8DF84 /* CollectionModelCell.swift in Sources */,

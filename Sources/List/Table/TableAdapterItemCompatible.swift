@@ -23,7 +23,7 @@ public enum TableAdapterItemCompatible: AdapterItemType {
         }
         return nil
     }
-    internal var value: AnyObject & CanSelectedStateDesignable & TableCellConfigProtocol & HiddenStateDesignable {
+    internal var value: AnyObject & CanSelectedStateDesignable & TableCellConfigProtocol & TableCellHeightProtocol & HiddenStateDesignable {
         switch self {
         case .cell(let cell):
             return cell
@@ -139,12 +139,12 @@ extension TableAdapterItemCompatible: TableCellConfigProtocol {
     public func getCell() -> TableItemCell? {
         return value.getCell()
     }
-
-    public var tempCellHeight: CGFloat {
-        return value.tempCellHeight
+}
+extension TableAdapterItemCompatible: TableCellHeightProtocol {
+    public var indexPath: IndexPath {
+        return value.indexPath
     }
-    public func changeTempCellHeight(_ newValue: CGFloat) {
-        value.changeTempCellHeight(newValue)
+    func setNewIndexPath(_ newValue: IndexPath) {
+        value.setNewIndexPath(newValue)
     }
-
 }

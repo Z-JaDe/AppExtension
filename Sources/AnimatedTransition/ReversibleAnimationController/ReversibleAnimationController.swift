@@ -7,7 +7,6 @@
 //
 
 import UIKit
-// TODO: 待优化
 open class ReversibleAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     enum TransitionState {
         case 未开始

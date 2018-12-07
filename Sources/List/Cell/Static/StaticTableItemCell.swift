@@ -8,12 +8,14 @@
 
 import UIKit
 
-open class StaticTableItemCell: TableItemCell, TableCellConfigProtocol, AdapterItemType {
+open class StaticTableItemCell: TableItemCell, AdapterItemType {
 
     open var canSelected: Bool = false
     public func checkCanSelected(_ closure: @escaping (Bool) -> Void) {
         closure(self.canSelected)
     }
+
+    private var _indexPath: IndexPath!
     // MARK: -
     open override func configInit() {
         super.configInit()
@@ -21,24 +23,19 @@ open class StaticTableItemCell: TableItemCell, TableCellConfigProtocol, AdapterI
 
         self.didLayoutSubviewsClosure = { [weak self] (cell) -> Void in
             guard let `self` = self else { return }
-            self.updateHeight(self, {
+            self.updateHeight(self.indexPath, {
 
             })
         }
     }
-    public private(set) var tempCellHeight: CGFloat = 0
-    public func changeTempCellHeight(_ newValue: CGFloat) {
-        self.tempCellHeight = newValue
-    }
 
-    public func createCell(isTemp: Bool) -> TableItemCell {
-        return self
-    }
-    public func recycleCell(_ cell: TableItemCell) {}
-    public func getCell() -> TableItemCell? {
-        return self
-    }
-
+    // MARK: - CheckAndCatchParamsProtocol
+    public var key: String = ""
+    public var catchParamsErrorPrompt: String?
+    public var catchParamsClosure: CatchParamsClosure?
+    public var checkParamsClosure: CheckParamsClosure?
+}
+extension StaticTableItemCell: TableCellConfigProtocol {
     public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
         let cell = _createCell(in: tableView, for: indexPath)
         //        let item = self.cell()
@@ -62,10 +59,19 @@ open class StaticTableItemCell: TableItemCell, TableCellConfigProtocol, AdapterI
         self.didDisappear()
         cell.contentItem = nil
     }
-
-    // MARK: - CheckAndCatchParamsProtocol
-    public var key: String = ""
-    public var catchParamsErrorPrompt: String?
-    public var catchParamsClosure: CatchParamsClosure?
-    public var checkParamsClosure: CheckParamsClosure?
+    public func createCell(isTemp: Bool) -> TableItemCell {
+        return self
+    }
+    public func recycleCell(_ cell: TableItemCell) {}
+    public func getCell() -> TableItemCell? {
+        return self
+    }
+}
+extension StaticTableItemCell: TableCellHeightProtocol {
+    public var indexPath: IndexPath {
+        return _indexPath
+    }
+    func setNewIndexPath(_ newValue: IndexPath) {
+        _indexPath = newValue
+    }
 }

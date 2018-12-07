@@ -104,41 +104,4 @@ open class TableItemCell: ItemCell, WritableDefaultHeightProtocol, DefaultProper
     open override func layoutSubviews() {
         super.layoutSubviews()
     }
-    // MARK: - updateCell
-    private var isUpdating: Bool = false
-    open func updateHeight<Item: TableCellConfigProtocol>(_ item: Item, _ closure: (() -> Void)?) {
-        guard self.isUpdating == false else {
-            return
-        }
-        guard CATransform3DIsIdentity(self.layer.transform) else {
-            return
-        }
-        guard (try? self.cellState.value()) == .didAppear else {
-            return
-        }
-        if item.cellHeightLayoutType == .hasLayout {
-            let oldHeight = item.tempCellHeight - self.insetSpace()
-            let height: CGFloat = self.height
-            if abs(height - oldHeight) > 2 && height > 0 {
-                logDebug("updateHeight -> \(item.tempCellHeight) to \(height)")
-                item.setNeedResetCellHeight()
-            }
-        }
-        guard item.cellHeightLayoutType == .resetLayout else {
-            return
-        }
-        self.setNeedUpdate()
-        guard let tableView = self.getTableView() else {
-            logError("\(item)->tableView找不到")
-            return
-        }
-        self.isUpdating = true
-        UIView.animate(withDuration: 0.25) {
-            TableViewUpdating(tableView).performBatch(animated: true, updates: {[weak self] in
-                guard let `self` = self else { return }
-                closure?()
-                self.isUpdating = false
-            }, completion: {_ in })
-        }
-    }
 }

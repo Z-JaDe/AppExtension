@@ -29,7 +29,7 @@ public class BufferPool {
         let result: T?
         var set: Set<NSObject> = getSet(key)
         if let item = set.first(where: {$0 is T}) {
-            result = item as! T
+            result = item as? T
             set.remove(item)
 //            logDebug("\(item)->: \(key) 取出缓存池")
         } else {

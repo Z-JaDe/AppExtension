@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol CollectionCellConfigProtocol: CellConfigProtocol {
+protocol CollectionCellConfigProtocol: CellConfigProtocol {
     func createCell(in collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell
     func willAppear(in cell: UICollectionViewCell)
     func didDisappear(in cell: UICollectionViewCell)
