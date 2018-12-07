@@ -27,7 +27,7 @@
 		C90E082E21BA339F00A59AD6 /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E082D21BA339F00A59AD6 /* TimerTests.swift */; };
 		C90E083121BA6F0F00A59AD6 /* TableCellHeightProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E082F21BA6F0000A59AD6 /* TableCellHeightProtocol.swift */; };
 		C90E083521BA717000A59AD6 /* TableItemCell+Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E083321BA716900A59AD6 /* TableItemCell+Height.swift */; };
-		C90E083821BA720300A59AD6 /* UITableView+CellHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E083621BA71FE00A59AD6 /* UITableView+CellHeight.swift */; };
+		C90E083821BA720300A59AD6 /* TableCellHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E083621BA71FE00A59AD6 /* TableCellHeight.swift */; };
 		C91055B121A8298200F87515 /* UserNotificationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C91055AF21A8298200F87515 /* UserNotificationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C91055B421A8298200F87515 /* UserNotificationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91055AD21A8298200F87515 /* UserNotificationManager.framework */; };
 		C91055B521A8298200F87515 /* UserNotificationManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C91055AD21A8298200F87515 /* UserNotificationManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -572,7 +572,7 @@
 		C90E082D21BA339F00A59AD6 /* TimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
 		C90E082F21BA6F0000A59AD6 /* TableCellHeightProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellHeightProtocol.swift; sourceTree = "<group>"; };
 		C90E083321BA716900A59AD6 /* TableItemCell+Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableItemCell+Height.swift"; sourceTree = "<group>"; };
-		C90E083621BA71FE00A59AD6 /* UITableView+CellHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+CellHeight.swift"; sourceTree = "<group>"; };
+		C90E083621BA71FE00A59AD6 /* TableCellHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellHeight.swift; sourceTree = "<group>"; };
 		C91055AD21A8298200F87515 /* UserNotificationManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserNotificationManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C91055AF21A8298200F87515 /* UserNotificationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserNotificationManager.h; sourceTree = "<group>"; };
 		C91055B021A8298200F87515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1130,7 +1130,7 @@
 			children = (
 				C90E082F21BA6F0000A59AD6 /* TableCellHeightProtocol.swift */,
 				C90E083321BA716900A59AD6 /* TableItemCell+Height.swift */,
-				C90E083621BA71FE00A59AD6 /* UITableView+CellHeight.swift */,
+				C90E083621BA71FE00A59AD6 /* TableCellHeight.swift */,
 			);
 			path = CellHeight;
 			sourceTree = "<group>";
@@ -3270,7 +3270,7 @@
 				C932FA6621006ED200B8DF84 /* TableViewDataSource.swift in Sources */,
 				C962C58C20CE1A060061FC20 /* List.swift in Sources */,
 				C910E63C21AE8A950067B51B /* TableViewUpdating.swift in Sources */,
-				C90E083821BA720300A59AD6 /* UITableView+CellHeight.swift in Sources */,
+				C90E083821BA720300A59AD6 /* TableCellHeight.swift in Sources */,
 				C932FA8621006ED200B8DF84 /* TitleCell.swift in Sources */,
 				C9B17600213045260095DC35 /* CollectionViewDataSource.swift in Sources */,
 				C932FA7E21006ED200B8DF84 /* CollectionModelCell.swift in Sources */,

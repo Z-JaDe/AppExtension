@@ -62,7 +62,7 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<SectionModelItem<Tabl
         let dataSource = DataSource(dataController: DataController())
         dataSource.configureCell = {[weak self] (_, tableView, indexPath, item) in
             guard let `self` = self else {
-                return item.createCell(in: tableView, for: indexPath)
+                return item.value.createCell(in: tableView, for: indexPath)
             }
             return self.createCell(in: tableView, for: indexPath, item: item)
         }
@@ -83,18 +83,11 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<SectionModelItem<Tabl
                 timer?.invalidate()
                 return
             }
-            guard let tableView = self.tableView else {
-                return
-            }
-            guard let heightItem = item as? TableCellHeightProtocol else {
-                return
-            }
-            guard let indexPath = heightItem.indexPath else {
-                return
-            }
+            guard let tableView = self.tableView else { return }
+            guard let heightItem = item as? TableCellHeightProtocol else { return }
             modelTable.remove(item)
-            if tableView.cellHeightLayoutType(at: indexPath).isNeedLayout {
-                heightItem.calculateCellHeight(tableView, for: indexPath, wait: false)
+            if heightItem.cellHeightLayoutType.isNeedLayout {
+                heightItem.calculateCellHeight(tableView, wait: false)
             }
         }
     }
@@ -140,16 +133,16 @@ extension UITableAdapter {
 }
 extension UITableAdapter: TableAdapterDelegate {
     private func createCell(in tableView: UITableView, for indexPath: IndexPath, item: TableAdapterItemCompatible) -> UITableViewCell {
-        if tableView.cellHeightLayoutType(at: indexPath).isNeedLayout {
-            item.calculateCellHeight(tableView, for: indexPath, wait: true)
+        if item.value.cellHeightLayoutType.isNeedLayout {
+            item.value.calculateCellHeight(tableView, wait: true)
         }
-        return item.createCell(in: tableView, for: indexPath)
+        return item.value.createCell(in: tableView, for: indexPath)
     }
     public func heightForRow(at indexPath: IndexPath) -> CGFloat {
         guard dataController.indexPathCanBound(indexPath) else {
             return 0.1
         }
-        let height = tableView?.tempCellHeight(at: indexPath) ?? 0
+        let height = dataController[indexPath].value.tempCellHeight
         return height > 0 ? height : Space.cellDefaultHeight
     }
     // MARK: -
@@ -190,8 +183,8 @@ extension UITableAdapter: TableAdapterDelegate {
             return
         }
         let itemModel = dataController[indexPath]
-        itemModel.willAppear(in: cell)
-        if let itemCell = itemModel.getCell() {
+        itemModel.value.willAppear(in: cell)
+        if let itemCell = itemModel.value.getCell() {
             delegate?.didDisplay(item: itemCell)
             if let isEnabled = self.isEnabled {
                 itemCell.refreshEnabledState(isEnabled)
@@ -219,7 +212,7 @@ extension UITableAdapter: TableAdapterDelegate {
         if let result = delegate?.shouldHighlightItem(at: indexPath) {
             return result
         }
-        let item = dataController[indexPath].getCell()
+        let item = dataController[indexPath].value.getCell()
         return item?.checkShouldHighlight() ?? true
     }
     private func _didSelectItem(at indexPath: IndexPath) {

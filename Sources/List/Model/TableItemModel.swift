@@ -135,7 +135,6 @@ extension TableItemModel: TableCellHeightProtocol {
         _indexPath = newValue
     }
     public func updateHeight(_ closure: (() -> Void)? = nil) {
-        guard let indexPath = self.indexPath else { return }
-        self._contentCell?.updateHeight(indexPath, closure)
+        self._contentCell?.updateHeight(self, closure)
     }
 }

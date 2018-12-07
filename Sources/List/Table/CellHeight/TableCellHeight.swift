@@ -34,4 +34,8 @@ extension TableCellHeightProtocol {
             return .hasLayout
         }
     }
+
+    func setNeedResetCellHeight() {
+        self.changeTempCellHeight(-1)
+    }
 }

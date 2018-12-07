@@ -116,38 +116,3 @@ extension TableAdapterItemCompatible: CustomStringConvertible {
         }
     }
 }
-extension TableAdapterItemCompatible: TableCellConfigProtocol {
-    public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
-        return value.createCell(in: tableView, for: indexPath)
-    }
-
-    public func willAppear(in cell: UITableViewCell) {
-        value.willAppear(in: cell)
-    }
-
-    public func didDisappear(in cell: UITableViewCell) {
-        value.didDisappear(in: cell)
-    }
-
-    public func createCell(isTemp: Bool) -> TableItemCell {
-        return value.createCell(isTemp: isTemp)
-    }
-    public func recycleCell(_ cell: TableItemCell) {
-        value.recycleCell(cell)
-    }
-
-    public func getCell() -> TableItemCell? {
-        return value.getCell()
-    }
-}
-extension TableAdapterItemCompatible: TableCellHeightProtocol {
-    var indexPath: IndexPath? {
-        return value.indexPath
-    }
-    func setNewIndexPath(_ newValue: IndexPath) {
-        value.setNewIndexPath(newValue)
-    }
-    func updateHeight(_ closure: (() -> Void)? = nil) {
-        self.value.updateHeight(closure)
-    }
-}

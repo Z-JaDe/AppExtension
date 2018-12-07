@@ -13,7 +13,7 @@ extension TableItemCell {
         get {return associatedObject(&isUpdatingKey, createIfNeed: false)}
         set {setAssociatedObject(&isUpdatingKey, newValue)}
     }
-    func updateHeight(_ indexPath: IndexPath, _ closure: (() -> Void)?) {
+    func updateHeight<Item: TableCellHeightProtocol>(_ item: Item, _ closure: (() -> Void)?) {
         guard self.isUpdating == false else {
             return
         }
@@ -23,19 +23,19 @@ extension TableItemCell {
         guard (try? self.cellState.value()) == .didAppear else {
             return
         }
-        guard let tableView = self.getTableView() else {
-            logError("\(self)->tableView找不到")
-            return
-        }
-        if tableView.cellHeightLayoutType(at: indexPath) == .hasLayout {
-            let oldHeight = tableView.tempCellHeight(at: indexPath) - self.insetSpace()
+        if item.cellHeightLayoutType == .hasLayout {
+            let oldHeight = item.tempCellHeight - self.insetSpace()
             let height: CGFloat = self.height
             if abs(height - oldHeight) > 2 && height > 0 {
                 logDebug("updateHeight -> \(oldHeight) to \(height)")
-                self.setNeedResetCellHeight(at: indexPath)
+                item.setNeedResetCellHeight()
             }
         }
-        guard tableView.cellHeightLayoutType(at: indexPath) == .resetLayout else {
+        guard item.cellHeightLayoutType == .resetLayout else {
+            return
+        }
+        guard let tableView = self.getTableView() else {
+            logError("\(self)->tableView找不到")
             return
         }
         self.setNeedUpdate()
@@ -47,12 +47,6 @@ extension TableItemCell {
                 self?.isUpdating = false
             })
         }
-    }
-    func setNeedResetCellHeight(at indexPath: IndexPath) {
-        guard let tableView = self.getTableView() else {
-            return
-        }
-        tableView.changeTempCellHeight(-1, at: indexPath)
     }
 }
 extension TableItemCell {
