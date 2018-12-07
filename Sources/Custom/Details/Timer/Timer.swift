@@ -22,7 +22,7 @@ extension Timer {
     @discardableResult
     public class func scheduleTimer(_ timeInterval: TimeInterval, repeats: Bool = true, _ closure: @escaping TimerExecuteClosure) -> Timer {
         let timer = Timer.timer(timeInterval, repeats: repeats, closure)
-        RunLoop.current.add(timer, forMode: RunLoop.Mode.default)
+        RunLoop.current.add(timer, forMode: .default)
         return timer
     }
 }
