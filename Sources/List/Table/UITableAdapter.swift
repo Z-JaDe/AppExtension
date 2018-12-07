@@ -69,42 +69,31 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<SectionModelItem<Tabl
     private var timer: Timer?
     public func updateItemsIfNeed() {
         let modelTable = NSHashTable<AnyObject>.weakObjects()
-        self.dataArray.forEach { (sectionModel) in
-            let (_, items) = sectionModel
-            items.forEach({ (item) in
-                switch item {
-                case .cell(let cell):
-                    modelTable.add(cell)
-                case .model(let model):
-                    modelTable.add(model)
-                }
-            })
-        }
+        self.dataArray.lazy
+            .flatMap({$0.items.map({$0.value})})
+            .forEach(modelTable.add)
+
         self.timer?.invalidate()
-        self.timer = Timer.scheduleTimer(0) {[weak self] (timer) in
+        self.timer = Timer.scheduleTimer(1) {[weak self] (timer) in
             guard let `self` = self else { return }
-            if let item = modelTable.anyObject {
-                modelTable.remove(item)
-                if let item = item as? TableCellConfigProtocol {
-                    if item.cellHeightLayoutType.isNeedLayout, let tableView = self.tableView {
-                        item.calculateCellHeight(tableView, wait: false)
-                    }
-                }
-            } else {
+            guard let item = modelTable.anyObject else {
                 timer?.invalidate()
+                return
+            }
+            modelTable.remove(item)
+            if let item = item as? TableCellConfigProtocol {
+                if item.cellHeightLayoutType.isNeedLayout, let tableView = self.tableView {
+                    item.calculateCellHeight(tableView, wait: false)
+                }
             }
         }
     }
 
     // MARK: -
     deinit {
-        self.dataArray.forEach { (sectionModel) in
-            sectionModel.1.forEach({ (item) in
-                if case .model(let model) = item {
-                    model.cleanReference()
-                }
-            })
-        }
+        self.dataArray.lazy
+            .flatMap({$0.items.compactMap({$0.model})})
+            .forEach({$0.cleanReference()})
     }
 }
 extension UITableAdapter {

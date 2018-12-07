@@ -45,7 +45,7 @@ extension TableCellConfigProtocol {
         /*************** 计算高度 ***************/
         let cellHeight = item.layoutHeight(itemCellWidth)
         changeTempCellHeight(cellHeight + item.insetSpace())
-        //            logDebug("\(item)->计算cell高度：\(cellHeight)")
+        logDebug("\(item)->计算cell高度：\(cellHeight)")
     }
 
     public var cellHeightLayoutType: CellHeightLayoutType {
