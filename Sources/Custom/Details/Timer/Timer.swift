@@ -8,9 +8,9 @@
 
 import Foundation
 
-public typealias TimerExecuteClosure = (Timer?) -> Void
 
 extension Timer {
+    public typealias TimerExecuteClosure = (Timer?) -> Void
     @discardableResult
     public class func timer(_ timeInterval: TimeInterval, repeats: Bool = true, _ closure: @escaping TimerExecuteClosure) -> Timer {
         let seconds: TimeInterval = max(timeInterval, 0.0001)

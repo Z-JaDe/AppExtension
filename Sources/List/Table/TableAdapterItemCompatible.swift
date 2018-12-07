@@ -23,7 +23,7 @@ public enum TableAdapterItemCompatible: AdapterItemType {
         }
         return nil
     }
-    private var value: CanSelectedStateDesignable & TableCellConfigProtocol & HiddenStateDesignable {
+    internal var value: AnyObject & CanSelectedStateDesignable & TableCellConfigProtocol & HiddenStateDesignable {
         switch self {
         case .cell(let cell):
             return cell

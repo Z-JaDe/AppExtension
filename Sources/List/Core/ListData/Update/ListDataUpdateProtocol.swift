@@ -31,7 +31,7 @@ extension ListDataUpdateProtocol {
         self.reloadDataWithInfo({_ in nil})
     }
     /// ZJaDe: 重新刷新 返回 ListDataType
-    public func reloadData(_ closure: (ListDataType) -> ListDataType?) {
+    public func reloadListData(_ closure: (ListDataType) -> ListDataType?) {
         self.reloadDataWithInfo({ (oldData) -> ListUpdateInfo<ListDataType>? in
             return closure(oldData).map(ListUpdateInfo.init)
         })
@@ -53,7 +53,7 @@ extension ListDataUpdateProtocol {
 extension ListDataUpdateProtocol where Item == TableAdapterItemCompatible {
     /// ZJaDe: 重新刷新cell
     public func reloadData(_ closure: () -> ListData<Section, StaticTableItemCell>?) {
-        self.reloadData({ (_) -> ListDataType? in
+        self.reloadListData({ (_) -> ListDataType? in
             return closure()?.map({.cell($0)})
         })
     }
