@@ -16,6 +16,8 @@ abstract_target 'BaseCore' do
     target:'Core' do
     end
     target:'Custom' do
+    end
+    target:'UIComponents' do
         pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
     end
 

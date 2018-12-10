@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabBarItemView: CustomView, ConfigModelProtocol {
+class TabBarItemView: CustomView {
 
     let titleLabel: Label = Label()
     let imageView: ImageView = ImageView()

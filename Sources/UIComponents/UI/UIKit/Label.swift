@@ -9,7 +9,6 @@
 import UIKit
 
 open class Label: UILabel {
-
     open override var font: UIFont! {
         didSet { updateFirstBaseline() }
     }

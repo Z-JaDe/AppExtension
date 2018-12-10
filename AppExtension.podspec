@@ -14,12 +14,23 @@ Pod::Spec.new do |s|
     
     s.ios.deployment_target = '9.0'
     
-    s.default_subspec = "Codable", "Core", "Animater", "Custom", "Third", "List"
+    s.default_subspec = "Default"
 
     s.xcconfig = { 'OTHER_SWIFT_FLAGS' => '"-D" "AppExtensionPods"' }
+
+    s.subspec "Default" do |ss|
+        ss.dependency "AppExtension/Codable"
+        ss.dependency "AppExtension/Core"
+        ss.dependency "AppExtension/Animater"
+        ss.dependency "AppExtension/UIComponents"
+        ss.dependency "AppExtension/Custom"
+        ss.dependency "AppExtension/Third"
+        ss.dependency "AppExtension/List"
+        ss.dependency "AppExtension/RouterManager"
+        ss.dependency "AppExtension/AnimatedTransition"
+        ss.dependency "AppExtension/UserNotificationManager"
+    end
     #基础 子模块
-
-
     s.subspec "Core" do |ss|
         ss.source_files  = "Sources/Core/**/*.{swift}"
 
@@ -40,7 +51,7 @@ Pod::Spec.new do |s|
     s.subspec "Async" do |ss|
         ss.source_files  = "Sources/Async/**/*.{swift}"
     end
-    
+
     s.subspec "Custom" do |ss|
         ss.source_files  = "Sources/Custom/**/*.{swift,h,m}"
         ss.resource = "Sources/Custom/**/*.{bundle}"
@@ -49,8 +60,14 @@ Pod::Spec.new do |s|
         ss.dependency "AppExtension/Core"
         ss.dependency "AppExtension/Codable"
         ss.dependency "AppExtension/Animater"
+    end
+    s.subspec "UIComponents" do |ss|
+        ss.source_files  = "Sources/UIComponents/**/*.{swift}"
         
         ss.dependency "SnapKit"
+        ss.dependency "AppExtension/Core"
+        ss.dependency "AppExtension/Codable"
+        ss.dependency "AppExtension/Animater"
     end
 
     s.subspec "Third" do |ss|

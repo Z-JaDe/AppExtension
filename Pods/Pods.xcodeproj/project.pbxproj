@@ -694,102 +694,28 @@
 		000000007300 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000002B50 /* Foundation.framework */; };
 		000000007370 /* Pods-BaseCore-Custom-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 000000007360 /* Pods-BaseCore-Custom-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0000000073C0 /* Pods-BaseCore-Custom-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0000000073B0 /* Pods-BaseCore-Custom-dummy.m */; };
-		0000000073E0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0000000073D0 /* UIKit.framework */; };
-		000000007400 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0000000073F0 /* CFNetwork.framework */; };
-		000000007410 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0000000073D0 /* UIKit.framework */; };
-		000000007420 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0000000073D0 /* UIKit.framework */; };
-		0000000076E0 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0000000076D0 /* Kingfisher.framework */; };
-		000000007720 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000007710 /* RxSwift.framework */; };
-		000000007770 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000007710 /* RxSwift.framework */; };
-		0000000077B0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0000000077A0 /* RxCocoa.framework */; };
-		000000007800 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000007710 /* RxSwift.framework */; };
-		000000007850 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000007710 /* RxSwift.framework */; };
-		000000007880 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0000000077A0 /* RxCocoa.framework */; };
-		0000000078D0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000007710 /* RxSwift.framework */; };
-		000000007900 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0000000077A0 /* RxCocoa.framework */; };
-		000000007950 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000007710 /* RxSwift.framework */; };
-		000000007980 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0000000077A0 /* RxCocoa.framework */; };
-		0000000079F0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000007710 /* RxSwift.framework */; };
+		000000007460 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000002B50 /* Foundation.framework */; };
+		0000000074D0 /* Pods-BaseCore-UIComponents-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0000000074C0 /* Pods-BaseCore-UIComponents-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		000000007520 /* Pods-BaseCore-UIComponents-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 000000007510 /* Pods-BaseCore-UIComponents-dummy.m */; };
+		000000007540 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000007530 /* UIKit.framework */; };
+		000000007560 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000007550 /* CFNetwork.framework */; };
+		000000007570 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000007530 /* UIKit.framework */; };
+		000000007580 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000007530 /* UIKit.framework */; };
+		0000000078E0 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0000000078D0 /* Kingfisher.framework */; };
+		000000007920 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000007910 /* RxSwift.framework */; };
+		000000007970 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000007910 /* RxSwift.framework */; };
+		0000000079B0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0000000079A0 /* RxCocoa.framework */; };
+		000000007A00 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000007910 /* RxSwift.framework */; };
+		000000007A50 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000007910 /* RxSwift.framework */; };
+		000000007A80 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0000000079A0 /* RxCocoa.framework */; };
+		000000007AD0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000007910 /* RxSwift.framework */; };
+		000000007B00 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0000000079A0 /* RxCocoa.framework */; };
+		000000007B50 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000007910 /* RxSwift.framework */; };
+		000000007B80 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0000000079A0 /* RxCocoa.framework */; };
+		000000007BF0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000000007910 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		000000007430 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000002AB0;
-			remoteInfo = CocoaExtension;
-		};
-		000000007450 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000003100;
-			remoteInfo = Encryption;
-		};
-		000000007470 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000003820;
-			remoteInfo = FunctionalSwift;
-		};
-		000000007490 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000004030;
-			remoteInfo = ModalManager;
-		};
-		0000000074B0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000006480;
-			remoteInfo = Validation;
-		};
-		0000000074D0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000002AB0;
-			remoteInfo = CocoaExtension;
-		};
-		0000000074F0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000003100;
-			remoteInfo = Encryption;
-		};
-		000000007510 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000003820;
-			remoteInfo = FunctionalSwift;
-		};
-		000000007530 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000004030;
-			remoteInfo = ModalManager;
-		};
-		000000007550 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000006480;
-			remoteInfo = Validation;
-		};
-		000000007570 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000006130;
-			remoteInfo = SnapKit;
-		};
 		000000007590 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
@@ -829,274 +755,274 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 000000006130;
-			remoteInfo = SnapKit;
-		};
-		000000007650 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0000000039D0;
-			remoteInfo = Kingfisher;
-		};
-		000000007670 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0000000041D0;
-			remoteInfo = Result;
-		};
-		000000007690 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000004320;
-			remoteInfo = "Rx+Kingfisher";
-		};
-		0000000076B0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0000000039D0;
-			remoteInfo = Kingfisher;
-		};
-		0000000076F0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0000000053C0;
-			remoteInfo = RxSwift;
-		};
-		000000007730 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0000000044C0;
-			remoteInfo = RxAnimated;
-		};
-		000000007750 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0000000053C0;
-			remoteInfo = RxSwift;
-		};
-		000000007780 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000004620;
-			remoteInfo = RxCocoa;
-		};
-		0000000077C0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000004620;
-			remoteInfo = RxCocoa;
-		};
-		0000000077E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0000000053C0;
-			remoteInfo = RxSwift;
-		};
-		000000007810 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000004EC0;
-			remoteInfo = RxGesture;
-		};
-		000000007830 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0000000053C0;
-			remoteInfo = RxSwift;
-		};
-		000000007860 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000004620;
-			remoteInfo = RxCocoa;
-		};
-		000000007890 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0000000050E0;
-			remoteInfo = RxKeyboard;
-		};
-		0000000078B0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0000000053C0;
-			remoteInfo = RxSwift;
-		};
-		0000000078E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000004620;
-			remoteInfo = RxCocoa;
-		};
-		000000007910 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000005220;
-			remoteInfo = RxOptional;
-		};
-		000000007930 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0000000053C0;
-			remoteInfo = RxSwift;
-		};
-		000000007960 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000004620;
-			remoteInfo = RxCocoa;
-		};
-		000000007990 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0000000053C0;
-			remoteInfo = RxSwift;
-		};
-		0000000079B0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000005E40;
-			remoteInfo = RxSwiftExt;
-		};
-		0000000079D0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0000000053C0;
-			remoteInfo = RxSwift;
-		};
-		000000007A00 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
 			remoteGlobalIDString = 000000002AB0;
 			remoteInfo = CocoaExtension;
 		};
-		000000007A20 /* PBXContainerItemProxy */ = {
+		000000007650 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000000003100;
 			remoteInfo = Encryption;
 		};
-		000000007A40 /* PBXContainerItemProxy */ = {
+		000000007670 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000000003820;
 			remoteInfo = FunctionalSwift;
 		};
-		000000007A60 /* PBXContainerItemProxy */ = {
+		000000007690 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000000004030;
 			remoteInfo = ModalManager;
 		};
-		000000007A80 /* PBXContainerItemProxy */ = {
+		0000000076B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000000006480;
 			remoteInfo = Validation;
 		};
-		000000007AA0 /* PBXContainerItemProxy */ = {
+		0000000076D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000002AB0;
+			remoteInfo = CocoaExtension;
+		};
+		0000000076F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000003100;
+			remoteInfo = Encryption;
+		};
+		000000007710 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000003820;
+			remoteInfo = FunctionalSwift;
+		};
+		000000007730 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000004030;
+			remoteInfo = ModalManager;
+		};
+		000000007750 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000006480;
+			remoteInfo = Validation;
+		};
+		000000007770 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000000006130;
 			remoteInfo = SnapKit;
 		};
-		000000007AC0 /* PBXContainerItemProxy */ = {
+		000000007790 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000002AB0;
+			remoteInfo = CocoaExtension;
+		};
+		0000000077B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000003100;
+			remoteInfo = Encryption;
+		};
+		0000000077D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000003820;
+			remoteInfo = FunctionalSwift;
+		};
+		0000000077F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000004030;
+			remoteInfo = ModalManager;
+		};
+		000000007810 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000006480;
+			remoteInfo = Validation;
+		};
+		000000007830 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000006130;
+			remoteInfo = SnapKit;
+		};
+		000000007850 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0000000039D0;
 			remoteInfo = Kingfisher;
 		};
-		000000007AE0 /* PBXContainerItemProxy */ = {
+		000000007870 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0000000041D0;
 			remoteInfo = Result;
 		};
-		000000007B00 /* PBXContainerItemProxy */ = {
+		000000007890 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000000004320;
 			remoteInfo = "Rx+Kingfisher";
 		};
-		000000007B20 /* PBXContainerItemProxy */ = {
+		0000000078B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0000000044C0;
-			remoteInfo = RxAnimated;
+			remoteGlobalIDString = 0000000039D0;
+			remoteInfo = Kingfisher;
 		};
-		000000007B40 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000004620;
-			remoteInfo = RxCocoa;
-		};
-		000000007B60 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000004EC0;
-			remoteInfo = RxGesture;
-		};
-		000000007B80 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0000000050E0;
-			remoteInfo = RxKeyboard;
-		};
-		000000007BA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000005220;
-			remoteInfo = RxOptional;
-		};
-		000000007BC0 /* PBXContainerItemProxy */ = {
+		0000000078F0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0000000053C0;
 			remoteInfo = RxSwift;
 		};
-		000000007BE0 /* PBXContainerItemProxy */ = {
+		000000007930 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0000000044C0;
+			remoteInfo = RxAnimated;
+		};
+		000000007950 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0000000053C0;
+			remoteInfo = RxSwift;
+		};
+		000000007980 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000004620;
+			remoteInfo = RxCocoa;
+		};
+		0000000079C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000004620;
+			remoteInfo = RxCocoa;
+		};
+		0000000079E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0000000053C0;
+			remoteInfo = RxSwift;
+		};
+		000000007A10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000004EC0;
+			remoteInfo = RxGesture;
+		};
+		000000007A30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0000000053C0;
+			remoteInfo = RxSwift;
+		};
+		000000007A60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000004620;
+			remoteInfo = RxCocoa;
+		};
+		000000007A90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0000000050E0;
+			remoteInfo = RxKeyboard;
+		};
+		000000007AB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0000000053C0;
+			remoteInfo = RxSwift;
+		};
+		000000007AE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000004620;
+			remoteInfo = RxCocoa;
+		};
+		000000007B10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000005220;
+			remoteInfo = RxOptional;
+		};
+		000000007B30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0000000053C0;
+			remoteInfo = RxSwift;
+		};
+		000000007B60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000004620;
+			remoteInfo = RxCocoa;
+		};
+		000000007B90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0000000053C0;
+			remoteInfo = RxSwift;
+		};
+		000000007BB0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000000005E40;
 			remoteInfo = RxSwiftExt;
+		};
+		000000007BD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0000000053C0;
+			remoteInfo = RxSwift;
 		};
 		000000007C00 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1438,150 +1364,262 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 000000002F40;
-			remoteInfo = DifferenceKit;
-		};
-		000000008220 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000000003C80;
-			remoteInfo = MJRefresh;
-		};
-		000000008240 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 000000000000 /* Project object */;
-			proxyType = 1;
 			remoteGlobalIDString = 000000002AB0;
 			remoteInfo = CocoaExtension;
 		};
-		000000008260 /* PBXContainerItemProxy */ = {
+		000000008220 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000000003100;
 			remoteInfo = Encryption;
 		};
-		000000008280 /* PBXContainerItemProxy */ = {
+		000000008240 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000000003820;
 			remoteInfo = FunctionalSwift;
 		};
-		0000000082A0 /* PBXContainerItemProxy */ = {
+		000000008260 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000000004030;
 			remoteInfo = ModalManager;
 		};
-		0000000082C0 /* PBXContainerItemProxy */ = {
+		000000008280 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000000006480;
 			remoteInfo = Validation;
 		};
-		0000000082E0 /* PBXContainerItemProxy */ = {
+		0000000082A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000000006130;
 			remoteInfo = SnapKit;
 		};
-		000000008300 /* PBXContainerItemProxy */ = {
+		0000000082C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0000000039D0;
 			remoteInfo = Kingfisher;
 		};
-		000000008320 /* PBXContainerItemProxy */ = {
+		0000000082E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0000000041D0;
 			remoteInfo = Result;
 		};
-		000000008340 /* PBXContainerItemProxy */ = {
+		000000008300 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000000004320;
 			remoteInfo = "Rx+Kingfisher";
 		};
-		000000008360 /* PBXContainerItemProxy */ = {
+		000000008320 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0000000044C0;
 			remoteInfo = RxAnimated;
 		};
-		000000008380 /* PBXContainerItemProxy */ = {
+		000000008340 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000000004620;
 			remoteInfo = RxCocoa;
 		};
-		0000000083A0 /* PBXContainerItemProxy */ = {
+		000000008360 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000000004EC0;
 			remoteInfo = RxGesture;
 		};
-		0000000083C0 /* PBXContainerItemProxy */ = {
+		000000008380 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0000000050E0;
 			remoteInfo = RxKeyboard;
 		};
-		0000000083E0 /* PBXContainerItemProxy */ = {
+		0000000083A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000000005220;
 			remoteInfo = RxOptional;
 		};
-		000000008400 /* PBXContainerItemProxy */ = {
+		0000000083C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0000000053C0;
 			remoteInfo = RxSwift;
 		};
-		000000008420 /* PBXContainerItemProxy */ = {
+		0000000083E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000000005E40;
 			remoteInfo = RxSwiftExt;
 		};
-		000000008440 /* PBXContainerItemProxy */ = {
+		000000008400 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000000002F40;
 			remoteInfo = DifferenceKit;
 		};
-		000000008460 /* PBXContainerItemProxy */ = {
+		000000008420 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000000003C80;
 			remoteInfo = MJRefresh;
 		};
+		000000008440 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000002AB0;
+			remoteInfo = CocoaExtension;
+		};
+		000000008460 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000003100;
+			remoteInfo = Encryption;
+		};
 		000000008480 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000003820;
+			remoteInfo = FunctionalSwift;
+		};
+		0000000084A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000004030;
+			remoteInfo = ModalManager;
+		};
+		0000000084C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000006480;
+			remoteInfo = Validation;
+		};
+		0000000084E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000006130;
+			remoteInfo = SnapKit;
+		};
+		000000008500 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0000000039D0;
+			remoteInfo = Kingfisher;
+		};
+		000000008520 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0000000041D0;
+			remoteInfo = Result;
+		};
+		000000008540 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000004320;
+			remoteInfo = "Rx+Kingfisher";
+		};
+		000000008560 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0000000044C0;
+			remoteInfo = RxAnimated;
+		};
+		000000008580 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000004620;
+			remoteInfo = RxCocoa;
+		};
+		0000000085A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000004EC0;
+			remoteInfo = RxGesture;
+		};
+		0000000085C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0000000050E0;
+			remoteInfo = RxKeyboard;
+		};
+		0000000085E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000005220;
+			remoteInfo = RxOptional;
+		};
+		000000008600 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0000000053C0;
+			remoteInfo = RxSwift;
+		};
+		000000008620 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000005E40;
+			remoteInfo = RxSwiftExt;
+		};
+		000000008640 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000002F40;
+			remoteInfo = DifferenceKit;
+		};
+		000000008660 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000003C80;
+			remoteInfo = MJRefresh;
+		};
+		000000008680 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 000000006A20;
 			remoteInfo = "Pods-BaseCore-CommonPods-AppExtension";
 		};
-		0000000084A0 /* PBXContainerItemProxy */ = {
+		0000000086A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 000000000000 /* Project object */;
 			proxyType = 1;
@@ -2444,11 +2482,21 @@
 		000000007390 /* Pods-BaseCore-Custom-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BaseCore-Custom-acknowledgements.plist"; sourceTree = "<group>"; };
 		0000000073A0 /* Pods-BaseCore-Custom-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BaseCore-Custom-acknowledgements.markdown"; sourceTree = "<group>"; };
 		0000000073B0 /* Pods-BaseCore-Custom-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BaseCore-Custom-dummy.m"; sourceTree = "<group>"; };
-		0000000073D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		0000000073F0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		0000000076D0 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		000000007710 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0000000077A0 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		000000007410 /* Pods_BaseCore_UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseCore_UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		000000007480 /* Pods-BaseCore-UIComponents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BaseCore-UIComponents.release.xcconfig"; sourceTree = "<group>"; };
+		000000007490 /* Pods-BaseCore-UIComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BaseCore-UIComponents.debug.xcconfig"; sourceTree = "<group>"; };
+		0000000074A0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0000000074B0 /* Pods-BaseCore-UIComponents.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BaseCore-UIComponents.modulemap"; sourceTree = "<group>"; };
+		0000000074C0 /* Pods-BaseCore-UIComponents-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BaseCore-UIComponents-umbrella.h"; sourceTree = "<group>"; };
+		0000000074E0 /* Pods-BaseCore-UIComponents-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BaseCore-UIComponents-resources.sh"; sourceTree = "<group>"; };
+		0000000074F0 /* Pods-BaseCore-UIComponents-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BaseCore-UIComponents-acknowledgements.plist"; sourceTree = "<group>"; };
+		000000007500 /* Pods-BaseCore-UIComponents-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BaseCore-UIComponents-acknowledgements.markdown"; sourceTree = "<group>"; };
+		000000007510 /* Pods-BaseCore-UIComponents-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BaseCore-UIComponents-dummy.m"; sourceTree = "<group>"; };
+		000000007530 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		000000007550 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		0000000078D0 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		000000007910 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0000000079A0 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2465,7 +2513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				000000002FD0 /* Foundation.framework in Frameworks */,
-				0000000073E0 /* UIKit.framework in Frameworks */,
+				000000007540 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2489,7 +2537,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				000000007400 /* CFNetwork.framework in Frameworks */,
+				000000007560 /* CFNetwork.framework in Frameworks */,
 				000000003A60 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2523,8 +2571,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0000000043B0 /* Foundation.framework in Frameworks */,
-				0000000076E0 /* Kingfisher.framework in Frameworks */,
-				000000007720 /* RxSwift.framework in Frameworks */,
+				0000000078E0 /* Kingfisher.framework in Frameworks */,
+				000000007920 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2533,9 +2581,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				000000004550 /* Foundation.framework in Frameworks */,
-				0000000077B0 /* RxCocoa.framework in Frameworks */,
-				000000007770 /* RxSwift.framework in Frameworks */,
-				000000007410 /* UIKit.framework in Frameworks */,
+				0000000079B0 /* RxCocoa.framework in Frameworks */,
+				000000007970 /* RxSwift.framework in Frameworks */,
+				000000007570 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2544,7 +2592,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0000000046B0 /* Foundation.framework in Frameworks */,
-				000000007800 /* RxSwift.framework in Frameworks */,
+				000000007A00 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2553,8 +2601,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				000000004F50 /* Foundation.framework in Frameworks */,
-				000000007880 /* RxCocoa.framework in Frameworks */,
-				000000007850 /* RxSwift.framework in Frameworks */,
+				000000007A80 /* RxCocoa.framework in Frameworks */,
+				000000007A50 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2563,9 +2611,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				000000005170 /* Foundation.framework in Frameworks */,
-				000000007900 /* RxCocoa.framework in Frameworks */,
-				0000000078D0 /* RxSwift.framework in Frameworks */,
-				000000007420 /* UIKit.framework in Frameworks */,
+				000000007B00 /* RxCocoa.framework in Frameworks */,
+				000000007AD0 /* RxSwift.framework in Frameworks */,
+				000000007580 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2574,8 +2622,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0000000052B0 /* Foundation.framework in Frameworks */,
-				000000007980 /* RxCocoa.framework in Frameworks */,
-				000000007950 /* RxSwift.framework in Frameworks */,
+				000000007B80 /* RxCocoa.framework in Frameworks */,
+				000000007B50 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2592,7 +2640,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				000000005ED0 /* Foundation.framework in Frameworks */,
-				0000000079F0 /* RxSwift.framework in Frameworks */,
+				000000007BF0 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2692,6 +2740,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		000000007440 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				000000007460 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -2727,6 +2783,7 @@
 				000000006FF0 /* Pods_BaseCore_CommonPods_UserNotificationManager.framework */,
 				000000007150 /* Pods_BaseCore_Core.framework */,
 				0000000072B0 /* Pods_BaseCore_Custom.framework */,
+				000000007410 /* Pods_BaseCore_UIComponents.framework */,
 				000000004210 /* Result.framework */,
 				000000004360 /* Rx_Kingfisher.framework */,
 				000000004500 /* RxAnimated.framework */,
@@ -2745,9 +2802,9 @@
 		000000000060 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0000000076D0 /* Kingfisher.framework */,
-				0000000077A0 /* RxCocoa.framework */,
-				000000007710 /* RxSwift.framework */,
+				0000000078D0 /* Kingfisher.framework */,
+				0000000079A0 /* RxCocoa.framework */,
+				000000007910 /* RxSwift.framework */,
 				000000002B40 /* iOS */,
 			);
 			name = Frameworks;
@@ -2766,6 +2823,7 @@
 				000000007050 /* Pods-BaseCore-CommonPods-UserNotificationManager */,
 				0000000071B0 /* Pods-BaseCore-Core */,
 				000000007310 /* Pods-BaseCore-Custom */,
+				000000007470 /* Pods-BaseCore-UIComponents */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
@@ -3843,9 +3901,9 @@
 		000000002B40 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				0000000073F0 /* CFNetwork.framework */,
+				000000007550 /* CFNetwork.framework */,
 				000000002B50 /* Foundation.framework */,
-				0000000073D0 /* UIKit.framework */,
+				000000007530 /* UIKit.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -4275,6 +4333,23 @@
 			path = "Target Support Files/Pods-BaseCore-Custom";
 			sourceTree = "<group>";
 		};
+		000000007470 /* Pods-BaseCore-UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				0000000074A0 /* Info.plist */,
+				0000000074B0 /* Pods-BaseCore-UIComponents.modulemap */,
+				000000007500 /* Pods-BaseCore-UIComponents-acknowledgements.markdown */,
+				0000000074F0 /* Pods-BaseCore-UIComponents-acknowledgements.plist */,
+				000000007510 /* Pods-BaseCore-UIComponents-dummy.m */,
+				0000000074E0 /* Pods-BaseCore-UIComponents-resources.sh */,
+				0000000074C0 /* Pods-BaseCore-UIComponents-umbrella.h */,
+				000000007490 /* Pods-BaseCore-UIComponents.debug.xcconfig */,
+				000000007480 /* Pods-BaseCore-UIComponents.release.xcconfig */,
+			);
+			name = "Pods-BaseCore-UIComponents";
+			path = "Target Support Files/Pods-BaseCore-UIComponents";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -4619,6 +4694,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		000000007420 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0000000074D0 /* Pods-BaseCore-UIComponents-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -4778,8 +4861,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				0000000076C0 /* PBXTargetDependency */,
-				000000007700 /* PBXTargetDependency */,
+				0000000078C0 /* PBXTargetDependency */,
+				000000007900 /* PBXTargetDependency */,
 			);
 			name = "Rx+Kingfisher";
 			productName = "Rx+Kingfisher";
@@ -4798,8 +4881,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				000000007790 /* PBXTargetDependency */,
-				000000007760 /* PBXTargetDependency */,
+				000000007990 /* PBXTargetDependency */,
+				000000007960 /* PBXTargetDependency */,
 			);
 			name = RxAnimated;
 			productName = RxAnimated;
@@ -4818,7 +4901,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				0000000077F0 /* PBXTargetDependency */,
+				0000000079F0 /* PBXTargetDependency */,
 			);
 			name = RxCocoa;
 			productName = RxCocoa;
@@ -4837,8 +4920,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				000000007870 /* PBXTargetDependency */,
-				000000007840 /* PBXTargetDependency */,
+				000000007A70 /* PBXTargetDependency */,
+				000000007A40 /* PBXTargetDependency */,
 			);
 			name = RxGesture;
 			productName = RxGesture;
@@ -4857,8 +4940,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				0000000078F0 /* PBXTargetDependency */,
-				0000000078C0 /* PBXTargetDependency */,
+				000000007AF0 /* PBXTargetDependency */,
+				000000007AC0 /* PBXTargetDependency */,
 			);
 			name = RxKeyboard;
 			productName = RxKeyboard;
@@ -4877,8 +4960,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				000000007970 /* PBXTargetDependency */,
-				000000007940 /* PBXTargetDependency */,
+				000000007B70 /* PBXTargetDependency */,
+				000000007B40 /* PBXTargetDependency */,
 			);
 			name = RxOptional;
 			productName = RxOptional;
@@ -4915,7 +4998,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				0000000079E0 /* PBXTargetDependency */,
+				000000007BE0 /* PBXTargetDependency */,
 			);
 			name = RxSwiftExt;
 			productName = RxSwiftExt;
@@ -4970,7 +5053,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				0000000084B0 /* PBXTargetDependency */,
+				0000000086B0 /* PBXTargetDependency */,
 			);
 			name = "Pods-AppExtensionTests";
 			productName = "Pods-AppExtensionTests";
@@ -4989,7 +5072,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				000000008490 /* PBXTargetDependency */,
+				000000008690 /* PBXTargetDependency */,
 			);
 			name = "Pods-AppExtensionUITests";
 			productName = "Pods-AppExtensionUITests";
@@ -5004,180 +5087,6 @@
 				000000006920 /* Sources */,
 				000000006930 /* Frameworks */,
 				000000006940 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				000000007A10 /* PBXTargetDependency */,
-				000000007A30 /* PBXTargetDependency */,
-				000000007A50 /* PBXTargetDependency */,
-				000000007AD0 /* PBXTargetDependency */,
-				000000007A70 /* PBXTargetDependency */,
-				000000007AF0 /* PBXTargetDependency */,
-				000000007B10 /* PBXTargetDependency */,
-				000000007B30 /* PBXTargetDependency */,
-				000000007B50 /* PBXTargetDependency */,
-				000000007B70 /* PBXTargetDependency */,
-				000000007B90 /* PBXTargetDependency */,
-				000000007BB0 /* PBXTargetDependency */,
-				000000007BD0 /* PBXTargetDependency */,
-				000000007BF0 /* PBXTargetDependency */,
-				000000007AB0 /* PBXTargetDependency */,
-				000000007A90 /* PBXTargetDependency */,
-			);
-			name = "Pods-BaseCore-CommonPods-AnimatedTransition";
-			productName = "Pods-BaseCore-CommonPods-AnimatedTransition";
-			productReference = 000000006900 /* Pods_BaseCore_CommonPods_AnimatedTransition.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		000000006A20 /* Pods-BaseCore-CommonPods-AppExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 000000006A30 /* Build configuration list for PBXNativeTarget "Pods-BaseCore-CommonPods-AppExtension" */;
-			buildPhases = (
-				000000006A70 /* Headers */,
-				000000006A80 /* Sources */,
-				000000006A90 /* Frameworks */,
-				000000006AA0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				000000008250 /* PBXTargetDependency */,
-				000000008450 /* PBXTargetDependency */,
-				000000008270 /* PBXTargetDependency */,
-				000000008290 /* PBXTargetDependency */,
-				000000008310 /* PBXTargetDependency */,
-				000000008470 /* PBXTargetDependency */,
-				0000000082B0 /* PBXTargetDependency */,
-				000000008330 /* PBXTargetDependency */,
-				000000008350 /* PBXTargetDependency */,
-				000000008370 /* PBXTargetDependency */,
-				000000008390 /* PBXTargetDependency */,
-				0000000083B0 /* PBXTargetDependency */,
-				0000000083D0 /* PBXTargetDependency */,
-				0000000083F0 /* PBXTargetDependency */,
-				000000008410 /* PBXTargetDependency */,
-				000000008430 /* PBXTargetDependency */,
-				0000000082F0 /* PBXTargetDependency */,
-				0000000082D0 /* PBXTargetDependency */,
-			);
-			name = "Pods-BaseCore-CommonPods-AppExtension";
-			productName = "Pods-BaseCore-CommonPods-AppExtension";
-			productReference = 000000006A60 /* Pods_BaseCore_CommonPods_AppExtension.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		000000006B90 /* Pods-BaseCore-CommonPods-List */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 000000006BA0 /* Build configuration list for PBXNativeTarget "Pods-BaseCore-CommonPods-List" */;
-			buildPhases = (
-				000000006BE0 /* Headers */,
-				000000006BF0 /* Sources */,
-				000000006C00 /* Frameworks */,
-				000000006C10 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				000000008010 /* PBXTargetDependency */,
-				000000008210 /* PBXTargetDependency */,
-				000000008030 /* PBXTargetDependency */,
-				000000008050 /* PBXTargetDependency */,
-				0000000080D0 /* PBXTargetDependency */,
-				000000008230 /* PBXTargetDependency */,
-				000000008070 /* PBXTargetDependency */,
-				0000000080F0 /* PBXTargetDependency */,
-				000000008110 /* PBXTargetDependency */,
-				000000008130 /* PBXTargetDependency */,
-				000000008150 /* PBXTargetDependency */,
-				000000008170 /* PBXTargetDependency */,
-				000000008190 /* PBXTargetDependency */,
-				0000000081B0 /* PBXTargetDependency */,
-				0000000081D0 /* PBXTargetDependency */,
-				0000000081F0 /* PBXTargetDependency */,
-				0000000080B0 /* PBXTargetDependency */,
-				000000008090 /* PBXTargetDependency */,
-			);
-			name = "Pods-BaseCore-CommonPods-List";
-			productName = "Pods-BaseCore-CommonPods-List";
-			productReference = 000000006BD0 /* Pods_BaseCore_CommonPods_List.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		000000006CF0 /* Pods-BaseCore-CommonPods-RouterManager */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 000000006D00 /* Build configuration list for PBXNativeTarget "Pods-BaseCore-CommonPods-RouterManager" */;
-			buildPhases = (
-				000000006D40 /* Headers */,
-				000000006D50 /* Sources */,
-				000000006D60 /* Frameworks */,
-				000000006D70 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				000000007E10 /* PBXTargetDependency */,
-				000000007E30 /* PBXTargetDependency */,
-				000000007E50 /* PBXTargetDependency */,
-				000000007ED0 /* PBXTargetDependency */,
-				000000007E70 /* PBXTargetDependency */,
-				000000007EF0 /* PBXTargetDependency */,
-				000000007F10 /* PBXTargetDependency */,
-				000000007F30 /* PBXTargetDependency */,
-				000000007F50 /* PBXTargetDependency */,
-				000000007F70 /* PBXTargetDependency */,
-				000000007F90 /* PBXTargetDependency */,
-				000000007FB0 /* PBXTargetDependency */,
-				000000007FD0 /* PBXTargetDependency */,
-				000000007FF0 /* PBXTargetDependency */,
-				000000007EB0 /* PBXTargetDependency */,
-				000000007E90 /* PBXTargetDependency */,
-			);
-			name = "Pods-BaseCore-CommonPods-RouterManager";
-			productName = "Pods-BaseCore-CommonPods-RouterManager";
-			productReference = 000000006D30 /* Pods_BaseCore_CommonPods_RouterManager.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		000000006E50 /* Pods-BaseCore-CommonPods-Third */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 000000006E60 /* Build configuration list for PBXNativeTarget "Pods-BaseCore-CommonPods-Third" */;
-			buildPhases = (
-				000000006EA0 /* Headers */,
-				000000006EB0 /* Sources */,
-				000000006EC0 /* Frameworks */,
-				000000006ED0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0000000075A0 /* PBXTargetDependency */,
-				0000000075C0 /* PBXTargetDependency */,
-				0000000075E0 /* PBXTargetDependency */,
-				000000007660 /* PBXTargetDependency */,
-				000000007600 /* PBXTargetDependency */,
-				000000007680 /* PBXTargetDependency */,
-				0000000076A0 /* PBXTargetDependency */,
-				000000007740 /* PBXTargetDependency */,
-				0000000077D0 /* PBXTargetDependency */,
-				000000007820 /* PBXTargetDependency */,
-				0000000078A0 /* PBXTargetDependency */,
-				000000007920 /* PBXTargetDependency */,
-				0000000079A0 /* PBXTargetDependency */,
-				0000000079C0 /* PBXTargetDependency */,
-				000000007640 /* PBXTargetDependency */,
-				000000007620 /* PBXTargetDependency */,
-			);
-			name = "Pods-BaseCore-CommonPods-Third";
-			productName = "Pods-BaseCore-CommonPods-Third";
-			productReference = 000000006E90 /* Pods_BaseCore_CommonPods_Third.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		000000006FB0 /* Pods-BaseCore-CommonPods-UserNotificationManager */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 000000006FC0 /* Build configuration list for PBXNativeTarget "Pods-BaseCore-CommonPods-UserNotificationManager" */;
-			buildPhases = (
-				000000007000 /* Headers */,
-				000000007010 /* Sources */,
-				000000007020 /* Frameworks */,
-				000000007030 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -5199,6 +5108,180 @@
 				000000007CB0 /* PBXTargetDependency */,
 				000000007C90 /* PBXTargetDependency */,
 			);
+			name = "Pods-BaseCore-CommonPods-AnimatedTransition";
+			productName = "Pods-BaseCore-CommonPods-AnimatedTransition";
+			productReference = 000000006900 /* Pods_BaseCore_CommonPods_AnimatedTransition.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		000000006A20 /* Pods-BaseCore-CommonPods-AppExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000000006A30 /* Build configuration list for PBXNativeTarget "Pods-BaseCore-CommonPods-AppExtension" */;
+			buildPhases = (
+				000000006A70 /* Headers */,
+				000000006A80 /* Sources */,
+				000000006A90 /* Frameworks */,
+				000000006AA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				000000008450 /* PBXTargetDependency */,
+				000000008650 /* PBXTargetDependency */,
+				000000008470 /* PBXTargetDependency */,
+				000000008490 /* PBXTargetDependency */,
+				000000008510 /* PBXTargetDependency */,
+				000000008670 /* PBXTargetDependency */,
+				0000000084B0 /* PBXTargetDependency */,
+				000000008530 /* PBXTargetDependency */,
+				000000008550 /* PBXTargetDependency */,
+				000000008570 /* PBXTargetDependency */,
+				000000008590 /* PBXTargetDependency */,
+				0000000085B0 /* PBXTargetDependency */,
+				0000000085D0 /* PBXTargetDependency */,
+				0000000085F0 /* PBXTargetDependency */,
+				000000008610 /* PBXTargetDependency */,
+				000000008630 /* PBXTargetDependency */,
+				0000000084F0 /* PBXTargetDependency */,
+				0000000084D0 /* PBXTargetDependency */,
+			);
+			name = "Pods-BaseCore-CommonPods-AppExtension";
+			productName = "Pods-BaseCore-CommonPods-AppExtension";
+			productReference = 000000006A60 /* Pods_BaseCore_CommonPods_AppExtension.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		000000006B90 /* Pods-BaseCore-CommonPods-List */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000000006BA0 /* Build configuration list for PBXNativeTarget "Pods-BaseCore-CommonPods-List" */;
+			buildPhases = (
+				000000006BE0 /* Headers */,
+				000000006BF0 /* Sources */,
+				000000006C00 /* Frameworks */,
+				000000006C10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				000000008210 /* PBXTargetDependency */,
+				000000008410 /* PBXTargetDependency */,
+				000000008230 /* PBXTargetDependency */,
+				000000008250 /* PBXTargetDependency */,
+				0000000082D0 /* PBXTargetDependency */,
+				000000008430 /* PBXTargetDependency */,
+				000000008270 /* PBXTargetDependency */,
+				0000000082F0 /* PBXTargetDependency */,
+				000000008310 /* PBXTargetDependency */,
+				000000008330 /* PBXTargetDependency */,
+				000000008350 /* PBXTargetDependency */,
+				000000008370 /* PBXTargetDependency */,
+				000000008390 /* PBXTargetDependency */,
+				0000000083B0 /* PBXTargetDependency */,
+				0000000083D0 /* PBXTargetDependency */,
+				0000000083F0 /* PBXTargetDependency */,
+				0000000082B0 /* PBXTargetDependency */,
+				000000008290 /* PBXTargetDependency */,
+			);
+			name = "Pods-BaseCore-CommonPods-List";
+			productName = "Pods-BaseCore-CommonPods-List";
+			productReference = 000000006BD0 /* Pods_BaseCore_CommonPods_List.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		000000006CF0 /* Pods-BaseCore-CommonPods-RouterManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000000006D00 /* Build configuration list for PBXNativeTarget "Pods-BaseCore-CommonPods-RouterManager" */;
+			buildPhases = (
+				000000006D40 /* Headers */,
+				000000006D50 /* Sources */,
+				000000006D60 /* Frameworks */,
+				000000006D70 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				000000008010 /* PBXTargetDependency */,
+				000000008030 /* PBXTargetDependency */,
+				000000008050 /* PBXTargetDependency */,
+				0000000080D0 /* PBXTargetDependency */,
+				000000008070 /* PBXTargetDependency */,
+				0000000080F0 /* PBXTargetDependency */,
+				000000008110 /* PBXTargetDependency */,
+				000000008130 /* PBXTargetDependency */,
+				000000008150 /* PBXTargetDependency */,
+				000000008170 /* PBXTargetDependency */,
+				000000008190 /* PBXTargetDependency */,
+				0000000081B0 /* PBXTargetDependency */,
+				0000000081D0 /* PBXTargetDependency */,
+				0000000081F0 /* PBXTargetDependency */,
+				0000000080B0 /* PBXTargetDependency */,
+				000000008090 /* PBXTargetDependency */,
+			);
+			name = "Pods-BaseCore-CommonPods-RouterManager";
+			productName = "Pods-BaseCore-CommonPods-RouterManager";
+			productReference = 000000006D30 /* Pods_BaseCore_CommonPods_RouterManager.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		000000006E50 /* Pods-BaseCore-CommonPods-Third */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000000006E60 /* Build configuration list for PBXNativeTarget "Pods-BaseCore-CommonPods-Third" */;
+			buildPhases = (
+				000000006EA0 /* Headers */,
+				000000006EB0 /* Sources */,
+				000000006EC0 /* Frameworks */,
+				000000006ED0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0000000077A0 /* PBXTargetDependency */,
+				0000000077C0 /* PBXTargetDependency */,
+				0000000077E0 /* PBXTargetDependency */,
+				000000007860 /* PBXTargetDependency */,
+				000000007800 /* PBXTargetDependency */,
+				000000007880 /* PBXTargetDependency */,
+				0000000078A0 /* PBXTargetDependency */,
+				000000007940 /* PBXTargetDependency */,
+				0000000079D0 /* PBXTargetDependency */,
+				000000007A20 /* PBXTargetDependency */,
+				000000007AA0 /* PBXTargetDependency */,
+				000000007B20 /* PBXTargetDependency */,
+				000000007BA0 /* PBXTargetDependency */,
+				000000007BC0 /* PBXTargetDependency */,
+				000000007840 /* PBXTargetDependency */,
+				000000007820 /* PBXTargetDependency */,
+			);
+			name = "Pods-BaseCore-CommonPods-Third";
+			productName = "Pods-BaseCore-CommonPods-Third";
+			productReference = 000000006E90 /* Pods_BaseCore_CommonPods_Third.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		000000006FB0 /* Pods-BaseCore-CommonPods-UserNotificationManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000000006FC0 /* Build configuration list for PBXNativeTarget "Pods-BaseCore-CommonPods-UserNotificationManager" */;
+			buildPhases = (
+				000000007000 /* Headers */,
+				000000007010 /* Sources */,
+				000000007020 /* Frameworks */,
+				000000007030 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				000000007E10 /* PBXTargetDependency */,
+				000000007E30 /* PBXTargetDependency */,
+				000000007E50 /* PBXTargetDependency */,
+				000000007ED0 /* PBXTargetDependency */,
+				000000007E70 /* PBXTargetDependency */,
+				000000007EF0 /* PBXTargetDependency */,
+				000000007F10 /* PBXTargetDependency */,
+				000000007F30 /* PBXTargetDependency */,
+				000000007F50 /* PBXTargetDependency */,
+				000000007F70 /* PBXTargetDependency */,
+				000000007F90 /* PBXTargetDependency */,
+				000000007FB0 /* PBXTargetDependency */,
+				000000007FD0 /* PBXTargetDependency */,
+				000000007FF0 /* PBXTargetDependency */,
+				000000007EB0 /* PBXTargetDependency */,
+				000000007E90 /* PBXTargetDependency */,
+			);
 			name = "Pods-BaseCore-CommonPods-UserNotificationManager";
 			productName = "Pods-BaseCore-CommonPods-UserNotificationManager";
 			productReference = 000000006FF0 /* Pods_BaseCore_CommonPods_UserNotificationManager.framework */;
@@ -5216,11 +5299,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				000000007440 /* PBXTargetDependency */,
-				000000007460 /* PBXTargetDependency */,
-				000000007480 /* PBXTargetDependency */,
-				0000000074A0 /* PBXTargetDependency */,
-				0000000074C0 /* PBXTargetDependency */,
+				0000000075A0 /* PBXTargetDependency */,
+				0000000075C0 /* PBXTargetDependency */,
+				0000000075E0 /* PBXTargetDependency */,
+				000000007600 /* PBXTargetDependency */,
+				000000007620 /* PBXTargetDependency */,
 			);
 			name = "Pods-BaseCore-Core";
 			productName = "Pods-BaseCore-Core";
@@ -5239,16 +5322,39 @@
 			buildRules = (
 			);
 			dependencies = (
-				0000000074E0 /* PBXTargetDependency */,
-				000000007500 /* PBXTargetDependency */,
-				000000007520 /* PBXTargetDependency */,
-				000000007540 /* PBXTargetDependency */,
-				000000007580 /* PBXTargetDependency */,
-				000000007560 /* PBXTargetDependency */,
+				000000007640 /* PBXTargetDependency */,
+				000000007660 /* PBXTargetDependency */,
+				000000007680 /* PBXTargetDependency */,
+				0000000076A0 /* PBXTargetDependency */,
+				0000000076C0 /* PBXTargetDependency */,
 			);
 			name = "Pods-BaseCore-Custom";
 			productName = "Pods-BaseCore-Custom";
 			productReference = 0000000072B0 /* Pods_BaseCore_Custom.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0000000073D0 /* Pods-BaseCore-UIComponents */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0000000073E0 /* Build configuration list for PBXNativeTarget "Pods-BaseCore-UIComponents" */;
+			buildPhases = (
+				000000007420 /* Headers */,
+				000000007430 /* Sources */,
+				000000007440 /* Frameworks */,
+				000000007450 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0000000076E0 /* PBXTargetDependency */,
+				000000007700 /* PBXTargetDependency */,
+				000000007720 /* PBXTargetDependency */,
+				000000007740 /* PBXTargetDependency */,
+				000000007780 /* PBXTargetDependency */,
+				000000007760 /* PBXTargetDependency */,
+			);
+			name = "Pods-BaseCore-UIComponents";
+			productName = "Pods-BaseCore-UIComponents";
+			productReference = 000000007410 /* Pods_BaseCore_UIComponents.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -5289,6 +5395,7 @@
 				000000006FB0 /* Pods-BaseCore-CommonPods-UserNotificationManager */,
 				000000007110 /* Pods-BaseCore-Core */,
 				000000007270 /* Pods-BaseCore-Custom */,
+				0000000073D0 /* Pods-BaseCore-UIComponents */,
 				0000000041D0 /* Result */,
 				000000004320 /* Rx+Kingfisher */,
 				0000000044C0 /* RxAnimated */,
@@ -5496,6 +5603,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0000000072F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000000007450 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -6214,75 +6328,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		000000007430 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				000000007520 /* Pods-BaseCore-UIComponents-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		000000007440 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CocoaExtension;
-			target = 000000002AB0 /* CocoaExtension */;
-			targetProxy = 000000007430 /* PBXContainerItemProxy */;
-		};
-		000000007460 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Encryption;
-			target = 000000003100 /* Encryption */;
-			targetProxy = 000000007450 /* PBXContainerItemProxy */;
-		};
-		000000007480 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FunctionalSwift;
-			target = 000000003820 /* FunctionalSwift */;
-			targetProxy = 000000007470 /* PBXContainerItemProxy */;
-		};
-		0000000074A0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ModalManager;
-			target = 000000004030 /* ModalManager */;
-			targetProxy = 000000007490 /* PBXContainerItemProxy */;
-		};
-		0000000074C0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Validation;
-			target = 000000006480 /* Validation */;
-			targetProxy = 0000000074B0 /* PBXContainerItemProxy */;
-		};
-		0000000074E0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CocoaExtension;
-			target = 000000002AB0 /* CocoaExtension */;
-			targetProxy = 0000000074D0 /* PBXContainerItemProxy */;
-		};
-		000000007500 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Encryption;
-			target = 000000003100 /* Encryption */;
-			targetProxy = 0000000074F0 /* PBXContainerItemProxy */;
-		};
-		000000007520 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FunctionalSwift;
-			target = 000000003820 /* FunctionalSwift */;
-			targetProxy = 000000007510 /* PBXContainerItemProxy */;
-		};
-		000000007540 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ModalManager;
-			target = 000000004030 /* ModalManager */;
-			targetProxy = 000000007530 /* PBXContainerItemProxy */;
-		};
-		000000007560 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Validation;
-			target = 000000006480 /* Validation */;
-			targetProxy = 000000007550 /* PBXContainerItemProxy */;
-		};
-		000000007580 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SnapKit;
-			target = 000000006130 /* SnapKit */;
-			targetProxy = 000000007570 /* PBXContainerItemProxy */;
-		};
 		0000000075A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CocoaExtension;
@@ -6315,237 +6371,237 @@
 		};
 		000000007640 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SnapKit;
-			target = 000000006130 /* SnapKit */;
+			name = CocoaExtension;
+			target = 000000002AB0 /* CocoaExtension */;
 			targetProxy = 000000007630 /* PBXContainerItemProxy */;
 		};
 		000000007660 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Kingfisher;
-			target = 0000000039D0 /* Kingfisher */;
+			name = Encryption;
+			target = 000000003100 /* Encryption */;
 			targetProxy = 000000007650 /* PBXContainerItemProxy */;
 		};
 		000000007680 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Result;
-			target = 0000000041D0 /* Result */;
+			name = FunctionalSwift;
+			target = 000000003820 /* FunctionalSwift */;
 			targetProxy = 000000007670 /* PBXContainerItemProxy */;
 		};
 		0000000076A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Rx+Kingfisher";
-			target = 000000004320 /* Rx+Kingfisher */;
+			name = ModalManager;
+			target = 000000004030 /* ModalManager */;
 			targetProxy = 000000007690 /* PBXContainerItemProxy */;
 		};
 		0000000076C0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Kingfisher;
-			target = 0000000039D0 /* Kingfisher */;
+			name = Validation;
+			target = 000000006480 /* Validation */;
 			targetProxy = 0000000076B0 /* PBXContainerItemProxy */;
+		};
+		0000000076E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CocoaExtension;
+			target = 000000002AB0 /* CocoaExtension */;
+			targetProxy = 0000000076D0 /* PBXContainerItemProxy */;
 		};
 		000000007700 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwift;
-			target = 0000000053C0 /* RxSwift */;
+			name = Encryption;
+			target = 000000003100 /* Encryption */;
 			targetProxy = 0000000076F0 /* PBXContainerItemProxy */;
+		};
+		000000007720 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FunctionalSwift;
+			target = 000000003820 /* FunctionalSwift */;
+			targetProxy = 000000007710 /* PBXContainerItemProxy */;
 		};
 		000000007740 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxAnimated;
-			target = 0000000044C0 /* RxAnimated */;
+			name = ModalManager;
+			target = 000000004030 /* ModalManager */;
 			targetProxy = 000000007730 /* PBXContainerItemProxy */;
 		};
 		000000007760 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwift;
-			target = 0000000053C0 /* RxSwift */;
+			name = Validation;
+			target = 000000006480 /* Validation */;
 			targetProxy = 000000007750 /* PBXContainerItemProxy */;
 		};
-		000000007790 /* PBXTargetDependency */ = {
+		000000007780 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxCocoa;
-			target = 000000004620 /* RxCocoa */;
-			targetProxy = 000000007780 /* PBXContainerItemProxy */;
+			name = SnapKit;
+			target = 000000006130 /* SnapKit */;
+			targetProxy = 000000007770 /* PBXContainerItemProxy */;
 		};
-		0000000077D0 /* PBXTargetDependency */ = {
+		0000000077A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxCocoa;
-			target = 000000004620 /* RxCocoa */;
-			targetProxy = 0000000077C0 /* PBXContainerItemProxy */;
+			name = CocoaExtension;
+			target = 000000002AB0 /* CocoaExtension */;
+			targetProxy = 000000007790 /* PBXContainerItemProxy */;
 		};
-		0000000077F0 /* PBXTargetDependency */ = {
+		0000000077C0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwift;
-			target = 0000000053C0 /* RxSwift */;
-			targetProxy = 0000000077E0 /* PBXContainerItemProxy */;
+			name = Encryption;
+			target = 000000003100 /* Encryption */;
+			targetProxy = 0000000077B0 /* PBXContainerItemProxy */;
+		};
+		0000000077E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FunctionalSwift;
+			target = 000000003820 /* FunctionalSwift */;
+			targetProxy = 0000000077D0 /* PBXContainerItemProxy */;
+		};
+		000000007800 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ModalManager;
+			target = 000000004030 /* ModalManager */;
+			targetProxy = 0000000077F0 /* PBXContainerItemProxy */;
 		};
 		000000007820 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxGesture;
-			target = 000000004EC0 /* RxGesture */;
+			name = Validation;
+			target = 000000006480 /* Validation */;
 			targetProxy = 000000007810 /* PBXContainerItemProxy */;
 		};
 		000000007840 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwift;
-			target = 0000000053C0 /* RxSwift */;
+			name = SnapKit;
+			target = 000000006130 /* SnapKit */;
 			targetProxy = 000000007830 /* PBXContainerItemProxy */;
 		};
-		000000007870 /* PBXTargetDependency */ = {
+		000000007860 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxCocoa;
-			target = 000000004620 /* RxCocoa */;
-			targetProxy = 000000007860 /* PBXContainerItemProxy */;
+			name = Kingfisher;
+			target = 0000000039D0 /* Kingfisher */;
+			targetProxy = 000000007850 /* PBXContainerItemProxy */;
+		};
+		000000007880 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Result;
+			target = 0000000041D0 /* Result */;
+			targetProxy = 000000007870 /* PBXContainerItemProxy */;
 		};
 		0000000078A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxKeyboard;
-			target = 0000000050E0 /* RxKeyboard */;
+			name = "Rx+Kingfisher";
+			target = 000000004320 /* Rx+Kingfisher */;
 			targetProxy = 000000007890 /* PBXContainerItemProxy */;
 		};
 		0000000078C0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwift;
-			target = 0000000053C0 /* RxSwift */;
+			name = Kingfisher;
+			target = 0000000039D0 /* Kingfisher */;
 			targetProxy = 0000000078B0 /* PBXContainerItemProxy */;
 		};
-		0000000078F0 /* PBXTargetDependency */ = {
+		000000007900 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxCocoa;
-			target = 000000004620 /* RxCocoa */;
-			targetProxy = 0000000078E0 /* PBXContainerItemProxy */;
-		};
-		000000007920 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxOptional;
-			target = 000000005220 /* RxOptional */;
-			targetProxy = 000000007910 /* PBXContainerItemProxy */;
+			name = RxSwift;
+			target = 0000000053C0 /* RxSwift */;
+			targetProxy = 0000000078F0 /* PBXContainerItemProxy */;
 		};
 		000000007940 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwift;
-			target = 0000000053C0 /* RxSwift */;
-			targetProxy = 000000007930 /* PBXContainerItemProxy */;
-		};
-		000000007970 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxCocoa;
-			target = 000000004620 /* RxCocoa */;
-			targetProxy = 000000007960 /* PBXContainerItemProxy */;
-		};
-		0000000079A0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxSwift;
-			target = 0000000053C0 /* RxSwift */;
-			targetProxy = 000000007990 /* PBXContainerItemProxy */;
-		};
-		0000000079C0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxSwiftExt;
-			target = 000000005E40 /* RxSwiftExt */;
-			targetProxy = 0000000079B0 /* PBXContainerItemProxy */;
-		};
-		0000000079E0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxSwift;
-			target = 0000000053C0 /* RxSwift */;
-			targetProxy = 0000000079D0 /* PBXContainerItemProxy */;
-		};
-		000000007A10 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CocoaExtension;
-			target = 000000002AB0 /* CocoaExtension */;
-			targetProxy = 000000007A00 /* PBXContainerItemProxy */;
-		};
-		000000007A30 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Encryption;
-			target = 000000003100 /* Encryption */;
-			targetProxy = 000000007A20 /* PBXContainerItemProxy */;
-		};
-		000000007A50 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FunctionalSwift;
-			target = 000000003820 /* FunctionalSwift */;
-			targetProxy = 000000007A40 /* PBXContainerItemProxy */;
-		};
-		000000007A70 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ModalManager;
-			target = 000000004030 /* ModalManager */;
-			targetProxy = 000000007A60 /* PBXContainerItemProxy */;
-		};
-		000000007A90 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Validation;
-			target = 000000006480 /* Validation */;
-			targetProxy = 000000007A80 /* PBXContainerItemProxy */;
-		};
-		000000007AB0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SnapKit;
-			target = 000000006130 /* SnapKit */;
-			targetProxy = 000000007AA0 /* PBXContainerItemProxy */;
-		};
-		000000007AD0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Kingfisher;
-			target = 0000000039D0 /* Kingfisher */;
-			targetProxy = 000000007AC0 /* PBXContainerItemProxy */;
-		};
-		000000007AF0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Result;
-			target = 0000000041D0 /* Result */;
-			targetProxy = 000000007AE0 /* PBXContainerItemProxy */;
-		};
-		000000007B10 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Rx+Kingfisher";
-			target = 000000004320 /* Rx+Kingfisher */;
-			targetProxy = 000000007B00 /* PBXContainerItemProxy */;
-		};
-		000000007B30 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
 			name = RxAnimated;
 			target = 0000000044C0 /* RxAnimated */;
-			targetProxy = 000000007B20 /* PBXContainerItemProxy */;
+			targetProxy = 000000007930 /* PBXContainerItemProxy */;
 		};
-		000000007B50 /* PBXTargetDependency */ = {
+		000000007960 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxSwift;
+			target = 0000000053C0 /* RxSwift */;
+			targetProxy = 000000007950 /* PBXContainerItemProxy */;
+		};
+		000000007990 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RxCocoa;
 			target = 000000004620 /* RxCocoa */;
-			targetProxy = 000000007B40 /* PBXContainerItemProxy */;
+			targetProxy = 000000007980 /* PBXContainerItemProxy */;
 		};
-		000000007B70 /* PBXTargetDependency */ = {
+		0000000079D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxCocoa;
+			target = 000000004620 /* RxCocoa */;
+			targetProxy = 0000000079C0 /* PBXContainerItemProxy */;
+		};
+		0000000079F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxSwift;
+			target = 0000000053C0 /* RxSwift */;
+			targetProxy = 0000000079E0 /* PBXContainerItemProxy */;
+		};
+		000000007A20 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RxGesture;
 			target = 000000004EC0 /* RxGesture */;
-			targetProxy = 000000007B60 /* PBXContainerItemProxy */;
+			targetProxy = 000000007A10 /* PBXContainerItemProxy */;
 		};
-		000000007B90 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxKeyboard;
-			target = 0000000050E0 /* RxKeyboard */;
-			targetProxy = 000000007B80 /* PBXContainerItemProxy */;
-		};
-		000000007BB0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxOptional;
-			target = 000000005220 /* RxOptional */;
-			targetProxy = 000000007BA0 /* PBXContainerItemProxy */;
-		};
-		000000007BD0 /* PBXTargetDependency */ = {
+		000000007A40 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RxSwift;
 			target = 0000000053C0 /* RxSwift */;
-			targetProxy = 000000007BC0 /* PBXContainerItemProxy */;
+			targetProxy = 000000007A30 /* PBXContainerItemProxy */;
 		};
-		000000007BF0 /* PBXTargetDependency */ = {
+		000000007A70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxCocoa;
+			target = 000000004620 /* RxCocoa */;
+			targetProxy = 000000007A60 /* PBXContainerItemProxy */;
+		};
+		000000007AA0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxKeyboard;
+			target = 0000000050E0 /* RxKeyboard */;
+			targetProxy = 000000007A90 /* PBXContainerItemProxy */;
+		};
+		000000007AC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxSwift;
+			target = 0000000053C0 /* RxSwift */;
+			targetProxy = 000000007AB0 /* PBXContainerItemProxy */;
+		};
+		000000007AF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxCocoa;
+			target = 000000004620 /* RxCocoa */;
+			targetProxy = 000000007AE0 /* PBXContainerItemProxy */;
+		};
+		000000007B20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxOptional;
+			target = 000000005220 /* RxOptional */;
+			targetProxy = 000000007B10 /* PBXContainerItemProxy */;
+		};
+		000000007B40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxSwift;
+			target = 0000000053C0 /* RxSwift */;
+			targetProxy = 000000007B30 /* PBXContainerItemProxy */;
+		};
+		000000007B70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxCocoa;
+			target = 000000004620 /* RxCocoa */;
+			targetProxy = 000000007B60 /* PBXContainerItemProxy */;
+		};
+		000000007BA0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxSwift;
+			target = 0000000053C0 /* RxSwift */;
+			targetProxy = 000000007B90 /* PBXContainerItemProxy */;
+		};
+		000000007BC0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RxSwiftExt;
 			target = 000000005E40 /* RxSwiftExt */;
-			targetProxy = 000000007BE0 /* PBXContainerItemProxy */;
+			targetProxy = 000000007BB0 /* PBXContainerItemProxy */;
+		};
+		000000007BE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxSwift;
+			target = 0000000053C0 /* RxSwift */;
+			targetProxy = 000000007BD0 /* PBXContainerItemProxy */;
 		};
 		000000007C10 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -6837,135 +6893,231 @@
 		};
 		000000008210 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = DifferenceKit;
-			target = 000000002F40 /* DifferenceKit */;
+			name = CocoaExtension;
+			target = 000000002AB0 /* CocoaExtension */;
 			targetProxy = 000000008200 /* PBXContainerItemProxy */;
 		};
 		000000008230 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = MJRefresh;
-			target = 000000003C80 /* MJRefresh */;
+			name = Encryption;
+			target = 000000003100 /* Encryption */;
 			targetProxy = 000000008220 /* PBXContainerItemProxy */;
 		};
 		000000008250 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CocoaExtension;
-			target = 000000002AB0 /* CocoaExtension */;
+			name = FunctionalSwift;
+			target = 000000003820 /* FunctionalSwift */;
 			targetProxy = 000000008240 /* PBXContainerItemProxy */;
 		};
 		000000008270 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Encryption;
-			target = 000000003100 /* Encryption */;
+			name = ModalManager;
+			target = 000000004030 /* ModalManager */;
 			targetProxy = 000000008260 /* PBXContainerItemProxy */;
 		};
 		000000008290 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = FunctionalSwift;
-			target = 000000003820 /* FunctionalSwift */;
+			name = Validation;
+			target = 000000006480 /* Validation */;
 			targetProxy = 000000008280 /* PBXContainerItemProxy */;
 		};
 		0000000082B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ModalManager;
-			target = 000000004030 /* ModalManager */;
+			name = SnapKit;
+			target = 000000006130 /* SnapKit */;
 			targetProxy = 0000000082A0 /* PBXContainerItemProxy */;
 		};
 		0000000082D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Validation;
-			target = 000000006480 /* Validation */;
+			name = Kingfisher;
+			target = 0000000039D0 /* Kingfisher */;
 			targetProxy = 0000000082C0 /* PBXContainerItemProxy */;
 		};
 		0000000082F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SnapKit;
-			target = 000000006130 /* SnapKit */;
+			name = Result;
+			target = 0000000041D0 /* Result */;
 			targetProxy = 0000000082E0 /* PBXContainerItemProxy */;
 		};
 		000000008310 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Kingfisher;
-			target = 0000000039D0 /* Kingfisher */;
+			name = "Rx+Kingfisher";
+			target = 000000004320 /* Rx+Kingfisher */;
 			targetProxy = 000000008300 /* PBXContainerItemProxy */;
 		};
 		000000008330 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Result;
-			target = 0000000041D0 /* Result */;
+			name = RxAnimated;
+			target = 0000000044C0 /* RxAnimated */;
 			targetProxy = 000000008320 /* PBXContainerItemProxy */;
 		};
 		000000008350 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Rx+Kingfisher";
-			target = 000000004320 /* Rx+Kingfisher */;
+			name = RxCocoa;
+			target = 000000004620 /* RxCocoa */;
 			targetProxy = 000000008340 /* PBXContainerItemProxy */;
 		};
 		000000008370 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxAnimated;
-			target = 0000000044C0 /* RxAnimated */;
+			name = RxGesture;
+			target = 000000004EC0 /* RxGesture */;
 			targetProxy = 000000008360 /* PBXContainerItemProxy */;
 		};
 		000000008390 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxCocoa;
-			target = 000000004620 /* RxCocoa */;
+			name = RxKeyboard;
+			target = 0000000050E0 /* RxKeyboard */;
 			targetProxy = 000000008380 /* PBXContainerItemProxy */;
 		};
 		0000000083B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxGesture;
-			target = 000000004EC0 /* RxGesture */;
+			name = RxOptional;
+			target = 000000005220 /* RxOptional */;
 			targetProxy = 0000000083A0 /* PBXContainerItemProxy */;
 		};
 		0000000083D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxKeyboard;
-			target = 0000000050E0 /* RxKeyboard */;
+			name = RxSwift;
+			target = 0000000053C0 /* RxSwift */;
 			targetProxy = 0000000083C0 /* PBXContainerItemProxy */;
 		};
 		0000000083F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxOptional;
-			target = 000000005220 /* RxOptional */;
+			name = RxSwiftExt;
+			target = 000000005E40 /* RxSwiftExt */;
 			targetProxy = 0000000083E0 /* PBXContainerItemProxy */;
 		};
 		000000008410 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwift;
-			target = 0000000053C0 /* RxSwift */;
+			name = DifferenceKit;
+			target = 000000002F40 /* DifferenceKit */;
 			targetProxy = 000000008400 /* PBXContainerItemProxy */;
 		};
 		000000008430 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwiftExt;
-			target = 000000005E40 /* RxSwiftExt */;
+			name = MJRefresh;
+			target = 000000003C80 /* MJRefresh */;
 			targetProxy = 000000008420 /* PBXContainerItemProxy */;
 		};
 		000000008450 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = DifferenceKit;
-			target = 000000002F40 /* DifferenceKit */;
+			name = CocoaExtension;
+			target = 000000002AB0 /* CocoaExtension */;
 			targetProxy = 000000008440 /* PBXContainerItemProxy */;
 		};
 		000000008470 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = MJRefresh;
-			target = 000000003C80 /* MJRefresh */;
+			name = Encryption;
+			target = 000000003100 /* Encryption */;
 			targetProxy = 000000008460 /* PBXContainerItemProxy */;
 		};
 		000000008490 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-BaseCore-CommonPods-AppExtension";
-			target = 000000006A20 /* Pods-BaseCore-CommonPods-AppExtension */;
+			name = FunctionalSwift;
+			target = 000000003820 /* FunctionalSwift */;
 			targetProxy = 000000008480 /* PBXContainerItemProxy */;
 		};
 		0000000084B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			name = ModalManager;
+			target = 000000004030 /* ModalManager */;
+			targetProxy = 0000000084A0 /* PBXContainerItemProxy */;
+		};
+		0000000084D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Validation;
+			target = 000000006480 /* Validation */;
+			targetProxy = 0000000084C0 /* PBXContainerItemProxy */;
+		};
+		0000000084F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SnapKit;
+			target = 000000006130 /* SnapKit */;
+			targetProxy = 0000000084E0 /* PBXContainerItemProxy */;
+		};
+		000000008510 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Kingfisher;
+			target = 0000000039D0 /* Kingfisher */;
+			targetProxy = 000000008500 /* PBXContainerItemProxy */;
+		};
+		000000008530 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Result;
+			target = 0000000041D0 /* Result */;
+			targetProxy = 000000008520 /* PBXContainerItemProxy */;
+		};
+		000000008550 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Rx+Kingfisher";
+			target = 000000004320 /* Rx+Kingfisher */;
+			targetProxy = 000000008540 /* PBXContainerItemProxy */;
+		};
+		000000008570 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxAnimated;
+			target = 0000000044C0 /* RxAnimated */;
+			targetProxy = 000000008560 /* PBXContainerItemProxy */;
+		};
+		000000008590 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxCocoa;
+			target = 000000004620 /* RxCocoa */;
+			targetProxy = 000000008580 /* PBXContainerItemProxy */;
+		};
+		0000000085B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxGesture;
+			target = 000000004EC0 /* RxGesture */;
+			targetProxy = 0000000085A0 /* PBXContainerItemProxy */;
+		};
+		0000000085D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxKeyboard;
+			target = 0000000050E0 /* RxKeyboard */;
+			targetProxy = 0000000085C0 /* PBXContainerItemProxy */;
+		};
+		0000000085F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxOptional;
+			target = 000000005220 /* RxOptional */;
+			targetProxy = 0000000085E0 /* PBXContainerItemProxy */;
+		};
+		000000008610 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxSwift;
+			target = 0000000053C0 /* RxSwift */;
+			targetProxy = 000000008600 /* PBXContainerItemProxy */;
+		};
+		000000008630 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxSwiftExt;
+			target = 000000005E40 /* RxSwiftExt */;
+			targetProxy = 000000008620 /* PBXContainerItemProxy */;
+		};
+		000000008650 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DifferenceKit;
+			target = 000000002F40 /* DifferenceKit */;
+			targetProxy = 000000008640 /* PBXContainerItemProxy */;
+		};
+		000000008670 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MJRefresh;
+			target = 000000003C80 /* MJRefresh */;
+			targetProxy = 000000008660 /* PBXContainerItemProxy */;
+		};
+		000000008690 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
 			name = "Pods-BaseCore-CommonPods-AppExtension";
 			target = 000000006A20 /* Pods-BaseCore-CommonPods-AppExtension */;
-			targetProxy = 0000000084A0 /* PBXContainerItemProxy */;
+			targetProxy = 000000008680 /* PBXContainerItemProxy */;
+		};
+		0000000086B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-BaseCore-CommonPods-AppExtension";
+			target = 000000006A20 /* Pods-BaseCore-CommonPods-AppExtension */;
+			targetProxy = 0000000086A0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -8976,6 +9128,78 @@
 			};
 			name = Debug;
 		};
+		0000000073F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 000000007480 /* Pods-BaseCore-UIComponents.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BaseCore-UIComponents/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BaseCore-UIComponents/Pods-BaseCore-UIComponents.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		000000007400 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 000000007490 /* Pods-BaseCore-UIComponents.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BaseCore-UIComponents/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BaseCore-UIComponents/Pods-BaseCore-UIComponents.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -9236,6 +9460,15 @@
 			buildConfigurations = (
 				0000000072A0 /* Debug */,
 				000000007290 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0000000073E0 /* Build configuration list for PBXNativeTarget "Pods-BaseCore-UIComponents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000000007400 /* Debug */,
+				0000000073F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -17,5 +17,3 @@ import Foundation
 @_exported import Codable
 @_exported import Animater
 #endif
-
-@_exported import SnapKit
