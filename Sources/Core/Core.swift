@@ -8,7 +8,9 @@
 
 import Foundation
 
+#if !AppExtensionPods
 @_exported import Async
+#endif
 @_exported import Validation
 @_exported import Encryption
 @_exported import FunctionalSwift

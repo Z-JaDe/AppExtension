@@ -14,10 +14,6 @@ open class Label: UILabel {
         didSet { updateFirstBaseline() }
     }
 
-    open override class var layerClass: AnyClass {
-        return AsyncLayer.self
-    }
-
     public convenience init(text: String = "", color: UIColor = Color.black, font: UIFont = Font.h3) {
         self.init()
         self.text = text
