@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
     s.subspec "Core" do |ss|
         ss.source_files  = "Sources/Core/**/*.{swift}"
 
-        ss.dependency "Async"
+        ss.dependency "AppExtension/Async"
         ss.dependency "CocoaExtension"
         ss.dependency "Encryption"
         ss.dependency "FunctionalSwift"
