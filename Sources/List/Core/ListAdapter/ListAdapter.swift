@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-#if HasRx
+#if canImport(RxSwift)
 typealias MultipleSelection = RxMultipleSelectionProtocol
 #else
 typealias MultipleSelection = MultipleSelectionProtocol
@@ -43,7 +43,7 @@ where DataSourceType.S.Item: AdapterItemType, DataSourceType.S.Section: AdapterS
     // MARK: - MultipleSelectionProtocol
     public typealias SelectItemType = Item
     public var selectedItemArray: [SelectItemType] = []
-    #if HasRx
+    #if canImport(RxSwift)
     public let selectedItemArraySubject: PublishSubject<SelectedItemArrayType> = PublishSubject()
     #endif
     public var maxSelectedCount: UInt? = 0

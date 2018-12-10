@@ -5,7 +5,7 @@
 //  Created by 郑军铎 on 2018/6/7.
 //  Copyright © 2018年 syk. All rights reserved.
 //
-#if HasRx
+#if canImport(RxSwift)
 import Foundation
 import RxSwift
 public protocol RxMultipleSelectionProtocol: MultipleSelectionProtocol {

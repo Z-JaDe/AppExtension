@@ -1,0 +1,233 @@
+{
+  "name": "AppExtension",
+  "version": "0.0.1",
+  "summary": "App框架",
+  "description": "App框架",
+  "homepage": "https://github.com/Z-JaDe",
+  "license": "MIT",
+  "authors": {
+    "ZJaDe": "zjade@outlook.com"
+  },
+  "source": {
+    "git": "https://github.com/Z-JaDe/AppExtension.git"
+  },
+  "requires_arc": true,
+  "platforms": {
+    "ios": "9.0"
+  },
+  "default_subspecs": "Default",
+  "xcconfig": {
+    "OTHER_SWIFT_FLAGS": "\"-D\" \"AppExtensionPods\""
+  },
+  "subspecs": [
+    {
+      "name": "Async",
+      "source_files": "Sources/Async/**/*.{swift}"
+    },
+    {
+      "name": "Core",
+      "source_files": "Sources/Core/**/*.{swift}",
+      "dependencies": {
+        "AppExtension/Async": [
+
+        ],
+        "CocoaExtension": [
+
+        ],
+        "Encryption": [
+
+        ],
+        "FunctionalSwift": [
+
+        ],
+        "Validation": [
+
+        ],
+        "ModalManager": [
+
+        ]
+      }
+    },
+    {
+      "name": "Codable",
+      "source_files": "Sources/Codable/**/*.{swift}"
+    },
+    {
+      "name": "Animater",
+      "source_files": "Sources/Animater/**/*.{swift}"
+    },
+    {
+      "name": "UIComponents",
+      "source_files": "Sources/UIComponents/**/*.{swift}",
+      "dependencies": {
+        "SnapKit": [
+
+        ],
+        "AppExtension/Core": [
+
+        ],
+        "AppExtension/Codable": [
+
+        ],
+        "AppExtension/Animater": [
+
+        ],
+        "RxSwift": [
+
+        ],
+        "RxCocoa": [
+
+        ]
+      }
+    },
+    {
+      "name": "EmptyDataSet",
+      "source_files": "Sources/EmptyDataSet/**/*.{swift}",
+      "dependencies": {
+        "AppExtension/UIComponents": [
+
+        ],
+        "AppExtension/Third": [
+
+        ]
+      }
+    },
+    {
+      "name": "UserNotificationManager",
+      "source_files": "Sources/UserNotificationManager/**/*.{swift}",
+      "dependencies": {
+        "AppExtension/Core": [
+
+        ],
+        "RxSwift": [
+
+        ]
+      }
+    },
+    {
+      "name": "RouterManager",
+      "source_files": "Sources/RouterManager/**/*.{swift}",
+      "dependencies": {
+        "AppExtension/Core": [
+
+        ]
+      }
+    },
+    {
+      "name": "AnimatedTransition",
+      "source_files": "Sources/AnimatedTransition/**/*.{swift}",
+      "dependencies": {
+        "AppExtension/Core": [
+
+        ],
+        "AppExtension/Animater": [
+
+        ]
+      }
+    },
+    {
+      "name": "Third",
+      "source_files": "Sources/Third/**/*.{swift}",
+      "dependencies": {
+        "AppExtension/Core": [
+
+        ],
+        "RxSwift": [
+
+        ],
+        "RxCocoa": [
+
+        ],
+        "RxGesture": [
+
+        ],
+        "RxSwiftExt": [
+
+        ],
+        "RxOptional": [
+
+        ],
+        "Rx+Kingfisher": [
+
+        ],
+        "Result": [
+
+        ]
+      }
+    },
+    {
+      "name": "ProjectBasic",
+      "resources": "Sources/ProjectBasic/**/*.{bundle}",
+      "source_files": "Sources/ProjectBasic/**/*.{swift,h,m}",
+      "public_header_files": [
+        "Sources/ProjectBasic/Details/SAMKeychain/SAMKeychain.h",
+        "Sources/ProjectBasic/Details/SAMKeychain/SAMKeychainQuery.h",
+        "Sources/ProjectBasic/Details/Alert/HUD/MBProgressHUD/MBProgressHUD.h"
+      ],
+      "dependencies": {
+        "AppExtension/Codable": [
+
+        ],
+        "AppExtension/Core": [
+
+        ]
+      }
+    },
+    {
+      "name": "List",
+      "source_files": "Sources/List/**/*.{swift}",
+      "dependencies": {
+        "AppExtension/ProjectBasic": [
+
+        ],
+        "AppExtension/Third": [
+
+        ],
+        "AppExtension/Animater": [
+
+        ],
+        "AppExtension/UIComponents": [
+
+        ],
+        "AppExtension/EmptyDataSet": [
+
+        ],
+        "DifferenceKit": [
+
+        ],
+        "MJRefresh": [
+
+        ]
+      }
+    },
+    {
+      "name": "Default",
+      "dependencies": {
+        "AppExtension/ProjectBasic": [
+
+        ],
+        "AppExtension/Animater": [
+
+        ],
+        "AppExtension/UIComponents": [
+
+        ],
+        "AppExtension/Third": [
+
+        ],
+        "AppExtension/List": [
+
+        ],
+        "AppExtension/RouterManager": [
+
+        ],
+        "AppExtension/AnimatedTransition": [
+
+        ],
+        "AppExtension/UserNotificationManager": [
+
+        ]
+      }
+    }
+  ]
+}

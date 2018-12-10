@@ -1,0 +1,6 @@
+framework module AppExtension {
+  umbrella header "AppExtension-umbrella.h"
+
+  export *
+  module * { export * }
+}

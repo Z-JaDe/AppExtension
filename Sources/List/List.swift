@@ -9,8 +9,8 @@
 import Foundation
 
 #if !AppExtensionPods
+@_exported import ProjectBasic
 @_exported import Core
-@_exported import Third
 @_exported import UIComponents
 @_exported import EmptyDataSet
 @_exported import Animater

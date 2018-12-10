@@ -1,0 +1,210 @@
+PODS:
+  - AppExtension/AnimatedTransition (0.0.1):
+    - AppExtension/Animater
+    - AppExtension/Core
+  - AppExtension/Animater (0.0.1)
+  - AppExtension/Async (0.0.1)
+  - AppExtension/Codable (0.0.1)
+  - AppExtension/Core (0.0.1):
+    - AppExtension/Async
+    - CocoaExtension
+    - Encryption
+    - FunctionalSwift
+    - ModalManager
+    - Validation
+  - AppExtension/Default (0.0.1):
+    - AppExtension/AnimatedTransition
+    - AppExtension/Animater
+    - AppExtension/List
+    - AppExtension/ProjectBasic
+    - AppExtension/RouterManager
+    - AppExtension/Third
+    - AppExtension/UIComponents
+    - AppExtension/UserNotificationManager
+  - AppExtension/EmptyDataSet (0.0.1):
+    - AppExtension/Third
+    - AppExtension/UIComponents
+  - AppExtension/List (0.0.1):
+    - AppExtension/Animater
+    - AppExtension/EmptyDataSet
+    - AppExtension/ProjectBasic
+    - AppExtension/Third
+    - AppExtension/UIComponents
+    - DifferenceKit
+    - MJRefresh
+  - AppExtension/ProjectBasic (0.0.1):
+    - AppExtension/Codable
+    - AppExtension/Core
+  - AppExtension/RouterManager (0.0.1):
+    - AppExtension/Core
+  - AppExtension/Third (0.0.1):
+    - AppExtension/Core
+    - Result
+    - "Rx+Kingfisher"
+    - RxCocoa
+    - RxGesture
+    - RxOptional
+    - RxSwift
+    - RxSwiftExt
+  - AppExtension/UIComponents (0.0.1):
+    - AppExtension/Animater
+    - AppExtension/Codable
+    - AppExtension/Core
+    - RxCocoa
+    - RxSwift
+    - SnapKit
+  - AppExtension/UserNotificationManager (0.0.1):
+    - AppExtension/Core
+    - RxSwift
+  - CocoaExtension (1.0.0)
+  - DifferenceKit (0.8.0):
+    - DifferenceKit/Core (= 0.8.0)
+    - DifferenceKit/UIKitExtension (= 0.8.0)
+  - DifferenceKit/Core (0.8.0)
+  - DifferenceKit/UIKitExtension (0.8.0):
+    - DifferenceKit/Core
+  - Encryption (1.0.0)
+  - FunctionalSwift (1.0.0)
+  - Kingfisher (4.10.1)
+  - MJRefresh (3.1.15.6)
+  - ModalManager (1.0.0)
+  - Result (4.0.0)
+  - "Rx+Kingfisher (1.0.0)":
+    - "Rx+Kingfisher/RxSwift (= 1.0.0)"
+  - "Rx+Kingfisher/Core (1.0.0)":
+    - Kingfisher (~> 4)
+  - "Rx+Kingfisher/RxSwift (1.0.0)":
+    - "Rx+Kingfisher/Core"
+    - RxSwift (~> 4)
+  - RxAnimated (0.5.0):
+    - RxAnimated/Core (= 0.5.0)
+    - RxCocoa (~> 4.3)
+    - RxSwift (~> 4.3)
+  - RxAnimated/Core (0.5.0):
+    - RxCocoa (~> 4.3)
+    - RxSwift (~> 4.3)
+  - RxAtomic (4.4.0)
+  - RxCocoa (4.4.0):
+    - RxSwift (~> 4.0)
+  - RxGesture (2.1.0):
+    - RxCocoa (~> 4.4.0)
+    - RxSwift (~> 4.4.0)
+  - RxKeyboard (0.9.0):
+    - RxCocoa (>= 4.3.1)
+    - RxSwift (>= 4.3.1)
+  - RxOptional (3.6.2):
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
+  - RxSwiftExt (3.4.0):
+    - RxSwiftExt/Core (= 3.4.0)
+    - RxSwiftExt/RxCocoa (= 3.4.0)
+  - RxSwiftExt/Core (3.4.0):
+    - RxSwift (~> 4.0)
+  - RxSwiftExt/RxCocoa (3.4.0):
+    - RxCocoa (~> 4.0)
+    - RxSwiftExt/Core
+  - SnapKit (4.2.0)
+  - SwiftLint (0.29.1)
+  - Validation (1.0.0)
+
+DEPENDENCIES:
+  - AppExtension/Default (from `../`)
+  - CocoaExtension (from `~/Desktop/wallet-ios/BaseSupport/CocoaExtension`)
+  - DifferenceKit
+  - Encryption (from `~/Desktop/wallet-ios/BaseSupport/Encryption`)
+  - FunctionalSwift (from `~/Desktop/wallet-ios/BaseSupport/FunctionalSwift`)
+  - Kingfisher
+  - MJRefresh (from `https://github.com/CoderMJLee/MJRefresh`)
+  - ModalManager (from `~/Desktop/wallet-ios/BaseSupport/ModalManager`)
+  - Result
+  - "Rx+Kingfisher (from `~/Desktop/wallet-ios/BaseSupport/RxKingfisher`)"
+  - RxAnimated
+  - RxCocoa (from `https://github.com/ReactiveX/RxSwift`)
+  - RxGesture
+  - RxKeyboard
+  - RxOptional
+  - RxSwift (from `https://github.com/ReactiveX/RxSwift`)
+  - RxSwiftExt
+  - SnapKit (from `https://github.com/SnapKit/SnapKit`)
+  - SwiftLint
+  - Validation (from `~/Desktop/wallet-ios/BaseSupport/Validation`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - DifferenceKit
+    - Kingfisher
+    - Result
+    - RxAnimated
+    - RxAtomic
+    - RxGesture
+    - RxKeyboard
+    - RxOptional
+    - RxSwiftExt
+    - SwiftLint
+
+EXTERNAL SOURCES:
+  AppExtension:
+    :path: "../"
+  CocoaExtension:
+    :path: "~/Desktop/wallet-ios/BaseSupport/CocoaExtension"
+  Encryption:
+    :path: "~/Desktop/wallet-ios/BaseSupport/Encryption"
+  FunctionalSwift:
+    :path: "~/Desktop/wallet-ios/BaseSupport/FunctionalSwift"
+  MJRefresh:
+    :git: https://github.com/CoderMJLee/MJRefresh
+  ModalManager:
+    :path: "~/Desktop/wallet-ios/BaseSupport/ModalManager"
+  "Rx+Kingfisher":
+    :path: "~/Desktop/wallet-ios/BaseSupport/RxKingfisher"
+  RxCocoa:
+    :git: https://github.com/ReactiveX/RxSwift
+  RxSwift:
+    :git: https://github.com/ReactiveX/RxSwift
+  SnapKit:
+    :git: https://github.com/SnapKit/SnapKit
+  Validation:
+    :path: "~/Desktop/wallet-ios/BaseSupport/Validation"
+
+CHECKOUT OPTIONS:
+  MJRefresh:
+    :commit: 5fee65f22a1e69a0538ef44f480715ec411c124f
+    :git: https://github.com/CoderMJLee/MJRefresh
+  RxCocoa:
+    :commit: bf83288eefa9b442b0541965d843f2b3433cc196
+    :git: https://github.com/ReactiveX/RxSwift
+  RxSwift:
+    :commit: bf83288eefa9b442b0541965d843f2b3433cc196
+    :git: https://github.com/ReactiveX/RxSwift
+  SnapKit:
+    :commit: 2f5a5da2458a4ae0fcd7d4a27e98a54d7f235af1
+    :git: https://github.com/SnapKit/SnapKit
+
+SPEC CHECKSUMS:
+  AppExtension: 8d44ef861ff7bde1369784f2466cd82a4d04dce1
+  CocoaExtension: 0baca243b4364a7ee257486f304b8c6f2965275c
+  DifferenceKit: edcc9da33f545a49a70eefcf1a5327162cb72eb8
+  Encryption: 07db83d78ab4bb1d12eb14c36c2c83909cb1b5f3
+  FunctionalSwift: ee8ef3c5a2fc28692a9a21522c10dca0977f0eeb
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  MJRefresh: 0efa19656679d70a0f47cbe76e56c2271fe53a97
+  ModalManager: 906a0d450038948099d8111d429314345afc7b97
+  Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
+  "Rx+Kingfisher": 5b57ffb8306230cfed69820229061dcc66bf4d68
+  RxAnimated: 57a731e59557219480fb3dd86d965d977d863fc6
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxGesture: 7f6dfb45dbde06e618c24442d38493e3144f2c95
+  RxKeyboard: 4f782303f499f41577b41c96c6a9a5d7acd51a47
+  RxOptional: 80426a0ddbd092573e4c482d8cc13302078c4d5e
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  RxSwiftExt: 01f8ecbeeb355698e9c75365ebe908b00dacf45d
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
+  Validation: b695c801939fdaa32b489dbf6e4a739538829a5a
+
+PODFILE CHECKSUM: 6f1fac52daf8c9eda5e763cd34d36013e84e2c77
+
+COCOAPODS: 1.5.0

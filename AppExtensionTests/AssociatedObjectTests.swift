@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Custom
+@testable import ProjectBasic
 
 var intkey: UInt8 = 0
 var protocolkey: UInt8 = 0

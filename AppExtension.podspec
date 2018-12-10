@@ -32,27 +32,43 @@ Pod::Spec.new do |s|
         ss.dependency "Validation"
         ss.dependency "ModalManager"
     end
-
     s.subspec "Codable" do |ss|
         ss.source_files  = "Sources/Codable/**/*.{swift}"
     end
     s.subspec "Animater" do |ss|
         ss.source_files  = "Sources/Animater/**/*.{swift}"
     end
-    s.subspec "Third" do |ss|
-        ss.source_files  = "Sources/Third/**/*.{swift}"
-        ss.resource = "Sources/Third/**/*.{bundle}"
+    #子模块
+    s.subspec "RouterManager" do |ss|
+        ss.source_files  = "Sources/RouterManager/**/*.{swift}"
 
+        ss.dependency "AppExtension/Core"
+    end
+    s.subspec "AnimatedTransition" do |ss|
+        ss.source_files  = "Sources/AnimatedTransition/**/*.{swift}"
+
+        ss.dependency "AppExtension/Core"
+        ss.dependency "AppExtension/Animater"
+    end
+    s.subspec "UserNotificationManager" do |ss|
+        ss.source_files  = "Sources/UserNotificationManager/**/*.{swift}"
+
+        ss.dependency "AppExtension/Core"
+        ss.dependency "RxSwift"
+    end
+    s.subspec "RxExtensions" do |ss|
+        ss.source_files  = "Sources/RxExtensions/**/*.{swift}"
+
+        ss.dependency "AppExtension/Core"
         ss.dependency "RxSwift"
         ss.dependency "RxCocoa"
         ss.dependency "RxGesture"
         ss.dependency "RxSwiftExt"
         ss.dependency "RxOptional"
 
-        ss.dependency "Rx+Kingfisher"
         ss.dependency "Result"
     end
-    #子模块
+
     s.subspec "UIComponents" do |ss|
         ss.source_files  = "Sources/UIComponents/**/*.{swift}"
 
@@ -69,55 +85,40 @@ Pod::Spec.new do |s|
         ss.source_files  = "Sources/EmptyDataSet/**/*.{swift}"
         
         ss.dependency "AppExtension/UIComponents"
-        ss.dependency "AppExtension/Third"
+        ss.dependency "AppExtension/RxExtensions"
     end
 
-    s.subspec "List" do |ss|
-        ss.source_files  = "Sources/List/**/*.{swift}"
-
-        ss.dependency "AppExtension/Core"
-        ss.dependency "AppExtension/Animater"
-        ss.dependency "AppExtension/UIComponents"
-        ss.dependency "AppExtension/Third"
-        ss.dependency "AppExtension/EmptyDataSet"
-        
-        ss.dependency "DifferenceKit"
-        ss.dependency "MJRefresh"
-    end
-
-    s.subspec "UserNotificationManager" do |ss|
-        ss.source_files  = "Sources/UserNotificationManager/**/*.{swift}"
-
-        ss.dependency "AppExtension/Core"
-        ss.dependency "RxSwift"
-    end
-    s.subspec "RouterManager" do |ss|
-        ss.source_files  = "Sources/RouterManager/**/*.{swift}"
-        ss.dependency "AppExtension/Core"
-    end
-    s.subspec "AnimatedTransition" do |ss|
-        ss.source_files  = "Sources/AnimatedTransition/**/*.{swift}"
-
-        ss.dependency "AppExtension/Animater"
-    end
     #项目基础
     s.subspec "ProjectBasic" do |ss|
+        ss.resource = "Sources/ProjectBasic/**/*.{bundle}"
         ss.source_files  = "Sources/ProjectBasic/**/*.{swift,h,m}"
         ss.resource = "Sources/ProjectBasic/**/*.{bundle}"
         ss.public_header_files = "Sources/ProjectBasic/Details/SAMKeychain/SAMKeychain.h", "Sources/ProjectBasic/Details/SAMKeychain/SAMKeychainQuery.h", "Sources/ProjectBasic/Details/Alert/HUD/MBProgressHUD/MBProgressHUD.h"
 
+        ss.dependency "Rx+Kingfisher"
+
         ss.dependency "AppExtension/Codable"
         ss.dependency "AppExtension/Core"
+        ss.dependency "AppExtension/UIComponents"
+        ss.dependency "AppExtension/RxExtensions"
+
+    end
+    s.subspec "List" do |ss|
+        ss.source_files  = "Sources/List/**/*.{swift}"
+
+        ss.dependency "AppExtension/ProjectBasic"
+        ss.dependency "AppExtension/Animater"
+        ss.dependency "AppExtension/UIComponents"
+        ss.dependency "AppExtension/EmptyDataSet"
+
+        ss.dependency "DifferenceKit"
+        ss.dependency "MJRefresh"
     end
     #项目集成
     s.subspec "Default" do |ss|
-        ss.xcconfig = { 'OTHER_SWIFT_FLAGS' => '"-D" "HasRx"' }
-        
         ss.dependency "AppExtension/ProjectBasic"
 
         ss.dependency "AppExtension/Animater"
-        ss.dependency "AppExtension/UIComponents"
-        ss.dependency "AppExtension/Third"
         ss.dependency "AppExtension/List"
         ss.dependency "AppExtension/RouterManager"
         ss.dependency "AppExtension/AnimatedTransition"

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Custom
+@testable import ProjectBasic
 class TimerTests: XCTestCase {
     func testTimer() {
         var value = 0

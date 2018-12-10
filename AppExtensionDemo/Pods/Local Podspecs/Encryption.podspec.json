@@ -1,0 +1,27 @@
+{
+  "name": "Encryption",
+  "version": "1.0.0",
+  "summary": "加密算法",
+  "description": "RSA MD5",
+  "homepage": "https://github.com/Z-JaDe",
+  "license": "MIT",
+  "authors": {
+    "ZJaDe": "zjade@outlook.com"
+  },
+  "source": {
+    "git": "git@github.com:Z-JaDe/Encryption.git",
+    "tag": "1.0.0"
+  },
+  "requires_arc": true,
+  "platforms": {
+    "ios": "9.0"
+  },
+  "frameworks": "Foundation",
+  "swift_version": "4.2",
+  "xcconfig": {
+    "HEADER_SEARCH_PATHS": "$(PODS_TARGET_SRCROOT)/Sources/openssl/include"
+  },
+  "public_header_files": "Sources/Utilities/FSOpenSSL.h",
+  "vendored_libraries": "Sources/openssl/lib/*.a",
+  "source_files": "Sources/**/*.{swift,h,m}"
+}

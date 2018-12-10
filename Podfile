@@ -15,8 +15,6 @@ abstract_target 'BaseCore' do
     
     target:'Core' do
     end
-    target:'ProjectBasic' do
-    end
     target:'AnimatedTransition' do
     end
     target:'UserNotificationManager' do
@@ -25,6 +23,8 @@ abstract_target 'BaseCore' do
     target:'RouterManager' do
     end
     target:'UIComponents' do
+        pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
+        pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift'
         pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
     end
     target:'EmptyDataSet' do
@@ -43,14 +43,16 @@ abstract_target 'BaseCore' do
         pod 'RxKeyboard'
 
         pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
-        pod 'Rx+Kingfisher', :path => '~/Desktop/wallet-ios/BaseSupport/RxKingfisher'
-        pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher'
-        pod 'Result'
 
         pod 'SwiftLint'
 
 
-        target:'Third' do
+        target:'RxExtensions' do
+            pod 'Result'
+        end
+        target:'ProjectBasic' do
+            pod 'Rx+Kingfisher', :path => '~/Desktop/wallet-ios/BaseSupport/RxKingfisher'
+            pod 'Kingfisher'
         end
         target:'List' do
             pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
