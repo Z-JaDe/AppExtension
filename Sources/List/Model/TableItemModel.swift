@@ -16,7 +16,6 @@ open class TableItemModel: ListItemModel {
     // MARK: - cell
     public weak var bufferPool: BufferPool?
 
-    private var _indexPath: IndexPath?
     /// ZJaDe: 手动释放
     private var _contentCell: DynamicTableItemCell? {
         didSet {
@@ -58,7 +57,7 @@ open class TableItemModel: ListItemModel {
 }
 extension TableItemModel: TableCellConfigProtocol {
     /// 这方法返回的是contentCell, 实际内容的cell
-    public func createCell(isTemp: Bool) -> TableItemCell {
+    func createCell(isTemp: Bool) -> TableItemCell {
         let result: DynamicTableItemCell
         let cellName = self.getCellClsName()
         // 如果缓存池有, 就pop出来使用
@@ -74,10 +73,10 @@ extension TableItemModel: TableCellConfigProtocol {
         result._model = self
         return result
     }
-    public func recycleCell(_ cell: TableItemCell) {
+    func recycleCell(_ cell: TableItemCell) {
         bufferPool?.push(cell)
     }
-    public func getCell() -> TableItemCell? {
+    func getCell() -> TableItemCell? {
         return _contentCell
     }
     private func createCellIfNil() {
@@ -88,7 +87,7 @@ extension TableItemModel: TableCellConfigProtocol {
         _contentCell = cell as? DynamicTableItemCell
     }
 
-    public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
+    func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
         let cell = _createCell(in: tableView, for: indexPath)
         //        logDebug("\(item)创建一个cell")
         /// ZJaDe: 初始化_contentCell，并且_contentCell持有tableView弱引用
@@ -96,7 +95,7 @@ extension TableItemModel: TableCellConfigProtocol {
         self.getCell()!._tableView = tableView
         return cell
     }
-    public func willAppear(in cell: UITableViewCell) {
+    func willAppear(in cell: UITableViewCell) {
         guard let cell = cell as? SNTableViewCell else {
             return
         }
@@ -108,7 +107,7 @@ extension TableItemModel: TableCellConfigProtocol {
         }
         //        logDebug("\(item)将要显示")
     }
-    public func didDisappear(in cell: UITableViewCell) {
+    func didDisappear(in cell: UITableViewCell) {
         guard let cell = cell as? SNTableViewCell else {
             return
         }
@@ -128,13 +127,10 @@ extension TableItemModel: TableCellConfigProtocol {
     }
 }
 extension TableItemModel: TableCellHeightProtocol {
-    public var indexPath: IndexPath? {
-        return _indexPath
-    }
-    func setNewIndexPath(_ newValue: IndexPath) {
-        _indexPath = newValue
-    }
     public func updateHeight(_ closure: (() -> Void)? = nil) {
         self._contentCell?.updateHeight(self, closure)
+    }
+    public func setNeedResetCellHeight() {
+        _setNeedResetCellHeight()
     }
 }

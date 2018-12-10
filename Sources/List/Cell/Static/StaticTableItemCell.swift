@@ -14,8 +14,6 @@ open class StaticTableItemCell: TableItemCell, AdapterItemType {
     public func checkCanSelected(_ closure: @escaping (Bool) -> Void) {
         closure(self.canSelected)
     }
-
-    private var _indexPath: IndexPath?
     // MARK: -
     open override func configInit() {
         super.configInit()
@@ -33,7 +31,7 @@ open class StaticTableItemCell: TableItemCell, AdapterItemType {
     public var checkParamsClosure: CheckParamsClosure?
 }
 extension StaticTableItemCell: TableCellConfigProtocol {
-    public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
+    func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
         let cell = _createCell(in: tableView, for: indexPath)
         //        let item = self.cell()
         //        logDebug("\(item)创建一个cell")
@@ -41,7 +39,7 @@ extension StaticTableItemCell: TableCellConfigProtocol {
         self._tableView = tableView
         return cell
     }
-    public func willAppear(in cell: UITableViewCell) {
+    func willAppear(in cell: UITableViewCell) {
         guard let cell = cell as? SNTableViewCell else {
             return
         }
@@ -49,29 +47,27 @@ extension StaticTableItemCell: TableCellConfigProtocol {
         self.willAppear()
         //        logDebug("\(item)将要显示")
     }
-    public func didDisappear(in cell: UITableViewCell) {
+    func didDisappear(in cell: UITableViewCell) {
         guard let cell = cell as? SNTableViewCell else {
             return
         }
         self.didDisappear()
         cell.contentItem = nil
     }
-    public func createCell(isTemp: Bool) -> TableItemCell {
+    func createCell(isTemp: Bool) -> TableItemCell {
         return self
     }
-    public func recycleCell(_ cell: TableItemCell) {}
-    public func getCell() -> TableItemCell? {
+    func recycleCell(_ cell: TableItemCell) {
+    }
+    func getCell() -> TableItemCell? {
         return self
     }
 }
 extension StaticTableItemCell: TableCellHeightProtocol {
-    public var indexPath: IndexPath? {
-        return _indexPath
-    }
-    func setNewIndexPath(_ newValue: IndexPath) {
-        _indexPath = newValue
-    }
     public func updateHeight(_ closure: (() -> Void)? = nil) {
         self.updateHeight(self, closure)
+    }
+    public func setNeedResetCellHeight() {
+        _setNeedResetCellHeight()
     }
 }

@@ -28,7 +28,7 @@ extension TableItemCell {
             let height: CGFloat = self.height
             if abs(height - oldHeight) > 2 && height > 0 {
                 logDebug("updateHeight -> \(oldHeight) to \(height)")
-                item.setNeedResetCellHeight()
+                item._setNeedResetCellHeight()
             }
         }
         guard item.cellHeightLayoutType == .resetLayout else {

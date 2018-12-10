@@ -35,7 +35,7 @@ extension TableCellHeightProtocol {
         }
     }
 
-    func setNeedResetCellHeight() {
+    func _setNeedResetCellHeight() {
         self.changeTempCellHeight(-1)
     }
 }
