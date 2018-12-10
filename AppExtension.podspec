@@ -54,7 +54,6 @@ Pod::Spec.new do |s|
     end
     #子模块
     s.subspec "UIComponents" do |ss|
-        s.xcconfig = { 'OTHER_SWIFT_FLAGS' => '"-D" "HasRx"' }
         ss.source_files  = "Sources/UIComponents/**/*.{swift}"
 
         ss.dependency "SnapKit"
@@ -65,12 +64,14 @@ Pod::Spec.new do |s|
         ss.dependency "RxSwift"
         ss.dependency "RxCocoa"
     end
+    ##组件
     s.subspec "EmptyDataSet" do |ss|
-        ss.source_files  = "Sources/Animater/**/*.{swift}"
+        ss.source_files  = "Sources/EmptyDataSet/**/*.{swift}"
         
         ss.dependency "AppExtension/UIComponents"
         ss.dependency "AppExtension/Third"
     end
+
     s.subspec "List" do |ss|
         ss.source_files  = "Sources/List/**/*.{swift}"
 
@@ -110,6 +111,8 @@ Pod::Spec.new do |s|
     end
     #项目集成
     s.subspec "Default" do |ss|
+        ss.xcconfig = { 'OTHER_SWIFT_FLAGS' => '"-D" "HasRx"' }
+        
         ss.dependency "AppExtension/ProjectBasic"
 
         ss.dependency "AppExtension/Animater"

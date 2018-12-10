@@ -58,7 +58,7 @@ open class InteractionController: UIPercentDrivenInteractiveTransition {
 }
 extension InteractionController {
     fileprivate func prepareGestureRecognizer(in viewCon: UIViewController) {
-        let panGesture = viewCon.view.panGesture
+        let panGesture = viewCon.view._panGesture
         panGesture.removeTarget(self, action: #selector(handleGesture(_: )))
         panGesture.addTarget(self, action: #selector(handleGesture(_: )))
     }
@@ -98,7 +98,7 @@ extension InteractionController {
 }
 private var jd_panKey: UInt8 = 0
 extension UIView {
-    var panGesture: UIPanGestureRecognizer {
+    fileprivate var _panGesture: UIPanGestureRecognizer {
         return associatedObject(&jd_panKey, createIfNeed: {() -> UIPanGestureRecognizer in
             let pan = UIPanGestureRecognizer()
             self.addGestureRecognizer(pan)
