@@ -19,9 +19,6 @@ Pod::Spec.new do |s|
     s.xcconfig = { 'OTHER_SWIFT_FLAGS' => '"-D" "AppExtensionPods"' }
     #基础 子模块
 
-    s.subspec "Codable" do |ss|
-        ss.source_files  = "Sources/Codable/**/*.{swift}"
-    end
 
     s.subspec "Core" do |ss|
         ss.source_files  = "Sources/Core/**/*.{swift}"
@@ -33,9 +30,15 @@ Pod::Spec.new do |s|
         ss.dependency "Validation"
         ss.dependency "ModalManager"
     end
-    
+
+    s.subspec "Codable" do |ss|
+        ss.source_files  = "Sources/Codable/**/*.{swift}"
+    end
     s.subspec "Animater" do |ss|
         ss.source_files  = "Sources/Animater/**/*.{swift}"
+    end
+    s.subspec "Async" do |ss|
+        ss.source_files  = "Sources/Async/**/*.{swift}"
     end
     
     s.subspec "Custom" do |ss|
