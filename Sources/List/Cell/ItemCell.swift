@@ -30,16 +30,16 @@ open class ItemCell: CustomView, DataSourceItemtype & SelectedStateDesignable & 
         return lhs.isEqual(rhs)
     }
     // MARK: NeedUpdateProtocol
-    private var needUpdateTag: Int = 0
+    private var needUpdateSentinel: Sentinel = Sentinel()
     open func setNeedUpdate() {
-        self.needUpdateTag += 1
+        self.needUpdateSentinel.increase()
     }
     // MARK: Differentiable
     open func isContentEqual(to source: ItemCell) -> Bool {
         return self.identity == source.identity
     }
     private var identity: String {
-        return "\(self.hashValue)\(self.needUpdateTag)"
+        return "\(self.hashValue)\(self.needUpdateSentinel.value)"
     }
 
     // MARK: selectedAccessoryType

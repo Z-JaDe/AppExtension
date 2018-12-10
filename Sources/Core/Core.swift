@@ -8,6 +8,7 @@
 
 import Foundation
 
+@_exported import Async
 @_exported import Validation
 @_exported import Encryption
 @_exported import FunctionalSwift

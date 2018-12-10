@@ -26,6 +26,7 @@ Pod::Spec.new do |s|
     s.subspec "Core" do |ss|
         ss.source_files  = "Sources/Core/**/*.{swift}"
 
+        ss.dependency "Async"
         ss.dependency "CocoaExtension"
         ss.dependency "Encryption"
         ss.dependency "FunctionalSwift"
@@ -40,7 +41,7 @@ Pod::Spec.new do |s|
     s.subspec "Custom" do |ss|
         ss.source_files  = "Sources/Custom/**/*.{swift,h,m}"
         ss.resource = "Sources/Custom/**/*.{bundle}"
-        ss.public_header_files = "Sources/Custom/Details/WeakProxy/WeakProxy.h", "Sources/Custom/Details/SAMKeychain/SAMKeychain.h", "Sources/Custom/Details/SAMKeychain/SAMKeychainQuery.h", "Sources/Custom/Details/Alert/HUD/MBProgressHUD/MBProgressHUD.h"
+        ss.public_header_files = "Sources/Custom/Details/SAMKeychain/SAMKeychain.h", "Sources/Custom/Details/SAMKeychain/SAMKeychainQuery.h", "Sources/Custom/Details/Alert/HUD/MBProgressHUD/MBProgressHUD.h"
 
         ss.dependency "AppExtension/Core"
         ss.dependency "AppExtension/Codable"

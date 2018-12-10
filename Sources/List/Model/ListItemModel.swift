@@ -28,13 +28,13 @@ open class ListItemModel: Model, AdapterItemType & CanSelectedStateDesignable & 
         return self.identity == source.identity
     }
     private var identity: String {
-        return "\(self.hashValue)\(self.needUpdateTag)"
+        return "\(self.hashValue)\(self.needUpdateSentinel.value)"
     }
     public var isHidden: Bool = false
     // MARK: -
-    private var needUpdateTag: Int = 0
+    private var needUpdateSentinel: Sentinel = Sentinel()
     public func setNeedUpdate() {
-        self.needUpdateTag += 1
+        self.needUpdateSentinel.increase()
     }
     // MARK: -
     public var isSelected: Bool = false

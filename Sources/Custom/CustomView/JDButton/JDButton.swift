@@ -8,10 +8,8 @@
 import UIKit
 import SnapKit
 extension UIControl.State: Hashable {
-    public var hashValue: Int {
-        var hasher = Hasher()
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(self.rawValue)
-        return hasher.finalize()
     }
 }
 open class JDButton: ImageLabelView {

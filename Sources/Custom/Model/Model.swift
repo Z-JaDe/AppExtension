@@ -14,10 +14,8 @@ open class Model: Hashable, InitProtocol, ClassNameDesignable {
 
     }
     // MARK: - Hashable
-    open var hashValue: Int {
-        var hasher = Hasher()
+    public func hash(into hasher: inout Hasher) {
         hasher.combine("\(Unmanaged.passUnretained(self).toOpaque())")
-        return hasher.finalize()
     }
     public static func == (lhs: Model, rhs: Model) -> Bool {
         return lhs.hashValue == rhs.hashValue
