@@ -13,5 +13,6 @@ import Foundation
  */
 
 #if !AppExtensionPods
-//@_exported import Core
+@_exported import Core
+@_exported import Codable
 #endif

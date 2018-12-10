@@ -18,18 +18,6 @@ Pod::Spec.new do |s|
 
     s.xcconfig = { 'OTHER_SWIFT_FLAGS' => '"-D" "AppExtensionPods"' }
 
-    s.subspec "Default" do |ss|
-        ss.dependency "AppExtension/ProjectBasic"
-        ss.dependency "AppExtension/Codable"
-        ss.dependency "AppExtension/Core"
-        ss.dependency "AppExtension/Animater"
-        ss.dependency "AppExtension/UIComponents"
-        ss.dependency "AppExtension/Third"
-        ss.dependency "AppExtension/List"
-        ss.dependency "AppExtension/RouterManager"
-        ss.dependency "AppExtension/AnimatedTransition"
-        ss.dependency "AppExtension/UserNotificationManager"
-    end
     #基础模块
     s.subspec "Async" do |ss|
         ss.source_files  = "Sources/Async/**/*.{swift}"
@@ -51,12 +39,6 @@ Pod::Spec.new do |s|
     s.subspec "Animater" do |ss|
         ss.source_files  = "Sources/Animater/**/*.{swift}"
     end
-    s.subspec "Custom" do |ss|
-        ss.source_files  = "Sources/Custom/**/*.{swift,h,m}"
-        ss.resource = "Sources/Custom/**/*.{bundle}"
-        ss.public_header_files = "Sources/Custom/Details/SAMKeychain/SAMKeychain.h", "Sources/Custom/Details/SAMKeychain/SAMKeychainQuery.h", "Sources/Custom/Details/Alert/HUD/MBProgressHUD/MBProgressHUD.h"
-    end
-
     s.subspec "Third" do |ss|
         ss.source_files  = "Sources/Third/**/*.{swift}"
         ss.resource = "Sources/Third/**/*.{bundle}"
@@ -110,6 +92,27 @@ Pod::Spec.new do |s|
         ss.source_files  = "Sources/AnimatedTransition/**/*.{swift}"
 
         ss.dependency "AppExtension/Animater"
+    end
+    #项目基础
+    s.subspec "ProjectBasic" do |ss|
+        ss.source_files  = "Sources/ProjectBasic/**/*.{swift,h,m}"
+        ss.resource = "Sources/ProjectBasic/**/*.{bundle}"
+        ss.public_header_files = "Sources/ProjectBasic/Details/SAMKeychain/SAMKeychain.h", "Sources/ProjectBasic/Details/SAMKeychain/SAMKeychainQuery.h", "Sources/ProjectBasic/Details/Alert/HUD/MBProgressHUD/MBProgressHUD.h"
+
+        ss.dependency "AppExtension/Codable"
+        ss.dependency "AppExtension/Core"
+    end
+    #项目集成
+    s.subspec "Default" do |ss|
+        ss.dependency "AppExtension/ProjectBasic"
+
+        ss.dependency "AppExtension/Animater"
+        ss.dependency "AppExtension/UIComponents"
+        ss.dependency "AppExtension/Third"
+        ss.dependency "AppExtension/List"
+        ss.dependency "AppExtension/RouterManager"
+        ss.dependency "AppExtension/AnimatedTransition"
+        ss.dependency "AppExtension/UserNotificationManager"
     end
 
 end

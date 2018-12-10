@@ -203,10 +203,10 @@
 		C9283C0221BE9D5400361B87 /* EmptyDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283BFC21BE9C4700361B87 /* EmptyDataSet.swift */; };
 		C92EF1352135394800F95C71 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EF1332135393200F95C71 /* QRCode.swift */; };
 		C930DAB920D3E3ED002D87D1 /* Text.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C930DAB820D3E3ED002D87D1 /* Text.storyboard */; };
-		C932F75B2100593E00B8DF84 /* Custom.h in Headers */ = {isa = PBXBuildFile; fileRef = C932F7592100593E00B8DF84 /* Custom.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C932F75B2100593E00B8DF84 /* ProjectBasic.h in Headers */ = {isa = PBXBuildFile; fileRef = C932F7592100593E00B8DF84 /* ProjectBasic.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C932F75E2100593E00B8DF84 /* ProjectBasic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C932F7572100593E00B8DF84 /* ProjectBasic.framework */; };
 		C932F75F2100593E00B8DF84 /* ProjectBasic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C932F7572100593E00B8DF84 /* ProjectBasic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C932F7A821005A9F00B8DF84 /* Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F763210059CC00B8DF84 /* Custom.swift */; };
+		C932F7A821005A9F00B8DF84 /* ProjectBasic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F763210059CC00B8DF84 /* ProjectBasic.swift */; };
 		C932F822210069AD00B8DF84 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F7F6210069AC00B8DF84 /* Alert.swift */; };
 		C932F823210069AD00B8DF84 /* JDProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F7F8210069AC00B8DF84 /* JDProgressHUD.swift */; };
 		C932F824210069AD00B8DF84 /* MessageHUDProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F7F9210069AC00B8DF84 /* MessageHUDProtocol.swift */; };
@@ -753,9 +753,9 @@
 		C92EF1332135393200F95C71 /* QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		C930DAB820D3E3ED002D87D1 /* Text.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Text.storyboard; sourceTree = "<group>"; };
 		C932F7572100593E00B8DF84 /* ProjectBasic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProjectBasic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C932F7592100593E00B8DF84 /* Custom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Custom.h; sourceTree = "<group>"; };
+		C932F7592100593E00B8DF84 /* ProjectBasic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectBasic.h; sourceTree = "<group>"; };
 		C932F75A2100593E00B8DF84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C932F763210059CC00B8DF84 /* Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom.swift; sourceTree = "<group>"; };
+		C932F763210059CC00B8DF84 /* ProjectBasic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectBasic.swift; sourceTree = "<group>"; };
 		C932F7EC210069AC00B8DF84 /* BufferPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferPool.swift; sourceTree = "<group>"; };
 		C932F7F6210069AC00B8DF84 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C932F7F8210069AC00B8DF84 /* JDProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDProgressHUD.swift; sourceTree = "<group>"; };
@@ -1677,8 +1677,8 @@
 				C932F86F21006DC500B8DF84 /* Model */,
 				C932F85621006DC500B8DF84 /* Protocol */,
 				C932F7EA210069AC00B8DF84 /* Details */,
-				C932F7592100593E00B8DF84 /* Custom.h */,
-				C932F763210059CC00B8DF84 /* Custom.swift */,
+				C932F7592100593E00B8DF84 /* ProjectBasic.h */,
+				C932F763210059CC00B8DF84 /* ProjectBasic.swift */,
 				C932F75A2100593E00B8DF84 /* Info.plist */,
 			);
 			path = ProjectBasic;
@@ -2440,7 +2440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C932F836210069AD00B8DF84 /* SAMKeychain.h in Headers */,
-				C932F75B2100593E00B8DF84 /* Custom.h in Headers */,
+				C932F75B2100593E00B8DF84 /* ProjectBasic.h in Headers */,
 				C932F838210069AD00B8DF84 /* SAMKeychainQuery.h in Headers */,
 				C932F827210069AD00B8DF84 /* MBProgressHUD.h in Headers */,
 			);
@@ -3555,7 +3555,7 @@
 				C932F834210069AD00B8DF84 /* SwiftyUserDefaults.swift in Sources */,
 				C932F8F521006DC500B8DF84 /* EntityManager.swift in Sources */,
 				C932F823210069AD00B8DF84 /* JDProgressHUD.swift in Sources */,
-				C932F7A821005A9F00B8DF84 /* Custom.swift in Sources */,
+				C932F7A821005A9F00B8DF84 /* ProjectBasic.swift in Sources */,
 				C932F824210069AD00B8DF84 /* MessageHUDProtocol.swift in Sources */,
 				C932F82D210069AD00B8DF84 /* ImageData.swift in Sources */,
 			);
