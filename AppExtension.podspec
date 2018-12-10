@@ -65,6 +65,12 @@ Pod::Spec.new do |s|
         ss.dependency "RxSwift"
         ss.dependency "RxCocoa"
     end
+    s.subspec "EmptyDataSet" do |ss|
+        ss.source_files  = "Sources/Animater/**/*.{swift}"
+        
+        ss.dependency "AppExtension/UIComponents"
+        ss.dependency "AppExtension/Third"
+    end
     s.subspec "List" do |ss|
         ss.source_files  = "Sources/List/**/*.{swift}"
 
