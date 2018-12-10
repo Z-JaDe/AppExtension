@@ -15,10 +15,22 @@ abstract_target 'BaseCore' do
     
     target:'Core' do
     end
-    target:'Custom' do
+    target:'ProjectBasic' do
+    end
+    target:'AnimatedTransition' do
+    end
+    target:'UserNotificationManager' do
+        pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
+    end
+    target:'RouterManager' do
     end
     target:'UIComponents' do
         pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
+    end
+    target:'EmptyDataSet' do
+        pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
+        pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
+        pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift'
     end
 
     abstract_target 'CommonPods' do
@@ -37,15 +49,11 @@ abstract_target 'BaseCore' do
 
         pod 'SwiftLint'
 
+
         target:'Third' do
         end
-        target:'AnimatedTransition' do
-        end
-        target:'UserNotificationManager' do
-        end
-        target:'RouterManager' do
-        end
         target:'List' do
+            pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
             pod 'DifferenceKit'
             pod 'MJRefresh', :git => 'https://github.com/CoderMJLee/MJRefresh'
         end

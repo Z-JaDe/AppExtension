@@ -120,7 +120,7 @@ public class RouterManager {
     // MARK: -
     /// ZJaDe: 解析routeUrl
     public func parse(_ routeUrl: RouteUrlType) -> UIViewController? {
-        jd.endEditing()
+        endEditing()
         guard let viewController = routeUrl.createViewCon(self) else {
             logError("跳转失败\(routeUrl)")
             return nil
@@ -128,11 +128,15 @@ public class RouterManager {
         return viewController
     }
     public func parse(_ routeUrls: [RouteUrlType]) -> [UIViewController]? {
-        jd.endEditing()
+        endEditing()
         guard let viewControllers = routeUrls.map({$0.createViewCon(self)}) as? [UIViewController] else {
             logError("跳转失败\(routeUrls)")
             return nil
         }
         return viewControllers
+    }
+
+    private func endEditing() {
+        UIApplication.shared.keyWindow?.endEditing(true)
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import Custom
+import UIComponents
 class SegmentScrollViewViewControllerTest: UIViewController {
     
     override func viewDidLoad() {

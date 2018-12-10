@@ -62,6 +62,7 @@ extension InteractionController {
         panGesture.removeTarget(self, action: #selector(handleGesture(_: )))
         panGesture.addTarget(self, action: #selector(handleGesture(_: )))
     }
+
     @objc func handleGesture(_ gesture: UIPanGestureRecognizer) {
         let view: UIView = gesture.view!.superview!
         switch gesture.state {
@@ -93,5 +94,15 @@ extension InteractionController {
         percentValue *= sensitivityValue
         percentValue = min(percentValue, 0.99)
         percentValue = max(percentValue, 0.01)
+    }
+}
+private var jd_panKey: UInt8 = 0
+extension UIView {
+    var panGesture: UIPanGestureRecognizer {
+        return associatedObject(&jd_panKey, createIfNeed: {() -> UIPanGestureRecognizer in
+            let pan = UIPanGestureRecognizer()
+            self.addGestureRecognizer(pan)
+            return pan
+        }())
     }
 }

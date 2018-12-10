@@ -32,7 +32,6 @@ open class NavInteractionController: InteractionController {
         }
         let translation = gesture.translation(in: view)
         percentValue = translation.x / 200
-        print(percentValue)
         let velocity = gesture.velocity(in: view)
         if velocity.x < 0 && self.popOnRightToLeft {
             self.shouldCompleteTransition = true

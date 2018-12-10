@@ -6,7 +6,7 @@
 //  Copyright © 2018年 ZJaDe. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public typealias CallBackNoParams = () -> Void
 public typealias CallBack<Params> = (Params) -> Void

@@ -13,7 +13,5 @@ import Foundation
  */
 
 #if !AppExtensionPods
-@_exported import Core
-@_exported import Animater
-@_exported import Custom
+//@_exported import Core
 #endif

@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import Custom
 import Third
+import UIComponents
 
 @UIApplicationMain
 

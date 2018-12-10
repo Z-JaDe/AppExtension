@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Custom
+import UIComponents
 class StackViewControllerTest: UIViewController {
 
     @IBOutlet weak var stackView: UIStackView!

@@ -10,12 +10,18 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+#if HasRx
+typealias MultipleSelection = RxMultipleSelectionProtocol
+#else
+typealias MultipleSelection = MultipleSelectionProtocol
+#endif
+
 open class ListAdapter<DataSourceType: SectionedDataSourceType>:
     ListAdapterType,
     EnabledStateDesignable,
     ListDataUpdateProtocol,
     DisposeBagProtocol,
-    RxMultipleSelectionProtocol
+    MultipleSelection
 where DataSourceType.S.Item: AdapterItemType, DataSourceType.S.Section: AdapterSectionType {
     public typealias DataSource = DataSourceType
     public typealias Section = DataSource.S.Section
@@ -37,7 +43,9 @@ where DataSourceType.S.Item: AdapterItemType, DataSourceType.S.Section: AdapterS
     // MARK: - MultipleSelectionProtocol
     public typealias SelectItemType = Item
     public var selectedItemArray: [SelectItemType] = []
+    #if HasRx
     public let selectedItemArraySubject: PublishSubject<SelectedItemArrayType> = PublishSubject()
+    #endif
     public var maxSelectedCount: UInt? = 0
     public var checkCanSelectedClosure: ((SelectItemType, @escaping (Bool) -> Void) -> Void)?
     public func changeSelectState(_ isSelected: Bool, _ item: SelectItemType) {

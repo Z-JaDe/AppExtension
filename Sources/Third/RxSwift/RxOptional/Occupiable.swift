@@ -6,7 +6,9 @@
 //  Copyright © 2017年 Z_JaDe. All rights reserved.
 //
 import RxOptional
-
+#if !AppExtensionPods
+@_exported import Custom
+#endif
 extension ImageData: Occupiable {
     public var isEmpty: Bool {
         return self.image == nil && self.urlData == nil

@@ -74,10 +74,10 @@ extension UIViewControllerContextTransitioning {
         }
     }
     func addTempFromView() -> UIView {
-        return UIImageView(image: fromView.toImage()).then { (view) in
-            view.frame = initialFrame(for: fromVC)
-            containerView.addSubview(view)
-        }
+        let view = UIImageView(image: fromView.toImage())
+        view.frame = initialFrame(for: fromVC)
+        containerView.addSubview(view)
+        return view
     }
     func setInitial(_ tempFromView: UIView, isReverse: Bool) {
         fromView.isHidden = true
@@ -98,5 +98,14 @@ extension UIViewControllerContextTransitioning {
             fromView.removeFromSuperview()
         }
         completeTransition(!isCancelled)
+    }
+}
+extension UIView {
+    func toImage() -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.isOpaque, self.layer.contentsScale)
+        drawHierarchy(in: bounds, afterScreenUpdates: false)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return image
     }
 }

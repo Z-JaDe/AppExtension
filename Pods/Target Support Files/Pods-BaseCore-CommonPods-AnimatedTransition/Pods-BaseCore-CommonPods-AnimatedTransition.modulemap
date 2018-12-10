@@ -1,6 +1,0 @@
-framework module Pods_BaseCore_CommonPods_AnimatedTransition {
-  umbrella header "Pods-BaseCore-CommonPods-AnimatedTransition-umbrella.h"
-
-  export *
-  module * { export * }
-}

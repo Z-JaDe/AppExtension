@@ -9,6 +9,5 @@
 import Foundation
 
 #if !AppExtensionPods
-@_exported import Custom
 @_exported import Animater
 #endif
