@@ -18,17 +18,15 @@ open class CycleView<ItemView, ItemData>: MultipleItemsView<ItemView, ItemData, 
         }
     }
     public let pageControl = SnakePageControl()
-    /// ZJaDe: 需要加载数据之前提前设置好
+    /// ZJaDe: 下面属性需要加载数据之前提前设置好
     public var cacheAppearCellCount: Int = 1
-    /// ZJaDe: 需要加载数据之前提前设置好
+    /// ZJaDe: 下面属性需要加载数据之前提前设置好
     public var cacheDisappearCellCount: Int = 1
     // MARK: - 自动滚动
     private lazy var timer: SwiftTimer = SwiftTimer.repeaticTimer(interval: .seconds(5)) {[weak self] (_) in
         guard let `self` = self else { return }
         guard self.dataArray.count > 1 else { return }
-        if self.scrollView.isDragging {
-            return
-        }
+        if self.scrollView.isDragging { return }
         self.scrollNextIndex()
     }
     public func timerStart() {
@@ -105,8 +103,7 @@ open class CycleView<ItemView, ItemData>: MultipleItemsView<ItemView, ItemData, 
     /// ZJaDe: 创建cell
     internal override func createCell() -> CellType {
         if self.scrollView.cacheCells.count > 0 {
-            let cell = self.scrollView.cacheCells.removeFirst()
-            return cell
+            return self.scrollView.cacheCells.removeFirst()
         } else {
             return super.createCell()
         }
@@ -185,4 +182,7 @@ extension CycleView {
             self.scrollView.scrollTo(offSet: scrollViewOffSet + offSet, animated: false)
         }
     }
+}
+extension CycleView: UIAccessibilityContainerDataTableCell {
+
 }
