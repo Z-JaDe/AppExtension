@@ -10,7 +10,7 @@ import Foundation
 
 public protocol Updating: class {
     associatedtype Target
-    var target: Target { get }
+    var target: Target? { get }
     init(_ target: Target)
 
     var isInHierarchy: Bool { get }
@@ -30,6 +30,6 @@ public protocol Updating: class {
 }
 extension Updating where Target: UIView {
     public var isInHierarchy: Bool {
-        return target.window != nil
+        return target?.window != nil
     }
 }

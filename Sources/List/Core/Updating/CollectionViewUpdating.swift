@@ -9,8 +9,8 @@
 import UIKit
 
 open class CollectionViewUpdating: Updating {
-    public unowned let collectionView: UICollectionView
-    public var target: UICollectionView {
+    public weak var collectionView: UICollectionView?
+    public var target: UICollectionView? {
         return collectionView
     }
     required public init(_ target: UICollectionView) {
@@ -18,6 +18,7 @@ open class CollectionViewUpdating: Updating {
     }
     // MARK: -
     open func performBatch(animated: Bool, updates: @escaping () -> Void, completion: @escaping (Bool) -> Void) {
+        guard let collectionView = collectionView else { return }
         if animated {
             collectionView.performBatchUpdates(updates, completion: completion)
         } else {
@@ -33,35 +34,35 @@ open class CollectionViewUpdating: Updating {
     }
     // MARK: -
     open func insertItems(at indexPaths: [IndexPath]) {
-        collectionView.insertItems(at: indexPaths)
+        collectionView?.insertItems(at: indexPaths)
     }
     open func deleteItems(at indexPaths: [IndexPath]) {
-        collectionView.deleteItems(at: indexPaths)
+        collectionView?.deleteItems(at: indexPaths)
     }
     open func reloadItems(at indexPaths: [IndexPath]) {
-        collectionView.reloadItems(at: indexPaths)
+        collectionView?.reloadItems(at: indexPaths)
     }
     open func moveItem(at indexPath: IndexPath, to newIndexPath: IndexPath) {
-        collectionView.moveItem(at: indexPath, to: newIndexPath)
+        collectionView?.moveItem(at: indexPath, to: newIndexPath)
     }
     // MARK: -
     // MARK: -
     open func insertSections(_ sections: IndexSet) {
-        collectionView.insertSections(sections)
+        collectionView?.insertSections(sections)
     }
     open func deleteSections(_ sections: IndexSet) {
-        collectionView.deleteSections(sections)
+        collectionView?.deleteSections(sections)
     }
     open func reloadSections(_ sections: IndexSet) {
-        collectionView.reloadSections(sections)
+        collectionView?.reloadSections(sections)
     }
     open func moveSection(_ section: Int, toSection newSection: Int) {
-        collectionView.moveSection(section, toSection: newSection)
+        collectionView?.moveSection(section, toSection: newSection)
     }
     // MARK: -
     open func reload(completion: @escaping () -> Void) {
-        collectionView.reloadData()
-        collectionView.collectionViewLayout.invalidateLayout()
+        collectionView?.reloadData()
+        collectionView?.collectionViewLayout.invalidateLayout()
         completion()
     }
 }

@@ -9,8 +9,8 @@
 import UIKit
 
 open class TableViewUpdating: Updating {
-    public unowned let tableView: UITableView
-    public var target: UITableView {
+    public weak var tableView: UITableView?
+    public var target: UITableView? {
         return tableView
     }
     required public init(_ target: UITableView) {
@@ -30,6 +30,7 @@ open class TableViewUpdating: Updating {
         }
     }
     private func _performBatchUpdates(_ updates: () -> Void, completion: @escaping (Bool) -> Void) {
+        guard let tableView = tableView else { return }
         if #available(iOS 11.0, tvOS 11.0, *) {
             tableView.performBatchUpdates(updates, completion: completion)
         } else {
@@ -41,33 +42,33 @@ open class TableViewUpdating: Updating {
     }
     // MARK: -
     open func insertItems(at indexPaths: [IndexPath]) {
-        tableView.insertRows(at: indexPaths, with: .automatic)
+        tableView?.insertRows(at: indexPaths, with: .automatic)
     }
     open func deleteItems(at indexPaths: [IndexPath]) {
-        tableView.deleteRows(at: indexPaths, with: .automatic)
+        tableView?.deleteRows(at: indexPaths, with: .automatic)
     }
     open func reloadItems(at indexPaths: [IndexPath]) {
-        tableView.reloadRows(at: indexPaths, with: .automatic)
+        tableView?.reloadRows(at: indexPaths, with: .automatic)
     }
     open func moveItem(at indexPath: IndexPath, to newIndexPath: IndexPath) {
-        tableView.moveRow(at: indexPath, to: newIndexPath)
+        tableView?.moveRow(at: indexPath, to: newIndexPath)
     }
     // MARK: -
     open func insertSections(_ sections: IndexSet) {
-        tableView.insertSections(sections, with: .automatic)
+        tableView?.insertSections(sections, with: .automatic)
     }
     open func deleteSections(_ sections: IndexSet) {
-        tableView.deleteSections(sections, with: .automatic)
+        tableView?.deleteSections(sections, with: .automatic)
     }
     open func reloadSections(_ sections: IndexSet) {
-        tableView.reloadSections(sections, with: .automatic)
+        tableView?.reloadSections(sections, with: .automatic)
     }
     open func moveSection(_ section: Int, toSection newSection: Int) {
-        tableView.moveSection(section, toSection: newSection)
+        tableView?.moveSection(section, toSection: newSection)
     }
     // MARK: -
     open func reload(completion: @escaping () -> Void) {
-        tableView.reloadData()
+        tableView?.reloadData()
         completion()
     }
 }
