@@ -18,17 +18,18 @@ open class PageScrollViewController: UIViewController, SingleCycleFormProtocol, 
     public lazy private(set) var scrollView: PageScrollView<UIView> = PageScrollView<UIView>()
     public var viewConArr: [UIViewController] = [] {
         didSet {
-            if oldValue != self.viewConArr {
-                oldValue.forEach { (viewCon) in
-                    self.removeAsChildViewController(viewCon)
-                }
-                self.scrollView.cleanCells()
-                viewConArr.forEach { (viewCon) in
-                    self.addChild(viewCon)
-                }
-                checkCells(true)
-                whenCurrentIndexChanged(self.currentIndex, self.currentIndex)
+            guard oldValue != self.viewConArr else {
+                return
             }
+            oldValue.forEach { (viewCon) in
+                self.removeAsChildViewController(viewCon)
+            }
+            self.scrollView.cleanCells()
+            viewConArr.forEach { (viewCon) in
+                self.addChild(viewCon)
+            }
+            checkCells(true)
+            whenCurrentIndexChanged(self.currentIndex, self.currentIndex)
 
         }
     }

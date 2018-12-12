@@ -117,6 +117,7 @@ Pod::Spec.new do |s|
         ss.dependency "AppExtension/ProjectBasic/List"
 
         ss.dependency "AppExtension/UIComponents/ScrollExtensions"
+        ss.dependency "AppExtension/UIComponents/CollectionKitExtensions"
 
         ss.dependency "AppExtension/RouterManager"
         ss.dependency "AppExtension/AnimatedTransition"
