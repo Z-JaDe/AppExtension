@@ -99,10 +99,13 @@ extension InteractionController {
 private var jd_panKey: UInt8 = 0
 extension UIView {
     fileprivate var _panGesture: UIPanGestureRecognizer {
-        return associatedObject(&jd_panKey, createIfNeed: {() -> UIPanGestureRecognizer in
+        if let pan = objc_getAssociatedObject(self, &jd_panKey) as? UIPanGestureRecognizer {
+            return pan
+        } else {
             let pan = UIPanGestureRecognizer()
             self.addGestureRecognizer(pan)
+            objc_setAssociatedObject(self, &jd_panKey, pan, .OBJC_ASSOCIATION_RETAIN)
             return pan
-        }())
+        }
     }
 }

@@ -9,7 +9,6 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import Result
 /// ZJaDe: 如果value是延时获取的，可能需要用到这个task。如果value是通过网络请求的，可以实现requestClosure
 public class LazyGetDataTask<Value: Equatable>: DisposeBagProtocol {
     public init() {}
@@ -26,9 +25,16 @@ public class LazyGetDataTask<Value: Equatable>: DisposeBagProtocol {
             }
         }
     }
+    enum Result<Value> {
+        case success(Value)
+        case failure(Error)
+        init(value: Value) {
+            self = .success(value)
+        }
+    }
     private let valueSubject: PublishSubject<()> = PublishSubject()
     /// ZJaDe: value负责记录，同时控制信号发送
-    var result: Result<Value?, AnyError> = Result(value: nil) {
+    var result: Result<Value?> = Result(value: nil) {
         didSet {
             switch result {
             case .success(let value):
@@ -77,7 +83,7 @@ public class LazyGetDataTask<Value: Equatable>: DisposeBagProtocol {
                 case .failure(let error):
                     switch whenError {
                     case .complete: return .empty()
-                    case .error: throw error.error
+                    case .error: throw error
                     case .never: return .never()
                     }
                 case .success(let value):
@@ -90,7 +96,7 @@ public class LazyGetDataTask<Value: Equatable>: DisposeBagProtocol {
             }).do(onSubscribed: { [weak self] in
                 guard let `self` = self else { return }
                 if let value = self.value {
-                    Async.main {
+                    DispatchQueue.main.async {
                         self.result = .success(value)
                     }
                 } else {
@@ -112,7 +118,7 @@ public class LazyGetDataTask<Value: Equatable>: DisposeBagProtocol {
                     self.result = .success(value)
                     self.requestState = .noRequest
                 case .error(let error):
-                    self.result = .failure(AnyError(error))
+                    self.result = .failure(error)
                     self.requestState = .noRequest
                 case .completed:
                     break

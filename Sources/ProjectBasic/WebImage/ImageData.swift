@@ -9,11 +9,7 @@
 import Foundation
 #if canImport(RxOptional)
 import RxOptional
-extension ImageData: Occupiable {
-    public var isEmpty: Bool {
-        return self.image == nil && self.urlData == nil
-    }
-}
+extension ImageData: Occupiable {}
 #endif
 public enum ImageData: Codable {
     case image(UIImage?)
@@ -34,6 +30,9 @@ public enum ImageData: Codable {
         case .image(let image):
             return image
         }
+    }
+    public var isEmpty: Bool {
+        return self.image == nil && self.urlData == nil
     }
     // MARK: - Codable
     public func encode(to encoder: Encoder) throws {
@@ -62,4 +61,18 @@ extension ImageData: ExpressibleByStringLiteral {
     public init(stringLiteral value: String) {
         self = .url(value)
     }
+}
+extension ImageData {
+    public static var userDefault: UIImage = {
+        return UIImage(named: "ic_default_userImg") ?? ImageData.default
+    }()
+    public static var userFailure: UIImage = {
+        return UIImage(named: "ic_default_userImg") ?? ImageData.failure
+    }()
+    public static var failure: UIImage = {
+        return UIImage(named: "ic_default_image_failure") ?? ImageData.default
+    }()
+    public static var `default`: UIImage = {
+        return UIImage(named: "ic_default_image")!
+    }()
 }

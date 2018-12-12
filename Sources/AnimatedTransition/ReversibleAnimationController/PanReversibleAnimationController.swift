@@ -7,9 +7,7 @@
 //
 
 import UIKit
-// TODO: 待优化
 open class PanReversibleAnimationController: ReversibleAnimationController {
-    // MARK: -
     open override func canUse() -> Bool {
         return true
     }
@@ -34,6 +32,7 @@ open class PanReversibleAnimationController: ReversibleAnimationController {
         self.transitionState = .进行中
         transitionContext.setInitial(tempFromView, isReverse: self.reverse)
         let duration = self.transitionDuration(using: transitionContext)
+
         let animater = Animater().duration(duration).animations {
             transitionContext.setFinal(tempFromView, isReverse: self.reverse)
         }.completion({ (_) in

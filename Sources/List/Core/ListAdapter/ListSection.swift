@@ -9,8 +9,19 @@
 import UIKit
 import RxSwift
 
-open class ListSection: Model, AdapterSectionType {
+open class ListSection: Hashable,
+    ClassNameDesignable,
+    AdapterSectionType {
+    public required init() {}
 
     // MARK: - HiddenStateDesignable
     open var isHidden: Bool = false
+}
+extension ListSection {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine("\(Unmanaged.passUnretained(self).toOpaque())")
+    }
+    public static func == (lhs: ListSection, rhs: ListSection) -> Bool {
+        return lhs.hashValue == rhs.hashValue
+    }
 }

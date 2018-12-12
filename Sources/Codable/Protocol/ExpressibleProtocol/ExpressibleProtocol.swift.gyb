@@ -11,7 +11,7 @@ expressible_type = {
 }
 }%
 // ZJaDe: gyb自动生成
-
+// swiftlint:disable colon
 public protocol ExpressibleValueProtocol:
     % for key in expressible_type: 
     ExpressibleBy${key.capitalize()}Literal,

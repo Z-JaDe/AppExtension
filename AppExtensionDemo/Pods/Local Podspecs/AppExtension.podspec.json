@@ -25,6 +25,27 @@
       "source_files": "Sources/Async/**/*.{swift}"
     },
     {
+      "name": "Codable",
+      "source_files": "Sources/Codable/**/*.{swift}"
+    },
+    {
+      "name": "Animater",
+      "source_files": "Sources/Animater/**/*.{swift}"
+    },
+    {
+      "name": "RouterManager",
+      "source_files": "Sources/RouterManager/**/*.{swift}"
+    },
+    {
+      "name": "AnimatedTransition",
+      "source_files": "Sources/AnimatedTransition/**/*.{swift}",
+      "dependencies": {
+        "AppExtension/Animater": [
+
+        ]
+      }
+    },
+    {
       "name": "Core",
       "source_files": "Sources/Core/**/*.{swift}",
       "dependencies": {
@@ -49,12 +70,40 @@
       }
     },
     {
-      "name": "Codable",
-      "source_files": "Sources/Codable/**/*.{swift}"
+      "name": "UserNotificationManager",
+      "source_files": "Sources/UserNotificationManager/**/*.{swift}",
+      "dependencies": {
+        "AppExtension/Core": [
+
+        ],
+        "RxSwift": [
+
+        ]
+      }
     },
     {
-      "name": "Animater",
-      "source_files": "Sources/Animater/**/*.{swift}"
+      "name": "RxExtensions",
+      "source_files": "Sources/RxExtensions/**/*.{swift}",
+      "dependencies": {
+        "AppExtension/Core": [
+
+        ],
+        "RxSwift": [
+
+        ],
+        "RxCocoa": [
+
+        ],
+        "RxGesture": [
+
+        ],
+        "RxSwiftExt": [
+
+        ],
+        "RxOptional": [
+
+        ]
+      }
     },
     {
       "name": "UIComponents",
@@ -78,127 +127,56 @@
         "RxCocoa": [
 
         ]
-      }
-    },
-    {
-      "name": "EmptyDataSet",
-      "source_files": "Sources/EmptyDataSet/**/*.{swift}",
-      "dependencies": {
-        "AppExtension/UIComponents": [
+      },
+      "subspecs": [
+        {
+          "name": "EmptyDataSet",
+          "source_files": "Sources/EmptyDataSet/**/*.{swift}",
+          "dependencies": {
+            "AppExtension/RxExtensions": [
 
-        ],
-        "AppExtension/Third": [
-
-        ]
-      }
-    },
-    {
-      "name": "UserNotificationManager",
-      "source_files": "Sources/UserNotificationManager/**/*.{swift}",
-      "dependencies": {
-        "AppExtension/Core": [
-
-        ],
-        "RxSwift": [
-
-        ]
-      }
-    },
-    {
-      "name": "RouterManager",
-      "source_files": "Sources/RouterManager/**/*.{swift}",
-      "dependencies": {
-        "AppExtension/Core": [
-
-        ]
-      }
-    },
-    {
-      "name": "AnimatedTransition",
-      "source_files": "Sources/AnimatedTransition/**/*.{swift}",
-      "dependencies": {
-        "AppExtension/Core": [
-
-        ],
-        "AppExtension/Animater": [
-
-        ]
-      }
-    },
-    {
-      "name": "Third",
-      "source_files": "Sources/Third/**/*.{swift}",
-      "dependencies": {
-        "AppExtension/Core": [
-
-        ],
-        "RxSwift": [
-
-        ],
-        "RxCocoa": [
-
-        ],
-        "RxGesture": [
-
-        ],
-        "RxSwiftExt": [
-
-        ],
-        "RxOptional": [
-
-        ],
-        "Rx+Kingfisher": [
-
-        ],
-        "Result": [
-
-        ]
-      }
+            ]
+          }
+        }
+      ]
     },
     {
       "name": "ProjectBasic",
-      "resources": "Sources/ProjectBasic/**/*.{bundle}",
-      "source_files": "Sources/ProjectBasic/**/*.{swift,h,m}",
-      "public_header_files": [
-        "Sources/ProjectBasic/Details/SAMKeychain/SAMKeychain.h",
-        "Sources/ProjectBasic/Details/SAMKeychain/SAMKeychainQuery.h",
-        "Sources/ProjectBasic/Details/Alert/HUD/MBProgressHUD/MBProgressHUD.h"
-      ],
+      "source_files": "Sources/ProjectBasic/**/*.{swift}",
       "dependencies": {
-        "AppExtension/Codable": [
-
-        ],
         "AppExtension/Core": [
 
-        ]
-      }
-    },
-    {
-      "name": "List",
-      "source_files": "Sources/List/**/*.{swift}",
-      "dependencies": {
-        "AppExtension/ProjectBasic": [
-
         ],
-        "AppExtension/Third": [
-
-        ],
-        "AppExtension/Animater": [
+        "AppExtension/Codable": [
 
         ],
         "AppExtension/UIComponents": [
 
         ],
-        "AppExtension/EmptyDataSet": [
-
-        ],
-        "DifferenceKit": [
-
-        ],
-        "MJRefresh": [
+        "AppExtension/RxExtensions": [
 
         ]
-      }
+      },
+      "subspecs": [
+        {
+          "name": "List",
+          "source_files": "Sources/List/**/*.{swift}",
+          "dependencies": {
+            "AppExtension/Animater": [
+
+            ],
+            "AppExtension/UIComponents/EmptyDataSet": [
+
+            ],
+            "DifferenceKit": [
+
+            ],
+            "MJRefresh": [
+
+            ]
+          }
+        }
+      ]
     },
     {
       "name": "Default",
@@ -206,16 +184,7 @@
         "AppExtension/ProjectBasic": [
 
         ],
-        "AppExtension/Animater": [
-
-        ],
-        "AppExtension/UIComponents": [
-
-        ],
-        "AppExtension/Third": [
-
-        ],
-        "AppExtension/List": [
+        "AppExtension/ProjectBasic/List": [
 
         ],
         "AppExtension/RouterManager": [

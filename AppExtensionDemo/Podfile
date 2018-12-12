@@ -25,7 +25,6 @@ target:'AppExtensionDemo' do
     pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
     pod 'Rx+Kingfisher', :path => '~/Desktop/wallet-ios/BaseSupport/RxKingfisher'
     pod 'Kingfisher'
-    pod 'Result'
 
     pod 'SwiftLint'
 

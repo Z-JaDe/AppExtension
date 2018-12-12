@@ -23,7 +23,7 @@ extension Kingfisher where Base: ChainCompatible,
     Base.ChainType: ViewChain<UIImageView> {
     func checkPlaceholder(_ chain: Base.ChainType) -> Kingfisher<Base.ChainType> {
         if chain.placeholder == nil {
-            return placeholder(AppDefaultImage.default)
+            return placeholder(ImageData.default)
         } else {
             return base.chain().kf
         }
@@ -70,7 +70,7 @@ extension Kingfisher where Base: ChainCompatible,
     Base.ChainType: ViewChain<UIButton> {
     func checkPlaceholder(_ chain: Base.ChainType) -> Kingfisher<Base.ChainType> {
         if chain.placeholder == nil {
-            return placeholder(AppDefaultImage.default)
+            return placeholder(ImageData.default)
         } else {
             return base.chain().kf
         }

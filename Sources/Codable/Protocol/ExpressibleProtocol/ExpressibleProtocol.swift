@@ -1,5 +1,5 @@
 // ZJaDe: gyb自动生成
-
+// swiftlint:disable colon
 public protocol ExpressibleValueProtocol:
     ExpressibleByBooleanLiteral,
     ExpressibleByIntegerLiteral,

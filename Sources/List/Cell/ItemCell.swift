@@ -24,6 +24,10 @@ public enum CellHighlightedAnimationType {
     case none
     case zoom
 }
+extension ItemCell {
+    public static var accessoryTypeSelectedImage: UIImage = UIImage(named: "ic_accessoryType_selected")!
+    public static var accessoryTypeUnSelectedImage: UIImage = UIImage(named: "ic_accessoryType_selected")!
+}
 open class ItemCell: CustomView, DataSourceItemtype & SelectedStateDesignable & HiddenStateDesignable & EnabledStateDesignable, HighlightedStateDesignable, NeedUpdateProtocol, BufferPoolItemProtocol {
 
     public static func == (lhs: ItemCell, rhs: ItemCell) -> Bool {
@@ -41,10 +45,9 @@ open class ItemCell: CustomView, DataSourceItemtype & SelectedStateDesignable & 
     private var identity: String {
         return "\(self.hashValue)\(self.needUpdateSentinel.value)"
     }
-
     // MARK: selectedAccessoryType
-    public lazy var selectedAccessoryTypeImageView: ImageView = ImageView(image: AppDefaultImage.accessoryTypeSelected)
-    public lazy var unselectedAccessoryTypeImageView: ImageView = ImageView(image: AppDefaultImage.accessoryTypeUnselected)
+    public lazy var selectedAccessoryTypeImageView: ImageView = ImageView(image: ItemCell.accessoryTypeSelectedImage)
+    public lazy var unselectedAccessoryTypeImageView: ImageView = ImageView(image: ItemCell.accessoryTypeUnSelectedImage)
     // MARK: selectedBackgroundView
     let selectedBackgroundView: ItemCellSelectedBackgroundView = ItemCellSelectedBackgroundView()
     // MARK: - StateProtocol

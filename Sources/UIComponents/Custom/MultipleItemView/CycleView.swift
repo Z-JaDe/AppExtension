@@ -183,6 +183,3 @@ extension CycleView {
         }
     }
 }
-extension CycleView: UIAccessibilityContainerDataTableCell {
-
-}

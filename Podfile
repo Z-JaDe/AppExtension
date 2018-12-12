@@ -48,11 +48,11 @@ abstract_target 'BaseCore' do
 
 
         target:'RxExtensions' do
-            pod 'Result'
         end
         target:'ProjectBasic' do
             pod 'Rx+Kingfisher', :path => '~/Desktop/wallet-ios/BaseSupport/RxKingfisher'
-            pod 'Kingfisher'
+            pod 'MBProgressHUD'
+            pod 'SwiftyUserDefaults'
         end
         target:'List' do
             pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
