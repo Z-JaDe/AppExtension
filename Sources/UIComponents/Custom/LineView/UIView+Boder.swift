@@ -53,7 +53,6 @@ extension UIView {
         self.addBorderRight(isDottedLine: true)
     }
     // MARK: -
-// TODO: 优化
     /// ZJaDe: fixedLength 不为空时，padding无效
     private func addBorder(boderWidth: CGFloat, direction: BoderDirection, color: UIColor, padding: CGFloat, fixedLength: CGFloat?, edgeType: ExcludePoint, isDottedLine: Bool) -> LineView? {
         var border: LineView! = {

@@ -17,6 +17,4 @@ extension InitProtocol {
         return self.init()
     }
 }
-extension String: InitProtocol {
-
-}
+extension String: InitProtocol {}

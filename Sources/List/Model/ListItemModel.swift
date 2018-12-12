@@ -8,7 +8,11 @@
 
 import UIKit
 
-open class ListItemModel: Model, AdapterItemType & CanSelectedStateDesignable & HiddenStateDesignable & EnabledStateDesignable, NeedUpdateProtocol {
+open class ListItemModel: Hashable,
+    ClassNameDesignable,
+    AdapterItemType & CanSelectedStateDesignable & HiddenStateDesignable & EnabledStateDesignable,
+    NeedUpdateProtocol {
+    public required init() {}
     var hasLoad: Bool = false
     // MARK: - ID
     open lazy var reuseIdentifier: String = self.cellFullName
@@ -55,6 +59,14 @@ open class ListItemModel: Model, AdapterItemType & CanSelectedStateDesignable & 
     }
     open func updateEnabledState(_ isEnabled: Bool) {
 
+    }
+}
+extension ListItemModel {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine("\(Unmanaged.passUnretained(self).toOpaque())")
+    }
+    public static func == (lhs: ListItemModel, rhs: ListItemModel) -> Bool {
+        return lhs.hashValue == rhs.hashValue
     }
 }
 extension ListItemModel {

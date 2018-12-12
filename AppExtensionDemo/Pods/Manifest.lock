@@ -1,7 +1,6 @@
 PODS:
   - AppExtension/AnimatedTransition (0.0.1):
     - AppExtension/Animater
-    - AppExtension/Core
   - AppExtension/Animater (0.0.1)
   - AppExtension/Async (0.0.1)
   - AppExtension/Codable (0.0.1)
@@ -14,33 +13,28 @@ PODS:
     - Validation
   - AppExtension/Default (0.0.1):
     - AppExtension/AnimatedTransition
-    - AppExtension/Animater
-    - AppExtension/List
     - AppExtension/ProjectBasic
+    - AppExtension/ProjectBasic/List
     - AppExtension/RouterManager
-    - AppExtension/Third
-    - AppExtension/UIComponents
     - AppExtension/UserNotificationManager
-  - AppExtension/EmptyDataSet (0.0.1):
-    - AppExtension/Third
-    - AppExtension/UIComponents
-  - AppExtension/List (0.0.1):
-    - AppExtension/Animater
-    - AppExtension/EmptyDataSet
-    - AppExtension/ProjectBasic
-    - AppExtension/Third
-    - AppExtension/UIComponents
-    - DifferenceKit
-    - MJRefresh
   - AppExtension/ProjectBasic (0.0.1):
     - AppExtension/Codable
     - AppExtension/Core
-  - AppExtension/RouterManager (0.0.1):
+    - AppExtension/ProjectBasic/List (= 0.0.1)
+    - AppExtension/RxExtensions
+    - AppExtension/UIComponents
+  - AppExtension/ProjectBasic/List (0.0.1):
+    - AppExtension/Animater
+    - AppExtension/Codable
     - AppExtension/Core
-  - AppExtension/Third (0.0.1):
+    - AppExtension/RxExtensions
+    - AppExtension/UIComponents
+    - AppExtension/UIComponents/EmptyDataSet
+    - DifferenceKit
+    - MJRefresh
+  - AppExtension/RouterManager (0.0.1)
+  - AppExtension/RxExtensions (0.0.1):
     - AppExtension/Core
-    - Result
-    - "Rx+Kingfisher"
     - RxCocoa
     - RxGesture
     - RxOptional
@@ -50,6 +44,15 @@ PODS:
     - AppExtension/Animater
     - AppExtension/Codable
     - AppExtension/Core
+    - AppExtension/UIComponents/EmptyDataSet (= 0.0.1)
+    - RxCocoa
+    - RxSwift
+    - SnapKit
+  - AppExtension/UIComponents/EmptyDataSet (0.0.1):
+    - AppExtension/Animater
+    - AppExtension/Codable
+    - AppExtension/Core
+    - AppExtension/RxExtensions
     - RxCocoa
     - RxSwift
     - SnapKit
@@ -183,7 +186,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/SnapKit/SnapKit
 
 SPEC CHECKSUMS:
-  AppExtension: 8d44ef861ff7bde1369784f2466cd82a4d04dce1
+  AppExtension: 765b09caa85219f720acb26a01951a7a82c11013
   CocoaExtension: 0baca243b4364a7ee257486f304b8c6f2965275c
   DifferenceKit: edcc9da33f545a49a70eefcf1a5327162cb72eb8
   Encryption: 07db83d78ab4bb1d12eb14c36c2c83909cb1b5f3

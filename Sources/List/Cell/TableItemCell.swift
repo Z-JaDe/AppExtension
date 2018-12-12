@@ -9,12 +9,11 @@
 import UIKit
 import RxSwift
 
-open class TableCellDefaultProperty: DefaultProperty {
-    public var cellSelectedBackgroundColor: UIColor = Color.colorFromRGB("#fffdef")!
+extension TableItemCell {
+    public static var selectedBackgroundDefaultColor: UIColor = Color.colorFromRGB("#fffdef")!
 }
 
-open class TableItemCell: ItemCell, WritableDefaultHeightProtocol, DefaultPropertyProtocol {
-    public static var defaultProperty: TableCellDefaultProperty = TableCellDefaultProperty()
+open class TableItemCell: ItemCell, WritableDefaultHeightProtocol {
 
     func getSNCell() -> SNTableViewCell? {
         return self.superView(SNTableViewCell.self)
@@ -24,7 +23,7 @@ open class TableItemCell: ItemCell, WritableDefaultHeightProtocol, DefaultProper
         return _tableView
     }
     /// ZJaDe: 
-    open var cellSelectedBackgroundColor: UIColor = TableItemCell.defaultProperty.cellSelectedBackgroundColor {
+    open var cellSelectedBackgroundColor: UIColor = TableItemCell.selectedBackgroundDefaultColor {
         didSet {self.selectedBackgroundView.backgroundColor = self.cellSelectedBackgroundColor}
     }
     open var selectionStyle: UITableViewCell.SelectionStyle = .gray {

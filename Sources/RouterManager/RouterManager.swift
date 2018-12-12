@@ -6,9 +6,6 @@
 //  Copyright © 2016 Z_JaDe. All rights reserved.
 //
 
-#if !AppExtensionPods
-@_exported import Core
-#endif
 /// ZJaDe: 路线类型
 public enum RouteType {
     case push
@@ -99,7 +96,7 @@ public class RouterManager {
             if viewCon.presentingViewController == nil {
                 self.currentNavC.present(viewCon, animated: animated, completion: completion)
             } else {
-                logError("当前控制器已经present")
+                assertionFailure("当前控制器已经present")
             }
         }
     }
@@ -113,7 +110,7 @@ public class RouterManager {
             if viewCon.presentingViewController == nil {
                 self.currentNavC.present(viewCon, animated: animated, completion: completion)
             } else {
-                logError("当前控制器已经present")
+                assertionFailure("当前控制器已经present")
             }
         }
     }
@@ -122,7 +119,7 @@ public class RouterManager {
     public func parse(_ routeUrl: RouteUrlType) -> UIViewController? {
         endEditing()
         guard let viewController = routeUrl.createViewCon(self) else {
-            logError("跳转失败\(routeUrl)")
+            assertionFailure("跳转失败\(routeUrl)")
             return nil
         }
         return viewController
@@ -130,7 +127,7 @@ public class RouterManager {
     public func parse(_ routeUrls: [RouteUrlType]) -> [UIViewController]? {
         endEditing()
         guard let viewControllers = routeUrls.map({$0.createViewCon(self)}) as? [UIViewController] else {
-            logError("跳转失败\(routeUrls)")
+            assertionFailure("跳转失败\(routeUrls)")
             return nil
         }
         return viewControllers
