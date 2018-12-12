@@ -76,8 +76,15 @@ Pod::Spec.new do |s|
         ss.dependency "RxCocoa"
 
         ss.subspec "EmptyDataSet" do |sss|
-            sss.source_files  = "Sources/EmptyDataSet/**/*.{swift}"
+            sss.source_files  = "Sources/UIComponents/EmptyDataSet/**/*.{swift}"
             sss.dependency "AppExtension/RxExtensions"
+        end
+        ss.subspec "ScrollExtensions" do |sss|
+            sss.source_files  = "Sources/UIComponents/ScrollExtensions/**/*.{swift}"
+        end
+        ss.subspec "CollectionKitExtensions" do |sss|
+            sss.source_files  = "Sources/UIComponents/CollectionKitExtensions/**/*.{swift}"
+            sss.dependency "CollectionKit"
         end
     end
 
@@ -95,7 +102,7 @@ Pod::Spec.new do |s|
         #ss.dependency "Rx+Kingfisher" #不强制安装
         #ss.dependency "MBProgressHUD" #不强制安装
         ss.subspec "List" do |sss|
-            sss.source_files  = "Sources/List/**/*.{swift}"
+            sss.source_files  = "Sources/ProjectBasic/List/**/*.{swift}"
 
             sss.dependency "AppExtension/Animater"
             sss.dependency "AppExtension/UIComponents/EmptyDataSet"
@@ -108,6 +115,8 @@ Pod::Spec.new do |s|
     s.subspec "Default" do |ss|
         ss.dependency "AppExtension/ProjectBasic"
         ss.dependency "AppExtension/ProjectBasic/List"
+
+        ss.dependency "AppExtension/UIComponents/ScrollExtensions"
 
         ss.dependency "AppExtension/RouterManager"
         ss.dependency "AppExtension/AnimatedTransition"

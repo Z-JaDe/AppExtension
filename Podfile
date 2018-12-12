@@ -26,6 +26,8 @@ abstract_target 'BaseCore' do
         pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
         pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift'
         pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
+        target:'ScrollExtensions' do
+        end
     end
     target:'EmptyDataSet' do
         pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
