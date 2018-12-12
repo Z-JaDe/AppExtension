@@ -26,7 +26,7 @@ public enum CellHighlightedAnimationType {
 }
 extension ItemCell {
     public static var accessoryTypeSelectedImage: UIImage = UIImage(named: "ic_accessoryType_selected")!
-    public static var accessoryTypeUnSelectedImage: UIImage = UIImage(named: "ic_accessoryType_selected")!
+    public static var accessoryTypeUnSelectedImage: UIImage = UIImage(named: "ic_accessoryType_unselected")!
 }
 open class ItemCell: CustomView, DataSourceItemtype & SelectedStateDesignable & HiddenStateDesignable & EnabledStateDesignable, HighlightedStateDesignable, NeedUpdateProtocol, BufferPoolItemProtocol {
 
