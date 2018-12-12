@@ -77,6 +77,8 @@
 		C91240E821C124BD00F13151 /* CollectionKitExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = C91240E621C124BD00F13151 /* CollectionKitExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C91240EB21C124BD00F13151 /* CollectionKitExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91240E421C124BD00F13151 /* CollectionKitExtensions.framework */; };
 		C91240EC21C124BD00F13151 /* CollectionKitExtensions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C91240E421C124BD00F13151 /* CollectionKitExtensions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C91240F421C128AB00F13151 /* CollectionKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91240F221C128A500F13151 /* CollectionKitExtensions.swift */; };
+		C91240F521C128AB00F13151 /* PageScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91240F021C1286B00F13151 /* PageScrollViewController.swift */; };
 		C9140BE521B6368A00CBA642 /* AutoreleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9140BE421B6368A00CBA642 /* AutoreleaseTests.swift */; };
 		C9140BE921B676B700CBA642 /* CellConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9140BE821B676B700CBA642 /* CellConfigProtocol.swift */; };
 		C9140BEB21B6777000CBA642 /* TableAdapterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9140BEA21B6777000CBA642 /* TableAdapterDelegate.swift */; };
@@ -735,6 +737,8 @@
 		C91240E421C124BD00F13151 /* CollectionKitExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CollectionKitExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C91240E621C124BD00F13151 /* CollectionKitExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionKitExtensions.h; sourceTree = "<group>"; };
 		C91240E721C124BD00F13151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C91240F021C1286B00F13151 /* PageScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageScrollViewController.swift; sourceTree = "<group>"; };
+		C91240F221C128A500F13151 /* CollectionKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionKitExtensions.swift; sourceTree = "<group>"; };
 		C9140BE421B6368A00CBA642 /* AutoreleaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoreleaseTests.swift; sourceTree = "<group>"; };
 		C9140BE821B676B700CBA642 /* CellConfigProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigProtocol.swift; sourceTree = "<group>"; };
 		C9140BEA21B6777000CBA642 /* TableAdapterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableAdapterDelegate.swift; sourceTree = "<group>"; };
@@ -1461,6 +1465,8 @@
 			isa = PBXGroup;
 			children = (
 				C91240E621C124BD00F13151 /* CollectionKitExtensions.h */,
+				C91240F021C1286B00F13151 /* PageScrollViewController.swift */,
+				C91240F221C128A500F13151 /* CollectionKitExtensions.swift */,
 				C91240E721C124BD00F13151 /* Info.plist */,
 			);
 			path = CollectionKitExtensions;
@@ -3549,6 +3555,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C91240F521C128AB00F13151 /* PageScrollViewController.swift in Sources */,
+				C91240F421C128AB00F13151 /* CollectionKitExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
