@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_BaseCore_CommonPods_ListVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_BaseCore_CommonPods_ListVersionString[];
+FOUNDATION_EXPORT double Pods_BaseCore_CommonPods_ProjectBasic_ListVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_BaseCore_CommonPods_ProjectBasic_ListVersionString[];
 

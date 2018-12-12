@@ -28,6 +28,9 @@ abstract_target 'BaseCore' do
         pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
         target:'ScrollExtensions' do
         end
+        target:'CollectionKitExtensions' do
+            pod 'CollectionKit'
+        end
     end
     target:'EmptyDataSet' do
         pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
@@ -55,11 +58,12 @@ abstract_target 'BaseCore' do
             pod 'Rx+Kingfisher', :path => '~/Desktop/wallet-ios/BaseSupport/RxKingfisher'
             pod 'MBProgressHUD'
             pod 'SwiftyUserDefaults'
-        end
-        target:'List' do
-            pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
-            pod 'DifferenceKit'
-            pod 'MJRefresh', :git => 'https://github.com/CoderMJLee/MJRefresh'
+
+            target:'List' do
+                pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
+                pod 'DifferenceKit'
+                pod 'MJRefresh', :git => 'https://github.com/CoderMJLee/MJRefresh'
+            end
         end
 
         target:'AppExtension' do

@@ -1,5 +1,8 @@
 PODS:
   - CocoaExtension (1.0.0)
+  - CollectionKit (2.2.0):
+    - CollectionKit/Core (= 2.2.0)
+  - CollectionKit/Core (2.2.0)
   - DifferenceKit (0.6.0):
     - DifferenceKit/Core (= 0.6.0)
     - DifferenceKit/UIKitExtension (= 0.6.0)
@@ -55,6 +58,7 @@ PODS:
 
 DEPENDENCIES:
   - CocoaExtension (from `~/Desktop/wallet-ios/BaseSupport/CocoaExtension`)
+  - CollectionKit
   - DifferenceKit
   - Encryption (from `~/Desktop/wallet-ios/BaseSupport/Encryption`)
   - FunctionalSwift (from `~/Desktop/wallet-ios/BaseSupport/FunctionalSwift`)
@@ -76,6 +80,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - CollectionKit
     - DifferenceKit
     - Kingfisher
     - MBProgressHUD
@@ -126,6 +131,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   CocoaExtension: 0baca243b4364a7ee257486f304b8c6f2965275c
+  CollectionKit: 5caa5341860d4c9b748ebfeaab97530b2d02c7c0
   DifferenceKit: 824ab6ecd2a20cc658071b2c0c071114cf91e4c9
   Encryption: 07db83d78ab4bb1d12eb14c36c2c83909cb1b5f3
   FunctionalSwift: ee8ef3c5a2fc28692a9a21522c10dca0977f0eeb
@@ -147,6 +153,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
   Validation: b695c801939fdaa32b489dbf6e4a739538829a5a
 
-PODFILE CHECKSUM: faa54b67bf742bdac1ff0c802590ab8ed507833a
+PODFILE CHECKSUM: 1fb94f263385b02ef6c0149ce8b49dcbc7b349bb
 
 COCOAPODS: 1.5.0
