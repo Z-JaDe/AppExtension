@@ -63,12 +63,6 @@
 		C91240CC21C121F400F13151 /* CycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B5421BE884100361B87 /* CycleView.swift */; };
 		C91240CD21C121F400F13151 /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B4A21BE884100361B87 /* SegmentView.swift */; };
 		C91240CE21C121F400F13151 /* MultipleItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B4B21BE884100361B87 /* MultipleItemsView.swift */; };
-		C91240CF21C1220C00F13151 /* SingleFormProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B4D21BE884100361B87 /* SingleFormProtocol.swift */; };
-		C91240D021C1220C00F13151 /* SingleScrollFormProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B4E21BE884100361B87 /* SingleScrollFormProtocol.swift */; };
-		C91240D121C1220C00F13151 /* SingleCycleFormProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B4F21BE884100361B87 /* SingleCycleFormProtocol.swift */; };
-		C91240D221C1220C00F13151 /* ScrollProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B5121BE884100361B87 /* ScrollProtocol.swift */; };
-		C91240D321C1220C00F13151 /* ItemsOneWayScrollProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B5221BE884100361B87 /* ItemsOneWayScrollProtocol.swift */; };
-		C91240D421C1220C00F13151 /* OneWayScrollProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B5321BE884100361B87 /* OneWayScrollProtocol.swift */; };
 		C91240D521C1220C00F13151 /* SegmentScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B4621BE884100361B87 /* SegmentScrollView.swift */; };
 		C91240D621C1220C00F13151 /* MultipleItemScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B4721BE884100361B87 /* MultipleItemScrollView.swift */; };
 		C91240D721C1220C00F13151 /* PageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B4821BE884100361B87 /* PageScrollView.swift */; };
@@ -78,9 +72,21 @@
 		C91240EB21C124BD00F13151 /* CollectionKitExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91240E421C124BD00F13151 /* CollectionKitExtensions.framework */; };
 		C91240EC21C124BD00F13151 /* CollectionKitExtensions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C91240E421C124BD00F13151 /* CollectionKitExtensions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C91240F421C128AB00F13151 /* CollectionKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91240F221C128A500F13151 /* CollectionKitExtensions.swift */; };
-		C91240F521C128AB00F13151 /* PageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91240F021C1286B00F13151 /* PageCollectionViewController.swift */; };
+		C91240F521C128AB00F13151 /* CKPageScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91240F021C1286B00F13151 /* CKPageScrollViewController.swift */; };
 		C91240FA21C129FA00F13151 /* PageScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91240F821C129F400F13151 /* PageScrollViewController.swift */; };
-		C912410121C138DB00F13151 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91240FF21C138D500F13151 /* CollectionViewController.swift */; };
+		C912410121C138DB00F13151 /* CKCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91240FF21C138D500F13151 /* CKCollectionViewController.swift */; };
+		C912410421C1427C00F13151 /* CKCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C912410221C1427200F13151 /* CKCycleView.swift */; };
+		C912410721C1459100F13151 /* CycleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C912410521C1458B00F13151 /* CycleDataSource.swift */; };
+		C912410D21C1536900F13151 /* FitHeightAutoLayoutSizeSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C912410B21C1536500F13151 /* FitHeightAutoLayoutSizeSource.swift */; };
+		C912410F21C160CD00F13151 /* ScrollProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B5121BE884100361B87 /* ScrollProtocol.swift */; };
+		C912411121C160CD00F13151 /* OneWayScrollProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B5321BE884100361B87 /* OneWayScrollProtocol.swift */; };
+		C912411221C160CD00F13151 /* SingleFormProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B4D21BE884100361B87 /* SingleFormProtocol.swift */; };
+		C912411621C1615500F13151 /* ItemsOneWayScrollProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B5221BE884100361B87 /* ItemsOneWayScrollProtocol.swift */; };
+		C912411921C161A600F13151 /* SingleCycleFormProtocol+PageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C912411721C161A100F13151 /* SingleCycleFormProtocol+PageScrollView.swift */; };
+		C912411A21C1620D00F13151 /* SingleCycleFormProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B4F21BE884100361B87 /* SingleCycleFormProtocol.swift */; };
+		C912411B21C1620D00F13151 /* SingleScrollFormProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B4E21BE884100361B87 /* SingleScrollFormProtocol.swift */; };
+		C912411E21C1635A00F13151 /* CurrentIndexProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C912411C21C1635600F13151 /* CurrentIndexProtocol.swift */; };
+		C912412121C1638200F13151 /* TotalCountProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C912411F21C1637900F13151 /* TotalCountProtocol.swift */; };
 		C9140BE521B6368A00CBA642 /* AutoreleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9140BE421B6368A00CBA642 /* AutoreleaseTests.swift */; };
 		C9140BE921B676B700CBA642 /* CellConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9140BE821B676B700CBA642 /* CellConfigProtocol.swift */; };
 		C9140BEB21B6777000CBA642 /* TableAdapterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9140BEA21B6777000CBA642 /* TableAdapterDelegate.swift */; };
@@ -760,10 +766,16 @@
 		C91240E421C124BD00F13151 /* CollectionKitExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CollectionKitExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C91240E621C124BD00F13151 /* CollectionKitExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionKitExtensions.h; sourceTree = "<group>"; };
 		C91240E721C124BD00F13151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C91240F021C1286B00F13151 /* PageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCollectionViewController.swift; sourceTree = "<group>"; };
+		C91240F021C1286B00F13151 /* CKPageScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKPageScrollViewController.swift; sourceTree = "<group>"; };
 		C91240F221C128A500F13151 /* CollectionKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionKitExtensions.swift; sourceTree = "<group>"; };
 		C91240F821C129F400F13151 /* PageScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageScrollViewController.swift; sourceTree = "<group>"; };
-		C91240FF21C138D500F13151 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		C91240FF21C138D500F13151 /* CKCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKCollectionViewController.swift; sourceTree = "<group>"; };
+		C912410221C1427200F13151 /* CKCycleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKCycleView.swift; sourceTree = "<group>"; };
+		C912410521C1458B00F13151 /* CycleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleDataSource.swift; sourceTree = "<group>"; };
+		C912410B21C1536500F13151 /* FitHeightAutoLayoutSizeSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitHeightAutoLayoutSizeSource.swift; sourceTree = "<group>"; };
+		C912411721C161A100F13151 /* SingleCycleFormProtocol+PageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SingleCycleFormProtocol+PageScrollView.swift"; sourceTree = "<group>"; };
+		C912411C21C1635600F13151 /* CurrentIndexProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentIndexProtocol.swift; sourceTree = "<group>"; };
+		C912411F21C1637900F13151 /* TotalCountProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCountProtocol.swift; sourceTree = "<group>"; };
 		C9140BE421B6368A00CBA642 /* AutoreleaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoreleaseTests.swift; sourceTree = "<group>"; };
 		C9140BE821B676B700CBA642 /* CellConfigProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigProtocol.swift; sourceTree = "<group>"; };
 		C9140BEA21B6777000CBA642 /* TableAdapterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableAdapterDelegate.swift; sourceTree = "<group>"; };
@@ -1470,7 +1482,7 @@
 		C91240C021C1205D00F13151 /* ScrollExtensions */ = {
 			isa = PBXGroup;
 			children = (
-				C9283B4C21BE884100361B87 /* Protocol */,
+				C912411521C1613200F13151 /* Protocol */,
 				C9283B4521BE884100361B87 /* ScrollView */,
 				C91240F621C129CF00F13151 /* View */,
 				C91240F721C129DE00F13151 /* ViewController */,
@@ -1498,9 +1510,12 @@
 			isa = PBXGroup;
 			children = (
 				C91240E621C124BD00F13151 /* CollectionKitExtensions.h */,
-				C91240FF21C138D500F13151 /* CollectionViewController.swift */,
-				C91240F021C1286B00F13151 /* PageCollectionViewController.swift */,
+				C91240FF21C138D500F13151 /* CKCollectionViewController.swift */,
+				C91240F021C1286B00F13151 /* CKPageScrollViewController.swift */,
 				C91240F221C128A500F13151 /* CollectionKitExtensions.swift */,
+				C912410221C1427200F13151 /* CKCycleView.swift */,
+				C912410B21C1536500F13151 /* FitHeightAutoLayoutSizeSource.swift */,
+				C912410521C1458B00F13151 /* CycleDataSource.swift */,
 				C91240E721C124BD00F13151 /* Info.plist */,
 			);
 			path = CollectionKitExtensions;
@@ -1522,6 +1537,29 @@
 				C91240F821C129F400F13151 /* PageScrollViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C912410E21C160A400F13151 /* ScrollProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				C9283B5121BE884100361B87 /* ScrollProtocol.swift */,
+				C912411C21C1635600F13151 /* CurrentIndexProtocol.swift */,
+				C912411F21C1637900F13151 /* TotalCountProtocol.swift */,
+				C9283B5321BE884100361B87 /* OneWayScrollProtocol.swift */,
+				C9283B4D21BE884100361B87 /* SingleFormProtocol.swift */,
+			);
+			path = ScrollProtocol;
+			sourceTree = "<group>";
+		};
+		C912411521C1613200F13151 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				C9283B5221BE884100361B87 /* ItemsOneWayScrollProtocol.swift */,
+				C9283B4E21BE884100361B87 /* SingleScrollFormProtocol.swift */,
+				C9283B4F21BE884100361B87 /* SingleCycleFormProtocol.swift */,
+				C912411721C161A100F13151 /* SingleCycleFormProtocol+PageScrollView.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		C9140C0121B689F900CBA642 /* UIViewController */ = {
@@ -1640,27 +1678,6 @@
 				C9283B4821BE884100361B87 /* PageScrollView.swift */,
 			);
 			path = ScrollView;
-			sourceTree = "<group>";
-		};
-		C9283B4C21BE884100361B87 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				C9283B4D21BE884100361B87 /* SingleFormProtocol.swift */,
-				C9283B4E21BE884100361B87 /* SingleScrollFormProtocol.swift */,
-				C9283B4F21BE884100361B87 /* SingleCycleFormProtocol.swift */,
-				C9283B5021BE884100361B87 /* ScrollProtocol */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
-		C9283B5021BE884100361B87 /* ScrollProtocol */ = {
-			isa = PBXGroup;
-			children = (
-				C9283B5121BE884100361B87 /* ScrollProtocol.swift */,
-				C9283B5221BE884100361B87 /* ItemsOneWayScrollProtocol.swift */,
-				C9283B5321BE884100361B87 /* OneWayScrollProtocol.swift */,
-			);
-			path = ScrollProtocol;
 			sourceTree = "<group>";
 		};
 		C9283B5521BE884100361B87 /* PasswordInputView */ = {
@@ -1783,6 +1800,7 @@
 		C9283BD521BE8F8400361B87 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				C912410E21C160A400F13151 /* ScrollProtocol */,
 				C932F85A21006DC500B8DF84 /* DefaultHeightProtocol.swift */,
 				C932F86D21006DC500B8DF84 /* MultipleSelectionProtocol.swift */,
 				C932F85721006DC500B8DF84 /* CheckAndCatchParamsProtocol.swift */,
@@ -3613,21 +3631,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C912411A21C1620D00F13151 /* SingleCycleFormProtocol.swift in Sources */,
 				C91240FA21C129FA00F13151 /* PageScrollViewController.swift in Sources */,
-				C91240D321C1220C00F13151 /* ItemsOneWayScrollProtocol.swift in Sources */,
-				C91240D121C1220C00F13151 /* SingleCycleFormProtocol.swift in Sources */,
+				C912411921C161A600F13151 /* SingleCycleFormProtocol+PageScrollView.swift in Sources */,
 				C91240D821C1220C00F13151 /* LayoutMultipleItemCell.swift in Sources */,
 				C91240CD21C121F400F13151 /* SegmentView.swift in Sources */,
 				C91240CE21C121F400F13151 /* MultipleItemsView.swift in Sources */,
+				C912411621C1615500F13151 /* ItemsOneWayScrollProtocol.swift in Sources */,
 				C91240D621C1220C00F13151 /* MultipleItemScrollView.swift in Sources */,
 				C91240CC21C121F400F13151 /* CycleView.swift in Sources */,
-				C91240D021C1220C00F13151 /* SingleScrollFormProtocol.swift in Sources */,
-				C91240D421C1220C00F13151 /* OneWayScrollProtocol.swift in Sources */,
+				C912411B21C1620D00F13151 /* SingleScrollFormProtocol.swift in Sources */,
 				C91240D521C1220C00F13151 /* SegmentScrollView.swift in Sources */,
-				C91240D221C1220C00F13151 /* ScrollProtocol.swift in Sources */,
 				C91240D721C1220C00F13151 /* PageScrollView.swift in Sources */,
 				C91240DE21C122AE00F13151 /* ScrollExtensions.swift in Sources */,
-				C91240CF21C1220C00F13151 /* SingleFormProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3635,8 +3651,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C912410121C138DB00F13151 /* CollectionViewController.swift in Sources */,
-				C91240F521C128AB00F13151 /* PageCollectionViewController.swift in Sources */,
+				C912410D21C1536900F13151 /* FitHeightAutoLayoutSizeSource.swift in Sources */,
+				C912410121C138DB00F13151 /* CKCollectionViewController.swift in Sources */,
+				C912410421C1427C00F13151 /* CKCycleView.swift in Sources */,
+				C91240F521C128AB00F13151 /* CKPageScrollViewController.swift in Sources */,
+				C912410721C1459100F13151 /* CycleDataSource.swift in Sources */,
 				C91240F421C128AB00F13151 /* CollectionKitExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3675,6 +3694,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C912410F21C160CD00F13151 /* ScrollProtocol.swift in Sources */,
 				C9283BCE21BE8F2900361B87 /* ScrollingPageControl.swift in Sources */,
 				C9283B9721BE893400361B87 /* UIView+Gesture.swift in Sources */,
 				C9283BD121BE8F2900361B87 /* SnakePageControl.swift in Sources */,
@@ -3685,6 +3705,7 @@
 				C9283BA721BE893400361B87 /* SwitchView.swift in Sources */,
 				C9283B9521BE892400361B87 /* JDRotationAnimation.swift in Sources */,
 				C9283BA821BE893400361B87 /* CountdownButton.swift in Sources */,
+				C912411221C160CD00F13151 /* SingleFormProtocol.swift in Sources */,
 				C9283BDD21BE902A00361B87 /* CheckAndCatchParamsProtocol.swift in Sources */,
 				C9283B7E21BE884300361B87 /* ImageLabelView.swift in Sources */,
 				C9283BB021BE8A6900361B87 /* ItemLayoutSpec.swift in Sources */,
@@ -3701,6 +3722,7 @@
 				C9283B7C21BE884300361B87 /* CycleProgress.swift in Sources */,
 				C9283B7F21BE884300361B87 /* JDButton.swift in Sources */,
 				C9283B8D21BE891A00361B87 /* TabBarItemView.swift in Sources */,
+				C912411121C160CD00F13151 /* OneWayScrollProtocol.swift in Sources */,
 				C9283BD921BE900D00361B87 /* EnabledStateDesignable.swift in Sources */,
 				C9283BA321BE893400361B87 /* Slider.swift in Sources */,
 				C9283B9121BE892400361B87 /* JDFumeAnimation.swift in Sources */,
@@ -3711,8 +3733,10 @@
 				C9283BD021BE8F2900361B87 /* PillPageControl.swift in Sources */,
 				C9283BB321BE8A6900361B87 /* SizeLayoutSpec.swift in Sources */,
 				C9283B8B21BE891A00361B87 /* TabBar.swift in Sources */,
+				C912411E21C1635A00F13151 /* CurrentIndexProtocol.swift in Sources */,
 				C9283B9C21BE893400361B87 /* SegmentedControl.swift in Sources */,
 				C9283B9B21BE893400361B87 /* PageControl.swift in Sources */,
+				C912412121C1638200F13151 /* TotalCountProtocol.swift in Sources */,
 				C9283BA421BE893400361B87 /* ImageView.swift in Sources */,
 				C9283BAF21BE8A5B00361B87 /* Array+Layout.swift in Sources */,
 				C9283BB621BE8A6900361B87 /* StackLayoutSpec.swift in Sources */,

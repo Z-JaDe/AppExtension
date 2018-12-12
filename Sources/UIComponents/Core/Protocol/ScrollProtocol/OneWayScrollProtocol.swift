@@ -13,7 +13,7 @@ public enum ScrollDirection {
     case vertical
 }
 public protocol OneWayScrollProtocol: ScrollProtocol {
-    var scrollDirection: ScrollDirection {get set}
+    var scrollDirection: ScrollDirection {get}
 }
 public extension OneWayScrollProtocol {
     /// ZJaDe: 视图中心的contentOffset

@@ -1,32 +1,13 @@
 //
-//  SingleFormProtocol.swift
+//  TotalCountProtocol.swift
 //  AppExtension
 //
-//  Created by 郑军铎 on 2018/6/25.
-//  Copyright © 2018年 ZJaDe. All rights reserved.
+//  Created by 郑军铎 on 2018/12/12.
+//  Copyright © 2018 ZJaDe. All rights reserved.
 //
 
 import Foundation
-public protocol CurrentIndexProtocol: class {
-    /// ZJaDe: 当前index
-    var currentIndex: Int {get set}
-}
-public extension CurrentIndexProtocol {
-    //    /// ZJaDe: 根据item数量计算出的真实currentIndex
-    //    var currentIndex: Int {
-    //        get {return self.realIndex(self._currentIndex)}
-    //    }
 
-    //    func changeCurrentIndex(_ index: Int) {
-    //        self.currentIndex = index
-    //    }
-    func scrollNextIndex() {
-        self.currentIndex += 1
-    }
-    func scrollPreviousIndex() {
-        self.currentIndex -= 1
-    }
-}
 public protocol TotalCountProtocol {
     /// ZJaDe: item总数量
     var totalCount: Int {get}
@@ -43,7 +24,7 @@ public extension TotalCountProtocol {
         }
         return index % self.totalCount
     }
-    /** ZJaDe: 
+    /** ZJaDe:
      根据totalCount和布局方向返回realProgress
      realProgress可以直接toInt转换成realIndex
      */
@@ -57,7 +38,4 @@ public extension TotalCountProtocol {
         let realOffset = offSet.truncatingRemainder(dividingBy: length * self.totalCount.toCGFloat)
         return realOffset / length
     }
-}
-public protocol SingleFormProtocol: CurrentIndexProtocol, TotalCountProtocol {
-    associatedtype CellType
 }

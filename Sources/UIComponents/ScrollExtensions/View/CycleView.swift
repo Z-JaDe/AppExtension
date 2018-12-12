@@ -53,9 +53,8 @@ open class CycleView<ItemView, ItemData>: MultipleItemsView<ItemView, ItemData, 
         super.addChildView()
         self.addSubview(self.pageControl)
     }
-
+    internal let repeatCount: Int = 1000
     // MARK: - 重写
-    internal let totalRepeatCount: Int = 1000
     /// ZJaDe: 设置数据
     open override func configData(_ dataArray: [ItemData]) {
         var dataArray = dataArray
@@ -76,7 +75,7 @@ open class CycleView<ItemView, ItemData>: MultipleItemsView<ItemView, ItemData, 
         layoutIfNeeded()
         checkCells(true)
         /// ZJaDe: 检查并更新cells
-        resetItemViewsLocation()
+        resetItemViewsLocation(repeatCount: repeatCount)
         /// ZJaDe: 刷新intrinsicContentSize
         invalidateIntrinsicContentSize()
     }
@@ -88,7 +87,7 @@ open class CycleView<ItemView, ItemData>: MultipleItemsView<ItemView, ItemData, 
         self.pageControl.centerX = self.width / 2
         /// ZJaDe: 布局更新时刷新contentLength
         if self.dataArray.count > 1 {
-            self.scrollView.contentLength = self.totalRepeatCount.toCGFloat * self.scrollView.length * self.totalCount.toCGFloat
+            self.scrollView.contentLength = repeatCount.toCGFloat * self.scrollView.length * self.totalCount.toCGFloat
         } else {
             self.scrollView.contentLength = self.scrollView.length * self.totalCount.toCGFloat
         }
@@ -110,7 +109,7 @@ open class CycleView<ItemView, ItemData>: MultipleItemsView<ItemView, ItemData, 
     }
     // MARK: - UIScrollViewDelegate
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        self.resetItemViewsLocation()
+        resetItemViewsLocation(repeatCount: repeatCount)
     }
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
 
@@ -140,7 +139,8 @@ open class CycleView<ItemView, ItemData>: MultipleItemsView<ItemView, ItemData, 
         }
     }
 }
-extension CycleView: SingleCycleFormProtocol { //
+
+extension CycleView: SingleCycleFormProtocol {
     public func loadCell(_ currentOffset: CGFloat, _ indexOffset: Int, _ isNeedResetData: Bool) {
         let length = self.scrollView.length
         let currentIndex = (currentOffset / length).toInt
@@ -155,31 +155,6 @@ extension CycleView: SingleCycleFormProtocol { //
             let cell = createCell()
             self.config(cell: cell, model: itemData)
             willAppear(cell, offSet: offSet, isToRight: indexOffset >= 0)
-        }
-    }
-}
-extension CycleView {
-    /// ZJaDe: 重新设置visibleItemViews在scrollView里的位置
-    private func resetItemViewsLocation() {
-        let length = self.scrollView.length
-        guard self.totalCount > 0 && length > 0 else {
-            return
-        }
-        let scrollViewOffSet = self.scrollView.viewHeadOffset()
-        let offSet: CGFloat
-        if self.totalCount == 1 {
-            offSet = 0
-        } else {
-            if scrollViewOffSet > length * (self.totalRepeatCount / 4 * 3).toCGFloat * self.totalCount.toCGFloat {
-                offSet = -length * (self.totalRepeatCount / 2).toCGFloat * self.totalCount.toCGFloat
-            } else if scrollViewOffSet < length * (self.totalRepeatCount / 4).toCGFloat * self.totalCount.toCGFloat {
-                offSet = length * (self.totalRepeatCount / 2).toCGFloat * self.totalCount.toCGFloat
-            } else {
-                offSet = 0
-            }
-        }
-        if offSet != 0 {
-            self.scrollView.scrollTo(offSet: scrollViewOffSet + offSet, animated: false)
         }
     }
 }

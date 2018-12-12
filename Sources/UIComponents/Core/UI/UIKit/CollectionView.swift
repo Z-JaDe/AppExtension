@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class CollectionView: UICollectionView {
+open class JDCollectionView: UICollectionView {
 
     public override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
 

@@ -8,13 +8,13 @@
 
 import UIKit
 
+public struct HeaderData {
+  public let index: Int
+  public let section: Provider
+}
+
 open class ComposedHeaderProvider<HeaderView: UIView>:
   SectionProvider, ItemProvider, LayoutableProvider, CollectionReloadable {
-
-  public struct HeaderData {
-    public let index: Int
-    public let section: Provider
-  }
 
   public typealias HeaderViewSource = ViewSource<HeaderData, HeaderView>
   public typealias HeaderSizeSource = SizeSource<HeaderData>
@@ -73,7 +73,7 @@ open class ComposedHeaderProvider<HeaderView: UIView>:
               layout: Layout = FlowLayout(),
               animator: Animator? = nil,
               headerViewSource: HeaderViewSource,
-              headerSizeSource: @escaping HeaderSizeSource,
+              headerSizeSource: HeaderSizeSource,
               sections: [Provider] = [],
               tapHandler: TapHandler? = nil) {
     self.animator = animator
@@ -152,7 +152,8 @@ open class ComposedHeaderProvider<HeaderView: UIView>:
 
   // MARK: private stuff
   open func hasReloadable(_ reloadable: CollectionReloadable) -> Bool {
-    return reloadable === self || sections.contains(where: { $0.hasReloadable(reloadable) })
+    return reloadable === self || reloadable === headerSizeSource
+      || sections.contains(where: { $0.hasReloadable(reloadable) })
   }
 
   open func flattenedProvider() -> ItemProvider {
@@ -182,12 +183,14 @@ open class ComposedHeaderProvider<HeaderView: UIView>:
         return sectionIdentifier
       }
     }
-    func size(at: Int, collectionSize: CGSize) -> CGSize {
-      if at % 2 == 0 {
-        return headerSizeSource(at / 2, data(at: at) as! HeaderData, collectionSize)
+    func size(at index: Int, collectionSize: CGSize) -> CGSize {
+      if index % 2 == 0 {
+        return headerSizeSource.size(at: index / 2,
+                                     data: data(at: index) as! HeaderData,
+                                     collectionSize: collectionSize)
       } else {
-        sections[at / 2].layout(collectionSize: collectionSize)
-        return sections[at / 2].contentSize
+        sections[index / 2].layout(collectionSize: collectionSize)
+        return sections[index / 2].contentSize
       }
     }
   }

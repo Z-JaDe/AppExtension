@@ -8,6 +8,7 @@
 import Foundation
 
 public protocol SingleScrollFormProtocol: SingleFormProtocol {
+    associatedtype CellType
     associatedtype ScrollViewType: OneWayScrollProtocol
     var scrollView: ScrollViewType {get}
 
@@ -21,16 +22,12 @@ public protocol SingleScrollFormProtocol: SingleFormProtocol {
     /// ZJaDe: cell快出现时 配置数据
     func willAppear(_ cell: CellType, offSet: CGFloat, isToRight: Bool)
 }
-public extension SingleScrollFormProtocol where ScrollViewType == PageScrollView<CellType> {
-    /// ZJaDe: cell快出现时 配置数据
-    public func willAppear(_ cell: CellType, offSet: CGFloat, isToRight: Bool) {
-        if isToRight {
-            self.scrollView.append(cell, originLocation: offSet)
-        } else {
-            self.scrollView.insertFirst(cell, originLocation: offSet)
-        }
+extension SingleScrollFormProtocol {
+    func resetItemViewsLocation(repeatCount: Int) {
+        resetItemViewsLocation(repeatCount: repeatCount, in: scrollView)
     }
 }
+
 public extension SingleScrollFormProtocol {
     /// ZJaDe: 检查cells的消失和出现
     func checkCells(_ isNeedResetData: Bool = false) {

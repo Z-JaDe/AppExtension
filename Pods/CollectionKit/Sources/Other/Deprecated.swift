@@ -78,7 +78,7 @@ extension BasicProvider {
                           dataProvider: DataSource<Data>,
                           viewProvider: ViewSource<Data, View>,
                           layout: Layout = FlowLayout(),
-                          sizeProvider: @escaping SizeSource<Data> = defaultSizeSource,
+                          sizeProvider: SizeSource<Data> = SizeSource<Data>(),
                           presenter: Animator? = nil,
                           willReloadHandler: (() -> Void)? = nil,
                           didReloadHandler: (() -> Void)? = nil,
@@ -98,7 +98,7 @@ extension BasicProvider {
                           viewGenerator: ((Data, Int) -> View)? = nil,
                           viewUpdater: @escaping (View, Data, Int) -> Void,
                           layout: Layout = FlowLayout(),
-                          sizeProvider: @escaping SizeSource<Data> = defaultSizeSource,
+                          sizeProvider: SizeSource<Data> = SizeSource<Data>(),
                           presenter: Animator? = nil,
                           willReloadHandler: (() -> Void)? = nil,
                           didReloadHandler: (() -> Void)? = nil,
@@ -118,7 +118,7 @@ extension BasicProvider {
                           viewGenerator: ((Data, Int) -> View)? = nil,
                           viewUpdater: @escaping (View, Data, Int) -> Void,
                           layout: Layout = FlowLayout(),
-                          sizeProvider: @escaping SizeSource<Data> = defaultSizeSource,
+                          sizeProvider: SizeSource<Data> = SizeSource<Data>(),
                           presenter: Animator? = nil,
                           willReloadHandler: (() -> Void)? = nil,
                           didReloadHandler: (() -> Void)? = nil,
@@ -130,38 +130,5 @@ extension BasicProvider {
               layout: layout,
               animator: presenter,
               tapHandler: BasicProvider.convertTapHandler(tapHandler))
-  }
-}
-
-@available(*, deprecated, message: "will be removed soon")
-open class LabelCollectionProvider: SimpleViewProvider {
-  public var label: UILabel {
-    return view(at: 0) as! UILabel
-  }
-  public init(identifier: String? = nil, insets: UIEdgeInsets = .zero) {
-    let label = UILabel()
-    label.numberOfLines = 0
-    super.init(identifier: identifier, views: [label], sizeStrategy: (.fill, .fit),
-               layout: insets == .zero ? FlowLayout() : FlowLayout().inset(by: insets))
-  }
-  public init(identifier: String? = nil,
-              text: String,
-              font: UIFont,
-              color: UIColor = .black,
-              insets: UIEdgeInsets = .zero) {
-    let label = UILabel()
-    label.font = font
-    label.textColor = color
-    label.text = text
-    label.numberOfLines = 0
-    super.init(identifier: identifier, views: [label], sizeStrategy: (.fill, .fit),
-               layout: insets == .zero ? FlowLayout() : FlowLayout().inset(by: insets))
-  }
-  public init(identifier: String? = nil, attributedString: NSAttributedString, insets: UIEdgeInsets = .zero) {
-    let label = UILabel()
-    label.attributedText = attributedString
-    label.numberOfLines = 0
-    super.init(identifier: identifier, views: [label], sizeStrategy: (.fill, .fit),
-               layout: insets == .zero ? FlowLayout() : FlowLayout().inset(by: insets))
   }
 }

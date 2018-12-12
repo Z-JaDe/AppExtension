@@ -1,5 +1,5 @@
 //
-//  PageCollectionViewController.swift
+//  CKPageScrollViewController.swift
 //  AppExtension
 //
 //  Created by 郑军铎 on 2018/12/12.
@@ -9,7 +9,7 @@
 import UIKit
 import CollectionKit
 
-open class PageCollectionViewController: ScrollViewController {
+open class CKPageScrollViewController: CKCollectionViewController {
     public typealias CellType = UIView
     public var viewConArr: [UIViewController] = [] {
         didSet {
@@ -22,6 +22,7 @@ open class PageCollectionViewController: ScrollViewController {
 
     open override func viewDidLoad() {
         super.viewDidLoad()
+        self.scrollView.isPagingEnabled = true
     }
 
     func updateProvider() {

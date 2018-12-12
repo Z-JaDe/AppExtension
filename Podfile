@@ -29,7 +29,7 @@ abstract_target 'BaseCore' do
         target:'ScrollExtensions' do
         end
         target:'CollectionKitExtensions' do
-            pod 'CollectionKit'
+            pod 'CollectionKit', :git => 'https://github.com/SoySauceLab/CollectionKit'
         end
     end
     target:'EmptyDataSet' do

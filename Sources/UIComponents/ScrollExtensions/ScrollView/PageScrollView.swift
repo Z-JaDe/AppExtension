@@ -83,3 +83,13 @@ extension PageScrollView {
         layoutCellsOrigin([cell], originLocation)
     }
 }
+public extension SingleScrollFormProtocol where ScrollViewType == PageScrollView<CellType> {
+    /// ZJaDe: cell快出现时 配置数据
+    public func willAppear(_ cell: CellType, offSet: CGFloat, isToRight: Bool) {
+        if isToRight {
+            self.scrollView.append(cell, originLocation: offSet)
+        } else {
+            self.scrollView.insertFirst(cell, originLocation: offSet)
+        }
+    }
+}

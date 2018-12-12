@@ -58,7 +58,7 @@ PODS:
 
 DEPENDENCIES:
   - CocoaExtension (from `~/Desktop/wallet-ios/BaseSupport/CocoaExtension`)
-  - CollectionKit
+  - CollectionKit (from `https://github.com/SoySauceLab/CollectionKit`)
   - DifferenceKit
   - Encryption (from `~/Desktop/wallet-ios/BaseSupport/Encryption`)
   - FunctionalSwift (from `~/Desktop/wallet-ios/BaseSupport/FunctionalSwift`)
@@ -80,7 +80,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - CollectionKit
     - DifferenceKit
     - Kingfisher
     - MBProgressHUD
@@ -96,6 +95,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   CocoaExtension:
     :path: "~/Desktop/wallet-ios/BaseSupport/CocoaExtension"
+  CollectionKit:
+    :git: https://github.com/SoySauceLab/CollectionKit
   Encryption:
     :path: "~/Desktop/wallet-ios/BaseSupport/Encryption"
   FunctionalSwift:
@@ -116,6 +117,9 @@ EXTERNAL SOURCES:
     :path: "~/Desktop/wallet-ios/BaseSupport/Validation"
 
 CHECKOUT OPTIONS:
+  CollectionKit:
+    :commit: b78e4b38e6f4a9c5b0cf68937ead5af6feecc6fa
+    :git: https://github.com/SoySauceLab/CollectionKit
   MJRefresh:
     :commit: 5fee65f22a1e69a0538ef44f480715ec411c124f
     :git: https://github.com/CoderMJLee/MJRefresh
@@ -153,6 +157,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
   Validation: b695c801939fdaa32b489dbf6e4a739538829a5a
 
-PODFILE CHECKSUM: 1fb94f263385b02ef6c0149ce8b49dcbc7b349bb
+PODFILE CHECKSUM: db6ae9a8af9021775097077535eb3f429636544c
 
 COCOAPODS: 1.5.0
