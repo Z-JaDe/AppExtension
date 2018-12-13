@@ -26,14 +26,14 @@ public enum ItemSpace {
 
 public protocol ItemsOneWayScrollProtocol: OneWayScrollProtocol {
     associatedtype ItemView: UIView
-    typealias LayoutCellType = LayoutMultipleItemCell<ItemView>
+    typealias LayoutItemType = LayoutItem<ItemView>
     var itemSpace: ItemSpace {get set}
 
     func setNeedsLayoutCells()
 }
-extension ItemsOneWayScrollProtocol {
+public extension ItemsOneWayScrollProtocol {
     /// ZJaDe: 更新itemArr的尺寸布局，cellLength不为空时表示给定尺寸
-    func layoutCellsSize(_ cellArr: [LayoutCellType], _ cellLength: CGFloat?) {
+    func layoutCellsSize(_ cellArr: [LayoutItemType], _ cellLength: CGFloat?) {
         cellArr.lazy.enumerated().forEach { (_, cell) in
             switch self.scrollDirection {
             case .horizontal:
@@ -46,24 +46,21 @@ extension ItemsOneWayScrollProtocol {
         }
     }
     @discardableResult
-    func layoutCellsOrigin(_ cellArr: [LayoutCellType], _ startLocation: CGFloat) -> CGFloat {
+    func layoutCellsOrigin(_ cellArr: [LayoutItemType], _ startLocation: CGFloat) -> CGFloat {
         return cellArr.reduce(startLocation) { (offSet, item) -> CGFloat in
             item.leading = offSet
             return item.trailing
         }
     }
     // MARK: -
-    public func createLayoutCell(_ itemView: ItemView) -> LayoutCellType {
-        let cell = LayoutCellType(itemView)
-        cell.itemSpace = self.itemSpace
-        cell.scrollDirection = self.scrollDirection
-        return cell
+    func createLayoutCell(_ itemView: ItemView) -> LayoutItemType {
+        return LayoutItemType(itemView, itemSpace, scrollDirection)
     }
 }
-extension ItemsOneWayScrollProtocol where Self: UIView {
+public extension ItemsOneWayScrollProtocol where Self: UIView {
     // MARK: -
     @discardableResult
-    internal func itemViewRemoveFromSuperview(_ itemView: ItemView) -> Bool {
+    func removeItemViewFromSuperview(_ itemView: ItemView) -> Bool {
         if itemView.superview == self || itemView.superview == nil {
             itemView.removeFromSuperview()
             return true

@@ -8,20 +8,22 @@
 
 import Foundation
 import CollectionKit
-open class CKCycleView<Data, View: UIView>: CustomView, UIScrollViewDelegate {
+open class CKCycleView<View: UIView, Data>: PageItemsView<View, Data, CKCollectionView> {
     /// ZJaDe: 点击item
-    public var tapHandler: ((BasicProvider<Data,View>.TapContext) -> Void)?
+    public var didSelectItem: ((BasicProvider<Data,View>.TapContext) -> Void)?
     /// ZJaDe: 配置model
-    public var viewUpdater: ((View, Data, Int) -> Void) = {_,_,_ in} {
-        didSet {
+    open override var viewUpdater: ((View, Data, Int) -> Void) {
+        get {return super.viewUpdater}
+        set {
+            super.viewUpdater = newValue
             self.provider.viewSource = ClosureViewSource(viewUpdater: viewUpdater)
             self.provider.sizeSource = FitHeightAutoLayoutSizeSource(dummyView: View.self, viewUpdater: viewUpdater)
         }
     }
 
-    public lazy private(set) var scrollView: CKCollectionView = CKCollectionView()
     lazy var dataSource: CycleDataSource<Data> = CycleDataSource(data: [])
-    private lazy var provider = BasicProvider(dataSource: dataSource,
+    private lazy var provider = BasicProvider(
+        dataSource: dataSource,
         viewSource: ClosureViewSource(viewUpdater: viewUpdater),
         sizeSource: FitHeightAutoLayoutSizeSource(dummyView: View.self, viewUpdater: viewUpdater),
         layout: RowLayout()
@@ -35,7 +37,7 @@ open class CKCycleView<Data, View: UIView>: CustomView, UIScrollViewDelegate {
         self.scrollView.showsVerticalScrollIndicator = false
         self.scrollView.showsHorizontalScrollIndicator = false
         self.scrollView.provider = self.provider
-        self.provider.tapHandler = self.tapHandler
+        self.provider.tapHandler = self.didSelectItem
     }
 
     open override func layoutSubviews() {
@@ -43,10 +45,8 @@ open class CKCycleView<Data, View: UIView>: CustomView, UIScrollViewDelegate {
         self.scrollView.frame = self.bounds
     }
 
-    private var calculateHeight: CGFloat? {
-        didSet { invalidateIntrinsicContentSize() }
-    }
-    public func configData(_ dataArray: [Data]) {
+    open override func configData(_ dataArray: [Data]) {
+        super.configData(dataArray)
         if let data = dataArray.first {
             self.calculateHeight = FitHeightAutoLayoutSizeSource(dummyView: View.self, viewUpdater: viewUpdater).size(at: 0, data: data, collectionSize: self.bounds.size).height
         }
@@ -55,6 +55,9 @@ open class CKCycleView<Data, View: UIView>: CustomView, UIScrollViewDelegate {
         resetItemViewsLocation()
     }
 
+    private var calculateHeight: CGFloat? {
+        didSet { invalidateIntrinsicContentSize() }
+    }
     open override var intrinsicContentSize: CGSize {
         if let height = calculateHeight {
             return CGSize(width: max(size.width, 1), height: height)
@@ -63,23 +66,13 @@ open class CKCycleView<Data, View: UIView>: CustomView, UIScrollViewDelegate {
         }
     }
     // MARK: -
-    open func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    open override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         resetItemViewsLocation()
     }
 }
-extension CKCycleView: SingleFormProtocol {
-    public var totalCount: Int {
-        return self.dataSource.data.count
-    }
-    public var currentIndex: Int {
-        get {return realProgress(offSet: self.scrollView.viewHeadOffset(), length: self.scrollView.length).toInt}
-        set {
-            self.scrollView.scrollTo(offSet: newValue.toCGFloat * self.scrollView.length)
-            resetItemViewsLocation()
-        }
-    }
+extension CKCycleView {
     private func resetItemViewsLocation() {
-        resetItemViewsLocation(repeatCount: self.dataSource.repeatCount, in: scrollView)
+        resetItemViewsLocation(repeatCount: self.dataSource.repeatCount)
     }
 }
 extension CKCollectionView: OneWayScrollProtocol {

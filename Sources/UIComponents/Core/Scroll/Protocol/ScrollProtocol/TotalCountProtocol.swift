@@ -13,6 +13,10 @@ public protocol TotalCountProtocol {
     var totalCount: Int {get}
 }
 public extension TotalCountProtocol {
+    /// ZJaDe: 是否是多个数据
+    public var isMultipleData: Bool {
+        return self.totalCount > 1
+    }
     /// ZJaDe: 根据totalCount返回realIndex
     func realIndex(_ index: Int) -> Int {
         guard self.totalCount > 0 else {

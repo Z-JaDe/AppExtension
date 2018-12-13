@@ -1,5 +1,5 @@
 //
-//  LayoutMultipleItemCell.swift
+//  LayoutItem.swift
 //  AppExtension
 //
 //  Created by 郑军铎 on 2018/6/28.
@@ -8,14 +8,19 @@
 
 import Foundation
 
-public final class LayoutMultipleItemCell<View: UIView>: Equatable {
+public final class LayoutItem<View: UIView>: Equatable {
 
-    internal var itemSpace: ItemSpace = .leading(0)
-    internal var scrollDirection: ScrollDirection = .horizontal
-
-    internal let view: View
-    internal init(_ view: View) {
+    private var itemSpace: ItemSpace
+    private var scrollDirection: ScrollDirection
+    public let view: View
+    internal init(_ view: View, _ itemSpace: ItemSpace, _ scrollDirection: ScrollDirection) {
         self.view = view
+        self.itemSpace = itemSpace
+        self.scrollDirection = scrollDirection
+    }
+    func update(_ itemSpace: ItemSpace, _ scrollDirection: ScrollDirection) {
+        self.itemSpace = itemSpace
+        self.scrollDirection = scrollDirection
     }
     public func sizeThatFits() -> CGSize {
         var resultSize = self.view.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
@@ -28,7 +33,7 @@ public final class LayoutMultipleItemCell<View: UIView>: Equatable {
         return resultSize
     }
     /// ZJaDe: 
-    public static func == (lhs: LayoutMultipleItemCell<View>, rhs: LayoutMultipleItemCell<View>) -> Bool {
+    public static func == (lhs: LayoutItem, rhs: LayoutItem) -> Bool {
         return lhs.view == rhs.view
     }
     /// ZJaDe: 

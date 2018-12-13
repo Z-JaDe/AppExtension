@@ -9,7 +9,7 @@ import Foundation
 
 open class MultipleItemScrollView<ItemView>: ScrollView, ItemsOneWayScrollProtocol where ItemView: UIView {
 
-    internal var _cellArr: [LayoutCellType] = []
+    public var _cellArr: [LayoutItemType] = []
     public func cleanCells() {
         self._cellArr = []
     }
@@ -36,10 +36,9 @@ open class MultipleItemScrollView<ItemView>: ScrollView, ItemsOneWayScrollProtoc
             layoutAllCells()
         }
     }
-    internal func layoutAllCells() {
+    open func layoutAllCells() {
         self._cellArr.forEach { (cell) in
-            cell.itemSpace = self.itemSpace
-            cell.scrollDirection = self.scrollDirection
+            cell.update(self.itemSpace, self.scrollDirection)
         }
     }
     private var isNeedsLayoutCells: Bool = false
@@ -63,7 +62,7 @@ open class MultipleItemScrollView<ItemView>: ScrollView, ItemsOneWayScrollProtoc
         }
     }
     /// ZJaDe: 根据offSet查找cell
-    public func getCell(_ offSet: CGFloat) -> ItemView? {
+    open func getCell(_ offSet: CGFloat) -> ItemView? {
         return nil
     }
 }

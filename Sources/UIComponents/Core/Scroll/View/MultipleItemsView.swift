@@ -16,32 +16,25 @@ import UIKit
  */
 
 // MARK: 抽象类 需要继承
-open class MultipleItemsView<ItemView, ItemData, ScrollViewType>: CustomControl, SingleFormProtocol where ItemView: UIView, ScrollViewType: MultipleItemScrollView<ItemView> {
-    public typealias CellType = ItemView
+open class MultipleItemsView<ItemView, ItemData, ScrollView>: CustomControl,
+    SingleFormProtocol
+    where ItemView: UIView, ScrollView: UIScrollView & OneWayScrollProtocol {
     public var inset: UIEdgeInsets = UIEdgeInsets.zero {
         didSet {setNeedsLayout()}
     }
-    /// ZJaDe: 点击item
-    public var didSelectItemClosure: ((ItemData) -> Void)?
-    /// ZJaDe: 配置model
-    public var configItemClosure: ((ItemView, ItemData) -> Void)?
-    /// ZJaDe: 当item数据需要更新时调用该方法
-    internal func config(cell: CellType, model: ItemData) {
-        modelAndCells[cell] = model
-        self.configItemClosure?(cell, model)
+    /// ZJaDe: viewUpdater
+    open var viewUpdater: ((ItemView, ItemData, Int) -> Void) = {_,_,_ in}
+    /// ZJaDe: 当item数据需要更新时会调用该方法 子类调用
+    public func config(cell: ItemView, index: Int) {
+        self.viewUpdater(cell, dataArray[index], index)
     }
     public private(set) var dataArray: [ItemData] = []
-    internal private(set) var modelAndCells: [CellType: ItemData] = [: ]
-
-    public lazy var scrollView: ScrollViewType = createScrollView()
-    func createScrollView() -> ScrollViewType {
-        return ScrollViewType()
+    public var itemViewArr: [ItemView] = []
+    // MARK: - SingleFormProtocol
+    public lazy var scrollView: ScrollView = createScrollView()
+    open func createScrollView() -> ScrollView {
+        return ScrollView()
     }
-    /// ZJaDe: 是否是多个数据
-    public var isMultipleData: Bool {
-        return self.totalCount > 1
-    }
-    /// ZJaDe: SingleFormProtocol
     public var currentIndex: Int = 0 {
         didSet {
             whenCurrentIndexChanged(oldValue, self.currentIndex)
@@ -82,31 +75,11 @@ open class MultipleItemsView<ItemView, ItemData, ScrollViewType>: CustomControl,
         return result
     }
     /// ZJaDe: _currentIndex更改时会调用该方法，该方法只能用于重写
-    internal func whenCurrentIndexChanged(_ from: Int, _ to: Int) {
+    open func whenCurrentIndexChanged(_ from: Int, _ to: Int) {
         jdAbstractMethod()
     }
     /// ZJaDe: 刷新数据后校正currentIndex 外部使用时不需要调用 重写时可能调用到
-    internal func updateCurrentIndex() {
+    open func updateCurrentIndex() {
         whenCurrentIndexChanged(self.currentIndex, self.currentIndex)
-    }
-    /// ZJaDe: 创建cell
-    internal func createCell() -> CellType {
-        let cell = CellType()
-        cell.isUserInteractionEnabled = true
-        cell.tapGesture.addTarget(self, action: #selector(whenTouch))
-        return cell
-    }
-    @objc func whenTouch(_ tap: UITapGestureRecognizer) {
-        guard let cell = tap.view as? CellType else {
-            return
-        }
-        didSelectItem(cell)
-    }
-    // MARK: isSelected
-    internal func didSelectItem(_ cell: CellType) {
-        guard let model = self.modelAndCells[cell] else {
-            return
-        }
-        self.didSelectItemClosure?(model)
     }
 }

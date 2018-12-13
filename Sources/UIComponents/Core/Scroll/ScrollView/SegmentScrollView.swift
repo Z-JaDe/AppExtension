@@ -34,7 +34,7 @@ public class SegmentScrollView<ItemView>: MultipleItemScrollView<ItemView>, Tota
     }
 
     /// ZJaDe: 布局
-    internal override func layoutAllCells() {
+    public override func layoutAllCells() {
         super.layoutAllCells()
         layoutCellsSize(self._cellArr, self.getCellLength())
         let length = layoutCellsOrigin(self._cellArr, 0)
@@ -139,7 +139,7 @@ extension SegmentScrollView {
             return
         }
         let removeCell = _cellArr.remove(at: index)
-        itemViewRemoveFromSuperview(removeCell.view)
+        removeItemViewFromSuperview(removeCell.view)
         if  _cellArr.count > 0 {
             let needUpdateOriginCells = Array(self._cellArr.suffix(from: index))
             let startLocation: CGFloat = index > 0 ? self._cellArr[index - 1].trailing : 0

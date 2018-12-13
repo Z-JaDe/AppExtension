@@ -9,8 +9,14 @@
 import UIKit
 
 open class SegmentView<ItemView, ItemData>: MultipleItemsView<ItemView, ItemData, SegmentScrollView<ItemView>> where ItemView: UIView {
-    private var cellArr: [CellType] = []
-
+    private var cellArr: [ItemView] {
+        get {return self.scrollView.itemArr}
+        set {self.scrollView.itemArr = newValue}
+    }
+    open override func configInit() {
+        super.configInit()
+        self.scrollView.tapGesture.addTarget(self, action: #selector(whenTap(_:)))
+    }
     // MARK: - 重写
     /// ZJaDe: item总数量
     open override var totalCount: Int {
@@ -19,19 +25,22 @@ open class SegmentView<ItemView, ItemData>: MultipleItemsView<ItemView, ItemData
     /// ZJaDe: 设置数据
     open override func configData(_ dataArray: [ItemData]) {
         super.configData(dataArray)
-        /// ZJaDe: 设置cellArr数据
-        self.cellArr.countIsEqual(dataArray, bind: { (itemView, itemData) in
-            self.config(cell: itemView, model: itemData)
-        }, append: {_ in createCell()}, remove: {_ in })
-
-        self.scrollView.itemArr = self.cellArr
-        self.cellArr.lazy.enumerated().forEach { (offset, cell) in
-            if var itemView = cell as? SelectedStateDesignable {
+        func bind(itemView: ItemView, itemData: ItemData, index: Int) {
+            config(cell: itemView, index: index)
+            if var itemView = itemView as? SelectedStateDesignable {
                 itemView.isSelected = false
             }
-            if offset == self.currentIndex {
-                self.currentItem = cell
-            }
+        }
+        /// ZJaDe: 设置cellArr数据
+        self.cellArr.countIsEqual(
+            dataArray,
+            bind: bind,
+            append: {_ in createCell()},
+            remove: {_ in }
+        )
+        self.scrollView.itemArr = self.cellArr
+        if self.currentIndex < self.cellArr.count {
+            self.currentItem = self.cellArr[self.currentIndex]
         }
         setNeedsLayout()
     }
@@ -45,17 +54,20 @@ open class SegmentView<ItemView, ItemData>: MultipleItemsView<ItemView, ItemData
         updateCurrentIndex()
     }
     /// ZJaDe: 当currentIndex改变时
-    internal override func whenCurrentIndexChanged(_ from: Int, _ to: Int) {
-        guard self.totalCount > 0 else {
-            return
-        }
+    open override func whenCurrentIndexChanged(_ from: Int, _ to: Int) {
+        guard self.totalCount > 0 else { return }
         // ZJaDe: 根据toIndex找到cell滚动
-        let currentItemView: CellType = self.cellArr[self.realIndex(to)]
+        let currentItemView: ItemView = self.cellArr[self.realIndex(to)]
         self.scrollView.scrollTo(currentItemView)
         self.currentItem = currentItemView
         self.currentLayer.position = CGPoint(x: currentItemView.centerX, y: currentItemView.bottom - self.currentLayer.height / 2)
         self.configCurrentLayerClosure?(self.currentLayer, currentItemView.frame)
         self.scrollView.layer.addSublayer(self.currentLayer)
+    }
+    // MARK: -
+    internal func createCell() -> ItemView {
+        let itemView = ItemView()
+        return itemView
     }
 
     // MARK: isSelected
@@ -71,11 +83,14 @@ open class SegmentView<ItemView, ItemData>: MultipleItemsView<ItemView, ItemData
             }
         }
     }
-    internal override func didSelectItem(_ cell: CellType) {
-        super.didSelectItem(cell)
-        self.currentItem = cell
-        if let index = self.cellArr.index(of: cell) {
-            self.currentIndex = index
+    // MARK: -
+    public var didSelectItem: ((TapContext<ItemView, ItemData>) -> Void)?
+    @objc open func whenTap(_ tap: UITapGestureRecognizer) {
+        let point = tap.location(in: tap.view)
+        if let (offset, element) = self.cellArr.enumerated().first(where: {$0.element.point(inside: point, with: nil)}) {
+            self.currentIndex = offset
+            let context = TapContext(view: element, data: dataArray[offset], index: offset)
+            self.didSelectItem?(context)
         }
     }
 }

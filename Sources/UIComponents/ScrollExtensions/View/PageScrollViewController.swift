@@ -8,13 +8,14 @@
 
 import Foundation
 
-open class PageScrollViewController: UIViewController, SingleCycleFormProtocol, UIScrollViewDelegate {
+open class PageScrollViewController: UIViewController, CyclePageFormProtocol, UIScrollViewDelegate {
     open override func loadView() {
         super.loadView()
         self.scrollView.frame = self.view.frame
         self.view = self.scrollView
     }
-    public typealias CellType = UIView
+    public typealias ItemView = UIView
+    public typealias ItemData = UIViewController
     public lazy private(set) var scrollView: PageScrollView<UIView> = PageScrollView<UIView>()
     public var viewConArr: [UIViewController] = [] {
         didSet {
@@ -28,7 +29,7 @@ open class PageScrollViewController: UIViewController, SingleCycleFormProtocol, 
             viewConArr.forEach { (viewCon) in
                 self.addChild(viewCon)
             }
-            checkCells(true)
+            checkCellsLifeCycle(isNeedReset: true)
             whenCurrentIndexChanged(self.currentIndex, self.currentIndex)
 
         }
@@ -65,7 +66,7 @@ open class PageScrollViewController: UIViewController, SingleCycleFormProtocol, 
     internal func whenCurrentIndexChanged(_ from: Int, _ to: Int) {
         self.scroll(to: to)
         Async.main(after: 0.1) {
-            self.checkCells(true)
+            self.checkCellsLifeCycle(isNeedReset: true)
         }
     }
     // MARK: -
@@ -86,7 +87,7 @@ open class PageScrollViewController: UIViewController, SingleCycleFormProtocol, 
     // MARK: -
     func whenScroll() {
         checkDidDisAppearCells()
-        checkWillAppearCells()
+        checkWillAppearCells(isNeedReset: false)
     }
     func whenScrollBegin() {
 
@@ -114,12 +115,12 @@ extension PageScrollViewController {
         }
         let viewCon = self.viewConArr[realIndex(itemIndex)]
         if viewCon.view.superview == nil {
-            willAppear(viewCon.view, offSet: offSet, isToRight: indexOffset > 0)
+            scrollView.add(viewCon.view, offSet: offSet, isToRight: indexOffset > 0)
             viewCon.didMove(toParent: self)
         }
     }
     /// ZJaDe: cell消失后回收
-    public func didDisAppear(_ cell: CellType) {
+    public func didDisAppear(_ cell: ItemView) {
         if let viewCon = cell.viewController(UIViewController.self) {
             viewCon.willMove(toParent: nil)
         }

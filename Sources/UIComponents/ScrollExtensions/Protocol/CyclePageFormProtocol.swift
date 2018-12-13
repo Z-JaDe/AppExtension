@@ -1,22 +1,24 @@
 //
-//  SingleCycleFormProtocol+PageScrollView.swift
+//  CyclePageFormProtocol.swift
 //  AppExtension
 //
-//  Created by 郑军铎 on 2018/12/12.
-//  Copyright © 2018 ZJaDe. All rights reserved.
+//  Created by 郑军铎 on 2018/6/26.
+//  Copyright © 2018年 ZJaDe. All rights reserved.
 //
 
 import Foundation
 
-public extension SingleCycleFormProtocol where ScrollViewType == PageScrollView<CellType>, CellType: UIView {
+public protocol CyclePageFormProtocol: ScrollPageFormProtocol {
+    /// ZJaDe: cell单边延迟释放的个数
+    var cacheDisappearCellCount: Int {get}
     /// ZJaDe: cell消失后回收
-    public func didDisAppear(_ cell: CellType) {
-        self.scrollView.remove(cell)
-    }
+    func didDisAppear(_ cell: ItemView)
+}
+public extension CyclePageFormProtocol where ScrollViewType == PageScrollView<ItemView> {
     /// ZJaDe: 检查cells的消失和出现
-    func checkCells(_ isNeedResetData: Bool = false) {
+    func checkCellsLifeCycle(isNeedReset: Bool) {
         checkDidDisAppearCells()
-        checkWillAppearCells(isNeedResetData)
+        checkWillAppearCells(isNeedReset: isNeedReset)
     }
     var cacheDisappearCellCount: Int {
         return 0
@@ -59,3 +61,8 @@ public extension SingleCycleFormProtocol where ScrollViewType == PageScrollView<
         //        logDebug("visibleCells: \n\(self.scrollView.visibleCells.map({"\($0.debugDescription)"}).joined(separator: "\n"))")
     }
 }
+//extension UIView {
+//    open override var debugDescription: String {
+//        return "\(self.hashValue) \(type(of: self)): \(self.frame))"
+//    }
+//}

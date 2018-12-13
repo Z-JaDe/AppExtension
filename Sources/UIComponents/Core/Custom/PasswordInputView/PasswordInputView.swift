@@ -100,7 +100,11 @@ extension PasswordInputView {
 }
 extension PasswordInputView {
     private func resetItemViews() {
-        self.itemViews.countIsEqual(count: self.passwordMaxLength, append: {_ in PasswordInputItemView()}, remove: {$0.removeFromSuperview()})
+        self.itemViews.countIsEqual(
+            count: self.passwordMaxLength,
+            append: {_ in PasswordInputItemView()},
+            remove: {$0.removeFromSuperview()}
+        )
         self.itemViews.forEach { (itemView) in
             if itemView.superview != self {
                 self.addSubview(itemView)
