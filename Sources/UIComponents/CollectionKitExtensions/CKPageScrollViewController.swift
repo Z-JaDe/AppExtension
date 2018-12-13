@@ -8,7 +8,7 @@
 
 import UIKit
 import CollectionKit
-
+/// ZJaDe: 不完善
 open class CKPageScrollViewController: CKCollectionViewController {
     public typealias CellType = UIView
     public var viewConArr: [UIViewController] = [] {
