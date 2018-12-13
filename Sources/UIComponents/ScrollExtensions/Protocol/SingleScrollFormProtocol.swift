@@ -9,9 +9,6 @@ import Foundation
 
 public protocol SingleScrollFormProtocol: SingleFormProtocol {
     associatedtype CellType
-    associatedtype ScrollViewType: OneWayScrollProtocol
-    var scrollView: ScrollViewType {get}
-
     /// ZJaDe: 检查cells的消失和出现
     func checkCells(_ isNeedResetData: Bool)
 
@@ -21,11 +18,6 @@ public protocol SingleScrollFormProtocol: SingleFormProtocol {
     func loadCell(_ currentOffset: CGFloat, _ indexOffset: Int, _ isNeedResetData: Bool)
     /// ZJaDe: cell快出现时 配置数据
     func willAppear(_ cell: CellType, offSet: CGFloat, isToRight: Bool)
-}
-extension SingleScrollFormProtocol {
-    func resetItemViewsLocation(repeatCount: Int) {
-        resetItemViewsLocation(repeatCount: repeatCount, in: scrollView)
-    }
 }
 
 public extension SingleScrollFormProtocol {

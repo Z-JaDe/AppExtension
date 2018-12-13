@@ -8,14 +8,16 @@
 
 import Foundation
 public protocol SingleFormProtocol: CurrentIndexProtocol, TotalCountProtocol {
+    associatedtype ScrollViewType: OneWayScrollProtocol
+    var scrollView: ScrollViewType {get}
 }
 extension SingleFormProtocol {
     /// ZJaDe: 重新设置visibleItemViews在scrollView里的位置
-    public func resetItemViewsLocation(repeatCount: Int = 1, in scrollItem: OneWayScrollProtocol) {
-        let length = scrollItem.length
+    public func resetItemViewsLocation(repeatCount: Int = 1) {
+        let length = scrollView.length
         guard self.totalCount > 0 && length > 0 else { return }
         guard repeatCount % 2 == 0 else { return }
-        let scrollViewOffSet = scrollItem.viewHeadOffset()
+        let scrollViewOffSet = scrollView.viewHeadOffset()
         let offSet: CGFloat
         if self.totalCount == 1 {
             offSet = 0
@@ -29,7 +31,7 @@ extension SingleFormProtocol {
             }
         }
         if offSet != 0 {
-            scrollItem.scrollTo(offSet: scrollViewOffSet + offSet, animated: false)
+            scrollView.scrollTo(offSet: scrollViewOffSet + offSet, animated: false)
         }
     }
 }
