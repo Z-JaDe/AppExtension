@@ -74,6 +74,7 @@ extension UIViewControllerContextTransitioning {
     }
     func addTempFromView() -> UIView {
         let view = UIImageView(image: fromView.toImage())
+        view.tag = 111
         view.frame = initialFrame(for: fromVC)
         containerView.addSubview(view)
         return view

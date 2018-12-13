@@ -19,16 +19,16 @@ public class NeedUpdateTask {
     private var isNeedUpdate: Bool = false
 
     public func setNeedUpdate() {
-        self.isNeedUpdate = true
-        self.needUpdateSubject.onNext(())
+        if self.isNeedUpdate == false {
+            self.isNeedUpdate = true
+            self.needUpdateSubject.onNext(())
+        }
     }
     public func setNeedUpdateObserver() -> AnyObserver<Void> {
         return AnyObserver(eventHandler: { (event) in
             switch event {
-            case .next:
-                self.setNeedUpdate()
-            case .completed, .error:
-                break
+            case .next: self.setNeedUpdate()
+            case .completed, .error: break
             }
         })
     }
@@ -59,8 +59,8 @@ public class NeedUpdateTask {
             .subscribeOnNext({[weak self] () in
                 guard let `self` = self else { return }
                 guard self.isNeedUpdate else { return }
-                self.isNeedUpdate = false
                 self.updateClosure?()
+                self.isNeedUpdate = false
             }).disposed(by: self.updateStreamDisposeBag)
 //
 //        Observable.of(limitObservable, updateSubject)
