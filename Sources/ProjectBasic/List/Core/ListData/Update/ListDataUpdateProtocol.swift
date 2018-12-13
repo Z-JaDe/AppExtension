@@ -10,6 +10,12 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+public typealias TableListData = ListData<TableSection, TableAdapterItemCompatible>
+public typealias TableStaticData = ListData<TableSection, StaticTableItemCell>
+
+public typealias TableUpdateInfo = ListUpdateInfo<TableListData>
+public typealias TableStaticUpdateInfo = ListUpdateInfo<TableStaticData>
+
 /// 更新数据源的协议
 public protocol ListDataUpdateProtocol: class {
     associatedtype Section: Diffable
@@ -57,5 +63,9 @@ extension ListDataUpdateProtocol where Item == TableAdapterItemCompatible {
             return closure()?.map({.cell($0)})
         })
     }
-
+}
+extension ListData where Item: StaticTableItemCell, Section == TableSection {
+    public func updateInfo() -> TableUpdateInfo {
+        return self.map({.cell($0)}).updateInfo()
+    }
 }

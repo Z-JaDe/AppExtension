@@ -52,3 +52,4 @@ extension ListData {
         return ListUpdateInfo(data: self)
     }
 }
+

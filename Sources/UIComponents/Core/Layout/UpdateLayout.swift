@@ -41,16 +41,10 @@ public class UpdateLayout: CustomDebugStringConvertible {
     }
     // MARK: -
     public func activate(tag: String) {
-        self.constraintDict[tag]?.forEach { (constraint) in
-            constraint.activate()
-        }
+        self.constraintDict[tag]?.forEach {$0.activate()}
     }
     public func deactivate(tag: String) {
-        self.constraintDict[tag]?.forEach { (constraint) in
-            if constraint.isActive {
-                constraint.deactivate()
-            }
-        }
+        self.constraintDict[tag]?.lazy.filter({$0.isActive}).forEach {$0.deactivate()}
         self.constraintDict[tag] = nil
     }
     // MARK: - 
