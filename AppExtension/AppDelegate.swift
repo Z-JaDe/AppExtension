@@ -121,6 +121,9 @@ class AAA:DisposeBagProtocol {
             print("AAA")
         }
     }
+    lazy var a: () -> Void = { [self] in
+        print(self)
+    }
     func configInit() {
         let a = [1,2,3,4,5,6].lazy.compactMap { (value) -> Int? in
             print("处理\(value)")
