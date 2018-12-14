@@ -138,34 +138,34 @@ extension Updater: Updating {
     var isInHierarchy: Bool {
         return updating.isInHierarchy
     }
-    func performBatch(animated: Bool, updates: @escaping () -> Void, completion: @escaping (Bool) -> Void) {
+    public func performBatch(animated: Bool, updates: @escaping () -> Void, completion: @escaping (Bool) -> Void) {
         updating.performBatch(animated: animated, updates: updates, completion: completion)
     }
-    func insertItems(at indexPaths: [IndexPath]) {
+    public func insertItems(at indexPaths: [IndexPath]) {
         updating.insertItems(at: indexPaths)
     }
-    func deleteItems(at indexPaths: [IndexPath]) {
+    public func deleteItems(at indexPaths: [IndexPath]) {
         updating.deleteItems(at: indexPaths)
     }
-    func reloadItems(at indexPaths: [IndexPath]) {
+    public func reloadItems(at indexPaths: [IndexPath]) {
         updating.reloadItems(at: indexPaths)
     }
-    func moveItem(at indexPath: IndexPath, to newIndexPath: IndexPath) {
+    public func moveItem(at indexPath: IndexPath, to newIndexPath: IndexPath) {
         updating.moveItem(at: indexPath, to: newIndexPath)
     }
-    func insertSections(_ sections: IndexSet) {
+    public func insertSections(_ sections: IndexSet) {
         updating.insertSections(sections)
     }
-    func deleteSections(_ sections: IndexSet) {
+    public func deleteSections(_ sections: IndexSet) {
         updating.deleteSections(sections)
     }
-    func reloadSections(_ sections: IndexSet) {
+    public func reloadSections(_ sections: IndexSet) {
         updating.reloadSections(sections)
     }
-    func moveSection(_ section: Int, toSection newSection: Int) {
+    public func moveSection(_ section: Int, toSection newSection: Int) {
         updating.moveSection(section, toSection: newSection)
     }
-    func reload(completion: @escaping () -> Void) {
+    public func reload(completion: @escaping () -> Void) {
         updating.reload(completion: completion)
     }
 }
