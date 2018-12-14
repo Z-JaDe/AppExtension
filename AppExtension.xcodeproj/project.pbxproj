@@ -350,7 +350,6 @@
 		C9B34DFC2133E097002C5F37 /* ListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B34DFB2133E097002C5F37 /* ListViewControllerTest.swift */; };
 		C9BC50E6216B081900381972 /* ResultParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BC50E5216B081900381972 /* ResultParser.swift */; };
 		C9DF833E2179D1640044334E /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DF833D2179D1640044334E /* Core.swift */; };
-		E3530E1F2558BAF38DFD19B8 /* Pods_BaseCore_CommonPods_List.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBAF48EB8821AD92E2F69A05 /* Pods_BaseCore_CommonPods_List.framework */; };
 		E57C820B26CAE39CB877A165 /* Pods_BaseCore_UIComponents_CollectionKitExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE983DABFBEDE870E487D00B /* Pods_BaseCore_UIComponents_CollectionKitExtensions.framework */; };
 		E87C618F4B3BE06A26771C95 /* Pods_AppExtensionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AE030F6C0EAB67632202A9 /* Pods_AppExtensionTests.framework */; };
 		F31A1630517868D0CC87B851 /* Pods_BaseCore_UserNotificationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CAF8AF88F79CEC9F915ABAA /* Pods_BaseCore_UserNotificationManager.framework */; };
@@ -1228,7 +1227,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3530E1F2558BAF38DFD19B8 /* Pods_BaseCore_CommonPods_List.framework in Frameworks */,
 				F4F97C73FA1A98A44414BEEC /* Pods_BaseCore_CommonPods_ProjectBasic_List.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1406,6 +1404,7 @@
 			isa = PBXGroup;
 			children = (
 				C910E63921AE86420067B51B /* Updater.swift */,
+				C910E63321AE80870067B51B /* Updating.swift */,
 				C910E64021AEA2650067B51B /* DataController.swift */,
 				C90A1C2A21B01EB6007D573C /* DataController+Update.swift */,
 			);
@@ -1476,16 +1475,6 @@
 				C910569821A847BB00F87515 /* Info.plist */,
 			);
 			path = AnimatedTransition;
-			sourceTree = "<group>";
-		};
-		C910E63F21AE9D0F0067B51B /* Updating */ = {
-			isa = PBXGroup;
-			children = (
-				C910E63321AE80870067B51B /* Updating.swift */,
-				C910E63521AE83BA0067B51B /* TableViewUpdating.swift */,
-				C910E63721AE84B50067B51B /* CollectionViewUpdating.swift */,
-			);
-			path = Updating;
 			sourceTree = "<group>";
 		};
 		C91240C021C1205D00F13151 /* ScrollExtensions */ = {
@@ -2110,6 +2099,7 @@
 			children = (
 				C90E083221BA714F00A59AD6 /* CellHeight */,
 				C932FA1321006ED100B8DF84 /* TableViewDataSource.swift */,
+				C910E63521AE83BA0067B51B /* TableViewUpdating.swift */,
 				C932FA4B21006ED200B8DF84 /* TableCellConfigProtocol.swift */,
 				C9140BEA21B6777000CBA642 /* TableAdapterDelegate.swift */,
 				C932FA0121006ED100B8DF84 /* TableSection.swift */,
@@ -2127,7 +2117,6 @@
 				C918DEFC21B52299000F2AAC /* ListData */,
 				C90A1C1E21AFDFC4007D573C /* ListAdapter */,
 				C90A1C2021AFE75E007D573C /* DataController */,
-				C910E63F21AE9D0F0067B51B /* Updating */,
 				C9B175F32130330A0095DC35 /* SectionedViewDataSource */,
 				C932FA4721006ED200B8DF84 /* Protocol */,
 				C9BC50E4216B017E00381972 /* RefreshList */,
@@ -2140,6 +2129,7 @@
 			isa = PBXGroup;
 			children = (
 				C932FA2721006ED200B8DF84 /* CollectSection.swift */,
+				C910E63721AE84B50067B51B /* CollectionViewUpdating.swift */,
 				C932FA4C21006ED200B8DF84 /* CollectionCellConfigProtocol.swift */,
 				C9140BEC21B6779E00CBA642 /* CollectionAdapterDelegate.swift */,
 				C932FA2921006ED200B8DF84 /* UICollectionAdapter.swift */,

@@ -12,7 +12,7 @@ import RxCocoa
 import RxSwift
 
 open class CollectionViewDataSource<S: SectionModelType>
-    : SectionedDataSource<S, CollectionViewUpdating>, UICollectionViewDataSource {
+    : SectionedDataSource<S>, UICollectionViewDataSource {
     public typealias ConfigureCell = (CollectionViewDataSource<S>, UICollectionView, IndexPath, S.Item) -> UICollectionViewCell
     public typealias ConfigureSupplementaryView = (CollectionViewDataSource<S>, UICollectionView, String, IndexPath) -> UICollectionReusableView
     public typealias MoveItem = (CollectionViewDataSource<S>, _ sourceIndexPath: IndexPath, _ destinationIndexPath: IndexPath) -> Void
@@ -91,9 +91,9 @@ open class CollectionViewDataSource<S: SectionModelType>
 
 extension CollectionViewDataSource: RxCollectionViewDataSourceType {
     public func collectionView(_ collectionView: UICollectionView, observedEvent: Event<Element>) {
-        let updater = createUpdater(target: collectionView)
+        let updater = collectionView.updater
         Binder(self) { dataSource, newValue in
             dataSource.rxChange(newValue, updater)
-            }.on(observedEvent)
+        }.on(observedEvent)
     }
 }

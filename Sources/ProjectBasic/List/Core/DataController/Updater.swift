@@ -13,7 +13,7 @@ public enum ListUpdateMode {
     case everything
     case partial(animated: Bool)
 }
-public final class Updater<A: Updating> {
+public final class Updater {
     enum State {
         case idle
         case updating
@@ -22,8 +22,8 @@ public final class Updater<A: Updating> {
         willSet { assertMainThread() }
     }
 
-    let updating: A
-    init(_ updating: A) {
+    private let updating: Updating
+    init(_ updating: Updating) {
         self.updating = updating
     }
     /// ZJaDe: 刷新或者更新列表, 根据updateMode判断
@@ -131,5 +131,41 @@ extension Updater {
     }
     private func mapIndexPath(_ indexPath: ElementPath) -> IndexPath {
         return IndexPath(row: indexPath.element, section: indexPath.section)
+    }
+}
+
+extension Updater: Updating {
+    var isInHierarchy: Bool {
+        return updating.isInHierarchy
+    }
+    func performBatch(animated: Bool, updates: @escaping () -> Void, completion: @escaping (Bool) -> Void) {
+        updating.performBatch(animated: animated, updates: updates, completion: completion)
+    }
+    func insertItems(at indexPaths: [IndexPath]) {
+        updating.insertItems(at: indexPaths)
+    }
+    func deleteItems(at indexPaths: [IndexPath]) {
+        updating.deleteItems(at: indexPaths)
+    }
+    func reloadItems(at indexPaths: [IndexPath]) {
+        updating.reloadItems(at: indexPaths)
+    }
+    func moveItem(at indexPath: IndexPath, to newIndexPath: IndexPath) {
+        updating.moveItem(at: indexPath, to: newIndexPath)
+    }
+    func insertSections(_ sections: IndexSet) {
+        updating.insertSections(sections)
+    }
+    func deleteSections(_ sections: IndexSet) {
+        updating.deleteSections(sections)
+    }
+    func reloadSections(_ sections: IndexSet) {
+        updating.reloadSections(sections)
+    }
+    func moveSection(_ section: Int, toSection newSection: Int) {
+        updating.moveSection(section, toSection: newSection)
+    }
+    func reload(completion: @escaping () -> Void) {
+        updating.reload(completion: completion)
     }
 }

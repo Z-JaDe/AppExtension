@@ -14,9 +14,7 @@ extension TableItemCell {
         set {setAssociatedObject(&isUpdatingKey, newValue)}
     }
     func updateHeight<Item: TableCellHeightProtocol>(_ item: Item, _ closure: (() -> Void)?) {
-        guard self.isUpdating == false else {
-            return
-        }
+        guard self.isUpdating == false else { return }
         guard CATransform3DIsIdentity(self.layer.transform) else {
             return
         }
@@ -41,7 +39,7 @@ extension TableItemCell {
         self.setNeedUpdate()
         self.isUpdating = true
         UIView.animate(withDuration: 0.25) {
-            TableViewUpdating(tableView).performBatch(animated: true, updates: {
+            tableView.updater.performBatch(animated: true, updates: {
                 closure?()
             }, completion: {[weak self] _ in
                 self?.isUpdating = false

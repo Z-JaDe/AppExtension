@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import UIComponents
+import ScrollExtensions
 
 class CycleViewViewControllerTest: UIViewController {
     
@@ -36,7 +36,7 @@ class CycleViewViewControllerTest: UIViewController {
     
     let segmentView: CycleView<ItemView, String> = {
         let segment = CycleView<ItemView, String>()
-        segment.configItemClosure = { (itemView, data) in
+        segment.viewUpdater = { (itemView, data, _) in
             itemView.label.text = "\(data)"
             Async.main(after: 1, {
                 //            label.superview?.superview?.setNeedsLayout()

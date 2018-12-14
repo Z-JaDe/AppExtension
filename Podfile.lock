@@ -62,6 +62,7 @@ DEPENDENCIES:
   - DifferenceKit
   - Encryption (from `~/Desktop/wallet-ios/BaseSupport/Encryption`)
   - FunctionalSwift (from `~/Desktop/wallet-ios/BaseSupport/FunctionalSwift`)
+  - Kingfisher
   - MBProgressHUD
   - MJRefresh (from `https://github.com/CoderMJLee/MJRefresh`)
   - ModalManager (from `~/Desktop/wallet-ios/BaseSupport/ModalManager`)
@@ -157,6 +158,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
   Validation: b695c801939fdaa32b489dbf6e4a739538829a5a
 
-PODFILE CHECKSUM: db6ae9a8af9021775097077535eb3f429636544c
+PODFILE CHECKSUM: bda7ca48103521bd25db5841f749f3bc83c74c7b
 
 COCOAPODS: 1.5.0

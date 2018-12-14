@@ -19,7 +19,7 @@ struct SectionModelSnapshot<Section, Item: Diffable> {
         self.items = items
     }
 }
-public final class DataController<S: SectionModelType, A: Updating> {
+public final class DataController<S: SectionModelType> {
     public typealias I = S.Item
     typealias DataSnapshot = SectionModelSnapshot<S, I>
     internal var _data: [DataSnapshot] = []

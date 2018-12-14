@@ -7,17 +7,22 @@
 //
 
 import UIKit
-
-open class CollectionViewUpdating: Updating {
-    public weak var collectionView: UICollectionView?
-    public var target: UICollectionView? {
-        return collectionView
+private var updaterKey: UInt8 = 0
+extension UICollectionView {
+    public var updater: Updater {
+        return associatedObject(&updaterKey, createIfNeed: Updater(CollectionViewUpdating(self)))
     }
-    required public init(_ target: UICollectionView) {
+}
+private class CollectionViewUpdating: Updating {
+    private weak var collectionView: UICollectionView?
+    fileprivate init(_ target: UICollectionView) {
         self.collectionView = target
     }
+    var isInHierarchy: Bool {
+        return collectionView?.window != nil
+    }
     // MARK: -
-    open func performBatch(animated: Bool, updates: @escaping () -> Void, completion: @escaping (Bool) -> Void) {
+    func performBatch(animated: Bool, updates: @escaping () -> Void, completion: @escaping (Bool) -> Void) {
         guard let collectionView = collectionView else { return }
         if animated {
             collectionView.performBatchUpdates(updates, completion: completion)
@@ -33,34 +38,34 @@ open class CollectionViewUpdating: Updating {
         }
     }
     // MARK: -
-    open func insertItems(at indexPaths: [IndexPath]) {
+    func insertItems(at indexPaths: [IndexPath]) {
         collectionView?.insertItems(at: indexPaths)
     }
-    open func deleteItems(at indexPaths: [IndexPath]) {
+    func deleteItems(at indexPaths: [IndexPath]) {
         collectionView?.deleteItems(at: indexPaths)
     }
-    open func reloadItems(at indexPaths: [IndexPath]) {
+    func reloadItems(at indexPaths: [IndexPath]) {
         collectionView?.reloadItems(at: indexPaths)
     }
-    open func moveItem(at indexPath: IndexPath, to newIndexPath: IndexPath) {
+    func moveItem(at indexPath: IndexPath, to newIndexPath: IndexPath) {
         collectionView?.moveItem(at: indexPath, to: newIndexPath)
     }
     // MARK: -
     // MARK: -
-    open func insertSections(_ sections: IndexSet) {
+    func insertSections(_ sections: IndexSet) {
         collectionView?.insertSections(sections)
     }
-    open func deleteSections(_ sections: IndexSet) {
+    func deleteSections(_ sections: IndexSet) {
         collectionView?.deleteSections(sections)
     }
-    open func reloadSections(_ sections: IndexSet) {
+    func reloadSections(_ sections: IndexSet) {
         collectionView?.reloadSections(sections)
     }
-    open func moveSection(_ section: Int, toSection newSection: Int) {
+    func moveSection(_ section: Int, toSection newSection: Int) {
         collectionView?.moveSection(section, toSection: newSection)
     }
     // MARK: -
-    open func reload(completion: @escaping () -> Void) {
+    func reload(completion: @escaping () -> Void) {
         collectionView?.reloadData()
         collectionView?.collectionViewLayout.invalidateLayout()
         completion()

@@ -10,6 +10,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+public typealias TableListData = ListData<TableSection, TableAdapterItemCompatible>
+public typealias TableStaticData = ListData<TableSection, StaticTableItemCell>
+
+public typealias TableUpdateInfo = ListUpdateInfo<TableListData>
+public typealias TableStaticUpdateInfo = ListUpdateInfo<TableStaticData>
+
 open class UITableAdapter: ListAdapter<TableViewDataSource<SectionModelItem<TableSection, TableAdapterItemCompatible>>> {
 
     public weak private(set) var tableView: UITableView?
@@ -131,6 +137,10 @@ extension UITableAdapter {
             .disposed(by: self.disposeBag)
     }
 }
+/** ZJaDe:
+ 因为heightForRow方法再reloadData的时候会调用一遍，所以计算高度的逻辑应该放在createCell中
+ 但是有时候height是重设的不会走createCell，所以当height为resetLayout时，即使在heightForRow方法中也要计算
+*/
 extension UITableAdapter: TableAdapterDelegate {
     private func createCell(in tableView: UITableView, for indexPath: IndexPath, item: TableAdapterItemCompatible) -> UITableViewCell {
         if item.value.cellHeightLayoutType.isNeedLayout {
@@ -142,7 +152,11 @@ extension UITableAdapter: TableAdapterDelegate {
         guard dataController.indexPathCanBound(indexPath) else {
             return 0.1
         }
-        let height = dataController[indexPath].value.tempCellHeight
+        let item = dataController[indexPath]
+        if item.value.cellHeightLayoutType == .resetLayout {
+            item.value.calculateCellHeight(tableView!, wait: true)
+        }
+        let height = item.value.tempCellHeight
         return height > 0 ? height : Space.cellDefaultHeight
     }
     // MARK: -

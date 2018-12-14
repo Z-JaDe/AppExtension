@@ -56,6 +56,7 @@ abstract_target 'BaseCore' do
         end
         target:'ProjectBasic' do
             pod 'Rx+Kingfisher', :path => '~/Desktop/wallet-ios/BaseSupport/RxKingfisher'
+            pod 'Kingfisher'
             pod 'MBProgressHUD'
             pod 'SwiftyUserDefaults'
 

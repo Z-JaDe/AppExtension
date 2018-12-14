@@ -8,16 +8,23 @@
 
 import UIKit
 
-open class TableViewUpdating: Updating {
-    public weak var tableView: UITableView?
-    public var target: UITableView? {
-        return tableView
+private var updaterKey: UInt8 = 0
+extension UITableView {
+    public var updater: Updater {
+        return associatedObject(&updaterKey, createIfNeed: Updater(TableViewUpdating(self)))
     }
-    required public init(_ target: UITableView) {
+}
+
+private class TableViewUpdating: Updating {
+    private weak var tableView: UITableView?
+    fileprivate init(_ target: UITableView) {
         self.tableView = target
     }
+    var isInHierarchy: Bool {
+        return tableView?.window != nil
+    }
     // MARK: - 
-    open func performBatch(animated: Bool, updates: @escaping () -> Void, completion: @escaping (Bool) -> Void) {
+    func performBatch(animated: Bool, updates: @escaping () -> Void, completion: @escaping (Bool) -> Void) {
         if animated {
             _performBatchUpdates(updates, completion: completion)
         } else {
@@ -41,33 +48,33 @@ open class TableViewUpdating: Updating {
         }
     }
     // MARK: -
-    open func insertItems(at indexPaths: [IndexPath]) {
+    func insertItems(at indexPaths: [IndexPath]) {
         tableView?.insertRows(at: indexPaths, with: .automatic)
     }
-    open func deleteItems(at indexPaths: [IndexPath]) {
+    func deleteItems(at indexPaths: [IndexPath]) {
         tableView?.deleteRows(at: indexPaths, with: .automatic)
     }
-    open func reloadItems(at indexPaths: [IndexPath]) {
+    func reloadItems(at indexPaths: [IndexPath]) {
         tableView?.reloadRows(at: indexPaths, with: .automatic)
     }
-    open func moveItem(at indexPath: IndexPath, to newIndexPath: IndexPath) {
+    func moveItem(at indexPath: IndexPath, to newIndexPath: IndexPath) {
         tableView?.moveRow(at: indexPath, to: newIndexPath)
     }
     // MARK: -
-    open func insertSections(_ sections: IndexSet) {
+    func insertSections(_ sections: IndexSet) {
         tableView?.insertSections(sections, with: .automatic)
     }
-    open func deleteSections(_ sections: IndexSet) {
+    func deleteSections(_ sections: IndexSet) {
         tableView?.deleteSections(sections, with: .automatic)
     }
-    open func reloadSections(_ sections: IndexSet) {
+    func reloadSections(_ sections: IndexSet) {
         tableView?.reloadSections(sections, with: .automatic)
     }
-    open func moveSection(_ section: Int, toSection newSection: Int) {
+    func moveSection(_ section: Int, toSection newSection: Int) {
         tableView?.moveSection(section, toSection: newSection)
     }
     // MARK: -
-    open func reload(completion: @escaping () -> Void) {
+    func reload(completion: @escaping () -> Void) {
         tableView?.reloadData()
         completion()
     }

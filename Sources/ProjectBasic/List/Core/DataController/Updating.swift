@@ -8,12 +8,9 @@
 
 import Foundation
 
-public protocol Updating: class {
-    associatedtype Target
-    var target: Target? { get }
-    init(_ target: Target)
-
+protocol Updating: class {
     var isInHierarchy: Bool { get }
+
     func performBatch(animated: Bool, updates: @escaping () -> Void, completion: @escaping (Bool) -> Void)
 
     func insertItems(at indexPaths: [IndexPath])
@@ -27,9 +24,4 @@ public protocol Updating: class {
     func moveSection(_ section: Int, toSection newSection: Int)
 
     func reload(completion: @escaping () -> Void)
-}
-extension Updating where Target: UIView {
-    public var isInHierarchy: Bool {
-        return target?.window != nil
-    }
 }

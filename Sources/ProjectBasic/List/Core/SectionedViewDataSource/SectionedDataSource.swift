@@ -12,14 +12,13 @@ import RxCocoa
 
 public protocol SectionedDataSourceType {
     associatedtype S: SectionModelType
-    associatedtype A: Updating
-    typealias DataControllerType = DataController<S, A>
+    typealias DataControllerType = DataController<S>
     var dataController: DataControllerType {get}
 }
 
-open class SectionedDataSource<S: SectionModelType, A: Updating>: NSObject, SectionedDataSourceType {
-    public let dataController: DataController<S, A>
-    public init(dataController: DataController<S, A>) {
+open class SectionedDataSource<S: SectionModelType>: NSObject, SectionedDataSourceType {
+    public let dataController: DataController<S>
+    public init(dataController: DataController<S>) {
         self.dataController = dataController
         super.init()
         self.configInit()
@@ -38,10 +37,8 @@ open class SectionedDataSource<S: SectionModelType, A: Updating>: NSObject, Sect
     }
     #endif
     public typealias Element = ListUpdateInfo<[S]>
-    func createUpdater(target: A.Target) -> Updater<A> {
-        return Updater(A(target))
-    }
-    func rxChange(_ newValue: Element, _ updater: Updater<A>) {
+
+    func rxChange(_ newValue: Element, _ updater: Updater) {
         #if DEBUG
         self._dataSourceBound = true
         #endif

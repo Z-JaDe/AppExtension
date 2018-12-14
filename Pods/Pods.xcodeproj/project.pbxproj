@@ -4500,7 +4500,7 @@
 				0000000033A0 /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../../../AppExtension/Pods/Target Support Files/CocoaExtension";
+			path = "../AppExtension/Pods/Target Support Files/CocoaExtension";
 			sourceTree = "<group>";
 		};
 		0000000037B0 /* Support Files */ = {
@@ -4542,7 +4542,7 @@
 				0000000040E0 /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../../../AppExtension/Pods/Target Support Files/Encryption";
+			path = "../AppExtension/Pods/Target Support Files/Encryption";
 			sourceTree = "<group>";
 		};
 		000000004240 /* Support Files */ = {
@@ -4556,7 +4556,7 @@
 				000000004290 /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../../../AppExtension/Pods/Target Support Files/FunctionalSwift";
+			path = "../AppExtension/Pods/Target Support Files/FunctionalSwift";
 			sourceTree = "<group>";
 		};
 		0000000044F0 /* Support Files */ = {
@@ -4612,7 +4612,7 @@
 				000000004BC0 /* ModalManager-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../../../AppExtension/Pods/Target Support Files/ModalManager";
+			path = "../AppExtension/Pods/Target Support Files/ModalManager";
 			sourceTree = "<group>";
 		};
 		000000004D30 /* Support Files */ = {
@@ -4626,7 +4626,7 @@
 				000000004D60 /* Rx+Kingfisher-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../../../AppExtension/Pods/Target Support Files/Rx+Kingfisher";
+			path = "../AppExtension/Pods/Target Support Files/Rx+Kingfisher";
 			sourceTree = "<group>";
 		};
 		000000004E90 /* Support Files */ = {
@@ -4780,7 +4780,7 @@
 				000000007200 /* Validation-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../../../AppExtension/Pods/Target Support Files/Validation";
+			path = "../AppExtension/Pods/Target Support Files/Validation";
 			sourceTree = "<group>";
 		};
 		000000007300 /* Pods-AppExtensionTests */ = {
@@ -6221,7 +6221,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 000000000030 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -8411,7 +8411,6 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;

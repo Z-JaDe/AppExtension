@@ -10,7 +10,7 @@ import Foundation
 import DifferenceKit
 
 extension DataController {
-    func update(_ newData: ListUpdateInfo<[S]>, _ updater: Updater<A>) {
+    func update(_ newData: ListUpdateInfo<[S]>, _ updater: Updater) {
         let stagedChangeset = StagedChangeset<[S]>(source: self.sectionModels, target: newData.data)
         let updateMode: ListUpdateMode
         if self.dataSet == false {

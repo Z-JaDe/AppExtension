@@ -13,7 +13,7 @@ import RxCocoa
 import RxSwift
 
 open class TableViewDataSource<S: SectionModelType>
-    : SectionedDataSource<S, TableViewUpdating>, UITableViewDataSource {
+    : SectionedDataSource<S>, UITableViewDataSource {
     public typealias ConfigureCell = (TableViewDataSource<S>, UITableView, IndexPath, S.Item) -> UITableViewCell
     public typealias TitleForHeaderInSection = (TableViewDataSource<S>, Int) -> String?
     public typealias TitleForFooterInSection = (TableViewDataSource<S>, Int) -> String?
@@ -125,10 +125,11 @@ open class TableViewDataSource<S: SectionModelType>
 
 extension TableViewDataSource: RxTableViewDataSourceType {
     public func tableView(_ tableView: UITableView, observedEvent: Event<Element>) {
-        let updater = createUpdater(target: tableView)
+        let updater = tableView.updater
         Binder(self) { dataSource, newValue in
             dataSource.rxChange(newValue, updater)
         }.on(observedEvent)
     }
 }
+
 #endif
