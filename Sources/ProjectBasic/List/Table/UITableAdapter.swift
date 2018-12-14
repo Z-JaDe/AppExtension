@@ -138,7 +138,7 @@ extension UITableAdapter {
     }
 }
 /** ZJaDe:
- 因为heightForRow方法再reloadData的时候会调用一遍，所以计算高度的逻辑应该放在createCell中
+ 因为heightForRow方法在reloadData的时候会全调用一遍，所以计算高度的逻辑应该放在createCell中
  但是有时候height是重设的不会走createCell，所以当height为resetLayout时，即使在heightForRow方法中也要计算
 */
 extension UITableAdapter: TableAdapterDelegate {
