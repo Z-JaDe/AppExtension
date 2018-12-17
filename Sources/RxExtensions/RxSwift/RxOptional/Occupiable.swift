@@ -6,7 +6,6 @@
 //  Copyright © 2017年 Z_JaDe. All rights reserved.
 //
 import RxOptional
-
 public extension Occupiable {
     public var nilIfEmpty: Self? {
         return self.isEmpty

@@ -9,14 +9,6 @@
 import Foundation
 import RxSwift
 
-extension Observable where Element: Equatable {
-    func ignore(value: Element) -> Observable<Element> {
-        return filter { (e) -> Bool in
-            return value != e
-        }
-    }
-}
-
 extension ObservableType {
     func then(closure: @escaping () -> Observable<E>?) -> Observable<E> {
         return then(closure: closure() ?? .empty())
@@ -28,11 +20,5 @@ extension ObservableType {
 
         return self
             .concat(next)
-    }
-}
-
-extension Observable {
-    func mapToOptional() -> Observable<Element?> {
-        return map { Optional($0) }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ViewStateProtocol.swift
+//  RootViewState.swift
 //  ZiWoYou
 //
 //  Created by Z_JaDe on 16/9/27.

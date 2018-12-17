@@ -62,6 +62,11 @@ Pod::Spec.new do |s|
         ss.dependency "RxSwiftExt"
         ss.dependency "RxOptional"
     end
+    s.subspec "NavigationFlow" do |ss|
+        ss.source_files  = "Sources/NavigationFlow/**/*.{swift}"
+
+        ss.dependency "AppExtension/RxExtensions"
+    end
 
     #组件
     s.subspec "UIComponents" do |ss|
@@ -112,20 +117,27 @@ Pod::Spec.new do |s|
         end
     end
     #项目集成
-    s.subspec "Default" do |ss|
+    s.subspec "MVCProject" do |ss|
         ss.dependency "AppExtension/ProjectBasic"
         ss.dependency "AppExtension/ProjectBasic/List"
 
         ss.dependency "AppExtension/UIComponents/ScrollExtensions"
         ss.dependency "AppExtension/UIComponents/CollectionKitExtensions"
 
-        ss.dependency "AppExtension/RouterManager"
         ss.dependency "AppExtension/AnimatedTransition"
         ss.dependency "AppExtension/UserNotificationManager"
 
         ss.dependency "SwiftyUserDefaults"
         ss.dependency "Rx+Kingfisher"
         ss.dependency "MBProgressHUD"
+    end
+    s.subspec "Default" do |ss|
+        ss.dependency "AppExtension/MVCProject"
+        ss.dependency "AppExtension/RouterManager"
+    end
+    s.subspec "MVCFlow" do |ss|
+        ss.dependency "AppExtension/MVCProject"
+        ss.dependency "AppExtension/NavigationFlow"
     end
 
 end

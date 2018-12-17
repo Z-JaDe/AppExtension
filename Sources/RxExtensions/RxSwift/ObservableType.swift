@@ -16,11 +16,28 @@ public enum ErrorEventHandle {
     case never
 }
 
-extension ObservableType {
+extension Observable {
     public func mapToVoid() -> Observable<()> {
         return map {_ in ()}
     }
-
+    func mapToOptional() -> Observable<Element?> {
+        return map { Optional($0) }
+    }
+}
+extension Observable where Element == Bool {
+    func filterTrue() -> Observable<Void> {
+        return filter({$0}).mapToVoid()
+    }
+}
+extension Observable where Element: Equatable {
+    func ignore(value: Element) -> Observable<Element> {
+        return filter { (e) -> Bool in
+            return value != e
+        }
+    }
+}
+// MARK: - subscribe
+extension ObservableType {
     public func subscribeOnNext(_ onNext: @escaping (E) -> Void) -> Disposable {
         return subscribe(onNext: onNext, onError: { error in
             logError("订阅失败 error: \(error)")

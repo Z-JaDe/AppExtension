@@ -8,7 +8,7 @@
 
 import Foundation
 import RxSwift
-
+@available(iOS, deprecated: 9.0, message: "可以使用 pausableBuffered")
 public class NeedUpdateTask {
     let buffer: TimeInterval
     public init(buffer: TimeInterval = 0) {
