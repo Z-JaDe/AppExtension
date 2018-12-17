@@ -47,7 +47,6 @@ open class SegmentView<ItemView, ItemData>: MultipleItemsView<ItemView, ItemData
     /// ZJaDe: 更新布局
     open override func layoutSubviews() {
         super.layoutSubviews()
-        self.scrollView.contentLength = self.scrollView.length * self.totalCount.toCGFloat
         self.scrollView.setNeedsLayout()
         self.scrollView.layoutIfNeeded()
         /// ZJaDe: 布局更新时刷新当前index

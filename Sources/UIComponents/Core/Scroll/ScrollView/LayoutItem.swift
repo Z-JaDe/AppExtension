@@ -8,6 +8,15 @@
 
 import Foundation
 
+extension ItemSpace {
+    fileprivate var space: CGFloat {
+        switch self {
+        case .center(let space): return space
+        case .leading(let space): return space
+        }
+    }
+}
+
 public final class LayoutItem<View: UIView>: Equatable {
 
     private var itemSpace: ItemSpace
@@ -39,39 +48,60 @@ public final class LayoutItem<View: UIView>: Equatable {
     /// ZJaDe: 
     public var leading: CGFloat {
         get {
-            switch (self.scrollDirection, self.itemSpace) {
-            case (.horizontal, .leading):
-                return self.view.left
-            case (.horizontal, .center(let space)):
-                return self.view.left - space / 2
-            case (.vertical, .leading):
-                return self.view.top
-            case (.vertical, .center(let space)):
-                return self.view.top - space / 2
+            let offset: CGFloat
+            switch self.itemSpace {
+            case .leading:
+                offset = 0
+            case .center(let space):
+                offset = space / 2
             }
-        }set {
-            switch (self.scrollDirection, self.itemSpace) {
-            case (.horizontal, .leading):
-                self.view.left = newValue
-            case (.horizontal, .center(let space)):
-                self.view.left = newValue + space / 2
-            case (.vertical, .leading):
-                self.view.top = newValue
-            case (.vertical, .center(let space)):
-                self.view.top = newValue + space / 2
+            switch self.scrollDirection {
+            case .horizontal:
+                return self.view.left - offset
+            case .vertical:
+                return self.view.top - offset
+            }
+        } set {
+            let offset: CGFloat
+            switch self.itemSpace {
+            case .leading:
+                offset = 0
+            case .center(let space):
+                offset = space / 2
+            }
+            switch self.scrollDirection {
+            case .horizontal:
+                 self.view.left = newValue + offset
+            case .vertical:
+                self.view.top = newValue + offset
             }
         }
     }
     public var trailing: CGFloat {
-        switch (self.scrollDirection, self.itemSpace) {
-        case (.horizontal, .leading(let space)):
-            return self.view.right + space
-        case (.horizontal, .center(let space)):
-            return self.view.right + space / 2
-        case (.vertical, .leading(let space)):
-            return self.view.bottom + space
-        case (.vertical, .center(let space)):
-            return self.view.bottom + space / 2
+        let offset: CGFloat
+        switch self.itemSpace {
+        case .leading(let space):
+            offset = space
+        case .center(let space):
+            offset = space / 2
+        }
+        switch self.scrollDirection {
+        case .horizontal:
+            return self.view.right + offset
+        case .vertical:
+            return self.view.bottom + offset
+        }
+    }
+    public func trailing(isLast: Bool) -> CGFloat {
+        if isLast {
+            switch self.itemSpace {
+            case .leading(let space):
+                return self.trailing - space
+            case .center,.leading:
+                return self.trailing
+            }
+        } else {
+            return self.trailing
         }
     }
 

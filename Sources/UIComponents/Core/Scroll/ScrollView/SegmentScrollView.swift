@@ -56,7 +56,7 @@ public class SegmentScrollView<ItemView>: MultipleItemScrollView<ItemView>, Tota
             count = max(1, count)
             return self.length / count.toCGFloat
         case .length(let length):
-            return length + self.itemSpace.space
+            return length
         case .auto:
             return nil
         }
@@ -81,7 +81,7 @@ extension SegmentScrollView {
             if offSet > head {
                 self.scrollTo(offSet: head)
             } else if offSet + self.length < tail {
-                self.scrollTo(offSet: tail)
+                self.scrollTo(offSet: tail - self.length)
             }
         case .center:
             let cellCenter = layoutCell.leading + layoutCell.length / 2
