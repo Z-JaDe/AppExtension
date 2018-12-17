@@ -9,19 +9,12 @@
 import Foundation
 
 public enum ItemSpace {
-    /// ZJaDe: 间距在item两边平分
+    /// ZJaDe: [-sapce/2-content-sapce/2-content-sapce/2-]
     case center(CGFloat)
-    /// ZJaDe: 间距在item右边或者下边
+    /// ZJaDe: [-content-sapce-content-sapce-]
     case leading(CGFloat)
-
-    var space: CGFloat {
-        switch self {
-        case .center(let space):
-            return space
-        case .leading(let space):
-            return space
-        }
-    }
+//    /// ZJaDe: [-content-sapce-content-]
+//    case fill(CGFloat)
 }
 
 public protocol ItemsOneWayScrollProtocol: OneWayScrollProtocol {
