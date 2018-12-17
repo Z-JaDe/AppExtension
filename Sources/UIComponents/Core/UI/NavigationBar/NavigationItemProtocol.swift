@@ -73,8 +73,9 @@ public extension NavigationItemProtocol where Self: UIViewController {
     }
     func changeIsHidden(_ isHidden: Bool) {
         guard checkVCType() else {return}
-
-        self.navigationController?.setNavigationBarHidden(isHidden, animated: true)
+        // ZJaDe: setNavigationBarHidden调用时机不对的话，会导致直接卡死
+//        self.navigationController?.setNavigationBarHidden(isHidden, animated: true)
+        self.navigationController?.isNavigationBarHidden = isHidden
     }
     /// ZJaDe: 
     func updateBarStyle() {
