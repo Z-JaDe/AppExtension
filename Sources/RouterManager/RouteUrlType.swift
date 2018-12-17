@@ -8,9 +8,6 @@
 
 import UIKit
 
-public typealias CallBackNoParams = () -> Void
-public typealias CallBack<Params> = (Params) -> Void
-
 public protocol RouteUrlType {
     func createViewCon(_ manager: RouterManager) -> UIViewController?
 }
