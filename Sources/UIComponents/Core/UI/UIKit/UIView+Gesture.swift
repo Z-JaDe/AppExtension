@@ -10,7 +10,6 @@ import Foundation
 
 private var jd_panKey: UInt8 = 0
 private var jd_tapKey: UInt8 = 0
-
 extension UIView {
     public var panGesture: UIPanGestureRecognizer {
         return associatedObject(&jd_panKey, createIfNeed: {() -> UIPanGestureRecognizer in

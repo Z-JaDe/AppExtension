@@ -86,11 +86,10 @@ open class SegmentView<ItemView, ItemData>: MultipleItemsView<ItemView, ItemData
     // MARK: -
     public var didSelectItem: ((TapContext<ItemView, ItemData>) -> Void)?
     @objc open func whenTap(_ tap: UITapGestureRecognizer) {
-        guard let didSelectItem = self.didSelectItem else { return }
         if let (offset, element) = self.cellArr.enumerated().first(where: {$0.element.point(inside: tap.location(in: $0.element), with: nil)}) {
             self.currentIndex = offset
             let context = TapContext(view: element, data: dataArray[offset], index: offset)
-            didSelectItem(context)
+            didSelectItem?(context)
         }
     }
 }

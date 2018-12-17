@@ -26,6 +26,7 @@ public class SegmentScrollView<ItemView>: MultipleItemScrollView<ItemView>, Tota
     public enum AutoScrollItemType {
         case center
         case edge
+        case none
     }
     public var autoScrollItem: AutoScrollItemType = .edge
     /// ZJaDe: TotalCountProtocol
@@ -87,6 +88,8 @@ extension SegmentScrollView {
             var offset: CGFloat = cellCenter - self.length / 2
             offset = offset.clamp(min: 0, max: self.contentLength - self.length)
             self.scrollTo(offSet: offset)
+        case .none:
+            break
         }
     }
 
