@@ -30,9 +30,7 @@ public extension UpdateDataProtocol where Self: UIViewController {
     func setNeedUpdateData<P: ObservableType>(_ pauser: P) where P.E == Bool {
         let tag = "isNeedUpdateData"
         self.resetDisposeBagWithTag(tag)
-        Observable.just(())
-            .setNeedUpdate(pauser)
-            .delay(0.5, scheduler: MainScheduler.instance)
+        Observable<()>.setNeedUpdate(pauser)
             .subscribeOnNext { [weak self] in
                 guard let `self` = self else { return }
                 self.updateData()

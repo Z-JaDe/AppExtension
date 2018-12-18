@@ -30,9 +30,7 @@ public extension UpdateNavItemProtocol where Self: UIViewController {
     func setNeedUpdateNavItem<P: ObservableType>(_ pauser: P) where P.E == Bool {
         let tag = "isNeedUpdateNavItem"
         self.resetDisposeBagWithTag(tag)
-        Observable.just(())
-            .setNeedUpdate(pauser)
-            .delay(0.5, scheduler: MainScheduler.instance)
+        Observable<()>.setNeedUpdate(pauser)
             .subscribeOnNext { [weak self] in
                 guard let `self` = self else { return }
                 self.updateNavItem(self.navigationItem)

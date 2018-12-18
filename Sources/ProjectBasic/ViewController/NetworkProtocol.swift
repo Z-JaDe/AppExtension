@@ -10,8 +10,17 @@ import Foundation
 import RxSwift
 import RxSwiftExt
 
-extension ObservableType {
-    public func setNeedUpdate<P: ObservableType> (_ pauser: P) -> Observable<E> where P.E == Bool {
+extension Observable {
+    public static func setNeedUpdate<P: ObservableType>(_ pauser: P) -> Observable<()> where P.E == Bool {
+        return Observable<()>.create { (observer) -> Disposable in
+            observer.onNext(())
+            return Disposables.create()
+            }
+            .setNeedUpdate(pauser)
+            .take(1)
+            .delay(0.2, scheduler: MainScheduler.instance)
+    }
+    private func setNeedUpdate<P: ObservableType>(_ pauser: P) -> Observable<E> where P.E == Bool {
         return pausableBuffered(pauser, flushOnCompleted: false, flushOnError: false)
     }
 }
@@ -35,9 +44,7 @@ public extension NetworkProtocol where Self: UIViewController {
     func setNeedRequest<P: ObservableType>(_ pauser: P) where P.E == Bool {
         let tag = "isNeedUpdateNetwork"
         self.resetDisposeBagWithTag(tag)
-        Observable.just(())
-            .setNeedUpdate(pauser)
-            .delay(0.5, scheduler: MainScheduler.instance)
+        Observable<Void>.setNeedUpdate(pauser)
             .subscribeOnNext { [weak self] in
                 guard let `self` = self else { return }
                 self.request()
