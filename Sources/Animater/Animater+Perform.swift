@@ -50,7 +50,7 @@ extension Animater {
     }
 
     // MARK: - shake
-    public func shake(In view: UIView, _ times: Int = 5, shakeDirection: ShakeDirection = .horizontal) {
+    public func shake(in view: UIView, _ times: Int = 5, shakeDirection: ShakeDirection = .horizontal) {
         let anim = CAKeyframeAnimation(keyPath: "transform")
         switch shakeDirection {
         case .horizontal:
