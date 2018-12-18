@@ -92,18 +92,18 @@ public final class LayoutItem<View: UIView>: Equatable {
             return self.view.bottom + offset
         }
     }
-    public func trailing(isLast: Bool) -> CGFloat {
-        if isLast {
-            switch self.itemSpace {
-            case .leading(let space):
-                return self.trailing - space
-            case .center,.leading:
-                return self.trailing
-            }
-        } else {
-            return self.trailing
-        }
-    }
+//    public func trailing(isLast: Bool) -> CGFloat {
+//        if isLast {
+//            switch self.itemSpace {
+//            case .leading(let space):
+//                return self.trailing - space
+//            case .center:
+//                return self.trailing
+//            }
+//        } else {
+//            return self.trailing
+//        }
+//    }
 
     public var length: CGFloat {
         switch self.scrollDirection {

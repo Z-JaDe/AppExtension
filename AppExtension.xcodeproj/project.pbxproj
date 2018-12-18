@@ -30,6 +30,9 @@
 		C90E083121BA6F0F00A59AD6 /* TableCellHeightProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E082F21BA6F0000A59AD6 /* TableCellHeightProtocol.swift */; };
 		C90E083521BA717000A59AD6 /* TableItemCell+Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E083321BA716900A59AD6 /* TableItemCell+Height.swift */; };
 		C90E083821BA720300A59AD6 /* TableCellHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E083621BA71FE00A59AD6 /* TableCellHeight.swift */; };
+		C90E76FC21C88F1C00707519 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E76FA21C88F1700707519 /* NetworkProtocol.swift */; };
+		C90E76FE21C8933200707519 /* UpdateDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932FAA421006EFD00B8DF84 /* UpdateDataProtocol.swift */; };
+		C90E770121C893BE00707519 /* UpdateNavItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E76FF21C893B900707519 /* UpdateNavItemProtocol.swift */; };
 		C91055B121A8298200F87515 /* UserNotificationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C91055AF21A8298200F87515 /* UserNotificationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C91055B421A8298200F87515 /* UserNotificationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91055AD21A8298200F87515 /* UserNotificationManager.framework */; };
 		C91055B521A8298200F87515 /* UserNotificationManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C91055AD21A8298200F87515 /* UserNotificationManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -219,7 +222,6 @@
 		C9283C2721BEB91200361B87 /* WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C989A342214011A500E64AD8 /* WebImage.swift */; };
 		C9283C2821BEB91200361B87 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F806210069AC00B8DF84 /* ImageData.swift */; };
 		C9283C2921BEB91200361B87 /* ImageURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C989A345214015CD00E64AD8 /* ImageURLProtocol.swift */; };
-		C9283C2A21BEB9C500361B87 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932FAA421006EFD00B8DF84 /* NetworkProtocol.swift */; };
 		C9283C3521BEC50500361B87 /* HeaderViewContainerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932FAA321006EFD00B8DF84 /* HeaderViewContainerProtocol.swift */; };
 		C92EF1352135394800F95C71 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EF1332135393200F95C71 /* QRCode.swift */; };
 		C930DAB920D3E3ED002D87D1 /* Text.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C930DAB820D3E3ED002D87D1 /* Text.storyboard */; };
@@ -768,6 +770,8 @@
 		C90E082F21BA6F0000A59AD6 /* TableCellHeightProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellHeightProtocol.swift; sourceTree = "<group>"; };
 		C90E083321BA716900A59AD6 /* TableItemCell+Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableItemCell+Height.swift"; sourceTree = "<group>"; };
 		C90E083621BA71FE00A59AD6 /* TableCellHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellHeight.swift; sourceTree = "<group>"; };
+		C90E76FA21C88F1700707519 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
+		C90E76FF21C893B900707519 /* UpdateNavItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNavItemProtocol.swift; sourceTree = "<group>"; };
 		C91055AD21A8298200F87515 /* UserNotificationManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserNotificationManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C91055AF21A8298200F87515 /* UserNotificationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserNotificationManager.h; sourceTree = "<group>"; };
 		C91055B021A8298200F87515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1006,7 +1010,7 @@
 		C932FAA121006EFD00B8DF84 /* CellModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellModelProtocol.swift; sourceTree = "<group>"; };
 		C932FAA221006EFD00B8DF84 /* RxMultipleSelectionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxMultipleSelectionProtocol.swift; sourceTree = "<group>"; };
 		C932FAA321006EFD00B8DF84 /* HeaderViewContainerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderViewContainerProtocol.swift; sourceTree = "<group>"; };
-		C932FAA421006EFD00B8DF84 /* NetworkProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
+		C932FAA421006EFD00B8DF84 /* UpdateDataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateDataProtocol.swift; sourceTree = "<group>"; };
 		C932FAA621006EFD00B8DF84 /* EmptyDataSetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyDataSetView.swift; sourceTree = "<group>"; };
 		C932FAA721006EFD00B8DF84 /* EmptyDataSetProtocol+ScrollItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EmptyDataSetProtocol+ScrollItem.swift"; sourceTree = "<group>"; };
 		C932FAA821006EFD00B8DF84 /* EmptyDataSetProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyDataSetProtocol.swift; sourceTree = "<group>"; };
@@ -1475,6 +1479,16 @@
 			path = CellHeight;
 			sourceTree = "<group>";
 		};
+		C90E76F921C88E6300707519 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C932FAA421006EFD00B8DF84 /* UpdateDataProtocol.swift */,
+				C90E76FA21C88F1700707519 /* NetworkProtocol.swift */,
+				C90E76FF21C893B900707519 /* UpdateNavItemProtocol.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		C91055AE21A8298200F87515 /* UserNotificationManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1909,6 +1923,7 @@
 		C932F7582100593E00B8DF84 /* ProjectBasic */ = {
 			isa = PBXGroup;
 			children = (
+				C90E76F921C88E6300707519 /* ViewController */,
 				C962C51720CE19EF0061FC20 /* List */,
 				C932F7F4210069AC00B8DF84 /* Alert */,
 				C932F804210069AC00B8DF84 /* WebImage */,
@@ -2052,7 +2067,6 @@
 			children = (
 				C932F85B21006DC500B8DF84 /* ConfigModelProtocol.swift */,
 				C932FAA321006EFD00B8DF84 /* HeaderViewContainerProtocol.swift */,
-				C932FAA421006EFD00B8DF84 /* NetworkProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -3973,14 +3987,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C932F8B321006DC500B8DF84 /* ConfigModelProtocol.swift in Sources */,
-				C9283C2A21BEB9C500361B87 /* NetworkProtocol.swift in Sources */,
 				C932F8F421006DC500B8DF84 /* EntityManager+Operation.swift in Sources */,
 				C932F822210069AD00B8DF84 /* Alert.swift in Sources */,
 				C9283C2721BEB91200361B87 /* WebImage.swift in Sources */,
+				C90E76FE21C8933200707519 /* UpdateDataProtocol.swift in Sources */,
 				C932F83A210069AD00B8DF84 /* Permission.swift in Sources */,
 				C932F8C521006DC500B8DF84 /* Model.swift in Sources */,
 				C932F83D210069AD00B8DF84 /* PermissionScope+Photos.swift in Sources */,
 				C932F825210069AD00B8DF84 /* HUD.swift in Sources */,
+				C90E770121C893BE00707519 /* UpdateNavItemProtocol.swift in Sources */,
 				C932F83B210069AD00B8DF84 /* PermissionScope+AVFoundation.swift in Sources */,
 				C92EF1352135394800F95C71 /* QRCode.swift in Sources */,
 				C932F83C210069AD00B8DF84 /* PermissionScope.swift in Sources */,
@@ -3989,6 +4004,7 @@
 				C932F834210069AD00B8DF84 /* SwiftyUserDefaults.swift in Sources */,
 				C932F8F521006DC500B8DF84 /* EntityManager.swift in Sources */,
 				C932F823210069AD00B8DF84 /* JDProgressHUD.swift in Sources */,
+				C90E76FC21C88F1C00707519 /* NetworkProtocol.swift in Sources */,
 				C932F7A821005A9F00B8DF84 /* ProjectBasic.swift in Sources */,
 				C932F824210069AD00B8DF84 /* MessageHUDProtocol.swift in Sources */,
 				C9283C2821BEB91200361B87 /* ImageData.swift in Sources */,

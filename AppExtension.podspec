@@ -137,6 +137,7 @@ Pod::Spec.new do |s|
     end
     s.subspec "MVCFlow" do |ss|
         ss.dependency "AppExtension/MVCProject"
+        ss.dependency "AppExtension/RouterManager"
         ss.dependency "AppExtension/NavigationFlow"
     end
 
