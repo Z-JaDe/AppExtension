@@ -10,6 +10,11 @@ import Foundation
 import RxSwift
 import RxSwiftExt
 
+extension ObservableType {
+    public func setNeedUpdate<P: ObservableType> (_ pauser: P) -> Observable<E> where P.E == Bool {
+        return pausableBuffered(pauser, flushOnCompleted: false, flushOnError: false)
+    }
+}
 public protocol NetworkProtocol: class {
     /// ZJaDe: 请求
     func request()
@@ -31,7 +36,7 @@ public extension NetworkProtocol where Self: UIViewController {
         let tag = "isNeedUpdateNetwork"
         self.resetDisposeBagWithTag(tag)
         Observable.just(())
-            .pausableBuffered(pauser)
+            .setNeedUpdate(pauser)
             .delay(0.5, scheduler: MainScheduler.instance)
             .subscribeOnNext { [weak self] in
                 guard let `self` = self else { return }
