@@ -67,6 +67,11 @@ Pod::Spec.new do |s|
 
         ss.dependency "AppExtension/RxExtensions"
     end
+    s.subspec "Coordinator" do |ss|
+        ss.source_files  = "Sources/Coordinator/**/*.{swift}"
+
+        ss.dependency "AppExtension/Core"
+    end
 
     #组件
     s.subspec "UIComponents" do |ss|
@@ -139,6 +144,11 @@ Pod::Spec.new do |s|
         ss.dependency "AppExtension/MVCProject"
         ss.dependency "AppExtension/RouterManager"
         ss.dependency "AppExtension/NavigationFlow"
+    end
+    s.subspec "MVCCoordinator" do |ss|
+        ss.dependency "AppExtension/MVCProject"
+        ss.dependency "AppExtension/RouterManager"
+        ss.dependency "AppExtension/Coordinator"
     end
 
 end

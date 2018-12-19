@@ -15,6 +15,8 @@ abstract_target 'BaseCore' do
     
     target:'Core' do
     end
+    target:'Coordinator' do
+    end
     target:'AnimatedTransition' do
     end
     target:'UserNotificationManager' do

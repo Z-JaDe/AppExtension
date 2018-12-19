@@ -8,6 +8,7 @@
 
 #if canImport(MBProgressHUD)
 import Foundation
+extension UIViewController: MessageHUDProtocol {}
 public protocol MessageHUDProtocol: AssociatedObjectProtocol {
     func showMessage(_ message: String) -> HUD
     func resetMessage(_ message: String) -> HUD
