@@ -10,7 +10,7 @@ import UIKit
 
 extension UINavigationController {
     @discardableResult
-    public func popTo<T: UIViewController>(_ VCType: T.Type, animated: Bool) -> Bool {
+    func popTo<T: UIViewController>(_ VCType: T.Type, animated: Bool) -> Bool {
         if let viewCon = self.viewControllers.first(where: {$0 is T}) {
             self.popToViewController(viewCon, animated: animated)
             return true
@@ -18,12 +18,12 @@ extension UINavigationController {
             return false
         }
     }
-    public func pop(count: Int, animated: Bool) {
+    func pop(count: Int, animated: Bool) {
         var vcArr = self.viewControllers
         vcArr.removeLast(count)
         self.setViewControllers(vcArr, animated: animated)
     }
-    public func popAndPush(count: Int, pushVC: UIViewController, animated: Bool) {
+    func popAndPush(count: Int, pushVC: UIViewController, animated: Bool) {
         var vcArr = self.viewControllers
         vcArr.removeLast(count)
         vcArr.append(pushVC)

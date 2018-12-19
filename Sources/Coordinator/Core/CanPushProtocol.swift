@@ -24,20 +24,22 @@ public extension CanPushProtocol {
         coordinators.forEach({navCon?.navItemChildCoordinators[$0.rootViewController] = $0})
         navCon?.setViewControllers(coordinators.map({$0.rootViewController}), animated: animated)
     }
-    func popTo<T: Coordinator & RouteUrl>(_ coordinator: T, animated: Bool = true) {
-        guard self.containsNavItem(T.self) else { return }
-        navCon?.popToViewController(coordinator.rootViewController, animated: animated)
+    func popTo<T: Coordinator & RouteUrl>(_ coordinator: T, animated: Bool = true) -> Bool {
+        if navCon?.viewControllers.contains(coordinator.rootViewController) == true {
+            navCon?.popToViewController(coordinator.rootViewController, animated: animated)
+            return true
+        }
+        return false
     }
-    func popTo<T: Coordinator & RouteUrl>(_ type: T.Type, animated: Bool = true) {
-        guard let coordinator = navItemChild(type) else { return }
-        popTo(coordinator, animated: animated)
+    func popTo<T: Coordinator & AssociatedRootViewControllerProvider>(_ type: T.Type, animated: Bool = true) -> Bool {
+        return navCon?.popTo(T.ViewControllerType.self, animated: animated) ?? false
     }
-    func containsNavItem<T: Coordinator & RouteUrl>(_ type: T.Type) -> Bool {
-        return navCon?.navItemChildCoordinators.values.contains(where: {$0 is T}) ?? false
-    }
-    func navItemChild<T: Coordinator & RouteUrl>(_ type: T.Type) -> T? {
-        return navCon?.navItemChildCoordinators.values.first(where: {$0 is T}) as? T
-    }
+//    func containsNavItem<T: Coordinator & RouteUrl>(_ type: T.Type) -> Bool {
+//        return navCon?.navItemChildCoordinators.values.contains(where: {$0 is T}) ?? false
+//    }
+//    func navItemChild<T: Coordinator & RouteUrl>(_ type: T.Type) -> T? {
+//        return navCon?.navItemChildCoordinators.values.first(where: {$0 is T}) as? T
+//    }
 }
 
 // MARK: -
