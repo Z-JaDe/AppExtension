@@ -11,20 +11,21 @@ import Foundation
 public protocol CanPushProtocol {
     var navCon: UINavigationController? {get}
 }
+public typealias CanPushItem = Coordinator & RouteUrl
 public extension CanPushProtocol {
-    func push<T: Coordinator & RouteUrl>(_ coordinator: T, animated: Bool = true) {
-        navCon?.navItemChildCoordinators[coordinator.rootViewController] = coordinator
+    func push<T: CanPushItem>(_ coordinator: T, animated: Bool = true) {
+        navCon?.childrenCoordinators.append(coordinator)
         navCon?.pushViewController(coordinator.rootViewController, animated: animated)
     }
-    func resetPush<T: Coordinator & RouteUrl>(_ coordinator: T, animated: Bool = true) {
-        navCon?.navItemChildCoordinators[coordinator.rootViewController] = coordinator
+    func resetPush<T: CanPushItem>(_ coordinator: T, animated: Bool = true) {
+        navCon?.childrenCoordinators.append(coordinator)
         navCon?.setViewControllers([coordinator.rootViewController], animated: animated)
     }
-    func reset<T: Coordinator & RouteUrl>(_ coordinators: [T], animated: Bool = true) {
-        coordinators.forEach({navCon?.navItemChildCoordinators[$0.rootViewController] = $0})
+    func reset<T: CanPushItem>(_ coordinators: [T], animated: Bool = true) {
+        navCon?.childrenCoordinators.append(contentsOf: coordinators)
         navCon?.setViewControllers(coordinators.map({$0.rootViewController}), animated: animated)
     }
-    func popTo<T: Coordinator & RouteUrl>(_ coordinator: T, animated: Bool = true) -> Bool {
+    func popTo<T: CanPushItem>(_ coordinator: T, animated: Bool = true) -> Bool {
         if navCon?.viewControllers.contains(coordinator.rootViewController) == true {
             navCon?.popToViewController(coordinator.rootViewController, animated: animated)
             return true
@@ -45,17 +46,15 @@ public extension CanPushProtocol {
 // MARK: -
 private var childsKey: UInt8 = 0
 extension UINavigationController {
-    fileprivate var navItemChildCoordinators: [UIViewController: Any] {
-        get {return associatedObject(&childsKey, createIfNeed: [: ])}
+    fileprivate var childrenCoordinators: [CanPushItem] {
+        get {return associatedObject(&childsKey, createIfNeed: [])}
         set {
             setAssociatedObject(&childsKey, newValue)
         }
     }
     public func cleanUpChildCoordinators() {
-        for viewController in navItemChildCoordinators.keys {
-            if !self.viewControllers.contains(viewController) {
-                navItemChildCoordinators.removeValue(forKey: viewController)
-            }
-        }
+        childrenCoordinators = childrenCoordinators.filter({
+            self.viewControllers.contains($0.rootViewController)
+        })
     }
 }
