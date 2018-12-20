@@ -18,7 +18,8 @@ public protocol UpdateDataProtocol: class {
 }
 public extension UpdateDataProtocol {
     func setNeedUpdateDataObserver() -> AnyObserver<Void> {
-        return AnyObserver(eventHandler: { (event) in
+        return AnyObserver(eventHandler: { [weak self] (event) in
+            guard let `self` = self else { return }
             switch event {
             case .next: self.setNeedUpdateData()
             case .completed, .error: break
