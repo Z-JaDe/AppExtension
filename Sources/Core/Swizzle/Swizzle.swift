@@ -22,21 +22,20 @@ extension String: SelectorProtocol {
     }
 }
 extension NSObject {
+    /// ZJaDe: 未完善 不可用
     @discardableResult
-    public class func swizzle<T: SelectorProtocol, U: SelectorProtocol>(original: T, swizzled: U) -> Bool {
+    public @objc class func swizzle<T: SelectorProtocol, U: SelectorProtocol>(original: T, swizzled: U) -> Bool {
         let originalSel = original.selectorValue
         let swizzledSel = swizzled.selectorValue
-        let originalMethod = class_getInstanceMethod(self, originalSel)
-        if originalMethod == nil {
+        guard let originalMethod = class_getInstanceMethod(self, originalSel) {
             return false
         }
-        let swizzledMethod = class_getInstanceMethod(self, swizzledSel)
-        if swizzledMethod == nil {
+        if let swizzledMethod = class_getInstanceMethod(self, swizzledSel) {
             return false
         }
 
-        class_addMethod(self, originalSel, class_getMethodImplementation(self, originalSel)!, method_getTypeEncoding(originalMethod!))
-        class_addMethod(self, swizzledSel, class_getMethodImplementation(self, swizzledSel)!, method_getTypeEncoding(swizzledMethod!))
+        class_addMethod(self, originalSel, class_getMethodImplementation(self, originalSel)!, method_getTypeEncoding(originalMethod))
+        class_addMethod(self, swizzledSel, class_getMethodImplementation(self, swizzledSel)!, method_getTypeEncoding(swizzledMethod))
 
         method_exchangeImplementations(class_getInstanceMethod(self, originalSel)!, class_getInstanceMethod(self, swizzledSel)!)
         return true
