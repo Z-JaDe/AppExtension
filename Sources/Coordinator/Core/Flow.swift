@@ -20,5 +20,5 @@ public typealias PushFlow = Flow & CanPushProtocol
 
 public typealias AnyFlow = Flow
 
-public typealias PresentFlow = Flow & CoordinatorContainer & CanPresentProtocol
+public typealias PresentFlow = Flow & CanPresentProtocol
 

@@ -24,13 +24,13 @@ extension String: SelectorProtocol {
 extension NSObject {
     /// ZJaDe: 未完善 不可用
     @discardableResult
-    public @objc class func swizzle<T: SelectorProtocol, U: SelectorProtocol>(original: T, swizzled: U) -> Bool {
+    public class func swizzle<T: SelectorProtocol, U: SelectorProtocol>(original: T, swizzled: U) -> Bool {
         let originalSel = original.selectorValue
         let swizzledSel = swizzled.selectorValue
-        guard let originalMethod = class_getInstanceMethod(self, originalSel) {
+        guard let originalMethod = class_getInstanceMethod(self, originalSel) else {
             return false
         }
-        if let swizzledMethod = class_getInstanceMethod(self, swizzledSel) {
+        guard let swizzledMethod = class_getInstanceMethod(self, swizzledSel) else {
             return false
         }
 

@@ -22,8 +22,8 @@ public protocol RootCoordinatorCompatible {
 /// ZJaDe: 一个nav流程的 根协调器
 open class RootCoordinator: ViewConCoordinator,
     CanPushProtocol,
-    CoordinatorContainer,
-    RootViewControllerProvider {
+    CanPresentProtocol,
+    CoordinatorContainer {
     /// ZJaDe: CoordinatorContainer
     public var coordinators: [Coordinator] = []
     /// ZJaDe: RootViewControllerProvider
