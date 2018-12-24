@@ -20,7 +20,7 @@ where ViewConType: CanCancelViewController & UIViewController {
 
     open func start(in flow: PresentFlow) {
         viewCon._modalCoordinator = self
-        viewCon.didCancel = { [weak self, weak flow] () in
+        viewCon.didCancel = { [weak self] () in
             guard let `self` = self else { return }
             self.didCancel()
             self.viewCon._modalCoordinator = nil
@@ -34,27 +34,6 @@ where ViewConType: CanCancelViewController & UIViewController {
     }
 }
 
-// MARK: -
-public typealias WindowRootItem = Coordinator & RootViewControllerProvider
-public protocol AbstractWindowCoordinator: ViewConCoordinator, CanPresentProtocol {
-    var window: UIWindow! {get}
-    func start(in window: UIWindow)
-    var currentWindowItem: WindowRootItem? {get}
-}
-public extension AbstractWindowCoordinator {
-    func load(rootViewCon: UIViewController) {
-        Animater().animations {
-            self.window.rootViewController = rootViewCon
-            if rootViewCon.presentedViewController != nil {
-                /// ZJaDe: 有presentedViewController控制器时，苹果默认不会加载rootViewController.view，但是有时候presentedViewController只是半屏显示，rootViewController.view还是要加载的
-                self.window.insertSubview(rootViewCon.view, at: 0)
-            }
-        }.options([.transitionCrossDissolve]).transition(with: window)
-    }
-    var rootViewController: UIViewController {
-        return self.window.rootViewController!
-    }
-}
 // MARK: - CanCancelViewController
 public protocol CanCancelViewController {
     var didCancel: CallBackNoParams? {get set}

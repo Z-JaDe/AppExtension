@@ -108,11 +108,14 @@
 		C918DF0921B52299000F2AAC /* DifferenceKitCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918DF0321B52299000F2AAC /* DifferenceKitCompatible.swift */; };
 		C918DF0B21B524D7000F2AAC /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918DF0A21B524D7000F2AAC /* CoreTests.swift */; };
 		C918DF0D21B5269D000F2AAC /* AssociatedObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918DF0C21B5269D000F2AAC /* AssociatedObjectTests.swift */; };
+		C9196E5821D0EAEE00CB47A1 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9196E5621D0EAEA00CB47A1 /* Scheduler.swift */; };
+		C9196E5B21D0EB3D00CB47A1 /* WindowScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9196E5921D0EB3800CB47A1 /* WindowScheduler.swift */; };
+		C9196E5E21D0EC9C00CB47A1 /* WindowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9196E5C21D0EC9500CB47A1 /* WindowCoordinator.swift */; };
+		C9196E6421D0F10100CB47A1 /* ModalCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BB58921CA14FB001D7789 /* ModalCoordinator.swift */; };
 		C91BB58021CA1495001D7789 /* Coordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = C91BB57E21CA1495001D7789 /* Coordinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C91BB58321CA1495001D7789 /* Coordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91BB57C21CA1494001D7789 /* Coordinator.framework */; };
 		C91BB58421CA1495001D7789 /* Coordinator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C91BB57C21CA1494001D7789 /* Coordinator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C91BB59321CA14FC001D7789 /* HasNavConCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BB58821CA14FB001D7789 /* HasNavConCoordinator.swift */; };
-		C91BB59421CA14FC001D7789 /* ModalCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BB58921CA14FB001D7789 /* ModalCoordinator.swift */; };
 		C91BB59521CA14FC001D7789 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BB58A21CA14FB001D7789 /* RootCoordinator.swift */; };
 		C91BB59621CA14FC001D7789 /* RouteUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BB58C21CA14FC001D7789 /* RouteUrl.swift */; };
 		C91BB59721CA14FC001D7789 /* CanPresentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BB58D21CA14FC001D7789 /* CanPresentProtocol.swift */; };
@@ -486,6 +489,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = C962C18F20CE17990061FC20;
 			remoteInfo = AppExtension;
+		};
+		C9196E5F21D0EFE300CB47A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C962C18820CE17990061FC20 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C962C8A220CE28BC0061FC20;
+			remoteInfo = Core;
 		};
 		C91BB58121CA1495001D7789 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -863,6 +873,9 @@
 		C918DF0321B52299000F2AAC /* DifferenceKitCompatible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifferenceKitCompatible.swift; sourceTree = "<group>"; };
 		C918DF0A21B524D7000F2AAC /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
 		C918DF0C21B5269D000F2AAC /* AssociatedObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociatedObjectTests.swift; sourceTree = "<group>"; };
+		C9196E5621D0EAEA00CB47A1 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		C9196E5921D0EB3800CB47A1 /* WindowScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowScheduler.swift; sourceTree = "<group>"; };
+		C9196E5C21D0EC9500CB47A1 /* WindowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowCoordinator.swift; sourceTree = "<group>"; };
 		C91BB57C21CA1494001D7789 /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C91BB57E21CA1495001D7789 /* Coordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coordinator.h; sourceTree = "<group>"; };
 		C91BB57F21CA1495001D7789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1751,14 +1764,40 @@
 			path = Update;
 			sourceTree = "<group>";
 		};
+		C9196E6121D0F05D00CB47A1 /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				C9196E5C21D0EC9500CB47A1 /* WindowCoordinator.swift */,
+				C9196E5921D0EB3800CB47A1 /* WindowScheduler.swift */,
+			);
+			path = Window;
+			sourceTree = "<group>";
+		};
+		C9196E6221D0F07100CB47A1 /* Push */ = {
+			isa = PBXGroup;
+			children = (
+				C91BB58821CA14FB001D7789 /* HasNavConCoordinator.swift */,
+				C91BB59121CA14FC001D7789 /* NavItemCoordinator.swift */,
+			);
+			path = Push;
+			sourceTree = "<group>";
+		};
+		C9196E6321D0F07C00CB47A1 /* Present */ = {
+			isa = PBXGroup;
+			children = (
+				C91BB58921CA14FB001D7789 /* ModalCoordinator.swift */,
+				C91BB59221CA14FC001D7789 /* PresentedCoordinator.swift */,
+			);
+			path = Present;
+			sourceTree = "<group>";
+		};
 		C91BB57D21CA1495001D7789 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
 				C91BB58B21CA14FC001D7789 /* Core */,
-				C91BB58821CA14FB001D7789 /* HasNavConCoordinator.swift */,
-				C91BB58921CA14FB001D7789 /* ModalCoordinator.swift */,
-				C91BB59121CA14FC001D7789 /* NavItemCoordinator.swift */,
-				C91BB59221CA14FC001D7789 /* PresentedCoordinator.swift */,
+				C9196E6121D0F05D00CB47A1 /* Window */,
+				C9196E6221D0F07100CB47A1 /* Push */,
+				C9196E6321D0F07C00CB47A1 /* Present */,
 				C91BB58A21CA14FB001D7789 /* RootCoordinator.swift */,
 				C91BB57E21CA1495001D7789 /* Coordinator.h */,
 				C91BB57F21CA1495001D7789 /* Info.plist */,
@@ -1770,6 +1809,7 @@
 			isa = PBXGroup;
 			children = (
 				C91BB58C21CA14FC001D7789 /* RouteUrl.swift */,
+				C9196E5621D0EAEA00CB47A1 /* Scheduler.swift */,
 				C91BB58D21CA14FC001D7789 /* CanPresentProtocol.swift */,
 				C91BB58E21CA14FC001D7789 /* Flow.swift */,
 				C91BB58F21CA14FC001D7789 /* CanPushProtocol.swift */,
@@ -2976,6 +3016,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9196E6021D0EFE300CB47A1 /* PBXTargetDependency */,
 			);
 			name = Coordinator;
 			productName = Coordinator;
@@ -4005,9 +4046,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9196E5821D0EAEE00CB47A1 /* Scheduler.swift in Sources */,
 				C91BB59A21CA14FC001D7789 /* Coordinator.swift in Sources */,
-				C91BB59421CA14FC001D7789 /* ModalCoordinator.swift in Sources */,
+				C9196E6421D0F10100CB47A1 /* ModalCoordinator.swift in Sources */,
+				C9196E5B21D0EB3D00CB47A1 /* WindowScheduler.swift in Sources */,
 				C91BB59721CA14FC001D7789 /* CanPresentProtocol.swift in Sources */,
+				C9196E5E21D0EC9C00CB47A1 /* WindowCoordinator.swift in Sources */,
 				C91BB59C21CA14FC001D7789 /* PresentedCoordinator.swift in Sources */,
 				C91BB59521CA14FC001D7789 /* RootCoordinator.swift in Sources */,
 				C91BB59B21CA14FC001D7789 /* NavItemCoordinator.swift in Sources */,
@@ -4431,6 +4475,11 @@
 			isa = PBXTargetDependency;
 			target = C962C18F20CE17990061FC20 /* AppExtension */;
 			targetProxy = C918DEF721B52068000F2AAC /* PBXContainerItemProxy */;
+		};
+		C9196E6021D0EFE300CB47A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C962C8A220CE28BC0061FC20 /* Core */;
+			targetProxy = C9196E5F21D0EFE300CB47A1 /* PBXContainerItemProxy */;
 		};
 		C91BB58221CA1495001D7789 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
