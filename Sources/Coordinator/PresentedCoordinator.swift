@@ -8,7 +8,8 @@
 
 import Foundation
 
-open class PresentedCoordinator: Coordinator, CoordinatorContainer {
+open class PresentedCoordinator: ViewConCoordinator,
+    CoordinatorContainer {
     public var coordinators: [Coordinator] = []
     public init() {}
 }

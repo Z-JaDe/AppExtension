@@ -8,7 +8,9 @@
 
 import Foundation
 
-open class HasNavConCoordinator: Coordinator, CoordinatorContainer, CanPushProtocol {
+open class HasNavConCoordinator: ViewConCoordinator,
+    CoordinatorContainer,
+    CanPushProtocol {
     public var coordinators: [Coordinator] = []
 
     public weak var navCon: UINavigationController?

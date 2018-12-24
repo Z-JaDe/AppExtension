@@ -11,9 +11,10 @@ import Foundation
 @_exported import Core
 #endif
 /** ZJaDe:
- Coordinator 项目中 一般 一个Coordinator代表一个可以打开的界面
- Coordinator可以由Aspect来初始化
+ Coordinator 项目中 一般 一个Coordinator代表UI逻辑
+ Coordinator可以由Flow来初始化
  */
+public typealias ViewConCoordinator = Coordinator & Flow
 public protocol Coordinator: class {
 
 }
