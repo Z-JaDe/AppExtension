@@ -9,11 +9,13 @@
 import Foundation
 
 open class WindowScheduler<WindowState: Hashable>: Scheduler {
-    public private(set) var windowStateArr: [WindowState] = []
+    public init() {}
+    public var windowStateArr: [WindowState] = []
     public var windowItemData: [WindowState: WindowRootItem] = [:]
     private var coordinator: AbstractWindowCoordinator!
-    func start(_ coordinator: AbstractWindowCoordinator) {
+    public func start(_ coordinator: AbstractWindowCoordinator) {
         self.coordinator = coordinator
+        updateState()
     }
 
     /// ZJaDe: 调用此方法能更新windowStateArr最新状态 需重写该方法

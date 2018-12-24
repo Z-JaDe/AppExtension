@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol Scheduler: class {
+public protocol Scheduler: class {
     
 }
