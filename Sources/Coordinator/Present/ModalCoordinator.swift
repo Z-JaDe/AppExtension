@@ -14,7 +14,7 @@ public typealias AbstractModalCoordinator = PresentedCoordinator & RootViewContr
 open class ModalCoordinator<ViewConType>: AbstractModalCoordinator,
     CanPresentProtocol,
     AssociatedRootViewControllerProvider
-where ViewConType: CanCancelViewController & UIViewController {
+where ViewConType: CanCancelModalViewController & UIViewController {
 
     public private(set) lazy var viewCon: ViewConType = ViewConType()
 
@@ -34,24 +34,3 @@ where ViewConType: CanCancelViewController & UIViewController {
     }
 }
 
-// MARK: - CanCancelViewController
-public protocol CanCancelViewController {
-    var didCancel: CallBackNoParams? {get set}
-    func cancel()
-    func cancel(completion: (() -> Void)?)
-}
-public extension CanCancelViewController {
-    func cancel() {
-        self.cancel(completion: nil)
-    }
-}
-private var coordinatorKey: UInt8 = 0
-public extension CanCancelViewController where Self: UIViewController {
-    fileprivate var _modalCoordinator: PresentedCoordinator? {
-        get {return associatedObject(&coordinatorKey)}
-        set {setAssociatedObject(&coordinatorKey, newValue)}
-    }
-    func getModalCoordinator() -> PresentedCoordinator? {
-        return _modalCoordinator
-    }
-}
