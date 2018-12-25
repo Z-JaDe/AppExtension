@@ -112,6 +112,9 @@
 		C9196E5B21D0EB3D00CB47A1 /* WindowScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9196E5921D0EB3800CB47A1 /* WindowScheduler.swift */; };
 		C9196E5E21D0EC9C00CB47A1 /* WindowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9196E5C21D0EC9500CB47A1 /* WindowCoordinator.swift */; };
 		C9196E6421D0F10100CB47A1 /* ModalCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BB58921CA14FB001D7789 /* ModalCoordinator.swift */; };
+		C91A7D0B21D1C16E00720E4F /* LogicScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A7D0A21D1C16E00720E4F /* LogicScanViewController.swift */; };
+		C91A7D0D21D1C52900720E4F /* ScanMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A7D0C21D1C52900720E4F /* ScanMaskView.swift */; };
+		C91A7D1021D1C5BA00720E4F /* CanCancelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A7D0E21D1C5A000720E4F /* CanCancelViewController.swift */; };
 		C91BB58021CA1495001D7789 /* Coordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = C91BB57E21CA1495001D7789 /* Coordinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C91BB58321CA1495001D7789 /* Coordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91BB57C21CA1494001D7789 /* Coordinator.framework */; };
 		C91BB58421CA1495001D7789 /* Coordinator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C91BB57C21CA1494001D7789 /* Coordinator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -876,6 +879,9 @@
 		C9196E5621D0EAEA00CB47A1 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		C9196E5921D0EB3800CB47A1 /* WindowScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowScheduler.swift; sourceTree = "<group>"; };
 		C9196E5C21D0EC9500CB47A1 /* WindowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowCoordinator.swift; sourceTree = "<group>"; };
+		C91A7D0A21D1C16E00720E4F /* LogicScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicScanViewController.swift; sourceTree = "<group>"; };
+		C91A7D0C21D1C52900720E4F /* ScanMaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanMaskView.swift; sourceTree = "<group>"; };
+		C91A7D0E21D1C5A000720E4F /* CanCancelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanCancelViewController.swift; sourceTree = "<group>"; };
 		C91BB57C21CA1494001D7789 /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C91BB57E21CA1495001D7789 /* Coordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coordinator.h; sourceTree = "<group>"; };
 		C91BB57F21CA1495001D7789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1786,9 +1792,19 @@
 			isa = PBXGroup;
 			children = (
 				C91BB58921CA14FB001D7789 /* ModalCoordinator.swift */,
+				C91A7D0E21D1C5A000720E4F /* CanCancelViewController.swift */,
 				C91BB59221CA14FC001D7789 /* PresentedCoordinator.swift */,
 			);
 			path = Present;
+			sourceTree = "<group>";
+		};
+		C91A7D0921D1C14500720E4F /* ScanUI */ = {
+			isa = PBXGroup;
+			children = (
+				C91A7D0A21D1C16E00720E4F /* LogicScanViewController.swift */,
+				C91A7D0C21D1C52900720E4F /* ScanMaskView.swift */,
+			);
+			path = ScanUI;
 			sourceTree = "<group>";
 		};
 		C91BB57D21CA1495001D7789 /* Coordinator */ = {
@@ -2058,6 +2074,7 @@
 		C932F7EA210069AC00B8DF84 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				C91A7D0921D1C14500720E4F /* ScanUI */,
 				C92EF1322135393200F95C71 /* QRCode */,
 				C932F810210069AC00B8DF84 /* SwiftyUserDefaults */,
 				C932F819210069AC00B8DF84 /* PermissionScope */,
@@ -4049,6 +4066,7 @@
 				C9196E5821D0EAEE00CB47A1 /* Scheduler.swift in Sources */,
 				C91BB59A21CA14FC001D7789 /* Coordinator.swift in Sources */,
 				C9196E6421D0F10100CB47A1 /* ModalCoordinator.swift in Sources */,
+				C91A7D1021D1C5BA00720E4F /* CanCancelViewController.swift in Sources */,
 				C9196E5B21D0EB3D00CB47A1 /* WindowScheduler.swift in Sources */,
 				C91BB59721CA14FC001D7789 /* CanPresentProtocol.swift in Sources */,
 				C9196E5E21D0EC9C00CB47A1 /* WindowCoordinator.swift in Sources */,
@@ -4189,6 +4207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C932F8B321006DC500B8DF84 /* ConfigModelProtocol.swift in Sources */,
+				C91A7D0D21D1C52900720E4F /* ScanMaskView.swift in Sources */,
 				C932F8F421006DC500B8DF84 /* EntityManager+Operation.swift in Sources */,
 				C932F822210069AD00B8DF84 /* Alert.swift in Sources */,
 				C9283C2721BEB91200361B87 /* WebImage.swift in Sources */,
@@ -4206,6 +4225,7 @@
 				C932F834210069AD00B8DF84 /* SwiftyUserDefaults.swift in Sources */,
 				C932F8F521006DC500B8DF84 /* EntityManager.swift in Sources */,
 				C932F823210069AD00B8DF84 /* JDProgressHUD.swift in Sources */,
+				C91A7D0B21D1C16E00720E4F /* LogicScanViewController.swift in Sources */,
 				C90E76FC21C88F1C00707519 /* NetworkProtocol.swift in Sources */,
 				C932F7A821005A9F00B8DF84 /* ProjectBasic.swift in Sources */,
 				C932F824210069AD00B8DF84 /* MessageHUDProtocol.swift in Sources */,
