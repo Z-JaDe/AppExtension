@@ -116,7 +116,7 @@ extension UINavigationBar {
      isTranslucent
      默认情况：
         默认为true
-        如果设置了背景图片，图片的任何一个像素有小于1的情况，为true，否则为false
+        如果设置了背景图片，图片的任何一个像素透明有小于1的情况，为true，否则为false
      如果手动设置了true，却设置了不透明的背景图片 ->
         导航栏会自动把图片改成一个透明度小于1的
      如果手动设置了false，却设置了透明的背景图片 ->

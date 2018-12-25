@@ -14,7 +14,7 @@ public class CountdownButton: Button {
             if self.isEnabled {
                 self.timer.suspend()
             } else {
-                self.update(self.totalSeconds)
+                self.update(self.timer.originalTimes)
                 self.timer.reCountDown()
                 self.timer.start()
             }
@@ -22,10 +22,12 @@ public class CountdownButton: Button {
     }
 
     public var updateDisabledText: ((Int) -> (String))?
-    public var totalSeconds: Int = 60 {
-        didSet {
-            self.timer.originalTimes = self.totalSeconds
-        }
+    /// ZJaDe: 默认设置的倒计时总时间，设置后需要手动更新
+    public var totalSeconds: Int = 60
+    /// ZJaDe: 有时候会根据实际情况得出实际的总倒计时时间，设置为nil则用默认的totalSeconds
+    public var realTempTotalSeconds: Int? {
+        get { return self.timer.originalTimes }
+        set { self.timer.originalTimes = newValue ?? self.totalSeconds }
     }
     lazy private(set) var timer: SwiftCountDownTimer = SwiftCountDownTimer(interval: .seconds(1), times: self.totalSeconds) {[weak self] (_, leftTimes) in
         self?.update(leftTimes)

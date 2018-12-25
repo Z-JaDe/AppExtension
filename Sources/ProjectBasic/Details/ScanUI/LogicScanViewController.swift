@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-open class LogicScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+open class LogicScanViewController: UIViewController {
     public typealias ParseCodeClosureType = (String, @escaping (Bool) -> Void) -> Void
     public var parseCodeClosure: ParseCodeClosureType?
     public var isLight: Bool = false {
@@ -18,57 +18,56 @@ open class LogicScanViewController: UIViewController, AVCaptureMetadataOutputObj
 
     private var _isReading: Bool = true
     // MARK: -
+    var deviceAvailable: Bool {
+        return self.device != nil
+    }
     lazy var device: AVCaptureDevice? = {
         return AVCaptureDevice.default(for: AVMediaType.video)
     }()
     lazy var session: AVCaptureSession = {
         let session = AVCaptureSession()
         session.sessionPreset = .high
-
-        if let device = device, let input = try? AVCaptureDeviceInput(device: device) {
-            if session.canAddInput(input) {
-                session.addInput(input)
-            }
-        }
-        let output = AVCaptureMetadataOutput()
-        output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-        output.rectOfInterest = self.rectOfInterest(scanViewRect: self.scanViewRect())
-        if session.canAddOutput(output) {
-            session.addOutput(output)
-        }
-        if output.availableMetadataObjectTypes.count > 0 {
-            output.metadataObjectTypes = [.qr, .ean13, .ean8, .code128]
-        }
-
         return session
     }()
-    open func scanViewRect() -> CGRect {
-        return jd.screenBounds
-    }
+    public private(set) lazy var previewView: UIView = UIView()
     lazy var preview: AVCaptureVideoPreviewLayer = {
         let preView = AVCaptureVideoPreviewLayer(session: self.session)
         preView.videoGravity = .resize
-        preView.frame = self.view.bounds
         return preView
     }()
 
     open override func viewDidLoad() {
         super.viewDidLoad()
+        addChildView()
+        configLayout()
+        if self.deviceAvailable {
+            self.addScanInput()
+            self.addScanOutput()
+            self.previewView.layer.insertSublayer(self.preview, at: 0)
+        }
         self.checkCanScan { [weak self] (canUse) in
-            guard let `self` = self else {return}
             if canUse {
-                self.openScanning()
-            } else {
-                self.popVC()
+                self?.openScanning()
             }
         }
     }
+    open func addChildView() {
+        self.view.addSubview(self.previewView)
+    }
+    open func configLayout() {
+
+    }
+    open override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.previewView.frame = self.view.bounds
+        self.preview.frame = self.previewView.bounds
+    }
+    // MARK: -
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if self.deviceAvailable {
             self.updateLighted(isLight: self.isLight)
         }
-
     }
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -78,51 +77,30 @@ open class LogicScanViewController: UIViewController, AVCaptureMetadataOutputObj
         }
     }
     // MARK: -
-    var deviceAvailable: Bool {
-        return self.device != nil
-    }
     let pscope = PermissionScope()
-    public func checkCanScan(_ closure: @escaping (Bool) -> Void) {
-        if self.deviceAvailable {
-            pscope.requestCamera(closure)
-        } else {
-            Alert.showPrompt("设备不支持扫描") { (_, _) in
-                closure(false)
-            }
-        }
-    }
     // MARK: -
     open func openScanning() {
         self._isReading = true
-        Async.main {
-            self.view.layer.insertSublayer(self.preview, at: 0)
-            self.session.startRunning()
-        }
+        self.session.startRunning()
     }
     open func stopScanning() {
         self._isReading = false
-        Async.main {
-            self.session.stopRunning()
-        }
+        self.session.stopRunning()
     }
+    /// ZJaDe: 灯泡开关更新
     open func updateLighted(isLight: Bool) {
         jd.torchOpenState = isLight
     }
-    // MARK: - 处理扫描结果
-    public func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        guard let metadataObject = metadataObjects.first as? AVMetadataMachineReadableCodeObject else {
-            return
-        }
-        guard let stringValue = metadataObject.stringValue else {
-            return
-        }
-        guard self._isReading == true else {
-            return
-        }
+    /// ZJaDe: 扫描范围
+    open func scanViewRect() -> CGRect {
+        return jd.screenBounds
+    }
+    /// ZJaDe: 扫描结果处理
+    open func parseScanResult(metadataObject: AVMetadataMachineReadableCodeObject, stringValue: String) {
+        guard self._isReading == true else { return }
         self.stopScanning()
-        logDebug(stringValue)
+        logDebug("扫描到\(stringValue)")
         self.parseCode(stringValue)
-
     }
     func parseCode(_ code: String) {
         self.parseCodeClosure?(code, {(_) in
@@ -131,9 +109,50 @@ open class LogicScanViewController: UIViewController, AVCaptureMetadataOutputObj
     }
 }
 extension LogicScanViewController {
+    public func checkCanScan(_ closure: @escaping (Bool) -> Void) {
+        if self.deviceAvailable {
+            pscope.requestCamera { (canUse) in
+                Async.main {
+                    closure(canUse)
+                }
+            }
+        } else {
+            Alert.showPrompt("设备不支持扫描") { (_, _) in
+                closure(false)
+            }
+        }
+    }
+    func addScanInput() {
+        guard session.inputs.count <= 0 else { return }
+        if let device = device, let input = try? AVCaptureDeviceInput(device: device) {
+            if session.canAddInput(input) {
+                session.addInput(input)
+            }
+        }
+    }
+    func addScanOutput() {
+        guard session.outputs.count <= 0 else { return }
+        let output = AVCaptureMetadataOutput()
+        output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+        output.rectOfInterest = self.rectOfInterest(scanViewRect: self.scanViewRect())
+        if output.availableMetadataObjectTypes.count > 0 {
+            output.metadataObjectTypes = [.qr, .ean13, .ean8, .code128]
+        }
+        if session.canAddOutput(output) {
+            session.addOutput(output)
+        }
+    }
     func rectOfInterest(scanViewRect: CGRect) -> CGRect {
         let width = scanViewRect.size.height / self.view.height
         let height = scanViewRect.size.width / self.view.width
         return CGRect(x: (1 - width) / 2, y: (1 - height) / 2, width: width, height: height)
+    }
+}
+// MARK: - 处理扫描结果
+extension LogicScanViewController: AVCaptureMetadataOutputObjectsDelegate {
+    public func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        guard let metadataObject = metadataObjects.first as? AVMetadataMachineReadableCodeObject else { return }
+        guard let stringValue = metadataObject.stringValue else { return }
+        self.parseScanResult(metadataObject: metadataObject, stringValue: stringValue)
     }
 }

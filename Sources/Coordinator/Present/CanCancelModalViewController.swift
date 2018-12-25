@@ -1,5 +1,5 @@
 //
-//  CanCancelViewController.swift
+//  CanCancelModalViewController.swift
 //  ProjectBasic
 //
 //  Created by 郑军铎 on 2018/12/25.
