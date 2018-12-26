@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window?.backgroundColor = UIColor.white
+        BBB()
         return true
     }
 
@@ -113,44 +114,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-class AAA:DisposeBagProtocol {
-    let button = Button()
+class AAA {
+    var a: Int = 2
     init() {
-        defer {
-            self.configInit()
-            print("AAA")
-        }
-    }
-    lazy var a: () -> Void = { [self] in
-        print(self)
+        self.configInit()
     }
     func configInit() {
-        let a = [1,2,3,4,5,6].lazy.compactMap { (value) -> Int? in
-            print("处理\(value)")
-            if value < 3 {
-                return nil
-            }
-            return value
-            }.map{$0 + 1}.first
-        print("a打印之前")
-        print(a as Any)
-    }
-    deinit {
-        print("A释放")
     }
 }
 class BBB: AAA {
-    override init() {
-        defer {
-            print("BBBdefer")
-        }
-        super.init()
-        print("BBB")
-    }
     override func configInit() {
         super.configInit()
-    }
-    deinit {
-        print("B释放")
+//        logDebug(self.a)
+//        logDebug(super.a)
+        self.a = 3
+        logDebug(self.a)
+        logDebug(super.a)
     }
 }
