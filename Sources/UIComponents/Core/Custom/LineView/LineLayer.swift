@@ -24,6 +24,11 @@ public class LineLayer: CAShapeLayer {
         self.fillColor = Color.clear.cgColor
         self.lineJoin = .round
     }
+    public override init(layer: Any) {
+        super.init(layer: layer)
+        self.fillColor = Color.clear.cgColor
+        self.lineJoin = .round
+    }
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
