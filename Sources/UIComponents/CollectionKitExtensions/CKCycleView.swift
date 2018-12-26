@@ -10,7 +10,7 @@ import Foundation
 import CollectionKit
 open class CKCycleView<View: UIView, Data>: PageItemsView<View, Data, CKCollectionView> {
     /// ZJaDe: 点击item
-    public var didSelectItem: ((BasicProvider<Data,View>.TapContext) -> Void)?
+    public var didSelectItem: ((BasicProvider<Data, View>.TapContext) -> Void)?
     /// ZJaDe: 配置model
     open override var viewUpdater: ((View, Data, Int) -> Void) {
         get {return super.viewUpdater}

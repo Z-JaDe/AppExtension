@@ -69,7 +69,6 @@ open class CycleView<ItemView, ItemData>: PageItemsView<ItemView, ItemData, Page
     // MARK: -
     public var didSelectItem: ((TapContext<ItemView, ItemData>) -> Void)?
     @objc open func whenTap(_ tap: UITapGestureRecognizer) {
-        let point = tap.location(in: tap.view)
         if let element = self.scrollView.visibleCells.first(where: {$0.point(inside: tap.location(in: $0), with: nil)}) {
             let index = getCurrentIndex()
             self.currentIndex = index

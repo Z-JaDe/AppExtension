@@ -23,7 +23,7 @@ open class MultipleItemsView<ItemView, ItemData, ScrollView>: CustomControl,
         didSet {setNeedsLayout()}
     }
     /// ZJaDe: viewUpdater
-    open var viewUpdater: ((ItemView, ItemData, Int) -> Void) = {_,_,_ in}
+    open var viewUpdater: ((ItemView, ItemData, Int) -> Void) = {_, _, _ in}
     /// ZJaDe: 当item数据需要更新时会调用该方法 子类调用
     public func config(cell: ItemView, index: Int) {
         self.viewUpdater(cell, dataArray[index], index)

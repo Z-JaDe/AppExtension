@@ -1,5 +1,5 @@
 ////
-////  CollectionTableCellNode.swift
+////  CollectionTableCell.swift
 ////  JDKit
 ////
 ////  Created by 茶古电子商务 on 2017/12/7.

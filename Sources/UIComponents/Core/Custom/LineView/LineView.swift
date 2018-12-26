@@ -7,56 +7,27 @@
 //
 
 import UIKit
-
-public enum LineType {
-    /// ZJaDe: 虚线
-    case dotted(width: Int, space: Int)
-    /// ZJaDe: 实线
-    case solid
-
-}
-public enum LineAxis {
-    case horizontal
-    case vertical
-}
-
 open class LineView: CustomView {
     open var lineHeight: CGFloat = 1 {
-        didSet {invalidateIntrinsicContentSize()}
+        didSet { invalidateIntrinsicContentSize() }
+    }
+    public let lineLayer: LineLayer = LineLayer()
+    open var lineAxis: LineAxis {
+        get { return self.lineLayer.lineAxis }
+        set { self.lineLayer.lineAxis = newValue
+            invalidateIntrinsicContentSize()
+        }
     }
     open var lineType: LineType {
-        get {
-            if dottedWidth == nil || dottedSpace == nil {
-                return .solid
-            } else {
-                return .dotted(width: dottedWidth!, space: dottedSpace!)
-            }
-        }
-        set {
-            switch newValue {
-            case .dotted(width: let width, space: let space):
-                dottedWidth = width
-                dottedSpace = space
-            case .solid:
-                dottedWidth = nil
-                dottedSpace = nil
-            }
-        }
+        get { return self.lineLayer.lineType }
+        set { self.lineLayer.lineType = newValue }
     }
-    open var lineAxis: LineAxis = .horizontal {
-        didSet {
-            self.invalidateIntrinsicContentSize()
-        }
-    }
-    open var lineColor: UIColor? = Color.boderLine {
-        didSet {
-            self.setNeedsLayout()
-        }
+    open var lineColor: UIColor? {
+        get { return self.lineLayer.lineColor }
+        set { self.lineLayer.lineColor = newValue }
     }
 
-    open var dottedWidth: Int?
-    open var dottedSpace: Int?
-
+    @available(*, unavailable, message: "使用lineColor")
     open override var backgroundColor: UIColor? {
         get {return self.lineColor}
         set {self.lineColor = newValue}
@@ -67,7 +38,7 @@ open class LineView: CustomView {
     open class func solid(lineAxis: LineAxis) -> Self {
         return self.init(lineType: .solid, lineAxis: lineAxis)
     }
-    public convenience required init(lineType: LineType = .dotted(width: 3, space: 1), lineAxis: LineAxis = .horizontal) {
+    public convenience required init(lineType: LineType, lineAxis: LineAxis = .horizontal) {
         self.init(frame: CGRect())
         self.lineType = lineType
         self.lineAxis = lineAxis
@@ -75,17 +46,12 @@ open class LineView: CustomView {
 
     open override func configInit() {
         super.configInit()
+        self.isUserInteractionEnabled = false
         self.layer.masksToBounds = true
-        self.layer.addSublayer(self.shapeLayer)
+        self.layer.addSublayer(self.lineLayer)
         self.contentPriority(.defaultLow)
     }
     // MARK: -
-    open var shapeLayer: CAShapeLayer = {
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.fillColor = Color.clear.cgColor
-        shapeLayer.lineJoin = CAShapeLayerLineJoin.round
-        return shapeLayer
-    }()
     open override var intrinsicContentSize: CGSize {
         switch self.lineAxis {
         case .horizontal:
@@ -96,25 +62,6 @@ open class LineView: CustomView {
     }
     open override func layoutSubviews() {
         super.layoutSubviews()
-        self.shapeLayer.frame = self.bounds
-        self.shapeLayer.strokeColor = self.lineColor?.cgColor
-        switch self.lineType {
-        case .dotted(width: let width, space: let space):
-            self.shapeLayer.lineDashPattern = [NSNumber(value: width), NSNumber(value: space)]
-        case .solid:
-            self.shapeLayer.lineDashPattern = nil
-        }
-        self.shapeLayer.lineWidth = self.lineAxis == .horizontal ? self.height : self.width
-        let path = CGMutablePath()
-        switch self.lineAxis {
-        case .horizontal:
-            path.move(to: CGPoint(x: 0, y: self.height/2))
-            path.addLine(to: CGPoint(x: self.right, y: self.height/2))
-        case .vertical:
-            path.move(to: CGPoint(x: self.width/2, y: 0))
-            path.addLine(to: CGPoint(x: self.width/2, y: self.bottom))
-        }
-        self.shapeLayer.path = path
+        self.lineLayer.frame = self.bounds
     }
-
 }

@@ -65,7 +65,6 @@ public extension Reactive where Base: UIViewController & RootViewStateProtocol {
         return self.checkViewState {$0.isDidDisappear}
     }
 
-
     /// ZJaDe: viewState符合时会发送一次信号
     func whenViewState(_ viewState: RootViewState) -> Observable<()> {
         return self.checkViewState({$0 == viewState}).filter({$0}).mapToVoid()

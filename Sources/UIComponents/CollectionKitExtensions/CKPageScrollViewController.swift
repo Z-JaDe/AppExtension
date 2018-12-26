@@ -29,7 +29,7 @@ open class CKPageScrollViewController: CKCollectionViewController {
         let dataSource = ArrayDataSource(data: self.viewConArr)
 
         let viewGenerator: (UIViewController, Int) -> UIView = { (viewCon, _) in return viewCon.view }
-        let viewSource = ClosureViewSource<UIViewController, UIView>(viewGenerator: viewGenerator, viewUpdater: { (view, data, index) in
+        let viewSource = ClosureViewSource<UIViewController, UIView>(viewGenerator: viewGenerator, viewUpdater: { (_, _, _) in
         })
         self.scrollView.provider = BasicProvider(
             dataSource: dataSource,

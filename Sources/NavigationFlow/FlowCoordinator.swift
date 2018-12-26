@@ -38,66 +38,60 @@ class FlowItemCoordinator: DisposeBagProtocol {
     }
 
     func coordinate() {
-        self.steps
-            .do(onNext: { [unowned self] (stepContext) in
-                self.delegate.willNavigate(to: stepContext)
-            })
-            .map { [unowned self] (stepContext) -> (StepContext, NextFlowItems) in
+        self.steps.do(onNext: { [unowned self] (stepContext) in
+                self.delegate.willNavigate(to: stepContext) // ZJaDe: 将要导航
+            }).map { [unowned self] (stepContext) -> (StepContext, NextFlowItems) in
                 return (stepContext, self.flow.navigate(to: stepContext.step))
             }.do(onNext: { [unowned self] (stepContext, _) in
-                self.flow.flowReadySubject.onNext(true)
+                self.flow.flowReadySubject.onNext(true) // ZJaDe: 跳转导航
                 stepContext.withinFlow = self.flow
-                self.delegate.didNavigate(to: stepContext)
-            }).map { [unowned self] (stepContext, nextFlowItems) -> (StepContext, [NextFlowItem]) in
-                switch nextFlowItems {
-                case .multiple(let flowItems):
-                    return (stepContext, flowItems)
-                case .one(let flowItem):
-                    return (stepContext, [flowItem])
-                case .end(let stepToSendToParentFlow):
-                    if let parent = self.parent {
-                        let stepContextForParentFlow = StepContext(with: stepToSendToParentFlow)
-                        stepContextForParentFlow.fromChildFlow = self.flow
-                        parent.steps.onNext(stepContextForParentFlow)
-                    }
-                    self.delegate.endFlowCoordinator(withIdentifier: self.identifier)
-                    return (stepContext, [])
-                case .triggerParentFlow(let stepToSendToParentFlow):
-                    if let parent = self.parent {
-                        let stepContextForParentFlow = StepContext(with: stepToSendToParentFlow)
-                        stepContextForParentFlow.fromChildFlow = self.flow
-                        parent.steps.onNext(stepContextForParentFlow)
-                    }
-                    return (stepContext, [])
-                case .none:
-                    return (stepContext, [])
-                }
-            }
-            .flatMap { (arg) -> Observable<NextFlowItem> in
-                return Observable.from(arg.1)
-            }
+                self.delegate.didNavigate(to: stepContext)  // ZJaDe: 已经导航
+            }).map { [unowned self] in self.mapFlowItem(next: $1)}
+            .flatMap { Observable.from($0) } // ZJaDe: 转换成NextFlowItem信号
             .do(onNext: { [unowned self] (nextFlowItem) in
-                if nextFlowItem.nextPresentable is Flow {
+                if nextFlowItem.nextPresentable is Flow { // ZJaDe: 如果nextPresentable为流，则导航到新的流
                     self.delegate.navigateToAnotherFlow(withParent: self, withNextFlowItem: nextFlowItem)
                 }
-            })
-            .filter { (nextFlowItem) -> Bool in
-                return !(nextFlowItem.nextPresentable is Flow)
-            }
-            .flatMap { (nextFlowItem) -> Observable<Step> in
+            }).filter { !($0.nextPresentable is Flow) }
+            .flatMap { (nextFlowItem) -> Observable<Step> in // ZJaDe: NextFlowItem转换成Step
                 let presentable = nextFlowItem.nextPresentable
                 let stepper = nextFlowItem.nextStepper
-                return stepper
-                    .steps
-                    .pausable(presentable.rxVisible)
-            }
-            .takeUntil(self.flow.rxDismissed.asObservable())
+                return stepper.steps.pausable(presentable.rxVisible)
+            }.takeUntil(self.flow.rxDismissed.asObservable()) // ZJaDe: 流结束的时候结束订阅
             .asDriver(onErrorJustReturn: NoneStep()).drive(onNext: { [weak self] (step) in
-                let newStepContext = StepContext(with: step)
+                let newStepContext = StepContext(with: step) // ZJaDe: 开启下一个Setp循环
                 self?.steps.onNext(newStepContext)
             }).disposed(by: flow.disposeBag)
-
-        // ZJaDe: stepper接受到新的信号后，开启新的StepContext
+        subscribeStepper()
+        subscribeFlowDismissed()
+    }
+    func mapFlowItem(next nextFlowItems: NextFlowItems) -> [NextFlowItem] {
+        switch nextFlowItems {
+        case .multiple(let flowItems):
+            return flowItems
+        case .one(let flowItem):
+            return [flowItem]
+        case .end(let stepToSendToParentFlow):
+            if let parent = self.parent {
+                let stepContextForParentFlow = StepContext(with: stepToSendToParentFlow)
+                stepContextForParentFlow.fromChildFlow = self.flow
+                parent.steps.onNext(stepContextForParentFlow)
+            }
+            self.delegate.endFlowCoordinator(withIdentifier: self.identifier)
+            return []
+        case .triggerParentFlow(let stepToSendToParentFlow):
+            if let parent = self.parent {
+                let stepContextForParentFlow = StepContext(with: stepToSendToParentFlow)
+                stepContextForParentFlow.fromChildFlow = self.flow
+                parent.steps.onNext(stepContextForParentFlow)
+            }
+            return []
+        case .none:
+            return []
+        }
+    }
+    /// ZJaDe: stepper接受到新的信号后，开启新的StepContext
+    private func subscribeStepper() {
         self.stepper
             .steps
             .pausableBuffered(self.flow.rxVisible)
@@ -108,7 +102,9 @@ class FlowItemCoordinator: DisposeBagProtocol {
                 newStepContext.withinFlow = self.flow
                 self.steps.onNext(newStepContext)
             }).disposed(by: flow.disposeBag)
-        // ZJaDe: 界面消失后 结束流
+    }
+    /// ZJaDe: 界面消失后 结束流
+    private func subscribeFlowDismissed() {
         self.flow.rxDismissed.subscribe(onSuccess: { [weak self] in
             guard let `self` = self else { return }
             self.delegate.endFlowCoordinator(withIdentifier: self.identifier)

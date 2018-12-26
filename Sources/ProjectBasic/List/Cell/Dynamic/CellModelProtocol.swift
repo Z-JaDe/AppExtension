@@ -7,10 +7,48 @@
 //
 
 import Foundation
-
-public protocol CellModelProtocol: ConfigModelProtocol, ModelUpdateProtocol {
+import RxSwift
+public protocol CellModelProtocol: ConfigModelProtocol, UpdateModelProtocol {
     init(model: ModelType)
 }
-public protocol ModelUpdateProtocol {
-    var modelUpdateTask: NeedUpdateTask {get}
+public extension CellModelProtocol where Self: ItemCell {
+    func configDataWithModel() {
+        self.configData(with: self.model)
+        self.setNeedsLayout()
+    }
+    func setNeedUpdateModel() {
+        setNeedUpdateModel(self.cellState.asObservable().map {$0 == .willAppear}.distinctUntilChanged())
+    }
+}
+// MARK: -
+public protocol UpdateModelProtocol: class {
+    func configDataWithModel()
+
+    func setNeedUpdateModel()
+    func updateModelIfNeed()
+    func setNeedUpdateModelObserver() -> AnyObserver<Void>
+}
+public extension UpdateModelProtocol {
+    func setNeedUpdateModelObserver() -> AnyObserver<Void> {
+        return AnyObserver(eventHandler: { (event) in
+            switch event {
+            case .next: self.setNeedUpdateModel()
+            case .completed, .error: break
+            }
+        })
+    }
+    func updateModelIfNeed() {
+        configDataWithModel()
+    }
+}
+public extension UpdateModelProtocol where Self: NSObject {
+    func setNeedUpdateModel<P: ObservableType>(_ pauser: P) where P.E == Bool {
+        let tag = "isNeedUpdateModel"
+        self.resetDisposeBagWithTag(tag)
+        Observable<Void>.setNeedUpdate(pauser)
+            .subscribeOnNext { [weak self] in
+                guard let `self` = self else { return }
+                self.configDataWithModel()
+            }.disposed(by: self.disposeBagWithTag(tag))
+    }
 }

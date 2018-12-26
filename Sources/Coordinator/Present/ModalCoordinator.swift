@@ -33,4 +33,3 @@ where ViewConType: CanCancelModalViewController & UIViewController {
         self.viewCon.cancel(completion: completion)
     }
 }
-

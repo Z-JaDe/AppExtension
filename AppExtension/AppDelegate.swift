@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func mainColor() {
         DispatchQueue.main.async {
-            var image:UIImage?
+            let image:UIImage? = nil
 
             let view = UIView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
             view.backgroundColor = UIImage(named: "bank_abc")?.mainColor()
@@ -133,7 +133,7 @@ class AAA:DisposeBagProtocol {
             return value
             }.map{$0 + 1}.first
         print("a打印之前")
-        print(a)
+        print(a as Any)
     }
     deinit {
         print("A释放")

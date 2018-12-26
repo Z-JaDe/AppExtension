@@ -13,7 +13,6 @@ public protocol Stepper: AssociatedObjectProtocol {
     var steps: Observable<Step> { get }
 }
 
-
 public class OneStepper: Stepper {
     public init(withSingleStep singleStep: Step) {
         self.step.accept(singleStep)
