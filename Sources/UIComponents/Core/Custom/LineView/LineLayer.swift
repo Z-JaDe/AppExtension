@@ -56,10 +56,10 @@ public class LineLayer: CAShapeLayer {
         switch self.lineAxis {
         case .horizontal:
             path.move(to: CGPoint(x: 0, y: self.height/2))
-            path.addLine(to: CGPoint(x: self.right, y: self.height/2))
+            path.addLine(to: CGPoint(x: self.width, y: self.height/2))
         case .vertical:
             path.move(to: CGPoint(x: self.width/2, y: 0))
-            path.addLine(to: CGPoint(x: self.width/2, y: self.bottom))
+            path.addLine(to: CGPoint(x: self.width/2, y: self.height))
         }
         self.path = path
     }

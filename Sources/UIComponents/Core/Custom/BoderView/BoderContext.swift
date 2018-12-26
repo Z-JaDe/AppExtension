@@ -20,7 +20,7 @@ public struct BoderContext {
         case endPoint(CGFloat)
         case allPoint(CGFloat)
     }
-    let view: UIView?
+    private var view: UIView?
     init(in view: UIView) {
         self.view = view
     }
@@ -34,6 +34,9 @@ public struct BoderContext {
 public extension BoderContext {
     private func finalize() {
         self.view!.boderView.update(with: self)
+    }
+    internal func cleanViewReference() -> BoderContext {
+        return self.then({$0.view = nil})
     }
     var lineAxis: LineAxis {
         switch direction {

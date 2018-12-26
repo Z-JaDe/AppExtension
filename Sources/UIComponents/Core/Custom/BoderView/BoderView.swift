@@ -22,7 +22,7 @@ class BoderView: CustomView {
     }
     // MARK: -
     func update(with context: BoderContext) {
-        self.data[context.direction] = context
+        self.data[context.direction] = context.cleanViewReference()
         setNeedsLayout()
     }
     override func layoutSubviews() {
@@ -49,7 +49,9 @@ extension BoderView {
         }
     }
     func createLayer() -> LineLayerType {
-        return LineLayerType()
+        let result = LineLayerType()
+        self.layer.addSublayer(result)
+        return result
     }
 }
 private var boderViewKey: UInt8 = 0
