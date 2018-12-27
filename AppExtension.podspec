@@ -135,7 +135,6 @@ Pod::Spec.new do |s|
     end
     s.subspec "Default" do |ss|
         ss.dependency "AppExtension/MVCProject"
-        ss.dependency "SwiftRouter"
     end
     s.subspec "MVCFlow" do |ss|
         ss.dependency "AppExtension/MVCProject"
@@ -144,7 +143,6 @@ Pod::Spec.new do |s|
     s.subspec "MVCCoordinator" do |ss|
         ss.dependency "AppExtension/MVCProject"
         ss.dependency "AppExtension/Coordinator"
-        ss.dependency "SwiftRouter"
     end
 
 end
