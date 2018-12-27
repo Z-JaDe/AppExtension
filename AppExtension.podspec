@@ -28,9 +28,6 @@ Pod::Spec.new do |s|
     s.subspec "Animater" do |ss|
         ss.source_files  = "Sources/Animater/**/*.{swift}"
     end
-    s.subspec "RouterManager" do |ss|
-        ss.source_files  = "Sources/RouterManager/**/*.{swift}"
-    end
     s.subspec "AnimatedTransition" do |ss|
         ss.source_files  = "Sources/AnimatedTransition/**/*.{swift}"
         ss.dependency "AppExtension/Animater"
@@ -138,17 +135,16 @@ Pod::Spec.new do |s|
     end
     s.subspec "Default" do |ss|
         ss.dependency "AppExtension/MVCProject"
-        ss.dependency "AppExtension/RouterManager"
+        ss.dependency "SwiftRouter"
     end
     s.subspec "MVCFlow" do |ss|
         ss.dependency "AppExtension/MVCProject"
-        ss.dependency "AppExtension/RouterManager"
         ss.dependency "AppExtension/NavigationFlow"
     end
     s.subspec "MVCCoordinator" do |ss|
         ss.dependency "AppExtension/MVCProject"
-        ss.dependency "AppExtension/RouterManager"
         ss.dependency "AppExtension/Coordinator"
+        ss.dependency "SwiftRouter"
     end
 
 end

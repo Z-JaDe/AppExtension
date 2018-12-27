@@ -9,7 +9,7 @@
 import Foundation
 
 public struct BoderContext {
-    enum BoderDirection: Hashable {
+    enum Direction: Hashable {
         case top
         case left
         case bottom
@@ -24,7 +24,7 @@ public struct BoderContext {
     init(in view: UIView) {
         self.view = view
     }
-    var direction: BoderDirection = .top
+    var direction: Direction = .top
     var boderWidth: CGFloat = 1
     var boderColor: UIColor = Color.boderLine
     var edgeType: BoderExcludePoint = .allPoint(0)

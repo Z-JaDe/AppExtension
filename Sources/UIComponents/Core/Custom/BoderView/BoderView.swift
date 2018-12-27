@@ -13,8 +13,8 @@ class BoderView: CustomView {
     private lazy var leftLayer: LineLayerType = createLayer()
     private lazy var bottomLayer: LineLayerType = createLayer()
     private lazy var rightLayer: LineLayerType = createLayer()
-    private typealias BoderDirection = BoderContext.BoderDirection
-    private var data: [BoderDirection: BoderContext] = [:]
+    private typealias Direction = BoderContext.Direction
+    private var data: [Direction: BoderContext] = [:]
     override func configInit() {
         super.configInit()
         self.isUserInteractionEnabled = false
@@ -40,7 +40,7 @@ class BoderView: CustomView {
 }
 
 extension BoderView {
-    private func getLayer(in direction: BoderDirection) -> LineLayerType {
+    private func getLayer(in direction: Direction) -> LineLayerType {
         switch direction {
         case .top: return self.topLayer
         case .left: return self.leftLayer

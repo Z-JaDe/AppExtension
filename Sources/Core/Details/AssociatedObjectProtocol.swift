@@ -50,7 +50,11 @@ public extension AssociatedObjectProtocol {
     // MARK: - set
     public func setAssociatedObject<V>(_ key: UnsafeRawPointer, _ newValue: V?) {
         synchronized {
-            _setAssociatedObject(key, WarppedObject(newValue))
+            if V.self is AnyClass {
+                _setAssociatedObject(key, newValue)
+            } else {
+                _setAssociatedObject(key, WarppedObject(newValue))
+            }
         }
     }
     public func setAssociatedWeakObject<V: AnyObject>(_ key: UnsafeRawPointer, _ newValue: V?) {

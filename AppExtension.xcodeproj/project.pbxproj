@@ -11,7 +11,6 @@
 		109E0DFB798EF646133BA1E6 /* Pods_BaseCore_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B10282B7C4C1BC2FA90EB2 /* Pods_BaseCore_Core.framework */; };
 		22A085A7B47715B330E2A981 /* Pods_BaseCore_UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D2E1FAEED0051ECACB03D3E /* Pods_BaseCore_UIComponents.framework */; };
 		40F023092B7DAF6C4ED8EE3D /* Pods_BaseCore_EmptyDataSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D4807F03687AF0B500B72E8 /* Pods_BaseCore_EmptyDataSet.framework */; };
-		601BDE414D248EAE685346E9 /* Pods_BaseCore_RouterManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 109485C8214BAEC0C6D845E0 /* Pods_BaseCore_RouterManager.framework */; };
 		88484F85A78A56A172DFC200 /* Pods_BaseCore_Coordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A81FE1E2A3EFA5742771FE /* Pods_BaseCore_Coordinator.framework */; };
 		8B43F6D53695CB639B7C4DAD /* Pods_BaseCore_CommonPods_AppExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C99D851D0782AE1882964A58 /* Pods_BaseCore_CommonPods_AppExtension.framework */; };
 		8C28337CCC9F8BBA0F7B5C83 /* Pods_AppExtensionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97014258276800C23FF1E924 /* Pods_AppExtensionUITests.framework */; };
@@ -42,14 +41,6 @@
 		C91055B421A8298200F87515 /* UserNotificationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91055AD21A8298200F87515 /* UserNotificationManager.framework */; };
 		C91055B521A8298200F87515 /* UserNotificationManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C91055AD21A8298200F87515 /* UserNotificationManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C91055B921A829F700F87515 /* UserNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F9BA21006E9B00B8DF84 /* UserNotificationManager.swift */; };
-		C91055C521A82B6800F87515 /* RouteManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C91055C321A82B6800F87515 /* RouteManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C91055C821A82B6800F87515 /* RouterManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91055C121A82B6700F87515 /* RouterManager.framework */; };
-		C91055C921A82B6800F87515 /* RouterManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C91055C121A82B6700F87515 /* RouterManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C91055CD21A82B8200F87515 /* RouteUrlType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C985B1A121269EF100967784 /* RouteUrlType.swift */; };
-		C91055CE21A82B8200F87515 /* RouterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F9C121006E9B00B8DF84 /* RouterManager.swift */; };
-		C91055CF21A82B8200F87515 /* AppRouterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F9C021006E9B00B8DF84 /* AppRouterItem.swift */; };
-		C91055D021A82B8200F87515 /* RouterManager+Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F9BF21006E9B00B8DF84 /* RouterManager+Url.swift */; };
-		C91055D221A82C2E00F87515 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91055D121A82C2E00F87515 /* UINavigationController.swift */; };
 		C910569921A847BB00F87515 /* AnimatedTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = C910569721A847BB00F87515 /* AnimatedTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C910569C21A847BB00F87515 /* AnimatedTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C910569521A847BA00F87515 /* AnimatedTransition.framework */; };
 		C910569D21A847BB00F87515 /* AnimatedTransition.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C910569521A847BA00F87515 /* AnimatedTransition.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -102,6 +93,7 @@
 		C916E8C921C23656002EE339 /* SegmentScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B4621BE884100361B87 /* SegmentScrollView.swift */; };
 		C916E8CA21C23656002EE339 /* MultipleItemScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B4721BE884100361B87 /* MultipleItemScrollView.swift */; };
 		C916E8CD21C23680002EE339 /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B4A21BE884100361B87 /* SegmentView.swift */; };
+		C916FF1621D4AB4F00DFC8C2 /* SwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C916FF1521D4AB4F00DFC8C2 /* SwiftTest.swift */; };
 		C918DEE721B5205F000F2AAC /* AppExtensionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918DEE621B5205F000F2AAC /* AppExtensionUITests.swift */; };
 		C918DEF521B52068000F2AAC /* AppExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918DEF421B52068000F2AAC /* AppExtensionTests.swift */; };
 		C918DF0421B52299000F2AAC /* ListData+EditItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918DEFD21B52299000F2AAC /* ListData+EditItems.swift */; };
@@ -412,13 +404,6 @@
 			remoteGlobalIDString = C962C8A220CE28BC0061FC20;
 			remoteInfo = Core;
 		};
-		C91055C621A82B6800F87515 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C962C18820CE17990061FC20 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C91055C021A82B6700F87515;
-			remoteInfo = RouteManager;
-		};
 		C910569A21A847BB00F87515 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C962C18820CE17990061FC20 /* Project object */;
@@ -699,7 +684,6 @@
 				C962C8AB20CE28BC0061FC20 /* Core.framework in Embed Frameworks */,
 				C962C4FA20CE19C60061FC20 /* Animater.framework in Embed Frameworks */,
 				C932F75F2100593E00B8DF84 /* ProjectBasic.framework in Embed Frameworks */,
-				C91055C921A82B6800F87515 /* RouterManager.framework in Embed Frameworks */,
 				C9283AF921BE335E00361B87 /* Async.framework in Embed Frameworks */,
 				C9283B3E21BE86BF00361B87 /* UIComponents.framework in Embed Frameworks */,
 				C9283BF321BE9C1D00361B87 /* EmptyDataSet.framework in Embed Frameworks */,
@@ -733,7 +717,6 @@
 		2DE671F64627928032533BC6 /* Pods-BaseCore-UserNotificationManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-UserNotificationManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-UserNotificationManager/Pods-BaseCore-UserNotificationManager.debug.xcconfig"; sourceTree = "<group>"; };
 		3B06639A7981C83B62A70330 /* Pods-BaseCore-UIComponents-ScrollExtensions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-UIComponents-ScrollExtensions.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-UIComponents-ScrollExtensions/Pods-BaseCore-UIComponents-ScrollExtensions.release.xcconfig"; sourceTree = "<group>"; };
 		3D4807F03687AF0B500B72E8 /* Pods_BaseCore_EmptyDataSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseCore_EmptyDataSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E14ACDB3C1069B3CB8BB910 /* Pods-BaseCore-RouterManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-RouterManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-RouterManager/Pods-BaseCore-RouterManager.debug.xcconfig"; sourceTree = "<group>"; };
 		3E576C8692FEB135B239E93B /* Pods_CommonPods_Base.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommonPods_Base.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47CE7D3F7AF90AF0E94A7FA0 /* Pods-BaseCore-CommonPods-RxExtensions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-CommonPods-RxExtensions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-CommonPods-RxExtensions/Pods-BaseCore-CommonPods-RxExtensions.debug.xcconfig"; sourceTree = "<group>"; };
 		5045266F165C938367DB33B6 /* Pods_BaseCore_CommonPods_EmptyDataSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseCore_CommonPods_EmptyDataSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -818,10 +801,6 @@
 		C91055AD21A8298200F87515 /* UserNotificationManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserNotificationManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C91055AF21A8298200F87515 /* UserNotificationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserNotificationManager.h; sourceTree = "<group>"; };
 		C91055B021A8298200F87515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C91055C121A82B6700F87515 /* RouterManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RouterManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C91055C321A82B6800F87515 /* RouteManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RouteManager.h; sourceTree = "<group>"; };
-		C91055C421A82B6800F87515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C91055D121A82C2E00F87515 /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		C910563221A844E100F87515 /* NavInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavInteractionController.swift; sourceTree = "<group>"; };
 		C910563321A844E100F87515 /* DismissInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissInteractionController.swift; sourceTree = "<group>"; };
 		C910563421A844E100F87515 /* InteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionController.swift; sourceTree = "<group>"; };
@@ -868,6 +847,7 @@
 		C916E8B321C1F96E002EE339 /* CurrentIndexProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentIndexProtocol.swift; sourceTree = "<group>"; };
 		C916E8BF21C228BF002EE339 /* PageItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageItemsView.swift; sourceTree = "<group>"; };
 		C916E8C221C232F8002EE339 /* PageFormProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageFormProtocol.swift; sourceTree = "<group>"; };
+		C916FF1521D4AB4F00DFC8C2 /* SwiftTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTest.swift; sourceTree = "<group>"; };
 		C918C50021B7CBF5007C4134 /* EmptyDataSetContentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataSetContentProtocol.swift; sourceTree = "<group>"; };
 		C918DEE421B5205F000F2AAC /* AppExtensionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppExtensionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C918DEE621B5205F000F2AAC /* AppExtensionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppExtensionUITests.swift; sourceTree = "<group>"; };
@@ -1028,9 +1008,6 @@
 		C932F8AD21006DC500B8DF84 /* EntityManager+Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntityManager+Operation.swift"; sourceTree = "<group>"; };
 		C932F8AE21006DC500B8DF84 /* EntityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityManager.swift; sourceTree = "<group>"; };
 		C932F9BA21006E9B00B8DF84 /* UserNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotificationManager.swift; sourceTree = "<group>"; };
-		C932F9BF21006E9B00B8DF84 /* RouterManager+Url.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RouterManager+Url.swift"; sourceTree = "<group>"; };
-		C932F9C021006E9B00B8DF84 /* AppRouterItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouterItem.swift; sourceTree = "<group>"; };
-		C932F9C121006E9B00B8DF84 /* RouterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterManager.swift; sourceTree = "<group>"; };
 		C932F9FC21006ED100B8DF84 /* UITableProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableProxy.swift; sourceTree = "<group>"; };
 		C932F9FD21006ED100B8DF84 /* UITableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableAdapter.swift; sourceTree = "<group>"; };
 		C932F9FE21006ED100B8DF84 /* TableAdapterItemCompatible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableAdapterItemCompatible.swift; sourceTree = "<group>"; };
@@ -1167,7 +1144,6 @@
 		C979FAAA215CDB97000F7435 /* CodableTypes.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = CodableTypes.py; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.python; };
 		C979FAAC215CF858000F7435 /* ExpressibleProtocol.swift.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = ExpressibleProtocol.swift.gyb; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.python; };
 		C979FAAE215CFE3A000F7435 /* ExpressibleProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpressibleProtocol.swift; sourceTree = "<group>"; };
-		C985B1A121269EF100967784 /* RouteUrlType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteUrlType.swift; sourceTree = "<group>"; };
 		C989A342214011A500E64AD8 /* WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImage.swift; sourceTree = "<group>"; };
 		C989A345214015CD00E64AD8 /* ImageURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageURLProtocol.swift; sourceTree = "<group>"; };
 		C98A958C210475D40009997F /* AttributedStringMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringMaker.swift; sourceTree = "<group>"; };
@@ -1191,7 +1167,6 @@
 		D495EE34FE153AA6D31AC03C /* Pods-List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-List/Pods-List.debug.xcconfig"; sourceTree = "<group>"; };
 		D7A39F47EA4516713ADF9EBD /* Pods-BaseCore-CommonPods-RxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-CommonPods-RxSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-CommonPods-RxSwift/Pods-BaseCore-CommonPods-RxSwift.release.xcconfig"; sourceTree = "<group>"; };
 		D83B93568F37DE0AA9B27F53 /* Pods_BaseCore_CommonPods_Third.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseCore_CommonPods_Third.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DEC959F30524029AE152018A /* Pods-BaseCore-RouterManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-RouterManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-RouterManager/Pods-BaseCore-RouterManager.release.xcconfig"; sourceTree = "<group>"; };
 		DF6DF4E7212EC68C9A669791 /* Pods-BaseCore-CommonPods-UserNotificationManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-CommonPods-UserNotificationManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-CommonPods-UserNotificationManager/Pods-BaseCore-CommonPods-UserNotificationManager.release.xcconfig"; sourceTree = "<group>"; };
 		E073A0F88F2CAB02336A2320 /* Pods-BaseCore-CommonPods-AnimatedTransition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-CommonPods-AnimatedTransition.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-CommonPods-AnimatedTransition/Pods-BaseCore-CommonPods-AnimatedTransition.release.xcconfig"; sourceTree = "<group>"; };
 		E1795480EBEDF2567CF44D43 /* Pods_Third.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Third.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1221,14 +1196,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F31A1630517868D0CC87B851 /* Pods_BaseCore_UserNotificationManager.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C91055BE21A82B6700F87515 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				601BDE414D248EAE685346E9 /* Pods_BaseCore_RouterManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1315,7 +1282,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C91055C821A82B6800F87515 /* RouterManager.framework in Frameworks */,
 				C962C87B20CE1D4D0061FC20 /* Codable.framework in Frameworks */,
 				C9283AF821BE335E00361B87 /* Async.framework in Frameworks */,
 				C91055B421A8298200F87515 /* UserNotificationManager.framework in Frameworks */,
@@ -1441,8 +1407,6 @@
 				FF873ADCAEF47C09FFAB1809 /* Pods-BaseCore-CommonPods-UIComponents.release.xcconfig */,
 				E6A061E70AE55381ECAF5417 /* Pods-BaseCore-AnimatedTransition.debug.xcconfig */,
 				9EF2DCDEA50998A566E6228C /* Pods-BaseCore-AnimatedTransition.release.xcconfig */,
-				3E14ACDB3C1069B3CB8BB910 /* Pods-BaseCore-RouterManager.debug.xcconfig */,
-				DEC959F30524029AE152018A /* Pods-BaseCore-RouterManager.release.xcconfig */,
 				2DE671F64627928032533BC6 /* Pods-BaseCore-UserNotificationManager.debug.xcconfig */,
 				2CE3B1DF4B25CCA8647D916A /* Pods-BaseCore-UserNotificationManager.release.xcconfig */,
 				10876045528AF2E252D1F07D /* Pods-BaseCore-CommonPods-EmptyDataSet.debug.xcconfig */,
@@ -1582,20 +1546,6 @@
 				C91055B021A8298200F87515 /* Info.plist */,
 			);
 			path = UserNotificationManager;
-			sourceTree = "<group>";
-		};
-		C91055C221A82B6800F87515 /* RouterManager */ = {
-			isa = PBXGroup;
-			children = (
-				C932F9BF21006E9B00B8DF84 /* RouterManager+Url.swift */,
-				C932F9C021006E9B00B8DF84 /* AppRouterItem.swift */,
-				C932F9C121006E9B00B8DF84 /* RouterManager.swift */,
-				C91055D121A82C2E00F87515 /* UINavigationController.swift */,
-				C985B1A121269EF100967784 /* RouteUrlType.swift */,
-				C91055C321A82B6800F87515 /* RouteManager.h */,
-				C91055C421A82B6800F87515 /* Info.plist */,
-			);
-			path = RouterManager;
 			sourceTree = "<group>";
 		};
 		C910563121A844E100F87515 /* InteractionController */ = {
@@ -2559,7 +2509,6 @@
 				C962C8A320CE28BC0061FC20 /* Core.framework */,
 				C932F7572100593E00B8DF84 /* ProjectBasic.framework */,
 				C91055AD21A8298200F87515 /* UserNotificationManager.framework */,
-				C91055C121A82B6700F87515 /* RouterManager.framework */,
 				C910569521A847BA00F87515 /* AnimatedTransition.framework */,
 				C918DEE421B5205F000F2AAC /* AppExtensionUITests.xctest */,
 				C918DEF221B52068000F2AAC /* AppExtensionTests.xctest */,
@@ -2578,6 +2527,7 @@
 			isa = PBXGroup;
 			children = (
 				C962C19320CE17990061FC20 /* AppDelegate.swift */,
+				C916FF1521D4AB4F00DFC8C2 /* SwiftTest.swift */,
 				C962C19520CE17990061FC20 /* StackViewControllerTest.swift */,
 				C90D85EE20E2282600A4D0FD /* SegmentScrollViewViewControllerTest.swift */,
 				C9274ACA20F7205300884B54 /* FontViewControllerTest.swift */,
@@ -2673,7 +2623,6 @@
 				C962C5D720CE1A230061FC20 /* RxExtensions */,
 				C9283B3721BE86BF00361B87 /* UIComponents */,
 				C910569621A847BB00F87515 /* AnimatedTransition */,
-				C91055C221A82B6800F87515 /* RouterManager */,
 				C91055AE21A8298200F87515 /* UserNotificationManager */,
 			);
 			path = Sources;
@@ -2773,14 +2722,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C91055B121A8298200F87515 /* UserNotificationManager.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C91055BC21A82B6700F87515 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C91055C521A82B6800F87515 /* RouteManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2917,25 +2858,6 @@
 			name = UserNotificationManager;
 			productName = UserNotificationManager;
 			productReference = C91055AD21A8298200F87515 /* UserNotificationManager.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		C91055C021A82B6700F87515 /* RouterManager */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C91055CA21A82B6800F87515 /* Build configuration list for PBXNativeTarget "RouterManager" */;
-			buildPhases = (
-				9CADABDB5D9A0976EB46A2E4 /* [CP] Check Pods Manifest.lock */,
-				C91055BC21A82B6700F87515 /* Headers */,
-				C91055BD21A82B6700F87515 /* Sources */,
-				C91055BE21A82B6700F87515 /* Frameworks */,
-				C91055BF21A82B6700F87515 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = RouterManager;
-			productName = RouteManager;
-			productReference = C91055C121A82B6700F87515 /* RouterManager.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C910569421A847BA00F87515 /* AnimatedTransition */ = {
@@ -3164,7 +3086,6 @@
 				C962C8A920CE28BC0061FC20 /* PBXTargetDependency */,
 				C932F75D2100593E00B8DF84 /* PBXTargetDependency */,
 				C91055B321A8298200F87515 /* PBXTargetDependency */,
-				C91055C721A82B6800F87515 /* PBXTargetDependency */,
 				C910569B21A847BB00F87515 /* PBXTargetDependency */,
 				C9283AF721BE335E00361B87 /* PBXTargetDependency */,
 				C9283B3C21BE86BF00361B87 /* PBXTargetDependency */,
@@ -3311,9 +3232,6 @@
 					C91055AC21A8298200F87515 = {
 						CreatedOnToolsVersion = 10.1;
 					};
-					C91055C021A82B6700F87515 = {
-						CreatedOnToolsVersion = 10.1;
-					};
 					C910569421A847BA00F87515 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -3399,7 +3317,6 @@
 				C962C51520CE19EF0061FC20 /* List */,
 				C932F7562100593E00B8DF84 /* ProjectBasic */,
 				C91055AC21A8298200F87515 /* UserNotificationManager */,
-				C91055C021A82B6700F87515 /* RouterManager */,
 				C910569421A847BA00F87515 /* AnimatedTransition */,
 				C918DEE321B5205F000F2AAC /* AppExtensionUITests */,
 				C918DEF121B52068000F2AAC /* AppExtensionTests */,
@@ -3416,13 +3333,6 @@
 
 /* Begin PBXResourcesBuildPhase section */
 		C91055AB21A8298200F87515 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C91055BF21A82B6700F87515 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3790,28 +3700,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9CADABDB5D9A0976EB46A2E4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BaseCore-RouterManager-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A78DF2C07711988330B85661 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -4000,18 +3888,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C91055B921A829F700F87515 /* UserNotificationManager.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C91055BD21A82B6700F87515 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C91055D021A82B8200F87515 /* RouterManager+Url.swift in Sources */,
-				C91055D221A82C2E00F87515 /* UINavigationController.swift in Sources */,
-				C91055CE21A82B8200F87515 /* RouterManager.swift in Sources */,
-				C91055CF21A82B8200F87515 /* AppRouterItem.swift in Sources */,
-				C91055CD21A82B8200F87515 /* RouteUrlType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4257,6 +4133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C916FF1621D4AB4F00DFC8C2 /* SwiftTest.swift in Sources */,
 				C962C19620CE17990061FC20 /* StackViewControllerTest.swift in Sources */,
 				C90D85F420E2541500A4D0FD /* CycleViewViewControllerTest.swift in Sources */,
 				C9B34DFC2133E097002C5F37 /* ListViewControllerTest.swift in Sources */,
@@ -4455,11 +4332,6 @@
 			isa = PBXTargetDependency;
 			target = C962C8A220CE28BC0061FC20 /* Core */;
 			targetProxy = C91055BA21A82AD900F87515 /* PBXContainerItemProxy */;
-		};
-		C91055C721A82B6800F87515 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C91055C021A82B6700F87515 /* RouterManager */;
-			targetProxy = C91055C621A82B6800F87515 /* PBXContainerItemProxy */;
 		};
 		C910569B21A847BB00F87515 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4701,67 +4573,6 @@
 				);
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zjade.UserNotificationManager;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C91055CB21A82B6800F87515 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E14ACDB3C1069B3CB8BB910 /* Pods-BaseCore-RouterManager.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = XSB6H7A323;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/RouterManager/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zjade.RouterManager;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C91055CC21A82B6800F87515 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DEC959F30524029AE152018A /* Pods-BaseCore-RouterManager.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = XSB6H7A323;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/RouterManager/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zjade.RouterManager;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -5919,15 +5730,6 @@
 			buildConfigurations = (
 				C91055B721A8298200F87515 /* Debug */,
 				C91055B821A8298200F87515 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C91055CA21A82B6800F87515 /* Build configuration list for PBXNativeTarget "RouterManager" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C91055CB21A82B6800F87515 /* Debug */,
-				C91055CC21A82B6800F87515 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

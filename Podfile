@@ -22,8 +22,6 @@ abstract_target 'BaseCore' do
     target:'UserNotificationManager' do
         pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
     end
-    target:'RouterManager' do
-    end
     target:'UIComponents' do
         pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
         pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift'
