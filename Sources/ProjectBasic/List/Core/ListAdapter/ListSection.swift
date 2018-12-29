@@ -19,7 +19,7 @@ open class ListSection: Hashable,
 }
 extension ListSection {
     public func hash(into hasher: inout Hasher) {
-        hasher.combine("\(Unmanaged.passUnretained(self).toOpaque())")
+        hasher.combine(ObjectIdentifier(self))
     }
     public static func == (lhs: ListSection, rhs: ListSection) -> Bool {
         return lhs.hashValue == rhs.hashValue

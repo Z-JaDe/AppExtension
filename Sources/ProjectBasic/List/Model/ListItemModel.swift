@@ -63,7 +63,7 @@ open class ListItemModel: Hashable,
 }
 extension ListItemModel {
     public func hash(into hasher: inout Hasher) {
-        hasher.combine("\(Unmanaged.passUnretained(self).toOpaque())")
+        hasher.combine(ObjectIdentifier(self))
     }
     public static func == (lhs: ListItemModel, rhs: ListItemModel) -> Bool {
         return lhs.hashValue == rhs.hashValue

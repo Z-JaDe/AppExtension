@@ -12,8 +12,16 @@ import RxSwift
 import RxExtensions
 
 func swiftText() {
+    let a = A()
+    let hash1 = ObjectIdentifier(a).debugDescription
+    let hash2 = ObjectIdentifier(a).debugDescription
+    print(hash1)
+    print(hash2)
     greetings(person: Person()) // prints 'Hello'
     greetings(person: MisunderstoodPerson()) // prints 'Hello'
+}
+class A {
+
 }
 @objc class Person: NSObject {
     @objc dynamic func sayHi() {

@@ -22,7 +22,7 @@ public struct Transaction {
 }
 extension Transaction: Hashable {
     public func hash(into hasher: inout Hasher) {
-        hasher.combine("\(Unmanaged.passUnretained(target).toOpaque())")
+        hasher.combine(ObjectIdentifier(target))
         hasher.combine(selector)
     }
     public static func == (lhs: Transaction, rhs: Transaction) -> Bool {
