@@ -74,9 +74,9 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
             }
             return self.createCell(in: tableView, for: indexPath, item: item)
         }
-        dataSource.didMoveItem = { [weak self] (dataSource) in
+        dataSource.didMoveItem = { [weak self] (dataSource, source, destination) in
             guard let `self` = self else { return }
-            self.lastListDataInfo = self.lastListDataInfo.map({_ in dataSource.dataArray})
+            self.lastListDataInfo = self.lastListDataInfo.map({$0.exchange(source, destination)})
         }
         return dataSource
     }

@@ -37,7 +37,7 @@ open class SectionedDataSource<S: SectionModelType>: NSObject, SectionedDataSour
     }
     #endif
     /// ZJaDe: 手动 移动编辑后调用该闭包
-    var didMoveItem: ((SectionedDataSource) -> Void)?
+    var didMoveItem: ((SectionedDataSource, S.Item, S.Item) -> Void)?
     
     public typealias Element = ListUpdateInfo<[S]>
 
@@ -46,11 +46,5 @@ open class SectionedDataSource<S: SectionModelType>: NSObject, SectionedDataSour
         self._dataSourceBound = true
         #endif
         self.dataController.update(newValue, updater)
-    }
-}
-extension SectionedDataSource where S.Section: Diffable {
-    var dataArray: ListData<S.Section, S.Item> {
-        let data = self.dataController.sectionModels.map({($0.section, $0.items)})
-        return ListData<S.Section, S.Item>(data)
     }
 }

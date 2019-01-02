@@ -28,6 +28,20 @@ public struct ListData<Section: Diffable, Item: Diffable>: CollectionProtocol {
     public var itemCount: Int {
         return self.value.flatMap({$0.items}).count
     }
+    func exchange(_ item1: Item, _ item2: Item) -> ListData {
+        var listData = self
+        for (offset: sectionIndex, element: (section: _, items: items)) in self.enumerated() {
+            for (itemIndex, item) in items.enumerated() {
+                if item.isContentEqual(to: item1) {
+                    listData[sectionIndex].items[itemIndex] = item2
+                }
+                if item.isContentEqual(to: item2) {
+                    listData[sectionIndex].items[itemIndex] = item1
+                }
+            }
+        }
+        return listData
+    }
 }
 extension ListData {
     func compactMapToSectionModels() -> [SectionModelItem<Section, Item>] {

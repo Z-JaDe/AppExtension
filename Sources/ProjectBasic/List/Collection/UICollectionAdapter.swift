@@ -56,9 +56,9 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<SectionMode
         dataSource.configureCell = {(_, collectionView, indexPath, item) in
             return item.createCell(in: collectionView, at: indexPath)
         }
-        dataSource.didMoveItem = { [weak self] (dataSource) in
+        dataSource.didMoveItem = { [weak self] (dataSource, source, destination) in
             guard let `self` = self else { return }
-            self.lastListDataInfo = self.lastListDataInfo.map({_ in dataSource.dataArray})
+            self.lastListDataInfo = self.lastListDataInfo.map({$0.exchange(source, destination)})
         }
         return dataSource
     }

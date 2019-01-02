@@ -11,14 +11,18 @@ import RxSwift
 import RxSwiftExt
 
 extension Observable {
-    public static func setNeedUpdate<P: ObservableType>(_ pauser: P) -> Observable<()> where P.E == Bool {
+    /** ZJaDe:
+     pauser发出true信号的时候，setNeedUpdate信号才能往下走
+     delay 延迟一点时间发射信号，如果延时时间内又调用了setNeedUpdate，会重新等待delay时间
+     */
+    public static func setNeedUpdate<P: ObservableType>(_ pauser: P, _ delay: RxTimeInterval = 0.2) -> Observable<()> where P.E == Bool {
         return Observable<()>.create { (observer) -> Disposable in
             observer.onNext(())
             return Disposables.create()
             }
             .setNeedUpdate(pauser)
             .take(1)
-            .delay(0.2, scheduler: MainScheduler.instance)
+            .delay(delay, scheduler: MainScheduler.instance)
     }
     private func setNeedUpdate<P: ObservableType>(_ pauser: P) -> Observable<E> where P.E == Bool {
         return pausableBuffered(pauser, flushOnCompleted: false, flushOnError: false)
