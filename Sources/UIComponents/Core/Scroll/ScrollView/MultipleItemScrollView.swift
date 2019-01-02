@@ -7,12 +7,9 @@
 
 import Foundation
 
-open class MultipleItemScrollView<ItemView>: ScrollView, ItemsOneWayScrollProtocol where ItemView: UIView {
+open class MultipleItemScrollView<CellView>: ScrollView, ItemsOneWayScrollProtocol where CellView: UIView {
 
-    public var _cellArr: [LayoutItemType] = []
-    public func cleanCells() {
-        self._cellArr = []
-    }
+    private var _layoutCells: [LayoutItemType] = []
     public var itemSpace: ItemSpace = .leading(0) {
         didSet {setNeedsLayoutCells()}
     }
@@ -37,7 +34,7 @@ open class MultipleItemScrollView<ItemView>: ScrollView, ItemsOneWayScrollProtoc
         }
     }
     open func layoutAllCells() {
-        self._cellArr.forEach { (cell) in
+        self.layoutCells.forEach { (cell) in
             cell.update(self.itemSpace, self.scrollDirection)
         }
     }
@@ -50,7 +47,7 @@ open class MultipleItemScrollView<ItemView>: ScrollView, ItemsOneWayScrollProtoc
     open override var intrinsicContentSize: CGSize {
         var maxWidth: CGFloat = 1
         var maxHeight: CGFloat = 1
-        self._cellArr.forEach { (layoutCell) in
+        self.layoutCells.forEach { (layoutCell) in
             maxWidth = max(maxWidth, layoutCell.sizeThatFits().width)
             maxHeight = max(maxHeight, layoutCell.sizeThatFits().height)
         }
@@ -62,7 +59,47 @@ open class MultipleItemScrollView<ItemView>: ScrollView, ItemsOneWayScrollProtoc
         }
     }
     /// ZJaDe: 根据offSet查找cell
-    open func getCell(_ offSet: CGFloat) -> ItemView? {
+    open func getCell(_ offSet: CGFloat) -> CellView? {
         return nil
+    }
+}
+extension MultipleItemScrollView {
+    /// ZJaDe: layoutCells相关，子类重写会用到
+    public var layoutCells: [LayoutItemType] {
+        return _layoutCells
+    }
+    /// ZJaDe: layoutCells相关，子类重写会用到
+    public func cleanCells() {
+        self._layoutCells = []
+    }
+    /// ZJaDe: layoutCells相关，子类重写会用到
+    public func resetLayoutCells(_ value: [LayoutItemType]) {
+        layoutCells.forEach { (cell) in
+            cell.view.removeFromSuperview()
+        }
+        _layoutCells = value
+        layoutCells.forEach { (cell) in
+            self.addSubview(cell.view)
+        }
+    }
+    /// ZJaDe: layoutCells相关，子类重写会用到
+    public func removeLayoutCell(with cell: CellView) {
+        _layoutCells.removeAll(where: {$0.view == cell})
+        removeCellFromSuperview(cell)
+    }
+    /// ZJaDe: layoutCells相关，子类重写会用到
+    public func removeLayoutCell(at index: Int) {
+        let removeCell = _layoutCells.remove(at: index)
+        removeCellFromSuperview(removeCell.view)
+    }
+    /// ZJaDe: layoutCells相关，子类重写会用到
+    public func insert(layoutCell: LayoutItemType, at index: Int) {
+        _layoutCells.insert(layoutCell, at: index)
+        self.insertSubview(layoutCell.view, at: index)
+    }
+    /// ZJaDe: layoutCells相关，子类重写会用到
+    public func append(layoutCell: LayoutItemType) {
+        _layoutCells.append(layoutCell)
+        self.addSubview(layoutCell.view)
     }
 }

@@ -16,20 +16,20 @@ import UIKit
  */
 
 // MARK: 抽象类 需要继承
-open class MultipleItemsView<ItemView, ItemData, ScrollView>: CustomControl,
+open class MultipleItemsView<CellView, CellData, ScrollView>: CustomControl,
     SingleFormProtocol
-    where ItemView: UIView, ScrollView: UIScrollView & OneWayScrollProtocol {
+    where CellView: UIView, ScrollView: UIScrollView & OneWayScrollProtocol {
     public var inset: UIEdgeInsets = UIEdgeInsets.zero {
         didSet {setNeedsLayout()}
     }
     /// ZJaDe: viewUpdater
-    open var viewUpdater: ((ItemView, ItemData, Int) -> Void) = {_, _, _ in}
+    open var viewUpdater: ((CellView, CellData, Int) -> Void) = {_, _, _ in}
     /// ZJaDe: 当item数据需要更新时会调用该方法 子类调用
-    public func config(cell: ItemView, index: Int) {
+    public func config(cell: CellView, index: Int) {
         self.viewUpdater(cell, dataArray[index], index)
     }
-    public private(set) var dataArray: [ItemData] = []
-    public var itemViewArr: [ItemView] = []
+    public private(set) var dataArray: [CellData] = []
+    public var itemViewArr: [CellView] = []
     // MARK: - SingleFormProtocol
     public lazy var scrollView: ScrollView = createScrollView()
     open func createScrollView() -> ScrollView {
@@ -56,7 +56,7 @@ open class MultipleItemsView<ItemView, ItemData, ScrollView>: CustomControl,
     }
     // MARK: - 需要重写的methods
     /// ZJaDe: 设置数据
-    open func configData(_ dataArray: [ItemData]) {
+    open func configData(_ dataArray: [CellData]) {
         self.dataArray = dataArray
     }
     /// ZJaDe: 更新布局
@@ -69,7 +69,7 @@ open class MultipleItemsView<ItemView, ItemData, ScrollView>: CustomControl,
     /// ZJaDe: 计算自有尺寸
     open override var intrinsicContentSize: CGSize {
         let result = self.scrollView.intrinsicContentSize
-//        if !(ItemView.self == Label.self || ItemView.self == ImageView.self) {
+//        if !(CellView.self == Label.self || CellView.self == ImageView.self) {
 //            logDebug("cycleView -> frame ->\(self.scrollView.subviews)")
 //        }
         return result

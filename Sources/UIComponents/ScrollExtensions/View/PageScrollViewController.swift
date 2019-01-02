@@ -14,8 +14,8 @@ open class PageScrollViewController: UIViewController, CyclePageFormProtocol, UI
         self.scrollView.frame = self.view.frame
         self.view = self.scrollView
     }
-    public typealias ItemView = UIView
-    public typealias ItemData = UIViewController
+    public typealias CellView = UIView
+    public typealias CellData = UIViewController
     public lazy private(set) var scrollView: PageScrollView<UIView> = PageScrollView<UIView>()
     public var viewConArr: [UIViewController] = [] {
         didSet {
@@ -120,7 +120,7 @@ extension PageScrollViewController {
         }
     }
     /// ZJaDe: cell消失后回收
-    public func didDisAppear(_ cell: ItemView) {
+    public func didDisAppear(_ cell: CellView) {
         if let viewCon = cell.viewController(UIViewController.self) {
             viewCon.willMove(toParent: nil)
         }

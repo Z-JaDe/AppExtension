@@ -1,5 +1,5 @@
 //
-//  SegmentView<ItemView, ItemData>.swift
+//  SegmentView.swift
 //  SNKit
 //
 //  Created by 郑军铎 on 2018/5/24.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-open class SegmentView<ItemView, ItemData>: MultipleItemsView<ItemView, ItemData, SegmentScrollView<ItemView>> where ItemView: UIView {
-    private var cellArr: [ItemView] {
+open class SegmentView<CellView, CellData>: MultipleItemsView<CellView, CellData, SegmentScrollView<CellView>> where CellView: UIView {
+    private var cellArr: [CellView] {
         get {return self.scrollView.itemArr}
         set {self.scrollView.itemArr = newValue}
     }
@@ -23,9 +23,9 @@ open class SegmentView<ItemView, ItemData>: MultipleItemsView<ItemView, ItemData
         return self.cellArr.count
     }
     /// ZJaDe: 设置数据
-    open override func configData(_ dataArray: [ItemData]) {
+    open override func configData(_ dataArray: [CellData]) {
         super.configData(dataArray)
-        func bind(itemView: ItemView, itemData: ItemData, index: Int) {
+        func bind(itemView: CellView, itemData: CellData, index: Int) {
             config(cell: itemView, index: index)
             if var itemView = itemView as? SelectedStateDesignable {
                 itemView.isSelected = false
@@ -56,23 +56,23 @@ open class SegmentView<ItemView, ItemData>: MultipleItemsView<ItemView, ItemData
     open override func whenCurrentIndexChanged(_ from: Int, _ to: Int) {
         guard self.totalCount > 0 else { return }
         // ZJaDe: 根据toIndex找到cell滚动
-        let currentItemView: ItemView = self.cellArr[self.realIndex(to)]
-        self.scrollView.scrollTo(currentItemView)
-        self.currentItem = currentItemView
-        self.currentLayer.position = CGPoint(x: currentItemView.centerX, y: currentItemView.bottom - self.currentLayer.height / 2)
-        self.configCurrentLayerClosure?(self.currentLayer, currentItemView.frame)
+        let currentCell: CellView = self.cellArr[self.realIndex(to)]
+        self.scrollView.scrollTo(currentCell)
+        self.currentItem = currentCell
+        self.currentLayer.position = CGPoint(x: currentCell.centerX, y: currentCell.bottom - self.currentLayer.height / 2)
+        self.configCurrentLayerClosure?(self.currentLayer, currentCell.frame)
         self.scrollView.layer.addSublayer(self.currentLayer)
     }
     // MARK: -
-    internal func createCell() -> ItemView {
-        let itemView = ItemView()
+    internal func createCell() -> CellView {
+        let itemView = CellView()
         return itemView
     }
 
     // MARK: isSelected
     public var configCurrentLayerClosure: ((CALayer, CGRect) -> Void)?
     public let currentLayer: CALayer = CALayer()
-    public private(set) var currentItem: ItemView? {
+    public private(set) var currentItem: CellView? {
         didSet {
             if var itemView = oldValue as? SelectedStateDesignable {
                 itemView.isSelected = false
@@ -83,7 +83,7 @@ open class SegmentView<ItemView, ItemData>: MultipleItemsView<ItemView, ItemData
         }
     }
     // MARK: -
-    public var didSelectItem: ((TapContext<ItemView, ItemData>) -> Void)?
+    public var didSelectItem: ((TapContext<CellView, CellData>) -> Void)?
     @objc open func whenTap(_ tap: UITapGestureRecognizer) {
         if let (offset, element) = self.cellArr.enumerated().first(where: {$0.element.point(inside: tap.location(in: $0.element), with: nil)}) {
             self.currentIndex = offset

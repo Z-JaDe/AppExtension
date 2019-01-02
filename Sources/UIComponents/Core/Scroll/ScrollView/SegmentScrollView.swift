@@ -8,9 +8,9 @@
 
 import Foundation
 
-public class SegmentScrollView<ItemView>: MultipleItemScrollView<ItemView>, TotalCountProtocol where ItemView: UIView {
+public class SegmentScrollView<CellView>: MultipleItemScrollView<CellView>, TotalCountProtocol where CellView: UIView {
 
-    public enum ItemViewLength {
+    public enum CellLength {
         /// ZJaDe: 最多显示几个，少的时候平铺，多的时候滑动
         case showMaxCount(Int)
         /// ZJaDe: 默认显示几个
@@ -20,7 +20,7 @@ public class SegmentScrollView<ItemView>: MultipleItemScrollView<ItemView>, Tota
         /// ZJaDe: 用item的自有长度
         case auto
     }
-    public var itewLength: ItemViewLength = .auto {
+    public var itewLength: CellLength = .auto {
         didSet {setNeedsLayoutCells()}
     }
     public enum AutoScrollItemType {
@@ -31,18 +31,18 @@ public class SegmentScrollView<ItemView>: MultipleItemScrollView<ItemView>, Tota
     public var autoScrollItem: AutoScrollItemType = .edge
     /// ZJaDe: TotalCountProtocol
     open var totalCount: Int {
-        return self._cellArr.count
+        return self.layoutCells.count
     }
 
     /// ZJaDe: 布局
     public override func layoutAllCells() {
         super.layoutAllCells()
-        layoutCellsSize(self._cellArr, self.getCellLength())
-        let length = layoutCellsOrigin(self._cellArr, 0)
+        layoutCellsSize(self.layoutCells, self.getCellLength())
+        let length = layoutCellsOrigin(self.layoutCells, 0)
         self.contentLength = length
-        if let firstCell = self._cellArr.first, self.viewHeadOffset() < firstCell.leading {
+        if let firstCell = self.layoutCells.first, self.viewHeadOffset() < firstCell.leading {
             self.scrollTo(offSet: firstCell.leading, animated: false)
-        } else if let lastCell = self._cellArr.last, self.viewTailOffset() > lastCell.trailing && self.contentLength > self.length {
+        } else if let lastCell = self.layoutCells.last, self.viewTailOffset() > lastCell.trailing && self.contentLength > self.length {
             self.scrollTo(offSet: lastCell.trailing - self.length, animated: false)
         }
     }
@@ -63,7 +63,7 @@ public class SegmentScrollView<ItemView>: MultipleItemScrollView<ItemView>, Tota
     }
 
     /// ZJaDe: 根据offSet查找cell
-    public override func getCell(_ offSet: CGFloat) -> ItemView? {
+    public override func getCell(_ offSet: CGFloat) -> CellView? {
         let index = self.realProgress(offSet: offSet, length: self.length).toInt
         return self.itemArr[self.realIndex(index)]
     }
@@ -71,8 +71,8 @@ public class SegmentScrollView<ItemView>: MultipleItemScrollView<ItemView>, Tota
 
 extension SegmentScrollView {
     /// ZJaDe: 滚动到指定的cell
-    public func scrollTo(_ item: ItemView) {
-        let layoutCell = createLayoutCell(item)
+    public func scrollTo(_ cell: CellView) {
+        let layoutCell = createLayoutCell(cell)
         switch self.autoScrollItem {
         case .edge:
             let head = layoutCell.leading
@@ -96,57 +96,46 @@ extension SegmentScrollView {
 }
 extension SegmentScrollView {
     /// ZJaDe: 重新设置 _cellArr
-    public var itemArr: [ItemView] {
-        get {return _cellArr.map {$0.view}}
+    public var itemArr: [CellView] {
+        get {return layoutCells.map {$0.view}}
         set {
-            _cellArr.forEach { (cell) in
-                cell.view.removeFromSuperview()
-            }
-            _cellArr = newValue.map {createLayoutCell($0)}
-            _cellArr.forEach { (cell) in
-                self.addSubview(cell.view)
-            }
+            resetLayoutCells(newValue.map {createLayoutCell($0)})
+            // ZJaDe: layout
             setNeedsLayoutCells()
         }
     }
     // MARK: - 添加或者移除itemView 默认都是更新右边的cells的位置
     /// ZJaDe: 插入一个itemView
-    public func insertAndUpdate(_ itemView: ItemView, at index: Int) {
-        guard _cellArr.indexCanInsert(index) else {
-            return
-        }
-        let cell = createLayoutCell(itemView)
-        _cellArr.insert(cell, at: index)
-        self.insertSubview(itemView, at: index)
+    public func insertAndUpdate(_ cell: CellView, at index: Int) {
+        guard layoutCells.indexCanInsert(index) else { return }
+        let layoutCell = createLayoutCell(cell)
+        insert(layoutCell: layoutCell, at: index)
+        // ZJaDe: layout
         let cellLength = getCellLength()
-        layoutCellsSize([cell], cellLength)
-        let needUpdateOriginCells = Array(self._cellArr.suffix(from: index))
-        let startLocation: CGFloat
-        if self._cellArr.count > 1 {
-            startLocation = index > 0 ? self._cellArr[index - 1].trailing : self._cellArr[index].leading - cell.length
+        layoutCellsSize([layoutCell], cellLength)
+        let needUpdateOriginCells = Array(self.layoutCells.suffix(from: index))
+        let startOrigin: CGFloat
+        if self.layoutCells.count > 1 {
+            startOrigin = index > 0 ? self.layoutCells[index - 1].trailing : self.layoutCells[index].leading - layoutCell.length
         } else {
-            startLocation = 0
+            startOrigin = 0
         }
-        layoutCellsOrigin(needUpdateOriginCells, startLocation)
+        layoutCellsOrigin(needUpdateOriginCells, startOrigin)
 
     }
     /// ZJaDe: 移除一个itemView
-    public func removeAndUpdate(_ itemView: ItemView) {
-        guard let index = self._cellArr.index(where: {$0.view == itemView}) else {
-            return
-        }
+    public func removeAndUpdate(_ cell: CellView) {
+        guard let index = self.layoutCells.index(where: {$0.view == cell}) else { return }
         removeAndUpdate(at: index)
     }
     public func removeAndUpdate(at index: Int) {
-        guard self._cellArr.indexCanBound(index) else {
-            return
-        }
-        let removeCell = _cellArr.remove(at: index)
-        removeItemViewFromSuperview(removeCell.view)
-        if  _cellArr.count > 0 {
-            let needUpdateOriginCells = Array(self._cellArr.suffix(from: index))
-            let startLocation: CGFloat = index > 0 ? self._cellArr[index - 1].trailing : 0
-            layoutCellsOrigin(needUpdateOriginCells, startLocation)
+        guard layoutCells.indexCanBound(index) else { return }
+        removeLayoutCell(at: index)
+        // ZJaDe: layout
+        if  layoutCells.count > 0 {
+            let needUpdateOriginCells = Array(self.layoutCells.suffix(from: index))
+            let startOrigin: CGFloat = index > 0 ? self.layoutCells[index - 1].trailing : 0
+            layoutCellsOrigin(needUpdateOriginCells, startOrigin)
         }
     }
 }

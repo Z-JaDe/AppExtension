@@ -12,9 +12,9 @@ public protocol CyclePageFormProtocol: ScrollPageFormProtocol {
     /// ZJaDe: cell单边延迟释放的个数
     var cacheDisappearCellCount: Int {get}
     /// ZJaDe: cell消失后回收
-    func didDisAppear(_ cell: ItemView)
+    func didDisAppear(_ cell: CellView)
 }
-public extension CyclePageFormProtocol where ScrollViewType == PageScrollView<ItemView> {
+public extension CyclePageFormProtocol where ScrollViewType == PageScrollView<CellView> {
     /// ZJaDe: 检查cells的消失和出现
     func checkCellsLifeCycle(isNeedReset: Bool) {
         checkDidDisAppearCells()

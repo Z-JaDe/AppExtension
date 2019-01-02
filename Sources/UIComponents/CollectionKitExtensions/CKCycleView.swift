@@ -52,7 +52,7 @@ open class CKCycleView<View: UIView, Data>: PageItemsView<View, Data, CKCollecti
         }
         self.dataSource.data = dataArray
         self.scrollView.reloadData()
-        resetItemViewsLocation()
+        resetCellsOrigin()
     }
 
     private var calculateHeight: CGFloat? {
@@ -67,12 +67,12 @@ open class CKCycleView<View: UIView, Data>: PageItemsView<View, Data, CKCollecti
     }
     // MARK: -
     open override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        resetItemViewsLocation()
+        resetCellsOrigin()
     }
 }
 extension CKCycleView {
-    private func resetItemViewsLocation() {
-        resetItemViewsLocation(repeatCount: self.dataSource.repeatCount)
+    private func resetCellsOrigin() {
+        resetCellsOrigin(repeatCount: self.dataSource.repeatCount)
     }
 }
 extension CKCollectionView: OneWayScrollProtocol {

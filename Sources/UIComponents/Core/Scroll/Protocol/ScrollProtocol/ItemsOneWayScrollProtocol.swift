@@ -18,8 +18,8 @@ public enum ItemSpace {
 }
 
 public protocol ItemsOneWayScrollProtocol: OneWayScrollProtocol {
-    associatedtype ItemView: UIView
-    typealias LayoutItemType = LayoutItem<ItemView>
+    associatedtype CellView: UIView
+    typealias LayoutItemType = LayoutItem<CellView>
     var itemSpace: ItemSpace {get set}
 
     func setNeedsLayoutCells()
@@ -39,21 +39,21 @@ public extension ItemsOneWayScrollProtocol {
         }
     }
     @discardableResult
-    func layoutCellsOrigin(_ cellArr: [LayoutItemType], _ startLocation: CGFloat) -> CGFloat {
-        return cellArr.reduce(startLocation) { (offSet, item) -> CGFloat in
+    func layoutCellsOrigin(_ cellArr: [LayoutItemType], _ startOrigin: CGFloat) -> CGFloat {
+        return cellArr.reduce(startOrigin) { (offSet, item) -> CGFloat in
             item.leading = offSet
             return item.trailing
         }
     }
     // MARK: -
-    func createLayoutCell(_ itemView: ItemView) -> LayoutItemType {
-        return LayoutItemType(itemView, itemSpace, scrollDirection)
+    func createLayoutCell(_ cell: CellView) -> LayoutItemType {
+        return LayoutItemType(cell, itemSpace, scrollDirection)
     }
 }
 public extension ItemsOneWayScrollProtocol where Self: UIView {
     // MARK: -
     @discardableResult
-    func removeItemViewFromSuperview(_ itemView: ItemView) -> Bool {
+    func removeCellFromSuperview(_ itemView: CellView) -> Bool {
         if itemView.superview == self || itemView.superview == nil {
             itemView.removeFromSuperview()
             return true

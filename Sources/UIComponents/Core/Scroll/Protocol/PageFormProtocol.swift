@@ -18,8 +18,8 @@ extension PageFormProtocol {
     public func getCurrentIndex() -> Int {
         return getCurrentProgress().toInt
     }
-    /// ZJaDe: 重新设置visibleItemViews在scrollView里的位置
-    public func resetItemViewsLocation(repeatCount: Int) {
+    /// ZJaDe: 重新设置visibleCells在scrollView里的位置
+    public func resetCellsOrigin(repeatCount: Int) {
         let length = scrollView.length
         guard self.totalCount > 0 && length > 0 else { return }
         guard repeatCount % 2 == 0 else { return }
@@ -42,7 +42,7 @@ extension PageFormProtocol {
     }
 }
 public extension PageFormProtocol {
-    /// ZJaDe: 当currentIndex改变时调用，只针对ItemView长度和ScrollView长度相等时
+    /// ZJaDe: 当currentIndex改变时调用，只针对Cell长度和ScrollView长度相等时
     public func scroll(_ from: Int, _ to: Int) {
         let length = self.scrollView.length
         guard self.totalCount > 0, length > 0 else { return }
@@ -60,7 +60,7 @@ public extension PageFormProtocol {
         }
         self.scrollView.scrollTo(offSet: offSet + indexOffset.toCGFloat * length)
     }
-    /// ZJaDe: 滚动到对应index，只针对ItemView长度和ScrollView长度相等时
+    /// ZJaDe: 滚动到对应index，只针对Cell长度和ScrollView长度相等时
     public func scroll(to index: Int, animated: Bool = true) {
         let length = self.scrollView.length
         guard self.totalCount > 0 && length > 0 else { return }

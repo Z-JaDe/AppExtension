@@ -8,10 +8,10 @@
 
 import UIKit
 
-open class PageItemsView<ItemView, ItemData, ScrollView>: MultipleItemsView<ItemView, ItemData, ScrollView>,
+open class PageItemsView<CellView, ItemData, ScrollView>: MultipleItemsView<CellView, ItemData, ScrollView>,
     PageFormProtocol,
     UIScrollViewDelegate
-    where ItemView: UIView, ScrollView: UIScrollView & OneWayScrollProtocol {
+    where CellView: UIView, ScrollView: UIScrollView & OneWayScrollProtocol {
     open var placeholderItem: ItemData? {
         didSet {
             if self.dataArray.count == 0 || self.placeholderItem != nil {
@@ -46,7 +46,7 @@ open class PageItemsView<ItemView, ItemData, ScrollView>: MultipleItemsView<Item
     }
 
     // MARK: -
-    open override func configData(_ dataArray: [ItemData]) {
+    open override func configData(_ dataArray: [CellData]) {
         var dataArray = dataArray
         if let placeholderItem = self.placeholderItem, dataArray.count == 0 {
             dataArray = [placeholderItem]

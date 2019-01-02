@@ -20,6 +20,6 @@ public struct TapContext<View: UIView, Data> {
 public protocol SingleFormProtocol: CurrentIndexProtocol, TotalCountProtocol {
     associatedtype ScrollViewType: OneWayScrollProtocol
     var scrollView: ScrollViewType {get}
-    associatedtype ItemView: UIView
-    associatedtype ItemData
+    associatedtype CellView: UIView
+    associatedtype CellData
 }

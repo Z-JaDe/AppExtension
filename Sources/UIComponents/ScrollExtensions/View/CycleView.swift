@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class CycleView<ItemView, ItemData>: PageItemsView<ItemView, ItemData, PageScrollView<ItemView>> where ItemView: UIView {
+open class CycleView<CellView, CellData>: PageItemsView<CellView, CellData, PageScrollView<CellView>> where CellView: UIView {
     /// ZJaDe: 下面属性需要加载数据之前提前设置好
     public var cacheAppearCellCount: Int = 1
     /// ZJaDe: 下面属性需要加载数据之前提前设置好
@@ -22,7 +22,7 @@ open class CycleView<ItemView, ItemData>: PageItemsView<ItemView, ItemData, Page
     internal let repeatCount: Int = 1000
     // MARK: - 重写
     /// ZJaDe: 设置数据
-    open override func configData(_ dataArray: [ItemData]) {
+    open override func configData(_ dataArray: [CellData]) {
         super.configData(dataArray)
         if dataArray.count > 0 {
             let cell = createCell()
@@ -33,7 +33,7 @@ open class CycleView<ItemView, ItemData>: PageItemsView<ItemView, ItemData, Page
         layoutIfNeeded()
         checkCellsLifeCycle(isNeedReset: true)
         /// ZJaDe: 检查并更新cells
-        resetItemViewsLocation()
+        resetCellsOrigin()
         /// ZJaDe: 刷新intrinsicContentSize
         invalidateIntrinsicContentSize()
     }
@@ -41,25 +41,22 @@ open class CycleView<ItemView, ItemData>: PageItemsView<ItemView, ItemData, Page
     open override func layoutSubviews() {
         super.layoutSubviews()
         /// ZJaDe: 布局更新时刷新contentLength
-        if self.dataArray.count > 1 {
-            self.scrollView.contentLength = repeatCount.toCGFloat * self.scrollView.length * self.totalCount.toCGFloat
-        } else {
-            self.scrollView.contentLength = self.scrollView.length * self.totalCount.toCGFloat
-        }
+        let repeatValue: CGFloat = self.dataArray.count > 1 ? repeatCount.toCGFloat : 1
+        self.scrollView.contentLength = repeatValue * self.scrollView.length * self.totalCount.toCGFloat
         /// ZJaDe: 布局更新时重新检查需要显示和消失的cells
         checkCellsLifeCycle(isNeedReset: false)
     }
     /// ZJaDe: 创建cell
-    internal func createCell() -> ItemView {
+    internal func createCell() -> CellView {
         if self.scrollView.cacheCells.count > 0 {
             return self.scrollView.cacheCells.removeFirst()
         } else {
-            return ItemView()
+            return CellView()
         }
     }
     // MARK: - UIScrollViewDelegate
     open override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        resetItemViewsLocation()
+        resetCellsOrigin()
     }
     open override func whenScroll() {
         super.whenScroll()
@@ -67,7 +64,7 @@ open class CycleView<ItemView, ItemData>: PageItemsView<ItemView, ItemData, Page
     }
 
     // MARK: -
-    public var didSelectItem: ((TapContext<ItemView, ItemData>) -> Void)?
+    public var didSelectItem: ((TapContext<CellView, CellData>) -> Void)?
     @objc open func whenTap(_ tap: UITapGestureRecognizer) {
         if let element = self.scrollView.visibleCells.first(where: {$0.point(inside: tap.location(in: $0), with: nil)}) {
             let index = getCurrentIndex()
@@ -78,8 +75,8 @@ open class CycleView<ItemView, ItemData>: PageItemsView<ItemView, ItemData, Page
     }
 }
 extension CycleView {
-    private func resetItemViewsLocation() {
-        resetItemViewsLocation(repeatCount: repeatCount)
+    private func resetCellsOrigin() {
+        resetCellsOrigin(repeatCount: repeatCount)
     }
 }
 extension CycleView: CyclePageFormProtocol {
@@ -98,7 +95,7 @@ extension CycleView: CyclePageFormProtocol {
             scrollView.add(cell, offSet: offSet, isToRight: indexOffset >= 0)
         }
     }
-    public func didDisAppear(_ cell: ItemView) {
+    public func didDisAppear(_ cell: CellView) {
         self.scrollView.remove(cell)
     }
 }
