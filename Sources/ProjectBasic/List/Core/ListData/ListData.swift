@@ -14,7 +14,6 @@ public struct ListData<Section: Diffable, Item: Diffable>: CollectionProtocol {
     public init<C: Swift.Collection>(_ elements: C) where C.Element == Element {
         self.value = ContiguousArray(elements)
     }
-
     public func map<U: Diffable>(_ transform: (Item) throws -> U) rethrows -> ListData<Section, U> {
         let value = try self.value.lazy.map({($0.section, try $0.items.map(transform))})
         return ListData<Section, U>(value)
@@ -28,5 +27,28 @@ public struct ListData<Section: Diffable, Item: Diffable>: CollectionProtocol {
 
     public var itemCount: Int {
         return self.value.flatMap({$0.items}).count
+    }
+}
+extension ListData {
+    func compactMapToSectionModels() -> [SectionModelItem<Section, Item>] {
+        return compactMap(ListData.mapToSectionModel)
+    }
+    /// 转成(组, model)类型信号
+    /// 将ListDataType转换为SectionModelType
+    static func mapToSectionModel(_ element: ListData.Element) -> SectionModelItem<Section, Item>? {
+        if let section = element.section as? HiddenStateDesignable, section.isHidden {
+            return nil
+        }
+        let items = element.items.filter({ (item) -> Bool in
+            if let item = item as? HiddenStateDesignable {
+                return item.isHidden != true
+            } else {
+                return true
+            }
+        })
+        if items.count <= 0 {
+            return nil
+        }
+        return SectionModelItem(element.0, items)
     }
 }

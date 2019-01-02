@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import RxSwift
-import RxCocoa
 
 /// 更新数据源的协议
 public protocol ListDataUpdateProtocol: class {
@@ -17,13 +15,8 @@ public protocol ListDataUpdateProtocol: class {
     typealias ListDataType = ListData<Section, Item>
     typealias ListUpdateInfoType = ListUpdateInfo<ListDataType>
 
-    var listUpdateInfoSubject: ReplaySubject<ListUpdateInfoType> {get}
-    var lastListDataInfo: ListUpdateInfoType {get set}
-}
-extension ListDataUpdateProtocol {
-    public var dataArray: ListDataType {
-        return self.lastListDataInfo.data
-    }
+    var dataArray: ListDataType {get}
+    func changeListDataInfo(_ newData: ListUpdateInfoType)
 }
 extension ListDataUpdateProtocol {
     /// ZJaDe: 更新
@@ -32,21 +25,15 @@ extension ListDataUpdateProtocol {
     }
     /// ZJaDe: 重新刷新 返回 ListDataType
     public func reloadListData(_ closure: (ListDataType) -> ListDataType?) {
-        self.reloadDataWithInfo({ (oldData) -> ListUpdateInfo<ListDataType>? in
+        self.reloadDataWithInfo({ (oldData) -> ListUpdateInfoType? in
             return closure(oldData).map(ListUpdateInfo.init)
         })
     }
-    /// ZJaDe: 重新刷新 返回 ListUpdateInfo<ListDataType>
-    public func reloadDataWithInfo(_ closure: (ListDataType) -> ListUpdateInfo<ListDataType>?) {
+    /// ZJaDe: 重新刷新 返回 ListUpdateInfoType
+    public func reloadDataWithInfo(_ closure: (ListDataType) -> ListUpdateInfoType?) {
         if let newData = closure(self.dataArray) {
-            self.lastListDataInfo = newData
+            self.changeListDataInfo(newData)
         }
-    }
-    /// 将dataArray转信号
-    public func dataArrayObservable() -> Observable<ListUpdateInfoType> {
-        return self.listUpdateInfoSubject.asObservable()
-            .delay(0.1, scheduler: MainScheduler.asyncInstance)
-            .throttle(0.3, scheduler: MainScheduler.instance)
     }
 }
 

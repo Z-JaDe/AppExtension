@@ -110,6 +110,7 @@ open class TableViewDataSource<S: SectionModelType>
 
     open func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         dataController.move(sourceIndexPath, target: destinationIndexPath)
+        self.didMoveItem?(self)
     }
 
     #if os(iOS)

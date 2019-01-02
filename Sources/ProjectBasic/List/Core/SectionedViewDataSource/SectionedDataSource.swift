@@ -36,6 +36,9 @@ open class SectionedDataSource<S: SectionModelType>: NSObject, SectionedDataSour
         assert(!_dataSourceBound, "Data source is already bound. Please write this line before binding call (`bindTo`, `drive`). Data source must first be completely configured, and then bound after that, otherwise there could be runtime bugs, glitches, or partial malfunctions.")
     }
     #endif
+    /// ZJaDe: 手动 移动编辑后调用该闭包
+    var didMoveItem: ((SectionedDataSource) -> Void)?
+    
     public typealias Element = ListUpdateInfo<[S]>
 
     func rxChange(_ newValue: Element, _ updater: Updater) {
@@ -43,5 +46,11 @@ open class SectionedDataSource<S: SectionModelType>: NSObject, SectionedDataSour
         self._dataSourceBound = true
         #endif
         self.dataController.update(newValue, updater)
+    }
+}
+extension SectionedDataSource where S.Section: Diffable {
+    var dataArray: ListData<S.Section, S.Item> {
+        let data = self.dataController.sectionModels.map({($0.section, $0.items)})
+        return ListData<S.Section, S.Item>(data)
     }
 }

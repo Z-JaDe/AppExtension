@@ -20,6 +20,7 @@ public protocol SectionModelType: DiffableSection {
     var items: [Item] {get}
     init(original: Self, items: [Item])
 }
+
 extension SectionModelItem: SectionModelType {
     public typealias Section = Model
     public var section: Section {
@@ -33,5 +34,23 @@ extension SectionModelItem: SectionModelType {
     }
     public init(original: SectionModelItem<Model, Element>, items: [Element]) {
         self.init(source: original, elements: items)
+    }
+}
+extension SectionModelItem {
+    var nilIfHidden: SectionModelItem<Model, Item>? {
+        if let section = self.section as? HiddenStateDesignable, section.isHidden {
+            return nil
+        }
+        let items = self.items.filter({ (item) -> Bool in
+            if let item = item as? HiddenStateDesignable {
+                return item.isHidden != true
+            } else {
+                return true
+            }
+        })
+        if items.count <= 0 {
+            return nil
+        }
+        return SectionModelItem(section, items)
     }
 }

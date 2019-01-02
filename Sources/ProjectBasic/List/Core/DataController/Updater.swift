@@ -78,8 +78,8 @@ public final class Updater {
                 self.update(changeset: changeset, interrupt: interrupt, setData: setData)
             }
         }, completion: { (result) in
-            self.state = .idle
             completion(result)
+            self.state = .idle
         })
     }
     /// ZJaDe: 刷新列表

@@ -19,7 +19,6 @@ typealias MultipleSelection = MultipleSelectionProtocol
 open class ListAdapter<DataSourceType: SectionedDataSourceType>:
     ListAdapterType,
     EnabledStateDesignable,
-    ListDataUpdateProtocol,
     DisposeBagProtocol,
     MultipleSelection
 where DataSourceType.S.Item: AdapterItemType, DataSourceType.S.Section: AdapterSectionType {
@@ -52,14 +51,9 @@ where DataSourceType.S.Item: AdapterItemType, DataSourceType.S.Section: AdapterS
         jdAbstractMethod()
     }
 
-    // MARK: -
-    public let listUpdateInfoSubject: ReplaySubject<ListUpdateInfoType> = ReplaySubject.create(bufferSize: 1)
-    public var lastListDataInfo: ListUpdateInfoType = ListUpdateInfo(data: []) {
-        didSet { self.listUpdateInfoSubject.onNext(self.lastListDataInfo) }
-    }
-    open func model(at indexPath: IndexPath) throws -> Item {
-        return self.rxDataSource.dataController[indexPath]
-    }
+    // MARK: - ListDataUpdateProtocol
+    let listUpdateInfoSubject: ReplaySubject<ListUpdateInfoType> = ReplaySubject.create(bufferSize: 1)
+    var lastListDataInfo: ListUpdateInfoType = ListUpdateInfo(data: [])
     // MARK: -
     public lazy var rxDataSource: DataSource = self.loadRxDataSource()
     func loadRxDataSource() -> DataSource {
@@ -75,5 +69,25 @@ where DataSourceType.S.Item: AdapterItemType, DataSourceType.S.Section: AdapterS
     }
     open func updateEnabledState(_ isEnabled: Bool) {
 
+    }
+}
+extension ListAdapter {
+    public func model(at indexPath: IndexPath) throws -> Item {
+        return try self.dataController.model(at: indexPath) as! Item
+    }
+}
+extension ListAdapter: ListDataUpdateProtocol {
+    public var dataArray: ListDataType {
+        return self.lastListDataInfo.data
+    }
+    public func changeListDataInfo(_ newData: ListUpdateInfoType) {
+        self.lastListDataInfo = newData
+        self.listUpdateInfoSubject.onNext(newData)
+    }
+    /// 将dataArray转信号
+    func dataArrayObservable() -> Observable<ListUpdateInfoType> {
+        return self.listUpdateInfoSubject.asObservable()
+            .delay(0.1, scheduler: MainScheduler.asyncInstance)
+            .throttle(0.3, scheduler: MainScheduler.instance)
     }
 }

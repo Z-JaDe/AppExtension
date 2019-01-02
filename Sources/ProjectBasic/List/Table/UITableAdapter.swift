@@ -10,13 +10,15 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+public typealias TableSectionModel = SectionModelItem<TableSection, TableAdapterItemCompatible>
+
 public typealias TableListData = ListData<TableSection, TableAdapterItemCompatible>
 public typealias TableStaticData = ListData<TableSection, StaticTableItemCell>
 
 public typealias TableUpdateInfo = ListUpdateInfo<TableListData>
 public typealias TableStaticUpdateInfo = ListUpdateInfo<TableStaticData>
 
-open class UITableAdapter: ListAdapter<TableViewDataSource<SectionModelItem<TableSection, TableAdapterItemCompatible>>> {
+open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
 
     public weak private(set) var tableView: UITableView?
     lazy private(set) var tableProxy: UITableProxy = UITableProxy(self)
@@ -72,6 +74,10 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<SectionModelItem<Tabl
             }
             return self.createCell(in: tableView, for: indexPath, item: item)
         }
+        dataSource.didMoveItem = { [weak self] (dataSource) in
+            guard let `self` = self else { return }
+            self.lastListDataInfo = self.lastListDataInfo.map({_ in dataSource.dataArray})
+        }
         return dataSource
     }
     // MARK: -
@@ -117,11 +123,11 @@ extension UITableAdapter {
     }
 }
 extension UITableAdapter {
-    open func configDataSource(_ tableView: UITableView) {
+    public func configDataSource(_ tableView: UITableView) {
         dataArrayObservable()
             .map({$0.map({[weak self] (dataArray) in
                 let dataArray = self?.insertSecionModelsClosure?(dataArray) ?? dataArray
-                return dataArray.compactMap(UITableAdapter.compactMap)
+                return dataArray.compactMapToSectionModels()
             })})
             .do(onNext: { [weak self] (element) -> Void in
                 guard let `self` = self else {return}
@@ -132,7 +138,7 @@ extension UITableAdapter {
             .disposed(by: disposeBag)
     }
 
-    open func configDelegate(_ tableView: UITableView) {
+    public func configDelegate(_ tableView: UITableView) {
         tableView.rx.setDelegate(self.tableProxy)
             .disposed(by: self.disposeBag)
     }

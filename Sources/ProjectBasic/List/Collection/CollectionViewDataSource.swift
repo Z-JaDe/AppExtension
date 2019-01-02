@@ -77,6 +77,7 @@ open class CollectionViewDataSource<S: SectionModelType>
 
     open func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         dataController.move(sourceIndexPath, target: destinationIndexPath)
+        self.didMoveItem?(self)
         self.moveItem(self, sourceIndexPath, destinationIndexPath)
     }
 

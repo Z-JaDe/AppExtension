@@ -56,6 +56,10 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<SectionMode
         dataSource.configureCell = {(_, collectionView, indexPath, item) in
             return item.createCell(in: collectionView, at: indexPath)
         }
+        dataSource.didMoveItem = { [weak self] (dataSource) in
+            guard let `self` = self else { return }
+            self.lastListDataInfo = self.lastListDataInfo.map({_ in dataSource.dataArray})
+        }
         return dataSource
     }
     // MARK: -
@@ -77,7 +81,8 @@ extension UICollectionAdapter {
 }
 extension UICollectionAdapter {
     open func configDataSource(_ collectionView: UICollectionView) {
-        dataArrayObservable().map({$0.map({$0.compactMap(UICollectionAdapter.compactMap)})})
+        dataArrayObservable()
+            .map({$0.map({$0.compactMapToSectionModels()})})
             .do(onNext: {[weak self] (element) -> Void in
                 guard let `self` = self else {return}
                 self.addBufferPool(at: element.data)

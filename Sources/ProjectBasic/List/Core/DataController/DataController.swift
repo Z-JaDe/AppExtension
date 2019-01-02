@@ -11,10 +11,10 @@ import RxCocoa
 import RxSwift
 
 struct SectionModelSnapshot<Section, Item: Diffable> {
-    public var model: Section
-    public var items: [Item]
+    var model: Section
+    var items: [Item]
 
-    public init(model: Section, items: [Item]) {
+    init(model: Section, items: [Item]) {
         self.model = model
         self.items = items
     }
@@ -27,37 +27,6 @@ public final class DataController<S: SectionModelType> {
     internal var dataSet = false
     public let reloadDataCompletion: ReplaySubject<Void> = ReplaySubject.create(bufferSize: 1)
 
-    public var sectionModels: [S] {
-        return _data.map { S(original: $0.model, items: $0.items) }
-    }
-    public subscript(section: Int) -> S {
-        let data = self._data[section]
-        return S(original: data.model, items: data.items)
-    }
-    public subscript(indexPath: IndexPath) -> I {
-        get { return self._data[indexPath.section].items[indexPath.item] }
-        set(item) {
-            var section = self._data[indexPath.section]
-            section.items[indexPath.item] = item
-            self._data[indexPath.section] = section
-        }
-    }
-    public func sectionIndexCanBound(_ sectionIndex: Int) -> Bool {
-        return _data.indexCanBound(sectionIndex)
-    }
-    public func indexPathCanBound(_ indexpath: IndexPath) -> Bool {
-        guard _data.indexCanBound(indexpath.section) else {
-            return false
-        }
-        guard _data[indexpath.section].items.indexCanBound(indexpath.row) else {
-            return false
-        }
-        return true
-    }
-
-    public func setSections(_ sections: [S]) {
-        self._data = sections.map { DataSnapshot(model: $0, items: $0.items) }
-    }
 
     func move(_ source: IndexPath, target: IndexPath) {
         let sourceSection: S = self[source.section]
@@ -74,7 +43,27 @@ public final class DataController<S: SectionModelType> {
         self._data[target.section] = DataSnapshot(model: destinationSection, items: destinationItems)
     }
 }
+extension DataController {
+    public var sectionModels: [S] {
+        return _data.lazy.map { S(original: $0.model, items: $0.items) }
+    }
+    public func setSections(_ sections: [S]) {
+        self._data = sections.map { DataSnapshot(model: $0, items: $0.items) }
+    }
+}
 extension DataController: SectionedViewDataSourceType {
+    public subscript(section: Int) -> S {
+        let data = self._data[section]
+        return S(original: data.model, items: data.items)
+    }
+    public subscript(indexPath: IndexPath) -> I {
+        get { return self._data[indexPath.section].items[indexPath.item] }
+        set(item) {
+            var section = self._data[indexPath.section]
+            section.items[indexPath.item] = item
+            self._data[indexPath.section] = section
+        }
+    }
     public func model(at indexPath: IndexPath) throws -> Any {
         guard sectionIndexCanBound(indexPath.section) else {
             throw NSError(domain: "分区下标越界", code: 0, userInfo: nil)
@@ -83,6 +72,20 @@ extension DataController: SectionedViewDataSourceType {
             throw NSError(domain: "下标越界", code: 0, userInfo: nil)
         }
         return self[indexPath]
+    }
+}
+extension DataController {
+    public func sectionIndexCanBound(_ sectionIndex: Int) -> Bool {
+        return _data.indexCanBound(sectionIndex)
+    }
+    public func indexPathCanBound(_ indexpath: IndexPath) -> Bool {
+        guard _data.indexCanBound(indexpath.section) else {
+            return false
+        }
+        guard _data[indexpath.section].items.indexCanBound(indexpath.row) else {
+            return false
+        }
+        return true
     }
 }
 extension DataController where S.Item: Equatable {
