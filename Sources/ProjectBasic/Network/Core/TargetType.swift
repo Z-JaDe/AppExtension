@@ -21,7 +21,14 @@ public protocol TargetType: URLRequestConvertible {
 }
 extension TargetType {
     func asURL() -> URL {
-        return self.baseURL.appendingPathComponent(self.path)
+        let url: URL
+        if let target = self as? URLConvertible, let _url = try? target.asURL() {
+            url = _url
+        } else {
+            url = self.baseURL.appendingPathComponent(self.path)
+        }
+        logInfo("请求地址: \(url)")
+        return url
     }
     public func asURLRequest() throws -> URLRequest {
         let url = self.asURL()

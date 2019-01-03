@@ -28,7 +28,7 @@
 		C90BCB3821D35AC4006FC76D /* LineLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BCB3721D35AC4006FC76D /* LineLayer.swift */; };
 		C90BFBE221DDEBE200DF1E54 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFBE021DDEBDC00DF1E54 /* TargetType.swift */; };
 		C90BFC0121DE001800DF1E54 /* ShowNetworkHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFBF121DE001700DF1E54 /* ShowNetworkHUD.swift */; };
-		C90BFC0321DE001800DF1E54 /* RetryRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFBF321DE001700DF1E54 /* RetryRequestProtocol.swift */; };
+		C90BFC0321DE001800DF1E54 /* ErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFBF321DE001700DF1E54 /* ErrorProtocol.swift */; };
 		C90BFC0421DE001800DF1E54 /* MonitorNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFBF521DE001800DF1E54 /* MonitorNetwork.swift */; };
 		C90BFC0F21DE07D400DF1E54 /* RxAlamofireRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFC0D21DE07AF00DF1E54 /* RxAlamofireRequest.swift */; };
 		C90BFC1221DE082600DF1E54 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFC1021DE082200DF1E54 /* SessionManager.swift */; };
@@ -38,6 +38,9 @@
 		C90BFC1E21DE352C00DF1E54 /* RequestContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFC1C21DE352900DF1E54 /* RequestContext.swift */; };
 		C90BFC2121DE430B00DF1E54 /* RequestContext+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFC2021DE430B00DF1E54 /* RequestContext+Map.swift */; };
 		C90BFC2321DE448D00DF1E54 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFC2221DE448D00DF1E54 /* NetworkError.swift */; };
+		C90BFC2521DE4DC200DF1E54 /* RequestContext+CallBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFC2421DE4DC200DF1E54 /* RequestContext+CallBack.swift */; };
+		C90BFC2721DE4E5600DF1E54 /* ResultModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFC2621DE4E5600DF1E54 /* ResultModelType.swift */; };
+		C90BFC2D21DE65B700DF1E54 /* RequestContext+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFC2C21DE65B700DF1E54 /* RequestContext+Rx.swift */; };
 		C90D85F020E2284A00A4D0FD /* SegmentScrollViewViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90D85EE20E2282600A4D0FD /* SegmentScrollViewViewControllerTest.swift */; };
 		C90D85F220E228C600A4D0FD /* PageViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90D85F120E228C600A4D0FD /* PageViewControllerTest.swift */; };
 		C90D85F420E2541500A4D0FD /* CycleViewViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90D85F320E2541500A4D0FD /* CycleViewViewControllerTest.swift */; };
@@ -805,7 +808,7 @@
 		C90BCB3721D35AC4006FC76D /* LineLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineLayer.swift; sourceTree = "<group>"; };
 		C90BFBE021DDEBDC00DF1E54 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		C90BFBF121DE001700DF1E54 /* ShowNetworkHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowNetworkHUD.swift; sourceTree = "<group>"; };
-		C90BFBF321DE001700DF1E54 /* RetryRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetryRequestProtocol.swift; sourceTree = "<group>"; };
+		C90BFBF321DE001700DF1E54 /* ErrorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorProtocol.swift; sourceTree = "<group>"; };
 		C90BFBF521DE001800DF1E54 /* MonitorNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitorNetwork.swift; sourceTree = "<group>"; };
 		C90BFC0D21DE07AF00DF1E54 /* RxAlamofireRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAlamofireRequest.swift; sourceTree = "<group>"; };
 		C90BFC1021DE082200DF1E54 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
@@ -815,6 +818,9 @@
 		C90BFC1C21DE352900DF1E54 /* RequestContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestContext.swift; sourceTree = "<group>"; };
 		C90BFC2021DE430B00DF1E54 /* RequestContext+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestContext+Map.swift"; sourceTree = "<group>"; };
 		C90BFC2221DE448D00DF1E54 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		C90BFC2421DE4DC200DF1E54 /* RequestContext+CallBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RequestContext+CallBack.swift"; sourceTree = "<group>"; };
+		C90BFC2621DE4E5600DF1E54 /* ResultModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultModelType.swift; sourceTree = "<group>"; };
+		C90BFC2C21DE65B700DF1E54 /* RequestContext+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RequestContext+Rx.swift"; sourceTree = "<group>"; };
 		C90D85EE20E2282600A4D0FD /* SegmentScrollViewViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentScrollViewViewControllerTest.swift; sourceTree = "<group>"; };
 		C90D85F120E228C600A4D0FD /* PageViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewControllerTest.swift; sourceTree = "<group>"; };
 		C90D85F320E2541500A4D0FD /* CycleViewViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleViewViewControllerTest.swift; sourceTree = "<group>"; };
@@ -1552,6 +1558,7 @@
 			isa = PBXGroup;
 			children = (
 				C90BFC0B21DE077800DF1E54 /* Core */,
+				C90BFC1F21DE42F100DF1E54 /* RequestContext */,
 				C90BFBF421DE001800DF1E54 /* MonitorNetwork */,
 				C90BFBEE21DE001700DF1E54 /* Result */,
 			);
@@ -1563,7 +1570,7 @@
 			children = (
 				C90BFC2221DE448D00DF1E54 /* NetworkError.swift */,
 				C90BFBF121DE001700DF1E54 /* ShowNetworkHUD.swift */,
-				C90BFBF321DE001700DF1E54 /* RetryRequestProtocol.swift */,
+				C90BFC2621DE4E5600DF1E54 /* ResultModelType.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -1579,12 +1586,12 @@
 		C90BFC0B21DE077800DF1E54 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				C90BFC1F21DE42F100DF1E54 /* RequestContext */,
 				C90BFBE021DDEBDC00DF1E54 /* TargetType.swift */,
 				C90BFC1321DE23B000DF1E54 /* Validation.swift */,
 				C90BFC1621DE242000DF1E54 /* Request.swift */,
 				C90BFC1921DE275B00DF1E54 /* RxProgress.swift */,
 				C90BFC0D21DE07AF00DF1E54 /* RxAlamofireRequest.swift */,
+				C90BFBF321DE001700DF1E54 /* ErrorProtocol.swift */,
 				C90BFC1021DE082200DF1E54 /* SessionManager.swift */,
 			);
 			path = Core;
@@ -1593,7 +1600,9 @@
 		C90BFC1F21DE42F100DF1E54 /* RequestContext */ = {
 			isa = PBXGroup;
 			children = (
+				C90BFC2421DE4DC200DF1E54 /* RequestContext+CallBack.swift */,
 				C90BFC1C21DE352900DF1E54 /* RequestContext.swift */,
+				C90BFC2C21DE65B700DF1E54 /* RequestContext+Rx.swift */,
 				C90BFC2021DE430B00DF1E54 /* RequestContext+Map.swift */,
 			);
 			path = RequestContext;
@@ -4190,6 +4199,7 @@
 				C90BFC0121DE001800DF1E54 /* ShowNetworkHUD.swift in Sources */,
 				C932F8B321006DC500B8DF84 /* ConfigModelProtocol.swift in Sources */,
 				C91A7D0D21D1C52900720E4F /* ScanMaskView.swift in Sources */,
+				C90BFC2721DE4E5600DF1E54 /* ResultModelType.swift in Sources */,
 				C932F8F421006DC500B8DF84 /* EntityManager+Operation.swift in Sources */,
 				C90BFC2121DE430B00DF1E54 /* RequestContext+Map.swift in Sources */,
 				C932F822210069AD00B8DF84 /* Alert.swift in Sources */,
@@ -4197,7 +4207,7 @@
 				C90E76FE21C8933200707519 /* UpdateDataProtocol.swift in Sources */,
 				C932F83A210069AD00B8DF84 /* Permission.swift in Sources */,
 				C932F8C521006DC500B8DF84 /* Model.swift in Sources */,
-				C90BFC0321DE001800DF1E54 /* RetryRequestProtocol.swift in Sources */,
+				C90BFC0321DE001800DF1E54 /* ErrorProtocol.swift in Sources */,
 				C90BFC1221DE082600DF1E54 /* SessionManager.swift in Sources */,
 				C932F83D210069AD00B8DF84 /* PermissionScope+Photos.swift in Sources */,
 				C90BFBE221DDEBE200DF1E54 /* TargetType.swift in Sources */,
@@ -4205,9 +4215,11 @@
 				C90BFC1B21DE275F00DF1E54 /* RxProgress.swift in Sources */,
 				C90E770121C893BE00707519 /* UpdateNavItemProtocol.swift in Sources */,
 				C932F83B210069AD00B8DF84 /* PermissionScope+AVFoundation.swift in Sources */,
+				C90BFC2D21DE65B700DF1E54 /* RequestContext+Rx.swift in Sources */,
 				C92EF1352135394800F95C71 /* QRCode.swift in Sources */,
 				C90BFC1521DE23B500DF1E54 /* Validation.swift in Sources */,
 				C90BFC1821DE242400DF1E54 /* Request.swift in Sources */,
+				C90BFC2521DE4DC200DF1E54 /* RequestContext+CallBack.swift in Sources */,
 				C932F83C210069AD00B8DF84 /* PermissionScope.swift in Sources */,
 				C9283C2921BEB91200361B87 /* ImageURLProtocol.swift in Sources */,
 				C9283C3521BEC50500361B87 /* HeaderViewContainerProtocol.swift in Sources */,

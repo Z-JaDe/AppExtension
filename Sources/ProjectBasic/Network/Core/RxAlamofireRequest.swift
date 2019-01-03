@@ -19,6 +19,7 @@ protocol RxAlamofireResponse {
 
 extension DefaultDataResponse: RxAlamofireResponse {}
 extension DefaultDownloadResponse: RxAlamofireResponse {}
+
 extension DataRequest: RxAlamofireRequest {
     func responseWith(completionHandler: @escaping (RxAlamofireResponse) -> Void) {
         response { (response) in

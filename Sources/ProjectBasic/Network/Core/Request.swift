@@ -36,7 +36,7 @@ extension Reactive where Base == RequestContext<DataRequest> {
     }
 }
 extension ObservableType where E == RequestContext<DataRequest> {
-    public func response() -> Observable<RequestContext<Data>> {
+    public func response() -> RequestContextObservable<Data> {
         return flatMap { $0.rx.response(responseSerializer: E.ValueType.dataResponseSerializer()) }
     }
 }
@@ -65,7 +65,7 @@ extension Reactive where Base == RequestContext<DownloadRequest> {
     }
 }
 extension ObservableType where E == RequestContext<DownloadRequest> {
-    public func response() -> Observable<RequestContext<Data>> {
+    public func response() -> RequestContextObservable<Data> {
         return flatMap { $0.rx.response(responseSerializer: E.ValueType.dataResponseSerializer()) }
     }
 }

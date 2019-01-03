@@ -12,3 +12,6 @@ import RxSwift
 public protocol RetryRequestProtocol {
     func retryError() -> Observable<()>
 }
+public protocol MapErrorProtocol {
+    func mapError() -> Error
+}

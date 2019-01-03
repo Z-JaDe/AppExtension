@@ -10,6 +10,7 @@ import Foundation
 
 extension RequestContext where Value == Data {
     public func map<T: Decodable>() throws -> T {
+        logDataResultInfo()
         let data = value
         let result: T
         do {
@@ -35,4 +36,11 @@ extension RequestContext where Value == Data {
         }
         return string
     }
+
+    private func logDataResultInfo() {
+        let str = try? mapString()
+        logInfo("获取到 -|\(self.urlPath) 接口数据->\(str ?? "空")")
+    }
 }
+// TODO: Data换成Result<Data>
+// TODO: 打印 logError("-|\(self.urlPath) 接口报错->\(error.localizedDescription)")

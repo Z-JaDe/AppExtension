@@ -103,6 +103,7 @@ Pod::Spec.new do |s|
         ss.dependency "AppExtension/Codable"
         ss.dependency "AppExtension/UIComponents"
         ss.dependency "AppExtension/RxExtensions"
+        ss.dependency "Alamofire"
 
         #ss.dependency "SAMKeychain"
         #ss.dependency "SwiftyUserDefaults" #不强制安装

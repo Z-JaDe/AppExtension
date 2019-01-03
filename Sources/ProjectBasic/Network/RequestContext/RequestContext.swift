@@ -8,12 +8,12 @@
 
 import Foundation
 import Alamofire
-//public protocol ResponseContextCompatible {
-//    associatedtype Value
-//    var value: Value { get }
-//    func map<T>(_ transform: (Value) -> T) -> RequestContext<T>
-//}
-public struct RequestContext<Value> {//}: ResponseContextCompatible {
+public protocol RequestContextCompatible {
+    associatedtype ValueType
+    var value: ValueType { get }
+    func map<T>(_ transform: (ValueType) throws -> T) rethrows -> RequestContext<T>
+}
+public struct RequestContext<Value>: RequestContextCompatible {
     public typealias ValueType = Value
     public let target: URLRequestConvertible?
     public let value: Value
@@ -21,8 +21,8 @@ public struct RequestContext<Value> {//}: ResponseContextCompatible {
         self.value = value
         self.target = target
     }
-    public func map<T>(_ transform: (Value) -> T) -> RequestContext<T> {
-        return RequestContext<T>(transform(value), self.target)
+    public func map<T>(_ transform: (Value) throws -> T) rethrows -> RequestContext<T> {
+        return RequestContext<T>(try transform(value), self.target)
     }
 }
 extension RequestContext {
