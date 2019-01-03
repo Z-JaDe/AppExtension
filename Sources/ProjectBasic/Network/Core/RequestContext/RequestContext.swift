@@ -1,0 +1,39 @@
+//
+//  RequestContext.swift
+//  AppExtension
+//
+//  Created by 郑军铎 on 2019/1/3.
+//  Copyright © 2019 ZJaDe. All rights reserved.
+//
+
+import Foundation
+import Alamofire
+//public protocol ResponseContextCompatible {
+//    associatedtype Value
+//    var value: Value { get }
+//    func map<T>(_ transform: (Value) -> T) -> RequestContext<T>
+//}
+public struct RequestContext<Value> {//}: ResponseContextCompatible {
+    public typealias ValueType = Value
+    public let target: URLRequestConvertible?
+    public let value: Value
+    init(_ value: Value, _ target: URLRequestConvertible?) {
+        self.value = value
+        self.target = target
+    }
+    public func map<T>(_ transform: (Value) -> T) -> RequestContext<T> {
+        return RequestContext<T>(transform(value), self.target)
+    }
+}
+extension RequestContext {
+    /// ZJaDe: 接口path
+    public var urlPath: String {
+        guard let url = target as? TargetType else {
+            return (try? target?.asURLRequest())??.url?.absoluteString ?? "未知"
+        }
+        guard url.path.count > 0 else {
+            return url.baseURL.absoluteString
+        }
+        return url.path
+    }
+}

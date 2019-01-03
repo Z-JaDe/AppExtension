@@ -51,6 +51,8 @@ abstract_target 'BaseCore' do
 
         pod 'SwiftLint'
 
+        pod 'Alamofire'
+
         pod 'Rx+Kingfisher', :path => '~/Desktop/wallet-ios/BaseSupport/RxKingfisher'
         pod 'Kingfisher'
         pod 'MBProgressHUD'
@@ -62,10 +64,14 @@ abstract_target 'BaseCore' do
         target:'NavigationFlow' do
         end
         target:'ProjectBasic' do
+            pod 'Alamofire'
+            pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
+
             pod 'Rx+Kingfisher', :path => '~/Desktop/wallet-ios/BaseSupport/RxKingfisher'
             pod 'Kingfisher'
             pod 'MBProgressHUD'
             pod 'SwiftyUserDefaults'
+
 
             target:'List' do
                 pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
@@ -84,8 +90,6 @@ abstract_target 'BaseCore' do
         end
     end
 end
-
-
 
 
 
