@@ -13,11 +13,23 @@ import FunctionalSwift
 typealias ViewControllerConvertible = RootViewStateProtocol & NetworkProtocol & UpdateDataProtocol
 
 open class ViewController<ViewType>: UIViewController, ViewControllerConvertible where ViewType: UIView {
-    public required init() {
+    // MARK: - init
+    public init() {
         super.init(nibName: nil, bundle: nil)
         configInit()
     }
-
+    /// ZJaDe: 重写这个方法是为了还可以使用xib
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nil, bundle: nil)
+        configInit()
+    }
+    private var isCoderLoad: Bool = false
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.isCoderLoad = true
+        configInit()
+    }
+    // MARK: - view
     open override func loadView() {
         super.loadView()
         if self.isCoderLoad == false {
@@ -30,17 +42,6 @@ open class ViewController<ViewType>: UIViewController, ViewControllerConvertible
     open var sn_view: ViewType {
         // swiftlint:disable force_cast
         return self.view as! ViewType
-    }
-    /// ZJaDe: 重写这个方法是为了还可以使用xib
-    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nil, bundle: nil)
-        configInit()
-    }
-    private var isCoderLoad: Bool = false
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.isCoderLoad = true
-        configInit()
     }
     // MARK: - 以下几个方法在不同的时候重写
     open func configInit() {

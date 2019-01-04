@@ -18,7 +18,6 @@ open class ScrollViewController<ScrollViewType>: ViewController<ScrollViewType> 
         }
     }
 }
-extension ScrollViewController: InitProtocol {}
 
 open class SNScrollViewContorller: ScrollViewController<ScrollView> {
 

@@ -415,6 +415,8 @@
 		C9D4132321DF6B74004368D4 /* LoadWebUrlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131921DF6B74004368D4 /* LoadWebUrlProtocol.swift */; };
 		C9D4132421DF6D7B004368D4 /* SectionedDataSource+ParamProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932FA2321006ED100B8DF84 /* SectionedDataSource+ParamProtocol.swift */; };
 		C9D4132721DF7110004368D4 /* TableAdapterItemConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4132521DF710A004368D4 /* TableAdapterItemConvertible.swift */; };
+		C9D4132921DF807C004368D4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4132821DF807C004368D4 /* RootViewController.swift */; };
+		C9D4132B21DF808B004368D4 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4132A21DF808B004368D4 /* ItemViewController.swift */; };
 		C9DF833E2179D1640044334E /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DF833D2179D1640044334E /* Core.swift */; };
 		E57C820B26CAE39CB877A165 /* Pods_BaseCore_UIComponents_CollectionKitExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE983DABFBEDE870E487D00B /* Pods_BaseCore_UIComponents_CollectionKitExtensions.framework */; };
 		E87C618F4B3BE06A26771C95 /* Pods_AppExtensionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AE030F6C0EAB67632202A9 /* Pods_AppExtensionTests.framework */; };
@@ -1210,6 +1212,8 @@
 		C9D4131721DF6B74004368D4 /* ScriptMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptMessageHandler.swift; sourceTree = "<group>"; };
 		C9D4131921DF6B74004368D4 /* LoadWebUrlProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadWebUrlProtocol.swift; sourceTree = "<group>"; };
 		C9D4132521DF710A004368D4 /* TableAdapterItemConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableAdapterItemConvertible.swift; sourceTree = "<group>"; };
+		C9D4132821DF807C004368D4 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		C9D4132A21DF808B004368D4 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		C9DF833D2179D1640044334E /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		CAC4EE8DC65E4ACAC9F4FA09 /* Pods-BaseCore-Core.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-Core.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-Core/Pods-BaseCore-Core.release.xcconfig"; sourceTree = "<group>"; };
 		CB539C82E22D6BE8F28A88BC /* Pods_BaseCore_Custom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseCore_Custom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1649,6 +1653,8 @@
 		C90E76F921C88E6300707519 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C9D4132A21DF808B004368D4 /* ItemViewController.swift */,
+				C9D4132821DF807C004368D4 /* RootViewController.swift */,
 				C9D4129921DF4218004368D4 /* BaseViewController.swift */,
 				C9D4129A21DF4218004368D4 /* UIViewController.swift */,
 				C9D4129F21DF4326004368D4 /* ScrollViewController */,
@@ -4374,6 +4380,7 @@
 				C9D412C021DF468B004368D4 /* CollectionReusableView.swift in Sources */,
 				C9D4131C21DF6B74004368D4 /* JSMutuallyClass.swift in Sources */,
 				C9D412D221DF4A88004368D4 /* TableSection.swift in Sources */,
+				C9D4132B21DF808B004368D4 /* ItemViewController.swift in Sources */,
 				C9D412B521DF4600004368D4 /* SwitchCell.swift in Sources */,
 				C932F8C521006DC500B8DF84 /* Model.swift in Sources */,
 				C9D412B921DF4601004368D4 /* DetailTitleCell.swift in Sources */,
@@ -4424,6 +4431,7 @@
 				C90E76FC21C88F1C00707519 /* NetworkProtocol.swift in Sources */,
 				C9D412AF21DF45FA004368D4 /* CollectionTableCell.swift in Sources */,
 				C9D412CA21DF4A10004368D4 /* TableAdapterDelegate.swift in Sources */,
+				C9D4132921DF807C004368D4 /* RootViewController.swift in Sources */,
 				C9D412AA21DF45EE004368D4 /* ListItemModel.swift in Sources */,
 				C9D412A621DF4326004368D4 /* TableViewController.swift in Sources */,
 				C932F7A821005A9F00B8DF84 /* ProjectBasic.swift in Sources */,
