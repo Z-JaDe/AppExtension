@@ -383,7 +383,7 @@
 		C9D412E321DF4B52004368D4 /* UITableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F9FD21006ED100B8DF84 /* UITableAdapter.swift */; };
 		C9D412E421DF4B52004368D4 /* TableCellConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932FA4B21006ED200B8DF84 /* TableCellConfigProtocol.swift */; };
 		C9D412E521DF4B52004368D4 /* TableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932FA0221006ED100B8DF84 /* TableViewHeaderFooterView.swift */; };
-		C9D412E621DF4B52004368D4 /* TableAdapterItemCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F9FE21006ED100B8DF84 /* TableAdapterItemCompatible.swift */; };
+		C9D412E621DF4B52004368D4 /* TableAdapterItemConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F9FE21006ED100B8DF84 /* TableAdapterItemConvertible.swift */; };
 		C9D412E721DF4B52004368D4 /* UITableProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F9FC21006ED100B8DF84 /* UITableProxy.swift */; };
 		C9D412E821DF4B65004368D4 /* UICollectionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932FA2921006ED200B8DF84 /* UICollectionAdapter.swift */; };
 		C9D412E921DF4B65004368D4 /* CollectionCellConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932FA4C21006ED200B8DF84 /* CollectionCellConfigProtocol.swift */; };
@@ -1049,7 +1049,7 @@
 		C932F9BA21006E9B00B8DF84 /* UserNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotificationManager.swift; sourceTree = "<group>"; };
 		C932F9FC21006ED100B8DF84 /* UITableProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableProxy.swift; sourceTree = "<group>"; };
 		C932F9FD21006ED100B8DF84 /* UITableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableAdapter.swift; sourceTree = "<group>"; };
-		C932F9FE21006ED100B8DF84 /* TableAdapterItemCompatible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableAdapterItemCompatible.swift; sourceTree = "<group>"; };
+		C932F9FE21006ED100B8DF84 /* TableAdapterItemConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableAdapterItemConvertible.swift; sourceTree = "<group>"; };
 		C932FA0121006ED100B8DF84 /* TableSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		C932FA0221006ED100B8DF84 /* TableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		C932FA1321006ED100B8DF84 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
@@ -2896,7 +2896,7 @@
 				C9D4130621DF5F71004368D4 /* UITable+AdapterDelegate.swift */,
 				C932FA0221006ED100B8DF84 /* TableViewHeaderFooterView.swift */,
 				C9D412EC21DF4BCB004368D4 /* ListDataUpdateProtocol+Table.swift */,
-				C932F9FE21006ED100B8DF84 /* TableAdapterItemCompatible.swift */,
+				C932F9FE21006ED100B8DF84 /* TableAdapterItemConvertible.swift */,
 				C932F9FC21006ED100B8DF84 /* UITableProxy.swift */,
 			);
 			path = Table;
@@ -4367,7 +4367,7 @@
 				C9D412CD21DF4A31004368D4 /* TableItemCell+Height.swift in Sources */,
 				C9D4131F21DF6B74004368D4 /* WKUIProxy.swift in Sources */,
 				C9D412B321DF45FA004368D4 /* DynamicCollectionItemCell.swift in Sources */,
-				C9D412E621DF4B52004368D4 /* TableAdapterItemCompatible.swift in Sources */,
+				C9D412E621DF4B52004368D4 /* TableAdapterItemConvertible.swift in Sources */,
 				C9D412A721DF4326004368D4 /* CollectionViewController.swift in Sources */,
 				C9D412BD21DF468B004368D4 /* ItemCell.swift in Sources */,
 				C9D412B121DF45FA004368D4 /* CollectionModelCell.swift in Sources */,
