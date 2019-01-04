@@ -62,10 +62,9 @@ enum TaskState {
 // MARK: -
 private var taskIsSuspendKey: UInt8 = 0
 private var taskStateKey: UInt8 = 0
+private var taskArrKey: UInt8 = 0
 public protocol TaskProtocol: AssociatedObjectProtocol {
     typealias TaskItemType = ProcessTask
-
-    var taskArr: [TaskItemType] {get set}
 
     func taskSuspend()
     func taskResume()
@@ -80,6 +79,10 @@ public extension TaskProtocol {
     private var taskState: TaskState {
         get {return associatedObject(&taskStateKey, createIfNeed: .free)}
         set {setAssociatedObject(&taskStateKey, newValue)}
+    }
+    public var taskArr: [TaskItemType] {
+        get {return associatedObject(&taskArrKey, createIfNeed: [])}
+        set {setAssociatedObject(&taskArrKey, newValue)}
     }
 
     func taskSuspend() {

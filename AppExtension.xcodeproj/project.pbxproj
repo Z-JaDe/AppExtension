@@ -1621,11 +1621,19 @@
 		C90E76F921C88E6300707519 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C90FFA0621DF401600A995A3 /* NeedUpdate */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C90FFA0621DF401600A995A3 /* NeedUpdate */ = {
+			isa = PBXGroup;
+			children = (
 				C932FAA421006EFD00B8DF84 /* UpdateDataProtocol.swift */,
 				C90E76FA21C88F1700707519 /* NetworkProtocol.swift */,
 				C90E76FF21C893B900707519 /* UpdateNavItemProtocol.swift */,
 			);
-			path = ViewController;
+			path = NeedUpdate;
 			sourceTree = "<group>";
 		};
 		C91055AE21A8298200F87515 /* UserNotificationManager */ = {

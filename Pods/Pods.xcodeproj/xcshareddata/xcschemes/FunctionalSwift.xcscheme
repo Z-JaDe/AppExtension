@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C910569421A847BA00F87515"
-               BuildableName = "AnimatedTransition.framework"
-               BlueprintName = "AnimatedTransition"
-               ReferencedContainer = "container:AppExtension.xcodeproj">
+               BlueprintIdentifier = "000000004480"
+               BuildableName = "FunctionalSwift.framework"
+               BlueprintName = "FunctionalSwift"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C910569421A847BA00F87515"
-            BuildableName = "AnimatedTransition.framework"
-            BlueprintName = "AnimatedTransition"
-            ReferencedContainer = "container:AppExtension.xcodeproj">
+            BlueprintIdentifier = "000000004480"
+            BuildableName = "FunctionalSwift.framework"
+            BlueprintName = "FunctionalSwift"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -63,10 +63,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C910569421A847BA00F87515"
-            BuildableName = "AnimatedTransition.framework"
-            BlueprintName = "AnimatedTransition"
-            ReferencedContainer = "container:AppExtension.xcodeproj">
+            BlueprintIdentifier = "000000004480"
+            BuildableName = "FunctionalSwift.framework"
+            BlueprintName = "FunctionalSwift"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

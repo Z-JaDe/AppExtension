@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C91240BE21C1205D00F13151"
-               BuildableName = "ScrollExtensions.framework"
-               BlueprintName = "ScrollExtensions"
-               ReferencedContainer = "container:AppExtension.xcodeproj">
+               BlueprintIdentifier = "000000004DE0"
+               BuildableName = "ModalManager.framework"
+               BlueprintName = "ModalManager"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C91240BE21C1205D00F13151"
-            BuildableName = "ScrollExtensions.framework"
-            BlueprintName = "ScrollExtensions"
-            ReferencedContainer = "container:AppExtension.xcodeproj">
+            BlueprintIdentifier = "000000004DE0"
+            BuildableName = "ModalManager.framework"
+            BlueprintName = "ModalManager"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -63,10 +63,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C91240BE21C1205D00F13151"
-            BuildableName = "ScrollExtensions.framework"
-            BlueprintName = "ScrollExtensions"
-            ReferencedContainer = "container:AppExtension.xcodeproj">
+            BlueprintIdentifier = "000000004DE0"
+            BuildableName = "ModalManager.framework"
+            BlueprintName = "ModalManager"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
