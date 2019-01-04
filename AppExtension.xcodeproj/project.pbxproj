@@ -417,6 +417,8 @@
 		C9D4132721DF7110004368D4 /* TableAdapterItemConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4132521DF710A004368D4 /* TableAdapterItemConvertible.swift */; };
 		C9D4132921DF807C004368D4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4132821DF807C004368D4 /* RootViewController.swift */; };
 		C9D4132B21DF808B004368D4 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4132A21DF808B004368D4 /* ItemViewController.swift */; };
+		C9D4132F21DF8DB6004368D4 /* BlurModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4132D21DF8DB6004368D4 /* BlurModalViewController.swift */; };
+		C9D4133021DF8DB6004368D4 /* ModalContainerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4132E21DF8DB6004368D4 /* ModalContainerProtocol.swift */; };
 		C9DF833E2179D1640044334E /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DF833D2179D1640044334E /* Core.swift */; };
 		E57C820B26CAE39CB877A165 /* Pods_BaseCore_UIComponents_CollectionKitExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE983DABFBEDE870E487D00B /* Pods_BaseCore_UIComponents_CollectionKitExtensions.framework */; };
 		E87C618F4B3BE06A26771C95 /* Pods_AppExtensionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AE030F6C0EAB67632202A9 /* Pods_AppExtensionTests.framework */; };
@@ -1214,6 +1216,8 @@
 		C9D4132521DF710A004368D4 /* TableAdapterItemConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableAdapterItemConvertible.swift; sourceTree = "<group>"; };
 		C9D4132821DF807C004368D4 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		C9D4132A21DF808B004368D4 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		C9D4132D21DF8DB6004368D4 /* BlurModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurModalViewController.swift; sourceTree = "<group>"; };
+		C9D4132E21DF8DB6004368D4 /* ModalContainerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalContainerProtocol.swift; sourceTree = "<group>"; };
 		C9DF833D2179D1640044334E /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		CAC4EE8DC65E4ACAC9F4FA09 /* Pods-BaseCore-Core.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-Core.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-Core/Pods-BaseCore-Core.release.xcconfig"; sourceTree = "<group>"; };
 		CB539C82E22D6BE8F28A88BC /* Pods_BaseCore_Custom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseCore_Custom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1657,6 +1661,7 @@
 				C9D4132821DF807C004368D4 /* RootViewController.swift */,
 				C9D4129921DF4218004368D4 /* BaseViewController.swift */,
 				C9D4129A21DF4218004368D4 /* UIViewController.swift */,
+				C9D4132C21DF8D97004368D4 /* Modal */,
 				C9D4129F21DF4326004368D4 /* ScrollViewController */,
 				C90FFA0621DF401600A995A3 /* NeedUpdate */,
 			);
@@ -2961,6 +2966,15 @@
 				C9D4131721DF6B74004368D4 /* ScriptMessageHandler.swift */,
 			);
 			path = WKWeb;
+			sourceTree = "<group>";
+		};
+		C9D4132C21DF8D97004368D4 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				C9D4132D21DF8DB6004368D4 /* BlurModalViewController.swift */,
+				C9D4132E21DF8DB6004368D4 /* ModalContainerProtocol.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -4370,6 +4384,7 @@
 				C9D412E621DF4B52004368D4 /* TableAdapterItemConvertible+Extension.swift in Sources */,
 				C9D412A721DF4326004368D4 /* CollectionViewController.swift in Sources */,
 				C9D412BD21DF468B004368D4 /* ItemCell.swift in Sources */,
+				C9D4133021DF8DB6004368D4 /* ModalContainerProtocol.swift in Sources */,
 				C9D412B121DF45FA004368D4 /* CollectionModelCell.swift in Sources */,
 				C9283C2721BEB91200361B87 /* WebImage.swift in Sources */,
 				C9D412E921DF4B65004368D4 /* CollectionCellConfigProtocol.swift in Sources */,
@@ -4393,6 +4408,7 @@
 				C9D4132321DF6B74004368D4 /* LoadWebUrlProtocol.swift in Sources */,
 				C9D412B021DF45FA004368D4 /* TableModelCell.swift in Sources */,
 				C9D412A521DF4326004368D4 /* ScrollViewController.swift in Sources */,
+				C9D4132F21DF8DB6004368D4 /* BlurModalViewController.swift in Sources */,
 				C932F83D210069AD00B8DF84 /* PermissionScope+Photos.swift in Sources */,
 				C90BFBE221DDEBE200DF1E54 /* TargetType.swift in Sources */,
 				C932F825210069AD00B8DF84 /* HUD.swift in Sources */,
