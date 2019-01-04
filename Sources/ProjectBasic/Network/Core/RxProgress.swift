@@ -21,16 +21,18 @@ extension Reactive where Base: Request {
                     observer.on(.completed)
                 }
             }
-            if let uploadReq = self.base as? UploadRequest {
+            switch self.base {
+            case let uploadReq as UploadRequest:
                 uploadReq.uploadProgress(closure: handler)
-            } else if let downloadReq = self.base as? DownloadRequest {
+            case let downloadReq as DownloadRequest:
                 downloadReq.downloadProgress(closure: handler)
-            } else if let dataReq = self.base as? DataRequest {
+            case let dataReq as DataRequest:
                 dataReq.downloadProgress(closure: handler)
+            default: break
             }
 
             return Disposables.create()
-            }
+        }
             // warm up a bit :)
             .startWith(RxProgress(bytesWritten: 0, totalBytes: 0))
     }

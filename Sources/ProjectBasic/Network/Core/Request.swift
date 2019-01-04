@@ -16,18 +16,13 @@ extension Reactive where Base == RequestContext<DataRequest> {
     public func response<T: DataResponseSerializerProtocol>(
         queue: DispatchQueue? = nil,
         responseSerializer: T
-        ) -> RequestContextObservable<T.SerializedObject> {
+        ) -> RequestContextObservable<Result<T.SerializedObject>> {
         return Observable.create { observer in
             let context = self.base
             let dataRequest = context.value
                 .response(queue: queue, responseSerializer: responseSerializer) { (packedResponse) -> Void in
-                    switch packedResponse.result {
-                    case .failure(let error):
-                        observer.onError(error)
-                    case .success(let value):
-                        observer.onNext(context.map({_ in value}))
-                        observer.on(.completed)
-                    }
+                    observer.onNext(context.map {_ in packedResponse.result} )
+                    observer.onCompleted()
             }
             return Disposables.create {
                 dataRequest.cancel()
@@ -36,7 +31,7 @@ extension Reactive where Base == RequestContext<DataRequest> {
     }
 }
 extension ObservableType where E == RequestContext<DataRequest> {
-    public func response() -> RequestContextObservable<Data> {
+    public func response() -> Observable<RequestContextResultData> {
         return flatMap { $0.rx.response(responseSerializer: E.ValueType.dataResponseSerializer()) }
     }
 }
@@ -45,18 +40,13 @@ extension Reactive where Base == RequestContext<DownloadRequest> {
     public func response<T: DownloadResponseSerializerProtocol>(
         queue: DispatchQueue? = nil,
         responseSerializer: T
-        ) -> RequestContextObservable<T.SerializedObject> {
+        ) -> RequestContextObservable<Result<T.SerializedObject>> {
         return Observable.create { observer in
             let context = self.base
             let dataRequest = context.value
                 .response(queue: queue, responseSerializer: responseSerializer) { (packedResponse) -> Void in
-                    switch packedResponse.result {
-                    case .failure(let error):
-                        observer.onError(error)
-                    case .success(let value):
-                        observer.onNext(context.map({_ in value}))
-                        observer.on(.completed)
-                    }
+                    observer.onNext(context.map {_ in packedResponse.result} )
+                    observer.onCompleted()
             }
             return Disposables.create {
                 dataRequest.cancel()
@@ -65,7 +55,7 @@ extension Reactive where Base == RequestContext<DownloadRequest> {
     }
 }
 extension ObservableType where E == RequestContext<DownloadRequest> {
-    public func response() -> RequestContextObservable<Data> {
+    public func response() -> Observable<RequestContextResultData> {
         return flatMap { $0.rx.response(responseSerializer: E.ValueType.dataResponseSerializer()) }
     }
 }

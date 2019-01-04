@@ -22,46 +22,17 @@ public protocol NavigationItemProtocol: class {
     var navBarAlpha: CGFloat {get}
     var navBarBackgroundImage: UIImage? {get}
     var navBarShadowType: NavBarShadowType {get}
-    func configInitAboutNavBar()
 
-    static func updateNavBar(_ navBar: UINavigationBar, fromVC: Self, toVC: Self, percent: CGFloat)
+    func updateNavBar(isDidAppear: Bool)
 }
 
 extension NavigationItemProtocol where Self: UIViewController {
-    public static func updateNavBar(_ navBar: UINavigationBar, fromVC: Self, toVC: Self, percent: CGFloat) {
-
-//        let navBarShadowColor = UIColor.animateScaleColor(beginColor: fromVC.navBarShadowColor, endColor: toVC.navBarShadowColor, percentComplete: percent)
-//        toVC.changeShadowColor(navBarShadowColor)
-
-        if fromVC.navBarTintColor != toVC.navBarTintColor || fromVC.navBarAlpha != toVC.navBarAlpha {
-            let navBarTintColor = UIColor.animateScaleColor(beginColor: fromVC.navBarTintColor, endColor: toVC.navBarTintColor, percentComplete: percent)
-            let alpha = CGFloat.scaleValue(beginValue: fromVC.getNavBarAlpha(), endValue: toVC.getNavBarAlpha(), percentComplete: percent)
-            navBar.changeBarTintColor(navBarTintColor, toVC.navBarBackgroundImage, toVC.navBarShadowType, alpha)
-        }
-
-        if fromVC.navTintColor != toVC.navTintColor {
-            let navTintColor = UIColor.animateScaleColor(beginColor: fromVC.navTintColor, endColor: toVC.navTintColor, percentComplete: percent)
-            navBar.changeTintColor(navTintColor)
-        }
-
-    }
-    public func configInitAboutNavBar() {
+    public func updateNavBar(isDidAppear: Bool) {
         guard checkVCType() else {return}
-        Animater().animations {
-            self.updateBarStyle()
-            self.changeTintColor(self.navTintColor)
-//            self.changeAlpha(self.getNavBarAlpha())
-        }.completion({ (_) in
-            self.updateNavBarWhenFinished()
-        }).spring()
+        self.updateBarStyle()
+        self.changeTintColor(self.navTintColor)
+        self.changeIsHidden(self.navBarIsHidden, isDidAppear)
     }
-    func getNavBarAlpha() -> CGFloat {
-        return self.navBarIsHidden ? 0 : self.navBarAlpha
-    }
-    public func updateNavBarWhenFinished() {
-        self.changeIsHidden(self.navBarIsHidden)
-    }
-
 }
 
 public extension NavigationItemProtocol where Self: UIViewController {
@@ -71,11 +42,13 @@ public extension NavigationItemProtocol where Self: UIViewController {
 
         navBar.changeTintColor(color)
     }
-    func changeIsHidden(_ isHidden: Bool) {
+    func changeIsHidden(_ isHidden: Bool, _ isDidAppear: Bool) {
         guard checkVCType() else {return}
-        // ZJaDe: setNavigationBarHidden调用时机不对的话，会导致直接卡死
-//        self.navigationController?.setNavigationBarHidden(isHidden, animated: true)
-        self.navigationController?.isNavigationBarHidden = isHidden
+        if isDidAppear {
+            self.navigationController?.isNavigationBarHidden = isHidden
+        } else {
+            self.navigationController?.setNavigationBarHidden(isHidden, animated: true)
+        }
     }
     /// ZJaDe: 
     func updateBarStyle() {

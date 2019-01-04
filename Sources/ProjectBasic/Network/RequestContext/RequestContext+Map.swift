@@ -7,11 +7,20 @@
 //
 
 import Foundation
-
-extension RequestContext where Value == Data {
+import Alamofire
+extension RequestContext where Value == Result<Data> {
+    func getData() throws -> Data {
+        switch self.value {
+        case .success(let value):
+            return value
+        case .failure(let error):
+            /// ZJaDe: 关于Alamofire请求返回的error处理
+            throw error._mapError()
+        }
+    }
     public func map<T: Decodable>() throws -> T {
         logDataResultInfo()
-        let data = value
+        let data = try getData()
         let result: T
         do {
             result = try T.deserialize(from: data)
@@ -31,16 +40,20 @@ extension RequestContext where Value == Data {
     }
 
     public func mapString() throws -> String {
-        guard let string = String(data: value, encoding: .utf8) else {
+        guard let string = String(data: try getData(), encoding: .utf8) else {
             throw NetworkError.objectMapping("转换字符串出错")
         }
         return string
     }
 
     private func logDataResultInfo() {
-        let str = try? mapString()
-        logInfo("获取到 -|\(self.urlPath) 接口数据->\(str ?? "空")")
+        switch self.value {
+        case .failure(let error):
+            logError("-|\(self.urlPath) 接口报错->\(error.localizedDescription)")
+        case .success(let value):
+            let str = try? mapString()
+            logInfo("获取到 -|\(self.urlPath) 接口数据->\(str ?? "空")")
+        }
     }
 }
-// TODO: Data换成Result<Data>
-// TODO: 打印 logError("-|\(self.urlPath) 接口报错->\(error.localizedDescription)")
+

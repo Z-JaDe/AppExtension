@@ -10,32 +10,28 @@ import Foundation
 import RxSwift
 import Alamofire
 extension ObservableType where E == RequestContext<DataRequest> {
-    public func mapResultModel<T: AbstractResultModelType>(_ transform: @escaping (RequestContext<Data>) throws -> T) -> RequestContextObservable<T> {
-        return response()
-            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            /// ZJaDe: Alamofire请求后catchError
-            .catchError { .error(($0 as? MapErrorProtocol)?.mapError() ?? $0) }
-            /// ZJaDe: data数据转resultModel
-            .map({ (context) -> RequestContext<T> in
-                return try context.map({_ in try transform(context)})
-            })
-            .observeOn(MainScheduler.instance)
-            .retryWhen({ (error) -> Observable<()> in
-                return error.flatMapLatest({ (error) -> Observable<()> in
-                    if let error = error as? RetryRequestProtocol {
-                        return error.retryError()
-                    } else {
-                        throw error
-                    }
-                })
-            })
+    public typealias RequestContextResult<T> = RequestContext<Result<T>>
+    public typealias RequestContextResultData = RequestContextResult<Data>
+    public func mapResultModel<T: AbstractResultModelType>(_ transform: @escaping (RequestContextResultData) throws -> T) -> RequestContextObservable<T> {
+        return responseFlatMap({ (context) -> T in
+            return try transform(context)
+        })
     }
 
     public func mapCustomType<DataType: Decodable>(type: DataType.Type) -> RequestContextObservable<DataType> {
+        return responseFlatMap({ (context) -> DataType in
+            return try context.mapCustomType()
+        })
+    }
+    private func responseFlatMap<T>(_ transform: @escaping (RequestContextResultData) throws -> T) -> RequestContextObservable<T> {
         return response()
-            .map({ (context) -> RequestContext<DataType> in
-            return try context.map({_ in try context.mapCustomType()})
+            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .map({ (context) -> RequestContext<T> in
+                /// ZJaDe: data数据转Model
+                return try context.map({_ in try transform(context)})
             })
             .observeOn(MainScheduler.instance)
+            .retryWhen({ $0._retryError() })
     }
 }
+
