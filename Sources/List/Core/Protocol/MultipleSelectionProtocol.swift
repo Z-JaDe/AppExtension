@@ -34,8 +34,9 @@ public extension MultipleSelectionProtocol {
         get {return associatedObject(&selectedItemArrayChangedKey)}
         set {setAssociatedObject(&selectedItemArrayChangedKey, newValue)}
     }
-    /// ZJaDe: 最大选中的item数量，小于0代表不限制，0代表不可选中
-    var maxSelectedCount: Int {
+    /// ZJaDe: 最大选中的item数量
+    var maxSelectedCount: MaxSelectedCount {
+        // ZJaDe: 使用MaxSelectedCount不使用UInt?的原因是 associated没法区分nil和0，用-1区分又不太优雅
         get {return associatedObject(&maxSelectedCountKey) ?? 0}
         set {setAssociatedObject(&maxSelectedCountKey, newValue)}
     }
@@ -60,8 +61,8 @@ extension MultipleSelectionProtocol {
             self.selectedItemArray.append(item)
         }
         updateSelectState(item, true)
-        if maxSelectedCount > 0 {
-            while self.selectedItemArray.count > maxSelectedCount {
+        if let count = maxSelectedCount.count {
+            while self.selectedItemArray.count > count {
                 let first = self.selectedItemArray.first!
                 changeSelectState(false, first)
             }
@@ -85,10 +86,7 @@ extension MultipleSelectionProtocol where SelectItemType: SelectedStateDesignabl
 // MARK: - CanSelected
 extension MultipleSelectionProtocol {
     private func checkCanSelected() -> Bool {
-        guard maxSelectedCount < 0 else {
-            return true
-        }
-        return maxSelectedCount > 0
+        return maxSelectedCount.canSelected
     }
     public func checkCanSelected(_ item: SelectItemType, _ closure: @escaping (Bool) -> Void) {
         guard checkCanSelected() else {
@@ -113,5 +111,34 @@ extension MultipleSelectionProtocol where SelectItemType: CanSelectedStateDesign
             return
         }
         item.checkCanSelected(closure)
+    }
+}
+// MARK: - MaxSelectedCount
+public enum MaxSelectedCount {
+    case noLimit
+    case value(UInt)
+}
+extension MaxSelectedCount {
+    var canSelected: Bool {
+        switch self {
+        case .noLimit: return true
+        case .value(let count): return count > 0
+        }
+    }
+    var count: UInt? {
+        switch self {
+        case .noLimit: return nil
+        case .value(let count): return count
+        }
+    }
+}
+extension MaxSelectedCount: ExpressibleByNilLiteral {
+    public init(nilLiteral: ()) {
+        self = .noLimit
+    }
+}
+extension MaxSelectedCount: ExpressibleByIntegerLiteral {
+    public init(integerLiteral value: UInt) {
+        self = .value(value)
     }
 }
