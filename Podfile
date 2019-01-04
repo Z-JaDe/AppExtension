@@ -22,6 +22,11 @@ abstract_target 'BaseCore' do
     target:'UserNotificationManager' do
         pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
     end
+    target:'List' do
+        pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
+        pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift'
+        pod 'DifferenceKit'
+    end
     target:'UIComponents' do
         pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
         pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift'
@@ -57,7 +62,9 @@ abstract_target 'BaseCore' do
         pod 'Kingfisher'
         pod 'MBProgressHUD'
         pod 'SwiftyUserDefaults'
-
+        
+        pod 'MJRefresh', :git => 'https://github.com/CoderMJLee/MJRefresh'
+        pod 'DifferenceKit'
 
         target:'RxExtensions' do
         end
@@ -72,12 +79,6 @@ abstract_target 'BaseCore' do
             pod 'MBProgressHUD'
             pod 'SwiftyUserDefaults'
 
-
-            target:'List' do
-                pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
-                pod 'DifferenceKit'
-                pod 'MJRefresh', :git => 'https://github.com/CoderMJLee/MJRefresh'
-            end
         end
 
         target:'AppExtension' do

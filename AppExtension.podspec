@@ -49,6 +49,12 @@ Pod::Spec.new do |s|
 
         ss.dependency "RxSwift"
     end
+    s.subspec "List" do |ss|
+        ss.source_files  = "Sources/List/**/*.{swift}"
+        ss.dependency "AppExtension/Core"
+
+        ss.dependency "DifferenceKit"
+    end
     s.subspec "RxExtensions" do |ss|
         ss.source_files  = "Sources/RxExtensions/**/*.{swift}"
         ss.dependency "AppExtension/Core"
@@ -104,25 +110,13 @@ Pod::Spec.new do |s|
         ss.dependency "AppExtension/UIComponents"
         ss.dependency "AppExtension/RxExtensions"
         ss.dependency "Alamofire"
-
-        #ss.dependency "SAMKeychain"
-        #ss.dependency "SwiftyUserDefaults" #不强制安装
-        #ss.dependency "Rx+Kingfisher" #不强制安装
-        #ss.dependency "MBProgressHUD" #不强制安装
-        ss.subspec "List" do |sss|
-            sss.source_files  = "Sources/ProjectBasic/List/**/*.{swift}"
-
-            sss.dependency "AppExtension/Animater"
-            sss.dependency "AppExtension/UIComponents/EmptyDataSet"
-
-            sss.dependency "DifferenceKit"
-            sss.dependency "MJRefresh"
-        end
+        #List
+        ss.dependency "AppExtension/List"
     end
     #项目集成
     s.subspec "MVCProject" do |ss|
         ss.dependency "AppExtension/ProjectBasic"
-        ss.dependency "AppExtension/ProjectBasic/List"
+        ss.dependency "MJRefresh"
 
         ss.dependency "AppExtension/UIComponents/ScrollExtensions"
         ss.dependency "AppExtension/UIComponents/CollectionKitExtensions"

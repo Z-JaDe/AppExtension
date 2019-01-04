@@ -12,9 +12,9 @@ open class ListViewController<ScrollViewType, AdapterType>: ScrollViewController
     where ScrollViewType: UIScrollView, AdapterType: ListDataUpdateProtocol & ListAdapterType {
     open override func viewDidLoad() {
         super.viewDidLoad()
-        self.adapter.dataController.reloadDataCompletion.subscribeOnNext {[weak self] () in
+        self.adapter.dataController.reloadDataCompletion = { [weak self] in
             self?.sn_view.emptyDataSet.reloadData()
-        }.disposed(by: self.disposeBag)
+        }
     }
 
     open var scrollItem: ScrollViewType {

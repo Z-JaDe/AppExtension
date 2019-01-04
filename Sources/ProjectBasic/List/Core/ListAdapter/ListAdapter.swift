@@ -10,19 +10,12 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-#if canImport(RxSwift)
-typealias MultipleSelection = RxMultipleSelectionProtocol
-#else
-typealias MultipleSelection = MultipleSelectionProtocol
-#endif
-
-open class ListAdapter<DataSourceType: SectionedDataSourceType>:
+open class ListAdapter<DataSource: SectionedDataSourceType>:
     ListAdapterType,
     EnabledStateDesignable,
     DisposeBagProtocol,
-    MultipleSelection
-where DataSourceType.S.Item: AdapterItemType, DataSourceType.S.Section: AdapterSectionType {
-    public typealias DataSource = DataSourceType
+    MultipleSelectionProtocol
+where DataSource.S.Item: AdapterItemType, DataSource.S.Section: AdapterSectionType {
     public typealias Section = DataSource.S.Section
     public typealias Item = DataSource.S.Item
 
@@ -37,17 +30,11 @@ where DataSourceType.S.Item: AdapterItemType, DataSourceType.S.Section: AdapterS
     }
     /// ZJaDe: 缓存池
     let bufferPool: BufferPool = BufferPool()
-    /// ZJaDe: 是否自动改回未选中
-    open var autoDeselectRow = true
+    /// ZJaDe: 是否自动改回未选中，子类实现相关逻辑
+    public var autoDeselectRow = true
     // MARK: - MultipleSelectionProtocol
     public typealias SelectItemType = Item
-    public var selectedItemArray: [SelectItemType] = []
-    #if canImport(RxSwift)
-    public let selectedItemArraySubject: PublishSubject<SelectedItemArrayType> = PublishSubject()
-    #endif
-    public var maxSelectedCount: UInt? = 0
-    public var checkCanSelectedClosure: ((SelectItemType, @escaping (Bool) -> Void) -> Void)?
-    public func changeSelectState(_ isSelected: Bool, _ item: SelectItemType) {
+    open func changeSelectState(_ isSelected: Bool, _ item: SelectItemType) {
         jdAbstractMethod()
     }
 
@@ -71,11 +58,7 @@ where DataSourceType.S.Item: AdapterItemType, DataSourceType.S.Section: AdapterS
 
     }
 }
-extension ListAdapter {
-    public func model(at indexPath: IndexPath) throws -> Item {
-        return try self.dataController.model(at: indexPath) as! Item
-    }
-}
+
 extension ListAdapter: ListDataUpdateProtocol {
     public var dataArray: ListDataType {
         return self.lastListDataInfo.data
