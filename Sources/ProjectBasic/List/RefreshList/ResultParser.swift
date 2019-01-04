@@ -84,15 +84,15 @@ extension ResultParser where AdapterType.Section: Equatable&InitProtocol, Adapte
         return self.itemArray(modelArray, refresh)
     }
 }
-extension ResultParser where AdapterType.Section: Equatable&InitProtocol, AdapterType.Item == TableAdapterItemCompatible {
+extension ResultParser where AdapterType.Section: Equatable&InitProtocol, AdapterType.Item == TableAdapterItemConvertible {
     @discardableResult
     public func modelArray(_ modelArray: [TableItemModel]?, _ refresh: Bool) -> ResultParser {
-        let listItems: [TableAdapterItemCompatible]? = modelArray?.map {.model($0)}
+        let listItems: [TableAdapterItemConvertible]? = modelArray?.map {.model($0)}
         return self.itemArray(listItems, refresh)
     }
     @discardableResult
     public func cellArray(_ cellArray: [StaticTableItemCell]?, _ refresh: Bool) -> ResultParser {
-        let listItems: [TableAdapterItemCompatible]? = cellArray?.map {.cell($0)}
+        let listItems: [TableAdapterItemConvertible]? = cellArray?.map {.cell($0)}
         return self.itemArray(listItems, refresh)
     }
 }

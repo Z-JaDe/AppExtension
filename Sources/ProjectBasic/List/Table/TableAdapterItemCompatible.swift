@@ -1,118 +1,71 @@
 //
-//  TableAdapterItemCompatible.swift
+//  TableAdapterItemConvertible.swift
 //  Alamofire
 //
 //  Created by 郑军铎 on 2018/7/17.
 //
 
 import Foundation
-
-public enum TableAdapterItemCompatible: AdapterItemType {
-    case cell(StaticTableItemCell)
-    case model(TableItemModel)
-
+extension TableAdapterItemConvertible: AdapterItemType {
     public var cell: StaticTableItemCell? {
-        if case .cell(let cell) = self {
-            return cell
-        }
-        return nil
+        return self.value as? StaticTableItemCell
+    }
+    public static func cell(_ value: StaticTableItemCell) -> TableAdapterItemConvertible {
+        return TableAdapterItemConvertible(value)
     }
     public var model: TableItemModel? {
-        if case .model(let model) = self {
-            return model
-        }
-        return nil
+        return self.value as? TableItemModel
     }
-    internal var value: AnyObject & CanSelectedStateDesignable & TableCellConfigProtocol & TableCellHeightProtocol & HiddenStateDesignable {
-        switch self {
-        case .cell(let cell):
-            return cell
-        case .model(let model):
-            return model
-        }
+    public static func model(_ value: TableItemModel) -> TableAdapterItemConvertible {
+        return TableAdapterItemConvertible(value)
+    }
+    var tableItem: TableCellConfigProtocol & TableCellHeightProtocol & EnabledStateDesignable {
+        return self.value as! TableCellConfigProtocol & TableCellHeightProtocol & EnabledStateDesignable
     }
 }
-
-extension TableAdapterItemCompatible: DataSourceItemtype, Hashable {
-    public static func == (lhs: TableAdapterItemCompatible, rhs: TableAdapterItemCompatible) -> Bool {
-        switch (lhs, rhs) {
-        case (.cell(let cell1), .cell(let cell2)):
-            return cell1 == cell2
-        case (.model(let model1), .model(let model2)):
-            return model1 == model2
-        case _:
+// MARK: - Diffable & Hashable
+extension TableAdapterItemConvertible: Diffable, Hashable {
+    public static func == (lhs: TableAdapterItemConvertible, rhs: TableAdapterItemConvertible) -> Bool {
+        if let value1 = lhs.cell, let value2 = rhs.cell {
+            return value1 == value2
+        } else if let value1 = lhs.model, let value2 = rhs.model {
+            return value1 == value2
+        } else {
+            assertionFailure("未知类型")
             return false
         }
     }
     public var hashValue: Int {
-        switch self {
-        case .cell(let cell):
-            return cell.hashValue
-        case .model(let model):
-            return model.hashValue
+        if let value = self.cell {
+            return value.hashValue
+        } else if let value = self.model {
+            return value.hashValue
+        } else {
+            assertionFailure("未知类型")
+            return ObjectIdentifier(self.value).hashValue
         }
     }
-    public func isContentEqual(to source: TableAdapterItemCompatible) -> Bool {
-        switch (self, source) {
-        case (.cell(let cell1), .cell(let cell2)):
-            return cell1.isContentEqual(to: cell2)
-        case (.model(let model1), .model(let model2)):
-            return model1.isContentEqual(to: model2)
-        case _:
+    public func isContentEqual(to source: TableAdapterItemConvertible) -> Bool {
+        if let value1 = self.cell, let value2 = source.cell {
+            return value1.isContentEqual(to: value2)
+        } else if let value1 = self.model, let value2 = source.model {
+            return value1.isContentEqual(to: value2)
+        } else {
+            assertionFailure("未知类型")
             return false
         }
     }
 }
-extension TableAdapterItemCompatible: HiddenStateDesignable {
-    public var isHidden: Bool {
-        get {return value.isHidden}
-        set {
-            switch self {
-            case .cell(let cell):
-                cell.isHidden = newValue
-            case .model(let model):
-                model.isHidden = newValue
-            }
-        }
-    }
-}
-extension TableAdapterItemCompatible: SelectedStateDesignable & CanSelectedStateDesignable {
-    public func checkCanSelected(_ closure: @escaping (Bool) -> Void) {
-        value.checkCanSelected(closure)
-    }
-    public func didSelectItem() {
-        value.didSelectItem()
-    }
-    public var isSelected: Bool {
-        get {return value.isSelected}
-        set {
-            switch self {
-            case .cell(let cell):
-                cell.isSelected = newValue
-            case .model(let model):
-                model.isSelected = newValue
-            }
-        }
-    }
-    public var canSelected: Bool {
-        get {return value.canSelected}
-        set {
-            switch self {
-            case .cell(let cell):
-                cell.canSelected = newValue
-            case .model(let model):
-                model.canSelected = newValue
-            }
-        }
-    }
-}
-extension TableAdapterItemCompatible: CustomStringConvertible {
+// MARK: - CustomStringConvertible
+extension TableAdapterItemConvertible: CustomStringConvertible {
     public var description: String {
-        switch self {
-        case .cell(let cell):
-            return "cell: \(cell)"
-        case .model(let model):
-            return "model: \(model)"
+        if let value = self.cell {
+            return "cell: \(value)"
+        } else if let value = self.model {
+            return "model: \(value)"
+        } else {
+            assertionFailure("未知类型")
+            return "\(self.value)"
         }
     }
 }

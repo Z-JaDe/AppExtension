@@ -18,10 +18,10 @@ extension UITableAdapter: TableAdapterDelegate {
             return 0.1
         }
         let item = dataController[indexPath]
-        if item.value.cellHeightLayoutType == .resetLayout {
-            item.value.calculateCellHeight(tableView!, wait: true)
+        if item.tableItem.cellHeightLayoutType == .resetLayout {
+            item.tableItem.calculateCellHeight(tableView!, wait: true)
         }
-        let height = item.value.tempCellHeight
+        let height = item.tableItem.tempCellHeight
         return height > 0 ? height : Space.cellDefaultHeight
     }
     // MARK: -
@@ -62,8 +62,8 @@ extension UITableAdapter: TableAdapterDelegate {
             return
         }
         let itemModel = dataController[indexPath]
-        itemModel.value.willAppear(in: cell)
-        if let itemCell = itemModel.value.getCell() {
+        itemModel.tableItem.willAppear(in: cell)
+        if let itemCell = itemModel.tableItem.getCell() {
             delegate?.didDisplay(item: itemCell)
             if let isEnabled = self.isEnabled {
                 itemCell.refreshEnabledState(isEnabled)
@@ -91,7 +91,7 @@ extension UITableAdapter: TableAdapterDelegate {
         if let result = delegate?.shouldHighlightItem(at: indexPath) {
             return result
         }
-        let item = dataController[indexPath].value.getCell()
+        let item = dataController[indexPath].tableItem.getCell()
         return item?.checkShouldHighlight() ?? true
     }
 
@@ -113,11 +113,11 @@ extension UITableAdapter: TableAdapterDelegate {
     }
 }
 extension UITableAdapter {
-    internal func createCell(in tableView: UITableView, for indexPath: IndexPath, item: TableAdapterItemCompatible) -> UITableViewCell {
-        if item.value.cellHeightLayoutType.isNeedLayout {
-            item.value.calculateCellHeight(tableView, wait: true)
+    internal func createCell(in tableView: UITableView, for indexPath: IndexPath, item: TableAdapterItemConvertible) -> UITableViewCell {
+        if item.tableItem.cellHeightLayoutType.isNeedLayout {
+            item.tableItem.calculateCellHeight(tableView, wait: true)
         }
-        return item.value.createCell(in: tableView, for: indexPath)
+        return item.tableItem.createCell(in: tableView, for: indexPath)
     }
     internal func _didSelectItem(at indexPath: IndexPath) {
         let item = dataController[indexPath]

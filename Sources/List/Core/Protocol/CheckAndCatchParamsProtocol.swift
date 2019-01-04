@@ -48,12 +48,8 @@ public protocol DataSourceItemsParamProtocol {
 extension DataSourceItemsParamProtocol {
     public func catchAllParams() -> [String: Any] {
         func catchModelParams(_ model: Any) -> [String: Any]? {
-            guard let model = model as? CatchParamsProtocol else {
-                return nil
-            }
-            if let model = model as? HiddenStateDesignable, model.isHidden == true {
-                return nil
-            }
+            guard let model = model as? CatchParamsProtocol else { return nil }
+            if let model = model as? HiddenStateDesignable, model.isHidden == true { return nil }
             if let closure = model.catchParamsClosure {
                 return closure()
             } else if !model.key.isEmpty {

@@ -388,7 +388,6 @@
 		C9D412E821DF4B65004368D4 /* UICollectionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932FA2921006ED200B8DF84 /* UICollectionAdapter.swift */; };
 		C9D412E921DF4B65004368D4 /* CollectionCellConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932FA4C21006ED200B8DF84 /* CollectionCellConfigProtocol.swift */; };
 		C9D412EA21DF4B65004368D4 /* UICollectionProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932FA2A21006ED200B8DF84 /* UICollectionProxy.swift */; };
-		C9D412EB21DF4B9B004368D4 /* DataSourceItemsParamProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932FA2321006ED100B8DF84 /* DataSourceItemsParamProtocol.swift */; };
 		C9D412EE21DF4BD3004368D4 /* ListDataUpdateProtocol+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D412EC21DF4BCB004368D4 /* ListDataUpdateProtocol+Table.swift */; };
 		C9D412EF21DF4C06004368D4 /* RefreshListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932FA5121006ED200B8DF84 /* RefreshListProtocol.swift */; };
 		C9D412F021DF4C06004368D4 /* ResultParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BC50E5216B081900381972 /* ResultParser.swift */; };
@@ -405,6 +404,17 @@
 		C9D4130521DF5F15004368D4 /* ListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962C52320CE1A050061FC20 /* ListAdapter.swift */; };
 		C9D4130821DF5F7F004368D4 /* UITable+AdapterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4130621DF5F71004368D4 /* UITable+AdapterDelegate.swift */; };
 		C9D4130B21DF6042004368D4 /* UICollection+AdapterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4130921DF6033004368D4 /* UICollection+AdapterDelegate.swift */; };
+		C9D4131A21DF6B74004368D4 /* BaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4130D21DF6B74004368D4 /* BaseWebViewController.swift */; };
+		C9D4131B21DF6B74004368D4 /* WebTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131021DF6B74004368D4 /* WebTableViewCell.swift */; };
+		C9D4131C21DF6B74004368D4 /* JSMutuallyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131121DF6B74004368D4 /* JSMutuallyClass.swift */; };
+		C9D4131D21DF6B74004368D4 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131221DF6B74004368D4 /* WebViewController.swift */; };
+		C9D4131E21DF6B74004368D4 /* WebViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131321DF6B74004368D4 /* WebViewProtocol.swift */; };
+		C9D4131F21DF6B74004368D4 /* WKUIProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131521DF6B74004368D4 /* WKUIProxy.swift */; };
+		C9D4132021DF6B74004368D4 /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131621DF6B74004368D4 /* WKWebViewController.swift */; };
+		C9D4132121DF6B74004368D4 /* ScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131721DF6B74004368D4 /* ScriptMessageHandler.swift */; };
+		C9D4132321DF6B74004368D4 /* LoadWebUrlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131921DF6B74004368D4 /* LoadWebUrlProtocol.swift */; };
+		C9D4132421DF6D7B004368D4 /* SectionedDataSource+ParamProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932FA2321006ED100B8DF84 /* SectionedDataSource+ParamProtocol.swift */; };
+		C9D4132721DF7110004368D4 /* TableAdapterItemConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4132521DF710A004368D4 /* TableAdapterItemConvertible.swift */; };
 		C9DF833E2179D1640044334E /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DF833D2179D1640044334E /* Core.swift */; };
 		E57C820B26CAE39CB877A165 /* Pods_BaseCore_UIComponents_CollectionKitExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE983DABFBEDE870E487D00B /* Pods_BaseCore_UIComponents_CollectionKitExtensions.framework */; };
 		E87C618F4B3BE06A26771C95 /* Pods_AppExtensionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AE030F6C0EAB67632202A9 /* Pods_AppExtensionTests.framework */; };
@@ -1041,7 +1051,7 @@
 		C932FA0121006ED100B8DF84 /* TableSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		C932FA0221006ED100B8DF84 /* TableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		C932FA1321006ED100B8DF84 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
-		C932FA2321006ED100B8DF84 /* DataSourceItemsParamProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceItemsParamProtocol.swift; sourceTree = "<group>"; };
+		C932FA2321006ED100B8DF84 /* SectionedDataSource+ParamProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SectionedDataSource+ParamProtocol.swift"; sourceTree = "<group>"; };
 		C932FA2721006ED200B8DF84 /* CollectSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectSection.swift; sourceTree = "<group>"; };
 		C932FA2921006ED200B8DF84 /* UICollectionAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionAdapter.swift; sourceTree = "<group>"; };
 		C932FA2A21006ED200B8DF84 /* UICollectionProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionProxy.swift; sourceTree = "<group>"; };
@@ -1190,6 +1200,16 @@
 		C9D412FF21DF5297004368D4 /* CellConfigProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigProtocol.swift; sourceTree = "<group>"; };
 		C9D4130621DF5F71004368D4 /* UITable+AdapterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITable+AdapterDelegate.swift"; sourceTree = "<group>"; };
 		C9D4130921DF6033004368D4 /* UICollection+AdapterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollection+AdapterDelegate.swift"; sourceTree = "<group>"; };
+		C9D4130D21DF6B74004368D4 /* BaseWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebViewController.swift; sourceTree = "<group>"; };
+		C9D4131021DF6B74004368D4 /* WebTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebTableViewCell.swift; sourceTree = "<group>"; };
+		C9D4131121DF6B74004368D4 /* JSMutuallyClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSMutuallyClass.swift; sourceTree = "<group>"; };
+		C9D4131221DF6B74004368D4 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		C9D4131321DF6B74004368D4 /* WebViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewProtocol.swift; sourceTree = "<group>"; };
+		C9D4131521DF6B74004368D4 /* WKUIProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKUIProxy.swift; sourceTree = "<group>"; };
+		C9D4131621DF6B74004368D4 /* WKWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
+		C9D4131721DF6B74004368D4 /* ScriptMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptMessageHandler.swift; sourceTree = "<group>"; };
+		C9D4131921DF6B74004368D4 /* LoadWebUrlProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadWebUrlProtocol.swift; sourceTree = "<group>"; };
+		C9D4132521DF710A004368D4 /* TableAdapterItemConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableAdapterItemConvertible.swift; sourceTree = "<group>"; };
 		C9DF833D2179D1640044334E /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		CAC4EE8DC65E4ACAC9F4FA09 /* Pods-BaseCore-Core.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-Core.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-Core/Pods-BaseCore-Core.release.xcconfig"; sourceTree = "<group>"; };
 		CB539C82E22D6BE8F28A88BC /* Pods_BaseCore_Custom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseCore_Custom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2119,11 +2139,10 @@
 		C932F7582100593E00B8DF84 /* ProjectBasic */ = {
 			isa = PBXGroup;
 			children = (
+				C9D4130C21DF6B43004368D4 /* WebView */,
 				C9D412A821DF45AD004368D4 /* List */,
 				C90BFBD221DDE1B100DF1E54 /* Network */,
 				C90E76F921C88E6300707519 /* ViewController */,
-				C932F7F4210069AC00B8DF84 /* Alert */,
-				C932F804210069AC00B8DF84 /* WebImage */,
 				C932F86F21006DC500B8DF84 /* Model */,
 				C932F85621006DC500B8DF84 /* Protocol */,
 				C932F7EA210069AC00B8DF84 /* Details */,
@@ -2137,6 +2156,8 @@
 		C932F7EA210069AC00B8DF84 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				C932F7F4210069AC00B8DF84 /* Alert */,
+				C932F804210069AC00B8DF84 /* WebImage */,
 				C932F8AC21006DC500B8DF84 /* CoreData */,
 				C91A7D0921D1C14500720E4F /* ScanUI */,
 				C92EF1322135393200F95C71 /* QRCode */,
@@ -2371,6 +2392,7 @@
 			children = (
 				C932FA1321006ED100B8DF84 /* TableViewDataSource.swift */,
 				C910E63521AE83BA0067B51B /* TableViewUpdating.swift */,
+				C9D4132521DF710A004368D4 /* TableAdapterItemConvertible.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -2784,6 +2806,7 @@
 			isa = PBXGroup;
 			children = (
 				C910E64621AEAF940067B51B /* SectionedDataSource.swift */,
+				C932FA2321006ED100B8DF84 /* SectionedDataSource+ParamProtocol.swift */,
 				C9D412FB21DF514B004368D4 /* RxDataSourceType.swift */,
 			);
 			path = SectionedViewDataSource;
@@ -2834,7 +2857,6 @@
 		C9D412C321DF4982004368D4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				C932FA2321006ED100B8DF84 /* DataSourceItemsParamProtocol.swift */,
 				C9D412CF21DF4A71004368D4 /* ListSection */,
 				C9D412C721DF49E4004368D4 /* ListDelegate */,
 				C90A1C1E21AFDFC4007D573C /* ListAdapter */,
@@ -2893,6 +2915,46 @@
 				C9D412FF21DF5297004368D4 /* CellConfigProtocol.swift */,
 			);
 			path = CellConfigProtocol;
+			sourceTree = "<group>";
+		};
+		C9D4130C21DF6B43004368D4 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				C9D4130E21DF6B74004368D4 /* UIWeb */,
+				C9D4131421DF6B74004368D4 /* WKWeb */,
+				C9D4131921DF6B74004368D4 /* LoadWebUrlProtocol.swift */,
+				C9D4130D21DF6B74004368D4 /* BaseWebViewController.swift */,
+				C9D4131321DF6B74004368D4 /* WebViewProtocol.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		C9D4130E21DF6B74004368D4 /* UIWeb */ = {
+			isa = PBXGroup;
+			children = (
+				C9D4130F21DF6B74004368D4 /* Cell */,
+				C9D4131121DF6B74004368D4 /* JSMutuallyClass.swift */,
+				C9D4131221DF6B74004368D4 /* WebViewController.swift */,
+			);
+			path = UIWeb;
+			sourceTree = "<group>";
+		};
+		C9D4130F21DF6B74004368D4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C9D4131021DF6B74004368D4 /* WebTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C9D4131421DF6B74004368D4 /* WKWeb */ = {
+			isa = PBXGroup;
+			children = (
+				C9D4131521DF6B74004368D4 /* WKUIProxy.swift */,
+				C9D4131621DF6B74004368D4 /* WKWebViewController.swift */,
+				C9D4131721DF6B74004368D4 /* ScriptMessageHandler.swift */,
+			);
+			path = WKWeb;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -4291,10 +4353,13 @@
 				C9D4130521DF5F15004368D4 /* ListAdapter.swift in Sources */,
 				C9D412E321DF4B52004368D4 /* UITableAdapter.swift in Sources */,
 				C9D4130B21DF6042004368D4 /* UICollection+AdapterDelegate.swift in Sources */,
+				C9D4132021DF6B74004368D4 /* WKWebViewController.swift in Sources */,
 				C90BFC2121DE430B00DF1E54 /* RequestContext+Map.swift in Sources */,
 				C9D412B621DF4600004368D4 /* TitleCell.swift in Sources */,
+				C9D4131E21DF6B74004368D4 /* WebViewProtocol.swift in Sources */,
 				C932F822210069AD00B8DF84 /* Alert.swift in Sources */,
 				C9D412CD21DF4A31004368D4 /* TableItemCell+Height.swift in Sources */,
+				C9D4131F21DF6B74004368D4 /* WKUIProxy.swift in Sources */,
 				C9D412B321DF45FA004368D4 /* DynamicCollectionItemCell.swift in Sources */,
 				C9D412E621DF4B52004368D4 /* TableAdapterItemCompatible.swift in Sources */,
 				C9D412A721DF4326004368D4 /* CollectionViewController.swift in Sources */,
@@ -4304,18 +4369,21 @@
 				C9D412E921DF4B65004368D4 /* CollectionCellConfigProtocol.swift in Sources */,
 				C90E76FE21C8933200707519 /* UpdateDataProtocol.swift in Sources */,
 				C9D4129C21DF4218004368D4 /* UIViewController.swift in Sources */,
-				C9D412EB21DF4B9B004368D4 /* DataSourceItemsParamProtocol.swift in Sources */,
 				C932F83A210069AD00B8DF84 /* Permission.swift in Sources */,
 				C9D412BB21DF4601004368D4 /* StaticTableItemCell.swift in Sources */,
 				C9D412C021DF468B004368D4 /* CollectionReusableView.swift in Sources */,
+				C9D4131C21DF6B74004368D4 /* JSMutuallyClass.swift in Sources */,
 				C9D412D221DF4A88004368D4 /* TableSection.swift in Sources */,
 				C9D412B521DF4600004368D4 /* SwitchCell.swift in Sources */,
 				C932F8C521006DC500B8DF84 /* Model.swift in Sources */,
 				C9D412B921DF4601004368D4 /* DetailTitleCell.swift in Sources */,
 				C90BFC0321DE001800DF1E54 /* ErrorProtocol.swift in Sources */,
 				C90BFC1221DE082600DF1E54 /* SessionManager.swift in Sources */,
+				C9D4131A21DF6B74004368D4 /* BaseWebViewController.swift in Sources */,
+				C9D4131D21DF6B74004368D4 /* WebViewController.swift in Sources */,
 				C9D412E821DF4B65004368D4 /* UICollectionAdapter.swift in Sources */,
 				C9D412E721DF4B52004368D4 /* UITableProxy.swift in Sources */,
+				C9D4132321DF6B74004368D4 /* LoadWebUrlProtocol.swift in Sources */,
 				C9D412B021DF45FA004368D4 /* TableModelCell.swift in Sources */,
 				C9D412A521DF4326004368D4 /* ScrollViewController.swift in Sources */,
 				C932F83D210069AD00B8DF84 /* PermissionScope+Photos.swift in Sources */,
@@ -4341,6 +4409,7 @@
 				C9D412B421DF4600004368D4 /* ButtonCell.swift in Sources */,
 				C9D412BF21DF468B004368D4 /* CollectionItemCell.swift in Sources */,
 				C9283C3521BEC50500361B87 /* HeaderViewContainerProtocol.swift in Sources */,
+				C9D4131B21DF6B74004368D4 /* WebTableViewCell.swift in Sources */,
 				C9D412BC21DF468B004368D4 /* ItemCellBackgroundView.swift in Sources */,
 				C9D412A921DF45EE004368D4 /* TableItemModel.swift in Sources */,
 				C90BFC0421DE001800DF1E54 /* MonitorNetwork.swift in Sources */,
@@ -4358,6 +4427,7 @@
 				C9D412AA21DF45EE004368D4 /* ListItemModel.swift in Sources */,
 				C9D412A621DF4326004368D4 /* TableViewController.swift in Sources */,
 				C932F7A821005A9F00B8DF84 /* ProjectBasic.swift in Sources */,
+				C9D4132121DF6B74004368D4 /* ScriptMessageHandler.swift in Sources */,
 				C9D412E521DF4B52004368D4 /* TableViewHeaderFooterView.swift in Sources */,
 				C932F824210069AD00B8DF84 /* MessageHUDProtocol.swift in Sources */,
 				C9D4130121DF529A004368D4 /* CellConfigProtocol.swift in Sources */,
@@ -4414,11 +4484,13 @@
 				C910E63B21AE8A950067B51B /* Updating.swift in Sources */,
 				C9D412F521DF4DAA004368D4 /* ListAdapterType.swift in Sources */,
 				C932FA6621006ED200B8DF84 /* TableViewDataSource.swift in Sources */,
+				C9D4132421DF6D7B004368D4 /* SectionedDataSource+ParamProtocol.swift in Sources */,
 				C9D4130321DF5E8A004368D4 /* MultipleSelectionProtocol.swift in Sources */,
 				C962C58C20CE1A060061FC20 /* List.swift in Sources */,
 				C910E63C21AE8A950067B51B /* TableViewUpdating.swift in Sources */,
 				C9B17600213045260095DC35 /* CollectionViewDataSource.swift in Sources */,
 				C918DF0921B52299000F2AAC /* DifferenceKitCompatible.swift in Sources */,
+				C9D4132721DF7110004368D4 /* TableAdapterItemConvertible.swift in Sources */,
 				C918DF0721B52299000F2AAC /* ListUpdateInfo.swift in Sources */,
 				C910E63D21AE8A950067B51B /* CollectionViewUpdating.swift in Sources */,
 				C918DF0821B52299000F2AAC /* ListData.swift in Sources */,
