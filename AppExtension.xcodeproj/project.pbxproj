@@ -396,6 +396,12 @@
 		C9B17600213045260095DC35 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B175FE213044F10095DC35 /* CollectionViewDataSource.swift */; };
 		C9B34DFC2133E097002C5F37 /* ListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B34DFB2133E097002C5F37 /* ListViewControllerTest.swift */; };
 		C9BC50E6216B081900381972 /* ResultParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BC50E5216B081900381972 /* ResultParser.swift */; };
+		C9D4129B21DF4218004368D4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4129921DF4218004368D4 /* BaseViewController.swift */; };
+		C9D4129C21DF4218004368D4 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4129A21DF4218004368D4 /* UIViewController.swift */; };
+		C9D412A421DF4326004368D4 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D412A021DF4326004368D4 /* ListViewController.swift */; };
+		C9D412A521DF4326004368D4 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D412A121DF4326004368D4 /* ScrollViewController.swift */; };
+		C9D412A621DF4326004368D4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D412A221DF4326004368D4 /* TableViewController.swift */; };
+		C9D412A721DF4326004368D4 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D412A321DF4326004368D4 /* CollectionViewController.swift */; };
 		C9DF833E2179D1640044334E /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DF833D2179D1640044334E /* Core.swift */; };
 		E57C820B26CAE39CB877A165 /* Pods_BaseCore_UIComponents_CollectionKitExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE983DABFBEDE870E487D00B /* Pods_BaseCore_UIComponents_CollectionKitExtensions.framework */; };
 		E87C618F4B3BE06A26771C95 /* Pods_AppExtensionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AE030F6C0EAB67632202A9 /* Pods_AppExtensionTests.framework */; };
@@ -1186,6 +1192,12 @@
 		C9B34DFB2133E097002C5F37 /* ListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerTest.swift; sourceTree = "<group>"; };
 		C9BC50E5216B081900381972 /* ResultParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultParser.swift; sourceTree = "<group>"; };
 		C9C3DE361EBF3729373D9852 /* Pods-AppExtensionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppExtensionUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppExtensionUITests/Pods-AppExtensionUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C9D4129921DF4218004368D4 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C9D4129A21DF4218004368D4 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		C9D412A021DF4326004368D4 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		C9D412A121DF4326004368D4 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		C9D412A221DF4326004368D4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		C9D412A321DF4326004368D4 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		C9DF833D2179D1640044334E /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		CAC4EE8DC65E4ACAC9F4FA09 /* Pods-BaseCore-Core.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-Core.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-Core/Pods-BaseCore-Core.release.xcconfig"; sourceTree = "<group>"; };
 		CB539C82E22D6BE8F28A88BC /* Pods_BaseCore_Custom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseCore_Custom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1621,6 +1633,9 @@
 		C90E76F921C88E6300707519 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C9D4129921DF4218004368D4 /* BaseViewController.swift */,
+				C9D4129A21DF4218004368D4 /* UIViewController.swift */,
+				C9D4129F21DF4326004368D4 /* ScrollViewController */,
 				C90FFA0621DF401600A995A3 /* NeedUpdate */,
 			);
 			path = ViewController;
@@ -2811,6 +2826,17 @@
 				C9BC50E5216B081900381972 /* ResultParser.swift */,
 			);
 			path = RefreshList;
+			sourceTree = "<group>";
+		};
+		C9D4129F21DF4326004368D4 /* ScrollViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C9D412A021DF4326004368D4 /* ListViewController.swift */,
+				C9D412A121DF4326004368D4 /* ScrollViewController.swift */,
+				C9D412A221DF4326004368D4 /* TableViewController.swift */,
+				C9D412A321DF4326004368D4 /* CollectionViewController.swift */,
+			);
+			path = ScrollViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -4208,19 +4234,24 @@
 				C932F8B321006DC500B8DF84 /* ConfigModelProtocol.swift in Sources */,
 				C91A7D0D21D1C52900720E4F /* ScanMaskView.swift in Sources */,
 				C90BFC2721DE4E5600DF1E54 /* ResultModelType.swift in Sources */,
+				C9D4129B21DF4218004368D4 /* BaseViewController.swift in Sources */,
 				C932F8F421006DC500B8DF84 /* EntityManager+Operation.swift in Sources */,
 				C90BFC2121DE430B00DF1E54 /* RequestContext+Map.swift in Sources */,
 				C932F822210069AD00B8DF84 /* Alert.swift in Sources */,
+				C9D412A721DF4326004368D4 /* CollectionViewController.swift in Sources */,
 				C9283C2721BEB91200361B87 /* WebImage.swift in Sources */,
 				C90E76FE21C8933200707519 /* UpdateDataProtocol.swift in Sources */,
+				C9D4129C21DF4218004368D4 /* UIViewController.swift in Sources */,
 				C932F83A210069AD00B8DF84 /* Permission.swift in Sources */,
 				C932F8C521006DC500B8DF84 /* Model.swift in Sources */,
 				C90BFC0321DE001800DF1E54 /* ErrorProtocol.swift in Sources */,
 				C90BFC1221DE082600DF1E54 /* SessionManager.swift in Sources */,
+				C9D412A521DF4326004368D4 /* ScrollViewController.swift in Sources */,
 				C932F83D210069AD00B8DF84 /* PermissionScope+Photos.swift in Sources */,
 				C90BFBE221DDEBE200DF1E54 /* TargetType.swift in Sources */,
 				C932F825210069AD00B8DF84 /* HUD.swift in Sources */,
 				C90BFC1B21DE275F00DF1E54 /* RxProgress.swift in Sources */,
+				C9D412A421DF4326004368D4 /* ListViewController.swift in Sources */,
 				C90E770121C893BE00707519 /* UpdateNavItemProtocol.swift in Sources */,
 				C932F83B210069AD00B8DF84 /* PermissionScope+AVFoundation.swift in Sources */,
 				C90BFC2D21DE65B700DF1E54 /* RequestContext+Rx.swift in Sources */,
@@ -4238,6 +4269,7 @@
 				C932F823210069AD00B8DF84 /* JDProgressHUD.swift in Sources */,
 				C91A7D0B21D1C16E00720E4F /* LogicScanViewController.swift in Sources */,
 				C90E76FC21C88F1C00707519 /* NetworkProtocol.swift in Sources */,
+				C9D412A621DF4326004368D4 /* TableViewController.swift in Sources */,
 				C932F7A821005A9F00B8DF84 /* ProjectBasic.swift in Sources */,
 				C932F824210069AD00B8DF84 /* MessageHUDProtocol.swift in Sources */,
 				C90BFC2321DE448D00DF1E54 /* NetworkError.swift in Sources */,
