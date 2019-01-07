@@ -7,8 +7,7 @@
 //
 
 import UIKit
-// MARK: -
-public protocol EmptyDataSetProtocol: DisposeBagProtocol {
+public protocol EmptyDataSetProtocol: AssociatedObjectProtocol {
     var emptyDataSet: EmptyDataSetView {get}
     func changeEmptyState(_ state: EmptyViewState)
 
@@ -20,13 +19,12 @@ extension EmptyDataSetProtocol {
     public var emptyDataSet: EmptyDataSetView {
         return associatedObject(&emptyDataSetViewKey, createIfNeed: EmptyDataSetView().then({ (node) in
             node.container = self
-            node.emptyStateChangedObserver()
-                .subscribeOnNext({[weak self, weak node] (_) in
-                    guard let `self` = self else { return }
-                    guard let node = node else { return }
-                    self.addEmptyItemToSuperItemIfNeed(node)
-                    node.reloadData()
-                }).disposed(by: self.disposeBag)
+            node.whenEmptyStateChanged {[weak self, weak node] (_) in
+                guard let `self` = self else { return }
+                guard let node = node else { return }
+                self.addEmptyItemToSuperItemIfNeed(node)
+                node.reloadData()
+            }
         }))
     }
     public func changeEmptyState(_ state: EmptyViewState) {

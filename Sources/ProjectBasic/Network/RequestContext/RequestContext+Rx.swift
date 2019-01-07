@@ -34,4 +34,3 @@ extension ObservableType where E == RequestContext<DataRequest> {
             .retryWhen({ $0._retryError() })
     }
 }
-

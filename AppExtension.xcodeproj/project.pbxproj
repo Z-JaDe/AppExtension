@@ -118,6 +118,10 @@
 		C91A7D0B21D1C16E00720E4F /* LogicScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A7D0A21D1C16E00720E4F /* LogicScanViewController.swift */; };
 		C91A7D0D21D1C52900720E4F /* ScanMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A7D0C21D1C52900720E4F /* ScanMaskView.swift */; };
 		C91A7D1021D1C5BA00720E4F /* CanCancelModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A7D0E21D1C5A000720E4F /* CanCancelModalViewController.swift */; };
+		C91B1E7521E31DB3004FEE44 /* Store+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B1E7321E31D64004FEE44 /* Store+Rx.swift */; };
+		C91B1E7821E32410004FEE44 /* EmptyDataSet+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B1E7621E3240C004FEE44 /* EmptyDataSet+Rx.swift */; };
+		C91B1E7B21E32478004FEE44 /* EmptyDataSetProtocol+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B1E7921E32475004FEE44 /* EmptyDataSetProtocol+Rx.swift */; };
+		C91B1E7F21E328C0004FEE44 /* RefreshListProtocol+MJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B1E7D21E328B9004FEE44 /* RefreshListProtocol+MJ.swift */; };
 		C91BB58021CA1495001D7789 /* Coordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = C91BB57E21CA1495001D7789 /* Coordinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C91BB58321CA1495001D7789 /* Coordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91BB57C21CA1494001D7789 /* Coordinator.framework */; };
 		C91BB58421CA1495001D7789 /* Coordinator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C91BB57C21CA1494001D7789 /* Coordinator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -910,6 +914,10 @@
 		C91A7D0A21D1C16E00720E4F /* LogicScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicScanViewController.swift; sourceTree = "<group>"; };
 		C91A7D0C21D1C52900720E4F /* ScanMaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanMaskView.swift; sourceTree = "<group>"; };
 		C91A7D0E21D1C5A000720E4F /* CanCancelModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanCancelModalViewController.swift; sourceTree = "<group>"; };
+		C91B1E7321E31D64004FEE44 /* Store+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Store+Rx.swift"; sourceTree = "<group>"; };
+		C91B1E7621E3240C004FEE44 /* EmptyDataSet+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmptyDataSet+Rx.swift"; sourceTree = "<group>"; };
+		C91B1E7921E32475004FEE44 /* EmptyDataSetProtocol+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmptyDataSetProtocol+Rx.swift"; sourceTree = "<group>"; };
+		C91B1E7D21E328B9004FEE44 /* RefreshListProtocol+MJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RefreshListProtocol+MJ.swift"; sourceTree = "<group>"; };
 		C91BB57C21CA1494001D7789 /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C91BB57E21CA1495001D7789 /* Coordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coordinator.h; sourceTree = "<group>"; };
 		C91BB57F21CA1495001D7789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1904,6 +1912,23 @@
 			path = ScanUI;
 			sourceTree = "<group>";
 		};
+		C91B1E7221E31D4A004FEE44 /* ReSwift+RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				C91B1E7321E31D64004FEE44 /* Store+Rx.swift */,
+			);
+			path = "ReSwift+RxSwift";
+			sourceTree = "<group>";
+		};
+		C91B1E7C21E3255F004FEE44 /* EmptyDataSet */ = {
+			isa = PBXGroup;
+			children = (
+				C91B1E7621E3240C004FEE44 /* EmptyDataSet+Rx.swift */,
+				C91B1E7921E32475004FEE44 /* EmptyDataSetProtocol+Rx.swift */,
+			);
+			path = EmptyDataSet;
+			sourceTree = "<group>";
+		};
 		C91BB57D21CA1495001D7789 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -2127,6 +2152,7 @@
 		C9283BEC21BE9C1D00361B87 /* EmptyDataSet */ = {
 			isa = PBXGroup;
 			children = (
+				C91B1E7C21E3255F004FEE44 /* EmptyDataSet */,
 				C932FAA621006EFD00B8DF84 /* EmptyDataSetView.swift */,
 				C932FAA721006EFD00B8DF84 /* EmptyDataSetProtocol+ScrollItem.swift */,
 				C932FAA821006EFD00B8DF84 /* EmptyDataSetProtocol.swift */,
@@ -2167,6 +2193,7 @@
 		C932F7EA210069AC00B8DF84 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				C91B1E7221E31D4A004FEE44 /* ReSwift+RxSwift */,
 				C932F7F4210069AC00B8DF84 /* Alert */,
 				C932F804210069AC00B8DF84 /* WebImage */,
 				C932F8AC21006DC500B8DF84 /* CoreData */,
@@ -2827,6 +2854,7 @@
 			isa = PBXGroup;
 			children = (
 				C932FA5121006ED200B8DF84 /* RefreshListProtocol.swift */,
+				C91B1E7D21E328B9004FEE44 /* RefreshListProtocol+MJ.swift */,
 				C9BC50E5216B081900381972 /* ResultParser.swift */,
 			);
 			path = RefreshList;
@@ -3888,6 +3916,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/CollectionKit/CollectionKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -3913,6 +3942,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftExt.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CollectionKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -4349,8 +4379,10 @@
 				C9283BF721BE9C3500361B87 /* EmptyDataSetProtocol+ScrollItem.swift in Sources */,
 				C9283C0221BE9D5400361B87 /* EmptyDataSet.swift in Sources */,
 				C9283BFB21BE9C3500361B87 /* EmptyDataSetContentProtocol.swift in Sources */,
+				C91B1E7B21E32478004FEE44 /* EmptyDataSetProtocol+Rx.swift in Sources */,
 				C9283BF921BE9C3500361B87 /* EmptyDataSetView.swift in Sources */,
 				C9283BFA21BE9C3500361B87 /* EmptyDataSetContentView.swift in Sources */,
+				C91B1E7821E32410004FEE44 /* EmptyDataSet+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4365,6 +4397,7 @@
 				C91A7D0D21D1C52900720E4F /* ScanMaskView.swift in Sources */,
 				C9D412F021DF4C06004368D4 /* ResultParser.swift in Sources */,
 				C9D412CE21DF4A31004368D4 /* TableCellHeight.swift in Sources */,
+				C91B1E7521E31DB3004FEE44 /* Store+Rx.swift in Sources */,
 				C90BFC2721DE4E5600DF1E54 /* ResultModelType.swift in Sources */,
 				C9D412CC21DF4A31004368D4 /* TableCellHeightProtocol.swift in Sources */,
 				C9D412B821DF4600004368D4 /* TextViewCell.swift in Sources */,
@@ -4416,6 +4449,7 @@
 				C9D412A421DF4326004368D4 /* ListViewController.swift in Sources */,
 				C90E770121C893BE00707519 /* UpdateNavItemProtocol.swift in Sources */,
 				C9D412EA21DF4B65004368D4 /* UICollectionProxy.swift in Sources */,
+				C91B1E7F21E328C0004FEE44 /* RefreshListProtocol+MJ.swift in Sources */,
 				C932F83B210069AD00B8DF84 /* PermissionScope+AVFoundation.swift in Sources */,
 				C90BFC2D21DE65B700DF1E54 /* RequestContext+Rx.swift in Sources */,
 				C9D412AD21DF45F4004368D4 /* SNCollectionViewCell.swift in Sources */,

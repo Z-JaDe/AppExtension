@@ -7,7 +7,6 @@
 //
 
 import Foundation
-#if canImport(MJRefresh)
 public class ResultParser<RefreshList: RefreshListProtocol, AdapterType: ListDataUpdateProtocol> {
     public let list: RefreshList
     public let adapter: AdapterType
@@ -96,4 +95,3 @@ extension ResultParser where AdapterType.Section: Equatable&InitProtocol, Adapte
         return self.itemArray(listItems, refresh)
     }
 }
-#endif

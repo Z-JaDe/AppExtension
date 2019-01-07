@@ -25,14 +25,8 @@ open class TableViewController: ListViewController<TableView, UITableAdapter> {
     // MARK: -
     private lazy var tableHeaderSection: TableSection = TableSection()
     private lazy var tableFooterSection: TableSection = TableSection()
-    private lazy var tableHeaderCell: CustomTableItemCell<UIView> = {
-        let view = CustomTableItemCell()
-        return view
-    }()
-    private lazy var tableFooterCell: CustomTableItemCell<UIView> = {
-        let view = CustomTableItemCell()
-        return view
-    }()
+    private lazy var tableHeaderCell: CustomTableItemCell<UIView> = CustomTableItemCell()
+    private lazy var tableFooterCell: CustomTableItemCell<UIView> = CustomTableItemCell()
     public var tableHeaderView: UIView? {
         get {return self.tableHeaderCell.customView}
         set {

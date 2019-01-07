@@ -16,6 +16,7 @@ PODS:
   - MBProgressHUD (1.1.0)
   - MJRefresh (3.1.15.6)
   - ModalManager (1.0.0)
+  - ReSwift (4.0.1)
   - "Rx+Kingfisher (1.0.0)":
     - "Rx+Kingfisher/RxSwift (= 1.0.0)"
   - "Rx+Kingfisher/Core (1.0.0)":
@@ -68,6 +69,7 @@ DEPENDENCIES:
   - MBProgressHUD
   - MJRefresh (from `https://github.com/CoderMJLee/MJRefresh`)
   - ModalManager (from `~/Desktop/wallet-ios/BaseSupport/ModalManager`)
+  - ReSwift
   - "Rx+Kingfisher (from `~/Desktop/wallet-ios/BaseSupport/RxKingfisher`)"
   - RxAnimated
   - RxCocoa (from `https://github.com/ReactiveX/RxSwift`)
@@ -87,6 +89,7 @@ SPEC REPOS:
     - DifferenceKit
     - Kingfisher
     - MBProgressHUD
+    - ReSwift
     - RxAnimated
     - RxAtomic
     - RxGesture
@@ -148,6 +151,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: 0efa19656679d70a0f47cbe76e56c2271fe53a97
   ModalManager: 906a0d450038948099d8111d429314345afc7b97
+  ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
   "Rx+Kingfisher": 5b57ffb8306230cfed69820229061dcc66bf4d68
   RxAnimated: 57a731e59557219480fb3dd86d965d977d863fc6
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
@@ -162,6 +166,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
   Validation: b695c801939fdaa32b489dbf6e4a739538829a5a
 
-PODFILE CHECKSUM: 97c98268cec89daca338d5b7c0bc791f5ffa41fd
+PODFILE CHECKSUM: caca8f2f070dddca28340de87e0e2d031787db46
 
 COCOAPODS: 1.5.0

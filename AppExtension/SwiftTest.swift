@@ -69,29 +69,7 @@ func mainColor() {
         window?.addSubview(imageView)
     }
 }
-func flatMapLatest() {
-    let publish = PublishSubject<Int>()
-    let publishFlat = publish.logDebug("a").flatMapLatest { (value) in
-        return Observable.just(value)
-        }.share()
 
-    publishFlat.subscribeOnNext { (value) in
-        logDebug(value)
-        }.disposed(by: globalDisposeBag)
-    publishFlat.subscribeOnNext { (value) in
-        logDebug(value)
-        }.disposed(by: globalDisposeBag)
-    publishFlat.subscribeOnNext { (value) in
-        logDebug(value)
-        }.disposed(by: globalDisposeBag)
-    publishFlat.subscribeOnNext { (value) in
-        logDebug(value)
-        }.disposed(by: globalDisposeBag)
-    publishFlat.subscribeOnNext { (value) in
-        logDebug(value)
-        }.disposed(by: globalDisposeBag)
-    publish.onNext(1)
-}
 //    func regex() {
 //        var regex: [String] = []
 //        let 汉字 = "\\u4E00-\\u9FA5"

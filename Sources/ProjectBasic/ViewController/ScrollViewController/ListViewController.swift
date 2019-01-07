@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class ListViewController<ScrollViewType, AdapterType>: ScrollViewController<ScrollViewType>, RefreshListProtocol
+open class ListViewController<ScrollViewType, AdapterType>: ScrollViewController<ScrollViewType>
     where ScrollViewType: UIScrollView, AdapterType: ListDataUpdateProtocol & ListAdapterType {
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,27 +20,13 @@ open class ListViewController<ScrollViewType, AdapterType>: ScrollViewController
     open var scrollItem: ScrollViewType {
         return self.sn_view
     }
-    private var _adapter: AdapterType?
-    public var adapter: AdapterType {
-        if let adapter = _adapter {
-            return adapter
-        }
-        let adapter = loadAdapter()
-        _adapter = adapter
-        return adapter
-    }
+    public lazy private(set) var adapter: AdapterType = self.loadAdapter()
     func loadAdapter() -> AdapterType {
         jdAbstractMethod()
     }
 
-    // MARK: - ResultParser RefreshListProtocol
-    public var parser: ResultParser<ListViewController, AdapterType> {
-        return ResultParser(self, self.adapter)
-    }
+    // MARK: - RefreshListProtocol
     public var networkPage: Int = 0
-    public func resetNetworkPageIndex() {
-        self.networkPage = 0
-    }
     public var limit: UInt? = 20
     // MARK: -
     open override func request() {
@@ -65,5 +51,10 @@ open class ListViewController<ScrollViewType, AdapterType>: ScrollViewController
         } else {
             jdAbstractMethod()
         }
+    }
+}
+extension ListViewController: RefreshListProtocol {
+    public var parser: ResultParser<ListViewController, AdapterType> {
+        return ResultParser(self, self.adapter)
     }
 }

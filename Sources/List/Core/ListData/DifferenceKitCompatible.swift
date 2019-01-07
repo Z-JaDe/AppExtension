@@ -44,7 +44,7 @@ extension SectionModelItem {
         let items = self.items.filter({ (item) -> Bool in
             if let item = item as? HiddenStateDesignable {
                 return item.isHidden != true
-            } else { 
+            } else {
                 return true
             }
         })

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "000000004DE0"
+               BlueprintIdentifier = "000000004EB0"
                BuildableName = "ModalManager.framework"
                BlueprintName = "ModalManager"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "000000004DE0"
+            BlueprintIdentifier = "000000004EB0"
             BuildableName = "ModalManager.framework"
             BlueprintName = "ModalManager"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -63,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "000000004DE0"
+            BlueprintIdentifier = "000000004EB0"
             BuildableName = "ModalManager.framework"
             BlueprintName = "ModalManager"
             ReferencedContainer = "container:Pods.xcodeproj">

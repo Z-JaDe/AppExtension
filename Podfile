@@ -78,7 +78,7 @@ abstract_target 'BaseCore' do
             pod 'Kingfisher'
             pod 'MBProgressHUD'
             pod 'SwiftyUserDefaults'
-
+            pod 'ReSwift'
         end
 
         target:'AppExtension' do

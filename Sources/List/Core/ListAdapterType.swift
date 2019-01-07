@@ -26,6 +26,7 @@ extension ListAdapterType {
 }
 extension ListAdapterType {
     public func model(at indexPath: IndexPath) throws -> Item {
+        // swiftlint:disable force_cast
         return try self.dataController.model(at: indexPath) as! Item
     }
 }

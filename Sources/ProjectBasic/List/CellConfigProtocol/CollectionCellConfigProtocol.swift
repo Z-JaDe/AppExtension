@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 protocol CollectionCellConfigProtocol: CellConfigProtocol {
     func createCell(in collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell
     func willAppear(in cell: UICollectionViewCell)

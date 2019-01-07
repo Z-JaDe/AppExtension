@@ -80,17 +80,13 @@ Pod::Spec.new do |s|
     s.subspec "UIComponents" do |ss|
         ss.source_files  = "Sources/UIComponents/**/*.{swift}"
 
-        ss.dependency "SnapKit"
         ss.dependency "AppExtension/Core"
         ss.dependency "AppExtension/Codable"
         ss.dependency "AppExtension/Animater"
-
-        ss.dependency "RxSwift"
-        ss.dependency "RxCocoa"
+        ss.dependency "SnapKit"
 
         ss.subspec "EmptyDataSet" do |sss|
             sss.source_files  = "Sources/UIComponents/EmptyDataSet/**/*.{swift}"
-            sss.dependency "AppExtension/RxExtensions"
         end
         ss.subspec "ScrollExtensions" do |sss|
             sss.source_files  = "Sources/UIComponents/ScrollExtensions/**/*.{swift}"
@@ -112,11 +108,11 @@ Pod::Spec.new do |s|
         ss.dependency "Alamofire"
         #List
         ss.dependency "AppExtension/List"
+
     end
     #项目集成
     s.subspec "MVCProject" do |ss|
         ss.dependency "AppExtension/ProjectBasic"
-        ss.dependency "MJRefresh"
 
         ss.dependency "AppExtension/UIComponents/ScrollExtensions"
         ss.dependency "AppExtension/UIComponents/CollectionKitExtensions"
@@ -124,9 +120,14 @@ Pod::Spec.new do |s|
         ss.dependency "AppExtension/AnimatedTransition"
         ss.dependency "AppExtension/UserNotificationManager"
 
+        #可选扩展
         ss.dependency "SwiftyUserDefaults"
         ss.dependency "Rx+Kingfisher"
         ss.dependency "MBProgressHUD"
+        ss.dependency "MJRefresh"
+        ss.dependency "RxSwift"
+        ss.dependency "RxCocoa"
+        ss.dependency "ReSwift"
     end
     s.subspec "Default" do |ss|
         ss.dependency "AppExtension/MVCProject"

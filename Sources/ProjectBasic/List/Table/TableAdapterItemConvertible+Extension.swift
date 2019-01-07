@@ -20,6 +20,7 @@ extension TableAdapterItemConvertible: AdapterItemType {
         return TableAdapterItemConvertible(value)
     }
     var tableItem: TableCellConfigProtocol & TableCellHeightProtocol & EnabledStateDesignable {
+        // swiftlint:disable force_cast
         return self.value as! TableCellConfigProtocol & TableCellHeightProtocol & EnabledStateDesignable
     }
 }

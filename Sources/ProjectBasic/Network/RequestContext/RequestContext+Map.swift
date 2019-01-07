@@ -50,10 +50,9 @@ extension RequestContext where Value == Result<Data> {
         switch self.value {
         case .failure(let error):
             logError("-|\(self.urlPath) 接口报错->\(error.localizedDescription)")
-        case .success(_):
+        case .success:
             let str = try? mapString()
             logInfo("获取到 -|\(self.urlPath) 接口数据->\(str ?? "空")")
         }
     }
 }
-

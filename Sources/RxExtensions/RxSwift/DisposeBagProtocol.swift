@@ -29,8 +29,11 @@ extension DisposeBagProtocol {
 // MARK: -
 private var jdDisposeBagDictKey: UInt8 = 0
 public extension DisposeBagProtocol {
-    func resetDisposeBagWithTag(_ tag: String) {
-        self.setDisposeBag(tag: tag, DisposeBag())
+    @discardableResult
+    func resetDisposeBagWithTag(_ tag: String) -> DisposeBag {
+        let bag = DisposeBag()
+        self.setDisposeBag(tag: tag, bag)
+        return bag
     }
     func disposeBagWithTag(_ tag: String) -> DisposeBag {
         var dict: [String: DisposeBag] = associatedObject(&jdDisposeBagDictKey, createIfNeed: [: ])

@@ -9,7 +9,6 @@
 import Foundation
 
 #if !AppExtensionPods
-@_exported import RxExtensions
 @_exported import UIComponents
 #endif
 

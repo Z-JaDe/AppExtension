@@ -165,6 +165,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CollectionKit/CollectionKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CocoaExtension/CocoaExtension.framework"
@@ -189,6 +190,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CollectionKit/CollectionKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

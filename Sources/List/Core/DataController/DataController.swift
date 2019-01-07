@@ -26,7 +26,6 @@ public final class DataController<S: SectionModelType> {
     internal var dataSet = false
     public var reloadDataCompletion: CallBackNoParams?
 
-
     func move(_ source: IndexPath, target: IndexPath) {
         let sourceSection: S = self[source.section]
         var sourceItems: [I] = sourceSection.items

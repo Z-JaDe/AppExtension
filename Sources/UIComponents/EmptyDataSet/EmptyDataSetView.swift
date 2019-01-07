@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
-//import SnapKit
 
 public enum EmptyViewState {
     case noload
@@ -37,7 +34,6 @@ public class EmptyDataSetView: CustomView {
 
     public override func configInit() {
         super.configInit()
-        configObserver()
         reloadData()
     }
     public override func addChildView() {
@@ -48,17 +44,16 @@ public class EmptyDataSetView: CustomView {
         }
     }
     // MARK: -
+    var emptyStateChanged: CallBack<EmptyViewState>?
     public var emptyState: EmptyViewState = .noload {
         didSet {
-            self.emptyStateSubject.onNext(self.emptyState)
+            self.emptyStateChanged?(self.emptyState)
         }
     }
-    let emptyStateSubject: ReplaySubject<EmptyViewState> = ReplaySubject.create(bufferSize: 1)
     public var showType: EmptyShowType = .automatic {
         didSet {reloadData()}
     }
 
-    var frameDisposeBag: DisposeBag = DisposeBag()
     weak var container: EmptyDataSetProtocol?
     public func checkCanShow() -> Bool {
         switch self.showType {
@@ -73,15 +68,6 @@ public class EmptyDataSetView: CustomView {
 
 }
 extension EmptyDataSetView {
-    func emptyStateChangedObserver() -> Observable<EmptyViewState> {
-        return self.emptyStateSubject.asObservable()
-            .observeOn(MainScheduler.instance)
-            .delay(0.1, scheduler: MainScheduler.instance)
-            .throttle(0.5, scheduler: MainScheduler.instance)
-    }
-    func configObserver() {
-
-    }
     public func reloadData() {
         self.prepareForReuse()
         if checkCanShow() {

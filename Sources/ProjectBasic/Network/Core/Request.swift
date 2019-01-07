@@ -21,7 +21,7 @@ extension Reactive where Base == RequestContext<DataRequest> {
             let context = self.base
             let dataRequest = context.value
                 .response(queue: queue, responseSerializer: responseSerializer) { (packedResponse) -> Void in
-                    observer.onNext(context.map {_ in packedResponse.result} )
+                    observer.onNext(context.map {_ in packedResponse.result})
                     observer.onCompleted()
             }
             return Disposables.create {
@@ -45,7 +45,7 @@ extension Reactive where Base == RequestContext<DownloadRequest> {
             let context = self.base
             let dataRequest = context.value
                 .response(queue: queue, responseSerializer: responseSerializer) { (packedResponse) -> Void in
-                    observer.onNext(context.map {_ in packedResponse.result} )
+                    observer.onNext(context.map {_ in packedResponse.result})
                     observer.onCompleted()
             }
             return Disposables.create {
