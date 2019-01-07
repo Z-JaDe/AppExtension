@@ -22,7 +22,7 @@ private class CollectionViewUpdating: Updating {
         return collectionView?.window != nil
     }
     // MARK: -
-    func performBatch(animated: Bool, updates: @escaping () -> Void, completion: @escaping (Bool) -> Void) {
+    func performBatch(animated: Bool, updates: (() -> Void)?, completion: @escaping (Bool) -> Void) {
         guard let collectionView = collectionView else { return }
         if animated {
             collectionView.performBatchUpdates(updates, completion: completion)
@@ -30,7 +30,7 @@ private class CollectionViewUpdating: Updating {
             CATransaction.begin()
             CATransaction.setDisableActions(true)
             collectionView.performBatchUpdates({
-                updates()
+                updates?()
             }, completion: { result in
                 CATransaction.commit()
                 completion(result)
@@ -38,13 +38,13 @@ private class CollectionViewUpdating: Updating {
         }
     }
     // MARK: -
-    func insertItems(at indexPaths: [IndexPath]) {
+    func insertItems(at indexPaths: [IndexPath], with animation: UITableView.RowAnimation) {
         collectionView?.insertItems(at: indexPaths)
     }
-    func deleteItems(at indexPaths: [IndexPath]) {
+    func deleteItems(at indexPaths: [IndexPath], with animation: UITableView.RowAnimation) {
         collectionView?.deleteItems(at: indexPaths)
     }
-    func reloadItems(at indexPaths: [IndexPath]) {
+    func reloadItems(at indexPaths: [IndexPath], with animation: UITableView.RowAnimation) {
         collectionView?.reloadItems(at: indexPaths)
     }
     func moveItem(at indexPath: IndexPath, to newIndexPath: IndexPath) {
@@ -52,13 +52,13 @@ private class CollectionViewUpdating: Updating {
     }
     // MARK: -
     // MARK: -
-    func insertSections(_ sections: IndexSet) {
+    func insertSections(_ sections: IndexSet, with animation: UITableView.RowAnimation) {
         collectionView?.insertSections(sections)
     }
-    func deleteSections(_ sections: IndexSet) {
+    func deleteSections(_ sections: IndexSet, with animation: UITableView.RowAnimation) {
         collectionView?.deleteSections(sections)
     }
-    func reloadSections(_ sections: IndexSet) {
+    func reloadSections(_ sections: IndexSet, with animation: UITableView.RowAnimation) {
         collectionView?.reloadSections(sections)
     }
     func moveSection(_ section: Int, toSection newSection: Int) {

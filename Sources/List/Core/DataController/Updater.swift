@@ -11,15 +11,19 @@ import DifferenceKit
 
 public enum ListUpdateMode {
     case everything
-    case partial(animated: Bool)
+    case partial(animation: UITableView.RowAnimation)
 }
 public final class Updater {
     enum State {
         case idle
         case updating
     }
+    /// ZJaDe: 暂时只做记录，由外部控制刷新，若是手动调用的更新需要检查下isUpdating
     private var state: State = .idle {
         willSet { assertMainThread() }
+    }
+    public var isUpdating: Bool {
+        return self.state == .updating
     }
 
     private let updating: Updating
@@ -49,11 +53,11 @@ public final class Updater {
             } else {
                 completion(true)
             }
-        case .partial(animated: let animated):
+        case .partial(animation: let animation):
             update(
                 using: stagedChangeset,
                 interrupt: interrupt,
-                animated: animated,
+                animation: animation,
                 setData: setData,
                 completion: completion
             )
@@ -64,22 +68,22 @@ public final class Updater {
     func update<C>(
         using stagedChangeset: StagedChangeset<C>,
         interrupt: ((Changeset<C>) -> Bool)?,
-        animated: Bool,
+        animation: UITableView.RowAnimation,
         setData: @escaping (C) -> Void,
         completion: @escaping (Bool) -> Void
         ) {
         self.state = .updating
-        self.updating.performBatch(animated: animated, updates: {
+        self.updating.performBatch(animated: animation == .none, updates: {
             for changeset in stagedChangeset {
                 if let interrupt = interrupt, interrupt(changeset), let data = stagedChangeset.last?.data {
                     self.reload(data: data, setData: setData, completion: completion)
                     return
                 }
-                self.update(changeset: changeset, interrupt: interrupt, setData: setData)
+                self.update(changeset: changeset, interrupt: interrupt, animation: animation, setData: setData)
             }
         }, completion: { (result) in
-            completion(result)
             self.state = .idle
+            completion(result)
         })
     }
     /// ZJaDe: 刷新列表
@@ -101,29 +105,30 @@ extension Updater {
     private func update<C>(
         changeset: Changeset<C>,
         interrupt: ((Changeset<C>) -> Bool)?,
+        animation: UITableView.RowAnimation,
         setData: (C) -> Void
         ) {
         setData(changeset.data)
         if !changeset.sectionDeleted.isEmpty {
-            updating.deleteSections(IndexSet(changeset.sectionDeleted))
+            updating.deleteSections(IndexSet(changeset.sectionDeleted), with: animation)
         }
         if !changeset.sectionInserted.isEmpty {
-            updating.insertSections(IndexSet(changeset.sectionInserted))
+            updating.insertSections(IndexSet(changeset.sectionInserted), with: animation)
         }
         if !changeset.sectionUpdated.isEmpty {
-            updating.reloadSections(IndexSet(changeset.sectionUpdated))
+            updating.reloadSections(IndexSet(changeset.sectionUpdated), with: animation)
         }
         for (source, target) in changeset.sectionMoved {
             updating.moveSection(source, toSection: target)
         }
         if !changeset.elementDeleted.isEmpty {
-            updating.deleteItems(at: changeset.elementDeleted.map(mapIndexPath))
+            updating.deleteItems(at: changeset.elementDeleted.map(mapIndexPath), with: animation)
         }
         if !changeset.elementInserted.isEmpty {
-            updating.insertItems(at: changeset.elementInserted.map(mapIndexPath))
+            updating.insertItems(at: changeset.elementInserted.map(mapIndexPath), with: animation)
         }
         if !changeset.elementUpdated.isEmpty {
-            updating.reloadItems(at: changeset.elementUpdated.map(mapIndexPath))
+            updating.reloadItems(at: changeset.elementUpdated.map(mapIndexPath), with: animation)
         }
         for (source, target) in changeset.elementMoved {
             updating.moveItem(at: mapIndexPath(source), to: mapIndexPath(target))
@@ -134,38 +139,15 @@ extension Updater {
     }
 }
 
-extension Updater: Updating {
+extension Updater {
     var isInHierarchy: Bool {
         return updating.isInHierarchy
     }
-    public func performBatch(animated: Bool, updates: @escaping () -> Void, completion: @escaping (Bool) -> Void) {
-        updating.performBatch(animated: animated, updates: updates, completion: completion)
-    }
-    public func insertItems(at indexPaths: [IndexPath]) {
-        updating.insertItems(at: indexPaths)
-    }
-    public func deleteItems(at indexPaths: [IndexPath]) {
-        updating.deleteItems(at: indexPaths)
-    }
-    public func reloadItems(at indexPaths: [IndexPath]) {
-        updating.reloadItems(at: indexPaths)
-    }
-    public func moveItem(at indexPath: IndexPath, to newIndexPath: IndexPath) {
-        updating.moveItem(at: indexPath, to: newIndexPath)
-    }
-    public func insertSections(_ sections: IndexSet) {
-        updating.insertSections(sections)
-    }
-    public func deleteSections(_ sections: IndexSet) {
-        updating.deleteSections(sections)
-    }
-    public func reloadSections(_ sections: IndexSet) {
-        updating.reloadSections(sections)
-    }
-    public func moveSection(_ section: Int, toSection newSection: Int) {
-        updating.moveSection(section, toSection: newSection)
-    }
-    public func reload(completion: @escaping () -> Void) {
-        updating.reload(completion: completion)
+    public func performBatch(animated: Bool, updates: (() -> Void)?, completion: @escaping (Bool) -> Void) {
+        self.state = .updating
+        updating.performBatch(animated: animated, updates: updates, completion: { (result) in
+            completion(result)
+            self.state = .idle
+        })
     }
 }

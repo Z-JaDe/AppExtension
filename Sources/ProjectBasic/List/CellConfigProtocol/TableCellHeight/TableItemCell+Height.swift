@@ -9,18 +9,14 @@
 import Foundation
 private var isUpdatingKey: UInt8 = 0
 extension TableItemCell {
-    private var isUpdating: Bool {
-        get {return associatedObject(&isUpdatingKey, createIfNeed: false)}
-        set {setAssociatedObject(&isUpdatingKey, newValue)}
-    }
-    func updateHeight<Item: TableCellHeightProtocol>(_ item: Item, _ closure: (() -> Void)?) {
-        guard self.isUpdating == false else { return }
-        guard CATransform3DIsIdentity(self.layer.transform) else {
+    func updateHeight<Item: TableCellHeightProtocol>(_ item: Item, _ updates: (() -> Void)?) {
+        guard let updater = self.getTableView()?.updater else {
+            logError("\(self)->tableView找不到")
             return
         }
-        guard (try? self.cellState.value()) == .didAppear else {
-            return
-        }
+        guard updater.isUpdating == false else { return }
+        guard CATransform3DIsIdentity(self.layer.transform) else { return }
+        guard (try? self.cellState.value()) == .didAppear else { return }
         if item.cellHeightLayoutType == .hasLayout {
             let oldHeight = item.tempCellHeight - self.insetVerticalSpace()
             let height: CGFloat = self.height
@@ -29,22 +25,9 @@ extension TableItemCell {
                 item._setNeedResetCellHeight()
             }
         }
-        guard item.cellHeightLayoutType == .resetLayout else {
-            return
-        }
-        guard let tableView = self.getTableView() else {
-            logError("\(self)->tableView找不到")
-            return
-        }
+        guard item.cellHeightLayoutType == .resetLayout else { return }
         self.setNeedUpdate()
-        self.isUpdating = true
-        UIView.animate(withDuration: 0.25) {
-            tableView.updater.performBatch(animated: true, updates: {
-                closure?()
-            }, completion: {[weak self] _ in
-                self?.isUpdating = false
-            })
-        }
+        updater.performBatch(animated: true, updates: updates, completion: { _ in })
     }
 }
 extension TableItemCell {

@@ -24,7 +24,17 @@ private class TableViewUpdating: Updating {
         return tableView?.window != nil
     }
     // MARK: - 
-    func performBatch(animated: Bool, updates: @escaping () -> Void, completion: @escaping (Bool) -> Void) {
+    func performBatch(animated: Bool, updates: (() -> Void)?, completion: @escaping (Bool) -> Void) {
+        guard let updates = updates else {
+            if let tableView = tableView {
+                tableView.beginUpdates()
+                tableView.endUpdates()
+                completion(true)
+            } else {
+                completion(false)
+            }
+            return
+        }
         if animated {
             _performBatchUpdates(updates, completion: completion)
         } else {
@@ -48,27 +58,27 @@ private class TableViewUpdating: Updating {
         }
     }
     // MARK: -
-    func insertItems(at indexPaths: [IndexPath]) {
-        tableView?.insertRows(at: indexPaths, with: .automatic)
+    func insertItems(at indexPaths: [IndexPath], with animation: UITableView.RowAnimation) {
+        tableView?.insertRows(at: indexPaths, with: animation)
     }
-    func deleteItems(at indexPaths: [IndexPath]) {
-        tableView?.deleteRows(at: indexPaths, with: .automatic)
+    func deleteItems(at indexPaths: [IndexPath], with animation: UITableView.RowAnimation) {
+        tableView?.deleteRows(at: indexPaths, with: animation)
     }
-    func reloadItems(at indexPaths: [IndexPath]) {
-        tableView?.reloadRows(at: indexPaths, with: .automatic)
+    func reloadItems(at indexPaths: [IndexPath], with animation: UITableView.RowAnimation) {
+        tableView?.reloadRows(at: indexPaths, with: animation)
     }
     func moveItem(at indexPath: IndexPath, to newIndexPath: IndexPath) {
         tableView?.moveRow(at: indexPath, to: newIndexPath)
     }
     // MARK: -
-    func insertSections(_ sections: IndexSet) {
-        tableView?.insertSections(sections, with: .automatic)
+    func insertSections(_ sections: IndexSet, with animation: UITableView.RowAnimation) {
+        tableView?.insertSections(sections, with: animation)
     }
-    func deleteSections(_ sections: IndexSet) {
-        tableView?.deleteSections(sections, with: .automatic)
+    func deleteSections(_ sections: IndexSet, with animation: UITableView.RowAnimation) {
+        tableView?.deleteSections(sections, with: animation)
     }
-    func reloadSections(_ sections: IndexSet) {
-        tableView?.reloadSections(sections, with: .automatic)
+    func reloadSections(_ sections: IndexSet, with animation: UITableView.RowAnimation) {
+        tableView?.reloadSections(sections, with: animation)
     }
     func moveSection(_ section: Int, toSection newSection: Int) {
         tableView?.moveSection(section, toSection: newSection)

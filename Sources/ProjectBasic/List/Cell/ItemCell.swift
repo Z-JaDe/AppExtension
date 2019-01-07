@@ -14,6 +14,14 @@ public enum CellState {
     case willAppear
     case didAppear
     case didDisappear
+    var isAppear: Bool {
+        switch self {
+        case .willAppear, .didAppear:
+            return true
+        case .prepare, .didDisappear:
+            return false
+        }
+    }
 }
 public enum CellAppearAnimationType {
     case none

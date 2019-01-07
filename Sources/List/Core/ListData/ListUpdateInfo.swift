@@ -13,7 +13,7 @@ public class ListUpdateInfo<DataType> {
     public var updateMode: ListUpdateMode
     public init(data: DataType) {
         self.data = data
-        self.updateMode = .partial(animated: true)
+        self.updateMode = .partial(animation: .automatic)
         self.completionHandle = {}
     }
     private init<T>(original: ListUpdateInfo<T>, data: DataType) {
