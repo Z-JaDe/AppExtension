@@ -127,7 +127,6 @@ Pod::Spec.new do |s|
         ss.dependency "MJRefresh"
         ss.dependency "RxSwift"
         ss.dependency "RxCocoa"
-        ss.dependency "ReSwift"
     end
     s.subspec "Default" do |ss|
         ss.dependency "AppExtension/MVCProject"
@@ -139,6 +138,7 @@ Pod::Spec.new do |s|
     s.subspec "MVCCoordinator" do |ss|
         ss.dependency "AppExtension/MVCProject"
         ss.dependency "AppExtension/Coordinator"
+        ss.dependency "ReSwift"
     end
 
 end
