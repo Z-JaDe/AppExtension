@@ -25,7 +25,7 @@ private var maxSelectedCountKey: UInt8 = 0
 private var checkCanSelectedClosureKey: UInt8 = 0
 public extension MultipleSelectionProtocol {
     /// ZJaDe: 存储选中的cell
-    private var selectedItemArray: [SelectItemType] {
+    private(set) var selectedItemArray: [SelectItemType] {
         get {return associatedObject(&selectedItemArrayKey, createIfNeed: [])}
         set {setAssociatedObject(&selectedItemArrayKey, newValue)}
     }
