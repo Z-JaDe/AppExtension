@@ -9,18 +9,19 @@
 import Foundation
 
 extension BoderView {
-    func update(layer: LineLayerType, context: BoderContext) {
-        layer.frame = calculateFrame(with: context)
+    func update(direction: Direction, context: BoderContext) {
+        let layer = getLayer(in: direction)
+        layer.frame = calculateFrame(direction: direction, with: context)
 
         layer.lineColor = context.boderColor
         layer.lineType = context.lineType
     }
-    private func calculateFrame(with context: BoderContext) -> CGRect {
+    private func calculateFrame(direction: Direction, with context: BoderContext) -> CGRect {
         var result = CGRect()
         let totalLength: CGFloat
         let length: CGFloat
         let boderWidth: CGFloat = context.boderWidth
-        switch context.lineAxis {
+        switch context.lineAxis(direction) {
         case .horizontal:
             totalLength = self.bounds.width
             length = calculateLength(with: context, totalLength).toPositiveNumber
@@ -34,7 +35,7 @@ extension BoderView {
             result.size.height = length
             result.origin.y = calculatePositionOffset(with: context, totalLength, length)
         }
-        switch context.direction {
+        switch direction {
         case .top: result.origin.y = 0
         case .left: result.origin.x = 0
         case .bottom: result.origin.y = self.bounds.maxY - boderWidth

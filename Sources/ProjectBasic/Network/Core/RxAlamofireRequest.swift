@@ -8,12 +8,12 @@
 
 import Foundation
 import Alamofire
-protocol RxAlamofireRequest {
+public protocol RxAlamofireRequest {
     func responseWith(completionHandler: @escaping (RxAlamofireResponse) -> Void)
     func resume()
     func cancel()
 }
-protocol RxAlamofireResponse {
+public protocol RxAlamofireResponse {
     var error: Error? {get}
 }
 
@@ -21,14 +21,14 @@ extension DefaultDataResponse: RxAlamofireResponse {}
 extension DefaultDownloadResponse: RxAlamofireResponse {}
 
 extension DataRequest: RxAlamofireRequest {
-    func responseWith(completionHandler: @escaping (RxAlamofireResponse) -> Void) {
+    public func responseWith(completionHandler: @escaping (RxAlamofireResponse) -> Void) {
         response { (response) in
             completionHandler(response)
         }
     }
 }
 extension DownloadRequest: RxAlamofireRequest {
-    func responseWith(completionHandler: @escaping (RxAlamofireResponse) -> Void) {
+    public func responseWith(completionHandler: @escaping (RxAlamofireResponse) -> Void) {
         response { (response) in
             completionHandler(response)
         }

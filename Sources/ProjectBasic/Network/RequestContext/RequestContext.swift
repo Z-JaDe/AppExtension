@@ -13,6 +13,7 @@ public protocol RequestContextCompatible {
     var value: ValueType { get }
     func map<T>(_ transform: (ValueType) throws -> T) rethrows -> RequestContext<T>
 }
+
 public struct RequestContext<Value>: RequestContextCompatible {
     public typealias ValueType = Value
     public let target: URLRequestConvertible?

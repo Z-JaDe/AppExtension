@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 import Alamofire
-extension ObservableType where E == RequestContext<DataRequest> {
+extension ObservableType where E: RequestableContext {
     public typealias RequestContextResult<T> = RequestContext<Result<T>>
     public typealias RequestContextResultData = RequestContextResult<Data>
     public func mapResultModel<T: AbstractResultModelType>(_ transform: @escaping (RequestContextResultData) throws -> T) -> RequestContextObservable<T> {
@@ -18,6 +18,11 @@ extension ObservableType where E == RequestContext<DataRequest> {
         })
     }
 
+    public func mapData() -> RequestContextObservable<Data> {
+        return responseFlatMap({ (context) -> Data in
+            return try context.getData()
+        })
+    }
     public func mapCustomType<DataType: Decodable>(type: DataType.Type) -> RequestContextObservable<DataType> {
         return responseFlatMap({ (context) -> DataType in
             return try context.mapCustomType()
@@ -32,5 +37,18 @@ extension ObservableType where E == RequestContext<DataRequest> {
             })
             .observeOn(MainScheduler.instance)
             .retryWhen({ $0._retryError() })
+    }
+}
+extension ObservableType where E: RequestableContext {
+    internal func response() -> Observable<RequestContextResultData> {
+        return flatMapLatest { (context) -> Observable<RequestContextResultData> in
+            switch context {
+            case let context as RequestContext<DataRequest>:
+                return context.rx.response(responseSerializer: DataRequest.dataResponseSerializer())
+            case let context as RequestContext<DownloadRequest>:
+                return context.rx.response(responseSerializer: DownloadRequest.dataResponseSerializer())
+            default: throw NetworkError.error("未实现的类型")
+            }
+        }
     }
 }

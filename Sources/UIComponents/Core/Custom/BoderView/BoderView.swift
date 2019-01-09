@@ -13,7 +13,7 @@ class BoderView: CustomView {
     private lazy var leftLayer: LineLayerType = createLayer()
     private lazy var bottomLayer: LineLayerType = createLayer()
     private lazy var rightLayer: LineLayerType = createLayer()
-    private typealias Direction = BoderContext.Direction
+    public typealias Direction = BoderContext.Direction
     private var data: [Direction: BoderContext] = [:]
     override func configInit() {
         super.configInit()
@@ -22,13 +22,15 @@ class BoderView: CustomView {
     }
     // MARK: -
     func update(with context: BoderContext) {
-        self.data[context.direction] = context.cleanViewReference()
+        for direction in context.directions {
+            self.data[direction] = context.cleanViewReference()
+        }
         setNeedsLayout()
     }
     override func layoutSubviews() {
         super.layoutSubviews()
         for (direction, context) in data {
-            update(layer: getLayer(in: direction), context: context)
+            update(direction: direction, context: context)
         }
     }
     // MARK: -
@@ -40,7 +42,7 @@ class BoderView: CustomView {
 }
 
 extension BoderView {
-    private func getLayer(in direction: Direction) -> LineLayerType {
+    internal func getLayer(in direction: Direction) -> LineLayerType {
         switch direction {
         case .top: return self.topLayer
         case .left: return self.leftLayer

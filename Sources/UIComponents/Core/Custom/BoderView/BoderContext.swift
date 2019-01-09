@@ -9,7 +9,7 @@
 import Foundation
 
 public struct BoderContext {
-    enum Direction: Hashable {
+    public enum Direction: Hashable, CaseIterable {
         case top
         case left
         case bottom
@@ -24,7 +24,7 @@ public struct BoderContext {
     init(in view: UIView) {
         self.view = view
     }
-    var direction: Direction = .top
+    var directions: [Direction] = []
     var boderWidth: CGFloat = 1
     var boderColor: UIColor = Color.boderLine
     var edgeType: BoderExcludePoint = .allPoint(0)
@@ -38,7 +38,7 @@ public extension BoderContext {
     internal func cleanViewReference() -> BoderContext {
         return self.then({$0.view = nil})
     }
-    var lineAxis: LineAxis {
+    func lineAxis(_ direction: Direction) -> LineAxis {
         switch direction {
         case .left, .right:
             return .vertical
@@ -71,16 +71,25 @@ public extension BoderContext {
 }
 public extension BoderContext {
     func addTop() {
-        return self.then({$0.direction = .top}).finalize()
+        return self.add(.top)
     }
     func addLeft() {
-        return self.then({$0.direction = .left}).finalize()
+        return self.add(.left)
     }
     func addBottom() {
-        return self.then({$0.direction = .bottom}).finalize()
+        return self.add(.bottom)
     }
     func addRight() {
-        return self.then({$0.direction = .right}).finalize()
+        return self.add(.right)
+    }
+    func add() {
+        return self.add(Direction.allCases)
+    }
+    func add(_ directions: Direction...) {
+        return self.add(directions)
+    }
+    func add(_ directions: [Direction]) {
+        return self.then({$0.directions = directions}).finalize()
     }
 }
 extension UIView {
