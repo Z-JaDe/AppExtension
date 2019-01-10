@@ -12,7 +12,7 @@ import RxSwift
 
 extension RequestContext: ReactiveCompatible {}
 // MARK: -
-extension Reactive where Base == RequestContext<DataRequest> {
+extension Reactive where Base: RequestContextCompatible, Base.ValueType: DataRequest {
     public func response<T: DataResponseSerializerProtocol>(
         queue: DispatchQueue? = nil,
         responseSerializer: T
@@ -29,7 +29,7 @@ extension Reactive where Base == RequestContext<DataRequest> {
         }
     }
 }
-extension Reactive where Base == RequestContext<DownloadRequest> {
+extension Reactive where Base: RequestContextCompatible, Base.ValueType: DownloadRequest {
     public func response<T: DownloadResponseSerializerProtocol>(
         queue: DispatchQueue? = nil,
         responseSerializer: T
@@ -52,6 +52,8 @@ extension ObservableType where E: RequestableContext {
             switch context {
             case let context as RequestContext<DataRequest>:
                 return context.rx.response(responseSerializer: DataRequest.dataResponseSerializer())
+            case let context as RequestContext<UploadRequest>:
+                return context.rx.response(responseSerializer: UploadRequest.dataResponseSerializer())
             case let context as RequestContext<DownloadRequest>:
                 return context.rx.response(responseSerializer: DownloadRequest.dataResponseSerializer())
             default: throw NetworkError.error("未实现的类型")
