@@ -15,7 +15,7 @@ extension RequestContext where Value == Result<Data> {
         case .success(let value):
             return value
         case .failure(let error):
-            /// ZJaDe: 关于Alamofire请求返回的error处理
+            /// ZJaDe: Alamofire内部抛出的Error处理
             throw error._mapError()
         }
     }

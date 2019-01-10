@@ -9,46 +9,41 @@
 import Foundation
 import RxSwift
 import Alamofire
-extension ObservableType where E: RequestableContext {
+extension ObservableType where E == RequestContext<Result<Data>> {
     public typealias RequestContextResult<T> = RequestContext<Result<T>>
     public typealias RequestContextResultData = RequestContextResult<Data>
     public func mapResultModel<T: AbstractResultModelType>(_ transform: @escaping (RequestContextResultData) throws -> T) -> RequestContextObservable<T> {
-        return responseFlatMap({ (context) -> T in
+        return responseMap({ (context) -> T in
             return try transform(context)
         })
     }
 
     public func mapData() -> RequestContextObservable<Data> {
-        return responseFlatMap({ (context) -> Data in
+        return responseMap({ (context) -> Data in
             return try context.getData()
         })
     }
     public func mapCustomType<DataType: Decodable>(type: DataType.Type) -> RequestContextObservable<DataType> {
-        return responseFlatMap({ (context) -> DataType in
+        return responseMap({ (context) -> DataType in
             return try context.mapCustomType()
         })
     }
-    private func responseFlatMap<T>(_ transform: @escaping (RequestContextResultData) throws -> T) -> RequestContextObservable<T> {
-        return response()
-            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+    /// ZJaDe: 总入口
+    private func responseMap<T>(_ transform: @escaping (RequestContextResultData) throws -> T) -> RequestContextObservable<T> {
+        return observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            /// ZJaDe: 一般这里不会抛出Error，但是外部调用的时候可能会抛出Error，可以进行一层map
+            .catchError({.error($0._mapError())})
             .map({ (context) -> RequestContext<T> in
+                let value = try transform(context)
                 /// ZJaDe: data数据转Model
-                return try context.map({_ in try transform(context)})
+                return try context.map({_ in value})
             })
             .observeOn(MainScheduler.instance)
             .retryWhen({ $0._retryError() })
     }
 }
 extension ObservableType where E: RequestableContext {
-    internal func response() -> Observable<RequestContextResultData> {
-        return flatMapLatest { (context) -> Observable<RequestContextResultData> in
-            switch context {
-            case let context as RequestContext<DataRequest>:
-                return context.rx.response(responseSerializer: DataRequest.dataResponseSerializer())
-            case let context as RequestContext<DownloadRequest>:
-                return context.rx.response(responseSerializer: DownloadRequest.dataResponseSerializer())
-            default: throw NetworkError.error("未实现的类型")
-            }
-        }
+    public func mapData() -> RequestContextObservable<Data> {
+        return response().mapData()
     }
 }

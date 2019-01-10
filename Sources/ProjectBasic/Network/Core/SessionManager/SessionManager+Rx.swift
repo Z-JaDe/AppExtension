@@ -10,6 +10,10 @@ import Foundation
 import RxSwift
 import RxSwiftExt
 import Alamofire
+/** ZJaDe:
+ 订阅Request消息后，请求会开始发送，
+ 在response、progress或者map方法里面可以截取到获取的数据
+ */
 // MARK: -
 /// ZJaDe: 类型约束
 public protocol RequestableContext: RequestContextCompatible {}
@@ -24,16 +28,16 @@ extension Reactive where Base: SessionManager {
                         parameters: Parameters? = nil,
                         encoding: ParameterEncoding = URLEncoding.default,
                         headers: HTTPHeaders? = nil) -> RequestContextObservable<DataRequest> {
-        return _request { $0.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers) }
+        return getRequest { $0.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers) }
             .map { RequestContext($0, $0.request) }
     }
     public func request(_ urlRequest: URLRequestConvertible) -> RequestContextObservable<DataRequest> {
-        return _request { $0.request(urlRequest) }
+        return getRequest { $0.request(urlRequest) }
             .map { RequestContext($0, urlRequest) }
     }
     // MARK: Upload
     public func upload(_ formData: [MultipartFormData], usingThreshold encodingMemoryThreshold: UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, _ urlRequest: URLRequestConvertible) -> RequestContextObservable<UploadRequest> {
-        return _request({ (manager, observer) -> Disposable in
+        return getRequest({ (manager, observer) -> Disposable in
             var dispose: Disposable?
             let (formData, urlRequest) = manager.uploadParamsUpdate(formData, urlRequest)
             manager.upload(multipartFormData: {$0.applyMultipartFormData(formData)}, usingThreshold: encodingMemoryThreshold, with: urlRequest, encodingCompletion: { (result) in
@@ -41,7 +45,7 @@ extension Reactive where Base: SessionManager {
                 case .failure(let error):
                     observer.onError(error)
                 case .success(request: let request, streamingFromDisk: _, streamFileURL: _):
-                    dispose = request.response(observer, manager)
+                    dispose = request.onNext(observer, manager)
                 }
             })
             return Disposables.create {
@@ -52,12 +56,12 @@ extension Reactive where Base: SessionManager {
     // MARK: Download
     public func download(_ urlRequest: URLRequestConvertible,
                          to destination: @escaping DownloadRequest.DownloadFileDestination) -> RequestContextObservable<DownloadRequest> {
-        return _request { $0.download(urlRequest, to: destination) }
+        return getRequest { $0.download(urlRequest, to: destination) }
             .map { RequestContext($0, urlRequest) }
     }
     public func download(resumeData: Data,
                          to destination: @escaping DownloadRequest.DownloadFileDestination) -> RequestContextObservable<DownloadRequest> {
-        return _request { $0.download(resumingWith: resumeData, to: destination) }
+        return getRequest { $0.download(resumingWith: resumeData, to: destination) }
             .map { RequestContext($0, $0.request) }
     }
 }
@@ -80,13 +84,13 @@ extension SessionManager {
     }
 }
 extension Reactive where Base: SessionManager {
-    private func _request<R: RxAlamofireRequest>(_ createRequest: @escaping (SessionManager) throws -> R) -> Observable<R> {
-        return _request { (manager, observer) in
+    private func getRequest<R: RxAlamofireRequest>(_ createRequest: @escaping (SessionManager) throws -> R) -> Observable<R> {
+        return getRequest { (manager, observer) in
             let request = try createRequest(manager)
-            return request.response(observer, manager)
+            return request.onNext(observer, manager)
         }
     }
-    private func _request<R: RxAlamofireRequest>(_ closure: @escaping (SessionManager, AnyObserver<R>) throws -> Disposable) -> Observable<R>  {
+    private func getRequest<R: RxAlamofireRequest>(_ closure: @escaping (SessionManager, AnyObserver<R>) throws -> Disposable) -> Observable<R>  {
         return Observable.create { observer -> Disposable in
             do {
                 return try closure(self.base, observer)
@@ -98,15 +102,8 @@ extension Reactive where Base: SessionManager {
     }
 }
 extension RxAlamofireRequest {
-    fileprivate func response(_ observer: AnyObserver<Self>, _ manager: SessionManager) -> Disposable {
+    fileprivate func onNext(_ observer: AnyObserver<Self>, _ manager: SessionManager) -> Disposable {
         observer.onNext(self)
-        self.responseWith(completionHandler: { (response) in
-            if let error = response.error {
-                observer.onError(error)
-            } else {
-                observer.onCompleted()
-            }
-        })
 
         if !manager.startRequestsImmediately {
             self.resume()

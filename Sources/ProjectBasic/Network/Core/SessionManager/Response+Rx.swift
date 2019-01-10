@@ -46,3 +46,16 @@ extension Reactive where Base == RequestContext<DownloadRequest> {
         }
     }
 }
+extension ObservableType where E: RequestableContext {
+    public func response() -> Observable<RequestContextResultData> {
+        return flatMapLatest { (context) -> Observable<RequestContextResultData> in
+            switch context {
+            case let context as RequestContext<DataRequest>:
+                return context.rx.response(responseSerializer: DataRequest.dataResponseSerializer())
+            case let context as RequestContext<DownloadRequest>:
+                return context.rx.response(responseSerializer: DownloadRequest.dataResponseSerializer())
+            default: throw NetworkError.error("未实现的类型")
+            }
+        }
+    }
+}
