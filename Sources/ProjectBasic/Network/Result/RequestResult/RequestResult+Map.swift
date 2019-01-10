@@ -10,7 +10,6 @@ import Foundation
 import Alamofire
 
 extension RequestContext where Value == Result<Data> {
-    // MARK: - result
     public func mapResult<DataType: Decodable>() throws -> ResultModel<DataType> {
         return try _mapResult()
     }
@@ -27,3 +26,4 @@ extension RequestContext where Value == Result<Data> {
         return try _mapResult()
     }
 }
+
