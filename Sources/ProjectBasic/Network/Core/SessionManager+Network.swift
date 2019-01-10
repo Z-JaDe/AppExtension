@@ -10,18 +10,13 @@ import Foundation
 import Alamofire
 import RxSwift
 extension SessionManager {
-    /// ZJaDe: 不会发送onCompleted
     public func checkNetwork<T>(_ value: T) -> Observable<T> {
-        /// ZJaDe: 这里不能使用self.monitorNetwork().map的方式，因为monitorNetwork发射完onNext(true)会紧接着发射onCompleted
-        return Observable.create({ (observer) -> Disposable in
-            let dispose = self.monitorNetwork().subscribeOnNext({ (hasNetwork) in
-                if hasNetwork {
-                    observer.onNext(value)
-                } else {
-                    observer.onError(NetworkError.noNetwork)
-                }
-            })
-            return Disposables.create([dispose])
+        return self.monitorNetwork().map({ (hasNetwork) -> T in
+            if hasNetwork {
+                return value
+            } else {
+                throw NetworkError.noNetwork
+            }
         })
     }
     private func monitorNetwork() -> Observable<Bool> {

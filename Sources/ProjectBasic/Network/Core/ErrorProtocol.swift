@@ -8,7 +8,7 @@
 
 import Foundation
 import RxSwift
-
+/// ZJaDe: Error实现该协议 截取信号重试
 public protocol RetryRequestProtocol {
     func retryError() -> Observable<()>
 }
@@ -24,6 +24,7 @@ extension ObservableType where E == Error {
     }
 }
 // MARK: -
+/// ZJaDe: 实现该协议，把错误转换成NetworkError
 public protocol MapErrorProtocol {
     func mapError() -> Error
 }
