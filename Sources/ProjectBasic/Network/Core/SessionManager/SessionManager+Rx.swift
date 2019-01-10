@@ -74,6 +74,7 @@ extension SessionManager {
                 }
             }
             target.parameters = params
+            urlRequest = target
         }
         return (formData, urlRequest)
     }
