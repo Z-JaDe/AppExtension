@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+
 extension RequestContext where Value == Result<Data> {
     func getData() throws -> Data {
         switch self.value {
@@ -30,6 +31,7 @@ extension RequestContext where Value == Result<Data> {
         }
         return result
     }
+
     public func mapCustomType<DataType: Decodable>() throws -> DataType {
         do {
             return try map()
@@ -53,6 +55,20 @@ extension RequestContext where Value == Result<Data> {
         case .success:
             let str = try? mapString()
             logInfo("获取到 -|\(self.urlPath) 接口数据->\(str ?? "空")")
+        }
+    }
+}
+// MARK: -
+/// ZJaDe: data转换成ResultModel时
+public protocol MapResultProtocol {
+    func mapResult<T: AbstractResultModelType&Decodable>() throws -> T
+}
+extension RequestContext where Value == Result<Data> {
+    internal func _mapResult<T: AbstractResultModelType&Decodable>() throws -> T {
+        if let context = self as? MapResultProtocol {
+            return try context.mapResult()
+        } else {
+            return try map()
         }
     }
 }
