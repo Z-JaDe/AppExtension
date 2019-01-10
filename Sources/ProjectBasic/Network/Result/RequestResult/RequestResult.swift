@@ -11,6 +11,8 @@ import Alamofire
 import RxSwift
 
 public typealias RequestResult<T> = RequestContext<T> where T: Codable
+
+public typealias OriginRequestResult = RequestContext<DataRequest>
 // ZJaDe:
 public typealias StringRequestResult = RequestResult<StringResultModel>
 public typealias DictRequestResult = RequestResult<DictResultModel>
