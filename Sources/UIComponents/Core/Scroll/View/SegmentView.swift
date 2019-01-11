@@ -70,10 +70,12 @@ open class SegmentView<CellView, CellData>: MultipleItemsView<CellView, CellData
     public var currentLayerUpdater: ((CALayer, CGRect) -> Void)?
     public let currentLayer: CALayer = CALayer()
     private func currentLayerUpdate(_ currentCell: CellView) {
+        self.scrollView.layer.addSublayer(self.currentLayer)
         if let updater = self.currentLayerUpdater {
             self.currentLayer.position = CGPoint(x: currentCell.centerX, y: currentCell.bottom)
             updater(self.currentLayer, currentCell.frame)
-            self.scrollView.layer.addSublayer(self.currentLayer)
+        } else {
+            self.currentLayer.position = CGPoint(x: currentCell.centerX, y: currentCell.bottom - currentLayer.width / 2)
         }
     }
     // MARK: - isSelected
