@@ -59,19 +59,24 @@ open class SegmentView<CellView, CellData>: MultipleItemsView<CellView, CellData
         let currentCell: CellView = self.cellArr[self.realIndex(to)]
         self.scrollView.scrollTo(currentCell)
         self.currentItem = currentCell
-        self.currentLayer.position = CGPoint(x: currentCell.centerX, y: currentCell.bottom - self.currentLayer.height / 2)
-        self.configCurrentLayerClosure?(self.currentLayer, currentCell.frame)
-        self.scrollView.layer.addSublayer(self.currentLayer)
+        currentLayerUpdate(currentCell)
     }
     // MARK: -
     internal func createCell() -> CellView {
         let itemView = CellView()
         return itemView
     }
-
-    // MARK: isSelected
-    public var configCurrentLayerClosure: ((CALayer, CGRect) -> Void)?
+    // MARK: - currentLayer
+    public var currentLayerUpdater: ((CALayer, CGRect) -> Void)?
     public let currentLayer: CALayer = CALayer()
+    private func currentLayerUpdate(_ currentCell: CellView) {
+        if let updater = self.currentLayerUpdater {
+            self.currentLayer.position = CGPoint(x: currentCell.centerX, y: currentCell.bottom)
+            updater(self.currentLayer, currentCell.frame)
+            self.scrollView.layer.addSublayer(self.currentLayer)
+        }
+    }
+    // MARK: - isSelected
     public private(set) var currentItem: CellView? {
         didSet {
             if var itemView = oldValue as? SelectedStateDesignable {
