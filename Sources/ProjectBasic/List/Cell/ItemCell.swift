@@ -194,8 +194,10 @@ open class ItemCell: CustomView, DataSourceItemtype & SelectedStateDesignable & 
         }
     }
     // MARK: - CellSelectProtocol
+    public var didSelectItemClosure: CallBackNoParams?
     public let didSelectItemPubject: PublishSubject<Void> = PublishSubject()
     open func didSelectItem() {
+        self.didSelectItemClosure?()
         self.didSelectItemPubject.onNext(())
     }
 

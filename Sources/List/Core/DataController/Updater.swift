@@ -73,7 +73,7 @@ public final class Updater {
         completion: @escaping (Bool) -> Void
         ) {
         self.state = .updating
-        self.updating.performBatch(animated: animation == .none, updates: {
+        self.updating.performBatch(animated: animation != .none, updates: {
             for changeset in stagedChangeset {
                 if let interrupt = interrupt, interrupt(changeset), let data = stagedChangeset.last?.data {
                     self.reload(data: data, setData: setData, completion: completion)

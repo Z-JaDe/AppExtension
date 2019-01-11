@@ -13,7 +13,7 @@ public class SegmentScrollView<CellView>: MultipleItemScrollView<CellView>, Tota
     public enum CellLength {
         /// ZJaDe: 最多显示几个，少的时候平铺，多的时候滑动
         case showMaxCount(Int)
-        /// ZJaDe: 默认显示几个
+        /// ZJaDe: 默认显示几个，根据个数和segment长度计算固定长度
         case showCount(Int)
         /// ZJaDe: 固定长度
         case length(CGFloat)

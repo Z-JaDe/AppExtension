@@ -15,7 +15,7 @@ public typealias TableSectionModel = SectionModelItem<TableSection, TableAdapter
 public typealias TableListData = ListData<TableSection, TableAdapterItemConvertible>
 public typealias TableStaticData = ListData<TableSection, StaticTableItemCell>
 
-public typealias TableUpdateInfo = ListUpdateInfo<TableListData>
+public typealias TableListUpdateInfo = ListUpdateInfo<TableListData>
 public typealias TableStaticUpdateInfo = ListUpdateInfo<TableStaticData>
 
 open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {

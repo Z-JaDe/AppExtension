@@ -26,9 +26,16 @@ open class TitleCell: StaticTableItemCell {
     public var title: String = "" {
         didSet {configTitle()}
     }
+    public var attrTitle: NSAttributedString? {
+        didSet {configTitle()}
+    }
     func configTitle() {
-        self.titleLabel.text = self.title
-        self.titleLabel.isHidden = self.title.isEmpty
+        if let attrTitle = self.attrTitle {
+            self.titleLabel.attributedText = attrTitle
+        } else {
+            self.titleLabel.text = self.title
+        }
+        self.titleLabel.isHidden = self.title.isEmpty && self.attrTitle == nil
     }
 
     // MARK: -
@@ -41,7 +48,7 @@ open class TitleCell: StaticTableItemCell {
         }
         return imageView
     }()
-    /// ZJaDe: 不要直接设置titleLabel的text 使用self.title
+    /// ZJaDe: 不要直接设置titleLabel的text 使用self.title 或 self.attrTitle
     public private(set) lazy var titleLabel: Label = Label(color: Color.black, font: Font.thinh3)
     public private(set) lazy var stackView: UIStackView = UIStackView(axis: .horizontal, alignment: .center, distribution: .fill, spacing: Space.itemSpace)
 
