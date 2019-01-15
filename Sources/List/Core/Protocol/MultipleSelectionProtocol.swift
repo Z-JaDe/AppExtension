@@ -18,6 +18,7 @@ public protocol MultipleSelectionProtocol: AssociatedObjectProtocol {
     func updateSelectState(_ item: SelectItemType, _ isSelected: Bool)
     /// ZJaDe: 主动更改item的选中状态
     func changeSelectState(_ isSelected: Bool, _ item: SelectItemType)
+    func changeSelectState(_ isSelected: Bool, _ items: [SelectItemType])
 }
 private var selectedItemArrayKey: UInt8 = 0
 private var selectedItemArrayChangedKey: UInt8 = 0
@@ -48,6 +49,11 @@ public extension MultipleSelectionProtocol {
 }
 // MARK: -
 extension MultipleSelectionProtocol {
+    public func changeSelectState(_ isSelected: Bool, _ items: [SelectItemType]) {
+        for item in items {
+            self.changeSelectState(isSelected, item)
+        }
+    }
     /// ZJaDe: 当item未选中时做一些处理 默认不能主动调用
     public func whenItemUnSelected(_ item: SelectItemType) {
         if let index = self.index(item) {
