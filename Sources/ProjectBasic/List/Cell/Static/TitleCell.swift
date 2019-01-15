@@ -44,7 +44,7 @@ open class TitleCell: StaticTableItemCell {
         let imageView = ImageView()
         imageView.isHidden = true
         imageView.snp.makeConstraints { (make) in
-            make.size.lessThanOrEqualTo(CGSize(width: 25, height: 25))
+            make.size.lessThanOrEqualTo(CGSize(width: 44, height: 44))
         }
         return imageView
     }()

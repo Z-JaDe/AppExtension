@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class GradientView: CustomView {
+public class GradientView: CustomView {
 
     public var gradientLayer: CAGradientLayer {
         // swiftlint:disable force_cast
@@ -24,10 +24,14 @@ open class GradientView: CustomView {
         case leftToRight
         case rightToLeft
     }
-
     @discardableResult
-    public func config(_ direction: Direction, _ fromColor: UIColor, _ toColor: UIColor) -> Self {
-        self.gradientLayer.colors = [fromColor.cgColor, toColor.cgColor]
+    public func config(_ direction: Direction, _ colors: UIColor...) -> Self {
+        return config(direction, colors)
+    }
+    @discardableResult
+    public func config(_ direction: Direction, _ colors: [UIColor]) -> Self {
+        self.gradientLayer.colors = colors.map({$0.cgColor})
+        self.gradientLayer.locations = colors.enumerated().map({$0.offset.toDouble / (colors.count - 1).toDouble}).map(NSNumber.init)
         switch direction {
         case .topToBottom:
             self.gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
@@ -43,5 +47,9 @@ open class GradientView: CustomView {
             self.gradientLayer.endPoint = CGPoint(x: 0, y: 0.5)
         }
         return self
+    }
+
+    public func finalizeImage() -> UIImage {
+        return self.layer.toImage()
     }
 }
