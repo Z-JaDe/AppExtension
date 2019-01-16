@@ -17,7 +17,7 @@ extension ListDataUpdateProtocol where Item == TableAdapterItemConvertible {
     }
 }
 extension ListData where Item: StaticTableItemCell, Section == TableSection {
-    public func updateInfo() -> TableUpdateInfo {
+    public func updateInfo() -> TableListUpdateInfo {
         return self.map({.cell($0)}).updateInfo()
     }
 }

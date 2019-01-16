@@ -26,4 +26,17 @@ open class ImageView: UIImageView {
 //        self.contentMode = .scaleAspectFill
     }
 
+    // MARK: - Round
+    private var isRound: Bool = false
+    open override func roundView() {
+        self.isRound = true
+        super.roundView()
+    }
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        if self.isRound {
+            self.roundView()
+        }
+    }
+
 }

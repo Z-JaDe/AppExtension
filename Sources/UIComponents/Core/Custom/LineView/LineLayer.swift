@@ -21,16 +21,15 @@ public enum LineAxis {
 public class LineLayer: CAShapeLayer {
     public override init() {
         super.init()
-        self.fillColor = Color.clear.cgColor
-        self.lineJoin = .round
+        configInit()
     }
     public override init(layer: Any) {
         super.init(layer: layer)
-        self.fillColor = Color.clear.cgColor
-        self.lineJoin = .round
+        configInit()
     }
     public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        configInit()
     }
     open var lineColor: UIColor? = Color.boderLine {
         didSet { super.strokeColor = self.lineColor?.cgColor }
@@ -52,6 +51,12 @@ public class LineLayer: CAShapeLayer {
     open override var strokeColor: CGColor? {
         get {return super.strokeColor}
         set {super.strokeColor = newValue}
+    }
+    // MARK: -
+    func configInit() {
+        self.fillColor = Color.clear.cgColor
+        self.lineJoin = .round
+        self.lineColor = self.lineColor.map{$0}
     }
     // MARK: -
     public override func layoutSublayers() {

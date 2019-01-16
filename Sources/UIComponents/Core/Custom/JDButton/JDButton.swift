@@ -63,7 +63,7 @@ open class JDButton: ImageLabelView {
         imageView.image = self.imageInfo[self.state] ?? self.imageInfo[.normal]
     }
     internal override func config(titleLabel: Label) {
-        titleLabel.attributedText = self.attributedTitleInfo[self.state] ?? self.attributedTitleInfo[.normal]
+        titleLabel.attributedText = getCurrentAttributedTitle()
     }
     // MARK: -
     private var _backgroundImageView: ImageView?
@@ -151,10 +151,11 @@ extension JDButton {
         updateBackgroundLayout()
     }
     public func setBackgroundColor(_ color: UIColor?, for state: UIControl.State) {
-        self.setBackgroundImage(UIImage.imageWithColor(color), for: .normal)
+        self.setBackgroundImage(UIImage.imageWithColor(color), for: state)
     }
 }
 extension JDButton {
+    /// ZJaDe: 存储state下的title，通过setAttributedTitle保存
     public func setTitle(_ title: String?, for state: UIControl.State) {
         if title != self.attributedTitleInfo[state]?.string {
             let titleFont = getTitleFont(state: state)
@@ -174,25 +175,56 @@ extension JDButton {
         self.setTitleColor(color, for: state)
         self.setTitleFont(font, for: state)
     }
+    /// ZJaDe: 存储state下的color，如果对应state下已经设置AttributedTitle，会更新AttributedTitle
     public func setTitleColor(_ color: UIColor?, for state: UIControl.State) {
         self.titleColorInfo[state] = color
-        let textColor = self.titleColorInfo[state] ?? self.titleColorInfo[.normal] ?? Color.black
-        if let attr = self.attributedTitleInfo[state] {
-            self.setAttributedTitle(AttributedStringMaker(attr).color(textColor).attr(), for: .normal)
+        if let attr = self.attributedTitleInfo[state], let color = color {
+            self.setAttributedTitle(AttributedStringMaker(attr).color(color).attr(), for: state)
+        }
+        if self.state == state {
+            updateData()
         }
     }
+    /// ZJaDe: 存储state下的font，如果对应state下已经设置AttributedTitle，会更新AttributedTitle
     public func setTitleFont(_ font: UIFont?, for state: UIControl.State) {
         self.titleFontInfo[state] = font
-        let titleFont = getTitleFont(state: state)
-        if let attr = self.attributedTitleInfo[state] {
-            self.setAttributedTitle(AttributedStringMaker(attr).font(titleFont).attr(), for: .normal)
+        if let attr = self.attributedTitleInfo[state], let font = font {
+            self.setAttributedTitle(AttributedStringMaker(attr).font(titleFont).attr(), for: state)
+        }
+        if self.state == state {
+            updateData()
         }
     }
-    // MARK: -
+}
+extension JDButton {
+    /// ZJaDe: 获取当前状态下的attributedTitle，如果对应状态下没有attr，同时normal下有的话 就根据状态生成属性字符串
+    internal func getCurrentAttributedTitle() -> NSAttributedString? {
+        if let attr = self.attributedTitleInfo[self.state] {
+            return attr
+        } else if let title = self.title {
+            return AttributedStringMaker(title)
+                .color(self.getTitleColor(state: self.state))
+                .font(self.getTitleFont(state: self.state))
+                .attr()
+        }
+        return nil
+    }
     private func getTitleFont(state: UIControl.State) -> UIFont {
-        return self.titleFontInfo[state] ?? self.titleFontInfo[.normal] ?? Font.h3
+        let result: UIFont
+        if state.contains(.highlighted), let font = self.titleFontInfo[.highlighted] {
+            result = font
+        } else {
+            result = self.titleFontInfo[state] ?? self.titleFontInfo[.normal] ?? Font.h3
+        }
+        return result
     }
     private func getTitleColor(state: UIControl.State) -> UIColor {
-        return self.titleColorInfo[state] ?? self.titleColorInfo[.normal] ?? Color.black
+        let result: UIColor
+        if state.contains(.highlighted), let font = self.titleColorInfo[.highlighted] {
+            result = font
+        } else {
+            result = self.titleColorInfo[state] ?? self.titleColorInfo[.normal] ?? Color.black
+        }
+        return result
     }
 }

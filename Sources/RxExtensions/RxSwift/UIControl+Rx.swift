@@ -51,7 +51,7 @@ extension Reactive where Base: UIControl {
     }
 
     @discardableResult
-    public func throttleTouchUpInside(timeInterval: TimeInterval = 1.5, _ closure: ((Base) -> Void)?) -> Disposable {
+    public func throttleTouchUpInside(timeInterval: TimeInterval = 1, _ closure: ((Base) -> Void)?) -> Disposable {
         return self.throttleTouchUpInside(timeInterval).subscribeOnNext {[weak base] _ in
             guard let base = base else {
                 return
@@ -59,7 +59,7 @@ extension Reactive where Base: UIControl {
             closure?(base)
         }
     }
-    public func throttleTouchUpInside(_ timeInterval: TimeInterval = 1.5) -> Observable<Void> {
+    public func throttleTouchUpInside(_ timeInterval: TimeInterval = 1) -> Observable<Void> {
         return self.touchUpInside().do(onNext: {[weak base] () in
             base?.isEnabled = false
             Async.main(after: timeInterval, {

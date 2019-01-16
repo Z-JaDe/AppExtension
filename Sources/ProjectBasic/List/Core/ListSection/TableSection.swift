@@ -7,6 +7,14 @@
 //
 
 import UIKit
+extension Font.List {
+    public static var sectionHeader: UIFont = Font.h4
+    public static var sectionFooter: UIFont = Font.h4
+}
+extension Color.List {
+    public static var sectionHeader: UIColor = Color.gray
+    public static var sectionFooter: UIColor = Color.gray
+}
 open class TableSection: ListSection {
 
     open lazy var headerView: TableViewHeaderView = {
@@ -41,12 +49,12 @@ open class TableSection: ListSection {
     }
 
     @discardableResult
-    open func changeHeader(title: String, font: UIFont = Font.h4_big, color: UIColor = Color.gray) -> Self {
+    open func changeHeader(title: String, font: UIFont = Font.List.sectionHeader, color: UIColor = Color.List.sectionHeader) -> Self {
         headerView.changeTitle(title, font: font, color: color)
         return self
     }
     @discardableResult
-    open func changeFooter(title: String, font: UIFont = Font.h4_big, color: UIColor = Color.gray) -> Self {
+    open func changeFooter(title: String, font: UIFont = Font.List.sectionFooter, color: UIColor = Color.List.sectionFooter) -> Self {
         footerView.changeTitle(title, font: font, color: color)
         return self
     }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 open class ButtonCell: StaticTableItemCell {
     public let button: Button
     public init(_ button: Button) {
@@ -44,7 +43,9 @@ open class ButtonCell: StaticTableItemCell {
         self.highlightedAnimation = .none
         self.separatorLineHeight = 0
         self.button.rx.throttleTouchUpInside()
-            .bind(to: self.didSelectItemPubject)
+            .subscribeOnNext({ [weak self] () in
+                self?.sendDidSelectItemEvent()
+            })
             .disposed(by: self.disposeBag)
     }
 

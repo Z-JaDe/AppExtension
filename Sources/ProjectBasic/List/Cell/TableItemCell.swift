@@ -22,6 +22,10 @@ open class TableItemCell: ItemCell, WritableDefaultHeightProtocol {
     func getTableView() -> UITableView? {
         return _tableView
     }
+    open override func configInit() {
+        super.configInit()
+        configDefaultInsets()
+    }
     /// ZJaDe: 
     open var cellSelectedBackgroundColor: UIColor = TableItemCell.selectedBackgroundDefaultColor {
         didSet {self.selectedBackgroundView.backgroundColor = self.cellSelectedBackgroundColor}
@@ -47,8 +51,14 @@ open class TableItemCell: ItemCell, WritableDefaultHeightProtocol {
         didSet {getSNCell()?.updateSeparatorLineViewFrame()}
     }
     /// ZJaDe: 内容insets
-    public var insets: UIEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16) {
+    public var insets: UIEdgeInsets = UIEdgeInsets.zero {
         didSet {getSNCell()?.setNeedsUpdateLayouts()}
+    }
+    private func configDefaultInsets() {
+        self.insets = TableItemCell.get(type(of: self)) ?? defaultInsets()
+    }
+    open func defaultInsets() -> UIEdgeInsets {
+        return UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
     }
     public func insetVerticalSpace() -> CGFloat {
         return insets.top + insets.bottom + separatorLineHeight
@@ -102,5 +112,21 @@ open class TableItemCell: ItemCell, WritableDefaultHeightProtocol {
     // MARK: -
     open override func layoutSubviews() {
         super.layoutSubviews()
+    }
+}
+extension TableItemCell {
+    private static var insetsInfo: [String: UIEdgeInsets] = [:]
+    public static func save<T>(_ cellType: T.Type, insets: UIEdgeInsets) where T: TableItemCell {
+        let name = cellType.classFullName
+        self.insetsInfo[name] = insets
+    }
+    public static func get<T>(_ cellType: T.Type) -> UIEdgeInsets? where T: TableItemCell {
+        let name = cellType.classFullName
+        if let insets = self.insetsInfo[name] {
+            return insets
+        } else if let cls = cellType.superclass() as? TableItemCell.Type {
+            return get(cls)
+        }
+        return nil
     }
 }

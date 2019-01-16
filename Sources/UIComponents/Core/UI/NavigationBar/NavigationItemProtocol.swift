@@ -19,9 +19,11 @@ public protocol NavigationItemProtocol: class {
     var navBarIsHidden: Bool {get}
     var navBarTintColor: UIColor {get}
     var navTintColor: UIColor {get}
+    /// ZJaDe: 更新时要控制不能超过1，一旦超过1 isTranslucent会自动设置成false
     var navBarAlpha: CGFloat {get}
     var navBarBackgroundImage: UIImage? {get}
     var navBarShadowType: NavBarShadowType {get}
+    var titleTextAttributes: [NSAttributedString.Key : Any] {get set}
 
     func updateNavBar(isDidAppear: Bool)
 }
@@ -30,12 +32,22 @@ extension NavigationItemProtocol where Self: UIViewController {
     public func updateNavBar(isDidAppear: Bool) {
         guard checkVCType() else {return}
         self.updateBarStyle()
+        self.changeTitleTextAttributes(self.titleTextAttributes)
         self.changeTintColor(self.navTintColor)
         self.changeIsHidden(self.navBarIsHidden, isDidAppear)
     }
 }
 
 public extension NavigationItemProtocol where Self: UIViewController {
+    func changeTitleTextAttributes(_ attributes: [NSAttributedString.Key : Any]) {
+        guard checkVCType() else {return}
+        guard let navBar = self.navigationController?.navigationBar else {return}
+        var attributes = attributes
+        if attributes[.foregroundColor] == nil {
+            attributes[.foregroundColor] = self.navTintColor
+        }
+        navBar.titleTextAttributes = attributes
+    }
     func changeTintColor(_ color: UIColor) {
         guard checkVCType() else {return}
         guard let navBar = self.navigationController?.navigationBar else {return}
@@ -120,7 +132,7 @@ extension UINavigationBar {
             self.shadowImage = nil
             self.addShadow(offset: CGSize.zero, color: Color.clear, opacity: 0, radius: 0)
         case .separatorLine(let color):
-            let color = color.alpha(alpha)
+            let color = color.alpha(color.alpha * alpha)
             self.shadowImage = UIImage.imageWithColor(color, size: CGSize(width: jd.screenWidth, height: 0.5))
             self.addShadow(offset: CGSize.zero, color: Color.clear, opacity: 0, radius: 0)
         }
@@ -135,7 +147,6 @@ extension UINavigationBar {
 //        }
 //    }
     @objc func changeTintColor(_ color: UIColor) {
-        self.titleTextAttributes = [.foregroundColor: color, .font: Font.boldh2]
         self.tintColor = color
         self.setNeedsDisplay()
         if let titleView = self.topItem?.titleView {

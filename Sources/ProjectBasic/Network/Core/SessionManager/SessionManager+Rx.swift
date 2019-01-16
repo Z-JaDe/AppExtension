@@ -104,6 +104,15 @@ extension Reactive where Base: SessionManager {
 extension RxAlamofireRequest {
     fileprivate func onNext(_ observer: AnyObserver<Self>, _ manager: SessionManager) -> Disposable {
         observer.onNext(self)
+        responseWith(completionHandler: { (response) in
+//            if let error = response.error {
+//                observer.onError(error)
+//            } else {
+//                observer.onCompleted()
+//            }
+            /// ZJaDe: 请求完成后发送完成时间，保证序列释放，不能发送error事件，response()方法里面会处理
+            observer.onCompleted()
+        })
 
         if !manager.startRequestsImmediately {
             self.resume()

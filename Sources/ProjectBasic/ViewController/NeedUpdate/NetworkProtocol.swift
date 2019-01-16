@@ -36,9 +36,9 @@ public protocol NetworkProtocol: class {
 }
 public extension NetworkProtocol {
     func setNeedRequestObserver() -> AnyObserver<Void> {
-        return AnyObserver(eventHandler: { (event) in
+        return AnyObserver(eventHandler: { [weak self] (event) in
             switch event {
-            case .next: self.setNeedRequest()
+            case .next: self?.setNeedRequest()
             case .completed, .error: break
             }
         })

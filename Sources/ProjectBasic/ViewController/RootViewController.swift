@@ -9,7 +9,6 @@
 import UIKit
 
 public class RootViewController: ItemViewController {
-
     public var contentVC: UIViewController {
         didSet {
             self.removeAsChildViewController(oldValue)

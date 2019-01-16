@@ -19,11 +19,19 @@ where ViewConType: CanCancelModalViewController & UIViewController {
     public private(set) lazy var viewCon: ViewConType = ViewConType()
 
     open func start(in flow: PresentFlow) {
-        viewCon._modalCoordinator = self
-        viewCon.didCancel = { [weak self] () in
+        if let flow = flow as? InPresentFlow {
+            flow.addChild(self)
+        } else {
+            viewCon._modalCoordinator = self
+        }
+        viewCon.didCancel = { [weak self, weak flow] () in
             guard let `self` = self else { return }
             self.didCancel()
-            self.viewCon._modalCoordinator = nil
+            if let flow = flow as? InPresentFlow {
+                flow.removeChild(self)
+            } else {
+                self.viewCon._modalCoordinator = nil
+            }
         }
     }
     open func didCancel() {

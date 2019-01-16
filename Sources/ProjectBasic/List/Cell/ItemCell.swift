@@ -33,8 +33,8 @@ public enum CellHighlightedAnimationType {
     case zoom
 }
 extension ItemCell {
-    public static var accessoryTypeSelectedImage: UIImage = UIImage(named: "ic_accessoryType_selected")!
-    public static var accessoryTypeUnSelectedImage: UIImage = UIImage(named: "ic_accessoryType_unselected")!
+    public static var accessoryTypeUnSelectedImage: UIImage = UIImage(named: "ic_accessoryType_unselected") ?? UIImage()
+    public static var accessoryTypeSelectedImage: UIImage = UIImage(named: "ic_accessoryType_selected") ?? UIImage()
 }
 open class ItemCell: CustomView, DataSourceItemtype & SelectedStateDesignable & HiddenStateDesignable & EnabledStateDesignable, HighlightedStateDesignable, NeedUpdateProtocol, BufferPoolItemProtocol {
 
@@ -194,8 +194,13 @@ open class ItemCell: CustomView, DataSourceItemtype & SelectedStateDesignable & 
         }
     }
     // MARK: - CellSelectProtocol
+    public var didSelectItemClosure: CallBackNoParams?
     public let didSelectItemPubject: PublishSubject<Void> = PublishSubject()
     open func didSelectItem() {
+        self.sendDidSelectItemEvent()
+    }
+    func sendDidSelectItemEvent() {
+        self.didSelectItemClosure?()
         self.didSelectItemPubject.onNext(())
     }
 

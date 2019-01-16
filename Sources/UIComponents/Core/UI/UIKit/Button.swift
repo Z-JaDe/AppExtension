@@ -20,15 +20,15 @@ open class Button: UIButton {
 
     open func configInit() {
     }
-    // MARK: - 
-    private var isRoundButton: Bool = false
-    public func roundButton() {
-        self.isRoundButton = true
-        self.roundView()
+    // MARK: - Round
+    private var isRound: Bool = false
+    open override func roundView() {
+        self.isRound = true
+        super.roundView()
     }
     open override func layoutSubviews() {
         super.layoutSubviews()
-        if self.isRoundButton {
+        if self.isRound {
             self.roundView()
         }
     }

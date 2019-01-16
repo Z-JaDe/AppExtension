@@ -32,8 +32,8 @@ extension Font {
     public static func boldSystemFontOfSize(_ fontSize: CGFloat) -> UIFont {
         return FontConfiger.shared.boldSystemFontOfSize(fontSize)
     }
-    public static func reset() {
-        if let configer = FontConfiger.shared as? FontConfigerProtocol {
+    public static func reset(_ configer: FontConfigerProtocol? = nil) {
+        if let configer = configer ?? (FontConfiger.shared as? FontConfigerProtocol) {
             configer.resetFonts(FontConfiger.shared)
         }
     }
@@ -48,7 +48,6 @@ public struct Font {
     ///正文
     public static var thinh3 = thinFontSize(16)
     ///副文
-    public static var thinh4_big = thinFontSize(14)
     public static var thinh4 = thinFontSize(13)
     ///最小
     public static var thinh5 = thinFontSize(11)
@@ -60,7 +59,6 @@ public struct Font {
     ///正文
     public static var h3 = fontSize(16)
     ///副文
-    public static var h4_big = fontSize(14)
     public static var h4 = fontSize(13)
     ///最小
     public static var h5 = fontSize(11)
@@ -72,7 +70,6 @@ public struct Font {
     ///正文
     public static var boldh3 = boldFontSize(16)
     ///副文
-    public static var boldh4_big = boldFontSize(14)
     public static var boldh4 = boldFontSize(13)
     ///最小
     public static var boldh5 = boldFontSize(11)
@@ -86,4 +83,6 @@ public struct Font {
     public static var boldFontSize: (CGFloat) -> UIFont = { (size) in
         return boldSystemFontOfSize(size)
     }
+    // MARK: - 
+    public struct List {}
 }

@@ -15,7 +15,7 @@ open class PageScrollViewController: UIViewController, CyclePageFormProtocol, UI
         self.view = self.scrollView
     }
     public typealias CellView = UIView
-    public typealias CellData = UIViewController
+    public typealias CellData = Void
     public lazy private(set) var scrollView: PageScrollView<UIView> = PageScrollView<UIView>()
     public var viewConArr: [UIViewController] = [] {
         didSet {

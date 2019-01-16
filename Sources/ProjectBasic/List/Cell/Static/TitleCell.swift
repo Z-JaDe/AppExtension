@@ -8,6 +8,12 @@
 
 import UIKit
 
+extension Font.List {
+    public static var title: UIFont = Font.thinh3
+}
+extension Color.List {
+    public static var title: UIColor = Color.black
+}
 open class TitleCell: StaticTableItemCell {
     public convenience init(img: ImageData? = nil, title: String) {
         self.init()
@@ -26,9 +32,16 @@ open class TitleCell: StaticTableItemCell {
     public var title: String = "" {
         didSet {configTitle()}
     }
+    public var attrTitle: NSAttributedString? {
+        didSet {configTitle()}
+    }
     func configTitle() {
-        self.titleLabel.text = self.title
-        self.titleLabel.isHidden = self.title.isEmpty
+        if let attrTitle = self.attrTitle {
+            self.titleLabel.attributedText = attrTitle
+        } else {
+            self.titleLabel.text = self.title
+        }
+        self.titleLabel.isHidden = self.title.isEmpty && self.attrTitle == nil
     }
 
     // MARK: -
@@ -37,12 +50,12 @@ open class TitleCell: StaticTableItemCell {
         let imageView = ImageView()
         imageView.isHidden = true
         imageView.snp.makeConstraints { (make) in
-            make.size.lessThanOrEqualTo(CGSize(width: 25, height: 25))
+            make.size.lessThanOrEqualTo(CGSize(width: 44, height: 44))
         }
         return imageView
     }()
-    /// ZJaDe: 不要直接设置titleLabel的text 使用self.title
-    public private(set) lazy var titleLabel: Label = Label(color: Color.black, font: Font.thinh3)
+    /// ZJaDe: 不要直接设置titleLabel的text 使用self.title 或 self.attrTitle
+    public private(set) lazy var titleLabel: Label = Label(color: Color.List.title, font: Font.List.title)
     public private(set) lazy var stackView: UIStackView = UIStackView(axis: .horizontal, alignment: .center, distribution: .fill, spacing: Space.itemSpace)
 
     open override func configInit() {

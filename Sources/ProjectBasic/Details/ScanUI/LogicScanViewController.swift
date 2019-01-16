@@ -30,20 +30,26 @@ open class LogicScanViewController: UIViewController {
         return session
     }()
     public private(set) lazy var previewView: UIView = UIView()
-    lazy var preview: AVCaptureVideoPreviewLayer = {
-        let preView = AVCaptureVideoPreviewLayer(session: self.session)
-        preView.videoGravity = .resize
-        return preView
-    }()
+    var _previewLayer: AVCaptureVideoPreviewLayer?
+    var previewLayer: AVCaptureVideoPreviewLayer {
+        if let layer = _previewLayer {
+            return layer
+        } else {
+            let layer = AVCaptureVideoPreviewLayer(session: self.session)
+            layer.videoGravity = .resize
+            _previewLayer = layer
+            return layer
+        }
+    }
 
     open override func viewDidLoad() {
         super.viewDidLoad()
         addChildView()
         configLayout()
         if self.deviceAvailable {
-            self.addScanInput()
-            self.addScanOutput()
-            self.previewView.layer.insertSublayer(self.preview, at: 0)
+            self.addScanInputAntOutput()
+            self.previewView.layer.insertSublayer(self.previewLayer, at: 0)
+            self.previewLayer.frame = self.previewView.bounds
         }
         self.checkCanScan { [weak self] (canUse) in
             if canUse {
@@ -60,7 +66,7 @@ open class LogicScanViewController: UIViewController {
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.previewView.frame = self.view.bounds
-        self.preview.frame = self.previewView.bounds
+        _previewLayer?.frame = self.previewView.bounds
     }
     // MARK: -
     open override func viewWillAppear(_ animated: Bool) {
@@ -122,24 +128,23 @@ extension LogicScanViewController {
             }
         }
     }
-    func addScanInput() {
+    func addScanInputAntOutput() {
         guard session.inputs.count <= 0 else { return }
         if let device = device, let input = try? AVCaptureDeviceInput(device: device) {
             if session.canAddInput(input) {
                 session.addInput(input)
             }
         }
-    }
-    func addScanOutput() {
         guard session.outputs.count <= 0 else { return }
         let output = AVCaptureMetadataOutput()
         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         output.rectOfInterest = self.rectOfInterest(scanViewRect: self.scanViewRect())
-        if output.availableMetadataObjectTypes.count > 0 {
-            output.metadataObjectTypes = [.qr, .ean13, .ean8, .code128]
-        }
         if session.canAddOutput(output) {
             session.addOutput(output)
+        }
+        /// ZJaDe: availableMetadataObjectTypes依赖于input，所以要先把input output添加到session中再做判断
+        if output.availableMetadataObjectTypes.count > 0 {
+            output.metadataObjectTypes = output.availableMetadataObjectTypes//[.qr, .ean13, .ean8, .code128]
         }
     }
     func rectOfInterest(scanViewRect: CGRect) -> CGRect {

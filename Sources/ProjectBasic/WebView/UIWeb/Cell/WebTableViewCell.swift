@@ -15,12 +15,13 @@ open class WebTableViewCell: StaticTableItemCell {
     open override func configInit() {
         super.configInit()
         self.cellBackgroundColor = Color.clear
-        self.insets = UIEdgeInsets.zero
         self.separatorLineHeight = 0
         self.separatorLineInsets = (0, 0)
         self.webVC.autoUpdateHeightWithContentSize()
     }
-
+    open override func defaultInsets() -> UIEdgeInsets {
+        return UIEdgeInsets.zero
+    }
     open override func addChildView() {
         super.addChildView()
         self.addSubview(self.webVC.sn_view)

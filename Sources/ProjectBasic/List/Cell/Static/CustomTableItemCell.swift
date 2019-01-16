@@ -20,9 +20,11 @@ public class CustomTableItemCell<ViewType: UIView>: StaticTableItemCell {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        self.insets = UIEdgeInsets.zero
         self.separatorLineHeight = 0
         self.separatorLineInsets = (0, 0)
+    }
+    public override func defaultInsets() -> UIEdgeInsets {
+        return UIEdgeInsets.zero
     }
     public var customView: ViewType? {
         didSet {

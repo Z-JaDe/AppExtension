@@ -11,18 +11,12 @@ import UIKit
 open class TabBar: UITabBar {
 
     open override var selectedItem: UITabBarItem? {
-        didSet {
-            self.currentItem = selectedItem as? TabBarItem
-        }
+        didSet { self.currentItem = selectedItem as? TabBarItem }
     }
     private var currentItem: TabBarItem? {
         didSet {
-            guard let currentItem = self.currentItem else {
-                return
-            }
-//            guard oldValue != currentItem else {
-//                return
-//            }
+            guard let currentItem = self.currentItem else { return }
+//            guard oldValue != currentItem else { return }
             changeItem(oldValue, toItem: currentItem)
             let index = items?.index(of: currentItem) ?? 0
             changeCurrentLayerFrame(barButton: tabBarButtonArr[index])
@@ -30,19 +24,13 @@ open class TabBar: UITabBar {
     }
 
     open var selectedLayerBackgroundColor: UIColor? {
-        didSet {
-            currentLayer.backgroundColor = selectedLayerBackgroundColor?.cgColor
-        }
+        didSet { currentLayer.backgroundColor = selectedLayerBackgroundColor?.cgColor }
     }
     open var jdSeparatorLineColor: UIColor? {
-        didSet {
-            shadowImage = UIImage.imageWithColor(jdSeparatorLineColor)
-        }
+        didSet { shadowImage = UIImage.imageWithColor(jdSeparatorLineColor) }
     }
     open var jdBackgroundColor: UIColor? {
-        didSet {
-            backgroundImage = UIImage.imageWithColor(jdBackgroundColor)
-        }
+        didSet { backgroundImage = UIImage.imageWithColor(jdBackgroundColor) }
     }
     override init(frame: CGRect) {
         super.init(frame: frame)

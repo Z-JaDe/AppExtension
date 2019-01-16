@@ -7,14 +7,19 @@
 //
 
 import UIKit
-
+extension Font.List {
+    public static var textView: UIFont = Font.thinh2
+}
+extension Color.List {
+    public static var textView: UIColor = Color.black
+}
 open class TextViewCell: TitleCell, CheckAndCatchParamsProtocol {
     public convenience init(img: ImageData? = nil, title: String = "", placeholder: String = "") {
         self.init(img: img, title: title)
         self.textView.placeholder = placeholder
     }
     // MARK: -
-    public lazy var textView: TextView = TextView(color: Color.black, font: Font.thinh2)
+    public lazy var textView: TextView = TextView(color: Color.List.textView, font: Font.List.textView)
     public var textViewText: String {
         return self.textView.text ?? ""
     }

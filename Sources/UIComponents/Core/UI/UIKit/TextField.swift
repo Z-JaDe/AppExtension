@@ -23,6 +23,19 @@ open class TextField: UITextField {
         if self.font == nil {
             self.font = Font.thinh3
         }
+        self.placeholderColor = Color.gray
+    }
+    open override var placeholder: String? {
+        didSet {
+            self.placeholderFont = self.placeholderFont.flatMap({$0})
+            self.placeholderColor = self.placeholderColor.flatMap({$0})
+        }
+    }
+    public var placeholderFont: UIFont? {
+        didSet { self.attributedPlaceholder = self.attributedPlaceholder.flatMap({$0.font(placeholderFont)}) }
+    }
+    public var placeholderColor: UIColor? {
+        didSet { self.attributedPlaceholder = self.attributedPlaceholder.flatMap({$0.color(placeholderColor)}) }
     }
     // MARK: -
     /// 输入框text位置
@@ -35,7 +48,5 @@ open class TextField: UITextField {
     open override func textRect(forBounds bounds: CGRect) -> CGRect {
         return super.textRect(forBounds: bounds) - textInset
     }
-
-    // MARK: -
 
 }
