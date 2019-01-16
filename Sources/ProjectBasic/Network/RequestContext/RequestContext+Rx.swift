@@ -34,7 +34,7 @@ extension ObservableType where E == RequestContext<Result<Data>> {
             .map({ (context) -> RequestContext<T> in
                 let value = try transform(context)
                 /// ZJaDe: data数据转Model
-                return try context.map({_ in value})
+                return context.map({_ in value})
             })
             .observeOn(MainScheduler.instance)
             .retryWhen({ $0._retryError() })

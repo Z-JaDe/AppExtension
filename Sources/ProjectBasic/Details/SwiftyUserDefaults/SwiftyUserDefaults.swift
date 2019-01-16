@@ -27,7 +27,7 @@ import Foundation
 import SwiftyUserDefaults
 extension UserDefaults {
     public func encode<T: Encodable>(_ key: DefaultsKey<T>, _ value: T?) {
-        set(key, try? value?.serialize())
+        set(key, try? value.serialize())
     }
 
     public func encode<T: Encodable>(_ key: DefaultsKey<T?>, _ value: T?) {
