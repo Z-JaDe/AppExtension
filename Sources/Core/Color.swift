@@ -61,8 +61,8 @@ extension Color {
     public static func colorFromRGB(_ hexString: String) -> UIColor? {
         return ColorConfiger.shared.colorFromRGB(hexString)
     }
-    public static func reset() {
-        if let configer = ColorConfiger.shared as? ColorConfigerProtocol {
+    public static func reset(_ configer: ColorConfigerProtocol? = nil) {
+        if let configer = configer ?? (ColorConfiger.shared as? ColorConfigerProtocol) {
             configer.resetColors(ColorConfiger.shared)
         }
     }
@@ -110,4 +110,6 @@ extension Color {
     ///占位颜色
     public static var placeholder: UIColor = colorFromRGB("#c7c7cd")!
 
+
+    public struct List {}
 }

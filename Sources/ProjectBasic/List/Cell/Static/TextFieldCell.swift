@@ -7,7 +7,12 @@
 //
 
 import UIKit
-import SnapKit
+extension Font.List {
+    public static var textField: UIFont = Font.thinh2
+}
+extension Color.List {
+    public static var textField: UIColor = Color.black
+}
 open class TextFieldCell: TitleCell, CheckAndCatchParamsProtocol {
     public convenience init(img: ImageData? = nil, title: String = "", placeholder: String = "") {
         self.init(img: img, title: title)
@@ -15,7 +20,7 @@ open class TextFieldCell: TitleCell, CheckAndCatchParamsProtocol {
     }
     public var autoBeginInputWhenSelectedItem: Bool = true
     // MARK: -
-    public lazy var textField: TextField = TextField(color: Color.black, font: Font.thinh2)
+    public lazy var textField: TextField = TextField(color: Color.List.textField, font: Font.List.textField)
     public var textFieldText: String {
         return self.textField.text ?? ""
     }

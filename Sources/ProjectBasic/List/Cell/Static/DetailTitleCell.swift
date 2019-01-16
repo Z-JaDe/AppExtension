@@ -7,14 +7,19 @@
 //
 
 import UIKit
-
+extension Font.List {
+    public static var detailTitle: UIFont = Font.thinh4
+}
+extension Color.List {
+    public static var detailTitle: UIColor = Color.black
+}
 open class DetailTitleCell: TitleCell, CheckAndCatchParamsProtocol {
     public convenience init(img: ImageData? = nil, title: String, detailText: String) {
         self.init(img: img, title: title)
         self.detailTitleLabel.text = detailText
     }
     // MARK: -
-    public private(set) lazy var detailTitleLabel: Label = Label(color: Color.black, font: Font.thinh4)
+    public private(set) lazy var detailTitleLabel: Label = Label(color: Color.List.detailTitle, font: Font.List.detailTitle)
     open override func configInit() {
         super.configInit()
         configSingleLineRight()

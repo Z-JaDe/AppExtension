@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 open class ButtonCell: StaticTableItemCell {
     public let button: Button
     public init(_ button: Button) {
