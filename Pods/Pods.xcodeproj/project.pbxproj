@@ -4841,7 +4841,7 @@
 				0000000037D0 /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../../../ios-tjs-rebuild/BaseSupport/AppExtension/Pods/Target Support Files/CocoaExtension";
+			path = "../../../AppExtension/Pods/Target Support Files/CocoaExtension";
 			sourceTree = "<group>";
 		};
 		000000003BE0 /* Support Files */ = {
@@ -4883,7 +4883,7 @@
 				000000004510 /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../../../ios-tjs-rebuild/BaseSupport/AppExtension/Pods/Target Support Files/Encryption";
+			path = "../../../AppExtension/Pods/Target Support Files/Encryption";
 			sourceTree = "<group>";
 		};
 		000000004670 /* Support Files */ = {
@@ -4897,7 +4897,7 @@
 				0000000046C0 /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../../../ios-tjs-rebuild/BaseSupport/AppExtension/Pods/Target Support Files/FunctionalSwift";
+			path = "../../../AppExtension/Pods/Target Support Files/FunctionalSwift";
 			sourceTree = "<group>";
 		};
 		000000004920 /* Support Files */ = {
@@ -4953,7 +4953,7 @@
 				000000004FF0 /* ModalManager-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../../../ios-tjs-rebuild/BaseSupport/AppExtension/Pods/Target Support Files/ModalManager";
+			path = "../../../AppExtension/Pods/Target Support Files/ModalManager";
 			sourceTree = "<group>";
 		};
 		0000000051B0 /* Support Files */ = {
@@ -4981,7 +4981,7 @@
 				000000005380 /* Rx+Kingfisher-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../../../ios-tjs-rebuild/BaseSupport/AppExtension/Pods/Target Support Files/Rx+Kingfisher";
+			path = "../../../AppExtension/Pods/Target Support Files/Rx+Kingfisher";
 			sourceTree = "<group>";
 		};
 		0000000054B0 /* Support Files */ = {
@@ -5135,7 +5135,7 @@
 				000000007820 /* Validation-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../../../ios-tjs-rebuild/BaseSupport/AppExtension/Pods/Target Support Files/Validation";
+			path = "../../../AppExtension/Pods/Target Support Files/Validation";
 			sourceTree = "<group>";
 		};
 		000000007920 /* Pods-AppExtensionTests */ = {

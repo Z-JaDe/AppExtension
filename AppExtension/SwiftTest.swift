@@ -11,7 +11,7 @@ import Core
 import RxSwift
 import RxExtensions
 
-func swiftText() {
+func swiftTest() {
     let a = A()
     let hash1 = ObjectIdentifier(a).debugDescription
     let hash2 = ObjectIdentifier(a).debugDescription
@@ -19,9 +19,15 @@ func swiftText() {
     print(hash2)
     greetings(person: Person()) // prints 'Hello'
     greetings(person: MisunderstoodPerson()) // prints 'Hello'
+
+    B.aa = 2
+    print(A.aa)
+    print(B.aa)
 }
 class A {
-
+    static var aa: Int = 0
+}
+class B: A {
 }
 @objc class Person: NSObject {
     @objc dynamic func sayHi() {
