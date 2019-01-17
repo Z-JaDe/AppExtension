@@ -36,7 +36,7 @@ open class TableItemCell: ItemCell, WritableDefaultHeightProtocol {
     open var cellBackgroundColor: UIColor = Color.white {
         didSet {getSNCell()?.backgroundColor = self.cellBackgroundColor}
     }
-    public var separatorLineHeight: CGFloat = 0.5 {
+    public var separatorLineHeight: CGFloat = jd.onePx {
         didSet {getSNCell()?.updateSeparatorLineViewFrame()}
     }
     /** ZJaDe: 
@@ -96,16 +96,20 @@ open class TableItemCell: ItemCell, WritableDefaultHeightProtocol {
         return resultSize
     }
     open override func systemLayoutSizeFitting(_ targetSize: CGSize) -> CGSize {
-        var resultSize = super.systemLayoutSizeFitting(targetSize)
+        var resultSize: CGSize
         if self.defaultHeight > 0 {
-            resultSize.height = self.defaultHeight
+            resultSize = CGSize(width: targetSize.width, height: self.defaultHeight)
+        } else {
+            resultSize = super.systemLayoutSizeFitting(targetSize)
         }
         return resultSize
     }
     open override func sizeThatFits(_ size: CGSize) -> CGSize {
-        var resultSize = super.sizeThatFits(size)
+        var resultSize: CGSize
         if self.defaultHeight > 0 {
-            resultSize.height = self.defaultHeight
+            resultSize = CGSize(width: size.width, height: self.defaultHeight)
+        } else {
+            resultSize = super.sizeThatFits(size)
         }
         return resultSize
     }
