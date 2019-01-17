@@ -194,8 +194,14 @@ open class ItemCell: CustomView, DataSourceItemtype & SelectedStateDesignable & 
         }
     }
     // MARK: - CellSelectProtocol
+    /// ZJaDe: 点击cell回调闭包
     public var didSelectItemClosure: CallBackNoParams?
-    public let didSelectItemPubject: PublishSubject<Void> = PublishSubject()
+    /// ZJaDe: 点击cell信号监听
+    public let didSelectItemPubject: PublishSubject<Void> = PublishSubject<Void>()
+    /// ZJaDe: 点击cell信号监听，throttle
+    public func throttleDidSelectItem(_ timeInterval: RxTimeInterval = 1) -> Observable<Void> {
+        return self.didSelectItemPubject.throttle(timeInterval, scheduler: MainScheduler.asyncInstance)
+    }
     open func didSelectItem() {
         self.sendDidSelectItemEvent()
     }
