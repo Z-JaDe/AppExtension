@@ -74,15 +74,9 @@ public struct Font {
     ///最小
     public static var boldh5 = boldFontSize(11)
 
-    public static var thinFontSize: (CGFloat) -> UIFont = { (size) in
-        return systemFontOfSize(size)
-    }
-    public static var fontSize: (CGFloat) -> UIFont = { (size) in
-        return systemFontOfSize(size)
-    }
-    public static var boldFontSize: (CGFloat) -> UIFont = { (size) in
-        return boldSystemFontOfSize(size)
-    }
+    public static var thinFontSize: (CGFloat) -> UIFont = systemFontOfSize
+    public static var fontSize: (CGFloat) -> UIFont = systemFontOfSize
+    public static var boldFontSize: (CGFloat) -> UIFont = boldSystemFontOfSize
     // MARK: - 
     public struct List {}
 }
