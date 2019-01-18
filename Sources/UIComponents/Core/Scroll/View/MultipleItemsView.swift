@@ -68,7 +68,9 @@ open class MultipleItemsView<CellView, CellData, ScrollView>: CustomControl,
     }
     /// ZJaDe: 计算自有尺寸
     open override var intrinsicContentSize: CGSize {
-        let result = self.scrollView.intrinsicContentSize
+        var result = self.scrollView.intrinsicContentSize
+        result.width += self.inset.left + self.inset.right
+        result.height += self.inset.top + self.inset.bottom
 //        if !(CellView.self == Label.self || CellView.self == ImageView.self) {
 //            logDebug("cycleView -> frame ->\(self.scrollView.subviews)")
 //        }

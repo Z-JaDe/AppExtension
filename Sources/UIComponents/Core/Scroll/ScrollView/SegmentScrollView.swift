@@ -8,6 +8,14 @@
 
 import Foundation
 
+extension SegmentScrollView.CellLength: ExpressibleByIntegerLiteral, ExpressibleByFloatLiteral {
+    public init(integerLiteral value: Int) {
+        self = .length(value.toCGFloat)
+    }
+    public init(floatLiteral value: Double) {
+        self = .length(value.toCGFloat)
+    }
+}
 public class SegmentScrollView<CellView>: MultipleItemScrollView<CellView>, TotalCountProtocol where CellView: UIView {
 
     public enum CellLength {
@@ -20,7 +28,7 @@ public class SegmentScrollView<CellView>: MultipleItemScrollView<CellView>, Tota
         /// ZJaDe: 用item的自有长度
         case auto
     }
-    public var itewLength: CellLength = .auto {
+    public var itemLength: CellLength = .auto {
         didSet {setNeedsLayoutCells()}
     }
     public enum AutoScrollItemType {
@@ -48,7 +56,7 @@ public class SegmentScrollView<CellView>: MultipleItemScrollView<CellView>, Tota
     }
     /// ZJaDe: 返回itemView宽度或者长度
     internal func getCellLength() -> CGFloat? {
-        switch self.itewLength {
+        switch self.itemLength {
         case .showMaxCount(let maxCount):
             let count = maxCount.clamp(min: 1, max: self.totalCount)
             return self.length / count.toCGFloat
@@ -72,6 +80,9 @@ public class SegmentScrollView<CellView>: MultipleItemScrollView<CellView>, Tota
 extension SegmentScrollView {
     /// ZJaDe: 滚动到指定的cell
     public func scrollTo(_ cell: CellView) {
+        guard self.layoutState == .end else {
+            return
+        }
         let layoutCell = createLayoutCell(cell)
         switch self.autoScrollItem {
         case .edge:

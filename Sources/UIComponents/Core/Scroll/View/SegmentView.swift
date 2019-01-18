@@ -68,9 +68,25 @@ open class SegmentView<CellView, CellData>: MultipleItemsView<CellView, CellData
     }
     // MARK: - currentLayer
     public var currentLayerUpdater: ((CALayer, CGRect) -> Void)?
-    public let currentLayer: CALayer = CALayer()
+    private var _currentLayer: CALayer?
+    public var currentLayer: CALayer {
+        get {
+            if let layer = _currentLayer {
+                return layer
+            } else {
+                self.currentLayer = CALayer()
+                return _currentLayer!
+            }
+        } set {
+            _currentLayer?.removeFromSuperlayer()
+            _currentLayer = newValue
+            self.scrollView.layer.addSublayer(self.currentLayer)
+        }
+    }
     private func currentLayerUpdate(_ currentCell: CellView) {
-        self.scrollView.layer.addSublayer(self.currentLayer)
+        if self.currentLayer == nil {
+            self.currentLayer = CALayer()
+        }
         if let updater = self.currentLayerUpdater {
             self.currentLayer.position = CGPoint(x: currentCell.centerX, y: currentCell.bottom)
             updater(self.currentLayer, currentCell.frame)
@@ -90,12 +106,16 @@ open class SegmentView<CellView, CellData>: MultipleItemsView<CellView, CellData
         }
     }
     // MARK: -
+    public var shouldSelectItem: ((TapContext<CellView, CellData>) -> Bool)?
     public var didSelectItem: ((TapContext<CellView, CellData>) -> Void)?
     @objc open func whenTap(_ tap: UITapGestureRecognizer) {
         if let (offset, element) = self.cellArr.enumerated().first(where: {$0.element.point(inside: tap.location(in: $0.element), with: nil)}) {
-            self.currentIndex = offset
             let context = TapContext(view: element, data: dataArray[offset], index: offset)
-            didSelectItem?(context)
+            let shouldSelect = self.shouldSelectItem?(context) ?? true
+            if shouldSelect {
+                self.currentIndex = offset
+                didSelectItem?(context)
+            }
         }
     }
 }

@@ -31,10 +31,10 @@ public extension ItemsOneWayScrollProtocol {
             switch self.scrollDirection {
             case .horizontal:
                 let _length = cellLength ?? cell.sizeThatFits().width
-                cell.changeSize(CGSize(width: min(_length, self.width), height: self.height))
+                cell.changeSize(CGSize(width: _length, height: self.height))
             case .vertical:
                 let _length = cellLength ?? cell.sizeThatFits().height
-                cell.changeSize(CGSize(width: self.width, height: min(_length, self.height)))
+                cell.changeSize(CGSize(width: self.width, height: _length))
             }
         }
     }

@@ -34,8 +34,6 @@ open class CycleView<CellView, CellData>: PageItemsView<CellView, CellData, Page
         checkCellsLifeCycle(isNeedReset: true)
         /// ZJaDe: 检查并更新cells
         resetCellsOrigin()
-        /// ZJaDe: 刷新intrinsicContentSize
-        invalidateIntrinsicContentSize()
     }
     /// ZJaDe: 更新布局
     open override func layoutSubviews() {

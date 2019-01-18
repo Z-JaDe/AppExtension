@@ -28,11 +28,13 @@ open class TextViewCell: TitleCell, CheckAndCatchParamsProtocol {
         self.textView.clipsToBounds = false
         self.textView.contentInset = .zero
         self.textView.textContainer.lineFragmentPadding = 0
+        self.separatorLineHeight = 1
         self.highlightedAnimation = .none
     }
     /// ZJaDe: autoUpdateHeightWithContentSize
     open func autoUpdateHeightWithContentSize() {
-        self.textView.contentSizeChanged = { (contentSize) in
+        self.textView.contentSizeChanged = { [weak self] (contentSize) in
+            guard let `self` = self else { return }
             let height = max(contentSize.height, 34)
             self.defaultHeight = height
             /// ZJaDe: 及时更新下textView的高度 防止contentOffset出现未知变动

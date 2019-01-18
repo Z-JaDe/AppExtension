@@ -8,7 +8,6 @@
 import Foundation
 
 open class MultipleItemScrollView<CellView>: ScrollView, ItemsOneWayScrollProtocol where CellView: UIView {
-
     private var _layoutCells: [LayoutItemType] = []
     public var itemSpace: ItemSpace = .leading(0) {
         didSet {setNeedsLayoutCells()}
@@ -19,6 +18,14 @@ open class MultipleItemScrollView<CellView>: ScrollView, ItemsOneWayScrollProtoc
             adjustAlwaysBounce()
         }
     }
+    // MARK: -
+    enum SelfLayoutState {
+        case none
+        case loading
+        case end
+    }
+    internal var layoutState: SelfLayoutState = .none
+    // MARK: -
     open override func configInit() {
         super.configInit()
         adjustAlwaysBounce()
@@ -31,9 +38,13 @@ open class MultipleItemScrollView<CellView>: ScrollView, ItemsOneWayScrollProtoc
             self.oldSize = self.size
             self.isNeedsLayoutCells = false
             layoutAllCells()
+            /// ZJaDe: superView更新ContentSize，同时也会调用self的intrinsicContentSize
+            superview?.invalidateIntrinsicContentSize()
         }
     }
+    /// ZJaDe: 子类需要实现
     open func layoutAllCells() {
+        self.layoutState = .loading
         self.layoutCells.forEach { (cell) in
             cell.update(self.itemSpace, self.scrollDirection)
         }
@@ -48,14 +59,18 @@ open class MultipleItemScrollView<CellView>: ScrollView, ItemsOneWayScrollProtoc
         var maxWidth: CGFloat = 1
         var maxHeight: CGFloat = 1
         self.layoutCells.forEach { (layoutCell) in
-            maxWidth = max(maxWidth, layoutCell.sizeThatFits().width)
-            maxHeight = max(maxHeight, layoutCell.sizeThatFits().height)
+            maxWidth = max(maxWidth, layoutCell.view.width)
+            maxHeight = max(maxHeight, layoutCell.view.height)
+        }
+        let trailing = max(self.layoutCells.last?.trailing ?? 1, 1)
+        if trailing > 1 {
+            self.layoutState = .end
         }
         switch self.scrollDirection {
         case .horizontal:
-            return CGSize(width: max(size.width, 1), height: maxHeight)
+            return CGSize(width: trailing, height: maxHeight)
         case .vertical:
-            return CGSize(width: maxWidth, height: max(size.height, 1))
+            return CGSize(width: maxWidth, height: trailing)
         }
     }
     /// ZJaDe: 根据offSet查找cell

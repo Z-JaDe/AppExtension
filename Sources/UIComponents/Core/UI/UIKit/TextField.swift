@@ -23,7 +23,7 @@ open class TextField: UITextField {
         if self.font == nil {
             self.font = Font.thinh3
         }
-        self.placeholderColor = Color.gray
+        self.placeholderColor = Color.placeholder
     }
     open override var placeholder: String? {
         didSet {
