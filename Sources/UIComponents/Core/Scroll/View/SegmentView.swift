@@ -91,7 +91,7 @@ open class SegmentView<CellView, CellData>: MultipleItemsView<CellView, CellData
             self.currentLayer.position = CGPoint(x: currentCell.centerX, y: currentCell.bottom)
             updater(self.currentLayer, currentCell.frame)
         } else {
-            self.currentLayer.position = CGPoint(x: currentCell.centerX, y: currentCell.bottom - currentLayer.width / 2)
+            self.currentLayer.position = CGPoint(x: currentCell.centerX, y: currentCell.bottom - currentLayer.height / 2)
         }
     }
     // MARK: - isSelected
