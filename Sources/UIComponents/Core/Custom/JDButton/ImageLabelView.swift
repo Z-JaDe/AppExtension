@@ -59,6 +59,7 @@ open class ImageLabelView: CustomControl {
         case begin
         case end
     }
+    /// ZJaDe: image和label的相对位置
     public var imageAlignment: ImageAlignment = .begin {
         didSet {updateContentItem()}
     }

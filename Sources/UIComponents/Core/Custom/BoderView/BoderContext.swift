@@ -25,7 +25,7 @@ public struct BoderContext {
         self.view = view
     }
     var directions: [Direction] = []
-    var boderWidth: CGFloat = 1
+    var boderWidth: CGFloat = jd.onePx
     var boderColor: UIColor = Color.boderLine
     var edgeType: BoderExcludePoint = .allPoint(0)
     var fixedLength: CGFloat?
