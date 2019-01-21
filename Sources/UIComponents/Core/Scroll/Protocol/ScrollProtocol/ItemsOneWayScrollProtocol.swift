@@ -26,15 +26,17 @@ public protocol ItemsOneWayScrollProtocol: OneWayScrollProtocol {
 }
 public extension ItemsOneWayScrollProtocol {
     /// ZJaDe: 更新itemArr的尺寸布局，cellLength不为空时表示给定尺寸
-    func layoutCellsSize(_ cellArr: [LayoutItemType], _ cellLength: CGFloat?) {
+    func layoutCellsSize(_ cellArr: [LayoutItemType], _ cellLength: CGFloat?, _ cellSize: CGFloat?) {
         cellArr.lazy.enumerated().forEach { (_, cell) in
             switch self.scrollDirection {
             case .horizontal:
                 let _length = cellLength ?? cell.sizeThatFits().width
-                cell.changeSize(CGSize(width: _length, height: self.height))
+                let _size = cellSize ?? cell.sizeThatFits().height
+                cell.changeSize(CGSize(width: _length, height: _size))
             case .vertical:
                 let _length = cellLength ?? cell.sizeThatFits().height
-                cell.changeSize(CGSize(width: self.width, height: _length))
+                let _size = cellSize ?? cell.sizeThatFits().width
+                cell.changeSize(CGSize(width: _size, height: _length))
             }
         }
     }

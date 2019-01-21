@@ -50,6 +50,15 @@ public extension OneWayScrollProtocol {
             return self.frame.size.height
         }
     }
+    /// ZJaDe: 水平方向上的高度，竖直方向上的宽度
+    var length2: CGFloat {
+        switch self.scrollDirection {
+        case .horizontal:
+            return self.frame.size.height
+        case .vertical:
+            return self.frame.size.width
+        }
+    }
     var contentLength: CGFloat {
         get {
             switch self.scrollDirection {

@@ -17,7 +17,6 @@ extension SegmentScrollView.CellLength: ExpressibleByIntegerLiteral, Expressible
     }
 }
 public class SegmentScrollView<CellView>: MultipleItemScrollView<CellView>, TotalCountProtocol where CellView: UIView {
-
     public enum CellLength {
         /// ZJaDe: 最多显示几个，少的时候平铺，多的时候滑动
         case showMaxCount(Int)
@@ -45,7 +44,7 @@ public class SegmentScrollView<CellView>: MultipleItemScrollView<CellView>, Tota
     /// ZJaDe: 布局
     public override func layoutAllCells() {
         super.layoutAllCells()
-        layoutCellsSize(self.layoutCells, self.getCellLength())
+        layoutCellsSize(self.layoutCells)
         let length = layoutCellsOrigin(self.layoutCells, 0)
         self.contentLength = length
         if let firstCell = self.layoutCells.first, self.viewHeadOffset() < firstCell.leading {
@@ -53,6 +52,9 @@ public class SegmentScrollView<CellView>: MultipleItemScrollView<CellView>, Tota
         } else if let lastCell = self.layoutCells.last, self.viewTailOffset() > lastCell.trailing && self.contentLength > self.length {
             self.scrollTo(offSet: lastCell.trailing - self.length, animated: false)
         }
+    }
+    public func layoutCellsSize(_ cellArr: [LayoutItemType]) {
+        layoutCellsSize(cellArr, self.getCellLength(), self.length2)
     }
     /// ZJaDe: 返回itemView宽度或者长度
     internal func getCellLength() -> CGFloat? {
@@ -122,8 +124,7 @@ extension SegmentScrollView {
         let layoutCell = createLayoutCell(cell)
         insert(layoutCell: layoutCell, at: index)
         // ZJaDe: layout
-        let cellLength = getCellLength()
-        layoutCellsSize([layoutCell], cellLength)
+        layoutCellsSize([layoutCell])
         let needUpdateOriginCells = Array(self.layoutCells.suffix(from: index))
         let startOrigin: CGFloat
         if self.layoutCells.count > 1 {

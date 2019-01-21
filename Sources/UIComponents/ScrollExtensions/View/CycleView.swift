@@ -31,6 +31,7 @@ open class CycleView<CellView, CellData>: PageItemsView<CellView, CellData, Page
         }
         setNeedsLayout()
         layoutIfNeeded()
+        scrollView.setNeedsLayoutCells()
         checkCellsLifeCycle(isNeedReset: true)
         /// ZJaDe: 检查并更新cells
         resetCellsOrigin()
@@ -46,8 +47,8 @@ open class CycleView<CellView, CellData>: PageItemsView<CellView, CellData, Page
     }
     /// ZJaDe: 创建cell
     internal func createCell() -> CellView {
-        if self.scrollView.cacheCells.count > 0 {
-            return self.scrollView.cacheCells.removeFirst()
+        if let first = self.scrollView.cacheCells.popFirst() {
+            return first
         } else {
             return CellView()
         }

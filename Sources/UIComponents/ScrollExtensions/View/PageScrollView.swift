@@ -14,21 +14,36 @@ import Foundation
 public class PageScrollView<CellView>: MultipleItemScrollView<CellView> where CellView: UIView {
     public var cacheCells: Set<CellView> = Set()
     public var visibleCells: Set<CellView> = Set()
+
+    public enum CellSize {
+        /// ZJaDe: 使用item的尺寸，适配scrollView大小
+        case itemsFill
+        /// ZJaDe: 给定scrollView大小，适配items大小
+        case adapterItems
+    }
+    public var itemSize: CellSize = .adapterItems {
+        didSet {setNeedsLayoutCells()}
+    }
     /// ZJaDe: 布局
     public override func layoutAllCells() {
-        layoutCellsSize(self.layoutCells, self.length)
+        layoutCellsSize(layoutCells)
         layoutCellsOrigin(self.layoutCells, self.layoutCells.first?.leading ?? 0)
+    }
+    public func layoutCellsSize(_ cellArr: [LayoutItemType]) {
+        switch self.itemSize {
+        case .itemsFill:
+             layoutCellsSize(cellArr, self.length, nil)
+        case .adapterItems:
+            layoutCellsSize(cellArr, self.length, self.length2)
+        }
     }
     // MARK: -
     /// ZJaDe: 根据offSet查找cell
     open override func getCell(_ offSet: CGFloat) -> CellView? {
-        for cell in self.visibleCells {
+        return self.visibleCells.first { (cell) -> Bool in
             let segmentLayoutCell = self.createLayoutCell(cell)
-            if segmentLayoutCell.leading <= offSet && segmentLayoutCell.trailing > offSet {
-                return cell
-            }
+            return segmentLayoutCell.leading <= offSet && segmentLayoutCell.trailing > offSet
         }
-        return nil
     }
 }
 extension PageScrollView {
@@ -71,7 +86,7 @@ extension PageScrollView {
         insert(layoutCell: layoutCell, at: 0)
         self.visibleCells.insert(cell)
         // ZJaDe: layout
-        layoutCellsSize([layoutCell], self.length)
+        layoutCellsSize([layoutCell])
         layoutCellsOrigin([layoutCell], origin)
     }
     /// ZJaDe: 右边插入一个cell
@@ -80,7 +95,7 @@ extension PageScrollView {
         append(layoutCell: layoutCell)
         self.visibleCells.insert(cell)
         // ZJaDe: layout
-        layoutCellsSize([layoutCell], self.length)
+        layoutCellsSize([layoutCell])
         layoutCellsOrigin([layoutCell], origin)
     }
 }
