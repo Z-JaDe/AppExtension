@@ -15,11 +15,15 @@ public protocol HeaderViewContainerProtocol: AssociatedObjectProtocol {
     var scrollView: ScrollViewType {get}
 
     func headerAndScrollBinding(in view: UIView?)
+    /// ZJaDe: 当滚动时监听
+    func whenScroll()
+    /// ZJaDe: 滚动时更新高度
+    func update(viewHeight height: CGFloat)
 }
 private var headerViewHeightKey: UInt8 = 0
 private var offsetYKey: UInt8 = 0
-public extension HeaderViewContainerProtocol {
-    private var headerViewHeight: CGFloat {
+private extension HeaderViewContainerProtocol {
+    var headerViewHeight: CGFloat {
         get {return associatedObject(&headerViewHeightKey, createIfNeed: 0)}
         set {
             willUpdateContentOffsetAndInset()
@@ -27,12 +31,11 @@ public extension HeaderViewContainerProtocol {
             updateContentOffsetAndInset()
         }
     }
-    private var offsetY: CGFloat {
+    var offsetY: CGFloat {
         get {return associatedObject(&offsetYKey, createIfNeed: 0)}
         set {setAssociatedObject(&offsetYKey, newValue)}
     }
-    // MARK: -
-    func headerAndScrollBinding(in view: UIView? = nil) {
+    func _headerAndScrollBinding(in view: UIView?) {
         willUpdateContentOffsetAndInset()
         if headerView.superview == nil {
             let superView = view ?? scrollView
@@ -43,10 +46,6 @@ public extension HeaderViewContainerProtocol {
         }
         resetHeaderViewHeight()
     }
-    func resetHeaderViewHeight() {
-        self.headerViewHeight = self.headerView.defaultHeight
-    }
-    // MARK: -
     /// ZJaDe: 当headerView将要改变或高度将要变化的时候，或者scrollView将要变化的时候调用
     func willUpdateContentOffsetAndInset() {
         self.offsetY = scrollView.contentOffset.y + headerViewHeight
@@ -57,17 +56,39 @@ public extension HeaderViewContainerProtocol {
         scrollView.contentInset.top += headerViewHeight
         changeContentOffsetY(scrollView: scrollView, y: self.offsetY - headerViewHeight)
     }
-    private func changeContentOffsetY(scrollView: ScrollViewType, y: CGFloat) {
+    func changeContentOffsetY(scrollView: ScrollViewType, y: CGFloat) {
         scrollView.contentOffset.y = y
     }
 }
-
+public extension HeaderViewContainerProtocol {
+    func headerAndScrollBinding(in view: UIView? = nil) {
+        _headerAndScrollBinding(in: view)
+    }
+    func resetHeaderViewHeight() {
+        self.headerViewHeight = self.headerView.defaultHeight
+    }
+}
+public extension HeaderViewContainerProtocol where HeaderViewType: UpdateHeightProtocol {
+    func update(viewHeight height: CGFloat) {
+        self.headerView.update(viewHeight: height)
+    }
+}
 #if canImport(RxSwift)
 import RxSwift
 import RxCocoa
-extension HeaderViewContainerProtocol where ScrollViewType == UIScrollView {
-    // MARK: -
-    public func subscribeWhenScroll(_ updateClosure: @escaping (CGFloat) -> Void) {
+public extension HeaderViewContainerProtocol where ScrollViewType: UIScrollView {
+    func headerAndScrollBinding(in view: UIView? = nil) {
+        _headerAndScrollBinding(in: view)
+        whenScroll()
+    }
+    func whenScroll() {
+        subscribeWhenScroll {[weak self] (offSet) in
+            guard let `self` = self else { return }
+            let height = self.headerView.defaultHeight - offSet
+            self.update(viewHeight: height)
+        }
+    }
+    func subscribeWhenScroll(_ updateClosure: @escaping (CGFloat) -> Void) {
         self.scrollView.resetDisposeBagWithTag("headerScroll")
         self.scrollView.rx.contentOffset
             .observeOn(MainScheduler.asyncInstance)

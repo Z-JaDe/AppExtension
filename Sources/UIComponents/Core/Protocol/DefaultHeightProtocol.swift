@@ -11,6 +11,9 @@ import Foundation
 public protocol DefaultHeightProtocol: class {
     var defaultHeight: CGFloat {get}
 }
+public protocol UpdateHeightProtocol {
+    func update(viewHeight height: CGFloat)
+}
 public protocol WritableDefaultHeightProtocol: class {
     var defaultHeight: CGFloat {get set}
 }
