@@ -16,14 +16,13 @@ open class ProgressView: CustomView {
     public var progress: CGFloat = 0 {
         didSet {
             progress = progress.clamp(min: 0, max: 1)
-            update()
+            updateProgress()
         }
     }
     public var progressLayer: CALayer = CALayer() {
         didSet {
             oldValue.removeFromSuperlayer()
-            configProgressLayer()
-            update()
+            changedProgress()
         }
     }
 
@@ -31,24 +30,24 @@ open class ProgressView: CustomView {
         super.configInit()
         self.backgroundColor = Color.clear
         self.progressLayer.backgroundColor = Color.tintColor.cgColor
-        configProgressLayer()
-        update()
+        changedProgress()
     }
     open override func addChildView() {
         super.addChildView()
     }
-    func configProgressLayer() {
+    func changedProgress() {
         self.layer.addSublayer(self.progressLayer)
+        updateProgress()
     }
     open override var intrinsicContentSize: CGSize {
-        return CGSize(width: jd.screenWidth, height: 3)
+        return CGSize(width: jd.screenWidth, height: 4)
     }
     // MARK: -
     open override func layoutSubviews() {
         super.layoutSubviews()
-        update()
+        updateProgress()
     }
-    func update() {
+    func updateProgress() {
         let rect = self.bounds
         self.progressLayer.height = rect.size.height
         self.progressLayer.width = rect.size.width * self.progress

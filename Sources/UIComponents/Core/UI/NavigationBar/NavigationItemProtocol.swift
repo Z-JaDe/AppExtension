@@ -151,7 +151,7 @@ extension UINavigationBar {
         self.setNeedsDisplay()
         if let titleView = self.topItem?.titleView {
             let scale: Float = color == Color.white ? 1.0 : 0.0
-            titleView.addTitleShadow(scale: scale)
+            titleView.addShadow(offset: CGSize(width: 0, height: 0), color: Color.darkBlack, opacity: 0.3 * scale, radius: 5)
         }
     }
     func updateIsTranslucent(_ alpha: CGFloat) {
