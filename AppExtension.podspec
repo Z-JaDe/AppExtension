@@ -52,7 +52,6 @@ Pod::Spec.new do |s|
     s.subspec "List" do |ss|
         ss.source_files  = "Sources/List/**/*.{swift}"
         ss.dependency "AppExtension/Core"
-
         ss.dependency "DifferenceKit"
     end
     s.subspec "RxExtensions" do |ss|
@@ -79,22 +78,23 @@ Pod::Spec.new do |s|
     #组件
     s.subspec "UIComponents" do |ss|
         ss.source_files  = "Sources/UIComponents/**/*.{swift}"
-
         ss.dependency "AppExtension/Core"
         ss.dependency "AppExtension/Codable"
         ss.dependency "AppExtension/Animater"
         ss.dependency "SnapKit"
-
-        ss.subspec "EmptyDataSet" do |sss|
-            sss.source_files  = "Sources/UIComponents/EmptyDataSet/**/*.{swift}"
-        end
-        ss.subspec "ScrollExtensions" do |sss|
-            sss.source_files  = "Sources/UIComponents/ScrollExtensions/**/*.{swift}"
-        end
-        ss.subspec "CollectionKitExtensions" do |sss|
-            sss.source_files  = "Sources/UIComponents/CollectionKitExtensions/**/*.{swift}"
-            sss.dependency "CollectionKit"
-        end
+    end
+    s.subspec "EmptyDataSet" do |ss|
+        ss.source_files  = "Sources/UIComponents/EmptyDataSet/**/*.{swift}"
+        ss.dependency "AppExtension/UIComponents"
+    end
+    s.subspec "ScrollExtensions" do |ss|
+        ss.source_files  = "Sources/UIComponents/ScrollExtensions/**/*.{swift}"
+        ss.dependency "AppExtension/UIComponents"
+    end
+    s.subspec "CollectionKitExtensions" do |ss|
+        ss.source_files  = "Sources/UIComponents/CollectionKitExtensions/**/*.{swift}"
+        ss.dependency "AppExtension/UIComponents"
+        ss.dependency "CollectionKit"
     end
 
     #项目基础
@@ -108,7 +108,7 @@ Pod::Spec.new do |s|
         ss.dependency "Alamofire"
         #List
         ss.dependency "AppExtension/List"
-
+        ss.dependency "AppExtension/EmptyDataSet"
     end
     #项目集成
     s.subspec "MVCProject" do |ss|
@@ -127,18 +127,18 @@ Pod::Spec.new do |s|
     end
     s.subspec "Default" do |ss|
         ss.dependency "AppExtension/MVCProject"
-        ss.dependency "AppExtension/UIComponents/ScrollExtensions"
+        ss.dependency "AppExtension/ScrollExtensions"
     end
     s.subspec "MVVMC" do |ss|
         ss.dependency "AppExtension/MVCProject"
-        ss.dependency "AppExtension/UIComponents/ScrollExtensions"
+        ss.dependency "AppExtension/ScrollExtensions"
         ss.dependency "AppExtension/Coordinator"
         ss.dependency "ReSwift"
     end
     s.subspec "MVCFlow" do |ss|
         ss.dependency "AppExtension/MVCProject"
         ss.dependency "AppExtension/NavigationFlow"
-        #ss.dependency "AppExtension/UIComponents/CollectionKitExtensions"
+        #ss.dependency "AppExtension/CollectionKitExtensions"
     end
 
 end

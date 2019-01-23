@@ -85,6 +85,9 @@ def commonPods
     pod 'MBProgressHUD'
     pod 'SwiftyUserDefaults'
 
+    pod 'Hero' #仅测试
+    pod 'CollectionKit', :git => 'https://github.com/SoySauceLab/CollectionKit'  #仅测试
+
     pod 'MJRefresh', :git => 'https://github.com/CoderMJLee/MJRefresh'
     pod 'DifferenceKit'
 end
