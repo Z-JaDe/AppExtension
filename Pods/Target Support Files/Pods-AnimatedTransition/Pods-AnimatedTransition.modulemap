@@ -1,0 +1,6 @@
+framework module Pods_AnimatedTransition {
+  umbrella header "Pods-AnimatedTransition-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,6 +1,0 @@
-framework module Pods_BaseCore_Coordinator {
-  umbrella header "Pods-BaseCore-Coordinator-umbrella.h"
-
-  export *
-  module * { export * }
-}

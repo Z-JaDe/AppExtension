@@ -23,7 +23,7 @@ public protocol NavigationItemProtocol: class {
     var navBarAlpha: CGFloat {get}
     var navBarBackgroundImage: UIImage? {get}
     var navBarShadowType: NavBarShadowType {get}
-    var titleTextAttributes: [NSAttributedString.Key : Any] {get set}
+    var titleTextAttributes: [NSAttributedString.Key: Any] {get set}
 
     func updateNavBar(isDidAppear: Bool)
 }
@@ -39,7 +39,7 @@ extension NavigationItemProtocol where Self: UIViewController {
 }
 
 public extension NavigationItemProtocol where Self: UIViewController {
-    func changeTitleTextAttributes(_ attributes: [NSAttributedString.Key : Any]) {
+    func changeTitleTextAttributes(_ attributes: [NSAttributedString.Key: Any]) {
         guard checkVCType() else {return}
         guard let navBar = self.navigationController?.navigationBar else {return}
         var attributes = attributes

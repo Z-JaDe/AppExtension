@@ -110,6 +110,5 @@ extension Color {
     ///占位颜色
     public static var placeholder: UIColor = colorFromRGB("#c7c7cd")!
 
-
     public struct List {}
 }

@@ -56,7 +56,7 @@ public class LineLayer: CAShapeLayer {
     func configInit() {
         self.fillColor = Color.clear.cgColor
         self.lineJoin = .round
-        self.lineColor = self.lineColor.map{$0}
+        self.lineColor = self.lineColor.map {$0}
     }
     // MARK: -
     public override func layoutSublayers() {

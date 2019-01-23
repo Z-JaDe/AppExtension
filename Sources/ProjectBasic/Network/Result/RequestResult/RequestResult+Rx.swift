@@ -49,5 +49,3 @@ extension ObservableType where E: RequestableContext {
         return response().mapList(type: type)
     }
 }
-
-

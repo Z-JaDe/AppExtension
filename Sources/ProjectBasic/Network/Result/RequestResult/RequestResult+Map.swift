@@ -26,4 +26,3 @@ extension RequestContext where Value == Result<Data> {
         return try _mapResult()
     }
 }
-

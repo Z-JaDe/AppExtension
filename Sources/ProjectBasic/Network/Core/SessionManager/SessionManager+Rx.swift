@@ -90,7 +90,7 @@ extension Reactive where Base: SessionManager {
             return request.onNext(observer, manager)
         }
     }
-    private func getRequest<R: RxAlamofireRequest>(_ closure: @escaping (SessionManager, AnyObserver<R>) throws -> Disposable) -> Observable<R>  {
+    private func getRequest<R: RxAlamofireRequest>(_ closure: @escaping (SessionManager, AnyObserver<R>) throws -> Disposable) -> Observable<R> {
         return Observable.create { observer -> Disposable in
             do {
                 return try closure(self.base, observer)
@@ -104,7 +104,7 @@ extension Reactive where Base: SessionManager {
 extension RxAlamofireRequest {
     fileprivate func onNext(_ observer: AnyObserver<Self>, _ manager: SessionManager) -> Disposable {
         observer.onNext(self)
-        responseWith(completionHandler: { (response) in
+        responseWith(completionHandler: { (_) in
 //            if let error = response.error {
 //                observer.onError(error)
 //            } else {

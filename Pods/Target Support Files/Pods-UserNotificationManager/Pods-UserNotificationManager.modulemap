@@ -1,0 +1,6 @@
+framework module Pods_UserNotificationManager {
+  umbrella header "Pods-UserNotificationManager-umbrella.h"
+
+  export *
+  module * { export * }
+}

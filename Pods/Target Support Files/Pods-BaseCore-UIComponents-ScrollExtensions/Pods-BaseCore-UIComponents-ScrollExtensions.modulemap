@@ -1,6 +1,0 @@
-framework module Pods_BaseCore_UIComponents_ScrollExtensions {
-  umbrella header "Pods-BaseCore-UIComponents-ScrollExtensions-umbrella.h"
-
-  export *
-  module * { export * }
-}
