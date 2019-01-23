@@ -114,9 +114,6 @@ Pod::Spec.new do |s|
     s.subspec "MVCProject" do |ss|
         ss.dependency "AppExtension/ProjectBasic"
 
-        ss.dependency "AppExtension/UIComponents/ScrollExtensions"
-        ss.dependency "AppExtension/UIComponents/CollectionKitExtensions"
-
         ss.dependency "AppExtension/AnimatedTransition"
         ss.dependency "AppExtension/UserNotificationManager"
 
@@ -130,15 +127,18 @@ Pod::Spec.new do |s|
     end
     s.subspec "Default" do |ss|
         ss.dependency "AppExtension/MVCProject"
+        ss.dependency "AppExtension/UIComponents/ScrollExtensions"
+    end
+    s.subspec "MVVMC" do |ss|
+        ss.dependency "AppExtension/MVCProject"
+        ss.dependency "AppExtension/UIComponents/ScrollExtensions"
+        ss.dependency "AppExtension/Coordinator"
+        ss.dependency "ReSwift"
     end
     s.subspec "MVCFlow" do |ss|
         ss.dependency "AppExtension/MVCProject"
         ss.dependency "AppExtension/NavigationFlow"
-    end
-    s.subspec "MVCCoordinator" do |ss|
-        ss.dependency "AppExtension/MVCProject"
-        ss.dependency "AppExtension/Coordinator"
-        ss.dependency "ReSwift"
+        #ss.dependency "AppExtension/UIComponents/CollectionKitExtensions"
     end
 
 end
