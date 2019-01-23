@@ -7,13 +7,13 @@
 //
 
 import Foundation
-extension Encodable where Self: ValueProtocol, Self.ValueType: Encodable {
+extension ValueProtocol where Self: Encodable, Self.ValueType: Encodable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(self.value)
     }
 }
-extension Decodable where Self: ExpressibleValueProtocol {
+extension ExpressibleValueProtocol where Self: Decodable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         if container.decodeNil() {
