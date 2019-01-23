@@ -77,7 +77,7 @@ Pod::Spec.new do |s|
 
     #组件
     s.subspec "UIComponents" do |ss|
-        ss.source_files  = "Sources/UIComponents/**/*.{swift}"
+        ss.source_files  = "Sources/UIComponents/Core/**/*.{swift}"
         ss.dependency "AppExtension/Core"
         ss.dependency "AppExtension/Codable"
         ss.dependency "AppExtension/Animater"

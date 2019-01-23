@@ -1868,6 +1868,9 @@
 				C9283B6821BE884300361B87 /* Custom */,
 				C9283BD521BE8F8400361B87 /* Protocol */,
 				C9283BD221BE8F4500361B87 /* Details */,
+				C9283B3821BE86BF00361B87 /* UIComponents.h */,
+				C9283B8721BE88D300361B87 /* UIComponents.swift */,
+				C9283B3921BE86BF00361B87 /* Info.plist */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -2124,9 +2127,6 @@
 				C91240E521C124BD00F13151 /* CollectionKitExtensions */,
 				C91240C021C1205D00F13151 /* ScrollExtensions */,
 				C9283BEC21BE9C1D00361B87 /* EmptyDataSet */,
-				C9283B3821BE86BF00361B87 /* UIComponents.h */,
-				C9283B8721BE88D300361B87 /* UIComponents.swift */,
-				C9283B3921BE86BF00361B87 /* Info.plist */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -5453,7 +5453,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/UIComponents/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/UIComponents/Core/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5484,7 +5484,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/UIComponents/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/UIComponents/Core/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
