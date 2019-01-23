@@ -189,7 +189,7 @@ extension JDButton {
     public func setTitleFont(_ font: UIFont?, for state: UIControl.State) {
         self.titleFontInfo[state] = font
         if let attr = self.attributedTitleInfo[state], let font = font {
-            self.setAttributedTitle(AttributedStringMaker(attr).font(titleFont).attr(), for: state)
+            self.setAttributedTitle(AttributedStringMaker(attr).font(font).attr(), for: state)
         }
         if self.state == state {
             updateData()

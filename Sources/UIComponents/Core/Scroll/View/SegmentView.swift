@@ -84,7 +84,7 @@ open class SegmentView<CellView, CellData>: MultipleItemsView<CellView, CellData
         }
     }
     private func currentLayerUpdate(_ currentCell: CellView) {
-        if self.currentLayer == nil {
+        if _currentLayer == nil {
             self.currentLayer = CALayer()
         }
         if let updater = self.currentLayerUpdater {
