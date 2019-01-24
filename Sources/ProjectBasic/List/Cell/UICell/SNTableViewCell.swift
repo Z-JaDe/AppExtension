@@ -42,7 +42,6 @@ class SNTableViewCell: UITableViewCell {
     func updateUI(_ contentItem: ContentItemType) {
         self.separatorLineView.backgroundColor = contentItem.separatorLineColor
         self.accessoryType = contentItem.accessoryType
-        contentItem.selectedBackgroundView.backgroundColor = contentItem.cellSelectedBackgroundColor
         self.selectedBackgroundView = contentItem.selectedBackgroundView
         self.selectionStyle = contentItem.selectionStyle
         self.backgroundColor = contentItem.cellBackgroundColor

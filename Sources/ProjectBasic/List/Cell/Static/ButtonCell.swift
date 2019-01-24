@@ -37,10 +37,9 @@ open class ButtonCell: StaticTableItemCell {
     open override func configInit() {
         super.configInit()
         self.cellBackgroundColor = Color.clear
-        self.cellSelectedBackgroundColor = Color.clear
+        disableSelectedAnimation()
         self.insets.left = 30
         self.insets.right = 30
-        self.highlightedAnimation = .none
         self.separatorLineHeight = 0
         self.button.rx.throttleTouchUpInside()
             .subscribeOnNext({ [weak self] () in

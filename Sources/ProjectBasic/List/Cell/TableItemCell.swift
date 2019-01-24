@@ -24,20 +24,23 @@ open class TableItemCell: ItemCell, WritableDefaultHeightProtocol {
     }
     open override func configInit() {
         super.configInit()
+        self.updateSelectedBackgroundColor()
         configDefaultInsets()
     }
     /// ZJaDe: 
-    open var cellSelectedBackgroundColor: UIColor = TableItemCell.selectedBackgroundDefaultColor {
-        didSet {self.selectedBackgroundView.backgroundColor = self.cellSelectedBackgroundColor}
-    }
-    open var selectionStyle: UITableViewCell.SelectionStyle = .gray {
-        didSet {getSNCell()?.selectionStyle = self.selectionStyle}
+    open var cellSelectedBackgroundColor: UIColor? = TableItemCell.selectedBackgroundDefaultColor {
+        didSet { updateSelectedBackgroundColor() }
     }
     open var cellBackgroundColor: UIColor = Color.white {
         didSet {getSNCell()?.backgroundColor = self.cellBackgroundColor}
     }
     public var separatorLineHeight: CGFloat = jd.onePx {
         didSet {getSNCell()?.updateSeparatorLineViewFrame()}
+    }
+    /// ZJaDe: 禁用选中时的高亮动画，以及选中状态
+    open override func disableSelectedAnimation() {
+        super.disableSelectedAnimation()
+        self.cellSelectedBackgroundColor = nil
     }
     /** ZJaDe: 
      默认与UITableViewCell对齐 而不是和contentView对齐
@@ -63,7 +66,6 @@ open class TableItemCell: ItemCell, WritableDefaultHeightProtocol {
     public func insetVerticalSpace() -> CGFloat {
         return insets.top + insets.bottom + separatorLineHeight
     }
-
     /// ZJaDe: 
     public var separatorLineColor: UIColor = Color.separatorLine {
         didSet {getSNCell()?.separatorLineView.backgroundColor = self.separatorLineColor}
@@ -116,6 +118,20 @@ open class TableItemCell: ItemCell, WritableDefaultHeightProtocol {
     // MARK: -
     open override func layoutSubviews() {
         super.layoutSubviews()
+    }
+}
+extension TableItemCell {
+    private func updateSelectedBackgroundColor() {
+        if let color = self.cellSelectedBackgroundColor {
+            self.selectedBackgroundView.backgroundColor = color
+            self.selectionStyle = .default
+        } else {
+            self.selectionStyle = .none
+        }
+    }
+    internal private(set) var selectionStyle: UITableViewCell.SelectionStyle {
+        get { return self.cellSelectedBackgroundColor == nil ? .none : .default }
+        set { getSNCell()?.selectionStyle = newValue }
     }
 }
 extension TableItemCell {

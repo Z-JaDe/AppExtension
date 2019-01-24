@@ -96,6 +96,7 @@ extension InteractionController {
         percentValue = max(percentValue, 0.01)
     }
 }
+
 private var jd_panKey: UInt8 = 0
 extension UIView {
     fileprivate var _panGesture: UIPanGestureRecognizer {
