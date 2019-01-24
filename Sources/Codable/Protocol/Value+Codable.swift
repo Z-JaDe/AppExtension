@@ -18,10 +18,10 @@ extension ExpressibleValueProtocol where Self: Decodable {
         let container = try decoder.singleValueContainer()
         if container.decodeNil() {
             self.init(nilLiteral: ())
-        } else if let value = try? container.decode(Int.self) {
-            self.init(integerLiteral: value)
         } else if let value = try? container.decode(Double.self) {
             self.init(floatLiteral: value)
+        } else if let value = try? container.decode(Int.self) {
+            self.init(integerLiteral: value)
         } else if let value = try? container.decode(String.self) {
             self.init(stringLiteral: value)
         } else {
