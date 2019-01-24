@@ -27,10 +27,10 @@ open class TabBar: UITabBar {
         didSet { currentLayer.backgroundColor = selectedLayerBackgroundColor?.cgColor }
     }
     open var jdSeparatorLineColor: UIColor? {
-        didSet { shadowImage = UIImage.imageWithColor(jdSeparatorLineColor) }
+        didSet { shadowImage = UIImage.create(color: jdSeparatorLineColor) }
     }
     open var jdBackgroundColor: UIColor? {
-        didSet { backgroundImage = UIImage.imageWithColor(jdBackgroundColor) }
+        didSet { backgroundImage = UIImage.create(color: jdBackgroundColor) }
     }
     override init(frame: CGRect) {
         super.init(frame: frame)

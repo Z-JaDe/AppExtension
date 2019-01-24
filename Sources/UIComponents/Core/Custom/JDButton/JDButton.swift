@@ -151,7 +151,7 @@ extension JDButton {
         updateBackgroundLayout()
     }
     public func setBackgroundColor(_ color: UIColor?, for state: UIControl.State) {
-        self.setBackgroundImage(UIImage.imageWithColor(color), for: state)
+        self.setBackgroundImage(UIImage.create(color: color), for: state)
     }
 }
 extension JDButton {

@@ -133,7 +133,7 @@ extension UINavigationBar {
             self.addShadow(offset: CGSize.zero, color: Color.clear, opacity: 0, radius: 0)
         case .separatorLine(let color):
             let color = color.alpha(color.alpha * alpha)
-            self.shadowImage = UIImage.imageWithColor(color, size: CGSize(width: jd.screenWidth, height: 0.5))
+            self.shadowImage = UIImage.create(color: color, CGSize(width: jd.screenWidth, height: 0.5))
             self.addShadow(offset: CGSize.zero, color: Color.clear, opacity: 0, radius: 0)
         }
 
@@ -168,7 +168,7 @@ extension UINavigationBar {
         if let backgroundImage = backgroundImage {
             setBackgroundImage(backgroundImage.alpha(alpha), for: .default)
         } else {
-            let backgroundImage = UIImage.imageWithColor(color)
+            let backgroundImage = UIImage.create(color: color)
             if self.isTranslucent == false {/// ZJaDe: 不透明的情况
                 setBackgroundImage(self.shadowImage.flatMap({_ in backgroundImage}), for: .default)
             } else {
