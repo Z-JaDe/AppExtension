@@ -16,7 +16,6 @@ open class ListViewController<ScrollViewType, AdapterType>: ScrollViewController
             self?.sn_view.emptyDataSet.reloadData()
         }
     }
-
     open var scrollItem: ScrollViewType {
         return self.sn_view
     }

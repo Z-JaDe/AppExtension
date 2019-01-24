@@ -43,6 +43,7 @@ public class ResultParser<RefreshList: RefreshListProtocol, AdapterType: ListDat
         }
     }
     open func endRefreshing(_ hasData: Bool?) {
+        self.list.preloadEnabled = hasData == true
         self.scrollItem.mj_header?.endRefreshing()
         if let hasData = hasData {
             self.list.networkPage = self.adapter.dataArray.itemCount

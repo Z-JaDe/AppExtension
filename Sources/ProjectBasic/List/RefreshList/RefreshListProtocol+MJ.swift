@@ -61,14 +61,22 @@ extension RefreshListProtocol {
 
 #if canImport(RxSwift) && canImport(MJRefresh)
 import RxSwift
+private var preloadEnabledKey: UInt8 = 0
 extension RefreshListProtocol {
+    /// ZJaDe: 刷新失败时 自动设置成false 默认为true
+    var preloadEnabled: Bool {
+        get { return associatedObject(&preloadEnabledKey, createIfNeed: true) }
+        set { setAssociatedObject(&preloadEnabledKey, newValue)}
+    }
     public func configPreload() {
         guard let scrollView = self.scrollItem as? NSObject else { return }
         let disposeBag = scrollView.resetDisposeBagWithTag("refreshOb_contentOffset")
         scrollView.rx.observeWeakly(CGPoint.self, "contentOffset")
             .observeOn(MainScheduler.asyncInstance)
             .subscribeOnNext {[weak self] (_) in
-                guard let scrollItem = self?.scrollItem else { return }
+                guard let `self` = self else { return }
+                guard self.preloadEnabled == true else { return }
+                let scrollItem = self.scrollItem
                 // ZJaDe: 内容超过一个屏幕时
                 guard scrollItem.contentInset.top + scrollItem.contentSize.height > scrollItem.height else { return }
                 guard scrollItem.contentOffset.y + scrollItem.height > scrollItem.contentSize.height + scrollItem.contentInset.top + scrollItem.contentInset.bottom else { return }

@@ -10,7 +10,7 @@ import Foundation
 #if !AppExtensionPods
 import EmptyDataSet
 #endif
-public protocol RefreshListProtocol: NetworkProtocol {
+public protocol RefreshListProtocol: NetworkProtocol, AssociatedObjectProtocol {
     #if canImport(MJRefresh)
     associatedtype ScrollViewType: MJScrollProtocol, EmptyDataSetProtocol
     #else
