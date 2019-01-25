@@ -10,14 +10,14 @@ import UIKit
 
 open class CollectionViewController: ListViewController<JDCollectionView, UICollectionAdapter> {
 
-    override func createView(_ frame: CGRect) -> JDCollectionView {
+    open override func createView(_ frame: CGRect) -> JDCollectionView {
         let layout = UICollectionViewFlowLayout()
         return JDCollectionView(frame: frame, collectionViewLayout: layout)
     }
 
     open override func viewDidLoad() {
         super.viewDidLoad()
-        adapter.collectionViewInit(self.sn_view)
+        adapter.collectionViewInit(self.rootView)
     }
 
     override func loadAdapter() -> UICollectionAdapter {

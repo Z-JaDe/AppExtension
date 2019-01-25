@@ -66,7 +66,6 @@ public extension NavigationItemProtocol where Self: UIViewController {
     func updateBarStyle() {
         guard checkVCType() else {return}
         guard let navBar = self.navigationController?.navigationBar else {return}
-
         navBar.changeBarTintColor(self.navBarTintColor, self.navBarBackgroundImage, self.navBarShadowType, self.navBarAlpha)
         navBar.changeShadow(self.navBarShadowType, self.navBarAlpha)
     }
@@ -162,6 +161,8 @@ extension UINavigationBar {
         }
     }
     func changeBarTintColor(_ color: UIColor, _ backgroundImage: UIImage?, _ shadowType: NavBarShadowType, _ alpha: CGFloat) {
+        /// ZJaDe: 设置成isTranslucent = false的时候，会导致UI布局，想要设置不透明可以设置成0.99
+//        let alpha = alpha.clamp(min: 0, max: 0.99)
         updateIsTranslucent(alpha)
         let color = color.alpha(alpha)
         self.barTintColor = color

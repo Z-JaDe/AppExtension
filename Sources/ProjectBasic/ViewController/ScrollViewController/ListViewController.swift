@@ -13,11 +13,11 @@ open class ListViewController<ScrollViewType, AdapterType>: ScrollViewController
     open override func viewDidLoad() {
         super.viewDidLoad()
         self.adapter.dataController.reloadDataCompletion = { [weak self] in
-            self?.sn_view.emptyDataSet.reloadData()
+            self?.rootView.emptyDataSet.reloadData()
         }
     }
     open var scrollItem: ScrollViewType {
-        return self.sn_view
+        return self.rootView
     }
     public lazy private(set) var adapter: AdapterType = self.loadAdapter()
     func loadAdapter() -> AdapterType {

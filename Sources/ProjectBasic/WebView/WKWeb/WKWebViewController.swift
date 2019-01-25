@@ -19,18 +19,18 @@ open class WKWebViewController: BaseWebViewController<JDWKWebView>, WKNavigation
     }
     func resetScriptMessages() {
         self.removeAllUserScripts()
-        self.scriptMessageHandler.addScriptMessages(in: self.sn_view.configuration.userContentController)
+        self.scriptMessageHandler.addScriptMessages(in: self.rootView.configuration.userContentController)
     }
     func removeAllUserScripts() {
-        self.sn_view.configuration.userContentController.removeAllUserScripts()
+        self.rootView.configuration.userContentController.removeAllUserScripts()
     }
     /// ZJaDe: 
     let uiProxy: WKUIProxy = WKUIProxy()
     open override func viewDidLoad() {
         super.viewDidLoad()
-        self.sn_view.allowsBackForwardNavigationGestures = true
-        self.sn_view.uiDelegate = self.uiProxy
-        self.sn_view.navigationDelegate = self
+        self.rootView.allowsBackForwardNavigationGestures = true
+        self.rootView.uiDelegate = self.uiProxy
+        self.rootView.navigationDelegate = self
 
     }
     // MARK: -

@@ -40,33 +40,33 @@ open class BaseWebViewController<ViewType>: ViewController<ViewType> where ViewT
         if let _self = self as? LoadWebUrlProtocol {
             _self.load(urlStr)
         } else {
-            self.sn_view.load(urlStr: urlStr)
+            self.rootView.load(urlStr: urlStr)
         }
     }
     open override func updateData() {
-        self.sn_view.reloadWeb()
+        self.rootView.reloadWeb()
     }
     // MARK: -
     /// ZJaDe: autoUpdateHeightWithContentSize
     open func autoUpdateHeightWithContentSize() {
         Async.main {
-            self.sn_view.scrollView.isScrollEnabled = false
-            self.sn_view.rxDidFinishLoad.subscribeOnNext {[weak self] () in
+            self.rootView.scrollView.isScrollEnabled = false
+            self.rootView.rxDidFinishLoad.subscribeOnNext {[weak self] () in
                 self?.calculateUpdateWebViewHeight()
                 }.disposed(by: self.disposeBag)
         }
     }
     /// ZJaDe: 更新高度
     func calculateUpdateWebViewHeight() {
-        guard let view = self.sn_view.scrollView.subviews.filter({($0 is UIImageView) == false}).max(by: {$0.bottom > $1.bottom}) else {
+        guard let view = self.rootView.scrollView.subviews.filter({($0 is UIImageView) == false}).max(by: {$0.bottom > $1.bottom}) else {
             return
         }
-        let height = view.sizeThatFits(CGSize(width: self.sn_view.width, height: CGFloat.greatestFiniteMagnitude)).height
+        let height = view.sizeThatFits(CGSize(width: self.rootView.width, height: CGFloat.greatestFiniteMagnitude)).height
         self.updateWebView(height: height)
     }
     public func updateWebView(height: CGFloat) {
-        if self.sn_view.defaultHeight != height {
-            self.sn_view.defaultHeight = height
+        if self.rootView.defaultHeight != height {
+            self.rootView.defaultHeight = height
         }
     }
 }

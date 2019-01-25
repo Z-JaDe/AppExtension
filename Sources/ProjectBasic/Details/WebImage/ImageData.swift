@@ -37,9 +37,7 @@ public enum ImageData: Codable {
     // MARK: - Codable
     public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
-        if let url = self.urlData {
-            try container.encode(url)
-        }
+        try container.encode(self.urlData)
     }
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()

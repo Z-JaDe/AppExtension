@@ -17,17 +17,17 @@ open class WebViewController: BaseWebViewController<WebView>, UIWebViewDelegate 
 
     open override func configWebView() {
         super.configWebView()
-        self.sn_view.isOpaque = false
-        self.sn_view.backgroundColor = Color.clear
-        self.sn_view.scrollView.bounces = false
+        self.rootView.isOpaque = false
+        self.rootView.backgroundColor = Color.clear
+        self.rootView.scrollView.bounces = false
     }
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.sn_view.rx.delegate.setForwardToDelegate(self, retainDelegate: false)
+        self.rootView.rx.delegate.setForwardToDelegate(self, retainDelegate: false)
     }
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.sn_view.rx.delegate.setForwardToDelegate(nil, retainDelegate: false)
+        self.rootView.rx.delegate.setForwardToDelegate(nil, retainDelegate: false)
     }
     /// ZJaDe: jsMutually
     public var jsMutually: JSExport? {
@@ -52,7 +52,7 @@ open class WebViewController: BaseWebViewController<WebView>, UIWebViewDelegate 
     }
 
     public func webViewDidFinishLoad(_ webView: UIWebView) {
-        if let jsContext = self.sn_view.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as? JSContext {
+        if let jsContext = self.rootView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as? JSContext {
             self.jsContext = jsContext
         }
     }

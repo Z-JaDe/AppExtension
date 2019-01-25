@@ -12,7 +12,7 @@ open class ScrollViewController<ScrollViewType>: ViewController<ScrollViewType> 
     open override func viewDidLoad() {
         super.viewDidLoad()
         if #available(iOS 11.0, *) {
-            self.sn_view.contentInsetAdjustmentBehavior = .never
+            self.rootView.contentInsetAdjustmentBehavior = .never
         } else {
 
         }
@@ -23,6 +23,6 @@ open class SNScrollViewContorller: ScrollViewController<ScrollView> {
 
     open override func viewDidLoad() {
         super.viewDidLoad()
-        self.sn_view.alwaysBounceVertical = true
+        self.rootView.alwaysBounceVertical = true
     }
 }

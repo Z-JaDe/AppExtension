@@ -24,7 +24,7 @@ open class WebTableViewCell: StaticTableItemCell {
     }
     open override func addChildView() {
         super.addChildView()
-        self.addSubview(self.webVC.sn_view)
+        self.addSubview(self.webVC.rootView)
     }
 
     open override func willAppear() {
@@ -41,9 +41,9 @@ open class WebTableViewCell: StaticTableItemCell {
 
     open override func configLayout() {
         super.configLayout()
-        self.webVC.sn_view.snp.makeConstraints { (maker) in
+        self.webVC.rootView.snp.makeConstraints { (maker) in
             maker.edges.equalToSuperview()
         }
-        self.webVC.sn_view.contentVerticalPriority(.required)
+        self.webVC.rootView.contentVerticalPriority(.required)
     }
 }

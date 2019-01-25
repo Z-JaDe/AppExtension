@@ -36,10 +36,11 @@ open class ViewController<ViewType>: UIViewController, ViewControllerConvertible
             self.view = createView(self.view.frame)
         }
     }
-    func createView(_ frame: CGRect) -> ViewType {
+    /// ZJaDe: 重写该方法 返回根视图
+    open func createView(_ frame: CGRect) -> ViewType {
         return ViewType(frame: frame)
     }
-    open var sn_view: ViewType {
+    open var rootView: ViewType {
         // swiftlint:disable force_cast
         return self.view as! ViewType
     }

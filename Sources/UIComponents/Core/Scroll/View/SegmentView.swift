@@ -106,7 +106,8 @@ open class SegmentView<CellView, CellData>: MultipleItemsView<CellView, CellData
             if var itemView = oldValue as? SelectedStateDesignable {
                 itemView.isSelected = false
             }
-            if let context = oldValue.map({CellTapContext(view: $0, data: dataArray[currentIndex], index: currentIndex)}) {
+            /// ZJaDe: 
+            if let context = currentItem.map({CellTapContext(view: $0, data: dataArray[currentIndex], index: currentIndex)}) {
                 self.changeSelectState?(context, true)
             }
             if var itemView = self.currentItem as? SelectedStateDesignable {

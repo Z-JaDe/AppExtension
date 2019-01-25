@@ -9,10 +9,10 @@
 import UIKit
 
 open class TableViewController: ListViewController<TableView, UITableAdapter> {
-    /// ZJaDe: view加载之前调用有效
+    /// ZJaDe: view加载之前设置有效
     public var style: UITableView.Style = .plain
 
-    override func createView(_ frame: CGRect) -> TableView {
+    open override func createView(_ frame: CGRect) -> TableView {
         let tableView = TableView(frame: frame, style: self.style)
         if self.style == .grouped && tableView.tableHeaderView == nil {
             let view = UIView()
@@ -48,7 +48,7 @@ open class TableViewController: ListViewController<TableView, UITableAdapter> {
 
     open override func viewDidLoad() {
         super.viewDidLoad()
-        adapter.tableViewInit(self.sn_view)
+        adapter.tableViewInit(self.rootView)
     }
 
     override func loadAdapter() -> UITableAdapter {
