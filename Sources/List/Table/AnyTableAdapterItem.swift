@@ -1,5 +1,5 @@
 //
-//  TableAdapterItemConvertible.swift
+//  AnyTableAdapterItem.swift
 //  ProjectBasic
 //
 //  Created by 郑军铎 on 2019/1/4.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct TableAdapterItemConvertible {
+public struct AnyTableAdapterItem {
     public typealias ValueType = AnyObject
         & HiddenStateDesignable
         & SelectedStateDesignable & CanSelectedStateDesignable
@@ -18,14 +18,14 @@ public struct TableAdapterItemConvertible {
     }
 }
 // MARK: - HiddenStateDesignable
-extension TableAdapterItemConvertible: HiddenStateDesignable {
+extension AnyTableAdapterItem: HiddenStateDesignable {
     public var isHidden: Bool {
         get { return value.isHidden }
         set { value.isHidden = newValue }
     }
 }
 // MARK: - CanSelectedStateDesignable & SelectedStateDesignable
-extension TableAdapterItemConvertible: SelectedStateDesignable & CanSelectedStateDesignable {
+extension AnyTableAdapterItem: SelectedStateDesignable & CanSelectedStateDesignable {
     public func checkCanSelected(_ closure: @escaping (Bool) -> Void) {
         value.checkCanSelected(closure)
     }

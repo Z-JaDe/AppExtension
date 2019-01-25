@@ -28,3 +28,9 @@ public extension RouteUrl {
         self.rootViewController.popVC()
     }
 }
+
+extension UIViewController: RouteUrl {
+    public var rootViewController: UIViewController {
+        return self
+    }
+}

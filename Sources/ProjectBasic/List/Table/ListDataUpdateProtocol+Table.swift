@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension ListDataUpdateProtocol where Item == TableAdapterItemConvertible {
+extension ListDataUpdateProtocol where Item == AnyTableAdapterItem {
     /// ZJaDe: 重新刷新cell
     public func reloadData(_ closure: () -> ListData<Section, StaticTableItemCell>?) {
         self.reloadListData({ (_) -> ListDataType? in

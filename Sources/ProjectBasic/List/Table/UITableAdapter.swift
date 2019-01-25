@@ -10,9 +10,9 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-public typealias TableSectionModel = SectionModelItem<TableSection, TableAdapterItemConvertible>
+public typealias TableSectionModel = SectionModelItem<TableSection, AnyTableAdapterItem>
 
-public typealias TableListData = ListData<TableSection, TableAdapterItemConvertible>
+public typealias TableListData = ListData<TableSection, AnyTableAdapterItem>
 public typealias TableStaticData = ListData<TableSection, StaticTableItemCell>
 
 public typealias TableListUpdateInfo = ListUpdateInfo<TableListData>
@@ -40,7 +40,7 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
         tableView.allowsSelection = true
         tableView.allowsMultipleSelection = true
     }
-    open override func changeSelectState(_ isSelected: Bool, _ item: TableAdapterItemConvertible) {
+    open override func changeSelectState(_ isSelected: Bool, _ item: AnyTableAdapterItem) {
         guard let indexPath = self.dataController.indexPath(with: item) else {
             return
         }

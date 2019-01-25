@@ -113,7 +113,7 @@ extension UITableAdapter: TableAdapterDelegate {
     }
 }
 extension UITableAdapter {
-    internal func createCell(in tableView: UITableView, for indexPath: IndexPath, item: TableAdapterItemConvertible) -> UITableViewCell {
+    internal func createCell(in tableView: UITableView, for indexPath: IndexPath, item: AnyTableAdapterItem) -> UITableViewCell {
         if item.tableItem.cellHeightLayoutType.isNeedLayout {
             item.tableItem.calculateCellHeight(tableView, wait: true)
         }

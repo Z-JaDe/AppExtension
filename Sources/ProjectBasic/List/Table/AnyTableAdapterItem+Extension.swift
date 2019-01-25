@@ -1,5 +1,5 @@
 //
-//  TableAdapterItemConvertible.swift
+//  AnyTableAdapterItem.swift
 //  Alamofire
 //
 //  Created by 郑军铎 on 2018/7/17.
@@ -11,7 +11,7 @@ extension AnyTableAdapterItem: AdapterItemType {
         return self.value as? StaticTableItemCell
     }
     public static func cell(_ value: StaticTableItemCell) -> AnyTableAdapterItem {
-        return TableAdapterItemConvertible(value)
+        return AnyTableAdapterItem(value)
     }
     public var model: TableItemModel? {
         return self.value as? TableItemModel

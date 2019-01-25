@@ -36,3 +36,5 @@ public extension CanPresentProtocol {
         }
     }
 }
+
+extension UIViewController: CanPresentProtocol {}

@@ -97,25 +97,37 @@ open class SegmentView<CellView, CellData>: MultipleItemsView<CellView, CellData
     // MARK: - isSelected
     public private(set) var currentItem: CellView? {
         didSet {
+            if let oldContext = oldValue.flatMap({ (oldItem) -> CellTapContext? in
+                guard let oldIndex = self.cellArr.firstIndex(of: oldItem) else {return nil}
+                return CellTapContext(view: oldItem, data: dataArray[oldIndex], index: oldIndex)
+            }) {
+                self.changeSelectState?(oldContext, false)
+            }
             if var itemView = oldValue as? SelectedStateDesignable {
                 itemView.isSelected = false
             }
-            if var itemView = self.currentItem as?SelectedStateDesignable {
+            if let context = oldValue.map({CellTapContext(view: $0, data: dataArray[currentIndex], index: currentIndex)}) {
+                self.changeSelectState?(context, true)
+            }
+            if var itemView = self.currentItem as? SelectedStateDesignable {
                 itemView.isSelected = true
             }
         }
     }
     // MARK: -
-    public var shouldSelectItem: ((TapContext<CellView, CellData>) -> Bool)?
-    public var didSelectItem: ((TapContext<CellView, CellData>) -> Void)?
+    public typealias CellTapContext = TapContext<CellView, CellData>
+    /// ZJaDe: 点击时会调用
+    public var shouldSelectItem: ((CellTapContext) -> Bool)?
+    /// ZJaDe: 点击时会调用
+    public var didSelectItem: ((CellTapContext) -> Void)?
+    /// ZJaDe: 只要状态更改就会调用
+    public var changeSelectState: ((CellTapContext, Bool) -> Void)?
     @objc open func whenTap(_ tap: UITapGestureRecognizer) {
         if let (offset, element) = self.cellArr.enumerated().first(where: {$0.element.point(inside: tap.location(in: $0.element), with: nil)}) {
-            let context = TapContext(view: element, data: dataArray[offset], index: offset)
-            let shouldSelect = self.shouldSelectItem?(context) ?? true
-            if shouldSelect {
-                self.currentIndex = offset
-                didSelectItem?(context)
-            }
+            let context = CellTapContext(view: element, data: dataArray[offset], index: offset)
+            guard self.shouldSelectItem?(context) != false else { return }
+            self.currentIndex = offset
+            didSelectItem?(context)
         }
     }
 }

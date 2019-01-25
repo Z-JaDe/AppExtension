@@ -12,7 +12,7 @@ extension SectionedDataSource: DataSourceItemsParamProtocol {
     public func eachModel(_ closure: ((Any) -> Bool)) -> Bool {
         for sectionModel in self.dataController.sectionModels {
             let items: [Any] = sectionModel.items.map({ (item) in
-                if let item = item as? TableAdapterItemConvertible {
+                if let item = item as? AnyTableAdapterItem {
                     return item.value
                 } else {
                     return item
