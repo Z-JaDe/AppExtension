@@ -10,9 +10,6 @@ import UIKit
 import Photos
 
 open class AssetGridViewController: CollectionViewController, PHPhotoLibraryChangeObserver {
-    open var callBack: ([UIImage]) -> Void = { (dataArr) in
-        logDebug("回调没有写")
-    }
     open var maxImageCount: MaxSelectedCount = 1 {
         didSet {
             self.adapter.maxSelectedCount = maxImageCount
