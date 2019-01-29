@@ -22,6 +22,5 @@ extension Reactive where Base: UIControl {
     @available(*, deprecated, message: "请使用touchUpInside")
     public func whenTouch(_ closure: ((Base) -> Void)?) -> Disposable {
         return self.touchUpInside(closure)
-
     }
 }
