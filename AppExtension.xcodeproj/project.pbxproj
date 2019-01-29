@@ -61,6 +61,7 @@
 		C90E74D622001608006CE73C /* AssetGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E74D322001608006CE73C /* AssetGridViewController.swift */; };
 		C90E74D722001608006CE73C /* AssetGridModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E74D422001608006CE73C /* AssetGridModel.swift */; };
 		C90E74D922001681006CE73C /* PHAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E74D822001681006CE73C /* PHAsset.swift */; };
+		C90E74DD220025FB006CE73C /* OpenPhotoConfiger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E74DB220025FB006CE73C /* OpenPhotoConfiger.swift */; };
 		C90E76FC21C88F1C00707519 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E76FA21C88F1700707519 /* NetworkProtocol.swift */; };
 		C90E76FE21C8933200707519 /* UpdateDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932FAA421006EFD00B8DF84 /* UpdateDataProtocol.swift */; };
 		C90E770121C893BE00707519 /* UpdateNavItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E76FF21C893B900707519 /* UpdateNavItemProtocol.swift */; };
@@ -904,6 +905,7 @@
 		C90E74D322001608006CE73C /* AssetGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGridViewController.swift; sourceTree = "<group>"; };
 		C90E74D422001608006CE73C /* AssetGridModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGridModel.swift; sourceTree = "<group>"; };
 		C90E74D822001681006CE73C /* PHAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAsset.swift; sourceTree = "<group>"; };
+		C90E74DB220025FB006CE73C /* OpenPhotoConfiger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPhotoConfiger.swift; sourceTree = "<group>"; };
 		C90E76FA21C88F1700707519 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
 		C90E76FF21C893B900707519 /* UpdateNavItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNavItemProtocol.swift; sourceTree = "<group>"; };
 		C90F046721FAEB5F007F1111 /* AnyTableAdapterItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyTableAdapterItem.swift; sourceTree = "<group>"; };
@@ -1795,6 +1797,7 @@
 			isa = PBXGroup;
 			children = (
 				C90E74D822001681006CE73C /* PHAsset.swift */,
+				C90E74DB220025FB006CE73C /* OpenPhotoConfiger.swift */,
 				C90E74D122001608006CE73C /* AssetGridPhoto */,
 				C90E74CE220015C0006CE73C /* ImagePicker */,
 			);
@@ -4603,6 +4606,7 @@
 				C9D412E821DF4B65004368D4 /* UICollectionAdapter.swift in Sources */,
 				C9D412E721DF4B52004368D4 /* UITableProxy.swift in Sources */,
 				C9D4132321DF6B74004368D4 /* LoadWebUrlProtocol.swift in Sources */,
+				C90E74DD220025FB006CE73C /* OpenPhotoConfiger.swift in Sources */,
 				C9D412B021DF45FA004368D4 /* TableModelCell.swift in Sources */,
 				C9D412A521DF4326004368D4 /* ScrollViewController.swift in Sources */,
 				C9D4132F21DF8DB6004368D4 /* BlurModalViewController.swift in Sources */,
