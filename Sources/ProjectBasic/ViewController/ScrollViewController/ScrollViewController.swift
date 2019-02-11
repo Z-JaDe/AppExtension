@@ -11,11 +11,6 @@ import UIKit
 open class ScrollViewController<ScrollViewType>: ViewController<ScrollViewType> where ScrollViewType: UIScrollView {
     open override func viewDidLoad() {
         super.viewDidLoad()
-        if #available(iOS 11.0, *) {
-            self.rootView.contentInsetAdjustmentBehavior = .never
-        } else {
-
-        }
     }
 }
 

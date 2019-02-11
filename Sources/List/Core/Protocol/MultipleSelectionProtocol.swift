@@ -16,7 +16,7 @@ public protocol MultipleSelectionProtocol: AssociatedObjectProtocol {
     func checkCanSelected(_ item: SelectItemType, _ closure: @escaping (Bool) -> Void)
     /// ZJaDe: 更新item选中状态
     func updateSelectState(_ item: SelectItemType, _ isSelected: Bool)
-    /// ZJaDe: 主动更改item的选中状态
+    /// ZJaDe: 主动更改item的选中状态时
     func changeSelectState(_ isSelected: Bool, _ item: SelectItemType)
     func changeSelectState(_ isSelected: Bool, _ items: [SelectItemType])
 }
