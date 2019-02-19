@@ -14,7 +14,7 @@ public protocol ColorConfigerProtocol {
 public class ColorConfiger {
     fileprivate static let shared: ColorConfiger = ColorConfiger()
     private init() {}
-    public func colorFromRGB(_ hexString: String) -> UIColor? {
+    public final func colorFromRGB(_ hexString: String) -> UIColor? {
         var red: CGFloat
         var blue: CGFloat
         var green: CGFloat
@@ -46,7 +46,7 @@ public class ColorConfiger {
         }
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
-    public func colorComponentFrom(_ string: String, _ start: Int, _ length: Int) -> CGFloat {
+    public final func colorComponentFrom(_ string: String, _ start: Int, _ length: Int) -> CGFloat {
         let subString = string[string.index(string.startIndex, offsetBy: start) ..< string.index(string.startIndex, offsetBy: start+length)]
         let fullHex = length == 2 ? subString : subString+subString
         var hexComponent: UInt32 = 0
