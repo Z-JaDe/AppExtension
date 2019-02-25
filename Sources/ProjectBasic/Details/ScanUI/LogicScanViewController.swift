@@ -72,6 +72,7 @@ open class LogicScanViewController: UIViewController {
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if self.deviceAvailable {
+            self.openScanning()
             self.updateLighted(isLight: self.isLight)
         }
     }
@@ -115,6 +116,7 @@ open class LogicScanViewController: UIViewController {
     }
 }
 extension LogicScanViewController {
+    /// ZJaDe: 闭包可能会被队列或者Alert持有
     public func checkCanScan(_ closure: @escaping (Bool) -> Void) {
         if self.deviceAvailable {
             pscope.requestCamera { (canUse) in

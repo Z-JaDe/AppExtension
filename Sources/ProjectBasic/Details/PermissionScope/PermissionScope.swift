@@ -34,7 +34,7 @@ public class PermissionScope: TaskProtocol {
         callback(true)
         self.currentTaskComplete()
     }
-    internal func requestError(_ callback: @escaping PermissionScopeCallback) {
+    internal func requestError(_ callback: PermissionScopeCallback) {
         callback(false)
         self.currentTaskComplete()
     }

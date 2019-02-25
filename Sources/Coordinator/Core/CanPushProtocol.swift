@@ -17,6 +17,10 @@ public extension CanPushProtocol {
         navCon?.childrenCoordinators.append(coordinator)
         navCon?.pushViewController(coordinator.rootViewController, animated: animated)
     }
+    func popAndPush<T: CanPushItem>(count: Int, _ coordinator: T, animated: Bool = true) {
+        navCon?.childrenCoordinators.append(coordinator)
+        navCon?.popAndPush(count: count, pushVC: coordinator.rootViewController, animated: animated)
+    }
     func resetPush<T: CanPushItem>(_ coordinator: T, animated: Bool = true) {
         navCon?.childrenCoordinators.append(coordinator)
         navCon?.setViewControllers([coordinator.rootViewController], animated: animated)
