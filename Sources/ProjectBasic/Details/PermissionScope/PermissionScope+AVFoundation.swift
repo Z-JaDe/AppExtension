@@ -49,10 +49,12 @@ public extension PermissionScope {
             self.requestError("app被禁止访问麦克风", closure)
         case .notDetermined:
             AVAudioSession.sharedInstance().requestRecordPermission { (granted) in
-                if granted {
-                    self.requestSuccessful(closure)
-                } else {
-                    self.requestError(closure)
+                Async.main {
+                    if granted {
+                        self.requestSuccessful(closure)
+                    } else {
+                        self.requestError(closure)
+                    }
                 }
             }
         }

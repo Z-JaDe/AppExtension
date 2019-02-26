@@ -7,7 +7,18 @@
 //
 
 import UIKit
-
+public protocol PasswordViewControllerProtocol {
+    var passwordView: PasswordInputView {get}
+}
+extension PasswordViewControllerProtocol {
+    public func resultHandle(isSuccessful: Bool) {
+        if isSuccessful {
+            self.passwordView.endInput()
+        } else {
+            self.passwordView.clearPassword()
+        }
+    }
+}
 public class PasswordInputView: CustomView {
     public var passwordMaxLength: Int = 6 {
         didSet {

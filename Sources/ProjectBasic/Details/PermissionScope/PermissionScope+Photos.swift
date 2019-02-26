@@ -27,10 +27,12 @@ public extension PermissionScope {
             self.requestError("app被禁止访问相册", closure)
         case .notDetermined:
             PHPhotoLibrary.requestAuthorization { (status) in
-                if status == .authorized {
-                    self.requestSuccessful(closure)
-                } else {
-                    self.requestError(closure)
+                Async.main {
+                    if status == .authorized {
+                        self.requestSuccessful(closure)
+                    } else {
+                        self.requestError(closure)
+                    }
                 }
             }
         }
