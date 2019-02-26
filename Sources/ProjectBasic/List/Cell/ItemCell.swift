@@ -34,8 +34,8 @@ public enum CellHighlightedAnimationType {
 }
 
 extension ItemCell {
-    public static var accessoryTypeUnSelectedImage: UIImage = UIImage(named: "ic_accessoryType_unselected") ?? UIImage()
-    public static var accessoryTypeSelectedImage: UIImage = UIImage(named: "ic_accessoryType_selected") ?? UIImage()
+    public static var accessoryTypeUnSelectedImage: UIImage = UIImage(named: "icon_commen_disagree") ?? UIImage()
+    public static var accessoryTypeSelectedImage: UIImage = UIImage(named: "icon_commen_agree") ?? UIImage()
 }
 open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable & EnabledStateDesignable, HighlightedStateDesignable, BufferPoolItemProtocol {
     // MARK: NeedUpdateProtocol
