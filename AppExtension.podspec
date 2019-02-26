@@ -64,6 +64,7 @@ Pod::Spec.new do |s|
         ss.dependency "RxSwiftExt"
         ss.dependency "RxOptional"
     end
+    #架构相关
     s.subspec "NavigationFlow" do |ss|
         ss.source_files  = "Sources/NavigationFlow/**/*.{swift}"
 

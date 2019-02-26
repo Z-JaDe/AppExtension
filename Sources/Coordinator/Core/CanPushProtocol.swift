@@ -12,26 +12,27 @@ public protocol CanPushProtocol {
     var navCon: UINavigationController? {get}
 }
 public typealias CanPushItem = Coordinator & RouteUrl
+extension UIViewController: Coordinator {}
 public extension CanPushProtocol {
-    func push<T: CanPushItem>(_ coordinator: T, animated: Bool = true) {
-        navCon?.childrenCoordinators.append(coordinator)
-        navCon?.pushViewController(coordinator.rootViewController, animated: animated)
+    func push<T: CanPushItem>(_ item: T, animated: Bool = true) {
+        navCon?.childrenCoordinators.append(item)
+        navCon?.pushViewController(item.rootViewController, animated: animated)
     }
-    func popAndPush<T: CanPushItem>(count: Int, _ coordinator: T, animated: Bool = true) {
-        navCon?.childrenCoordinators.append(coordinator)
-        navCon?.popAndPush(count: count, pushVC: coordinator.rootViewController, animated: animated)
+    func popAndPush<T: CanPushItem>(count: Int, _ item: T, animated: Bool = true) {
+        navCon?.childrenCoordinators.append(item)
+        navCon?.popAndPush(count: count, pushVC: item.rootViewController, animated: animated)
     }
-    func resetPush<T: CanPushItem>(_ coordinator: T, animated: Bool = true) {
-        navCon?.childrenCoordinators.append(coordinator)
-        navCon?.setViewControllers([coordinator.rootViewController], animated: animated)
+    func resetPush<T: CanPushItem>(_ item: T, animated: Bool = true) {
+        navCon?.childrenCoordinators.append(item)
+        navCon?.setViewControllers([item.rootViewController], animated: animated)
     }
-    func reset<T: CanPushItem>(_ coordinators: [T], animated: Bool = true) {
-        navCon?.childrenCoordinators.append(contentsOf: coordinators)
-        navCon?.setViewControllers(coordinators.map({$0.rootViewController}), animated: animated)
+    func reset<T: CanPushItem>(_ items: [T], animated: Bool = true) {
+        navCon?.childrenCoordinators.append(contentsOf: items)
+        navCon?.setViewControllers(items.map({$0.rootViewController}), animated: animated)
     }
-    func popTo<T: CanPushItem>(_ coordinator: T, animated: Bool = true) -> Bool {
-        if navCon?.viewControllers.contains(coordinator.rootViewController) == true {
-            navCon?.popToViewController(coordinator.rootViewController, animated: animated)
+    func popTo<T: CanPushItem>(_ item: T, animated: Bool = true) -> Bool {
+        if navCon?.viewControllers.contains(item.rootViewController) == true {
+            navCon?.popToViewController(item.rootViewController, animated: animated)
             return true
         }
         return false
@@ -53,7 +54,7 @@ extension UINavigationController {
     fileprivate var childrenCoordinators: [CanPushItem] {
         get {return associatedObject(&childsKey, createIfNeed: [])}
         set {
-            setAssociatedObject(&childsKey, newValue)
+            setAssociatedObject(&childsKey, newValue.filter({($0 is UIViewController) == false}))
         }
     }
     public func cleanUpChildCoordinators() {
