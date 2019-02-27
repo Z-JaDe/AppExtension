@@ -19,7 +19,7 @@ public protocol NavigationItemProtocol: class {
     var navBarIsHidden: Bool {get}
     var navBarTintColor: UIColor {get}
     var navTintColor: UIColor {get}
-    /// ZJaDe: 更新时要控制不能超过1，一旦超过1 isTranslucent会自动设置成false
+    /// ZJaDe: 大于等于1时会更新isTranslucent为false
     var navBarAlpha: CGFloat {get}
     var navBarBackgroundImage: UIImage? {get}
     var navBarShadowType: NavBarShadowType {get}
@@ -161,7 +161,7 @@ extension UINavigationBar {
         }
     }
     func changeBarTintColor(_ color: UIColor, _ backgroundImage: UIImage?, _ shadowType: NavBarShadowType, _ alpha: CGFloat) {
-        /// ZJaDe: 设置成isTranslucent = false的时候，会导致UI布局，想要设置不透明可以设置成0.99
+        /// ZJaDe: 设置成isTranslucent = false的时候，会导致UI布局更新，想要设置不透明可以设置成0.99
 //        let alpha = alpha.clamp(min: 0, max: 0.99)
         updateIsTranslucent(alpha)
         let color = color.alpha(alpha)
