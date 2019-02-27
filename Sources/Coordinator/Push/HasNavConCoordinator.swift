@@ -22,7 +22,7 @@ open class HasNavConCoordinator: ViewConCoordinator,
 
     }
 }
-public extension RouteUrl where Self: HasNavConCoordinator {
+public extension RouteUrl where Self: ViewConCoordinator & CanPushProtocol {
     func load() {
         guard let navCon = navCon else { return }
         if navCon.viewControllers.count <= 0 {
