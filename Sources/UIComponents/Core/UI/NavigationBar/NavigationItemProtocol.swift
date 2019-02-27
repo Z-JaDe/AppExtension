@@ -154,7 +154,7 @@ extension UINavigationBar {
         }
     }
     func updateIsTranslucent(_ alpha: CGFloat) {
-        if alpha > 1 {
+        if alpha >= 1 {
             self.isTranslucent = false
         } else {
             self.isTranslucent = true

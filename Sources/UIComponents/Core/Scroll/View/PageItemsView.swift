@@ -59,7 +59,7 @@ open class PageItemsView<CellView, ItemData, ScrollView>: MultipleItemsView<Cell
     open override func layoutSubviews() {
         super.layoutSubviews()
         self.pageControl.sizeToFit()
-        self.pageControl.bottom = self.height - 15
+        self.pageControl.bottom = self.height - 20
         self.pageControl.centerX = self.width / 2
     }
 
