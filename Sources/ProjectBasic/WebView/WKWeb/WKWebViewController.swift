@@ -12,18 +12,7 @@ import WebKit
 
 open class WKWebViewController: BaseWebViewController<JDWKWebView>, WKNavigationDelegate {
     /// ZJaDe: 
-    open var scriptMessageHandler: ScriptMessageHandler = ScriptMessageHandler() {
-        didSet {
-            self.resetScriptMessages()
-        }
-    }
-    func resetScriptMessages() {
-        self.removeAllUserScripts()
-        self.scriptMessageHandler.addScriptMessages(in: self.rootView.configuration.userContentController)
-    }
-    func removeAllUserScripts() {
-        self.rootView.configuration.userContentController.removeAllUserScripts()
-    }
+    public private(set) lazy var jsBridge: JSBridge = JSBridge(libraryCode: "", functionNamespace: "appNative")
     /// ZJaDe: 
     let uiProxy: WKUIProxy = WKUIProxy()
     open override func viewDidLoad() {
@@ -31,22 +20,16 @@ open class WKWebViewController: BaseWebViewController<JDWKWebView>, WKNavigation
         self.rootView.allowsBackForwardNavigationGestures = true
         self.rootView.uiDelegate = self.uiProxy
         self.rootView.navigationDelegate = self
-
     }
-    // MARK: -
-    open override func configWebView() {
-        super.configWebView()
-        resetScriptMessages()
-    }
-    deinit {
-        removeAllUserScripts()
+    open override func createView(_ frame: CGRect) -> JDWKWebView {
+        return self.jsBridge.webView
     }
 
     // MARK: - WKNavigationDelegate
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
 
     }
-    public var decidePolicyClosure: ((_ navigationAction: WKNavigationAction, _ decisionHandler: @escaping (WKNavigationActionPolicy)-> Void)->Void)?
+    public var decidePolicyClosure: ((_ navigationAction: WKNavigationAction, _ decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) -> Void)?
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let closure = self.decidePolicyClosure {
             closure(navigationAction, decisionHandler)

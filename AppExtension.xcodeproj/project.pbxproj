@@ -260,6 +260,9 @@
 		C9283C2821BEB91200361B87 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F806210069AC00B8DF84 /* ImageData.swift */; };
 		C9283C2921BEB91200361B87 /* ImageURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C989A345214015CD00E64AD8 /* ImageURLProtocol.swift */; };
 		C9283C3521BEC50500361B87 /* HeaderViewContainerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932FAA321006EFD00B8DF84 /* HeaderViewContainerProtocol.swift */; };
+		C92B6D4D222CD041001A1663 /* JSBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92B6D4B222CD039001A1663 /* JSBridge.swift */; };
+		C92B6D52222CD0C9001A1663 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92B6D51222CD0C9001A1663 /* Context.swift */; };
+		C92B6D54222CD96D001A1663 /* JSBridge+Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92B6D53222CD96D001A1663 /* JSBridge+Call.swift */; };
 		C92EF1352135394800F95C71 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EF1332135393200F95C71 /* QRCode.swift */; };
 		C930DAB920D3E3ED002D87D1 /* Text.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C930DAB820D3E3ED002D87D1 /* Text.storyboard */; };
 		C932F75B2100593E00B8DF84 /* ProjectBasic.h in Headers */ = {isa = PBXBuildFile; fileRef = C932F7592100593E00B8DF84 /* ProjectBasic.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -433,7 +436,6 @@
 		C9D4131E21DF6B74004368D4 /* WebViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131321DF6B74004368D4 /* WebViewProtocol.swift */; };
 		C9D4131F21DF6B74004368D4 /* WKUIProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131521DF6B74004368D4 /* WKUIProxy.swift */; };
 		C9D4132021DF6B74004368D4 /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131621DF6B74004368D4 /* WKWebViewController.swift */; };
-		C9D4132121DF6B74004368D4 /* ScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131721DF6B74004368D4 /* ScriptMessageHandler.swift */; };
 		C9D4132321DF6B74004368D4 /* LoadWebUrlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131921DF6B74004368D4 /* LoadWebUrlProtocol.swift */; };
 		C9D4132421DF6D7B004368D4 /* SectionedDataSource+ParamProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932FA2321006ED100B8DF84 /* SectionedDataSource+ParamProtocol.swift */; };
 		C9D4132921DF807C004368D4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4132821DF807C004368D4 /* RootViewController.swift */; };
@@ -1035,6 +1037,9 @@
 		C9283BED21BE9C1D00361B87 /* EmptyDataSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyDataSet.h; sourceTree = "<group>"; };
 		C9283BEE21BE9C1D00361B87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9283BFC21BE9C4700361B87 /* EmptyDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataSet.swift; sourceTree = "<group>"; };
+		C92B6D4B222CD039001A1663 /* JSBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSBridge.swift; sourceTree = "<group>"; };
+		C92B6D51222CD0C9001A1663 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		C92B6D53222CD96D001A1663 /* JSBridge+Call.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSBridge+Call.swift"; sourceTree = "<group>"; };
 		C92E501E2101825600F4F887 /* EmptyDataSetContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyDataSetContentView.swift; sourceTree = "<group>"; };
 		C92EF1332135393200F95C71 /* QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		C930DAB820D3E3ED002D87D1 /* Text.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Text.storyboard; sourceTree = "<group>"; };
@@ -1283,7 +1288,6 @@
 		C9D4131321DF6B74004368D4 /* WebViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewProtocol.swift; sourceTree = "<group>"; };
 		C9D4131521DF6B74004368D4 /* WKUIProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKUIProxy.swift; sourceTree = "<group>"; };
 		C9D4131621DF6B74004368D4 /* WKWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
-		C9D4131721DF6B74004368D4 /* ScriptMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptMessageHandler.swift; sourceTree = "<group>"; };
 		C9D4131921DF6B74004368D4 /* LoadWebUrlProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadWebUrlProtocol.swift; sourceTree = "<group>"; };
 		C9D4132821DF807C004368D4 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		C9D4132A21DF808B004368D4 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
@@ -2325,6 +2329,16 @@
 			path = EmptyDataSet;
 			sourceTree = "<group>";
 		};
+		C92B6D4A222CD02E001A1663 /* JSBridge */ = {
+			isa = PBXGroup;
+			children = (
+				C92B6D51222CD0C9001A1663 /* Context.swift */,
+				C92B6D4B222CD039001A1663 /* JSBridge.swift */,
+				C92B6D53222CD96D001A1663 /* JSBridge+Call.swift */,
+			);
+			path = JSBridge;
+			sourceTree = "<group>";
+		};
 		C92EF1322135393200F95C71 /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -3150,9 +3164,9 @@
 		C9D4131421DF6B74004368D4 /* WKWeb */ = {
 			isa = PBXGroup;
 			children = (
+				C92B6D4A222CD02E001A1663 /* JSBridge */,
 				C9D4131521DF6B74004368D4 /* WKUIProxy.swift */,
 				C9D4131621DF6B74004368D4 /* WKWebViewController.swift */,
-				C9D4131721DF6B74004368D4 /* ScriptMessageHandler.swift */,
 			);
 			path = WKWeb;
 			sourceTree = "<group>";
@@ -4629,6 +4643,7 @@
 				C90BFC1821DE242400DF1E54 /* Response+Rx.swift in Sources */,
 				C90E74D922001681006CE73C /* PHAsset.swift in Sources */,
 				C90E74D622001608006CE73C /* AssetGridViewController.swift in Sources */,
+				C92B6D4D222CD041001A1663 /* JSBridge.swift in Sources */,
 				C9D412EF21DF4C06004368D4 /* RefreshListProtocol.swift in Sources */,
 				C90BFC2521DE4DC200DF1E54 /* RequestContext+CallBack.swift in Sources */,
 				C9D412BE21DF468B004368D4 /* TableItemCell.swift in Sources */,
@@ -4645,6 +4660,7 @@
 				C9D412AE21DF45FA004368D4 /* CellModelProtocol.swift in Sources */,
 				C90CC68121E711D700BEF2DA /* RequestResult+Map.swift in Sources */,
 				C9D412D321DF4A88004368D4 /* CollectSection.swift in Sources */,
+				C92B6D54222CD96D001A1663 /* JSBridge+Call.swift in Sources */,
 				C90E74D0220015C0006CE73C /* ImagePickerController.swift in Sources */,
 				C90CC67D21E710C400BEF2DA /* ResultCode.swift in Sources */,
 				C90BFC1E21DE352C00DF1E54 /* RequestContext.swift in Sources */,
@@ -4661,7 +4677,6 @@
 				C9D412A621DF4326004368D4 /* TableViewController.swift in Sources */,
 				C90AFE5E21E62C59009C27F7 /* SessionManager+Network.swift in Sources */,
 				C932F7A821005A9F00B8DF84 /* ProjectBasic.swift in Sources */,
-				C9D4132121DF6B74004368D4 /* ScriptMessageHandler.swift in Sources */,
 				C9D412E521DF4B52004368D4 /* TableViewHeaderFooterView.swift in Sources */,
 				C932F824210069AD00B8DF84 /* MessageHUDProtocol.swift in Sources */,
 				C9D4130121DF529A004368D4 /* CellConfigProtocol.swift in Sources */,
@@ -4675,6 +4690,7 @@
 				C9D4130821DF5F7F004368D4 /* UITable+AdapterDelegate.swift in Sources */,
 				C9D412AC21DF45F4004368D4 /* SNTableViewCell.swift in Sources */,
 				C9D412B721DF4600004368D4 /* TextFieldCell.swift in Sources */,
+				C92B6D52222CD0C9001A1663 /* Context.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
