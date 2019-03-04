@@ -22,16 +22,13 @@ public struct JSError: Error, Codable {
 }
 
 open class JSBridge {
-    public let encoder = JSONEncoder()
-    public let decoder = JSONDecoder()
-
-    public var webView: JDWKWebView {
-        return self.context.webView
-    }
-
+    public let webView: JDWKWebView
     internal let context: Context
 
     public init(libraryCode: String, customOrigin: URL? = nil, incognito: Bool = false, functionNamespace: String) {
+
+        self.webView = JDWKWebView(frame: .zero, configuration: buildWebViewConfig(libraryCode: libraryCode, incognito: incognito))
         self.context = Context(libraryCode: libraryCode, customOrigin: customOrigin, incognito: incognito, functionNamespace: functionNamespace)
+        self.context.webView = self.webView
     }
 }

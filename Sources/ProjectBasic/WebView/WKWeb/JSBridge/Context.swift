@@ -106,7 +106,7 @@ fileprivate class BridgeSchemeHandler: NSObject, WKURLSchemeHandler {
     func webView(_ webView: WKWebView, stop urlSchemeTask: WKURLSchemeTask) {}
 }
 
-fileprivate func buildWebViewConfig(libraryCode: String, incognito: Bool) -> WKWebViewConfiguration {
+internal func buildWebViewConfig(libraryCode: String, incognito: Bool) -> WKWebViewConfiguration {
     let source = "\(internalLibrary);try{(function () {\(libraryCode)}());__JSBridge__ready__(true)} catch (err) {__JSBridge__ready__(false, err)}"
     let script = WKUserScript(source: source, injectionTime: .atDocumentStart, forMainFrameOnly: true)
     let controller = WKUserContentController()
@@ -137,16 +137,15 @@ internal class Context: NSObject, WKScriptMessageHandler {
 
     private static var errorEncoder = JSONEncoder()
 
-    internal let webView: JDWKWebView
+    internal weak var webView: JDWKWebView?
 
     init(libraryCode: String, customOrigin: URL?, incognito: Bool, functionNamespace: String) {
         self.functionNamespace = functionNamespace
-        webView = JDWKWebView(frame: .zero, configuration: buildWebViewConfig(libraryCode: libraryCode, incognito: incognito))
 
         super.init()
 
-        webView.configuration.userContentController.add(self, name: "scriptHandler")
-        webView.load(html, mimeType: "text/html", characterEncodingName: "utf8", baseURL: customOrigin ?? defaultOrigin)
+        webView?.configuration.userContentController.add(self, name: "scriptHandler")
+//        webView.load(html, mimeType: "text/html", characterEncodingName: "utf8", baseURL: customOrigin ?? defaultOrigin)
     }
 
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
@@ -190,12 +189,12 @@ internal class Context: NSObject, WKScriptMessageHandler {
             guard let `self` = self else { return }
             switch event {
             case .next(let value):
-                self.webView.evaluateJavaScript("__JSBridge__resolve__(\(id), \(value))")
+                self.webView?.evaluateJavaScript("__JSBridge__resolve__(\(id), \(value))")
             case .error(let error):
                 if let error = error as? JSError, let encoded = try? Context.errorEncoder.encode(error), let props = String(data: encoded, encoding: .utf8) {
-                    self.webView.evaluateJavaScript("__JSBridge__reject__(\(id), Object.assign(new Error(''), \(props)))")
+                    self.webView?.evaluateJavaScript("__JSBridge__reject__(\(id), Object.assign(new Error(''), \(props)))")
                 } else {
-                    self.webView.evaluateJavaScript("__JSBridge__reject__(\(id), new Error('\(error.localizedDescription)'))")
+                    self.webView?.evaluateJavaScript("__JSBridge__reject__(\(id), new Error('\(error.localizedDescription)'))")
                 }
             case .completed: break
             }
@@ -203,19 +202,21 @@ internal class Context: NSObject, WKScriptMessageHandler {
     }
 
     private func evaluateJavaScript(_ javaScriptString: String, completionHandler: ((Any?, Error?) -> Void)? = nil) {
-        self.readySubject.take(1).subscribe { (event) in
+        self.readySubject.take(1).subscribe { [weak self] (event) in
+            guard let `self` = self else { return }
             switch event {
             case .error(let error):
                 completionHandler?(nil, error)
             case .next(_):
-                self.webView.evaluateJavaScript(javaScriptString, completionHandler: completionHandler)
+                self.webView?.evaluateJavaScript(javaScriptString, completionHandler: completionHandler)
             case .completed: break
             }
         }.disposed(by: self.disposeBag)
     }
 
     internal func rawCall(function: String, args: String) -> Observable<String> {
-        return Observable.create({ (observer) -> Disposable in
+        return Observable.create({ [weak self] (observer) -> Disposable in
+            guard let `self` = self else { return Disposables.create() }
             let id = self.nextIdentifier
             self.nextIdentifier += 1
             self.handlers[id] = observer
@@ -233,6 +234,6 @@ internal class Context: NSObject, WKScriptMessageHandler {
 
     internal func register(functionNamed name: String, _ fn: @escaping ([String]) throws -> Observable<String>) {
         self.functions[name] = fn
-        self.evaluateJavaScript("window.\(self.functionNamespace).\(name) = (...args) => __JSBridge__send__('\(name)', ...args)")
+        self.evaluateJavaScript("window.\(name) = (...args) => __JSBridge__send__('\(name)', ...args)")
     }
 }
