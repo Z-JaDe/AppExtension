@@ -27,8 +27,7 @@ open class JSBridge {
 
     public init(libraryCode: String, customOrigin: URL? = nil, incognito: Bool = false, functionNamespace: String) {
 
-        self.webView = JDWKWebView(frame: .zero, configuration: buildWebViewConfig(libraryCode: libraryCode, incognito: incognito))
-        self.context = Context(libraryCode: libraryCode, customOrigin: customOrigin, incognito: incognito, functionNamespace: functionNamespace)
-        self.context.webView = self.webView
+        self.context = Context(functionNamespace: functionNamespace)
+        self.webView = self.context.createWebView(libraryCode: libraryCode, customOrigin: customOrigin, incognito: incognito)
     }
 }

@@ -127,7 +127,18 @@ internal func buildWebViewConfig(libraryCode: String, incognito: Bool) -> WKWebV
 }
 
 internal class Context: NSObject, WKScriptMessageHandler {
-    private var readySubject: ReplaySubject<Void> = ReplaySubject.create(bufferSize: 1)
+    enum State {
+        case didLoad
+        case didLoadWithError(Error)
+        case didUnload
+        var isLoad: Bool {
+            switch self {
+            case .didLoad, .didLoadWithError: return true
+            case .didUnload: return false
+            }
+        }
+    }
+    private let readySubject: ReplaySubject<State> = ReplaySubject.create(bufferSize: 1)
     let functionNamespace: String
 
     private var nextIdentifier = 1
@@ -137,15 +148,18 @@ internal class Context: NSObject, WKScriptMessageHandler {
 
     private static var errorEncoder = JSONEncoder()
 
-    internal weak var webView: JDWKWebView?
+    private weak var webView: JDWKWebView?
 
-    init(libraryCode: String, customOrigin: URL?, incognito: Bool, functionNamespace: String) {
+    init(functionNamespace: String) {
         self.functionNamespace = functionNamespace
-
         super.init()
-
-        webView?.configuration.userContentController.add(self, name: "scriptHandler")
-//        webView.load(html, mimeType: "text/html", characterEncodingName: "utf8", baseURL: customOrigin ?? defaultOrigin)
+    }
+    func createWebView(libraryCode: String, customOrigin: URL?, incognito: Bool) -> JDWKWebView {
+        let webView = JDWKWebView(frame: .zero, configuration: buildWebViewConfig(libraryCode: libraryCode, incognito: incognito))
+        webView.configuration.userContentController.add(self, name: "scriptHandler")
+        webView.load(html, mimeType: "text/html", characterEncodingName: "utf8", baseURL: customOrigin ?? defaultOrigin)
+        self.webView = webView
+        return webView
     }
 
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
@@ -153,16 +167,16 @@ internal class Context: NSObject, WKScriptMessageHandler {
 
         if let didLoad = dict["didLoad"] as? Bool, didLoad {
             if let error = dict["error"] as? Dictionary<String, AnyObject> {
-                readySubject.onError(JSError(fromDictionary: error))
+                readySubject.onNext(.didLoadWithError(JSError(fromDictionary: error)))
             } else {
-                readySubject.onNext(())
+                readySubject.onNext(.didLoad)
             }
         }
 
         if let didUnload = dict["didUnload"] as? Bool, didUnload {
             handlers.forEach { $1.onError(AbortedError()) }
             handlers.removeAll()
-            readySubject = ReplaySubject.create(bufferSize: 1)
+            readySubject.onNext(.didUnload)
         }
 
         guard let id = dict["id"] as? Int else { return }
@@ -201,14 +215,27 @@ internal class Context: NSObject, WKScriptMessageHandler {
         }).disposed(by: self.disposeBag)
     }
 
-    private func evaluateJavaScript(_ javaScriptString: String, completionHandler: ((Any?, Error?) -> Void)? = nil) {
-        self.readySubject.take(1).subscribe { [weak self] (event) in
+    /// ZJaDe: 会自动在web加载后 执行js代码，count传nil表示 每次web加载都会执行这段js代码，传1表示 只会执行一次
+    private func evaluateJavaScript(_ evaluateCount: Int?, jsStr: String, completionHandler: ((Any?, Error?) -> Void)? = nil) {
+        let readySubject: Observable<State>
+        if let count = evaluateCount {
+            readySubject = self.readySubject.filter({$0.isLoad}).take(count)
+        } else {
+            readySubject = self.readySubject
+        }
+        readySubject.subscribe { [weak self] (event) in
             guard let `self` = self else { return }
             switch event {
             case .error(let error):
                 completionHandler?(nil, error)
-            case .next(_):
-                self.webView?.evaluateJavaScript(javaScriptString, completionHandler: completionHandler)
+            case .next(let state):
+                switch state {
+                case .didLoad:
+                    self.webView?.evaluateJavaScript(jsStr, completionHandler: completionHandler)
+                case .didLoadWithError(let error):
+                    completionHandler?(nil, error)
+                case .didUnload: break
+                }
             case .completed: break
             }
         }.disposed(by: self.disposeBag)
@@ -221,7 +248,7 @@ internal class Context: NSObject, WKScriptMessageHandler {
             self.nextIdentifier += 1
             self.handlers[id] = observer
 
-            self.evaluateJavaScript("__JSBridge__receive__(\(id), () => \(function), ...[\(args)])") {
+            self.evaluateJavaScript(1, jsStr: "__JSBridge__receive__(\(id), () => \(function), ...[\(args)])") {
                 if let error = $1 { observer.onError(error) }
             }
             return Disposables.create()
@@ -229,11 +256,11 @@ internal class Context: NSObject, WKScriptMessageHandler {
     }
 
     internal func register(namespace: String) {
-        self.evaluateJavaScript("window.\(namespace) = {}")
+        self.evaluateJavaScript(nil, jsStr: "window.\(namespace) = {}")
     }
 
     internal func register(functionNamed name: String, _ fn: @escaping ([String]) throws -> Observable<String>) {
         self.functions[name] = fn
-        self.evaluateJavaScript("window.\(name) = (...args) => __JSBridge__send__('\(name)', ...args)")
+        self.evaluateJavaScript(nil, jsStr: "window.\(name) = (...args) => __JSBridge__send__('\(name)', ...args)")
     }
 }
