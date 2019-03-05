@@ -27,8 +27,8 @@ open class RootCoordinator: ViewConCoordinator,
     /// ZJaDe: CoordinatorContainer
     public var coordinators: [Coordinator] = []
     /// ZJaDe: RootViewControllerProvider
-    public var rootViewController: UIViewController {
-        return self.navCon!
+    public var rootViewController: UIViewController? {
+        return self.navCon
     }
     /// ZJaDe: CanPushProtocol
     public lazy var navCon: UINavigationController? = {

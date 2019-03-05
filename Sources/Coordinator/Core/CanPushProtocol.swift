@@ -15,24 +15,29 @@ public typealias CanPushItem = Coordinator & RouteUrl
 extension UIViewController: Coordinator {}
 public extension CanPushProtocol {
     func push<T: CanPushItem>(_ item: T, animated: Bool = true) {
+        guard let viewCon = item.rootViewController else { return }
         navCon?.childrenCoordinators.append(item)
-        navCon?.pushViewController(item.rootViewController, animated: animated)
+        navCon?.pushViewController(viewCon, animated: animated)
     }
     func popAndPush<T: CanPushItem>(count: Int, _ item: T, animated: Bool = true) {
+        guard let viewCon = item.rootViewController else { return }
         navCon?.childrenCoordinators.append(item)
-        navCon?.popAndPush(count: count, pushVC: item.rootViewController, animated: animated)
+        navCon?.popAndPush(count: count, pushVC: viewCon, animated: animated)
     }
     func resetPush<T: CanPushItem>(_ item: T, animated: Bool = true) {
+        guard let viewCon = item.rootViewController else { return }
         navCon?.childrenCoordinators.append(item)
-        navCon?.setViewControllers([item.rootViewController], animated: animated)
+        navCon?.setViewControllers([viewCon], animated: animated)
     }
     func reset<T: CanPushItem>(_ items: [T], animated: Bool = true) {
+        guard let viewCons = items.map({$0.rootViewController}) as? [UIViewController] else { return }
         navCon?.childrenCoordinators.append(contentsOf: items)
-        navCon?.setViewControllers(items.map({$0.rootViewController}), animated: animated)
+        navCon?.setViewControllers(viewCons, animated: animated)
     }
     func popTo<T: CanPushItem>(_ item: T, animated: Bool = true) -> Bool {
-        if navCon?.viewControllers.contains(item.rootViewController) == true {
-            navCon?.popToViewController(item.rootViewController, animated: animated)
+        guard let viewCon = item.rootViewController else { return false }
+        if navCon?.viewControllers.contains(viewCon) == true {
+            navCon?.popToViewController(viewCon, animated: animated)
             return true
         }
         return false
@@ -59,7 +64,8 @@ extension UINavigationController {
     }
     public func cleanUpChildCoordinators() {
         childrenCoordinators = childrenCoordinators.filter({
-            self.viewControllers.contains($0.rootViewController)
+            guard let viewCon = $0.rootViewController else { return false }
+            return self.viewControllers.contains(viewCon)
         })
     }
 }

@@ -26,7 +26,7 @@ public extension AbstractWindowCoordinator {
             }
         }, completion: nil)
     }
-    var rootViewController: UIViewController {
-        return self.window.rootViewController!
+    var rootViewController: UIViewController? {
+        return self.window.rootViewController
     }
 }

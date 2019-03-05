@@ -9,7 +9,7 @@
 import Foundation
 /// ZJaDe: 代表有控制器的协调器
 public protocol RootViewControllerProvider: class {
-    var rootViewController: UIViewController { get }
+    var rootViewController: UIViewController? { get }
 }
 /// ZJaDe: 代表有控制器的协调器，实现时只要有viewCon属性即可
 public protocol AssociatedRootViewControllerProvider: RootViewControllerProvider {
@@ -17,7 +17,7 @@ public protocol AssociatedRootViewControllerProvider: RootViewControllerProvider
     var viewCon: ViewControllerType {get}
 }
 extension AssociatedRootViewControllerProvider {
-    public var rootViewController: UIViewController {
+    public var rootViewController: UIViewController? {
         return self.viewCon
     }
 }
@@ -25,12 +25,12 @@ extension AssociatedRootViewControllerProvider {
 public protocol RouteUrl: RootViewControllerProvider {}
 public extension RouteUrl {
     func pop() {
-        self.rootViewController.popVC()
+        self.rootViewController?.popVC()
     }
 }
 
 extension UIViewController: RouteUrl {
-    public var rootViewController: UIViewController {
+    public var rootViewController: UIViewController? {
         return self
     }
 }

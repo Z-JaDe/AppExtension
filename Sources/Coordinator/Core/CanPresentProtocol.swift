@@ -16,9 +16,9 @@ public protocol CanPresentProtocol: RootViewControllerProvider {
 public extension CanPresentProtocol {
     func present(_ coordinator: RootViewControllerProvider, animated: Bool = true, completion: (() -> Void)? = nil) {
         DispatchQueue.main.async {
-            let rootViewCon = coordinator.rootViewController
+            guard let rootViewCon = coordinator.rootViewController else { return }
             if rootViewCon.isBeingDismissed || rootViewCon.isBeingPresented == false {
-                self.rootViewController.present(rootViewCon, animated: animated, completion: completion)
+                self.rootViewController?.present(rootViewCon, animated: animated, completion: completion)
             } else {
                 assertionFailure("控制器已经显示")
             }
@@ -27,7 +27,7 @@ public extension CanPresentProtocol {
     /// ZJaDe: 不一定会调用这个方法，有可能控制器自己调用了dismiss，比如实现了CanCancelModalViewController协议时
     func dismiss(animated: Bool = true, completion: (() -> Void)? = nil) {
         DispatchQueue.main.async {
-            let rootViewCon = self.rootViewController
+            guard let rootViewCon = self.rootViewController else { return }
             if rootViewCon.isBeingPresented || rootViewCon.isBeingDismissed == false {
                 rootViewCon.dismiss(animated: animated, completion: completion)
             } else {
