@@ -18,13 +18,3 @@ public extension CanCancelModalViewController {
         self.cancel(completion: nil)
     }
 }
-private var coordinatorKey: UInt8 = 0
-public extension CanCancelModalViewController where Self: UIViewController {
-    internal var _modalCoordinator: PresentedCoordinator? {
-        get {return associatedObject(&coordinatorKey)}
-        set {setAssociatedObject(&coordinatorKey, newValue)}
-    }
-    func getModalCoordinator() -> PresentedCoordinator? {
-        return _modalCoordinator
-    }
-}

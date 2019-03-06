@@ -12,7 +12,7 @@ open class RootNavCoordinator<NavItemType>: RootCoordinator where NavItemType: A
     public lazy var rootItem = NavItemType(self.navCon)
 
     open func start() {
-        rootItem.start()
+        rootItem.startNoViewCon()
         rootItem.load()
     }
 }

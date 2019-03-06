@@ -46,3 +46,11 @@ public extension CoordinatorContainer {
         }
     }
 }
+
+private var coorKey: UInt8 = 0
+extension UIViewController {
+    public var coordinator: Coordinator? {
+        get {return associatedObject(&coorKey)}
+        set {setAssociatedObject(&coorKey, newValue)}
+    }
+}

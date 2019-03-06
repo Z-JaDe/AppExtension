@@ -10,13 +10,13 @@ import Foundation
 
 /// ZJaDe: 实现这个协议 说明该协调器可以present
 public protocol CanPresentProtocol: RootViewControllerProvider {
-    func present(_ coordinator: RootViewControllerProvider, animated: Bool, completion: (() -> Void)?)
+    func present(_ item: RootViewControllerProvider, animated: Bool, completion: (() -> Void)?)
     func dismiss(animated: Bool, completion: (() -> Void)?)
 }
 public extension CanPresentProtocol {
-    func present(_ coordinator: RootViewControllerProvider, animated: Bool = true, completion: (() -> Void)? = nil) {
+    func present(_ item: RootViewControllerProvider, animated: Bool = true, completion: (() -> Void)? = nil) {
         DispatchQueue.main.async {
-            guard let rootViewCon = coordinator.rootViewController else { return }
+            guard let rootViewCon = item.rootViewController else { return }
             if rootViewCon.isBeingDismissed || rootViewCon.isBeingPresented == false {
                 self.rootViewController?.present(rootViewCon, animated: animated, completion: completion)
             } else {

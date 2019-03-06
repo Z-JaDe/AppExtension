@@ -16,28 +16,19 @@ open class ModalCoordinator<ViewConType>: AbstractModalCoordinator,
     AssociatedRootViewControllerProvider
 where ViewConType: CanCancelModalViewController & UIViewController {
 
-    public private(set) lazy var viewCon: ViewConType = ViewConType()
+    public private(set) weak var viewCon: ViewConType?
+    open func createViewCon() -> ViewConType {
+        let viewCon = ViewConType()
+        viewCon.coordinator = self
+        return viewCon
+    }
 
-    open func start(in flow: PresentFlow) {
-        if let flow = flow as? InPresentFlow {
-            flow.addChild(self)
-        } else {
-            viewCon._modalCoordinator = self
-        }
-        viewCon.didCancel = { [weak self, weak flow] () in
-            guard let `self` = self else { return }
-            self.didCancel()
-            if let flow = flow as? InPresentFlow {
-                flow.removeChild(self)
-            } else {
-                self.viewCon._modalCoordinator = nil
-            }
-        }
+    open func start(in viewCon: ViewConType) {
     }
     open func didCancel() {
 
     }
     public func cancel(completion: (() -> Void)? = nil) {
-        self.viewCon.cancel(completion: completion)
+        self.viewCon?.cancel(completion: completion)
     }
 }

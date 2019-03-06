@@ -9,11 +9,20 @@
 import Foundation
 
 /// ZJaDe: nav流程中的一个 item
-public typealias AbstractNavItemCoordinator = HasNavConCoordinator & RouteUrl & CanPresentProtocol
+public typealias AbstractNavItemCoordinator = HasNavConCoordinator & CanPresentProtocol
 
 open class NavItemCoordinator<ViewConType>: AbstractNavItemCoordinator,
     AssociatedRootViewControllerProvider
     where ViewConType: UIViewController {
 
-    public private(set) lazy var viewCon: ViewConType = ViewConType()
+    open func start(in viewCon: ViewConType) {
+
+    }
+
+    public private(set) weak var viewCon: ViewConType?
+    open func createViewCon() -> ViewConType {
+        let viewCon = ViewConType()
+        viewCon.coordinator = self
+        return viewCon
+    }
 }

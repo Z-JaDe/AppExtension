@@ -18,18 +18,18 @@ open class HasNavConCoordinator: ViewConCoordinator,
         self.navCon = navCon
     }
 
-    open func start() {
+    open func startNoViewCon() {
 
     }
 }
-public extension RouteUrl where Self: ViewConCoordinator & CanPushProtocol {
+public extension RootViewControllerProvider where Self: CanPushProtocol {
     func load() {
         guard let navCon = navCon else { return }
         guard let viewCon = rootViewController else { return }
         if navCon.viewControllers.count <= 0 {
             navCon.viewControllers = [viewCon]
         } else {
-            push(self)
+            push(viewCon)
         }
     }
     func popToCurrentViewController() {

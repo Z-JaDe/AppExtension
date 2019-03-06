@@ -14,7 +14,7 @@ public protocol RootViewControllerProvider: class {
 /// ZJaDe: 代表有控制器的协调器，实现时只要有viewCon属性即可
 public protocol AssociatedRootViewControllerProvider: RootViewControllerProvider {
     associatedtype ViewControllerType: UIViewController
-    var viewCon: ViewControllerType {get}
+    var viewCon: ViewControllerType? {get}
 }
 extension AssociatedRootViewControllerProvider {
     public var rootViewController: UIViewController? {
