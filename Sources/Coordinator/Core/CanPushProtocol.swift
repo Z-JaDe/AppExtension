@@ -11,6 +11,11 @@ import Foundation
 public protocol CanPushProtocol {
     var navCon: UINavigationController? {get}
 }
+extension UIViewController: CanPushProtocol {
+    public var navCon: UINavigationController? {
+        return self.navigationController
+    }
+}
 public typealias CanPushItem = Coordinator & RouteUrl
 extension UIViewController: Coordinator {}
 public extension CanPushProtocol {
