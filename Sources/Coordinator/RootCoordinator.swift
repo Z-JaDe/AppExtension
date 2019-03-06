@@ -8,12 +8,12 @@
 
 import UIKit
 
-open class RootNavCoordinator<NavItemType>: RootCoordinator where NavItemType: AbstractNavItemCoordinator {
-    public lazy var rootItem = NavItemType(self.navCon)
+open class RootNavCoordinator<NavItemType>: RootCoordinator where NavItemType: AbstractNavItemCoordinator & NavItemCoordinatorProtocol {
 
     open func start() {
-        rootItem.startNoViewCon()
-        rootItem.load()
+        let item = NavItemType.create(self.navCon)
+        item.coor.start(in: item.viewCon)
+        item.coor.load(viewCon: item.viewCon)
     }
 }
 public protocol RootCoordinatorCompatible {

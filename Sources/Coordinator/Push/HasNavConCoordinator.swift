@@ -22,10 +22,10 @@ open class HasNavConCoordinator: ViewConCoordinator,
 
     }
 }
+
 public extension RootViewControllerProvider where Self: CanPushProtocol {
-    func load() {
+    func load(viewCon: UIViewController) {
         guard let navCon = navCon else { return }
-        guard let viewCon = rootViewController else { return }
         if navCon.viewControllers.count <= 0 {
             navCon.viewControllers = [viewCon]
         } else {

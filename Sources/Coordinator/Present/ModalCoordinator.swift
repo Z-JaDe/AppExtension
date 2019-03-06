@@ -7,19 +7,36 @@
 //
 
 import UIKit
-
+public protocol ModalCoordinatorProtocol {
+    associatedtype ViewConType: UIViewController
+    func createViewCon() -> ViewConType
+    func start(in viewCon: ViewConType)
+    init()
+}
+public extension ModalCoordinatorProtocol {
+    public static func create() -> (coor: Self, viewCon: ViewConType) {
+        let coor = self.init()
+        return (coor, coor.createViewCon())
+    }
+}
 /// ZJaDe: 可以被modal出来的 协调器
 public typealias AbstractModalCoordinator = PresentedCoordinator & RootViewControllerProvider
 
 open class ModalCoordinator<ViewConType>: AbstractModalCoordinator,
     CanPresentProtocol,
-    AssociatedRootViewControllerProvider
+    AssociatedRootViewControllerProvider,
+    ModalCoordinatorProtocol
 where ViewConType: CanCancelModalViewController & UIViewController {
 
-    public private(set) weak var viewCon: ViewConType?
+    public private(set) weak var viewCon: ViewConType? {
+        didSet {
+            oldValue?.coordinator = nil
+            self.viewCon?.coordinator = self
+        }
+    }
     open func createViewCon() -> ViewConType {
         let viewCon = ViewConType()
-        viewCon.coordinator = self
+        self.viewCon = viewCon
         return viewCon
     }
 

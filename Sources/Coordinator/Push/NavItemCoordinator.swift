@@ -7,22 +7,40 @@
 //
 
 import Foundation
-
+public protocol NavItemCoordinatorProtocol {
+    associatedtype ViewConType: UIViewController
+    func createViewCon() -> ViewConType
+    func start(in viewCon: ViewConType)
+    init(_ navCon: UINavigationController?)
+}
+public extension NavItemCoordinatorProtocol {
+    public static func create(_ navCon: UINavigationController?) -> (coor: Self, viewCon: ViewConType) {
+        let coor = self.init(navCon)
+        return (coor, coor.createViewCon())
+    }
+}
 /// ZJaDe: nav流程中的一个 item
 public typealias AbstractNavItemCoordinator = HasNavConCoordinator & CanPresentProtocol
 
 open class NavItemCoordinator<ViewConType>: AbstractNavItemCoordinator,
-    AssociatedRootViewControllerProvider
+    AssociatedRootViewControllerProvider,
+    NavItemCoordinatorProtocol
     where ViewConType: UIViewController {
 
     open func start(in viewCon: ViewConType) {
 
     }
 
-    public private(set) weak var viewCon: ViewConType?
+    public private(set) weak var viewCon: ViewConType? {
+        didSet {
+            oldValue?.coordinator = nil
+            self.viewCon?.coordinator = self
+        }
+    }
+
     open func createViewCon() -> ViewConType {
         let viewCon = ViewConType()
-        viewCon.coordinator = self
+        self.viewCon = viewCon
         return viewCon
     }
 }

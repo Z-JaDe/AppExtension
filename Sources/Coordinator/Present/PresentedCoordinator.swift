@@ -11,5 +11,5 @@ import Foundation
 open class PresentedCoordinator: ViewConCoordinator,
     CoordinatorContainer {
     public var coordinators: [Coordinator] = []
-    public init() {}
+    public required init() {}
 }
