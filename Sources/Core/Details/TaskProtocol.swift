@@ -14,7 +14,7 @@ public protocol ProcessTask {
 public struct AsyncTask: ProcessTask {
     var hashValue: Int = {
         var hasher = Hasher()
-        hasher.combine(Date().timeIntervalSince1970)
+        hasher.combine(UUID().uuidString)
         return hasher.finalize()
     }()
     let task: (@escaping () -> Void) -> Void
@@ -35,7 +35,7 @@ public struct AsyncTask: ProcessTask {
 public struct SyncTask: ProcessTask {
     var hashValue: Int = {
         var hasher = Hasher()
-        hasher.combine(Date().timeIntervalSince1970)
+        hasher.combine(UUID().uuidString)
         return hasher.finalize()
     }()
     let task: () -> Void

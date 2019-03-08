@@ -12,12 +12,12 @@ import ModalManager
 private var modalClosureKey: UInt8 = 0
 private var modalIdDictKey: UInt8 = 0
 extension ModalContainerProtocol where Self: UIViewController&TaskProtocol {
-    fileprivate var modalTaskDict: [ModalViewController: AsyncTask] {
+    fileprivate var modalTaskDict: [Int: AsyncTask] {
         get {return associatedObject(&modalIdDictKey, createIfNeed: [: ])}
         set {setAssociatedObject(&modalIdDictKey, newValue)}
     }
     public func contains(_ viewCon: ModalViewController) -> Bool {
-        return self.modalTaskDict[viewCon] != nil
+        return self.modalTaskDict[viewCon.hashValue] != nil
     }
     public func show(_ viewCon: ModalViewController, animated: Bool = true) {
         guard self.contains(viewCon) == false else {
@@ -28,13 +28,13 @@ extension ModalContainerProtocol where Self: UIViewController&TaskProtocol {
             self.setAssociatedObject(&modalClosureKey, closure)
             self._show(viewCon, animated: animated)
         })
-        self.modalTaskDict[viewCon] = task
+        self.modalTaskDict[viewCon.hashValue] = task
     }
     public func hide(_ viewCon: ModalViewController, animated: Bool = true, _ callback: AnimateCompletionType? = nil) {
-        guard let task = self.modalTaskDict[viewCon] else {
+        guard let task = self.modalTaskDict[viewCon.hashValue] else {
             return
         }
-        self.modalTaskDict[viewCon] = nil
+        self.modalTaskDict[viewCon.hashValue] = nil
         _ = self.cancelTask(task)
 
         _hide(viewCon, animated: animated, callback)
