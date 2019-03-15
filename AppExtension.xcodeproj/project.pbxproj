@@ -4069,7 +4069,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AppExtension/Pods-AppExtension-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-AppExtension/Pods-AppExtension-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CocoaExtension/CocoaExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/Encryption/Encryption.framework",
 				"${BUILT_PRODUCTS_DIR}/FunctionalSwift/FunctionalSwift.framework",
@@ -4093,7 +4093,6 @@
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Rx+Kingfisher/Rx_Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
-				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -4120,11 +4119,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rx_Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppExtension/Pods-AppExtension-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppExtension/Pods-AppExtension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		893C01BB932133AA6CB7B742 /* [CP] Check Pods Manifest.lock */ = {
