@@ -154,15 +154,13 @@ extension UINavigationBar {
         }
     }
     func updateIsTranslucent(_ alpha: CGFloat) {
-        if alpha >= 1 {
-            self.isTranslucent = false
-        } else {
+        if self.isTranslucent == false {
             self.isTranslucent = true
         }
     }
     func changeBarTintColor(_ color: UIColor, _ backgroundImage: UIImage?, _ shadowType: NavBarShadowType, _ alpha: CGFloat) {
         /// ZJaDe: 设置成isTranslucent = false的时候，会导致UI布局更新，想要设置不透明可以设置成0.99
-//        let alpha = alpha.clamp(min: 0, max: 0.99)
+        let alpha = alpha.clamp(min: 0, max: 0.99)
         updateIsTranslucent(alpha)
         let color = color.alpha(alpha)
         self.barTintColor = color
