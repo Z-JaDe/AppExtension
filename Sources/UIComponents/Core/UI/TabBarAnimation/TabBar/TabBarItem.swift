@@ -9,13 +9,15 @@
 import Foundation
 
 open class TabBarItem: UITabBarItem {
+    @available(*, unavailable, message: "废弃")
     open override var title: String? {
-        get {return nil}
-        set {}
+        get { return nil }
+        set { super.title = nil }
     }
+    @available(*, unavailable, message: "废弃")
     open override var image: UIImage? {
-        get {return nil}
-        set {}
+        get { return nil }
+        set { super.image = nil }
     }
 
     public var itemModel: TabBarItemModel {

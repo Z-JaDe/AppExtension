@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0000000048D0"
+               BlueprintIdentifier = "0000000048A0"
                BuildableName = "FunctionalSwift.framework"
                BlueprintName = "FunctionalSwift"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0000000048D0"
+            BlueprintIdentifier = "0000000048A0"
             BuildableName = "FunctionalSwift.framework"
             BlueprintName = "FunctionalSwift"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -63,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0000000048D0"
+            BlueprintIdentifier = "0000000048A0"
             BuildableName = "FunctionalSwift.framework"
             BlueprintName = "FunctionalSwift"
             ReferencedContainer = "container:Pods.xcodeproj">

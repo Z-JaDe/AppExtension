@@ -22,28 +22,79 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-public typealias TapConfiguration = Configuration<UITapGestureRecognizer>
-public typealias TapControlEvent = ControlEvent<UITapGestureRecognizer>
-public typealias TapObservable = Observable<UITapGestureRecognizer>
+/// Default values for `UITapGestureRecognizer` configuration
+public enum UITapGestureRecognizerDefaults {
+    public static var numberOfTouchesRequired: Int = 1
+    public static var numberOfTapsRequired: Int = 1
+    public static var configuration: ((UITapGestureRecognizer, RxGestureRecognizerDelegate) -> Void)?
+}
 
-extension Factory where Gesture == GestureRecognizer {
+fileprivate typealias Defaults = UITapGestureRecognizerDefaults
+
+/// A `GestureRecognizerFactory` for `UITapGestureRecognizer`
+public struct TapGestureRecognizerFactory: GestureRecognizerFactory {
+    public typealias Gesture = UITapGestureRecognizer
+    public let configuration: (UITapGestureRecognizer, RxGestureRecognizerDelegate) -> Void
 
     /**
-     Returns an `AnyFactory` for `UITapGestureRecognizer`
+     Initialiaze a `GestureRecognizerFactory` for `UITapGestureRecognizer`
+     - parameter numberOfTouchesRequired: The number of fingers required to match
+     - parameter numberOfTapsRequired: The number of taps required to match
      - parameter configuration: A closure that allows to fully configure the gesture recognizer
      */
-    public static func tap(configuration: TapConfiguration? = nil) -> AnyFactory {
-        return make(configuration: configuration).abstracted()
+    public init(
+        numberOfTouchesRequired: Int = Defaults.numberOfTouchesRequired,
+        numberOfTapsRequired: Int = Defaults.numberOfTapsRequired,
+        configuration: ((UITapGestureRecognizer, RxGestureRecognizerDelegate) -> Void)? = Defaults.configuration
+        ) {
+        self.configuration = { gesture, delegate in
+            gesture.numberOfTouchesRequired = numberOfTouchesRequired
+            gesture.numberOfTapsRequired = numberOfTapsRequired
+            configuration?(gesture, delegate)
+        }
     }
 }
 
-public extension Reactive where Base: View {
+extension AnyGestureRecognizerFactory {
+
+    /**
+     Returns an `AnyGestureRecognizerFactory` for `UITapGestureRecognizer`
+     - parameter numberOfTouchesRequired: The number of fingers required to match
+     - parameter numberOfTapsRequired: The number of taps required to match
+     - parameter configuration: A closure that allows to fully configure the gesture recognizer
+     */
+    public static func tap(
+        numberOfTouchesRequired: Int = Defaults.numberOfTouchesRequired,
+        numberOfTapsRequired: Int = Defaults.numberOfTapsRequired,
+        configuration: ((UITapGestureRecognizer, RxGestureRecognizerDelegate) -> Void)? = Defaults.configuration
+        ) -> AnyGestureRecognizerFactory {
+        let gesture = TapGestureRecognizerFactory(
+            numberOfTouchesRequired: numberOfTouchesRequired,
+            numberOfTapsRequired: numberOfTapsRequired,
+            configuration: configuration
+        )
+        return AnyGestureRecognizerFactory(gesture)
+    }
+}
+
+public extension Reactive where Base: UIView {
 
     /**
      Returns an observable `UITapGestureRecognizer` events sequence
+     - parameter numberOfTouchesRequired: The number of fingers required to match
+     - parameter numberOfTapsRequired: The number of taps required to match
      - parameter configuration: A closure that allows to fully configure the gesture recognizer
      */
-    public func tapGesture(configuration: TapConfiguration? = nil) -> TapControlEvent {
-        return gesture(make(configuration: configuration))
+    public func tapGesture(
+        numberOfTouchesRequired: Int = Defaults.numberOfTouchesRequired,
+        numberOfTapsRequired: Int = Defaults.numberOfTapsRequired,
+        configuration: ((UITapGestureRecognizer, RxGestureRecognizerDelegate) -> Void)? = Defaults.configuration
+        ) -> ControlEvent<UITapGestureRecognizer> {
+
+        return gesture(TapGestureRecognizerFactory(
+            numberOfTouchesRequired: numberOfTouchesRequired,
+            numberOfTapsRequired: numberOfTapsRequired,
+            configuration: configuration
+        ))
     }
 }

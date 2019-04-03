@@ -23,12 +23,6 @@ func swiftTest() {
     B.aa = 2
     print(A.aa)
     print(B.aa)
-    ///2
-    let lock = NSLock()
-    lock.lock()
-    lock.lock()
-    lock.unlock()
-    lock.unlock()
 }
 class A {
     static var aa: Int = 0

@@ -1,23 +1,23 @@
 PODS:
-  - Alamofire (4.8.0)
+  - Alamofire (4.8.2)
   - CocoaExtension (1.0.0)
-  - CollectionKit (2.2.0):
-    - CollectionKit/Core (= 2.2.0)
-  - CollectionKit/Core (2.2.0)
-  - DifferenceKit (0.6.0):
-    - DifferenceKit/Core (= 0.6.0)
-    - DifferenceKit/UIKitExtension (= 0.6.0)
-  - DifferenceKit/Core (0.6.0)
-  - DifferenceKit/UIKitExtension (0.6.0):
+  - CollectionKit (2.4.0):
+    - CollectionKit/Core (= 2.4.0)
+  - CollectionKit/Core (2.4.0)
+  - DifferenceKit (1.1.1):
+    - DifferenceKit/Core (= 1.1.1)
+    - DifferenceKit/UIKitExtension (= 1.1.1)
+  - DifferenceKit/Core (1.1.1)
+  - DifferenceKit/UIKitExtension (1.1.1):
     - DifferenceKit/Core
   - Encryption (1.0.0)
   - FunctionalSwift (1.0.0)
   - Hero (1.4.0)
   - Kingfisher (4.10.1)
   - MBProgressHUD (1.1.0)
-  - MJRefresh (3.1.15.6)
+  - MJRefresh (3.1.16)
   - ModalManager (1.0.0)
-  - ReSwift (4.0.1)
+  - ReSwift (4.1.1)
   - "Rx+Kingfisher (1.0.0)":
     - "Rx+Kingfisher/RxSwift (= 1.0.0)"
   - "Rx+Kingfisher/Core (1.0.0)":
@@ -32,20 +32,18 @@ PODS:
   - RxAnimated/Core (0.5.0):
     - RxCocoa (~> 4.3)
     - RxSwift (~> 4.3)
-  - RxAtomic (4.4.0)
-  - RxCocoa (4.4.0):
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxGesture (1.2.1):
+    - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
-  - RxGesture (2.1.0):
-    - RxCocoa (~> 4.4.0)
-    - RxSwift (~> 4.4.0)
   - RxKeyboard (0.9.0):
     - RxCocoa (>= 4.3.1)
     - RxSwift (>= 4.3.1)
   - RxOptional (3.6.2):
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
-  - RxSwift (4.4.0):
-    - RxAtomic (~> 4.4)
+  - RxSwift (4.5.0)
   - RxSwiftExt (3.4.0):
     - RxSwiftExt/Core (= 3.4.0)
     - RxSwiftExt/RxCocoa (= 3.4.0)
@@ -54,8 +52,8 @@ PODS:
   - RxSwiftExt/RxCocoa (3.4.0):
     - RxCocoa (~> 4.0)
     - RxSwiftExt/Core
-  - SnapKit (4.0.1)
-  - SwiftLint (0.27.0)
+  - SnapKit (4.2.0)
+  - SwiftLint (0.31.0)
   - SwiftyUserDefaults (3.0.1)
   - Validation (1.0.0)
 
@@ -94,7 +92,6 @@ SPEC REPOS:
     - MBProgressHUD
     - ReSwift
     - RxAnimated
-    - RxAtomic
     - RxGesture
     - RxKeyboard
     - RxOptional
@@ -128,48 +125,47 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   CollectionKit:
-    :commit: b78e4b38e6f4a9c5b0cf68937ead5af6feecc6fa
+    :commit: daf0bc37651a9d335c1292390420f9bf4d8c1209
     :git: https://github.com/SoySauceLab/CollectionKit
   MJRefresh:
-    :commit: 5fee65f22a1e69a0538ef44f480715ec411c124f
+    :commit: aa94f68e739c719ee4484110de14ece950546fb6
     :git: https://github.com/CoderMJLee/MJRefresh
   RxCocoa:
-    :commit: bf83288eefa9b442b0541965d843f2b3433cc196
+    :commit: cce95dd704bc08cd3d69c087a05a6fc3118e2722
     :git: https://github.com/ReactiveX/RxSwift
   RxSwift:
-    :commit: bf83288eefa9b442b0541965d843f2b3433cc196
+    :commit: cce95dd704bc08cd3d69c087a05a6fc3118e2722
     :git: https://github.com/ReactiveX/RxSwift
   SnapKit:
-    :commit: 0c92c7a9a90ee7a9c71f95f400f86e0d611f757f
+    :commit: b3b64f61a74572bab2c36eced63f954f3a71e587
     :git: https://github.com/SnapKit/SnapKit
 
 SPEC CHECKSUMS:
-  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   CocoaExtension: 2c1aec4d5c5f8e4572dd73fc7d9b74480afbf105
-  CollectionKit: 5caa5341860d4c9b748ebfeaab97530b2d02c7c0
-  DifferenceKit: 824ab6ecd2a20cc658071b2c0c071114cf91e4c9
+  CollectionKit: 8f01e7629185bb81072c4aa734d105df5c2d1c8b
+  DifferenceKit: cf1b84e2207ea45c3640381cb229cf46c1647466
   Encryption: 49b598dec0bc1049c3f1574100fef4f89403d4c1
   FunctionalSwift: 4b37532327a62d9409eb20195a2667fdaca5e2ef
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
-  MJRefresh: 0efa19656679d70a0f47cbe76e56c2271fe53a97
+  MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
   ModalManager: ac1516a8555e06856556a3f0a2846c0d60af5748
-  ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
+  ReSwift: d925be0033558f55bd73d92869961230dfe19d52
   "Rx+Kingfisher": 0d2ec6818f393aa2a8cb46bf34992f5ba65826b0
   RxAnimated: 57a731e59557219480fb3dd86d965d977d863fc6
-  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
-  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
-  RxGesture: 7f6dfb45dbde06e618c24442d38493e3144f2c95
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxGesture: c278eb05b187abd47e11e65464ae4de53ab71d95
   RxKeyboard: 4f782303f499f41577b41c96c6a9a5d7acd51a47
   RxOptional: 80426a0ddbd092573e4c482d8cc13302078c4d5e
-  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   RxSwiftExt: 01f8ecbeeb355698e9c75365ebe908b00dacf45d
-  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
-  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
+  SnapKit: ae1cdee794f6a7b8e909092c5244a79b9d1c9e26
+  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
   Validation: 97b3bada3386fda19f01619703389d998733c72f
 
-PODFILE CHECKSUM: b44f16ae5967cf4ce44664e30e36849b178de417
+PODFILE CHECKSUM: 0e341c037c51aa9a51ef341a23aa46d93c51d43b
 
 COCOAPODS: 1.6.1

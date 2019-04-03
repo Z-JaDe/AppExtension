@@ -1,6 +1,6 @@
 {
   "name": "MJRefresh",
-  "version": "3.1.15.6",
+  "version": "3.1.16",
   "summary": "An easy way to use pull-to-refresh",
   "homepage": "https://github.com/CoderMJLee/MJRefresh",
   "license": "MIT",
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/CoderMJLee/MJRefresh.git",
-    "tag": "3.1.15.6"
+    "tag": "3.1.16"
   },
   "source_files": "MJRefresh/**/*.{h,m}",
   "resources": "MJRefresh/MJRefresh.bundle",
