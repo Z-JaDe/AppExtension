@@ -47,19 +47,19 @@ class CycleViewViewControllerTest: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        logDebug("\(self.index) 将要出现")
+        logDebug("\(String(describing: self.index)) 将要出现")
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        logDebug("\(self.index) 已经出现")
+        logDebug("\(String(describing: self.index)) 已经出现")
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        logDebug("\(self.index) 将要消失")
+        logDebug("\(String(describing: self.index)) 将要消失")
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        logDebug("\(self.index) 已经消失")
+        logDebug("\(String(describing: self.index)) 已经消失")
     }
 }
 class ItemView: CustomView {

@@ -53,7 +53,7 @@ extension PHAsset {
         options.isNetworkAccessAllowed = true
         options.deliveryMode = .highQualityFormat
         let targetSize = adapterSize(targetSize)
-        PHImageManager.default().requestImage(for: self, targetSize: targetSize, contentMode: .aspectFill, options: options) { (image, info) in
+        PHImageManager.default().requestImage(for: self, targetSize: targetSize, contentMode: .aspectFill, options: options) { (image, _) in
             callback(image)
         }
     }

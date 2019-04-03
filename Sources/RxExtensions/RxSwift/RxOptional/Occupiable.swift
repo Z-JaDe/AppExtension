@@ -7,7 +7,7 @@
 //
 import RxOptional
 public extension Occupiable {
-    public var nilIfEmpty: Self? {
+    var nilIfEmpty: Self? {
         return self.isEmpty
             ? .none
             : .some(self)

@@ -137,7 +137,7 @@ extension SegmentScrollView {
     }
     /// ZJaDe: 移除一个itemView
     public func removeAndUpdate(_ cell: CellView) {
-        guard let index = self.layoutCells.index(where: {$0.view == cell}) else { return }
+        guard let index = self.layoutCells.firstIndex(where: {$0.view == cell}) else { return }
         removeAndUpdate(at: index)
     }
     public func removeAndUpdate(at index: Int) {

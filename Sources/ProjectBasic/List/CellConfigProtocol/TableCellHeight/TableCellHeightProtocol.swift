@@ -49,6 +49,8 @@ extension TableItemCell {
                 contentViewWidth -= 40
             case .detailButton:
                 contentViewWidth -= 48
+            @unknown default:
+                fatalError()
             }
         }
         if UIScreen.main.scale >= 3 && UIScreen.main.bounds.size.width >= 414 {

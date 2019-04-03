@@ -13,6 +13,7 @@ extension JSBridge {
     public static let decoder = JSONDecoder()
 }
 private func encode<T: Encodable>(_ value: T) -> String {
+    // swiftlint:disable force_try
     return String(data: try! JSBridge.encoder.encode([value]).dropFirst().dropLast(), encoding: .utf8)!
 }
 private func decode<T: Decodable>(_ jsonString: String) throws -> T {
@@ -39,8 +40,9 @@ extension JSBridge {
     public func call<A: Encodable, B: Encodable>(function: String, withArgs args: (A, B)) -> Observable<Void> {
         return call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1))")
     }
-
+    // swiftlint:disable large_tuple
     public func call<A: Encodable, B: Encodable, C: Encodable>(function: String, withArgs args: (A, B, C)) -> Observable<Void> {
+        // swiftlint:disable large_tuple
         return call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2))")
     }
 

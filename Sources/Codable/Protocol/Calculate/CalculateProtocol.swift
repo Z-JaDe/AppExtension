@@ -18,12 +18,12 @@ public extension AddCalculatable where Self: ValueProtocol, Self.ValueType: AddC
     }
 }
 public extension Optional where Wrapped: AddCalculatable & ValueProtocol, Wrapped.ValueType: AddCalculatable {
-    public static func += (left: inout Wrapped?, right: Wrapped?) {
+    static func += (left: inout Wrapped?, right: Wrapped?) {
         let leftValue = left?.value ?? Wrapped(value: nil).value
         let rightValue = right?.value ?? Wrapped(value: nil).value
         left = Wrapped(value: leftValue + rightValue)
     }
-    public static func + (left: Wrapped?, right: Wrapped?) -> Wrapped {
+    static func + (left: Wrapped?, right: Wrapped?) -> Wrapped {
         let leftValue = left?.value ?? Wrapped(value: nil).value
         let rightValue = right?.value ?? Wrapped(value: nil).value
         return Wrapped(value: leftValue + rightValue)
@@ -43,12 +43,12 @@ public extension MinusCalculatable where Self: ValueProtocol, Self.ValueType: Mi
     }
 }
 public extension Optional where Wrapped: MinusCalculatable & ValueProtocol, Wrapped.ValueType: MinusCalculatable {
-    public static func -= (left: inout Wrapped?, right: Wrapped?) {
+    static func -= (left: inout Wrapped?, right: Wrapped?) {
         let leftValue = left?.value ?? Wrapped(value: nil).value
         let rightValue = right?.value ?? Wrapped(value: nil).value
         left = Wrapped(value: leftValue - rightValue)
     }
-    public static func - (left: Wrapped?, right: Wrapped?) -> Wrapped {
+    static func - (left: Wrapped?, right: Wrapped?) -> Wrapped {
         let leftValue = left?.value ?? Wrapped(value: nil).value
         let rightValue = right?.value ?? Wrapped(value: nil).value
         return Wrapped(value: leftValue - rightValue)

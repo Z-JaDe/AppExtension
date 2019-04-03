@@ -25,12 +25,12 @@ public extension ${key}Calculatable where Self: ValueProtocol, Self.ValueType: $
     }
 }
 public extension Optional where Wrapped: ${key}Calculatable & ValueProtocol, Wrapped.ValueType: ${key}Calculatable {
-    public static func ${value}= (left: inout Wrapped?, right: Wrapped?) {
+    static func ${value}= (left: inout Wrapped?, right: Wrapped?) {
         let leftValue = left?.value ?? Wrapped(value: nil).value
         let rightValue = right?.value ?? Wrapped(value: nil).value
         left = Wrapped(value: leftValue ${value} rightValue)
     }
-    public static func ${value} (left: Wrapped?, right: Wrapped?) -> Wrapped {
+    static func ${value} (left: Wrapped?, right: Wrapped?) -> Wrapped {
         let leftValue = left?.value ?? Wrapped(value: nil).value
         let rightValue = right?.value ?? Wrapped(value: nil).value
         return Wrapped(value: leftValue ${value} rightValue)

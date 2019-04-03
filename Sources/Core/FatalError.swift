@@ -40,7 +40,7 @@ public func !?<T: ExpressibleByArrayLiteral>
 }
 public func !?<T: ExpressibleByStringLiteral>
     (wrapped: T?, failureText: @autoclosure () -> String) -> T {
-    assert(wrapped != nil, failureText)
+    assert(wrapped != nil, failureText())
     return wrapped ?? ""
 }
 public func !?<T> (wrapped: T?,
@@ -50,5 +50,5 @@ public func !?<T> (wrapped: T?,
 }
 public func !? (wrapped: ()?,
                 failureText: @autoclosure () -> String) {
-    assert(wrapped != nil, failureText)
+    assert(wrapped != nil, failureText())
 }

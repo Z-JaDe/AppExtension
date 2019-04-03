@@ -14,7 +14,7 @@ public protocol TotalCountProtocol {
 }
 public extension TotalCountProtocol {
     /// ZJaDe: 是否是多个数据
-    public var isMultipleData: Bool {
+    var isMultipleData: Bool {
         return self.totalCount > 1
     }
     /// ZJaDe: 根据totalCount返回realIndex

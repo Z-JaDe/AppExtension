@@ -122,7 +122,7 @@ extension HUD {
             promptHUD.show(to: view)
             promptHUD.hide(hideType: .falling, delay: 1.0, completion: { [weak promptHUD] in
                 guard let promptHUD = promptHUD else { return }
-                if let index = promptHUDArray.index(of: promptHUD) {
+                if let index = promptHUDArray.firstIndex(of: promptHUD) {
                     promptHUDArray.remove(at: index)
                 }
             })

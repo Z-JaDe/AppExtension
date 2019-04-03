@@ -24,19 +24,19 @@ public protocol AssociatedObjectProtocol: class, Synchronizable {
     // MARK: - get
     /// ZJaDe: V的类型不能是协议 或者部分协议，要不然取值的时候会转换成nil
     func associatedObject<V>(_ key: UnsafeRawPointer) -> V?
-    func associatedObject<V>(_ key: UnsafeRawPointer, createIfNeed closure: (@autoclosure () -> V)) -> V
+    func associatedObject<V>(_ key: UnsafeRawPointer, createIfNeed closure: @autoclosure () -> V) -> V
     // MARK: - set
     func setAssociatedObject<V>(_ key: UnsafeRawPointer, _ newValue: V?)
     func setAssociatedWeakObject<V: AnyObject>(_ key: UnsafeRawPointer, _ newValue: V?)
 }
 public extension AssociatedObjectProtocol {
     // MARK: - get
-    public func associatedObject<V>(_ key: UnsafeRawPointer) -> V? {
+    func associatedObject<V>(_ key: UnsafeRawPointer) -> V? {
         return synchronized {
             _associatedObject(key)
         }
     }
-    public func associatedObject<V>(_ key: UnsafeRawPointer, createIfNeed closure: (@autoclosure () -> V)) -> V {
+    func associatedObject<V>(_ key: UnsafeRawPointer, createIfNeed closure: @autoclosure () -> V) -> V {
         return synchronized {
             if let value: V = associatedObject(key) {
                 return value
@@ -48,7 +48,7 @@ public extension AssociatedObjectProtocol {
         }
     }
     // MARK: - set
-    public func setAssociatedObject<V>(_ key: UnsafeRawPointer, _ newValue: V?) {
+    func setAssociatedObject<V>(_ key: UnsafeRawPointer, _ newValue: V?) {
         synchronized {
             if V.self is AnyClass {
                 _setAssociatedObject(key, newValue)
@@ -57,7 +57,7 @@ public extension AssociatedObjectProtocol {
             }
         }
     }
-    public func setAssociatedWeakObject<V: AnyObject>(_ key: UnsafeRawPointer, _ newValue: V?) {
+    func setAssociatedWeakObject<V: AnyObject>(_ key: UnsafeRawPointer, _ newValue: V?) {
         synchronized {
             _setAssociatedObject(key, WeakWarppedObject(newValue))
         }

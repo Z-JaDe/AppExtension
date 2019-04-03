@@ -77,7 +77,7 @@ extension MultipleSelectionProtocol {
 }
 extension MultipleSelectionProtocol where SelectItemType: Equatable {
     public func index(_ item: SelectItemType) -> Int? {
-        return self.selectedItemArray.index(of: item)
+        return self.selectedItemArray.firstIndex(of: item)
     }
 }
 // MARK: - UpdateSelectState

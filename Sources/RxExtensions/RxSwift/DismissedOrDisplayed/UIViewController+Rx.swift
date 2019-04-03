@@ -11,25 +11,25 @@ import RxSwift
 import RxCocoa
 
 public extension Reactive where Base: UIViewController {
-    public var viewWillLayoutSubviews: ControlEvent<Void> {
+    var viewWillLayoutSubviews: ControlEvent<Void> {
         let source = self.sentMessage(#selector(Base.viewWillLayoutSubviews)).map { _ in }
         return ControlEvent(events: source)
     }
-    public var viewDidLayoutSubviews: ControlEvent<Void> {
+    var viewDidLayoutSubviews: ControlEvent<Void> {
         let source = self.sentMessage(#selector(Base.viewDidLayoutSubviews)).map { _ in }
         return ControlEvent(events: source)
     }
 }
 public extension Reactive where Base: UIViewController {
-    public var willMove: ControlEvent<UIViewController?> {
+    var willMove: ControlEvent<UIViewController?> {
         let source = self.sentMessage(#selector(Base.willMove)).map { $0.first as? UIViewController }
         return ControlEvent(events: source)
     }
-    public var didMove: ControlEvent<UIViewController?> {
+    var didMove: ControlEvent<UIViewController?> {
         let source = self.sentMessage(#selector(Base.didMove)).map { $0.first as? UIViewController }
         return ControlEvent(events: source)
     }
-    public var didReceiveMemoryWarning: ControlEvent<Void> {
+    var didReceiveMemoryWarning: ControlEvent<Void> {
         let source = self.sentMessage(#selector(Base.didReceiveMemoryWarning)).map { _ in }
         return ControlEvent(events: source)
     }

@@ -14,7 +14,7 @@ public protocol ModalCoordinatorProtocol {
     init()
 }
 public extension ModalCoordinatorProtocol {
-    public static func create() -> (coor: Self, viewCon: ViewConType) {
+    static func create() -> (coor: Self, viewCon: ViewConType) {
         let coor = self.init()
         return (coor, coor.createViewCon())
     }

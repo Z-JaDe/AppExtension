@@ -36,14 +36,14 @@ extension AnyTableAdapterItem: Diffable, Hashable {
             return false
         }
     }
-    public var hashValue: Int {
+    public func hash(into hasher: inout Hasher) {
         if let value = self.cell {
-            return value.hashValue
+            hasher.combine(value)
         } else if let value = self.model {
-            return value.hashValue
+            hasher.combine(value)
         } else {
             assertionFailure("未知类型")
-            return ObjectIdentifier(self.value).hashValue
+            hasher.combine(ObjectIdentifier(self.value))
         }
     }
     public func isContentEqual(to source: AnyTableAdapterItem) -> Bool {

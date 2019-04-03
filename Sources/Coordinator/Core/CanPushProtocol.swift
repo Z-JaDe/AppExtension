@@ -17,7 +17,7 @@ extension UIViewController: CanPushProtocol {
     }
 }
 public extension CanPushProtocol {
-    public typealias CanPushItem = RouteUrl
+    typealias CanPushItem = RouteUrl
     func push<T: CanPushItem>(_ item: T, animated: Bool = true) {
         guard let viewCon = item.rootViewController else { return }
         navCon?.pushViewController(viewCon, animated: animated)

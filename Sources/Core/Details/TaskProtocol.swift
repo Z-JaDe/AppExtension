@@ -80,7 +80,7 @@ public extension TaskProtocol {
         get {return associatedObject(&taskStateKey, createIfNeed: .free)}
         set {setAssociatedObject(&taskStateKey, newValue)}
     }
-    public var taskArr: [TaskItemType] {
+    var taskArr: [TaskItemType] {
         get {return associatedObject(&taskArrKey, createIfNeed: [])}
         set {setAssociatedObject(&taskArrKey, newValue)}
     }
@@ -140,7 +140,7 @@ public extension TaskProtocol {
     }
     func cancelTask(_ task: TaskItemType) -> Bool {
         objc_sync_enter(self);defer {objc_sync_exit(self)}
-        if let index = self.taskArr.index(where: task.isEqual) {
+        if let index = self.taskArr.firstIndex(where: task.isEqual) {
             if index == 0 && self.taskState == .working {
                 return false
             }

@@ -11,6 +11,7 @@ import Foundation
 public protocol InputTypeDesignable: class {
 
 }
+
 public extension InputTypeDesignable {
     func datePickerFormat(_ datePickerMode: UIDatePicker.Mode) -> String {
         switch datePickerMode {
@@ -22,6 +23,8 @@ public extension InputTypeDesignable {
             return "ss"
         case .time:
             return "HH: mm: ss"
+        @unknown default:
+            fatalError("\(datePickerMode.rawValue)")
         }
     }
 }

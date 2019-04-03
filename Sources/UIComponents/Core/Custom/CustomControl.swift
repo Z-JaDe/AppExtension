@@ -104,6 +104,8 @@ extension CustomControl {
             options = .centerOffset(0)
         case .fill:
             options = .fill(self.contentEdgeInsets.top, self.contentEdgeInsets.bottom)
+        @unknown default:
+            fatalError()
         }
         maker.vertical(self, options)
     }
@@ -122,6 +124,8 @@ extension CustomControl {
             options = .centerOffset(0)
         case .fill:
             options = .fill(self.contentEdgeInsets.left, self.contentEdgeInsets.right)
+        @unknown default:
+            fatalError()
         }
         maker.horizontal(self, options)
     }

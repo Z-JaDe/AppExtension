@@ -18,7 +18,7 @@ open class TabBar: UITabBar {
             guard let currentItem = self.currentItem else { return }
 //            guard oldValue != currentItem else { return }
             changeItem(oldValue, toItem: currentItem)
-            let index = items?.index(of: currentItem) ?? 0
+            let index = items?.firstIndex(of: currentItem) ?? 0
             changeCurrentLayerFrame(barButton: tabBarButtonArr[index])
         }
     }

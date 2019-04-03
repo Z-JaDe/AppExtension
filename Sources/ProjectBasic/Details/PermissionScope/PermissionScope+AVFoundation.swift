@@ -34,6 +34,8 @@ public extension PermissionScope {
                     self.requestError(closure)
                 }
             }
+        @unknown default:
+            fatalError()
         }
     }
 
@@ -57,6 +59,8 @@ public extension PermissionScope {
                     }
                 }
             }
+        @unknown default:
+            fatalError()
         }
     }
 }

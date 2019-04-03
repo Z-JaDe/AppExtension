@@ -118,6 +118,8 @@ open class ImageLabelView: CustomControl {
                 result += CGSize(width: labelSize.width + imageSize.width + self.contentStackView.spacing, height: max(labelSize.height, imageSize.height))
             case .vertical:
                 result += CGSize(width: max(labelSize.width, imageSize.width), height: labelSize.height + imageSize.height + self.contentStackView.spacing)
+            @unknown default:
+                fatalError()
             }
         case (false, false):
             result = super.intrinsicContentSize

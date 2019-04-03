@@ -43,7 +43,7 @@ extension PageFormProtocol {
 }
 public extension PageFormProtocol {
     /// ZJaDe: 当currentIndex改变时调用，只针对Cell长度和ScrollView长度相等时
-    public func scroll(_ from: Int, _ to: Int) {
+    func scroll(_ from: Int, _ to: Int) {
         let length = self.scrollView.length
         guard self.totalCount > 0, length > 0 else { return }
         let offSet = self.scrollView.viewCenterOffset().floorToNearest(increment: length)
@@ -61,7 +61,7 @@ public extension PageFormProtocol {
         self.scrollView.scrollTo(offSet: offSet + indexOffset.toCGFloat * length)
     }
     /// ZJaDe: 滚动到对应index，只针对Cell长度和ScrollView长度相等时
-    public func scroll(to index: Int, animated: Bool = true) {
+    func scroll(to index: Int, animated: Bool = true) {
         let length = self.scrollView.length
         guard self.totalCount > 0 && length > 0 else { return }
         let offSet = self.scrollView.viewCenterOffset().floorToNearest(increment: length)

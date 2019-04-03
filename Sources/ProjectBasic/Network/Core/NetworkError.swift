@@ -26,7 +26,7 @@ extension NetworkError: LocalizedError {
             var keyValue: [(String, Any)] = []
             #if DEBUG || Beta || POD_CONFIGURATION_BETA
             if let error = error as? DecodingError {
-                let context: DecodingError.Context
+                let context: DecodingError.Context?
                 switch error {
                 case .dataCorrupted(let _context):
                     keyValue.append(("error", "数据损坏"))
@@ -43,9 +43,13 @@ extension NetworkError: LocalizedError {
                     keyValue.append(("error", "没有找到value"))
                     keyValue.append(("type", type))
                     context = _context
+                @unknown default:
+                    context = nil
                 }
-                keyValue.append(("codingPath", context.codingPath.map {$0.stringValue}.joined(separator: ", ")))
-                keyValue.append(("debugDescription", context.debugDescription))
+                if let context = context {
+                    keyValue.append(("codingPath", context.codingPath.map {$0.stringValue}.joined(separator: ", ")))
+                    keyValue.append(("debugDescription", context.debugDescription))
+                }
             } else {
                 keyValue.append(("请求错误: ", error.localizedDescription))
             }

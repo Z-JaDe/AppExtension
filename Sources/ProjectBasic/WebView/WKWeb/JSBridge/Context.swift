@@ -7,7 +7,7 @@ import UIKit
 import RxSwift
 
 fileprivate extension JSError {
-    init(fromDictionary error: Dictionary<String, AnyObject>) {
+    init(fromDictionary error: [String: AnyObject]) {
         self.init(
             name: (error["name"] as? String) ?? "Error",
             message: (error["message"] as? String) ?? "Unknown error",
@@ -19,11 +19,11 @@ fileprivate extension JSError {
     }
 }
 
-fileprivate let defaultOrigin = URL(string: "bridge://localhost/")!
-fileprivate let html = "<!DOCTYPE html>\n<html>\n<head></head>\n<body></body>\n</html>".data(using: .utf8)!
-fileprivate let notFound = "404 Not Found".data(using: .utf8)!
+private let defaultOrigin = URL(string: "bridge://localhost/")!
+private let html = "<!DOCTYPE html>\n<html>\n<head></head>\n<body></body>\n</html>".data(using: .utf8)!
+private let notFound = "404 Not Found".data(using: .utf8)!
 
-fileprivate let internalLibrary = """
+private let internalLibrary = """
 (function () {
     function serializeError (value) {
         return (typeof value !== 'object' || value === null) ? {} : {
@@ -89,13 +89,13 @@ fileprivate class BridgeSchemeHandler: NSObject, WKURLSchemeHandler {
         if url.path == "/" {
             urlSchemeTask.didReceive(HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: [
                 "Content-Type": "text/html; charset=utf-8",
-                "Content-Length": String(html.count),
+                "Content-Length": String(html.count)
             ])!)
             urlSchemeTask.didReceive(html)
         } else {
             urlSchemeTask.didReceive(HTTPURLResponse(url: url, statusCode: 404, httpVersion: nil, headerFields: [
                 "Content-Type": "text/plain; charset=utf-8",
-                "Content-Length": String(notFound.count),
+                "Content-Length": String(notFound.count)
             ])!)
             urlSchemeTask.didReceive(notFound)
         }
@@ -161,12 +161,12 @@ internal class Context: NSObject, WKScriptMessageHandler {
         self.webView = webView
         return webView
     }
-
+    // swiftlint:disable cyclomatic_complexity
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        guard let dict = message.body as? Dictionary<String, AnyObject> else { return }
+        guard let dict = message.body as? [String: AnyObject] else { return }
 
         if let didLoad = dict["didLoad"] as? Bool, didLoad {
-            if let error = dict["error"] as? Dictionary<String, AnyObject> {
+            if let error = dict["error"] as? [String: AnyObject] {
                 readySubject.onNext(.didLoadWithError(JSError(fromDictionary: error)))
             } else {
                 readySubject.onNext(.didLoad)
@@ -187,7 +187,7 @@ internal class Context: NSObject, WKScriptMessageHandler {
             return handler.onNext(result)
         }
 
-        if let error = dict["error"] as? Dictionary<String, AnyObject> {
+        if let error = dict["error"] as? [String: AnyObject] {
             guard let handler = handlers.removeValue(forKey: id) else { return }
 
             return handler.onError(JSError(fromDictionary: error))

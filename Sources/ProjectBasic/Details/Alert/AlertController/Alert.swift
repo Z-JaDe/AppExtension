@@ -108,10 +108,10 @@ import AudioToolbox
 extension UIAlertController {
     convenience init(style: UIAlertController.Style, source: UIView? = nil, title: String? = nil, message: String? = nil, tintColor: UIColor? = nil) {
         self.init(title: title, message: message, preferredStyle: style)
-        
+
         let isPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
         let root = UIApplication.shared.keyWindow?.rootViewController?.view
-        
+
         //self.responds(to: #selector(getter: popoverPresentationController))
         if let source = source {
             popoverPresentationController?.sourceView = source
@@ -122,7 +122,7 @@ extension UIAlertController {
             //popoverPresentationController?.permittedArrowDirections = .down
             popoverPresentationController?.permittedArrowDirections = .init(rawValue: 0)
         }
-        
+
         if let color = tintColor {
             self.view.tintColor = color
         }
@@ -145,12 +145,12 @@ extension UIAlertController {
         //let action = UIAlertAction(title: title, style: isPad && style == .cancel ? .default : style, handler: handler)
         let action = UIAlertAction(title: title, style: style, handler: handler)
         action.isEnabled = isEnabled
-        
+
         // button image
         if let image = image {
             action.setValue(image, forKey: "image")
         }
-        
+
         // button title color
         if let color = color {
             action.setValue(color, forKey: "titleTextColor")
@@ -163,7 +163,7 @@ extension UIAlertController {
         }
         setTitle(font: font, color: color)
     }
-    
+
     func setTitle(font: UIFont, color: UIColor) {
         guard let title = self.title else { return }
         let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: color]
@@ -177,14 +177,14 @@ extension UIAlertController {
         }
         setMessage(font: font, color: color)
     }
-    
+
     func setMessage(font: UIFont, color: UIColor) {
         guard let message = self.message else { return }
         let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: color]
         let attributedMessage = NSMutableAttributedString(string: message, attributes: attributes)
         setValue(attributedMessage, forKey: "attributedMessage")
     }
-    
+
     func set(vc: UIViewController?, height: CGFloat? = nil) {
         guard let vc = vc else { return }
         setValue(vc, forKey: "contentViewController")

@@ -14,7 +14,7 @@ public protocol NavItemCoordinatorProtocol {
     init(_ navCon: UINavigationController?)
 }
 public extension NavItemCoordinatorProtocol {
-    public static func create(_ navCon: UINavigationController?) -> (coor: Self, viewCon: ViewConType) {
+    static func create(_ navCon: UINavigationController?) -> (coor: Self, viewCon: ViewConType) {
         let coor = self.init(navCon)
         return (coor, coor.createViewCon())
     }

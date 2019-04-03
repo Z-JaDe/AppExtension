@@ -746,6 +746,8 @@ public extension DispatchQoS.QoSClass {
         case .utility: return "Utility"
         case .background: return "Background"
         case .unspecified: return "Unspecified"
+        default:
+            return "\(self.rawValue.rawValue)"
         }
     }
 }

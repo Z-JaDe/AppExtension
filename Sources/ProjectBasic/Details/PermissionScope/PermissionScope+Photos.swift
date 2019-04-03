@@ -35,6 +35,8 @@ public extension PermissionScope {
                     }
                 }
             }
+        @unknown default:
+            fatalError()
         }
 
     }

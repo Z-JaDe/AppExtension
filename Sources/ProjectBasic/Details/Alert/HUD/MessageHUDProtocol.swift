@@ -66,7 +66,7 @@ public extension MessageHUDProtocol where Self: UIViewController {
     }
 
     func hideMessage(_ message: String = "") {
-        if let index = self.messageArr.index(of: message) {
+        if let index = self.messageArr.firstIndex(of: message) {
             self.messageArr.remove(at: index)
         } else {
             _ = self.messageArr.popLast()

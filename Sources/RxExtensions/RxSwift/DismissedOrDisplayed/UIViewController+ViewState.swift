@@ -77,7 +77,7 @@ public extension Reactive where Base: UIViewController & RootViewStateProtocol {
 
 }
 public extension Reactive where Base: UIViewController & RootViewStateProtocol {
-    public var dismissed: ControlEvent<Void> {
+    var dismissed: ControlEvent<Void> {
         let dismissedSource = self.isDidDisAppear
             .filter { [base] in $0 && base.isBeingDismissed }
             .mapToVoid()
@@ -86,7 +86,7 @@ public extension Reactive where Base: UIViewController & RootViewStateProtocol {
             .mapToVoid()
         return ControlEvent(events: Observable.merge(dismissedSource, movedToParentSource))
     }
-    public var firstTimeViewDidAppear: Single<Void> {
+    var firstTimeViewDidAppear: Single<Void> {
         return self.isDidAppear
             .filterTrue()
             .take(1).asSingle()

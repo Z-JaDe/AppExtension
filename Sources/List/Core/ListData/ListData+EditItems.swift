@@ -39,7 +39,7 @@ extension ListData where Section: Equatable & InitProtocol {
         var sectionIndex: Int?
         let section: Section = section ?? newData.last?.section ?? Section()
         var newItems: [Item]
-        if let index = newData.index(where: {$0.section == section}) {
+        if let index = newData.firstIndex(where: {$0.section == section}) {
             newItems = newData[index].items
             sectionIndex = index
         } else {
