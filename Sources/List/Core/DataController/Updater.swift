@@ -22,6 +22,9 @@ public final class Updater {
     private var state: State = .idle {
         willSet { assertMainThread() }
     }
+    public func becomeUpdating() {
+        self.state = .updating
+    }
     public var isUpdating: Bool {
         return self.state == .updating
     }
@@ -72,13 +75,15 @@ public final class Updater {
         setData: @escaping (C) -> Void,
         completion: @escaping (Bool) -> Void
         ) {
+        for changeset in stagedChangeset {
+            if let interrupt = interrupt, interrupt(changeset), let data = stagedChangeset.last?.data {
+                self.reload(data: data, setData: setData, completion: completion)
+                return
+            }
+        }
         self.state = .updating
         self.updating.performBatch(animated: animation != .none, updates: {
             for changeset in stagedChangeset {
-                if let interrupt = interrupt, interrupt(changeset), let data = stagedChangeset.last?.data {
-                    self.reload(data: data, setData: setData, completion: completion)
-                    return
-                }
                 self.update(changeset: changeset, interrupt: interrupt, animation: animation, setData: setData)
             }
         }, completion: { (result) in
@@ -144,10 +149,12 @@ extension Updater {
         return updating.isInHierarchy
     }
     public func performBatch(animated: Bool, updates: (() -> Void)?, completion: @escaping (Bool) -> Void) {
-        self.state = .updating
-        updating.performBatch(animated: animated, updates: updates, completion: { (result) in
-            completion(result)
-            self.state = .idle
-        })
+        Async.main {
+            self.state = .updating
+            self.updating.performBatch(animated: animated, updates: updates, completion: { (result) in
+                completion(result)
+                self.state = .idle
+            })
+        }
     }
 }

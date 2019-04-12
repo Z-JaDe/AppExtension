@@ -11,6 +11,7 @@ import DifferenceKit
 
 extension DataController {
     func update(_ newData: ListUpdateInfo<[S]>, _ updater: Updater) {
+        updater.becomeUpdating()
         let stagedChangeset = StagedChangeset<[S]>(source: self.sectionModels, target: newData.data)
         let updateMode: ListUpdateMode
         if self.dataSet == false {
@@ -23,7 +24,7 @@ extension DataController {
             using: stagedChangeset,
             updateMode: updateMode,
             interrupt: {$0.data.count > 100},
-            setData: {self.setSections($0)},
+            setData: setSections,
             completion: { _ in
                 newData.performCompletion()
                 newData.infoRelease()

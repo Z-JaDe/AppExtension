@@ -18,7 +18,7 @@ public struct RequestContext<Value>: RequestContextCompatible {
     public typealias ValueType = Value
     public let target: URLRequestConvertible?
     public let value: Value
-    init(_ value: Value, _ target: URLRequestConvertible?) {
+    public init(_ value: Value, _ target: URLRequestConvertible?) {
         self.value = value
         self.target = target
     }

@@ -16,4 +16,5 @@ public protocol ListResultModelType: Codable {
 public class ListResultModel<ListItem: Codable>: Codable, ListResultModelType {
     public var count: Count?
     public var list: [ListItem] = []
+    public init() {}
 }
