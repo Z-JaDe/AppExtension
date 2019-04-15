@@ -25,16 +25,7 @@ private class TableViewUpdating: Updating {
     }
     // MARK: - 
     func performBatch(animated: Bool, updates: (() -> Void)?, completion: @escaping (Bool) -> Void) {
-        guard let updates = updates else {
-            if let tableView = tableView {
-                tableView.beginUpdates()
-                tableView.endUpdates()
-                completion(true)
-            } else {
-                completion(false)
-            }
-            return
-        }
+        let updates = updates ?? {}
         if animated {
             _performBatchUpdates(updates, completion: completion)
         } else {
