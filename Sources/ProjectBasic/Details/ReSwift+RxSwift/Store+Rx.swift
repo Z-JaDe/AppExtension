@@ -20,7 +20,7 @@ extension Store {
             }
     }
 
-    open func rxSubscribe<SelectedState, S: StoreSubscriber>(
+    open func rxSubscribe<SelectedState: Equatable, S: StoreSubscriber>(
         _ subscriber: S, transform: ((Subscription<State>) -> Subscription<SelectedState>)?
         ) -> Disposable where S.StoreSubscriberStateType == SelectedState {
         self.subscribe(subscriber, transform: transform)
