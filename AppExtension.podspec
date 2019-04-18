@@ -37,11 +37,11 @@ Pod::Spec.new do |s|
         ss.source_files  = "Sources/Core/**/*.{swift}"
 
         ss.dependency "AppExtension/Async"
-        ss.dependency "CocoaExtension", :path => 'BaseSupport/CocoaExtension'
-        ss.dependency "Encryption", :path => 'BaseSupport/Encryption'
-        ss.dependency "FunctionalSwift", :path => 'BaseSupport/FunctionalSwift'
-        ss.dependency "Validation", :path => 'BaseSupport/Validation'
-        ss.dependency "ModalManager", :path => 'BaseSupport/ModalManager'
+        ss.dependency "CocoaExtension"
+        ss.dependency "Encryption"
+        ss.dependency "FunctionalSwift"
+        ss.dependency "Validation"
+        ss.dependency "ModalManager"
     end
     #子模块
     s.subspec "UserNotificationManager" do |ss|
@@ -61,9 +61,9 @@ Pod::Spec.new do |s|
 
         ss.dependency "RxSwift"
         ss.dependency "RxCocoa"
-        ss.dependency "RxGesture", :path => 'BaseSupport/RxGesture'
-        ss.dependency "RxSwiftExt", :path => 'BaseSupport/RxSwiftExt'
-        ss.dependency "RxOptional", :path => 'BaseSupport/RxOptional'
+        ss.dependency "RxGesture"
+        ss.dependency "RxSwiftExt"
+        ss.dependency "RxOptional"
     end
     #架构相关
     s.subspec "NavigationFlow" do |ss|
