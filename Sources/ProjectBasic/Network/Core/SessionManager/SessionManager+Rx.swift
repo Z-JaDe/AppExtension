@@ -8,7 +8,9 @@
 
 import Foundation
 import RxSwift
+#if canImport(RxSwiftExt)
 import RxSwiftExt
+#endif
 import Alamofire
 /** ZJaDe:
  订阅Request消息后，请求会开始发送，

@@ -1,129 +1,115 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '9.0'
+platform :ios, '10.0'
 use_frameworks!
 #Framework
 
 install! 'cocoapods', :deterministic_uuids => false
 
 def baseCore
-    pod 'Validation', :path => '~/Desktop/wallet-ios/BaseSupport/Validation'
-    pod 'Encryption', :path => '~/Desktop/wallet-ios/BaseSupport/Encryption'
-    pod 'FunctionalSwift', :path => '~/Desktop/wallet-ios/BaseSupport/FunctionalSwift'
-    pod 'CocoaExtension', :path => '~/Desktop/wallet-ios/BaseSupport/CocoaExtension'
-    pod 'ModalManager', :path => '~/Desktop/wallet-ios/BaseSupport/ModalManager'
+  pod 'Validation', :path => './BaseSupport/Validation'
+  pod 'Encryption', :path => './BaseSupport/Encryption'
+  pod 'FunctionalSwift', :path => './BaseSupport/FunctionalSwift'
+  pod 'CocoaExtension', :path => './BaseSupport/CocoaExtension'
+  pod 'ModalManager', :path => './BaseSupport/ModalManager'
 end
 def rx
-    pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
-    pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift'
+  pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
+  pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift'
 end
 def rxExtension
-    rx
-    pod 'RxGesture'
-    pod 'RxSwiftExt'
-    pod 'RxAnimated'
-    pod 'RxOptional'
-    pod 'RxKeyboard'
+  rx
+  pod 'RxGesture', :git => './BaseSupport/RxGesture'
+  pod 'RxSwiftExt', :git => './BaseSupport/RxSwiftExt'
+  pod 'RxOptional', :git => './BaseSupport/RxOptional'
+  #    pod 'RxAnimated'
+  #    pod 'RxKeyboard'
 end
 def snapKit
-    pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
+  pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
 end
 
 target:'Core' do
-    baseCore
+  baseCore
 end
 target:'Coordinator' do
-    baseCore
+  baseCore
 end
 target:'AnimatedTransition' do
-    baseCore
+  baseCore
 end
 target:'UserNotificationManager' do
-    baseCore
-    pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
+  baseCore
+  pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
 end
 target:'List' do
-    baseCore
-    rx
-    pod 'DifferenceKit'
+  baseCore
+  rx
+  pod 'DifferenceKit'
 end
 target:'UIComponents' do
-    baseCore
-    rx
-    snapKit
-    target:'ScrollExtensions' do
-    end
-    target:'CollectionKitExtensions' do
-        pod 'CollectionKit', :git => 'https://github.com/SoySauceLab/CollectionKit'
-    end
+  baseCore
+  rx
+  snapKit
+  target:'ScrollExtensions' do
+  end
+  target:'CollectionKitExtensions' do
+    pod 'CollectionKit', :git => 'https://github.com/SoySauceLab/CollectionKit'
+  end
 end
 target:'EmptyDataSet' do
-    baseCore
-    rx
-    snapKit
+  baseCore
+  rx
+  snapKit
 end
 target:'RxExtensions' do
-    baseCore
-    rxExtension
+  baseCore
+  rxExtension
 end
 target:'NavigationFlow' do
-    baseCore
-    rxExtension
+  baseCore
+  rxExtension
 end
 
 def commonPods
-    baseCore
-    rxExtension
-    snapKit
-
-    pod 'SwiftLint'
-
-    pod 'Alamofire'
-
-    pod 'Rx+Kingfisher', :path => '~/Desktop/wallet-ios/BaseSupport/RxKingfisher'
-    pod 'Kingfisher'
-    pod 'MBProgressHUD'
-    pod 'SwiftyUserDefaults'
-
-    pod 'Hero' #仅测试
-    pod 'CollectionKit', :git => 'https://github.com/SoySauceLab/CollectionKit'  #仅测试
-
-    pod 'MJRefresh', :git => 'https://github.com/CoderMJLee/MJRefresh'
-    pod 'DifferenceKit'
+  baseCore
+  rxExtension
+  snapKit
+  
+  pod 'SwiftLint'
+  
+  pod 'Alamofire'
+  
+  pod 'Kingfisher'
+  pod 'MBProgressHUD'
+  pod 'SwiftyUserDefaults'
+  
+  pod 'Hero' #仅测试
+  pod 'CollectionKit', :git => 'https://github.com/SoySauceLab/CollectionKit'  #仅测试
+  
+  pod 'MJRefresh'
+  pod 'DifferenceKit'
 end
 
 target:'ProjectBasic' do
-    commonPods
-    pod 'Alamofire'
-
-    pod 'Rx+Kingfisher', :path => '~/Desktop/wallet-ios/BaseSupport/RxKingfisher'
-    pod 'Kingfisher'
-    pod 'MBProgressHUD'
-    pod 'SwiftyUserDefaults'
-    pod 'ReSwift'
+  commonPods
+  pod 'Alamofire'
+  
+  pod 'Kingfisher'
+  pod 'MBProgressHUD'
+  pod 'SwiftyUserDefaults'
+  pod 'ReSwift'
 end
 
 target:'AppExtension' do
-    commonPods
-    pod 'ReSwift'
-    target 'AppExtensionUITests' do
-        inherit! :search_paths
-    end
-    target 'AppExtensionTests' do
-        inherit! :search_paths
-    end
-end
-
-
-
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-      if Array['RxGesture'].include?(target.name)
-        config.build_settings['SWIFT_VERSION'] = '4.0'
-        else
-        config.build_settings['SWIFT_VERSION'] = '5.0'
-      end
-    end
+  commonPods
+  pod 'ReSwift'
+  target 'AppExtensionUITests' do
+    inherit! :search_paths
+  end
+  target 'AppExtensionTests' do
+    inherit! :search_paths
   end
 end
+
+

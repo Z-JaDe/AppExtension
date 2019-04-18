@@ -263,7 +263,7 @@
 		C92B6D52222CD0C9001A1663 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92B6D51222CD0C9001A1663 /* Context.swift */; };
 		C92B6D54222CD96D001A1663 /* JSBridge+Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92B6D53222CD96D001A1663 /* JSBridge+Call.swift */; };
 		C92EF1352135394800F95C71 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EF1332135393200F95C71 /* QRCode.swift */; };
-		C930DAB920D3E3ED002D87D1 /* Text.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C930DAB820D3E3ED002D87D1 /* Text.storyboard */; };
+		C930DAB920D3E3ED002D87D1 /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C930DAB820D3E3ED002D87D1 /* Test.storyboard */; };
 		C932F75B2100593E00B8DF84 /* ProjectBasic.h in Headers */ = {isa = PBXBuildFile; fileRef = C932F7592100593E00B8DF84 /* ProjectBasic.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C932F75E2100593E00B8DF84 /* ProjectBasic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C932F7572100593E00B8DF84 /* ProjectBasic.framework */; };
 		C932F75F2100593E00B8DF84 /* ProjectBasic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C932F7572100593E00B8DF84 /* ProjectBasic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -1048,7 +1048,7 @@
 		C92B6D53222CD96D001A1663 /* JSBridge+Call.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSBridge+Call.swift"; sourceTree = "<group>"; };
 		C92E501E2101825600F4F887 /* EmptyDataSetContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyDataSetContentView.swift; sourceTree = "<group>"; };
 		C92EF1332135393200F95C71 /* QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
-		C930DAB820D3E3ED002D87D1 /* Text.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Text.storyboard; sourceTree = "<group>"; };
+		C930DAB820D3E3ED002D87D1 /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		C932F7572100593E00B8DF84 /* ProjectBasic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProjectBasic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C932F7592100593E00B8DF84 /* ProjectBasic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectBasic.h; sourceTree = "<group>"; };
 		C932F75A2100593E00B8DF84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -2859,7 +2859,7 @@
 				C90D85F320E2541500A4D0FD /* CycleViewViewControllerTest.swift */,
 				C90D85F120E228C600A4D0FD /* PageViewControllerTest.swift */,
 				C90D85F920E26B8F00A4D0FD /* ItemViewController.swift */,
-				C930DAB820D3E3ED002D87D1 /* Text.storyboard */,
+				C930DAB820D3E3ED002D87D1 /* Test.storyboard */,
 				C962C19A20CE179A0061FC20 /* Assets.xcassets */,
 				C962C19F20CE179A0061FC20 /* Info.plist */,
 			);
@@ -3886,7 +3886,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C930DAB920D3E3ED002D87D1 /* Text.storyboard in Resources */,
+				C930DAB920D3E3ED002D87D1 /* Test.storyboard in Resources */,
 				C910FEBD20CFF55600761301 /* AppExtension.podspec in Resources */,
 				C962C19B20CE179A0061FC20 /* Assets.xcassets in Resources */,
 			);
@@ -4075,57 +4075,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AppExtension/Pods-AppExtension-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CocoaExtension/CocoaExtension.framework",
-				"${BUILT_PRODUCTS_DIR}/Encryption/Encryption.framework",
-				"${BUILT_PRODUCTS_DIR}/FunctionalSwift/FunctionalSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/ModalManager/ModalManager.framework",
-				"${BUILT_PRODUCTS_DIR}/Validation/Validation.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/DifferenceKit/DifferenceKit.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAnimated/RxAnimated.framework",
-				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
-				"${BUILT_PRODUCTS_DIR}/RxKeyboard/RxKeyboard.framework",
-				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/CollectionKit/CollectionKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Rx+Kingfisher/Rx_Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppExtension/Pods-AppExtension-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaExtension.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Encryption.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FunctionalSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ModalManager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Validation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DifferenceKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAnimated.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxKeyboard.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftExt.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CollectionKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rx_Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppExtension/Pods-AppExtension-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -5751,7 +5706,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -5807,7 +5762,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
