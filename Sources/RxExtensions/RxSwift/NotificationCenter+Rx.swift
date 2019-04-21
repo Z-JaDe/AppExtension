@@ -8,7 +8,6 @@
 
 import Foundation
 import RxSwift
-import RxOptional
 extension Reactive where Base: NotificationCenter {
     // swiftlint:disable large_tuple
     public func notificationKeyboardWillChangeFrame() -> Observable<(CGRect, CGRect, TimeInterval)> {

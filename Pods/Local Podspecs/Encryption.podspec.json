@@ -17,7 +17,7 @@
     "ios": "9.0"
   },
   "frameworks": "Foundation",
-  "swift_version": "4.2",
+  "swift_versions": "5.0",
   "xcconfig": {
     "HEADER_SEARCH_PATHS": "$(PODS_TARGET_SRCROOT)/Sources/openssl/include"
   },

@@ -1,0 +1,30 @@
+[submodule "BaseSupport/RxOptional"]
+	path = BaseSupport/RxOptional
+	url = git@github.com:Z-JaDe/RxOptional.git
+[submodule "BaseSupport/RxSwiftExt"]
+	path = BaseSupport/RxSwiftExt
+	url = git@github.com:Z-JaDe/RxSwiftExt.git
+[submodule "BaseSupport/RxGesture"]
+	path = BaseSupport/RxGesture
+	url = git@github.com:Z-JaDe/RxGesture.git
+[submodule "BaseSupport/CocoaExtension"]
+	path = BaseSupport/CocoaExtension
+	url = git@github.com:Z-JaDe/CocoaExtension.git
+[submodule "BaseSupport/FunctionalSwift"]
+	path = BaseSupport/FunctionalSwift
+	url = git@github.com:Z-JaDe/FunctionalSwift.git
+[submodule "BaseSupport/Encryption"]
+	path = BaseSupport/Encryption
+	url = git@github.com:Z-JaDe/Encryption.git
+[submodule "BaseSupport/JDEther"]
+	path = BaseSupport/JDEther
+	url = git@github.com:Z-JaDe/JDEther.git
+[submodule "BaseSupport/ModalManager"]
+	path = BaseSupport/ModalManager
+	url = git@github.com:Z-JaDe/ModalManager.git
+[submodule "BaseSupport/SwifterRouter"]
+	path = BaseSupport/SwifterRouter
+	url = git@github.com:Z-JaDe/SwifterRouter.git
+[submodule "BaseSupport/Validation"]
+	path = BaseSupport/Validation
+	url = git@github.com:Z-JaDe/Validation.git

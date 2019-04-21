@@ -1,12 +1,12 @@
 included: # 执行 linting 时包含的路径。如果出现这个 `--path` 会被忽略。
   - Sources
-  - ../Sources/ModalManager/Sources
-  - ../Sources/JDEther/Sources
-  - ../Sources/FunctionalSwift/Sources
-  - ../Sources/CocoaExtension/Sources
-  - ../Sources/Validation/Sources
-  - ../Sources/Encryption/Sources
-  - ../Sources/RxKingfisher/Sources
+  - BaseSupport/ModalManager/Sources
+  - BaseSupport/JDEther/Sources
+  - BaseSupport/FunctionalSwift/Sources
+  - BaseSupport/CocoaExtension/Sources
+  - BaseSupport/Validation/Sources
+  - BaseSupport/Encryption/Sources
+  - BaseSupport/RxKingfisher/Sources
 
 opt_in_rules: # 启用指定的规则
   - file_length

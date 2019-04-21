@@ -1,6 +1,6 @@
 {
   "name": "RxCocoa",
-  "version": "4.5.0",
+  "version": "5.0.0",
   "summary": "RxSwift Cocoa extensions",
   "description": "* UI extensions\n* NSURL extensions\n* KVO extensions",
   "homepage": "https://github.com/ReactiveX/RxSwift",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/ReactiveX/RxSwift.git",
-    "tag": "4.5.0"
+    "tag": "5.0.0"
   },
   "requires_arc": true,
   "platforms": {
@@ -29,8 +29,8 @@
   ],
   "dependencies": {
     "RxSwift": [
-      "~> 4.4",
-      ">= 4.4.2"
+      "~> 5"
     ]
-  }
+  },
+  "swift_versions": "5.0"
 }
