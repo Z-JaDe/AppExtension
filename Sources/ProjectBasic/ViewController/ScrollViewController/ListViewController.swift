@@ -8,29 +8,15 @@
 
 import UIKit
 
-open class ListViewController<ScrollViewType, AdapterType>: ScrollViewController<ScrollViewType>
-    where ScrollViewType: UIScrollView, AdapterType: ListDataUpdateProtocol & ListAdapterType {
-    open override func viewDidLoad() {
-        super.viewDidLoad()
-        self.adapter.dataController.reloadDataCompletion = { [weak self] in
-            self?.rootView.emptyDataSet.reloadData()
-        }
-    }
+open class ListViewController<ScrollViewType>: ScrollViewController<ScrollViewType>
+    where ScrollViewType: UIScrollView {
+
     open var scrollItem: ScrollViewType {
         return self.rootView
     }
-    public lazy private(set) var adapter: AdapterType = self.loadAdapter()
-    func loadAdapter() -> AdapterType {
-        jdAbstractMethod()
-    }
-
-    // MARK: - RefreshListProtocol
-    public var networkPage: Int = 0
-    public var limit: UInt? = 20
     // MARK: -
     open override func request() {
-        // ZJaDe: request() 指向 refreshHeader(false) 指向 request(isRefresh: true)
-        self.refreshHeader(false)
+        self.request(isRefresh: true)
     }
 
     /// ZJaDe: 如果继承自该类的情况可以直接重写request(isRefresh: Bool)，如果是在外部该类作为子控制器的情况，应该把requestClosure指向外部类里面的request(isRefresh: Bool)
@@ -52,8 +38,48 @@ open class ListViewController<ScrollViewType, AdapterType>: ScrollViewController
         }
     }
 }
-extension ListViewController: RefreshListProtocol {
-    public var parser: ResultParser<ListViewController, AdapterType> {
+
+open class AdapterListViewController<ScrollViewType, AdapterType>: ListViewController<ScrollViewType> where ScrollViewType: UIScrollView, AdapterType: ListDataUpdateProtocol & ListAdapterType {
+    
+    // MARK: - RefreshListProtocol
+    public var networkPage: Int = 0
+    public var limit: UInt? = 20
+    
+    open override func request() {
+        // ZJaDe: request() 指向 refreshHeader(false) 指向 request(isRefresh: true)
+        self.refreshHeader(false)
+    }
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        self.adapter.dataController.reloadDataCompletion = { [weak self] in
+            self?.rootView.emptyDataSet.reloadData()
+        }
+    }
+    
+    public lazy private(set) var adapter: AdapterType = self.loadAdapter()
+    func loadAdapter() -> AdapterType {
+        jdAbstractMethod()
+    }
+}
+// MARK: - RefreshListProtocol
+extension AdapterListViewController: RefreshListProtocol {
+    public var parser: ResultParser<AdapterListViewController, AdapterType> {
         return ResultParser(self, self.adapter)
+    }
+}
+extension AdapterTableViewController {
+    // MARK: - ResultParser
+    public func parseCellArray(_ cellArray: [StaticTableItemCell]?, _ refresh: Bool) {
+        parser.cellArray(cellArray, refresh)
+    }
+    public func parseModelArray(_ modelArray: [TableItemModel]?, _ refresh: Bool) {
+        parser.modelArray(modelArray, refresh)
+    }
+}
+extension AdapterCollectionViewController {
+    // MARK: - ResultParser
+    public func parseModelArray(_ modelArray: [CollectionItemModel]?, _ refresh: Bool) {
+        parser.modelArray(modelArray, refresh)
     }
 }

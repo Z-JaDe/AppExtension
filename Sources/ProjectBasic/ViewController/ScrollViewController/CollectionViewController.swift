@@ -7,8 +7,13 @@
 //
 
 import UIKit
-
-open class CollectionViewController: ListViewController<JDCollectionView, UICollectionAdapter> {
+open class NormalCollectionViewController: ListViewController<JDCollectionView> {
+    open override func createView(_ frame: CGRect) -> JDCollectionView {
+        let layout = UICollectionViewFlowLayout()
+        return JDCollectionView(frame: frame, collectionViewLayout: layout)
+    }
+}
+open class AdapterCollectionViewController: AdapterListViewController<JDCollectionView, UICollectionAdapter> {
 
     open override func createView(_ frame: CGRect) -> JDCollectionView {
         let layout = UICollectionViewFlowLayout()
@@ -23,10 +28,5 @@ open class CollectionViewController: ListViewController<JDCollectionView, UIColl
     override func loadAdapter() -> UICollectionAdapter {
         let adapter = UICollectionAdapter()
         return adapter
-    }
-
-    // MARK: - ResultParser
-    public func parseModelArray(_ modelArray: [CollectionItemModel]?, _ refresh: Bool) {
-        parser.modelArray(modelArray, refresh)
     }
 }

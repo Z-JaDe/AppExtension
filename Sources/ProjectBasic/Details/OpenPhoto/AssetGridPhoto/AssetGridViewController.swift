@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-open class AssetGridViewController: CollectionViewController, PHPhotoLibraryChangeObserver {
+open class AssetGridViewController: AdapterCollectionViewController, PHPhotoLibraryChangeObserver {
     open var maxImageCount: MaxSelectedCount = 1 {
         didSet {
             self.adapter.maxSelectedCount = maxImageCount

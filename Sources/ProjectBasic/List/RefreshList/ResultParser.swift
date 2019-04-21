@@ -7,7 +7,7 @@
 //
 
 import Foundation
-public class ResultParser<RefreshList: RefreshListProtocol, AdapterType: ListDataUpdateProtocol> {
+public class ResultParser<RefreshList, AdapterType: ListDataUpdateProtocol> {
     public let list: RefreshList
     public let adapter: AdapterType
     public typealias ListDataType = AdapterType.ListDataType
@@ -15,23 +15,23 @@ public class ResultParser<RefreshList: RefreshListProtocol, AdapterType: ListDat
         self.list = list
         self.adapter = adapter
     }
-    private var scrollItem: RefreshList.ScrollViewType {
-        return self.list.scrollItem
-    }
-
     // MARK: - updateScrollState
     public private(set) var updateScrollState: Bool = true
-    public func isNeedUpdateScrollState(_ value: Bool) -> ResultParser {
-        self.updateScrollState = value
-        return self
-    }
     // MARK: - section
     public private(set) var section: AdapterType.Section?
     public func section(_ value: AdapterType.Section) -> ResultParser {
         self.section = value
         return self
     }
-
+}
+extension ResultParser where RefreshList: RefreshListProtocol {
+    public func isNeedUpdateScrollState(_ value: Bool) -> ResultParser {
+        self.updateScrollState = value
+        return self
+    }
+    private var scrollItem: RefreshList.ScrollViewType {
+        return self.list.scrollItem
+    }
     open func endRefreshing(count: Int?) {
         guard updateScrollState else {
             return
@@ -62,7 +62,7 @@ public class ResultParser<RefreshList: RefreshListProtocol, AdapterType: ListDat
 
 // MARK: - ResultParser扩展table collection
 extension ResultParser where AdapterType.Section: Equatable&InitProtocol {
-    public func itemArray(_ itemArray: [AdapterType.Item]?, _ refresh: Bool) -> ResultParser {
+    public func reloadData(_ itemArray: [AdapterType.Item]?, _ refresh: Bool, closure:((ListUpdateInfo<ListDataType>)->(ListUpdateInfo<ListDataType>))? = nil){
         let _itemArray = itemArray ?? []
         self.adapter.reloadDataWithInfo({ (oldData) -> ListUpdateInfo<ListDataType> in
             var newData = oldData
@@ -71,20 +71,26 @@ extension ResultParser where AdapterType.Section: Equatable&InitProtocol {
             } else if _itemArray.count > 0 {
                 newData.append(section: self.section, items: _itemArray)
             }
-            return newData.updateInfo().configUpdateMode(.everything).completion {
-                self.endRefreshing(count: itemArray?.count)
-            }
+            let result = newData.updateInfo().configUpdateMode(.everything)
+            return closure?(result) ?? result
         })
+    }
+}
+extension ResultParser where AdapterType.Section: Equatable&InitProtocol, RefreshList: RefreshListProtocol {
+    public func itemArray(_ itemArray: [AdapterType.Item]?, _ refresh: Bool) -> ResultParser {
+        self.reloadData(itemArray, refresh, closure: {$0.completion {
+            self.endRefreshing(count: itemArray?.count)
+            }})
         return self
     }
 }
-extension ResultParser where AdapterType.Section: Equatable&InitProtocol, AdapterType.Item == CollectionItemModel {
+extension ResultParser where AdapterType.Section: Equatable&InitProtocol, AdapterType.Item == CollectionItemModel, RefreshList: RefreshListProtocol {
     @discardableResult
     public func modelArray(_ modelArray: [CollectionItemModel]?, _ refresh: Bool) -> ResultParser {
         return self.itemArray(modelArray, refresh)
     }
 }
-extension ResultParser where AdapterType.Section: Equatable&InitProtocol, AdapterType.Item == AnyTableAdapterItem {
+extension ResultParser where AdapterType.Section: Equatable&InitProtocol, AdapterType.Item == AnyTableAdapterItem, RefreshList: RefreshListProtocol  {
     @discardableResult
     public func modelArray(_ modelArray: [TableItemModel]?, _ refresh: Bool) -> ResultParser {
         let listItems: [AnyTableAdapterItem]? = modelArray?.map {.model($0)}

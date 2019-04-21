@@ -7,8 +7,21 @@
 //
 
 import UIKit
-
-open class TableViewController: ListViewController<TableView, UITableAdapter> {
+open class NormalTableViewController: ListViewController<TableView> {
+    /// ZJaDe: view加载之前设置有效
+    public var style: UITableView.Style = .plain
+    
+    open override func createView(_ frame: CGRect) -> TableView {
+        let tableView = TableView(frame: frame, style: self.style)
+        if self.style == .grouped && tableView.tableHeaderView == nil {
+            let view = UIView()
+            view.height = 1
+            tableView.tableHeaderView = view
+        }
+        return tableView
+    }
+}
+open class AdapterTableViewController: AdapterListViewController<TableView, UITableAdapter> {
     /// ZJaDe: view加载之前设置有效
     public var style: UITableView.Style = .plain
 
@@ -65,13 +78,5 @@ open class TableViewController: ListViewController<TableView, UITableAdapter> {
             return dataArray
         }
         return adapter
-    }
-
-    // MARK: - ResultParser
-    public func parseCellArray(_ cellArray: [StaticTableItemCell]?, _ refresh: Bool) {
-        parser.cellArray(cellArray, refresh)
-    }
-    public func parseModelArray(_ modelArray: [TableItemModel]?, _ refresh: Bool) {
-        parser.modelArray(modelArray, refresh)
     }
 }
