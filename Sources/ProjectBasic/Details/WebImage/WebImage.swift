@@ -13,12 +13,13 @@ import RxSwift
 
 extension UIImageView {
     @discardableResult
-    public func setImage(_ imageData: ImageData?) -> DownloadTask? {
+    public func setImage(_ imageData: ImageData?, placeholder: Placeholder? = ImageData.default, options: KingfisherOptionsInfo? = nil) -> DownloadTask? {
         switch imageData {
         case .url(let url)?:
-            return self.kf.setImage(with: url?.url, placeholder: ImageData.default)
+            return self.kf.setImage(with: url?.url, placeholder: placeholder, options: options)
         case .image(let image)?:
-            return self.kf.setImage(with: image?.kfDataProvider, placeholder: ImageData.default, options: [.forceRefresh])
+            self.image = image
+            return nil
         case .none:
             return nil
         }
@@ -28,32 +29,33 @@ extension UIImageView {
 // MARK: -
 extension UIButton {
     @discardableResult
-    public func setImage(_ imageData: ImageData?, for state: UIControl.State) -> DownloadTask? {
+    public func setImage(_ imageData: ImageData?, for state: UIControl.State, placeholder: UIImage? = ImageData.default, options: KingfisherOptionsInfo? = nil) -> DownloadTask? {
         switch imageData {
         case .url(let url)?:
-            return self.kf.setImage(with: url?.url, for: state, placeholder: ImageData.default)
+            return self.kf.setImage(with: url?.url, for: state, placeholder: placeholder, options: options)
         case .image(let image)?:
-            return self.kf.setImage(with: image?.kfSource, for: state, placeholder: ImageData.default, options: [.forceRefresh])
+            self.setImage(image, for: state)
+            return nil
         case .none:
             return nil
         }
     }
 }
-extension UIImage {
-    public var kfDataProvider: RawImageDataProvider? {
-        if let data = self.data() {
-            return RawImageDataProvider(data: data, cacheKey: "")
-        } else {
-            return nil
-        }
-    }
-    public var kfSource: Source? {
-        if let dataProvider = self.kfDataProvider {
-            return Source.provider(dataProvider)
-        } else {
-            return nil
-        }
-    }
-}
+//extension UIImage {
+//    public var kfDataProvider: RawImageDataProvider? {
+//        if let data = self.data() {
+//            return RawImageDataProvider(data: data, cacheKey: "")
+//        } else {
+//            return nil
+//        }
+//    }
+//    public var kfSource: Source? {
+//        if let dataProvider = self.kfDataProvider {
+//            return Source.provider(dataProvider)
+//        } else {
+//            return nil
+//        }
+//    }
+//}
 
 #endif
