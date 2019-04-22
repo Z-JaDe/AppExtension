@@ -1,17 +1,17 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '10.0'
+platform :ios, '9.0'
 use_frameworks!
 #Framework
 
 install! 'cocoapods', :deterministic_uuids => false
 
 def baseCore
-  pod 'Validation', :path => './BaseSupport/Validation'
-  pod 'Encryption', :path => './BaseSupport/Encryption'
-  pod 'FunctionalSwift', :path => './BaseSupport/FunctionalSwift'
-  pod 'CocoaExtension', :path => './BaseSupport/CocoaExtension'
-  pod 'ModalManager', :path => './BaseSupport/ModalManager'
+  pod 'Validation', :path => 'BaseSupport/Validation'
+  pod 'Encryption', :path => 'BaseSupport/Encryption'
+  pod 'FunctionalSwift', :path => 'BaseSupport/FunctionalSwift'
+  pod 'CocoaExtension', :path => 'BaseSupport/CocoaExtension'
+  pod 'ModalManager', :path => 'BaseSupport/ModalManager'
 end
 def rx
   pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
@@ -19,9 +19,9 @@ def rx
 end
 def rxExtension
   rx
-  pod 'RxGesture', :git => './BaseSupport/RxGesture'
-  pod 'RxSwiftExt', :git => './BaseSupport/RxSwiftExt'
-  pod 'RxOptional', :git => './BaseSupport/RxOptional'
+  pod 'RxGesture', :git => 'BaseSupport/RxGesture'
+  pod 'RxSwiftExt', :git => 'BaseSupport/RxSwiftExt'
+  pod 'RxOptional', :git => 'BaseSupport/RxOptional'
   #    pod 'RxAnimated'
   #    pod 'RxKeyboard'
 end

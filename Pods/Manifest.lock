@@ -13,7 +13,7 @@ PODS:
   - Encryption (1.0.0)
   - FunctionalSwift (1.0.0)
   - Hero (1.4.0)
-  - Kingfisher (5.3.1)
+  - Kingfisher (4.10.1)
   - MBProgressHUD (1.1.0)
   - MJRefresh (3.1.16)
   - ModalManager (1.0.0)
@@ -42,26 +42,26 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - CocoaExtension (from `./BaseSupport/CocoaExtension`)
+  - CocoaExtension (from `BaseSupport/CocoaExtension`)
   - CollectionKit (from `https://github.com/SoySauceLab/CollectionKit`)
   - DifferenceKit
-  - Encryption (from `./BaseSupport/Encryption`)
-  - FunctionalSwift (from `./BaseSupport/FunctionalSwift`)
+  - Encryption (from `BaseSupport/Encryption`)
+  - FunctionalSwift (from `BaseSupport/FunctionalSwift`)
   - Hero
   - Kingfisher
   - MBProgressHUD
   - MJRefresh
-  - ModalManager (from `./BaseSupport/ModalManager`)
+  - ModalManager (from `BaseSupport/ModalManager`)
   - ReSwift
   - RxCocoa (from `https://github.com/ReactiveX/RxSwift`)
-  - RxGesture (from `./BaseSupport/RxGesture`)
-  - RxOptional (from `./BaseSupport/RxOptional`)
+  - RxGesture (from `BaseSupport/RxGesture`)
+  - RxOptional (from `BaseSupport/RxOptional`)
   - RxSwift (from `https://github.com/ReactiveX/RxSwift`)
-  - RxSwiftExt (from `./BaseSupport/RxSwiftExt`)
+  - RxSwiftExt (from `BaseSupport/RxSwiftExt`)
   - SnapKit (from `https://github.com/SnapKit/SnapKit`)
   - SwiftLint
   - SwiftyUserDefaults
-  - Validation (from `./BaseSupport/Validation`)
+  - Validation (from `BaseSupport/Validation`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -77,29 +77,29 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   CocoaExtension:
-    :path: "./BaseSupport/CocoaExtension"
+    :path: BaseSupport/CocoaExtension
   CollectionKit:
     :git: https://github.com/SoySauceLab/CollectionKit
   Encryption:
-    :path: "./BaseSupport/Encryption"
+    :path: BaseSupport/Encryption
   FunctionalSwift:
-    :path: "./BaseSupport/FunctionalSwift"
+    :path: BaseSupport/FunctionalSwift
   ModalManager:
-    :path: "./BaseSupport/ModalManager"
+    :path: BaseSupport/ModalManager
   RxCocoa:
     :git: https://github.com/ReactiveX/RxSwift
   RxGesture:
-    :git: "./BaseSupport/RxGesture"
+    :git: BaseSupport/RxGesture
   RxOptional:
-    :git: "./BaseSupport/RxOptional"
+    :git: BaseSupport/RxOptional
   RxSwift:
     :git: https://github.com/ReactiveX/RxSwift
   RxSwiftExt:
-    :git: "./BaseSupport/RxSwiftExt"
+    :git: BaseSupport/RxSwiftExt
   SnapKit:
     :git: https://github.com/SnapKit/SnapKit
   Validation:
-    :path: "./BaseSupport/Validation"
+    :path: BaseSupport/Validation
 
 CHECKOUT OPTIONS:
   CollectionKit:
@@ -110,16 +110,16 @@ CHECKOUT OPTIONS:
     :git: https://github.com/ReactiveX/RxSwift
   RxGesture:
     :commit: 2e86eeb6379cbacce7b7b9efc0a12ba33e5f3b68
-    :git: "./BaseSupport/RxGesture"
+    :git: BaseSupport/RxGesture
   RxOptional:
     :commit: ab98360805936a280b7b8de3b7d2943e866db05c
-    :git: "./BaseSupport/RxOptional"
+    :git: BaseSupport/RxOptional
   RxSwift:
     :commit: 27b42ed7584a044d9ec6d7968c0d5f464abdcf93
     :git: https://github.com/ReactiveX/RxSwift
   RxSwiftExt:
     :commit: 220cd19a5b0edc2d284918e82ac8753c40e7f195
-    :git: "./BaseSupport/RxSwiftExt"
+    :git: BaseSupport/RxSwiftExt
   SnapKit:
     :commit: eea05d74f073696202cd0bb8e744e4c89781a414
     :git: https://github.com/SnapKit/SnapKit
@@ -132,7 +132,7 @@ SPEC CHECKSUMS:
   Encryption: 341e53c4fbc96dc568a23f444231eb2ca9810cbf
   FunctionalSwift: 45c6c16128dec033a5a1e0d7f46da29a82dc43cc
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
-  Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
   ModalManager: 024904cbb43f8e65bdd3d0ae5b0f4a853cccc8bd
@@ -147,6 +147,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
   Validation: 80624ad9a49780a8e9dbc425de2eb0867a3075ea
 
-PODFILE CHECKSUM: f23d05bbe0e0846ef582ce6475e70483da2fbfc0
+PODFILE CHECKSUM: e9dee16a79c5e7d5070d5f4f6cdf0b056314553e
 
 COCOAPODS: 1.7.0.beta.3
