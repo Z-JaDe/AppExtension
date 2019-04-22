@@ -4,6 +4,7 @@ Pod::Spec.new do |s|
     s.summary          = "App框架"
     s.description      = <<-DESC
     App框架
+    如有针对性设计，把podspec copy一份，podfile中指定下path就行了
     DESC
     s.homepage         = "https://github.com/Z-JaDe"
     s.license          = 'MIT'

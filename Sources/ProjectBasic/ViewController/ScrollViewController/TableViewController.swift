@@ -10,7 +10,7 @@ import UIKit
 open class NormalTableViewController: ListViewController<TableView> {
     /// ZJaDe: view加载之前设置有效
     public var style: UITableView.Style = .plain
-    
+
     open override func createView(_ frame: CGRect) -> TableView {
         let tableView = TableView(frame: frame, style: self.style)
         if self.style == .grouped && tableView.tableHeaderView == nil {

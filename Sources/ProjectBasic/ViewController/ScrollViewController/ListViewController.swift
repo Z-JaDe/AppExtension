@@ -40,23 +40,24 @@ open class ListViewController<ScrollViewType>: ScrollViewController<ScrollViewTy
 }
 
 open class AdapterListViewController<ScrollViewType, AdapterType>: ListViewController<ScrollViewType> where ScrollViewType: UIScrollView, AdapterType: ListDataUpdateProtocol & ListAdapterType {
-    
+
     // MARK: - RefreshListProtocol
-    public var networkPage: Int = 0
-    public var limit: UInt? = 20
-    
+    open var networkPage: Int = 0
+    ///默认值若有变化 子类可重写
+    open var limit: UInt? = 20
+
     open override func request() {
         // ZJaDe: request() 指向 refreshHeader(false) 指向 request(isRefresh: true)
         self.refreshHeader(false)
     }
-    
+
     open override func viewDidLoad() {
         super.viewDidLoad()
         self.adapter.dataController.reloadDataCompletion = { [weak self] in
             self?.rootView.emptyDataSet.reloadData()
         }
     }
-    
+
     public lazy private(set) var adapter: AdapterType = self.loadAdapter()
     func loadAdapter() -> AdapterType {
         jdAbstractMethod()
