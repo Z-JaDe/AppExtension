@@ -73,7 +73,7 @@ open class AssetGridViewController: AdapterCollectionViewController, PHPhotoLibr
             }
             array.append(model)
         }
-        self.parseModelArray(array, true)
+        self.adapter.reloadData(array, isRefresh: true)
     }
     open func requestSelectedImages(_ closure: @escaping ([UIImage]) -> Void) {
         let assets: [PHAsset] = self.adapter.selectedItemArray.compactMap({($0 as? AssetGridModel)?.asset})

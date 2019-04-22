@@ -10,10 +10,8 @@ import Foundation
 
 extension ListDataUpdateProtocol where Item == AnyTableAdapterItem {
     /// ZJaDe: 重新刷新cell
-    public func reloadData(_ closure: () -> ListData<Section, StaticTableItemCell>?) {
-        self.reloadListData({ (_) -> ListDataType? in
-            return closure()?.map({.cell($0)})
-        })
+    public func reloadData(_ listCellData: ListData<Section, StaticTableItemCell>?) {
+        self.reloadData(listCellData?.map({.cell($0)}))
     }
 }
 extension ListData where Item: StaticTableItemCell, Section == TableSection {

@@ -1,5 +1,5 @@
 //
-//  CollectionAdapterDelegate.swift
+//  CollectionDelegate.swift
 //  List
 //
 //  Created by 郑军铎 on 2018/12/4.

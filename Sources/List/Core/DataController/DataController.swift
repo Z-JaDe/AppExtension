@@ -24,6 +24,7 @@ public final class DataController<S: SectionModelType> {
     internal var _data: [DataSnapshot] = []
 
     internal var dataSet = false
+    // TODO: 回调封装
     public var reloadDataCompletion: CallBackNoParams?
 
     func move(_ source: IndexPath, target: IndexPath) {

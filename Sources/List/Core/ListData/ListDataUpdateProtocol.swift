@@ -18,21 +18,34 @@ public protocol ListDataUpdateProtocol: class {
     var dataArray: ListDataType {get}
     func changeListDataInfo(_ newData: ListUpdateInfoType)
 }
+// TODO: Async/Await 出来后需优化
 extension ListDataUpdateProtocol {
     /// ZJaDe: 更新
     public func updateData() {
-        self.reloadDataWithInfo({_ in nil})
+        self.reloadData(self.dataArray)
     }
-    /// ZJaDe: 重新刷新 返回 ListDataType
-    public func reloadListData(_ closure: (ListDataType) -> ListDataType?) {
-        self.reloadDataWithInfo({ (oldData) -> ListUpdateInfoType? in
-            return closure(oldData).map(ListUpdateInfo.init)
-        })
+    /// ZJaDe: 重新刷新 传入 listData
+    public func reloadData(_ listData: ListDataType?) {
+        self.reloadData(listData?.updateInfo())
     }
-    /// ZJaDe: 重新刷新 返回 ListUpdateInfoType
-    public func reloadDataWithInfo(_ closure: (ListDataType) -> ListUpdateInfoType?) {
-        if let newData = closure(self.dataArray) {
-            self.changeListDataInfo(newData)
+    /// ZJaDe: 重新刷新 传入 listUpdateInfo
+    public func reloadData(_ listUpdateInfo: ListUpdateInfoType?) {
+        if let listUpdateInfo = listUpdateInfo {
+            self.changeListDataInfo(listUpdateInfo)
         }
+    }
+}
+extension ListDataUpdateProtocol where Section: Equatable & InitProtocol {
+    /// ZJaDe: 重新刷新 返回 ListUpdateInfoType
+    public func reloadData(section: Section? = nil, _ itemArray: [Item]?, isRefresh: Bool, _ closure: ((ListUpdateInfo<ListDataType>) -> (ListUpdateInfo<ListDataType>))? = nil) {
+        let _itemArray = itemArray ?? []
+        var newData = self.dataArray
+        if isRefresh {
+            newData.reset(section: section, items: _itemArray)
+        } else if _itemArray.count > 0 {
+            newData.append(section: section, items: _itemArray)
+        }
+        let result = newData.updateInfo()
+        self.reloadData(closure?(result) ?? result)
     }
 }

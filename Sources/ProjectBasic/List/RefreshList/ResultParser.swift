@@ -61,26 +61,13 @@ extension ResultParser where RefreshList: RefreshListProtocol {
 }
 
 // MARK: - ResultParser扩展table collection
-extension ResultParser where AdapterType.Section: Equatable&InitProtocol {
-    public func reloadData(_ itemArray: [AdapterType.Item]?, _ refresh: Bool, closure: ((ListUpdateInfo<ListDataType>) -> (ListUpdateInfo<ListDataType>))? = nil) {
-        let _itemArray = itemArray ?? []
-        self.adapter.reloadDataWithInfo({ (oldData) -> ListUpdateInfo<ListDataType> in
-            var newData = oldData
-            if refresh {
-                newData.reset(section: self.section, items: _itemArray)
-            } else if _itemArray.count > 0 {
-                newData.append(section: self.section, items: _itemArray)
-            }
-            let result = newData.updateInfo().configUpdateMode(.everything)
-            return closure?(result) ?? result
-        })
-    }
-}
 extension ResultParser where AdapterType.Section: Equatable&InitProtocol, RefreshList: RefreshListProtocol {
-    public func itemArray(_ itemArray: [AdapterType.Item]?, _ refresh: Bool) -> ResultParser {
-        self.reloadData(itemArray, refresh, closure: {$0.completion {
-            self.endRefreshing(count: itemArray?.count)
-            }})
+    public func itemArray(_ itemArray: [AdapterType.Item]?, _ isRefresh: Bool) -> ResultParser {
+        self.adapter.reloadData(section: self.section, itemArray, isRefresh: isRefresh, {
+            $0.configUpdateMode(.everything).completion {
+                self.endRefreshing(count: itemArray?.count)
+            }
+        })
         return self
     }
 }
