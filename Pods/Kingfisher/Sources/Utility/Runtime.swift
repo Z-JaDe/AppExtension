@@ -1,8 +1,8 @@
 //
-//  Kingfisher.h
+//  Runtime.swift
 //  Kingfisher
 //
-//  Created by Wei Wang on 15/4/6.
+//  Created by Wei Wang on 2018/10/12.
 //
 //  Copyright (c) 2019 Wei Wang <onevcat@gmail.com>
 //
@@ -24,14 +24,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+import Foundation
 
-//! Project version number for Kingfisher.
-FOUNDATION_EXPORT double KingfisherVersionNumber;
+func getAssociatedObject<T>(_ object: Any, _ key: UnsafeRawPointer) -> T? {
+    return objc_getAssociatedObject(object, key) as? T
+}
 
-//! Project version string for Kingfisher.
-FOUNDATION_EXPORT const unsigned char KingfisherVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <Kingfisher/PublicHeader.h>
-
-
+func setRetainedAssociatedObject<T>(_ object: Any, _ key: UnsafeRawPointer, _ value: T) {
+    objc_setAssociatedObject(object, key, value, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+}

@@ -13,17 +13,17 @@ import RxSwift
 
 extension UIImageView {
     @discardableResult
-    public func setImage(_ imageData: ImageData?,
-                         placeholder: Placeholder? = ImageData.default,
-                         options: KingfisherOptionsInfo? = nil,
-                         progressBlock: DownloadProgressBlock? = nil,
-                         completionHandler: CompletionHandler? = nil) -> RetrieveImageTask? {
+    public func setImage(
+        _ imageData: ImageData?,
+        placeholder: Placeholder? = ImageData.default,
+        options: KingfisherOptionsInfo? = nil,
+        progressBlock: DownloadProgressBlock? = nil,
+        completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)? = nil) -> DownloadTask? {
         switch imageData {
         case .url(let url)?:
             return self.kf.setImage(with: url?.url, placeholder: placeholder, options: options, progressBlock: progressBlock, completionHandler: completionHandler)
         case .image(let image)?:
-            self.image = image
-            return nil
+            return self.kf.setImage(with: image?.kfDataProvider, placeholder: placeholder, options: options, progressBlock: progressBlock, completionHandler: completionHandler)
         case .none:
             return nil
         }
@@ -33,19 +33,35 @@ extension UIImageView {
 // MARK: -
 extension UIButton {
     @discardableResult
-    public func setImage(_ imageData: ImageData?,
-                         for state: UIControl.State,
-                         placeholder: UIImage? = ImageData.default,
-                         options: KingfisherOptionsInfo? = nil,
-                         progressBlock: DownloadProgressBlock? = nil,
-                         completionHandler: CompletionHandler? = nil) -> RetrieveImageTask? {
+    public func setImage(
+        _ imageData: ImageData?,
+        for state: UIControl.State,
+        placeholder: UIImage? = ImageData.default,
+        options: KingfisherOptionsInfo? = nil,
+        progressBlock: DownloadProgressBlock? = nil,
+        completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)? = nil) -> DownloadTask? {
         switch imageData {
         case .url(let url)?:
             return self.kf.setImage(with: url?.url, for: state, placeholder: placeholder, options: options, progressBlock: progressBlock, completionHandler: completionHandler)
         case .image(let image)?:
-            self.setImage(image, for: state)
-            return nil
+            return self.kf.setImage(with: image?.kfSource, for: state, placeholder: placeholder, options: options, progressBlock: progressBlock, completionHandler: completionHandler)
         case .none:
+            return nil
+        }
+    }
+}
+extension UIImage {
+    public var kfDataProvider: RawImageDataProvider? {
+        if let data = self.data() {
+            return RawImageDataProvider(data: data, cacheKey: "")
+        } else {
+            return nil
+        }
+    }
+    public var kfSource: Source? {
+        if let dataProvider = self.kfDataProvider {
+            return Source.provider(dataProvider)
+        } else {
             return nil
         }
     }
