@@ -29,12 +29,8 @@ public class UpdateLayout: CustomDebugStringConvertible {
     public let view: UIView
     public static let defaultTag: String = "_default"
     public var constraintDict: [String: [Constraint]] {
-        get {
-            return self.view.associatedObject(&updateLayoutArrKey, createIfNeed: [: ])
-        }
-        set {
-            self.view.setAssociatedObject(&updateLayoutArrKey, newValue)
-        }
+        get { return self.view.associatedObject(&updateLayoutArrKey, createIfNeed: [: ]) }
+        set { self.view.setAssociatedObject(&updateLayoutArrKey, newValue) }
     }
     public init(view: UIView) {
         self.view = view
