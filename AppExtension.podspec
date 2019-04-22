@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = "AppExtension"
-    s.version          = "0.0.1"
+    s.version          = "1.0.0"
     s.summary          = "App框架"
     s.description      = <<-DESC
     App框架
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
     s.homepage         = "https://github.com/Z-JaDe"
     s.license          = 'MIT'
     s.author           = { "ZJaDe" => "zjade@outlook.com" }
-    s.source           = { :git => "https://github.com/Z-JaDe/AppExtension.git"}
+    s.source           = { :git => "https://github.com/Z-JaDe/AppExtension.git" }
     
     s.requires_arc          = true
     
