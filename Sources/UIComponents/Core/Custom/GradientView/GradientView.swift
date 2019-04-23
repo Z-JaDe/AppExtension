@@ -8,7 +8,7 @@
 
 import UIKit
 
-@available(*, unavailable, message: "废弃 使用UIImage扩展")
+@available(*, deprecated, message: "废弃 使用UIImage扩展")
 public class GradientView: CustomView {
 
     public var gradientLayer: CAGradientLayer {

@@ -27,7 +27,7 @@ open class LineView: CustomView {
         set { self.lineLayer.lineColor = newValue }
     }
 
-    @available(*, unavailable, message: "使用lineColor")
+    @available(*, deprecated, message: "使用lineColor")
     open override var backgroundColor: UIColor? {
         get {return self.lineColor}
         set {self.lineColor = newValue}

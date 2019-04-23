@@ -49,3 +49,14 @@ extension ListDataUpdateProtocol where Section: Equatable & InitProtocol {
         self.reloadData(closure?(result) ?? result)
     }
 }
+// MARK: - Deprecated
+extension ListDataUpdateProtocol {
+    @available(*, deprecated, message: "请使用reloadData")
+    public func reloadDataWithInfo(_ closure: (ListDataType) -> ListUpdateInfoType?) {
+        self.reloadData(closure(self.dataArray))
+    }
+    @available(*, deprecated, message: "请使用reloadData")
+    public func reloadDataWithInfo(_ closure: (ListDataType) -> ListDataType?) {
+        self.reloadData(closure(self.dataArray))
+    }
+}
