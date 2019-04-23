@@ -36,8 +36,20 @@ public class Callbacker<Input, Output> {
         self.closures.removeAll()
     }
     public func call(_ input: Input) -> Output? {
-        let closure = self.closures[self.defaultKey]
-        return closure?(input)
+        var result: Output?
+        for (key, closure) in self.closures {
+            if key == self.defaultKey {
+                result = closure(input)
+            } else {
+                _ = closure(input)
+            }
+        }
+        return result
+    }
+}
+extension Callbacker where Input == Void {
+    public func call() -> Output? {
+        return self.call(())
     }
 }
 extension Callbacker where Output == Void {
