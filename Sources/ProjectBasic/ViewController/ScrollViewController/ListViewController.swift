@@ -53,9 +53,9 @@ open class AdapterListViewController<ScrollViewType, AdapterType>: ListViewContr
 
     open override func viewDidLoad() {
         super.viewDidLoad()
-        self.adapter.dataController.reloadDataCompletion = { [weak self] in
-            self?.rootView.emptyDataSet.reloadData()
-        }
+        self.adapter.dataController.reloadDataCompletion.register(on: self, key: "emptyDataSetReloadData", { (self) in
+            self.rootView.emptyDataSet.reloadData()
+        })
     }
 
     public lazy private(set) var adapter: AdapterType = self.loadAdapter()

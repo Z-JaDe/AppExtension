@@ -168,9 +168,9 @@ open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable
     }
     // MARK: - CellSelectProtocol
     /// ZJaDe: 点击cell回调闭包
-    public var didSelectItemClosure: CallBackNoParams?
+    public let didSelectItemClosure: CallBackerNoParams = CallBackerNoParams()
     /// ZJaDe: 点击cell信号监听
-    public let didSelectItemPubject: PublishSubject<Void> = PublishSubject<Void>()
+    private let didSelectItemPubject: PublishSubject<Void> = PublishSubject<Void>()
     /// ZJaDe: 点击cell信号监听，throttle
     public func throttleDidSelectItem(_ timeInterval: RxTimeInterval = 1) -> Observable<Void> {
         return self.didSelectItemPubject.throttle(timeInterval, scheduler: MainScheduler.asyncInstance)
@@ -216,7 +216,7 @@ extension ItemCell {
         return self.disposeBagWithTag("appear")
     }
     func sendDidSelectItemEvent() {
-        self.didSelectItemClosure?()
+        self.didSelectItemClosure.call()
         self.didSelectItemPubject.onNext(())
     }
 }

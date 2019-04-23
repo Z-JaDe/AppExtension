@@ -31,9 +31,8 @@ public extension MultipleSelectionProtocol {
         set {setAssociatedObject(&selectedItemArrayKey, newValue)}
     }
     /// ZJaDe: 选中的cell改变时
-    var selectedItemArrayChanged: CallBack<[SelectItemType]>? {
-        get {return associatedObject(&selectedItemArrayChangedKey)}
-        set {setAssociatedObject(&selectedItemArrayChangedKey, newValue)}
+    var selectedItemArrayChanged: CallBackerVoid<[SelectItemType]> {
+        return associatedObject(&selectedItemArrayChangedKey, createIfNeed: CallBackerVoid<[SelectItemType]>())
     }
     /// ZJaDe: 最大选中的item数量
     var maxSelectedCount: MaxSelectedCount {
@@ -86,7 +85,7 @@ extension MultipleSelectionProtocol where SelectItemType: SelectedStateDesignabl
         var item = item
         item.isSelected = isSelected
         logDebug("\(self.selectedItemArray)")
-        self.selectedItemArrayChanged?(self.selectedItemArray)
+        self.selectedItemArrayChanged.call(self.selectedItemArray)
     }
 }
 // MARK: - CanSelected

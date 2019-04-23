@@ -28,7 +28,7 @@ extension DataController {
             completion: { _ in
                 newData.performCompletion()
                 newData.infoRelease()
-                self.reloadDataCompletion?()
+                self.reloadDataCompletion.call()
         })
     }
 }
