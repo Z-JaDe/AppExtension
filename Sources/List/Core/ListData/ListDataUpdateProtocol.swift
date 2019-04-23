@@ -18,7 +18,6 @@ public protocol ListDataUpdateProtocol: class {
     var dataArray: ListDataType {get}
     func changeListDataInfo(_ newData: ListUpdateInfoType)
 }
-// TODO: Async/Await 出来后需优化
 extension ListDataUpdateProtocol {
     /// ZJaDe: 更新
     public func updateData() {
@@ -36,6 +35,7 @@ extension ListDataUpdateProtocol {
     }
 }
 extension ListDataUpdateProtocol where Section: Equatable & InitProtocol {
+    // TODO: Async/Await 出来后需优化
     /// ZJaDe: 重新刷新 返回 ListUpdateInfoType
     public func reloadData(section: Section? = nil, _ itemArray: [Item]?, isRefresh: Bool, _ closure: ((ListUpdateInfo<ListDataType>) -> (ListUpdateInfo<ListDataType>))? = nil) {
         let _itemArray = itemArray ?? []
