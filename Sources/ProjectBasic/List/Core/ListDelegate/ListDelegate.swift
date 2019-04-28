@@ -7,19 +7,8 @@
 //
 import Foundation
 
-public protocol _ListDelegate: class {
-    func didSelectItem(at indexPath: IndexPath)
-    func didDeselectItem(at indexPath: IndexPath)
-    func shouldHighlightItem(at indexPath: IndexPath) -> Bool
-}
-extension _ListDelegate {
-    public func didSelectItem(at indexPath: IndexPath) {
-
-    }
-    public func didDeselectItem(at indexPath: IndexPath) {
-
-    }
-    public func shouldHighlightItem(at indexPath: IndexPath) -> Bool {
-        return true
-    }
-}
+//public protocol _ListDelegate: class {
+//}
+//extension _ListDelegate {
+//
+//}

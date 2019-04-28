@@ -8,20 +8,28 @@
 
 import Foundation
 
-protocol CollectionAdapterDelegate: _ListDelegate {
+protocol CollectionAdapterDelegate: class {
+    func didSelectItem(at indexPath: IndexPath)
+    func didDeselectItem(at indexPath: IndexPath)
+    func shouldHighlightItem(at indexPath: IndexPath) -> Bool
+
     func willDisplay(cell: UICollectionViewCell, at indexPath: IndexPath)
     func didEndDisplaying(cell: UICollectionViewCell, at indexPath: IndexPath)
 }
 
-public protocol CollectionViewDelegate: _ListDelegate {
+public protocol CollectionViewDelegate: class {
+    func didSelectItem(at indexPath: IndexPath)
+    func didDeselectItem(at indexPath: IndexPath)
+    func shouldHighlightItem(at indexPath: IndexPath) -> Bool
+
     func didDisplay(item: CollectionItemCell)
     func didEndDisplaying(item: CollectionItemCell)
 }
 extension CollectionViewDelegate {
-    public func didDisplay(item: CollectionItemCell) {
+    public func didSelectItem(at indexPath: IndexPath) { }
+    public func didDeselectItem(at indexPath: IndexPath) { }
+    public func shouldHighlightItem(at indexPath: IndexPath) -> Bool { return true }
 
-    }
-    public func didEndDisplaying(item: CollectionItemCell) {
-
-    }
+    public func didDisplay(item: CollectionItemCell) { }
+    public func didEndDisplaying(item: CollectionItemCell) { }
 }

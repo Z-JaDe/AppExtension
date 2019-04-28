@@ -8,7 +8,11 @@
 
 import Foundation
 
-protocol TableAdapterDelegate: _ListDelegate {
+protocol TableAdapterDelegate: class {
+    func didSelectItem(at indexPath: IndexPath)
+    func didDeselectItem(at indexPath: IndexPath)
+    func shouldHighlightItem(at indexPath: IndexPath) -> Bool
+
     func willDisplay(cell: UITableViewCell, at indexPath: IndexPath)
     func didEndDisplaying(cell: UITableViewCell, at indexPath: IndexPath)
 
@@ -22,20 +26,23 @@ protocol TableAdapterDelegate: _ListDelegate {
     func viewForFooter(in section: Int) -> UIView?
 }
 
-public protocol TableViewDelegate: _ListDelegate {
+public protocol TableViewDelegate: class {
+    func didSelectItem(at indexPath: IndexPath)
+    func didDeselectItem(at indexPath: IndexPath)
+    func shouldHighlightItem(at indexPath: IndexPath) -> Bool
+
     func didDisplay(item: TableItemCell)
     func didEndDisplaying(item: TableItemCell)
+
     func editActionsForRowAt(at indexPath: IndexPath) -> [UITableViewRowAction]?
 }
 extension TableViewDelegate {
-    public func didDisplay(item: TableItemCell) {
+    public func didSelectItem(at indexPath: IndexPath) { }
+    public func didDeselectItem(at indexPath: IndexPath) { }
+    public func shouldHighlightItem(at indexPath: IndexPath) -> Bool { return true }
 
-    }
-    public func didEndDisplaying(item: TableItemCell) {
+    public func didDisplay(item: TableItemCell) { }
+    public func didEndDisplaying(item: TableItemCell) { }
 
-    }
-
-    public func editActionsForRowAt(at indexPath: IndexPath) -> [UITableViewRowAction]? {
-        return nil
-    }
+    public func editActionsForRowAt(at indexPath: IndexPath) -> [UITableViewRowAction]? { return nil }
 }

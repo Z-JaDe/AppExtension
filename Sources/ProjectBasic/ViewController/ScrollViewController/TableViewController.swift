@@ -41,7 +41,7 @@ open class AdapterTableViewController: AdapterListViewController<TableView, UITa
     private lazy var tableHeaderCell: CustomTableItemCell<UIView> = CustomTableItemCell()
     private lazy var tableFooterCell: CustomTableItemCell<UIView> = CustomTableItemCell()
     public var tableHeaderView: UIView? {
-        get {return self.tableHeaderCell.customView}
+        get { return self.tableHeaderCell.customView }
         set {
             self.tableHeaderCell.customView = newValue
             if self.adapter.dataArray.count > 0 {
@@ -50,7 +50,7 @@ open class AdapterTableViewController: AdapterListViewController<TableView, UITa
         }
     }
     public var tableFooterView: UIView? {
-        get {return self.tableFooterCell.customView}
+        get { return self.tableFooterCell.customView }
         set {
             self.tableFooterCell.customView = newValue
             if self.adapter.dataArray.count > 0 {
@@ -66,8 +66,7 @@ open class AdapterTableViewController: AdapterListViewController<TableView, UITa
 
     override func loadAdapter() -> UITableAdapter {
         let adapter = UITableAdapter()
-        adapter.insertSecionModelsClosure = {[weak self] (dataArray) in
-            guard let `self` = self else { return dataArray }
+        adapter.insertSecionModels.register(on: self, key: "defaultHeaderAndFooter") { (self, dataArray) in
             var dataArray = dataArray
             if self.tableHeaderView != nil {
                 dataArray.insert((self.tableHeaderSection, [.cell(self.tableHeaderCell)]), at: 0)

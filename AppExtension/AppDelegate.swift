@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let result = "6226095711104732".isValidBankCard
         logDebug(result)
         swiftTest()
+        lockTest()
         return true
     }
 

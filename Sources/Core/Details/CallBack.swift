@@ -11,16 +11,21 @@ import Foundation
 public typealias CallBackNoParams = () -> Void
 public typealias CallBack<Params> = (Params) -> Void
 
-public typealias CallBackerNoParams = Callbacker<(), ()>
-public typealias CallBackerVoid<Input> = Callbacker<Input, ()>
-public class Callbacker<Input, Output> {
+public typealias CallBackerNoParams = CallBacker<(), ()>
+public typealias CallBackerVoid<Input> = CallBacker<Input, ()>
+public typealias CallBackerReduce<Input> = CallBacker<Input, Input>
+public class CallBacker<Input, Output> {
     typealias ClosureType = (Input) -> Output?
     private var closures: [String: ClosureType] = [:]
+    private var keys: [String] = []
     private let defaultKey: String = "__default"
     public init() {}
 
     private func _register<T: AnyObject>(on target: T, key: String, closure: ((T, Input) -> Output)?) {
+        objc_sync_enter(self); defer {objc_sync_exit(self)}
+        self.keys.removeAll(where: {$0 == key})
         if let closure = closure {
+            self.keys.append(key)
             self.closures[key] = { [weak target] (input) in
                 guard let target = target else { return nil }
                 return closure(target, input)
@@ -29,41 +34,73 @@ public class Callbacker<Input, Output> {
             self.closures[key] = nil
         }
     }
+
+    public func cleanAll() {
+        objc_sync_enter(self); defer {objc_sync_exit(self)}
+        self.keys.removeAll()
+        self.closures.removeAll()
+    }
+}
+// MARK: -
+extension CallBacker {
     public func register<T: AnyObject>(on target: T, _ closure: ((T, Input) -> Output)?) {
         self._register(on: target, key: self.defaultKey, closure: closure)
     }
-    public func cleanAll() {
-        self.closures.removeAll()
+    public func register<T: AnyObject>(on target: T, key: String, _ closure: ((T, Input) -> Output)?) {
+        self._register(on: target, key: key, closure: closure)
     }
-    public func call(_ input: Input) -> Output? {
-        var result: Output?
-        for (key, closure) in self.closures {
-            if key == self.defaultKey {
-                result = closure(input)
-            } else {
-                _ = closure(input)
+    public func callAll(_ input: Input) -> [Output] {
+        objc_sync_enter(self); defer {objc_sync_exit(self)}
+        var result: [Output] = []
+        for (_, closure) in self.closures {
+            if let output = closure(input) {
+                result.append(output)
+            }
+        }
+        return result
+    }
+    public func callOne(_ input: Input) -> Output? {
+        objc_sync_enter(self); defer {objc_sync_exit(self)}
+        if let closure = self.closures[self.defaultKey] {
+            return closure(input)
+        } else {
+            return nil
+        }
+    }
+}
+// MARK: -
+extension CallBacker where Input == Output {
+    public func callReduce(_ input: Input) -> Output {
+        objc_sync_enter(self); defer {objc_sync_exit(self)}
+        var result: Output = input
+        for (_, closure) in self.closures {
+            if let output = closure(result) {
+                result = output
             }
         }
         return result
     }
 }
-extension Callbacker where Input == Void {
-    public func call() -> Output? {
-        return self.call(())
+// MARK: -
+extension CallBacker where Input == Void {
+    public func callOne() -> Output? {
+        return self.callOne(())
     }
 }
-extension Callbacker where Output == Void {
+// MARK: -
+extension CallBacker where Output == Void {
     public func register<T: AnyObject>(on target: T, key: String, _ closure: ((T, Input) -> Void)?) {
         self._register(on: target, key: key, closure: closure)
     }
     public func call(_ input: Input) {
+        objc_sync_enter(self); defer {objc_sync_exit(self)}
         for closure in self.closures.values {
             closure(input)
         }
     }
 }
-
-extension Callbacker where Input == Void, Output == Void {
+// MARK: -
+extension CallBacker where Input == Void, Output == Void {
     public func register<T: AnyObject>(on target: T, _ closure: ((T) -> Void)?) {
         self.register(on: target, key: self.defaultKey, closure)
     }
