@@ -11,7 +11,7 @@ import Foundation
 public protocol Synchronizable {
 }
 extension Synchronizable {
-    public func synchronized<T>( _ action: () -> T) -> T {
+    public func synchronized<T>(_ action: () -> T) -> T {
         objc_sync_enter(self)
         let result = action()
         objc_sync_exit(self)

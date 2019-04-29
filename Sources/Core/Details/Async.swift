@@ -71,7 +71,7 @@ Chainable dispatch blocks with GCD:
 
 All moderns queue classes: 
 
-    Async.main {}
+    DispatchQueue.main.async {}
     Async.userInteractive {}
     Async.userInitiated {}
     Async.utility {}
@@ -85,7 +85,7 @@ Custom queues:
 Dispatch block after delay: 
 
     let seconds = 0.5
-    Async.main(after: seconds) {}
+    DispatchQueue.main.async(after: seconds) {}
 
 Cancel blocks not yet dispatched
 
@@ -95,7 +95,7 @@ Cancel blocks not yet dispatched
     let block2 = block1.background {
         // Some other work
     }
-    Async.main {
+    DispatchQueue.main.async {
         // Cancel async to allow block1 to begin
         block1.cancel() // First block is NOT cancelled
         block2.cancel() // Second block IS cancelled
@@ -383,7 +383,7 @@ public struct AsyncBlock<In, Out> {
         let block2 = block1.background {
             // Some other work
         }
-        Async.main {
+        DispatchQueue.main.async {
             // Cancel async to allow block1 to begin
             block1.cancel() // First block is NOT cancelled
             block2.cancel() // Second block IS cancelled

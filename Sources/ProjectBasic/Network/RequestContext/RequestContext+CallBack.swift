@@ -38,7 +38,7 @@ extension Observable where Element: RequestContextCompatible & ResultModelHandle
     public func callback(_ closure: @escaping (Element.ValueType?) -> Void, _ showHUD: ShowNetworkHUD<Element.ResultCodeType>) -> Disposable {
         return self.logDebug("请求回调").subscribe(onNext: { (result) in
             closure(result.value)
-            Async.main(after: 0.1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 result.handle(showHUD)
             }
         }, onError: { (error) in

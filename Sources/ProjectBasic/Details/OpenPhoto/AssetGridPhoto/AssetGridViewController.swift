@@ -111,16 +111,17 @@ extension AssetGridViewController {
 extension AssetGridViewController {
     public func requestAllImage(assets: [PHAsset], callback: @escaping ([UIImage]) -> Void) {
         var dataArr: [UIImage] = []
-        var count: Int = assets.count
+        let group: DispatchGroup = DispatchGroup()
         for asset in assets {
+            group.enter()
             asset.requestImage { (image) in
                 if let image = image {
                     dataArr.append(image)
                 }
-                count -= 1
-                if count <= 0 {
-                    callback(dataArr)
-                }
+                group.leave()
+            }
+            group.notify(queue: DispatchQueue.main) {
+                callback(dataArr)
             }
         }
     }

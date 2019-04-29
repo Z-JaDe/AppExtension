@@ -85,7 +85,7 @@ extension TabBar {
 //        //            return
 //        //        }
 //        //        self.canTap = false
-//        //        Async.main(after: 0.2) {
+//        //        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
 //        //            self.canTap = true
 //        //        }
 //        guard let items = self.items as? [TabBarItem] else {

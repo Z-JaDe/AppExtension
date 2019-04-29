@@ -26,7 +26,7 @@ extension ThenProtocol where Self: AnyObject {
     }
     @discardableResult
     public func thenMain(_ closure: @escaping (Self) -> Void) -> Self {
-        Async.main {[weak self] in
+        DispatchQueue.main.async {[weak self] in
             guard let `self` = self else { return }
             closure(self)
         }

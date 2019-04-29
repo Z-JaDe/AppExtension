@@ -83,13 +83,12 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
         cleanReference()
     }
 }
-extension UITableAdapter {    
+extension UITableAdapter {
     public func updateItemsIfNeed() {
         let modelTable = NSHashTable<AnyObject>.weakObjects()
         self.dataArray.lazy
             .flatMap({$0.items.map({$0.value})})
             .forEach(modelTable.add)
-        
         self.timer?.invalidate()
         self.timer = Timer.scheduleTimer(0.01) {[weak self] (timer) in
             guard let `self` = self else { return }

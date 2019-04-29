@@ -28,12 +28,8 @@ public struct Logger {
         return result
     }()
     fileprivate func log(_ level: LogLevel, _ message: String) {
-        if Thread.isMainThread {
-            privateLog(level, message)
-        } else {
-            DispatchQueue.main.async {
-                self.privateLog(level, message)
-            }
+        performInMainAsync {
+            self.privateLog(level, message)
         }
     }
     private func privateLog(_ level: LogLevel, _ message: String) {

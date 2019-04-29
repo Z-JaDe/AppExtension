@@ -49,7 +49,7 @@ open class BaseWebViewController<ViewType>: ViewController<ViewType> where ViewT
     // MARK: -
     /// ZJaDe: autoUpdateHeightWithContentSize
     open func autoUpdateHeightWithContentSize() {
-        Async.main {
+        DispatchQueue.main.async {
             self.rootView.scrollView.isScrollEnabled = false
             self.rootView.rxDidFinishLoad.subscribeOnNext {[weak self] () in
                 self?.calculateUpdateWebViewHeight()

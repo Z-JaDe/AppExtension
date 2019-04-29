@@ -38,9 +38,9 @@ class CycleViewViewControllerTest: UIViewController {
         let segment = CycleView<ItemView, String>()
         segment.viewUpdater = { (itemView, data, _) in
             itemView.label.text = "\(data)"
-            Async.main(after: 1, {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 //            label.superview?.superview?.setNeedsLayout()
-            })
+            }
         }
         return segment
     }()

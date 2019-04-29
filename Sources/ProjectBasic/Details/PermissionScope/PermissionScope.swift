@@ -8,14 +8,14 @@
 
 import Foundation
 
-public class PermissionScope: TaskProtocol {
-    public var taskArr: [TaskItemType] = []
+public class PermissionScope: TaskQueueProtocol {
+    public let taskQueue: TaskQueue = TaskQueue()
 
     public init() {}
     public typealias PermissionScopeCallback = (Bool) -> Void
     private var cancelTaskClosure: (() -> Void)?
     public func request(_ permission: Permission, _ callback: @escaping PermissionScopeCallback) {
-        self.addAsyncTask({[weak self] (closure) in
+        self.taskQueue.addAsyncTask({[weak self] (closure) in
             guard let `self` = self else { return }
             self.cancelTaskClosure = closure
             switch permission {

@@ -13,6 +13,7 @@ func lockTest() {
         DispatchQueue.main.sync {
             print("11111")
         }
+        print("22222")
     }
     
     let lock = ConditionLock()

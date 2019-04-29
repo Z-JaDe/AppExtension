@@ -17,6 +17,8 @@ func swiftTest() {
     let hash2 = ObjectIdentifier(a).debugDescription
     print(hash1)
     print(hash2)
+    let value = ~0
+    print(value)
     greetings(person: Person()) // prints 'Hello'
     greetings(person: MisunderstoodPerson()) // prints 'Hello'
 

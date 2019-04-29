@@ -8,7 +8,7 @@
 
 import UIKit
 
-public typealias TaskVC = MessageHUDProtocol & TaskProtocol
+public typealias TaskVC = MessageHUDProtocol & TaskQueueProtocol
 
 public enum ShowNetworkHUD<ResultCodeType> where ResultCodeType: RawRepresentable & Equatable {
     case `default`
@@ -30,7 +30,7 @@ public extension ShowNetworkHUD {
         case .show:
             HUD.showSuccess(text)
         case .showIn(let viewCon):
-            viewCon.addTask({ [weak viewCon] in
+            viewCon.taskQueue.addTask({ [weak viewCon] in
                 viewCon?.showSuccess(text)
             })
         }
@@ -60,7 +60,7 @@ public extension ShowNetworkHUD {
             HUD.showError(text)
             #endif
         case .showIn(let viewCon):
-            viewCon.addTask({ [weak viewCon] in
+            viewCon.taskQueue.addTask({ [weak viewCon] in
                 viewCon?.showError(text)
             })
         }

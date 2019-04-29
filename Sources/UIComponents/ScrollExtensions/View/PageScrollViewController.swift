@@ -65,7 +65,7 @@ open class PageScrollViewController: UIViewController, CyclePageFormProtocol, UI
     /// ZJaDe: 当currentIndex改变时
     internal func whenCurrentIndexChanged(_ from: Int, _ to: Int) {
         self.scroll(to: to)
-        Async.main(after: 0.1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.checkCellsLifeCycle(isNeedReset: true)
         }
     }

@@ -28,7 +28,7 @@ open class BlurModalViewController: ModalViewController {
 
     var keyboardValues: (offset: CGFloat, duration: TimeInterval) = (0, 0)
     func checkUpdateContentViewBottom() {
-        Async.main {
+        DispatchQueue.main.async {
             if self.state == .已经显示 && self.needObserverKeyboard {
                 self.updateContentViewBottom(self.keyboardValues.duration)
             }

@@ -119,13 +119,11 @@ extension AsyncLayer {
             self.didDisplay(isFinished)
         }
     }
-    private func performInMain(_ closure: @escaping () -> Void) {
+    private func performInMain(_ action: @escaping () -> Void) {
         if Thread.isMainThread {
-            closure()
+            return action()
         } else {
-            DispatchQueue.main.async {
-                closure()
-            }
+            return DispatchQueue.main.async(execute: action)
         }
     }
     private func didDisplay(_ isFinished: Bool) {

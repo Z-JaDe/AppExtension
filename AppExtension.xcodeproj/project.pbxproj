@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		06392983545B1EF1F00E3DDF /* Pods_NavigationFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AACB36531272B57B4EDD866 /* Pods_NavigationFlow.framework */; };
+		1805B3CE2276A82900F0574D /* GCDTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805B3CD2276A82900F0574D /* GCDTest.swift */; };
+		1805B3D422772EF100F0574D /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805B3D222772E9C00F0574D /* DispatchQueue.swift */; };
 		18B56D462272CEC000AADA00 /* LockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B56D452272CEC000AADA00 /* LockTest.swift */; };
 		1CBE8225C379D54EBD24ECD9 /* Pods_AnimatedTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8D0708651443C60CC1A051 /* Pods_AnimatedTransition.framework */; };
 		21FBC951A37DD62FCD3E2319 /* Pods_AppExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB786A69356822AA07D7A025 /* Pods_AppExtension.framework */; };
@@ -170,7 +172,7 @@
 		C9283B1421BE356600361B87 /* BufferPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F7EC210069AC00B8DF84 /* BufferPool.swift */; };
 		C9283B1521BE357400361B87 /* Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F80F210069AC00B8DF84 /* Swizzle.swift */; };
 		C9283B1621BE360100361B87 /* ClassNameDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F86121006DC500B8DF84 /* ClassNameDesignable.swift */; };
-		C9283B1721BE362600361B87 /* TaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F85C21006DC500B8DF84 /* TaskProtocol.swift */; };
+		C9283B1721BE362600361B87 /* TaskQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F85C21006DC500B8DF84 /* TaskQueue.swift */; };
 		C9283B1A21BE37B500361B87 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B1821BE37B000361B87 /* Transaction.swift */; };
 		C9283B2221BE712A00361B87 /* AsyncLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9283B2121BE712A00361B87 /* AsyncLayer.swift */; };
 		C9283B3A21BE86BF00361B87 /* UIComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = C9283B3821BE86BF00361B87 /* UIComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -768,6 +770,8 @@
 		140162C8D07EDAF4143B5FF0 /* Pods-BaseCore-CommonPods-UIComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-CommonPods-UIComponents.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-CommonPods-UIComponents/Pods-BaseCore-CommonPods-UIComponents.debug.xcconfig"; sourceTree = "<group>"; };
 		15B47ACD1F0F5AAEF2BA7AE8 /* Pods-BaseCore-CommonPods-AnimatedTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-CommonPods-AnimatedTransition.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-CommonPods-AnimatedTransition/Pods-BaseCore-CommonPods-AnimatedTransition.debug.xcconfig"; sourceTree = "<group>"; };
 		17065616726B4A208465F7EF /* Pods_BaseCore_CommonPods_RxExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseCore_CommonPods_RxExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1805B3CD2276A82900F0574D /* GCDTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDTest.swift; sourceTree = "<group>"; };
+		1805B3D222772E9C00F0574D /* DispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueue.swift; sourceTree = "<group>"; };
 		18B56D452272CEC000AADA00 /* LockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockTest.swift; sourceTree = "<group>"; };
 		1B033DAE5C3915346DA12475 /* Pods-CommonPods-List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommonPods-List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommonPods-List/Pods-CommonPods-List.debug.xcconfig"; sourceTree = "<group>"; };
 		1C45FE7A5C23783E6ED24218 /* Pods-BaseCore-CommonPods-EmptyDataSet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-CommonPods-EmptyDataSet.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-CommonPods-EmptyDataSet/Pods-BaseCore-CommonPods-EmptyDataSet.release.xcconfig"; sourceTree = "<group>"; };
@@ -1086,7 +1090,7 @@
 		C932F85721006DC500B8DF84 /* CheckAndCatchParamsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckAndCatchParamsProtocol.swift; sourceTree = "<group>"; };
 		C932F85A21006DC500B8DF84 /* DefaultHeightProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultHeightProtocol.swift; sourceTree = "<group>"; };
 		C932F85B21006DC500B8DF84 /* ConfigModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigModelProtocol.swift; sourceTree = "<group>"; };
-		C932F85C21006DC500B8DF84 /* TaskProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskProtocol.swift; sourceTree = "<group>"; };
+		C932F85C21006DC500B8DF84 /* TaskQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskQueue.swift; sourceTree = "<group>"; };
 		C932F85D21006DC500B8DF84 /* RootViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewState.swift; sourceTree = "<group>"; };
 		C932F85F21006DC500B8DF84 /* TitleItemDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleItemDesignable.swift; sourceTree = "<group>"; };
 		C932F86021006DC500B8DF84 /* TextDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDesignable.swift; sourceTree = "<group>"; };
@@ -2165,7 +2169,7 @@
 				C9140BEE21B67B7A00CBA642 /* InitProtocol.swift */,
 				C932F86B21006DC500B8DF84 /* ThenProtocol.swift */,
 				C9669DBF21C7CBF1007B6668 /* CallBack.swift */,
-				C932F85C21006DC500B8DF84 /* TaskProtocol.swift */,
+				C932F85C21006DC500B8DF84 /* TaskQueue.swift */,
 				C932F86121006DC500B8DF84 /* ClassNameDesignable.swift */,
 				C932F86A21006DC500B8DF84 /* AssociatedObjectProtocol.swift */,
 			);
@@ -2855,6 +2859,7 @@
 				C962C19320CE17990061FC20 /* AppDelegate.swift */,
 				C916FF1521D4AB4F00DFC8C2 /* SwiftTest.swift */,
 				18B56D452272CEC000AADA00 /* LockTest.swift */,
+				1805B3CD2276A82900F0574D /* GCDTest.swift */,
 				C962C19520CE17990061FC20 /* StackViewControllerTest.swift */,
 				C90D85EE20E2282600A4D0FD /* SegmentScrollViewViewControllerTest.swift */,
 				C9274ACA20F7205300884B54 /* FontViewControllerTest.swift */,
@@ -2970,6 +2975,7 @@
 			isa = PBXGroup;
 			children = (
 				C9669DA721C77527007B6668 /* Synchronizable.swift */,
+				1805B3D222772E9C00F0574D /* DispatchQueue.swift */,
 			);
 			path = Synchronizable;
 			sourceTree = "<group>";
@@ -4661,6 +4667,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1805B3CE2276A82900F0574D /* GCDTest.swift in Sources */,
 				18B56D462272CEC000AADA00 /* LockTest.swift in Sources */,
 				C916FF1621D4AB4F00DFC8C2 /* SwiftTest.swift in Sources */,
 				C962C19620CE17990061FC20 /* StackViewControllerTest.swift in Sources */,
@@ -4770,7 +4777,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9283B1721BE362600361B87 /* TaskProtocol.swift in Sources */,
+				C9283B1721BE362600361B87 /* TaskQueue.swift in Sources */,
 				C9283B1521BE357400361B87 /* Swizzle.swift in Sources */,
 				C9669DC121C7CBF9007B6668 /* CallBack.swift in Sources */,
 				C932F84F21006D9D00B8DF84 /* Log.swift in Sources */,
@@ -4781,6 +4788,7 @@
 				C9D412F221DF4C57004368D4 /* EnabledStateDesignable.swift in Sources */,
 				C9283B0C21BE34E300361B87 /* NotificationToken.swift in Sources */,
 				C9D412F421DF4C57004368D4 /* HighlightedStateDesignable.swift in Sources */,
+				1805B3D422772EF100F0574D /* DispatchQueue.swift in Sources */,
 				C9D412F121DF4C57004368D4 /* HiddenStateDesignable.swift in Sources */,
 				C9283B1221BE354A00361B87 /* Timer.swift in Sources */,
 				C9283B1321BE354A00361B87 /* SwiftTimer.swift in Sources */,

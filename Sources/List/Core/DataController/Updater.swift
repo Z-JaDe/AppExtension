@@ -149,7 +149,7 @@ extension Updater {
         return updating.isInHierarchy
     }
     public func performBatch(animated: Bool, updates: (() -> Void)?, completion: @escaping (Bool) -> Void) {
-        Async.main {
+        DispatchQueue.main.async {
             self.state = .updating
             self.updating.performBatch(animated: animated, updates: updates, completion: { (result) in
                 completion(result)

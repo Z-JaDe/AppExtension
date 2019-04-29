@@ -62,9 +62,9 @@ extension Reactive where Base: UIControl {
     public func throttleTouchUpInside(_ timeInterval: TimeInterval = 1) -> Observable<Void> {
         return self.touchUpInside().do(onNext: {[weak base] () in
             base?.isEnabled = false
-            Async.main(after: timeInterval, {
+            DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval) {
                 base?.isEnabled = true
-            })
+            }
         })
     }
 }

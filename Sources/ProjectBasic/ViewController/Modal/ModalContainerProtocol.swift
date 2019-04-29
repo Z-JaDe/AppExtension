@@ -11,7 +11,7 @@ import ModalManager
 
 private var modalClosureKey: UInt8 = 0
 private var modalIdDictKey: UInt8 = 0
-extension ModalContainerProtocol where Self: UIViewController&TaskProtocol {
+extension ModalContainerProtocol where Self: UIViewController & TaskQueueProtocol {
     fileprivate var modalTaskDict: [Int: AsyncTask] {
         get {return associatedObject(&modalIdDictKey, createIfNeed: [: ])}
         set {setAssociatedObject(&modalIdDictKey, newValue)}
@@ -23,7 +23,7 @@ extension ModalContainerProtocol where Self: UIViewController&TaskProtocol {
         guard self.contains(viewCon) == false else {
             return
         }
-        let task = self.addAsyncTask({[weak self] (closure) in
+        let task = self.taskQueue.addAsyncTask({[weak self] (closure) in
             guard let `self` = self else { return }
             self.setAssociatedObject(&modalClosureKey, closure)
             self._show(viewCon, animated: animated)
@@ -35,10 +35,10 @@ extension ModalContainerProtocol where Self: UIViewController&TaskProtocol {
             return
         }
         self.modalTaskDict[viewCon.hashValue] = nil
-        _ = self.cancelTask(task)
+        _ = self.taskQueue.cancelTask(task)
 
         _hide(viewCon, animated: animated, callback)
-        Async.main(after: 0.2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             if let closure: AnimateCompletionType = self.associatedObject(&modalClosureKey) {
                 closure()
                 let _value: AnimateCompletionType? = nil

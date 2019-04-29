@@ -120,7 +120,7 @@ extension LogicScanViewController {
     public func checkCanScan(_ closure: @escaping (Bool) -> Void) {
         if self.deviceAvailable {
             pscope.requestCamera { (canUse) in
-                Async.main {
+                DispatchQueue.main.async {
                     closure(canUse)
                 }
             }

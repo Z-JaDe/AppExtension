@@ -32,35 +32,27 @@ public protocol AssociatedObjectProtocol: class, Synchronizable {
 public extension AssociatedObjectProtocol {
     // MARK: - get
     func associatedObject<V>(_ key: UnsafeRawPointer) -> V? {
-        return synchronized {
-            _associatedObject(key)
-        }
+        return _associatedObject(key)
     }
     func associatedObject<V>(_ key: UnsafeRawPointer, createIfNeed closure: @autoclosure () -> V) -> V {
-        return synchronized {
-            if let value: V = associatedObject(key) {
-                return value
-            } else {
-                let value: V = closure()
-                setAssociatedObject(key, value)
-                return value
-            }
+        if let value: V = associatedObject(key) {
+            return value
+        } else {
+            let value: V = closure()
+            setAssociatedObject(key, value)
+            return value
         }
     }
     // MARK: - set
     func setAssociatedObject<V>(_ key: UnsafeRawPointer, _ newValue: V?) {
-        synchronized {
-            if V.self is AnyClass {
-                _setAssociatedObject(key, newValue)
-            } else {
-                _setAssociatedObject(key, WarppedObject(newValue))
-            }
+        if V.self is AnyClass {
+            _setAssociatedObject(key, newValue)
+        } else {
+            _setAssociatedObject(key, WarppedObject(newValue))
         }
     }
     func setAssociatedWeakObject<V: AnyObject>(_ key: UnsafeRawPointer, _ newValue: V?) {
-        synchronized {
-            _setAssociatedObject(key, WeakWarppedObject(newValue))
-        }
+        _setAssociatedObject(key, WeakWarppedObject(newValue))
     }
 }
 private extension AssociatedObjectProtocol {

@@ -8,7 +8,8 @@
 
 import UIKit
 
-open class ItemViewController: ViewController<UIView>, TaskProtocol {
+open class ItemViewController: ViewController<UIView>, TaskQueueProtocol {
+    public let taskQueue: TaskQueue = TaskQueue()
     open override func configInit() {
         super.configInit()
         if #available(iOS 11.0, *) {
@@ -25,15 +26,15 @@ open class ItemViewController: ViewController<UIView>, TaskProtocol {
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         /// ZJaDe: 界面出现后恢复任务
-        self.taskResume()
+        self.taskQueue.taskResume()
     }
     /// ZJaDe: NavItemViewController 才需要暂停
     open override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         /// ZJaDe: 界面消失后暂停任务
-        self.taskSuspend()
+        self.taskQueue.taskSuspend()
     }
     deinit {
-        self.cleanAllTasks()
+        self.taskQueue.cleanAllTasks()
     }
 }

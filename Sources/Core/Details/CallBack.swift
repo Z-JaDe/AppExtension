@@ -19,26 +19,29 @@ public class CallBacker<Input, Output> {
     private var closures: [String: ClosureType] = [:]
     private var keys: [String] = []
     private let defaultKey: String = "__default"
+    private let queue: DispatchQueue = DispatchQueue(label: "com.zjade.callBacker")
     public init() {}
 
     private func _register<T: AnyObject>(on target: T, key: String, closure: ((T, Input) -> Output)?) {
-        objc_sync_enter(self); defer {objc_sync_exit(self)}
-        self.keys.removeAll(where: {$0 == key})
-        if let closure = closure {
-            self.keys.append(key)
-            self.closures[key] = { [weak target] (input) in
-                guard let target = target else { return nil }
-                return closure(target, input)
+        queue.async {
+            self.keys.removeAll(where: {$0 == key})
+            if let closure = closure {
+                self.keys.append(key)
+                self.closures[key] = { [weak target] (input) in
+                    guard let target = target else { return nil }
+                    return closure(target, input)
+                }
+            } else {
+                self.closures[key] = nil
             }
-        } else {
-            self.closures[key] = nil
         }
     }
 
     public func cleanAll() {
-        objc_sync_enter(self); defer {objc_sync_exit(self)}
-        self.keys.removeAll()
-        self.closures.removeAll()
+        queue.async {
+            self.keys.removeAll()
+            self.closures.removeAll()
+        }
     }
 }
 // MARK: -
@@ -50,35 +53,38 @@ extension CallBacker {
         self._register(on: target, key: key, closure: closure)
     }
     public func callAll(_ input: Input) -> [Output] {
-        objc_sync_enter(self); defer {objc_sync_exit(self)}
-        var result: [Output] = []
-        for (_, closure) in self.closures {
-            if let output = closure(input) {
-                result.append(output)
+        return queue.syncInMain {
+            var result: [Output] = []
+            for key in self.keys {
+                if let output = self.closures[key]?(input) {
+                    result.append(output)
+                }
             }
+            return result
         }
-        return result
     }
     public func callOne(_ input: Input) -> Output? {
-        objc_sync_enter(self); defer {objc_sync_exit(self)}
-        if let closure = self.closures[self.defaultKey] {
-            return closure(input)
-        } else {
-            return nil
+        return queue.syncInMain {
+            if let closure = self.closures[self.defaultKey] {
+                return closure(input)
+            } else {
+                return nil
+            }
         }
     }
 }
 // MARK: -
 extension CallBacker where Input == Output {
     public func callReduce(_ input: Input) -> Output {
-        objc_sync_enter(self); defer {objc_sync_exit(self)}
-        var result: Output = input
-        for (_, closure) in self.closures {
-            if let output = closure(result) {
-                result = output
+        return queue.syncInMain {
+            var result: Output = input
+            for key in self.keys {
+                if let output = self.closures[key]?(result) {
+                    result = output
+                }
             }
+            return result
         }
-        return result
     }
 }
 // MARK: -
@@ -93,9 +99,10 @@ extension CallBacker where Output == Void {
         self._register(on: target, key: key, closure: closure)
     }
     public func call(_ input: Input) {
-        objc_sync_enter(self); defer {objc_sync_exit(self)}
-        for closure in self.closures.values {
-            closure(input)
+        queue.async {
+            for key in self.keys {
+                self.closures[key]?(input)
+            }
         }
     }
 }
