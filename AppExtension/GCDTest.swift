@@ -10,8 +10,10 @@ import Foundation
 import Core
 func gcdTest() {
     let queue = DispatchQueue(label: "qqq", target: DispatchQueue.main)
-    queue.syncIfNeed {
-        
+    queue.async {
+        DispatchQueue.main.syncIfNeed {
+            
+        }
     }
     DispatchQueue.global().async {
         print("1\(Thread.current)")
