@@ -15,17 +15,23 @@ public func performInMainAsync(_ action: @escaping () -> Void) {
         return DispatchQueue.main.async(execute: action)
     }
 }
-
 private let labelSpec = DispatchSpecificKey<Int>()
 extension DispatchQueue {
+    public var isInCurrentQueue: Bool {
+        let label: Int = Int.random(min: 0, max: 1000)
+        setSpecific(key: labelSpec, value: label)
+        if DispatchQueue.getSpecific(key: labelSpec) == label {
+            setSpecific(key: labelSpec, value: nil)
+            return true
+        } else {
+            return false
+        }
+    }
     public func syncIfNeed<T>(_ action: () throws -> T) rethrows -> T {
         if Thread.isMainThread && self == DispatchQueue.main {
             return try action()
         }
-        let label = Int.random(min: 0, max: 1000)
-        setSpecific(key: labelSpec, value: label)
-        if let label = DispatchQueue.getSpecific(key: labelSpec), label == label {
-            setSpecific(key: labelSpec, value: nil)
+        if self.isInCurrentQueue {
             return try action()
         } else {
             return try sync(execute: action)

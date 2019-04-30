@@ -9,18 +9,17 @@
 import Foundation
 import Core
 func gcdTest() {
-//    let queue = DispatchQueue(label: "qqq", target: DispatchQueue.main)
-//    let spec = DispatchSpecificKey<String>()
-//    queue.setSpecific(key: spec, value: queue.label)
-//    DispatchQueue.global().async {
-//        print("1\(Thread.current)")
-//        queue.async {
-//            print("2\(Thread.current)")
-//            let label = DispatchQueue.getSpecific(key: spec)
-//            print(label ?? "")
-//        }
-//        print("3\(Thread.current)")
-//    }
+    let queue = DispatchQueue(label: "qqq", target: DispatchQueue.main)
+    queue.syncIfNeed {
+        
+    }
+    DispatchQueue.global().async {
+        print("1\(Thread.current)")
+        queue.async {
+            print("2\(Thread.current)")
+        }
+        print("3\(Thread.current)")
+    }
     // MARK: - taskQueue
 //    let taskQueue = TaskQueue()
 //    taskQueue.addAsyncTask { (done) in
