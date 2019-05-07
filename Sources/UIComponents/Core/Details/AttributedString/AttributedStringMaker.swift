@@ -10,12 +10,17 @@ import Foundation
 
 public struct AttributedStringMaker {
     public let text: String
-    fileprivate let attrStr: NSMutableAttributedString
+    private let attrStr: NSMutableAttributedString
     public init(_ text: String) {
         self.text = text
         self.attrStr = NSMutableAttributedString(string: text)
     }
-    public init(_ attrStr: NSAttributedString) {
+    public init(_ attrStr: NSAttributedString?) {
+        guard let attrStr = attrStr else {
+            self.text = ""
+            self.attrStr = NSMutableAttributedString()
+            return
+        }
         self.text = attrStr.string
         if let attrStr = attrStr as? NSMutableAttributedString {
             self.attrStr = attrStr
@@ -24,15 +29,12 @@ public struct AttributedStringMaker {
             self.attrStr = attrStr.mutableCopy() as! NSMutableAttributedString
         }
     }
-    init(_ attrStr: NSMutableAttributedString) {
-        self.text = attrStr.string
-        self.attrStr = attrStr
-    }
+
     private var defaultRange: NSRange {
         return NSRange(location: 0, length: self.attrStr.length)
     }
-    public func attr() -> NSMutableAttributedString {
-        return self.attrStr
+    public func attr() -> NSAttributedString {
+        return self.attrStr.copy() as! NSAttributedString
     }
     // MARK: -
     public func color(_ color: UIColor?, range: NSRange? = nil) -> AttributedStringMaker {
@@ -73,7 +75,7 @@ public struct AttributedStringMaker {
         self.setAttribute(.kern, value: value, range: range)
         return self
     }
-    // MARK: - paragraphStyle
+    // MARK: paragraphStyle
     @discardableResult
     public func paragraphStyle(_ style: NSParagraphStyle?, range: NSRange? = nil) -> AttributedStringMaker {
         self.setAttribute(.paragraphStyle, value: style, range: range)
@@ -119,16 +121,41 @@ extension AttributedStringMaker {
 }
 extension AttributedStringMaker {
     public static func += (left: inout AttributedStringMaker, right: AttributedStringMaker) {
-        left.attrStr += right
+        let attrStr: NSMutableAttributedString = left.attrStr
+        attrStr.append(right.attrStr)
+        left = AttributedStringMaker(attrStr)
     }
     public static func += (left: inout AttributedStringMaker, right: NSAttributedString) {
-        left.attrStr += right
+        let attrStr: NSMutableAttributedString = left.attrStr
+        attrStr.append(right)
+        left = AttributedStringMaker(attrStr)
     }
 }
-/// ZJaDe: 两个属性字符串拼接
-public func += (left: NSMutableAttributedString, right: AttributedStringMaker) {
-    left.append(right.attrStr)
+extension NSMutableAttributedString {
+    /// ZJaDe: 两个属性字符串拼接
+    public static func += (left: NSMutableAttributedString, right: AttributedStringMaker) {
+        left.append(right.attr())
+    }
+    public static func += (left: NSMutableAttributedString, right: NSAttributedString) {
+        left.append(right)
+    }
 }
-public func += (left: NSMutableAttributedString, right: NSAttributedString) {
-    left.append(right)
+// MARK: - UI
+public protocol AttributedStringMakerProtocol: class {
+    var attributedText: NSAttributedString? { get set }
+}
+extension AttributedStringMakerProtocol {
+    public var attributedTextMaker: AttributedStringMaker? {
+        get { return AttributedStringMaker(self.attributedText) }
+        set { self.attributedText = newValue?.attr() }
+    }
+}
+extension UILabel: AttributedStringMakerProtocol {}
+extension UITextField: AttributedStringMakerProtocol {}
+
+extension UITextView {
+    public var attributedTextMaker: AttributedStringMaker? {
+        get { return AttributedStringMaker(self.attributedText) }
+        set { self.attributedText = newValue?.attr() }
+    }
 }

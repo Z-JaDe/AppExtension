@@ -11,6 +11,7 @@ import Core
 import RxSwift
 import RxExtensions
 
+var observation: NSKeyValueObservation?
 func swiftTest() {
     let a = A()
     let hash1 = ObjectIdentifier(a).debugDescription
