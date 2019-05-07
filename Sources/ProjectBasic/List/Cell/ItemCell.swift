@@ -125,7 +125,7 @@ open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable
     }
     /// ZJaDe: 负责一些逻辑处理，但是不负责界面布局
     open func didDisappear() {
-        self.resetDisposeBagWithTag("appear")
+        self.resetAppearDisposeBag()
         self.cellState.onNext(.didDisappear)
     }
 
@@ -213,7 +213,10 @@ extension ItemCell {
         return isEnabled ?? true
     }
     public var appearDisposeBag: DisposeBag {
-        return self.disposeBagWithTag("appear")
+        return self.disposeBagWithTag("_appear")
+    }
+    func resetAppearDisposeBag() {
+        self.resetDisposeBagWithTag("_appear")
     }
     func sendDidSelectItemEvent() {
         self.didSelectItemClosure.call()

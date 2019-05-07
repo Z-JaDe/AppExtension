@@ -8,7 +8,6 @@
 
 import Foundation
 import RxSwift
-import RxSwiftExt
 
 public protocol UpdateNavItemProtocol: class {
     /// ZJaDe: 请求
@@ -28,13 +27,9 @@ public extension UpdateNavItemProtocol {
 }
 public extension UpdateNavItemProtocol where Self: UIViewController {
     func setNeedUpdateNavItem<P: ObservableType>(_ pauser: P) where P.E == Bool {
-        let tag = "isNeedUpdateNavItem"
-        let delay = disposeBagWithTag(tag) == nil ? 0 : 0.2
-        self.resetDisposeBagWithTag(tag)
-        Observable<()>.setNeedUpdate(pauser, delay)
-            .subscribeOnNext { [weak self] in
-                guard let `self` = self else { return }
-                self.updateNavItem(self.navigationItem)
-            }.disposed(by: self.disposeBagWithTag(tag))
+        setNeedUpdate(pauser, tag: "isNeedUpdateNavItem") { [weak self] in
+            guard let `self` = self else { return }
+            self.updateNavItem(self.navigationItem)
+        }
     }
 }

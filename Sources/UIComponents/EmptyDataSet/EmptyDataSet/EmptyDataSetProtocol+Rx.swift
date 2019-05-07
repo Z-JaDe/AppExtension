@@ -30,7 +30,7 @@ extension EmptyDataSetProtocol where Self: ScrollProtocol & UIView {
                 .throttle(0.1, scheduler: MainScheduler.instance)
                 .takeUntil(self.rx.deallocated)
 
-            let disposeBag = emptyDataSet.resetDisposeBagWithTag("frame")
+            let disposeBag = emptyDataSet.resetDisposeBagWithTag("_emptySetUpdate")
             combineLatest.subscribeOnNext({ [weak self, weak emptyDataSet] (_) in
                 guard let `self` = self else { return }
                 guard let emptyDataSet = emptyDataSet else { return }
@@ -43,7 +43,7 @@ extension EmptyDataSetProtocol where Self: ScrollProtocol & UIView {
                     if self.contentSize.height <= 0 {
                         self.contentSize.height = emptyDataSet.bottom
                     }
-                    }.animate()
+                }.animate()
             }).disposed(by: disposeBag)
         }
     }

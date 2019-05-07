@@ -17,6 +17,13 @@ extension Reactive where Base: UIView {
             closure?(tap.view as! Base)
         })
     }
+    public func whenDidLayoutSubviews(_ closure: ((Base) -> Void)?) {
+        let disposeBag = self.base.resetDisposeBagWithTag("_didLayoutSubviews")
+        self.sentMessage(#selector(Base.layoutSubviews)).asDriver(onErrorJustReturn: []).driveOnNext {[weak base] (_) in
+            guard let base = base else { return }
+            closure?(base)
+        }.disposed(by: disposeBag)
+    }
 }
 extension Reactive where Base: UIControl {
     @available(*, deprecated, message: "请使用touchUpInside")

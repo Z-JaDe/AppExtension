@@ -10,6 +10,7 @@
 		06392983545B1EF1F00E3DDF /* Pods_NavigationFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AACB36531272B57B4EDD866 /* Pods_NavigationFlow.framework */; };
 		1805B3CE2276A82900F0574D /* GCDTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805B3CD2276A82900F0574D /* GCDTest.swift */; };
 		1805B3D422772EF100F0574D /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805B3D222772E9C00F0574D /* DispatchQueue.swift */; };
+		180B46B722812B31001AE9B1 /* NeedUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B46B522812B2A001AE9B1 /* NeedUpdate.swift */; };
 		18B56D462272CEC000AADA00 /* LockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B56D452272CEC000AADA00 /* LockTest.swift */; };
 		1CBE8225C379D54EBD24ECD9 /* Pods_AnimatedTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8D0708651443C60CC1A051 /* Pods_AnimatedTransition.framework */; };
 		21FBC951A37DD62FCD3E2319 /* Pods_AppExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB786A69356822AA07D7A025 /* Pods_AppExtension.framework */; };
@@ -772,6 +773,7 @@
 		17065616726B4A208465F7EF /* Pods_BaseCore_CommonPods_RxExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseCore_CommonPods_RxExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1805B3CD2276A82900F0574D /* GCDTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDTest.swift; sourceTree = "<group>"; };
 		1805B3D222772E9C00F0574D /* DispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueue.swift; sourceTree = "<group>"; };
+		180B46B522812B2A001AE9B1 /* NeedUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedUpdate.swift; sourceTree = "<group>"; };
 		18B56D452272CEC000AADA00 /* LockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockTest.swift; sourceTree = "<group>"; };
 		1B033DAE5C3915346DA12475 /* Pods-CommonPods-List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommonPods-List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommonPods-List/Pods-CommonPods-List.debug.xcconfig"; sourceTree = "<group>"; };
 		1C45FE7A5C23783E6ED24218 /* Pods-BaseCore-CommonPods-EmptyDataSet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-CommonPods-EmptyDataSet.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-CommonPods-EmptyDataSet/Pods-BaseCore-CommonPods-EmptyDataSet.release.xcconfig"; sourceTree = "<group>"; };
@@ -1857,6 +1859,7 @@
 				C932FAA421006EFD00B8DF84 /* UpdateDataProtocol.swift */,
 				C90E76FA21C88F1700707519 /* NetworkProtocol.swift */,
 				C90E76FF21C893B900707519 /* UpdateNavItemProtocol.swift */,
+				180B46B522812B2A001AE9B1 /* NeedUpdate.swift */,
 			);
 			path = NeedUpdate;
 			sourceTree = "<group>";
@@ -4639,6 +4642,7 @@
 				C90E74D522001608006CE73C /* AssetGridCell.swift in Sources */,
 				C91A7D0B21D1C16E00720E4F /* LogicScanViewController.swift in Sources */,
 				C90E76FC21C88F1C00707519 /* NetworkProtocol.swift in Sources */,
+				180B46B722812B31001AE9B1 /* NeedUpdate.swift in Sources */,
 				C9D412AF21DF45FA004368D4 /* CollectionTableCell.swift in Sources */,
 				C9D412CA21DF4A10004368D4 /* TableDelegate.swift in Sources */,
 				C9D4132921DF807C004368D4 /* RootViewController.swift in Sources */,

@@ -123,7 +123,7 @@ open class BlurPresentationController: PresentationController {
 //                let dimmingBgView = self.gaussianBlurPresentationCon?.dimmingBgView
 //                if let image = container.screenshotsImage()?.blurImage(tintColor: Color.blackMask) {
 //                    dimmingBgView?.image = image
-//                    self.resetDisposeBagWithTag("screenshotsImage")
+//                    self.resetDisposeBagWithTag("_screenshotsImage")
 //                }
 //            }.disposed(by: self.disposeBagWithTag("screenshotsImage"))
 //    }
