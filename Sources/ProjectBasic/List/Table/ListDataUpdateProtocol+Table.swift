@@ -37,3 +37,12 @@ extension ListData where Item: StaticTableItemCell, Section == TableSection {
         return self.map({.cell($0)}).updateInfo()
     }
 }
+
+
+// MARK: - Deprecated
+extension ListDataUpdateProtocol where Item == AnyTableAdapterItem {
+    @available(*, deprecated, message: "请使用reloadData(listCellData:ListData)")
+    public func reloadData(_ closure: () -> ListData<Section, StaticTableItemCell>?) {
+        self.reloadData(closure())
+    }
+}

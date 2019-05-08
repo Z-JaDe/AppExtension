@@ -81,6 +81,9 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionS
             .bind(to: collectionView.rx.items(dataSource: self.rxDataSource))
             .disposed(by: disposeBag)
     }
+    /**
+     设置自定义的代理时，需要注意尽量使用UICollectionProxy或者它的子类，这样会自动实现一些默认配置
+     */
     open func setDelegate(_ collectProxy: UICollectionViewDelegate) {
         self.collectProxy = collectProxy
         collectionView?.rx.setDelegate(self.collectProxy)

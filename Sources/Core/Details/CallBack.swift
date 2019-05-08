@@ -100,8 +100,10 @@ extension CallBacker where Output == Void {
     }
     public func call(_ input: Input) {
         queue.async {
-            for key in self.keys {
-                self.closures[key]?(input)
+            DispatchQueue.main.syncIfNeed {
+                for key in self.keys {
+                    self.closures[key]?(input)
+                }
             }
         }
     }

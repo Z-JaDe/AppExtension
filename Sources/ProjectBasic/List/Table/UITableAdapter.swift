@@ -104,6 +104,9 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
             .bind(to: tableView.rx.items(dataSource: self.rxDataSource))
             .disposed(by: disposeBag)
     }
+    /**
+     设置自定义的代理时，需要注意尽量使用UITableProxy或者它的子类，这样会自动实现一些默认配置
+     */
     open func setDelegate(_ tableProxy: UITableViewDelegate) {
         self.tableProxy = tableProxy
         tableView?.rx.setDelegate(self.tableProxy)

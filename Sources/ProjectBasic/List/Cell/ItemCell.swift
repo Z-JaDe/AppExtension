@@ -168,7 +168,7 @@ open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable
     }
     // MARK: - CellSelectProtocol
     /// ZJaDe: 点击cell回调闭包
-    public let didSelectItemClosure: CallBackerNoParams = CallBackerNoParams()
+    public let didSelectItemCallBacker: CallBackerNoParams = CallBackerNoParams()
     /// ZJaDe: 点击cell信号监听
     private let didSelectItemPubject: PublishSubject<Void> = PublishSubject<Void>()
     /// ZJaDe: 点击cell信号监听，throttle
@@ -219,7 +219,7 @@ extension ItemCell {
         self.resetDisposeBagWithTag("_appear")
     }
     func sendDidSelectItemEvent() {
-        self.didSelectItemClosure.call()
+        self.didSelectItemCallBacker.call()
         self.didSelectItemPubject.onNext(())
     }
 }

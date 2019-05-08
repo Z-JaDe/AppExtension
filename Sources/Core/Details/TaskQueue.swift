@@ -74,6 +74,11 @@ public class TaskQueue {
         self.taskIsSuspend = true
         self.queue.suspend()
     }
+    deinit {
+        if self.taskIsSuspend {
+            self.queue.resume()
+        }
+    }
 }
 public extension TaskQueue {
     func taskSuspend() {

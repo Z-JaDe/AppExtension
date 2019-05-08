@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol CanCancelModalViewController {
-    var didCancel: CallBackerNoParams {get}
+//    var didCancel: CallBackerNoParams {get}
     func cancel()
     func cancel(completion: (() -> Void)?)
 }
