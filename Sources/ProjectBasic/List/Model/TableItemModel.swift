@@ -87,7 +87,7 @@ extension TableItemModel: TableCellConfigProtocol {
         _contentCell = cell as? DynamicTableItemCell
     }
 
-    func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
+    public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
         let cell = _createCell(in: tableView, for: indexPath)
         //        logDebug("\(item)创建一个cell")
         /// ZJaDe: 初始化_contentCell，并且_contentCell持有tableView弱引用

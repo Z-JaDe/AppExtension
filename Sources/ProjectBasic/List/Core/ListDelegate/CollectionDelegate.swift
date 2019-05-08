@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CollectionAdapterDelegate: class {
+public protocol CollectionAdapterDelegate: class {
     func didSelectItem(at indexPath: IndexPath)
     func didDeselectItem(at indexPath: IndexPath)
     func shouldHighlightItem(at indexPath: IndexPath) -> Bool

@@ -10,5 +10,4 @@ import Foundation
 
 public protocol HiddenStateDesignable {
     var isHidden: Bool {get set}
-
 }

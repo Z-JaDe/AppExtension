@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol TableAdapterDelegate: class {
+public protocol TableAdapterDelegate: class {
     func didSelectItem(at indexPath: IndexPath)
     func didDeselectItem(at indexPath: IndexPath)
     func shouldHighlightItem(at indexPath: IndexPath) -> Bool

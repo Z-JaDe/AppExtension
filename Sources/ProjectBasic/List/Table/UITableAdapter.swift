@@ -19,9 +19,9 @@ public typealias TableListUpdateInfo = ListUpdateInfo<TableListData>
 public typealias TableStaticUpdateInfo = ListUpdateInfo<TableStaticData>
 
 open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
-
+    private var timer: Timer?
     public weak private(set) var tableView: UITableView?
-    lazy private(set) var tableProxy: UITableProxy = UITableProxy(self)
+    lazy private(set) var tableProxy: UITableViewDelegate = UITableProxy(self)
     /// ZJaDe: 代理
     open weak var delegate: TableViewDelegate?
 
@@ -30,9 +30,9 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
         // 注册的用的全部都是SNTableViewCell, 真正的cell是SNTableViewCell.contentItem
         tableView.register(SNTableViewCell.self, forCellReuseIdentifier: SNTableViewCell.reuseIdentifier)
         //初始化数据源
-        configDataSource(tableView)
+        setDataSource(self.rxDataSource)
         //初始化代理
-        configDelegate(tableView)
+        setDelegate(self.tableProxy)
         allowsSelection(tableView)
     }
     // MARK: - MultipleSelectionProtocol
@@ -56,7 +56,7 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
     open override func updateEnabledState(_ isEnabled: Bool) {
         super.updateEnabledState(isEnabled)
         dataArray.flatMap({$0.1}).forEach { (item) in
-            item.tableItem.refreshEnabledState(isEnabled)
+            (item.value as? EnabledStateDesignable)?.refreshEnabledState(isEnabled)
         }
     }
     // MARK: - ListDataUpdateProtocol
@@ -65,7 +65,7 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
         let dataSource = DataSource(dataController: DataController())
         dataSource.configureCell = {[weak self] (_, tableView, indexPath, item) in
             guard let `self` = self else {
-                return item.tableItem.createCell(in: tableView, for: indexPath)
+                return item.createCell(in: tableView, for: indexPath)
             }
             return self.createCell(in: tableView, for: indexPath, item: item)
         }
@@ -75,12 +75,39 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
         }
         return dataSource
     }
-    // MARK: -
-    private var timer: Timer?
-
+    private func createCell(in tableView: UITableView, for indexPath: IndexPath, item: AnyTableAdapterItem) -> UITableViewCell {
+        if let _item = item.value as? TableCellHeightProtocol {
+            if _item.cellHeightLayoutType.isNeedLayout {
+                _item.calculateCellHeight(tableView, wait: true)
+            }
+        }
+        return item.createCell(in: tableView, for: indexPath)
+    }
     // MARK: -
     deinit {
         cleanReference()
+    }
+    // MARK: -
+    open override func setDataSource(_ dataSource: DataSource) {
+        super.setDataSource(dataSource)
+        guard let tableView = tableView else { return }
+        dataArrayObservable()
+            .map({$0.map({[weak self] (dataArray) in
+                let dataArray = self?.insertSecionModels.callReduce(dataArray) ?? dataArray
+                return dataArray.compactMapToSectionModels()
+            })})
+            .do(onNext: { [weak self] (element) -> Void in
+                guard let `self` = self else {return}
+                self.updateItemsIfNeed()
+                self.addBufferPool(at: element.data)
+            })
+            .bind(to: tableView.rx.items(dataSource: self.rxDataSource))
+            .disposed(by: disposeBag)
+    }
+    open func setDelegate(_ tableProxy: UITableViewDelegate) {
+        self.tableProxy = tableProxy
+        tableView?.rx.setDelegate(self.tableProxy)
+            .disposed(by: self.disposeBag)
     }
 }
 extension UITableAdapter {
@@ -116,26 +143,5 @@ extension UITableAdapter {
         data.lazy.flatMap({$0.items}).compactMap({$0.model}).forEach({ (model) in
             model.bufferPool = self.bufferPool
         })
-    }
-}
-extension UITableAdapter {
-    public func configDataSource(_ tableView: UITableView) {
-        dataArrayObservable()
-            .map({$0.map({[weak self] (dataArray) in
-                let dataArray = self?.insertSecionModels.callReduce(dataArray) ?? dataArray
-                return dataArray.compactMapToSectionModels()
-            })})
-            .do(onNext: { [weak self] (element) -> Void in
-                guard let `self` = self else {return}
-                self.updateItemsIfNeed()
-                self.addBufferPool(at: element.data)
-            })
-            .bind(to: tableView.rx.items(dataSource: self.rxDataSource))
-            .disposed(by: disposeBag)
-    }
-
-    public func configDelegate(_ tableView: UITableView) {
-        tableView.rx.setDelegate(self.tableProxy)
-            .disposed(by: self.disposeBag)
     }
 }

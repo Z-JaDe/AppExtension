@@ -7,9 +7,10 @@
 //
 
 import Foundation
-
-protocol CollectionCellConfigProtocol: CellConfigProtocol {
-    func createCell(in collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell
+/**
+ 自己实现复用cell，willAppear和didDisappear需要代理里面调用，UICollectionAdapter默认已经调用
+ */
+protocol CollectionCellConfigProtocol: CreateCollectionCellrotocol {
     func willAppear(in cell: UICollectionViewCell)
     func didDisappear(in cell: UICollectionViewCell)
 
@@ -17,3 +18,4 @@ protocol CollectionCellConfigProtocol: CellConfigProtocol {
     func recycleCell(_ cell: CollectionItemCell)
     func getCell() -> CollectionItemCell?
 }
+

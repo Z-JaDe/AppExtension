@@ -13,15 +13,19 @@ import UIKit
  但是有时候height是重设时不会走createCell，所以当height为resetLayout时，即使在heightForRow方法中也要计算
  */
 extension UITableAdapter: TableAdapterDelegate {
+    func tableCellItem(at indexPath: IndexPath) -> TableCellHeightProtocol & TableCellConfigProtocol {
+        // swiftlint:disable force_cast
+        return dataController[indexPath].value as! TableCellHeightProtocol & TableCellConfigProtocol
+    }
     public func heightForRow(at indexPath: IndexPath) -> CGFloat {
         guard dataController.indexPathCanBound(indexPath) else {
             return 0.1
         }
-        let item = dataController[indexPath]
-        if item.tableItem.cellHeightLayoutType == .resetLayout {
-            item.tableItem.calculateCellHeight(tableView!, wait: true)
+        let item = tableCellItem(at: indexPath)
+        if item.cellHeightLayoutType == .resetLayout {
+            item.calculateCellHeight(tableView!, wait: true)
         }
-        let height = item.tableItem.tempCellHeight
+        let height = item.tempCellHeight
         return height > 0 ? height : Space.cellDefaultHeight
     }
     // MARK: -
@@ -61,9 +65,9 @@ extension UITableAdapter: TableAdapterDelegate {
         guard let cell = cell as? SNTableViewCell else {
             return
         }
-        let itemModel = dataController[indexPath]
-        itemModel.tableItem.willAppear(in: cell)
-        if let itemCell = itemModel.tableItem.getCell() {
+        let itemModel = tableCellItem(at: indexPath)
+        itemModel.willAppear(in: cell)
+        if let itemCell = itemModel.getCell() {
             delegate?.didDisplay(item: itemCell)
             if let isEnabled = self.isEnabled {
                 itemCell.refreshEnabledState(isEnabled)
@@ -91,7 +95,7 @@ extension UITableAdapter: TableAdapterDelegate {
         if let result = delegate?.shouldHighlightItem(at: indexPath) {
             return result
         }
-        let item = dataController[indexPath].tableItem.getCell()
+        let item = tableCellItem(at: indexPath).getCell()
         return item?.checkShouldHighlight() ?? true
     }
 
@@ -113,12 +117,6 @@ extension UITableAdapter: TableAdapterDelegate {
     }
 }
 extension UITableAdapter {
-    internal func createCell(in tableView: UITableView, for indexPath: IndexPath, item: AnyTableAdapterItem) -> UITableViewCell {
-        if item.tableItem.cellHeightLayoutType.isNeedLayout {
-            item.tableItem.calculateCellHeight(tableView, wait: true)
-        }
-        return item.tableItem.createCell(in: tableView, for: indexPath)
-    }
     internal func _didSelectItem(at indexPath: IndexPath) {
         let item = dataController[indexPath]
         self.checkCanSelected(item) {[weak self] (isCanSelected) in

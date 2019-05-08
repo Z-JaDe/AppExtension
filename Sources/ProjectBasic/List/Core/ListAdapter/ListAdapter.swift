@@ -42,9 +42,12 @@ where DataSource.S.Item: AdapterItemType, DataSource.S.Section: AdapterSectionTy
     let listUpdateInfoSubject: ReplaySubject<ListUpdateInfoType> = ReplaySubject.create(bufferSize: 1)
     var lastListDataInfo: ListUpdateInfoType = ListUpdateInfo(data: [])
     // MARK: -
-    public lazy var rxDataSource: DataSource = self.loadRxDataSource()
+    public lazy private(set) var rxDataSource: DataSource = self.loadRxDataSource()
     func loadRxDataSource() -> DataSource {
         jdAbstractMethod()
+    }
+    open func setDataSource(_ dataSource: DataSource) {
+        self.rxDataSource = dataSource
     }
     // MARK: -
     open var isEnabled: Bool? {

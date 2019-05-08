@@ -10,10 +10,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<SectionModelItem<CollectSection, CollectionItemModel>>> {
+public typealias CollectionSectionModel = SectionModelItem<CollectSection, CollectionItemModel>
+
+open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionSectionModel>> {
 
     public weak private(set) var collectionView: UICollectionView?
-    lazy private(set) var collectProxy: UICollectionProxy = UICollectionProxy(self)
+    lazy private(set) var collectProxy: UICollectionViewDelegate = UICollectionProxy(self)
     /// ZJaDe: 代理
     open weak var delegate: CollectionViewDelegate?
 
@@ -22,8 +24,8 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<SectionMode
         collectionView.register(SNCollectionViewCell.self, forCellWithReuseIdentifier: SNCollectionViewCell.reuseIdentifier)
         collectionView.register(SNCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SNCollectionReusableView.reuseIdentifier)
         collectionView.register(SNCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: SNCollectionReusableView.reuseIdentifier)
-        configDataSource(collectionView)
-        configDelegate(collectionView)
+        setDataSource(self.rxDataSource)
+        setDelegate(self.collectProxy)
         allowsSelection(collectionView)
     }
     // MARK: - MultipleSelectionProtocol
@@ -66,6 +68,24 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<SectionMode
     deinit {
         cleanReference()
     }
+    // MARK: -
+    open override func setDataSource(_ dataSource: DataSource) {
+        super.setDataSource(dataSource)
+        guard let collectionView = collectionView else { return }
+        dataArrayObservable()
+            .map({$0.map({$0.compactMapToSectionModels()})})
+            .do(onNext: {[weak self] (element) -> Void in
+                guard let `self` = self else {return}
+                self.addBufferPool(at: element.data)
+            })
+            .bind(to: collectionView.rx.items(dataSource: self.rxDataSource))
+            .disposed(by: disposeBag)
+    }
+    open func setDelegate(_ collectProxy: UICollectionViewDelegate) {
+        self.collectProxy = collectProxy
+        collectionView?.rx.setDelegate(self.collectProxy)
+            .disposed(by: self.disposeBag)
+    }
 }
 extension UICollectionAdapter {
     func cleanReference() {
@@ -77,21 +97,5 @@ extension UICollectionAdapter {
         data.lazy.flatMap({$0.items}).forEach({ (model) in
             model.bufferPool = self.bufferPool
         })
-    }
-}
-extension UICollectionAdapter {
-    open func configDataSource(_ collectionView: UICollectionView) {
-        dataArrayObservable()
-            .map({$0.map({$0.compactMapToSectionModels()})})
-            .do(onNext: {[weak self] (element) -> Void in
-                guard let `self` = self else {return}
-                self.addBufferPool(at: element.data)
-            })
-            .bind(to: collectionView.rx.items(dataSource: self.rxDataSource))
-            .disposed(by: disposeBag)
-    }
-    open func configDelegate(_ collectionView: UICollectionView) {
-        collectionView.rx.setDelegate(self.collectProxy)
-            .disposed(by: self.disposeBag)
     }
 }

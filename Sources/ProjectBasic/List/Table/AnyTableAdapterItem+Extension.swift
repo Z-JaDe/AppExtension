@@ -19,10 +19,6 @@ extension AnyTableAdapterItem: AdapterItemType {
     public static func model(_ value: TableItemModel) -> AnyTableAdapterItem {
         return AnyTableAdapterItem(value)
     }
-    var tableItem: TableCellConfigProtocol & TableCellHeightProtocol & EnabledStateDesignable {
-        // swiftlint:disable force_cast
-        return self.value as! TableCellConfigProtocol & TableCellHeightProtocol & EnabledStateDesignable
-    }
 }
 // MARK: - Diffable & Hashable
 extension AnyTableAdapterItem: Diffable, Hashable {

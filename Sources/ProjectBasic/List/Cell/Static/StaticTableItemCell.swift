@@ -31,7 +31,7 @@ open class StaticTableItemCell: TableItemCell, AdapterItemType {
     public var checkParamsClosure: CheckParamsClosure?
 }
 extension StaticTableItemCell: TableCellConfigProtocol {
-    func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
+    public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
         let cell = _createCell(in: tableView, for: indexPath)
         //        let item = self.cell()
         //        logDebug("\(item)创建一个cell")

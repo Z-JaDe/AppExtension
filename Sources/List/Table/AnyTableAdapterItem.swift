@@ -12,6 +12,7 @@ public struct AnyTableAdapterItem {
     public typealias ValueType = AnyObject
         & HiddenStateDesignable
         & SelectedStateDesignable & CanSelectedStateDesignable
+        & CreateTableCellrotocol
     public var value: ValueType
     public init(_ value: ValueType) {
         self.value = value
@@ -39,5 +40,11 @@ extension AnyTableAdapterItem: SelectedStateDesignable & CanSelectedStateDesigna
     public var canSelected: Bool {
         get { return value.canSelected }
         set { value.canSelected = newValue }
+    }
+}
+// MARK: - CreateTableCellrotocol
+extension AnyTableAdapterItem: CreateTableCellrotocol {
+    public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
+        return self.value.createCell(in: tableView, for: indexPath)
     }
 }
