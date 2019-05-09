@@ -126,7 +126,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  CocoaExtension: 634c0f34be7306fe6aa7884ab3b037e20da7d7c6
+  CocoaExtension: aef70c5151d84bf5917c885bd2b2f7aa15455edd
   CollectionKit: 8f01e7629185bb81072c4aa734d105df5c2d1c8b
   DifferenceKit: cf1b84e2207ea45c3640381cb229cf46c1647466
   Encryption: 341e53c4fbc96dc568a23f444231eb2ca9810cbf

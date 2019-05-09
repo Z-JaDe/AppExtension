@@ -38,7 +38,6 @@ extension ListData where Item: StaticTableItemCell, Section == TableSection {
     }
 }
 
-
 // MARK: - Deprecated
 extension ListDataUpdateProtocol where Item == AnyTableAdapterItem {
     @available(*, deprecated, message: "请使用reloadData(listCellData:ListData)")

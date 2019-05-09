@@ -46,7 +46,7 @@ open class CollectionViewDataSource<S: SectionModelType>
             #endif
         }
     }
-    
+
     #if os(iOS)
     public typealias IndexTitles = (CollectionViewDataSource<S>) -> [String]?
     public typealias IndexPathForIndexTitle = (CollectionViewDataSource<S>, _ title: String, _ index: Int) -> IndexPath
@@ -99,12 +99,12 @@ open class CollectionViewDataSource<S: SectionModelType>
         self.didMoveItem?(self, source, destination)
         self.moveItem(self, sourceIndexPath, destinationIndexPath)
     }
-    
+
     #if os(iOS)
     open func indexTitles(for collectionView: UICollectionView) -> [String]? {
         return indexTitles(self)
     }
-    
+
     open func collectionView(_ collectionView: UICollectionView, indexPathForIndexTitle title: String, at index: Int) -> IndexPath {
         return indexPathForIndexTitle(self, title, index)
     }

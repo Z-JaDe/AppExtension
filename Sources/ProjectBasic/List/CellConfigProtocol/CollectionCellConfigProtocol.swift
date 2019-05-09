@@ -18,4 +18,3 @@ protocol CollectionCellConfigProtocol: CreateCollectionCellrotocol {
     func recycleCell(_ cell: CollectionItemCell)
     func getCell() -> CollectionItemCell?
 }
-

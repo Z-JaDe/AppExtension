@@ -13,7 +13,7 @@ import Foundation
 protocol TableCellConfigProtocol: CreateTableCellrotocol {
     func willAppear(in cell: UITableViewCell)
     func didDisappear(in cell: UITableViewCell)
-    
+
     func createCell(isTemp: Bool) -> TableItemCell
     func recycleCell(_ cell: TableItemCell)
     func getCell() -> TableItemCell?

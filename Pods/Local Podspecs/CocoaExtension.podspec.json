@@ -14,7 +14,7 @@
   },
   "requires_arc": true,
   "platforms": {
-    "ios": "9.0"
+    "ios": "10.0"
   },
   "frameworks": "Foundation",
   "swift_versions": "5.0",
