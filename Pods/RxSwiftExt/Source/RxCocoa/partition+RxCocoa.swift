@@ -17,8 +17,8 @@ public extension SharedSequence {
 
      - returns: A tuple of two streams of elements that match, and don't match, the provided predicate.
      */
-    func partition(_ predicate: @escaping (E) -> Bool) -> (matches: SharedSequence<S, E>,
-                                                           nonMatches: SharedSequence<S, E>) {
+    func partition(_ predicate: @escaping (E) -> Bool) -> (matches: SharedSequence<SharingStrategy, E>,
+                                                           nonMatches: SharedSequence<SharingStrategy, E>) {
         let stream = self.map { ($0, predicate($0)) }
 
         let hits = stream.filter { $0.1 }.map { $0.0 }

@@ -46,7 +46,7 @@ extension Reactive where Base: RequestContextCompatible, Base.ValueType: Downloa
         }
     }
 }
-extension ObservableType where E: RequestableContext {
+extension ObservableType where Element: RequestableContext {
     public func response() -> Observable<RequestContext<Result<Data>>> {
         return flatMapLatest { (context) -> Observable<RequestContext<Result<Data>>> in
             switch context {

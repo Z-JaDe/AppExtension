@@ -10,8 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-open class ListAdapter<DataSource: SectionedDataSourceType>:
-    ListAdapterType,
+open class ListAdapter<DataSource: SectionedDataSourceType>: ListAdapterType,
     EnabledStateDesignable,
     DisposeBagProtocol,
     MultipleSelectionProtocol
@@ -73,7 +72,7 @@ extension ListAdapter: ListDataUpdateProtocol {
     /// 将dataArray转信号
     func dataArrayObservable() -> Observable<ListUpdateInfoType> {
         return self.listUpdateInfoSubject.asObservable()
-            .delay(0.1, scheduler: MainScheduler.asyncInstance)
-            .throttle(0.3, scheduler: MainScheduler.instance)
+            .delay(.milliseconds(100), scheduler: MainScheduler.asyncInstance)
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
     }
 }

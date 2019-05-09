@@ -14,7 +14,7 @@ extension Reactive where Base: UIBarButtonItem {
     @discardableResult
     public func tap(_ closure: ((Base) -> Void)?) -> Disposable {
         return self.tap
-            .throttle(0.1, scheduler: MainScheduler.instance)
+            .throttle(.milliseconds(100), scheduler: MainScheduler.instance)
             .asDriver(onErrorJustReturn: ())
             .driveOnNext { [weak base] in
                 guard let base = base else { return }

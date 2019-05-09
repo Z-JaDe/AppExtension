@@ -27,7 +27,7 @@ public extension UpdateDataProtocol {
     }
 }
 public extension UpdateDataProtocol where Self: UIViewController {
-    func setNeedUpdateData<P: ObservableType>(_ pauser: P) where P.E == Bool {
+    func setNeedUpdateData<P: ObservableType>(_ pauser: P) where P.Element == Bool {
         setNeedUpdate(pauser, tag: "isNeedUpdateData") { [weak self] in
             guard let `self` = self else { return }
             self.updateData()

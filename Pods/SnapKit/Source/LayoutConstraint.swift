@@ -44,18 +44,37 @@ public class LayoutConstraint : NSLayoutConstraint {
 }
 
 internal func ==(lhs: LayoutConstraint, rhs: LayoutConstraint) -> Bool {
-    let areLayoutAnchorsEqual: Bool
-    if #available(iOS 10.0, OSXApplicationExtension 10.12, *) {
-        areLayoutAnchorsEqual = lhs.firstAnchor === rhs.firstAnchor &&
-            lhs.secondAnchor === rhs.secondAnchor
-    } else {
-        areLayoutAnchorsEqual = lhs.firstItem === rhs.firstItem &&
-            lhs.secondItem === rhs.secondItem &&
-            lhs.firstAttribute == rhs.firstAttribute &&
-            lhs.secondAttribute == rhs.secondAttribute
+    #if os(OSX)
+    // ensure first anchor items match
+    guard let item1 = lhs.firstAnchor.item,
+          let item2 = rhs.firstAnchor.item,
+          item1 === item2 else {
+        return false
     }
-    return areLayoutAnchorsEqual &&
-        lhs.relation == rhs.relation &&
-        lhs.priority == rhs.priority &&
-        lhs.multiplier == rhs.multiplier
+
+    // ensure second anchor items match
+    guard ((lhs.secondAnchor?.item == nil && rhs.secondAnchor?.item == nil) ||
+           (lhs.secondAnchor?.item === rhs.secondAnchor?.item)) else {
+        return false
+    }
+    #else
+    guard lhs.firstAnchor == rhs.firstAnchor else {
+        return false
+    }
+    guard ((lhs.secondAnchor == nil && rhs.secondAnchor == nil) ||
+           (lhs.secondAnchor! == rhs.secondAnchor!)) else {
+        return false
+    }
+    #endif
+
+
+    // ensure attributes, relation, priorty and multiplier match
+    guard lhs.firstAttribute == rhs.firstAttribute &&
+          lhs.secondAttribute == rhs.secondAttribute &&
+          lhs.relation == rhs.relation &&
+          lhs.priority == rhs.priority &&
+          lhs.multiplier == rhs.multiplier else {
+        return false
+    }
+    return true
 }

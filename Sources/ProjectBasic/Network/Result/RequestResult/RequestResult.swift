@@ -23,7 +23,7 @@ public typealias ArrayRequestResult<T> = RequestResult<ArrayResultModel<T>> wher
 
 public typealias ListRequesxtResult<T> = ObjectRequestResult<ListResultModel<T>> where T: Codable
 // MARK: -
-extension ObservableType where E: RequestContextCompatible {
+extension ObservableType where Element: RequestContextCompatible {
     public typealias BaseResult<T> = RequestContext<T>
     public typealias StringResult = BaseResult<StringResultModel>
     public typealias DictResult = BaseResult<DictResultModel>

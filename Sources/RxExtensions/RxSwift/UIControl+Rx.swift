@@ -14,7 +14,7 @@ extension Reactive where Base: UIControl {
     @discardableResult
     public func controlEvent(_ controlEvents: UIControl.Event, _ closure: ((Base) -> Void)?) -> Disposable {
         return self.controlEvent(controlEvents)
-            .throttle(0.1, scheduler: MainScheduler.instance)
+            .throttle(.milliseconds(100), scheduler: MainScheduler.instance)
             .asDriver(onErrorJustReturn: ())
             .driveOnNext { [weak base] in
                 guard let base = base else {return}

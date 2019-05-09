@@ -58,7 +58,7 @@ open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable
     /// ZJaDe: 选中状态更改时发送信号
     open func observerSelectedStateChanged(_ isSelected: Observable<Bool>) -> Observable<Bool> {
         return isSelected
-            .throttle(0.1, scheduler: MainScheduler.instance)
+            .throttle(.milliseconds(100), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
     }
     /// ZJaDe: 高亮动画
@@ -77,7 +77,7 @@ open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable
     /// ZJaDe: 高亮状态更改时发送信号
     open func observerHighlightedStateChanged(_ isHighlighted: Observable<Bool>) -> Observable<Bool> {
         return isHighlighted
-            .throttle(0.1, scheduler: MainScheduler.instance)
+            .throttle(.milliseconds(100), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
     }
     // MARK: - EnabledStateProtocol
@@ -172,7 +172,7 @@ open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable
     /// ZJaDe: 点击cell信号监听
     private let didSelectItemPubject: PublishSubject<Void> = PublishSubject<Void>()
     /// ZJaDe: 点击cell信号监听，throttle
-    public func throttleDidSelectItem(_ timeInterval: RxTimeInterval = 1) -> Observable<Void> {
+    public func throttleDidSelectItem(_ timeInterval: RxTimeInterval = .seconds(1)) -> Observable<Void> {
         return self.didSelectItemPubject.throttle(timeInterval, scheduler: MainScheduler.asyncInstance)
     }
     open func didSelectItem() {

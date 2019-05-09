@@ -9,8 +9,7 @@
 import Foundation
 import UIKit
 
-open class CollectionViewDataSource<S: SectionModelType>
-    : SectionedDataSource<S>, UICollectionViewDataSource {
+open class CollectionViewDataSource<S: SectionModelType>: SectionedDataSource<S>, UICollectionViewDataSource {
     public typealias ConfigureCell = (CollectionViewDataSource<S>, UICollectionView, IndexPath, S.Item) -> UICollectionViewCell
     public typealias ConfigureSupplementaryView = (CollectionViewDataSource<S>, UICollectionView, String, IndexPath) -> UICollectionReusableView
     public typealias MoveItem = (CollectionViewDataSource<S>, _ sourceIndexPath: IndexPath, _ destinationIndexPath: IndexPath) -> Void

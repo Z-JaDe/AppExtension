@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 import Alamofire
-extension ObservableType where E == RequestContext<Result<Data>> {
+extension ObservableType where Element == RequestContext<Result<Data>> {
     public func mapResultModel<T: AbstractResultModelType>(_ transform: @escaping (RequestContext<Result<Data>>) throws -> T) -> RequestContextObservable<T> {
         return responseMap({ (context) -> T in
             return try transform(context)
@@ -40,7 +40,7 @@ extension ObservableType where E == RequestContext<Result<Data>> {
             .retryWhen({ $0._retryError() })
     }
 }
-extension ObservableType where E: RequestableContext {
+extension ObservableType where Element: RequestableContext {
     public func mapResultModel<T: AbstractResultModelType>(_ transform: @escaping (RequestContext<Result<Data>>) throws -> T) -> RequestContextObservable<T> {
         return response().mapResultModel(transform)
     }

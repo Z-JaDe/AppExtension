@@ -10,8 +10,7 @@
 import Foundation
 import UIKit
 
-open class TableViewDataSource<S: SectionModelType>
-    : SectionedDataSource<S>, UITableViewDataSource {
+open class TableViewDataSource<S: SectionModelType>: SectionedDataSource<S>, UITableViewDataSource {
     public typealias ConfigureCell = (TableViewDataSource<S>, UITableView, IndexPath, S.Item) -> UITableViewCell
     public typealias TitleForHeaderInSection = (TableViewDataSource<S>, Int) -> String?
     public typealias TitleForFooterInSection = (TableViewDataSource<S>, Int) -> String?

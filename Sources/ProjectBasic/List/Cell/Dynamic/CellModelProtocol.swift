@@ -42,10 +42,10 @@ public extension UpdateModelProtocol {
     }
 }
 public extension UpdateModelProtocol where Self: NSObject {
-    func setNeedUpdateModel<P: ObservableType>(_ pauser: P) where P.E == Bool {
+    func setNeedUpdateModel<P: ObservableType>(_ pauser: P) where P.Element == Bool {
         let tag = "isNeedUpdateModel"
         self.resetDisposeBagWithTag(tag)
-        Observable<Void>.setNeedUpdate(pauser, 0.01)
+        Observable<Void>.setNeedUpdate(pauser, .milliseconds(10))
             .subscribeOnNext { [weak self] in
                 guard let `self` = self else { return }
                 self.configDataWithModel()

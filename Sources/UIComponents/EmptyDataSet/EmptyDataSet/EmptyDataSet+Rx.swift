@@ -27,8 +27,8 @@ extension EmptyDataSetView {
         })
             .share(replay: 1)
             .observeOn(MainScheduler.instance)
-            .delay(0.1, scheduler: MainScheduler.instance)
-            .throttle(0.5, scheduler: MainScheduler.instance)
+            .delay(.milliseconds(100), scheduler: MainScheduler.instance)
+            .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
     }
 }
 #else

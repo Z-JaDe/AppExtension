@@ -279,7 +279,6 @@
 		C932F824210069AD00B8DF84 /* MessageHUDProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F7F9210069AC00B8DF84 /* MessageHUDProtocol.swift */; };
 		C932F825210069AD00B8DF84 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F7FA210069AC00B8DF84 /* HUD.swift */; };
 		C932F828210069AD00B8DF84 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C932F7FE210069AC00B8DF84 /* MBProgressHUD.bundle */; };
-		C932F834210069AD00B8DF84 /* SwiftyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F811210069AC00B8DF84 /* SwiftyUserDefaults.swift */; };
 		C932F83A210069AD00B8DF84 /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F81A210069AC00B8DF84 /* Permission.swift */; };
 		C932F83B210069AD00B8DF84 /* PermissionScope+AVFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F81B210069AC00B8DF84 /* PermissionScope+AVFoundation.swift */; };
 		C932F83C210069AD00B8DF84 /* PermissionScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F81C210069AC00B8DF84 /* PermissionScope.swift */; };
@@ -1078,7 +1077,6 @@
 		C932F80C210069AC00B8DF84 /* PillPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillPageControl.swift; sourceTree = "<group>"; };
 		C932F80D210069AC00B8DF84 /* SnakePageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnakePageControl.swift; sourceTree = "<group>"; };
 		C932F80F210069AC00B8DF84 /* Swizzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swizzle.swift; sourceTree = "<group>"; };
-		C932F811210069AC00B8DF84 /* SwiftyUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyUserDefaults.swift; sourceTree = "<group>"; };
 		C932F81A210069AC00B8DF84 /* Permission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permission.swift; sourceTree = "<group>"; };
 		C932F81B210069AC00B8DF84 /* PermissionScope+AVFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PermissionScope+AVFoundation.swift"; sourceTree = "<group>"; };
 		C932F81C210069AC00B8DF84 /* PermissionScope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionScope.swift; sourceTree = "<group>"; };
@@ -2390,7 +2388,6 @@
 				C932F8AC21006DC500B8DF84 /* CoreData */,
 				C91A7D0921D1C14500720E4F /* ScanUI */,
 				C92EF1322135393200F95C71 /* QRCode */,
-				C932F810210069AC00B8DF84 /* SwiftyUserDefaults */,
 				C932F819210069AC00B8DF84 /* PermissionScope */,
 			);
 			path = Details;
@@ -2468,14 +2465,6 @@
 				C932F80F210069AC00B8DF84 /* Swizzle.swift */,
 			);
 			path = Swizzle;
-			sourceTree = "<group>";
-		};
-		C932F810210069AC00B8DF84 /* SwiftyUserDefaults */ = {
-			isa = PBXGroup;
-			children = (
-				C932F811210069AC00B8DF84 /* SwiftyUserDefaults.swift */,
-			);
-			path = SwiftyUserDefaults;
 			sourceTree = "<group>";
 		};
 		C932F819210069AC00B8DF84 /* PermissionScope */ = {
@@ -4639,7 +4628,6 @@
 				C90E74D0220015C0006CE73C /* ImagePickerController.swift in Sources */,
 				C90CC67D21E710C400BEF2DA /* ResultCode.swift in Sources */,
 				C90BFC1E21DE352C00DF1E54 /* RequestContext.swift in Sources */,
-				C932F834210069AD00B8DF84 /* SwiftyUserDefaults.swift in Sources */,
 				C932F8F521006DC500B8DF84 /* EntityManager.swift in Sources */,
 				C932F823210069AD00B8DF84 /* JDProgressHUD.swift in Sources */,
 				C90E74D522001608006CE73C /* AssetGridCell.swift in Sources */,

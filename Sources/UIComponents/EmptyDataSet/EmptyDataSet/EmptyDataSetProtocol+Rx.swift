@@ -27,7 +27,7 @@ extension EmptyDataSetProtocol where Self: ScrollProtocol & UIView {
             let combineLatest: Observable<(CGRect?, UIEdgeInsets?)> = Observable
                 .combineLatest(frameObserve, contentInsetObserve, resultSelector: {($0, $1)})
                 .observeOn(MainScheduler.asyncInstance)
-                .throttle(0.1, scheduler: MainScheduler.instance)
+                .throttle(.milliseconds(100), scheduler: MainScheduler.instance)
                 .takeUntil(self.rx.deallocated)
 
             let disposeBag = emptyDataSet.resetDisposeBagWithTag("_emptySetUpdate")

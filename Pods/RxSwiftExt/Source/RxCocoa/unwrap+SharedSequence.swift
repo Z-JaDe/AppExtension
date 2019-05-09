@@ -16,7 +16,7 @@ extension SharedSequence {
      - returns: A SharedSequence of non-optional elements
      */
 
-    public func unwrap<T>() -> SharedSequence<S, T> where E == T? {
+    public func unwrap<T>() -> SharedSequence<SharingStrategy, T> where E == T? {
         return self.filter { $0 != nil }.map { $0! }
     }
 }

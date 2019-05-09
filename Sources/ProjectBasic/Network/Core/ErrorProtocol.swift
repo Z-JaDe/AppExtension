@@ -12,7 +12,7 @@ import RxSwift
 public protocol RetryRequestProtocol {
     func retryError() -> Observable<()>
 }
-extension ObservableType where E == Error {
+extension ObservableType where Element == Error {
     internal func _retryError() -> Observable<()> {
         return flatMapLatest({ (error) -> Observable<()> in
             if let error = error as? RetryRequestProtocol {
