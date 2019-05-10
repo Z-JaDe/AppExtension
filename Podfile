@@ -19,9 +19,9 @@ def rx
 end
 def rxExtension
   rx
-  pod 'RxGesture', :git => 'BaseSupport/RxGesture'
-  pod 'RxSwiftExt', :git => 'BaseSupport/RxSwiftExt'
-  pod 'RxOptional', :git => 'BaseSupport/RxOptional'
+  pod 'RxGesture', :path => 'BaseSupport/RxGesture'
+  pod 'RxSwiftExt', :path => 'BaseSupport/RxSwiftExt'
+  pod 'RxOptional', :path => 'BaseSupport/RxOptional'
   #    pod 'RxAnimated'
   #    pod 'RxKeyboard'
 end
@@ -91,19 +91,21 @@ def commonPods
   pod 'DifferenceKit'
 end
 
-target:'ProjectBasic' do
+def projectBasic
   commonPods
   pod 'Alamofire'
   
   pod 'Kingfisher'
   pod 'MBProgressHUD'
   pod 'SwiftyUserDefaults'
-  pod 'ReSwift'
+  pod 'ReSwift', :git => 'https://github.com/ReSwift/ReSwift.git'
+end
+target:'ProjectBasic' do
+  projectBasic
 end
 
 target:'AppExtension' do
-  commonPods
-  pod 'ReSwift'
+  projectBasic
   target 'AppExtensionUITests' do
     inherit! :search_paths
   end

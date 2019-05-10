@@ -1,6 +1,6 @@
 {
   "name": "RxOptional",
-  "version": "3.6.2",
+  "version": "4.0.0",
   "summary": "RxSwift extensions for Swift optionals and Occupiable types",
   "description": "RxSwift extensions for Swift optionals and \"Occupiable\" types.",
   "homepage": "https://github.com/RxSwiftCommunity/RxOptional",
@@ -10,21 +10,21 @@
   },
   "source": {
     "git": "https://github.com/RxSwiftCommunity/RxOptional.git",
-    "tag": "3.6.2"
+    "tag": "4.0.0"
   },
   "platforms": {
-    "ios": "8.0",
+    "ios": "9.0",
     "osx": "10.10",
-    "watchos": "2.0",
+    "watchos": "3.0",
     "tvos": "9.0"
   },
   "source_files": "Source/*.swift",
   "dependencies": {
     "RxSwift": [
-
+      "~> 5"
     ],
     "RxCocoa": [
-
+      "~> 5"
     ]
   },
   "frameworks": "Foundation"
