@@ -32,7 +32,7 @@ extension DispatchQueue {
         是因为api没有提供查询当前队列的targetQueue是什么队列
      */
     public func syncIfNeed<T>(_ action: () throws -> T) rethrows -> T {
-        if Thread.isMainThread && self == DispatchQueue.main {
+        if self == DispatchQueue.main && Thread.isMainThread {
             //self是main队列且在主线程时，可以直接执行action。即使当前是在其他队列的任务代码中，也不影响。
             return try action()
         }

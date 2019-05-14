@@ -26,6 +26,7 @@ func swiftTest() {
     B.aa = 2
     print(A.aa)
     print(B.aa)
+    C().a()
 }
 class A {
     static var aa: Int = 0
@@ -49,11 +50,43 @@ extension MisunderstoodPerson {
     }
 }
 
+protocol AAAA {
+    func a()
+}
+extension AAAA {
+    func a() {
+        let a = 2
+        if a > 3 {
+            let a = 0
+        }
+        
+    }
+}
+protocol BBBB {
+    func a()
+}
+extension BBBB {
+    func a() {
+        
+    }
+}
+public class C {
+    public init() {}
+//    func a() {
+//        print("B")
+//    }
+}
+extension C: AAAA, BBBB {
+    func a() {
+        print("A")
+    }
+}
+
 
 // MARK: -
 func hasher() {
     var hasher = Hasher()
-    hasher.combine(UIControl.State.highlighted.rawValue)
+    hasher.combine(UIControl.State.highlighted)
     print(hasher.finalize())
     print(UIControl.State.highlighted.rawValue.hashValue)
     print("1".hashValue)

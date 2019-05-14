@@ -80,6 +80,7 @@ public class TaskQueue {
         }
     }
 }
+// MARK: 任务暂停、恢复
 public extension TaskQueue {
     func taskSuspend() {
         performInMainAsync {
@@ -97,38 +98,9 @@ public extension TaskQueue {
             }
         }
     }
-
-    private func executeIfNeed() {
-        queue.async {
-            guard self.taskIsSuspend == false else { return }
-            guard self.taskState == .free else { return }
-            guard let task = self.taskArr.first else { return }
-            self.taskState = .working
-            self.execute(task: task) {[weak self] in
-                guard let `self` = self else { return }
-                self.queue.async {
-                    if self.taskArr.count > 0 {
-                        self.taskArr.removeFirst()
-                    }
-                    self.taskState = .free
-                    self.executeIfNeed()
-                }
-            }
-        }
-    }
-    private func execute(task: TaskItem, taskComplete: @escaping () -> Void) {
-        DispatchQueue.main.async {
-            task.start(taskComplete)
-        }
-    }
 }
+// MARK: 是否包含任务
 public extension TaskQueue {
-    func cleanAllTasks() {
-        queue.async {
-            self.taskState = .free
-            self.taskArr.removeAll()
-        }
-    }
     func contains<T: TaskItem>(_ taskType: T.Type) -> Bool {
         return queue.syncIfNeed {
             return self.taskArr.contains(where: {$0 is T})
@@ -137,6 +109,15 @@ public extension TaskQueue {
     func contains(_ task: TaskItem) -> Bool {
         return queue.syncIfNeed {
             return self.taskArr.contains(where: task.isEqual)
+        }
+    }
+}
+// MARK: 添加、移除任务
+public extension TaskQueue {
+    func cleanAllTasks() {
+        queue.async {
+            self.taskState = .free
+            self.taskArr.removeAll()
         }
     }
     func cancelTask(_ task: TaskItem) -> Bool {
@@ -152,8 +133,15 @@ public extension TaskQueue {
             }
         }
     }
+    private func removeTask(_ task: TaskItem) -> Bool {
+        if let index = self.taskArr.firstIndex(where: task.isEqual) {
+            self.taskArr.remove(at: index)
+            return true
+        } else {
+            return false
+        }
+    }
 }
-// MARK: -
 public extension TaskQueue {
     func addTaskItem(_ taskItem: TaskItem) {
         queue.async {
@@ -172,5 +160,27 @@ public extension TaskQueue {
         let result = AsyncTask(closure: task)
         self.addTaskItem(result)
         return result
+    }
+}
+// MARK: 执行任务
+private extension TaskQueue {
+    func executeIfNeed() {
+        guard self.taskIsSuspend == false else { return }
+        guard self.taskState == .free else { return }
+        guard let task = self.taskArr.first else { return }
+        self.taskState = .working
+        self.execute(task: task) {[weak self] in
+            guard let `self` = self else { return }
+            self.queue.async {
+                _ = self.removeTask(task)
+                self.taskState = .free
+                self.executeIfNeed()
+            }
+        }
+    }
+    func execute(task: TaskItem, taskComplete: @escaping () -> Void) {
+        DispatchQueue.main.async {
+            task.start(taskComplete)
+        }
     }
 }
