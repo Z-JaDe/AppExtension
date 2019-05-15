@@ -32,7 +32,7 @@ extension Observable {
         return pausableBuffered(pauser, flushOnCompleted: false, flushOnError: false)
     }
 }
-extension NSObject {
+extension DisposeBagProtocol {
     public func setNeedUpdate<P: ObservableType>(_ pauser: P, tag: String, updater: @escaping () -> Void) where P.Element == Bool {
         let delay: RxTimeInterval = disposeBagWithTag(tag) == nil ? .milliseconds(0) : .milliseconds(200)
         let disposeBag = self.resetDisposeBagWithTag(tag)

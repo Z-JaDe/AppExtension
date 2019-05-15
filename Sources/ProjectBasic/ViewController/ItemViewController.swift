@@ -9,7 +9,7 @@
 import UIKit
 
 open class ItemViewController: ViewController<UIView>, TaskQueueProtocol {
-    public let taskQueue: TaskQueue = TaskQueue()
+    public lazy var taskQueue: TaskQueue = TaskQueue()
     open override func configInit() {
         super.configInit()
         if #available(iOS 11.0, *) {

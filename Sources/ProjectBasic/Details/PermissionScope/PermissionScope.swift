@@ -9,7 +9,7 @@
 import Foundation
 
 public class PermissionScope: TaskQueueProtocol {
-    public let taskQueue: TaskQueue = TaskQueue()
+    public lazy var taskQueue: TaskQueue = TaskQueue()
 
     public init() {}
     public typealias PermissionScopeCallback = (Bool) -> Void

@@ -11,10 +11,9 @@ import UIKit
 public var alertTitle: String = "温馨提示"
 public var alertCancelTitle: String = "取消"
 public var alertConfirmTitle: String = "确定"
-public var alertIKnowTitle: String = "知道了"
+public var alertPromptTitle: String = "知道了"
 
 public class Alert {
-
     fileprivate let alertController: UIAlertController
 
     init(title: String?, message: String?, preferredStyle: UIAlertController.Style) {
@@ -26,20 +25,19 @@ public class Alert {
     public static func actionSheet(title: String? = alertTitle, message: String?) -> Alert {
         return Alert(title: title, message: message, preferredStyle: .actionSheet)
     }
-
 }
 extension Alert {
-    public typealias AlertControllerClosureType = (UIAlertController, UIAlertAction) -> Void
-    public typealias AlertControllerTextInputClosureType = (UIAlertController, UITextField) -> Void
-    public func addCancelAction(title: String, _ closure: @escaping AlertControllerClosureType) -> Alert {
+    public typealias AlertClosureType = (UIAlertController, UIAlertAction) -> Void
+    public typealias AlertTextInputClosureType = (UIAlertController, UITextField) -> Void
+    public func addCancelAction(title: String, _ closure: @escaping AlertClosureType) -> Alert {
         let alertVC = self.alertController
-        alertVC.addAction(UIAlertAction(title: title, style: .cancel, handler: {[weak alertVC] (action) in
+        alertVC.addAction(UIAlertAction(title: title, style: .cancel, handler: { [weak alertVC] (action) in
             guard let alertVC = alertVC else { return }
             closure(alertVC, action)
         }))
         return self
     }
-    public func addDefaultAction(title: String, _ closure: @escaping AlertControllerClosureType) -> Alert {
+    public func addDefaultAction(title: String, _ closure: @escaping AlertClosureType) -> Alert {
         let alertVC = self.alertController
         alertVC.addAction(UIAlertAction(title: title, style: .default, handler: {[weak alertVC] (action) in
             guard let alertVC = alertVC else { return }
@@ -47,7 +45,7 @@ extension Alert {
         }))
         return self
     }
-    public func addDestructiveAction(title: String, _ closure: @escaping AlertControllerClosureType) -> Alert {
+    public func addDestructiveAction(title: String, _ closure: @escaping AlertClosureType) -> Alert {
         let alertVC = self.alertController
         alertVC.addAction(UIAlertAction(title: title, style: .destructive, handler: {[weak alertVC] (action) in
             guard let alertVC = alertVC else { return }
@@ -55,7 +53,7 @@ extension Alert {
         }))
         return self
     }
-    public func addTextInputAction(placeholder: String, _ closure: @escaping AlertControllerTextInputClosureType) -> Alert {
+    public func addTextInputAction(placeholder: String, _ closure: @escaping AlertTextInputClosureType) -> Alert {
         let alertVC = self.alertController
         alertVC.addTextField {[weak alertVC] (textField) in
             guard let alertVC = alertVC else { return }
@@ -67,12 +65,11 @@ extension Alert {
 }
 extension Alert {
     func currentPresentedViewController(_ viewCon: UIViewController? = nil) -> UIViewController {
-        let viewCon: UIViewController = viewCon ?? UIApplication.shared.delegate!.window!!.rootViewController!
-        if let presentVC = viewCon.presentedViewController {
-            return currentPresentedViewController(presentVC)
-        } else {
-            return viewCon
+        var viewCon: UIViewController = viewCon ?? UIApplication.shared.delegate!.window!!.rootViewController!
+        while let presentVC = viewCon.presentedViewController {
+            viewCon = presentVC
         }
+        return viewCon
     }
     public func show(in viewCon: UIViewController? = nil) {
 //        if alertController.actions.first(where: {$0.style == .cancel}) == nil {
@@ -83,24 +80,26 @@ extension Alert {
         currentPresentedViewController(viewCon).present(alertController, animated: true, completion: nil)
     }
     public func hide() {
-        self.alertController.dismiss(animated: true, completion: nil)
+        self.alertController.dismiss(animated: true, completion:  {})
     }
 }
 extension Alert {
-    public static func showPrompt(title: String = alertTitle, _ message: String, _ closure: AlertControllerClosureType? = nil) {
-        Alert.alert(title: title, message: message).addDefaultAction(title: alertIKnowTitle) { (alertVC, action) in
-            closure?(alertVC, action)
-        }.show()
+    private static func cancel(_ alertVC: UIAlertController, action: UIAlertAction) {
+        alertVC.dismiss(animated: true, completion: {})
     }
-    public static func showConfirm(title: String = alertTitle, _ message: String, _ closure: AlertControllerClosureType?) {
+    public static func showPrompt(title: String = alertTitle, _ message: String, _ closure: AlertClosureType? = nil) {
+        Alert.alert(title: title, message: message)
+            .addDefaultAction(title: alertConfirmTitle, closure ?? Alert.cancel)
+            .show()
+    }
+    public static func showConfirm(title: String = alertTitle, _ message: String, _ closure: AlertClosureType?) {
         self.showConfirm(title: title, message, closure, nil)
     }
-    public static func showConfirm(title: String = alertTitle, _ message: String, _ closure: AlertControllerClosureType?, _  cancelClosure: AlertControllerClosureType?) {
-        Alert.alert(title: title, message: message).addDefaultAction(title: alertConfirmTitle) { (alertVC, action) in
-            closure?(alertVC, action)
-            }.addCancelAction(title: alertCancelTitle) { (alertVC, action) in
-                cancelClosure?(alertVC, action)
-            }.show()
+    public static func showConfirm(title: String = alertTitle, _ message: String, _ closure: AlertClosureType?, _  cancelClosure: AlertClosureType?) {
+        Alert.alert(title: title, message: message)
+            .addDefaultAction(title: alertConfirmTitle, closure ?? Alert.cancel)
+            .addCancelAction(title: alertCancelTitle, cancelClosure ?? Alert.cancel)
+            .show()
     }
 }
 
