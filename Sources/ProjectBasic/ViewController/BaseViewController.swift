@@ -10,9 +10,9 @@ import RxSwift
 import RxCocoa
 import FunctionalSwift
 
-typealias ViewControllerConvertible = RootViewStateProtocol & NetworkProtocol & UpdateDataProtocol
+typealias ViewControllerProtocol = RootViewStateProtocol & NetworkProtocol & UpdateDataProtocol
 
-open class ViewController<ViewType>: UIViewController, ViewControllerConvertible where ViewType: UIView {
+open class ViewController<ViewType>: UIViewController, ViewControllerProtocol where ViewType: UIView {
     // MARK: - init
     public init() {
         super.init(nibName: nil, bundle: nil)

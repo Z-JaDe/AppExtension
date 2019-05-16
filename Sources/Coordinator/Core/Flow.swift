@@ -16,9 +16,9 @@ public protocol Flow: class {
 
 }
 
-public typealias PushFlow = Flow & CanPushProtocol
+public typealias PushFlow = Flow & PushJumpPlugin
 
 public typealias AnyFlow = Flow
 
-public typealias PresentFlow = Flow & CanPresentProtocol
-public typealias InPresentFlow = Flow & CanPresentProtocol & CoordinatorContainer
+public typealias PresentFlow = Flow & PresentJumpPlugin
+public typealias InPresentFlow = Flow & PresentJumpPlugin & CoordinatorContainer

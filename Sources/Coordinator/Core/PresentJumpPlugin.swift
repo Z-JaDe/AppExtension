@@ -1,5 +1,5 @@
 //
-//  CanPresentProtocol.swift
+//  PresentJumpPlugin.swift
 //  Wallet
 //
 //  Created by 郑军铎 on 2018/11/2.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-/// ZJaDe: 实现这个协议 说明该协调器可以present
-public protocol CanPresentProtocol: ViewControllerConvertible {
+/// ZJaDe: present跳转支持
+public protocol PresentJumpPlugin: ViewControllerConvertible {
     func present(_ item: ViewControllerConvertible, animated: Bool, completion: (() -> Void)?)
     func dismiss(animated: Bool, completion: (() -> Void)?)
 }
-public extension CanPresentProtocol {
+public extension PresentJumpPlugin {
     func present(_ item: ViewControllerConvertible, animated: Bool = true, completion: (() -> Void)? = nil) {
         DispatchQueue.main.async {
             guard let rootViewCon = item.rootViewController else { return }
@@ -37,4 +37,4 @@ public extension CanPresentProtocol {
     }
 }
 
-extension UIViewController: CanPresentProtocol {}
+extension UIViewController: PresentJumpPlugin {}

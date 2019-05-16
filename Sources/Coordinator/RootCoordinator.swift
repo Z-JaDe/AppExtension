@@ -13,24 +13,23 @@ open class RootNavCoordinator<NavItemType>: RootCoordinator where NavItemType: A
     open func start() {
         let item = NavItemType.create(self.navCon)
         item.coor.start(in: item.viewCon)
-        item.coor.load(viewCon: item.viewCon)
+        item.coor.jump(viewCon: item.viewCon)
     }
 }
 public protocol RootCoordinatorCompatible {
     func createNavigationController() -> UINavigationController
 }
 /// ZJaDe: 一个nav流程的 根协调器
-open class RootCoordinator: ViewConCoordinator,
-    CanPushProtocol,
-    CanPresentProtocol,
+open class RootCoordinator: Coordinator, Flow,
+    PushJumpPlugin,
+    PresentJumpPlugin,
     CoordinatorContainer {
-    /// ZJaDe: CoordinatorContainer
+
     public var coordinators: [Coordinator] = []
-    /// ZJaDe: ViewControllerConvertible
     public var rootViewController: UIViewController? {
         return self.navCon
     }
-    /// ZJaDe: CanPushProtocol
+    /// ZJaDe: PushJumpPlugin
     public lazy var navCon: UINavigationController? = {
         let navCon = (self as? RootCoordinatorCompatible)?.createNavigationController()
             ?? UINavigationController()

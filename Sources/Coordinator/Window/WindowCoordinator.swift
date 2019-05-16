@@ -9,7 +9,9 @@
 import Foundation
 
 public typealias WindowRootItem = ViewControllerConvertible
-public protocol AbstractWindowCoordinator: ViewConCoordinator, CanPresentProtocol {
+public protocol AbstractWindowCoordinator: Coordinator, Flow,
+    PresentJumpPlugin {
+
     var window: UIWindow! {get}
     func start(in window: UIWindow)
     var currentWindowItem: WindowRootItem? {get}

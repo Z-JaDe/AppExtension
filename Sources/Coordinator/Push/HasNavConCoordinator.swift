@@ -8,11 +8,11 @@
 
 import Foundation
 
-open class HasNavConCoordinator: ViewConCoordinator,
-    CoordinatorContainer,
-    CanPushProtocol {
-    public var coordinators: [Coordinator] = []
+open class HasNavConCoordinator: Coordinator, Flow,
+    PushJumpPlugin,
+    CoordinatorContainer {
 
+    public var coordinators: [Coordinator] = []
     public weak var navCon: UINavigationController?
     public required init(_ navCon: UINavigationController?) {
         self.navCon = navCon
@@ -23,8 +23,8 @@ open class HasNavConCoordinator: ViewConCoordinator,
     }
 }
 
-public extension ViewControllerConvertible where Self: CanPushProtocol {
-    func load(viewCon: UIViewController) {
+public extension ViewControllerConvertible where Self: PushJumpPlugin {
+    func jump(viewCon: UIViewController) {
         guard let navCon = navCon else { return }
         if navCon.viewControllers.count <= 0 {
             navCon.viewControllers = [viewCon]

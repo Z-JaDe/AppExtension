@@ -11,7 +11,7 @@ import Foundation
 public protocol ViewControllerConvertible: class {
     var rootViewController: UIViewController? { get }
 }
-/// ZJaDe: 代表有控制器的协调器，实现时只要有viewCon属性即可
+/// ZJaDe: 控制器协议，实现时只要有viewCon属性即可
 public protocol AssociatedViewControllerConvertible: ViewControllerConvertible {
     associatedtype ViewControllerType: UIViewController
     var viewCon: ViewControllerType? {get}

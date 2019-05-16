@@ -20,11 +20,12 @@ public extension NavItemCoordinatorProtocol {
     }
 }
 /// ZJaDe: nav流程中的一个 item
-public typealias AbstractNavItemCoordinator = HasNavConCoordinator & CanPresentProtocol
+public typealias AbstractNavItemCoordinator = HasNavConCoordinator & ViewControllerConvertible
 
 open class NavItemCoordinator<ViewConType>: AbstractNavItemCoordinator,
     AssociatedViewControllerConvertible,
-    NavItemCoordinatorProtocol
+    NavItemCoordinatorProtocol,
+    PresentJumpPlugin
     where ViewConType: UIViewController {
 
     open func start(in viewCon: ViewConType) {
