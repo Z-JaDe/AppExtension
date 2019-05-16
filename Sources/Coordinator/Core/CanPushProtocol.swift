@@ -42,7 +42,7 @@ public extension CanPushProtocol {
         }
         return false
     }
-    func popTo<T: AssociatedRootViewControllerProvider>(_ type: T.Type, animated: Bool = true) -> Bool {
+    func popTo<T: AssociatedViewControllerConvertible>(_ type: T.Type, animated: Bool = true) -> Bool {
         return navCon?.popTo(T.ViewControllerType.self, animated: animated) ?? false
     }
 //    func containsNavItem<T: Coordinator & RouteItem>(_ type: T.Type) -> Bool {

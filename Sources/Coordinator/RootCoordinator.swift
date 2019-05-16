@@ -26,7 +26,7 @@ open class RootCoordinator: ViewConCoordinator,
     CoordinatorContainer {
     /// ZJaDe: CoordinatorContainer
     public var coordinators: [Coordinator] = []
-    /// ZJaDe: RootViewControllerProvider
+    /// ZJaDe: ViewControllerConvertible
     public var rootViewController: UIViewController? {
         return self.navCon
     }

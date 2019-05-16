@@ -20,11 +20,11 @@ public extension ModalCoordinatorProtocol {
     }
 }
 /// ZJaDe: 可以被modal出来的 协调器
-public typealias AbstractModalCoordinator = PresentedCoordinator & RootViewControllerProvider
+public typealias AbstractModalCoordinator = PresentedCoordinator & ViewControllerConvertible
 
 open class ModalCoordinator<ViewConType>: AbstractModalCoordinator,
     CanPresentProtocol,
-    AssociatedRootViewControllerProvider,
+    AssociatedViewControllerConvertible,
     ModalCoordinatorProtocol
 where ViewConType: CanCancelModalViewController & UIViewController {
 

@@ -9,12 +9,12 @@
 import Foundation
 
 /// ZJaDe: 实现这个协议 说明该协调器可以present
-public protocol CanPresentProtocol: RootViewControllerProvider {
-    func present(_ item: RootViewControllerProvider, animated: Bool, completion: (() -> Void)?)
+public protocol CanPresentProtocol: ViewControllerConvertible {
+    func present(_ item: ViewControllerConvertible, animated: Bool, completion: (() -> Void)?)
     func dismiss(animated: Bool, completion: (() -> Void)?)
 }
 public extension CanPresentProtocol {
-    func present(_ item: RootViewControllerProvider, animated: Bool = true, completion: (() -> Void)? = nil) {
+    func present(_ item: ViewControllerConvertible, animated: Bool = true, completion: (() -> Void)? = nil) {
         DispatchQueue.main.async {
             guard let rootViewCon = item.rootViewController else { return }
             if rootViewCon.isBeingDismissed || rootViewCon.isBeingPresented == false {

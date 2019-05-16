@@ -8,7 +8,7 @@
 
 import Foundation
 
-public typealias WindowRootItem = RootViewControllerProvider
+public typealias WindowRootItem = ViewControllerConvertible
 public protocol AbstractWindowCoordinator: ViewConCoordinator, CanPresentProtocol {
     var window: UIWindow! {get}
     func start(in window: UIWindow)

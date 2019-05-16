@@ -23,7 +23,7 @@ public extension NavItemCoordinatorProtocol {
 public typealias AbstractNavItemCoordinator = HasNavConCoordinator & CanPresentProtocol
 
 open class NavItemCoordinator<ViewConType>: AbstractNavItemCoordinator,
-    AssociatedRootViewControllerProvider,
+    AssociatedViewControllerConvertible,
     NavItemCoordinatorProtocol
     where ViewConType: UIViewController {
 
