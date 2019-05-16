@@ -1,5 +1,5 @@
 //
-//  RouteUrl.swift
+//  RouteItem.swift
 //  Wallet
 //
 //  Created by 郑军铎 on 2018/11/1.
@@ -22,14 +22,14 @@ extension AssociatedRootViewControllerProvider {
     }
 }
 /// ZJaDe: 代表一个页面
-public protocol RouteUrl: RootViewControllerProvider {}
-public extension RouteUrl {
+public protocol RouteItem: RootViewControllerProvider {}
+public extension RouteItem {
     func pop() {
         self.rootViewController?.popVC()
     }
 }
 
-extension UIViewController: RouteUrl {
+extension UIViewController: RouteItem {
     public var rootViewController: UIViewController? {
         return self
     }

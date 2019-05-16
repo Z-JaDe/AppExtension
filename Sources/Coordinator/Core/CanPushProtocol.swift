@@ -17,7 +17,7 @@ extension UIViewController: CanPushProtocol {
     }
 }
 public extension CanPushProtocol {
-    typealias CanPushItem = RouteUrl
+    typealias CanPushItem = RouteItem
     func push<T: CanPushItem>(_ item: T, animated: Bool = true) {
         guard let viewCon = item.rootViewController else { return }
         navCon?.pushViewController(viewCon, animated: animated)
@@ -45,10 +45,10 @@ public extension CanPushProtocol {
     func popTo<T: AssociatedRootViewControllerProvider>(_ type: T.Type, animated: Bool = true) -> Bool {
         return navCon?.popTo(T.ViewControllerType.self, animated: animated) ?? false
     }
-//    func containsNavItem<T: Coordinator & RouteUrl>(_ type: T.Type) -> Bool {
+//    func containsNavItem<T: Coordinator & RouteItem>(_ type: T.Type) -> Bool {
 //        return navCon?.navItemChildCoordinators.values.contains(where: {$0 is T}) ?? false
 //    }
-//    func navItemChild<T: Coordinator & RouteUrl>(_ type: T.Type) -> T? {
+//    func navItemChild<T: Coordinator & RouteItem>(_ type: T.Type) -> T? {
 //        return navCon?.navItemChildCoordinators.values.first(where: {$0 is T}) as? T
 //    }
 }
