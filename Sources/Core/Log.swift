@@ -14,13 +14,22 @@ public protocol LogUploadProtocol {
 }
 public enum LogLevel: String {
     case debug = "Debug"
-    case info = "Info"
     case warn = "Warn"
+    case info = "Info"
     case error = "Error"
+    var value: Int {
+        switch self {
+        case .debug: return 0
+        case .warn: return 1
+        case .info: return 2
+        case .error: return 3
+        }
+    }
 }
 public struct Logger {
     private init() {}
     static var shared: Logger = Logger()
+    public static var logLevels: [LogLevel]?
     private let tag: String = jd.appDisplayName ?? "未知App名称"
     private let timeFormatter: DateFormatter = {
         let result = DateFormatter()
@@ -33,6 +42,9 @@ public struct Logger {
         }
     }
     private func privateLog(_ level: LogLevel, _ message: String) {
+        if let logLevels = Logger.logLevels, logLevels.contains(level) == false {
+            return
+        }
         var str: String = ""
         switch level {
         case .debug: str.append("🚑 ")
@@ -70,12 +82,12 @@ public func logInfo<T>(_ message: @autoclosure () -> T) {
         Logger.shared.log(.info, "\(message())")
     #endif
 }
-public func logWarn<T>(_ message: @autoclosure () -> T, file: StaticString = #file, method: String = #function, line: UInt = #line) {
+public func logWarn<T>(_ message: @autoclosure () -> T) {
     if let logger = Logger.shared as? LogUploadProtocol {
-        logger.logUpload(.warn, "\(file)[\(line)], \(method): \(message())")
+        logger.logUpload(.warn, "\(message())")
     }
     #if DEBUG || Beta || POD_CONFIGURATION_BETA
-    Logger.shared.log(.warn, "\(file)[\(line)], \(method): \(message())")
+    Logger.shared.log(.warn, "\(message())")
     #endif
 }
 public func logError<T>(_ message: @autoclosure () -> T, file: StaticString = #file, method: String = #function, line: UInt = #line) {

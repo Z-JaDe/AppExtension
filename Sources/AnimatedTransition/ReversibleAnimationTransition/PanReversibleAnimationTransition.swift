@@ -9,7 +9,9 @@
 import UIKit
 open class PanReversibleAnimationTransition: ReversibleAnimationTransition {
     var tempFromView: UIView?
+    var transitionContext: UIViewControllerContextTransitioning?
     open override func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        self.transitionContext = transitionContext
         super.animateTransition(using: transitionContext)
         transitionContext.addViews()
         let containerView = transitionContext.containerView
@@ -24,7 +26,7 @@ open class PanReversibleAnimationTransition: ReversibleAnimationTransition {
 
         guard self.transitionState == .未开始 || self.transitionState == .已重设 else {
             transitionContext.setFinal(tempFromView, self.isReverse)
-            completeHandle(using: transitionContext, tempFromView, false)
+            completeHandle(using: transitionContext, false)
             self.transitionState = .已重设
             return
         }
@@ -44,26 +46,21 @@ open class PanReversibleAnimationTransition: ReversibleAnimationTransition {
     func complete(using transitionContext: UIViewControllerContextTransitioning, _ tempFromView: UIView) {
         guard self.transitionState == .进行中 else { return }
         let isCancelled = transitionContext.transitionWasCancelled
-        if transitionContext.isInteractive {
-            Animater().duration(duration / 2).animations {
-                if isCancelled {
-                    transitionContext.setInitial(tempFromView, self.isReverse)
-                } else {
-                    transitionContext.setFinal(tempFromView, self.isReverse)
-                }
-                }.completion({ (_) in
-                    self.completeHandle(using: transitionContext, tempFromView, isCancelled)
-                }).animate()
-        } else {
-            self.completeHandle(using: transitionContext, tempFromView, isCancelled)
-        }
-    }
-    func completeHandle(using transitionContext: UIViewControllerContextTransitioning, _ tempFromView: UIView, _ isCancelled: Bool) {
-        if self.tempFromView == tempFromView {
-            tempFromView.removeFromSuperview()
-        }
-        transitionContext._completeHandle(isCancelled)
+        completeHandle(using: transitionContext, isCancelled)
         self.transitionState = .未开始
+    }
+    func completeHandle(using transitionContext: UIViewControllerContextTransitioning, _ isCancelled: Bool) {
+        transitionContext._completeHandle(isCancelled)
+    }
+    public override func animationEnded(_ transitionCompleted: Bool) {
+        self.tempFromView?.removeFromSuperview()
+        self.tempFromView = nil
+        guard let context = self.transitionContext else { return }
+        if transitionCompleted {
+            context.fromView.removeFromSuperview()
+        } else {
+            context.toView.removeFromSuperview()
+        }
     }
 }
 extension UIViewControllerContextTransitioning {
