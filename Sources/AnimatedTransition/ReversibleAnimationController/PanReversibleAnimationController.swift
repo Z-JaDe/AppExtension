@@ -8,33 +8,32 @@
 
 import UIKit
 open class PanReversibleAnimationController: ReversibleAnimationController {
-    open override func canUse() -> Bool {
-        return true
-    }
+    var tempFromView: UIView?
     open override func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         super.animateTransition(using: transitionContext)
         transitionContext.addViews()
         let containerView = transitionContext.containerView
         let tempFromView = transitionContext.addTempFromView()
+        self.tempFromView = tempFromView
         let toView = transitionContext.toView
 
         // MARK: -
-        self.reverse ?
+        self.isReverse ?
             containerView.sendSubviewToBack(toView) :
             containerView.bringSubviewToFront(toView)
 
         guard self.transitionState == .未开始 || self.transitionState == .已重设 else {
-            transitionContext.setFinal(tempFromView, isReverse: self.reverse)
+            transitionContext.setFinal(tempFromView, self.isReverse)
             completeHandle(using: transitionContext, tempFromView, false)
             self.transitionState = .已重设
             return
         }
         self.transitionState = .进行中
-        transitionContext.setInitial(tempFromView, isReverse: self.reverse)
+        transitionContext.setInitial(tempFromView, self.isReverse)
         let duration = self.transitionDuration(using: transitionContext)
 
         let animater = Animater().duration(duration).animations {
-            transitionContext.setFinal(tempFromView, isReverse: self.reverse)
+            transitionContext.setFinal(tempFromView, self.isReverse)
         }.completion({ (_) in
             self.complete(using: transitionContext, tempFromView)
         })
@@ -48,9 +47,9 @@ open class PanReversibleAnimationController: ReversibleAnimationController {
         if transitionContext.isInteractive {
             Animater().duration(duration / 2).animations {
                 if isCancelled {
-                    transitionContext.setInitial(tempFromView, isReverse: self.reverse)
+                    transitionContext.setInitial(tempFromView, self.isReverse)
                 } else {
-                    transitionContext.setFinal(tempFromView, isReverse: self.reverse)
+                    transitionContext.setFinal(tempFromView, self.isReverse)
                 }
                 }.completion({ (_) in
                     self.completeHandle(using: transitionContext, tempFromView, isCancelled)
@@ -60,7 +59,9 @@ open class PanReversibleAnimationController: ReversibleAnimationController {
         }
     }
     func completeHandle(using transitionContext: UIViewControllerContextTransitioning, _ tempFromView: UIView, _ isCancelled: Bool) {
-        tempFromView.removeFromSuperview()
+        if self.tempFromView == tempFromView {
+            tempFromView.removeFromSuperview()
+        }
         transitionContext._completeHandle(isCancelled)
         self.transitionState = .未开始
     }
@@ -73,38 +74,39 @@ extension UIViewControllerContextTransitioning {
         }
     }
     func addTempFromView() -> UIView {
-        let view = UIImageView(image: fromView.toImage())
+        let screenshotsView: UIView = fromView//fromView.window ?? fromView
+        let view = UIImageView(image: screenshotsView.toImage())
         view.frame = initialFrame(for: fromVC)
         containerView.addSubview(view)
         return view
     }
-    func setInitial(_ tempFromView: UIView, isReverse: Bool) {
-        fromView.isHidden = true
+    func setInitial(_ tempFromView: UIView, _ isReverse: Bool) {
+        if fromView != tempFromView {
+            fromView.isHidden = true
+        }
         tempFromView.frame.origin.x = 0
         tempFromView.alpha = 1
         toView.frame.origin.x = isReverse ? -toWidth/2 : toWidth
     }
-    func setFinal(_ tempFromView: UIView, isReverse: Bool) {
+    func setFinal(_ tempFromView: UIView, _ isReverse: Bool) {
         tempFromView.frame.origin.x = isReverse ? fromWidth : -fromWidth/2
         tempFromView.alpha = 0
         toView.frame.origin.x = 0
     }
     fileprivate func _completeHandle(_ isCancelled: Bool) {
         fromView.isHidden = false
-        if isCancelled {
-            toView.removeFromSuperview()
-        } else {
-            fromView.removeFromSuperview()
-        }
         completeTransition(!isCancelled)
+//        if isCancelled {
+//            toView.removeFromSuperview()
+//        } else {
+//            fromView.removeFromSuperview()
+//        }
     }
 }
 extension UIView {
     func toImage() -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.isOpaque, self.layer.contentsScale)
-        drawHierarchy(in: bounds, afterScreenUpdates: false)
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        return image
+        return UIGraphicsImageRenderer(bounds: self.bounds).image(actions: { (context) in
+            drawHierarchy(in: self.bounds, afterScreenUpdates: false)
+        })
     }
 }

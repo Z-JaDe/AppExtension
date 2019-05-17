@@ -14,12 +14,13 @@ open class ReversibleAnimationController: NSObject, UIViewControllerAnimatedTran
         case 已重设
     }
     var transitionState: TransitionState = .未开始
-    open func canUse() -> Bool {
-        return self.transitionState == .未开始
-    }
     // MARK: - 
-    public var reverse: Bool = false
+    public private(set) var isReverse: Bool
     public var duration: TimeInterval = 0.75
+    public init(isReverse: Bool) {
+        self.isReverse = isReverse
+        super.init()
+    }
 
     public var animateTransitionClosure: ((UIViewControllerContextTransitioning) -> Void)?
 

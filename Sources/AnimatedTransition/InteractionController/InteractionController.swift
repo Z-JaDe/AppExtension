@@ -15,11 +15,15 @@ public enum InteractionOperation {
 }
 private var gestureKey: UInt8 = 0
 open class InteractionController: UIPercentDrivenInteractiveTransition {
+    public var interactiveTransitioning: UIViewControllerInteractiveTransitioning? {
+        self.finish()
+        return self.interactionInProgress ? self : nil
+    }
+    
     var viewController: UIViewController?
     var shouldCompleteTransition: Bool = false
-    var percentValue: CGFloat = 0
-
     public fileprivate(set) var interactionInProgress: Bool = false
+
     public var sensitivityValue: CGFloat = 1.35
     public var interactiveUpdate: ((CGFloat) -> Void)?
     public var interactiveComplete: ((Bool) -> Void)?
@@ -32,9 +36,8 @@ open class InteractionController: UIPercentDrivenInteractiveTransition {
         prepareGestureRecognizer(in: viewCon)
     }
     func handleGestureBegin(_ gesture: UIGestureRecognizer, _ view: UIView) {
-        self.interactionInProgress = true
     }
-    func updatePercent(_ gesture: UIGestureRecognizer, _ view: UIView) {
+    func updatePercent(_ gesture: UIGestureRecognizer, _ view: UIView) -> CGFloat {
         fatalError()
     }
     // MARK: -
@@ -67,19 +70,14 @@ extension InteractionController {
         let view: UIView = gesture.view!.superview!
         switch gesture.state {
         case .began:
+            self.interactionInProgress = true
             handleGestureBegin(gesture, view)
         case .changed:
-            guard self.interactionInProgress else {
-                return
-            }
-            self.updatePercent(gesture, view)
-            self.formatPercent()
-
+            guard self.interactionInProgress else { return }
+            let percentValue = formatPercent(updatePercent(gesture, view))
             self.update(percentValue)
         case .ended, .cancelled:
-            guard self.interactionInProgress else {
-                return
-            }
+            guard self.interactionInProgress else { return }
             self.interactionInProgress = false
             if !self.shouldCompleteTransition || gesture.state == .cancelled {
                 self.cancel()
@@ -90,10 +88,12 @@ extension InteractionController {
             break
         }
     }
-    func formatPercent() {
-        percentValue *= sensitivityValue
-        percentValue = min(percentValue, 0.99)
-        percentValue = max(percentValue, 0.01)
+    func formatPercent(_ value: CGFloat) -> CGFloat {
+        var value = value
+        value *= sensitivityValue
+        value = min(value, 0.99)
+        value = max(value, 0.01)
+        return value
     }
 }
 
