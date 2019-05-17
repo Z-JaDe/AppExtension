@@ -1,5 +1,5 @@
 //
-//  InteractionController.swift
+//  InteractionTransition.swift
 //  PaiBaoTang
 //
 //  Created by 茶古电子商务 on 2017/7/27.
@@ -14,9 +14,9 @@ public enum InteractionOperation {
     case Tab
 }
 private var gestureKey: UInt8 = 0
-open class InteractionController: UIPercentDrivenInteractiveTransition {
+open class InteractionTransition: UIPercentDrivenInteractiveTransition {
     public var interactiveTransitioning: UIViewControllerInteractiveTransitioning? {
-        self.finish()
+        self.cancel()
         return self.interactionInProgress ? self : nil
     }
     
@@ -59,7 +59,7 @@ open class InteractionController: UIPercentDrivenInteractiveTransition {
         self.interactiveComplete?(false)
     }
 }
-extension InteractionController {
+extension InteractionTransition {
     fileprivate func prepareGestureRecognizer(in viewCon: UIViewController) {
         let panGesture = viewCon.view._panGesture
         panGesture.removeTarget(self, action: #selector(handleGesture(_: )))

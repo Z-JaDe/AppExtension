@@ -1,5 +1,5 @@
 ////
-////  NavInteractionController.swift
+////  NavInteractionTransition.swift
 ////  PaiBaoTang
 ////
 ////  Created by 茶古电子商务 on 2017/7/27.
@@ -8,7 +8,7 @@
 //
 //import UIKit
 //
-//open class NavInteractionController: InteractionController {
+//open class NavInteractionTransition: InteractionTransition {
 //    open var popOnRightToLeft: Bool = false
 //
 ////    override func getGesture(viewCon: UIViewController) -> UIGestureRecognizer? {

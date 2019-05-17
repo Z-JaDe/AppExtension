@@ -1,5 +1,5 @@
 //
-//  ReversibleAnimationController.swift
+//  ReversibleAnimationTransition.swift
 //  PaiBaoTang
 //
 //  Created by 茶古电子商务 on 2017/7/27.
@@ -7,7 +7,7 @@
 //
 
 import UIKit
-open class ReversibleAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
+open class ReversibleAnimationTransition: NSObject, UIViewControllerAnimatedTransitioning {
     enum TransitionState {
         case 未开始
         case 进行中

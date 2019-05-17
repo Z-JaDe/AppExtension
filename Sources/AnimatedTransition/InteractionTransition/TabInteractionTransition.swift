@@ -1,5 +1,5 @@
 //
-//  TabInteractionController.swift
+//  TabInteractionTransition.swift
 //  PaiBaoTang
 //
 //  Created by 茶古电子商务 on 2017/7/27.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class TabInteractionController: InteractionController {
+open class TabInteractionTransition: InteractionTransition {
     var leftToRight: Bool = false
     override func handleGestureBegin(_ gesture: UIGestureRecognizer, _ view: UIView) {
         guard let gesture = gesture as? UIPanGestureRecognizer else {

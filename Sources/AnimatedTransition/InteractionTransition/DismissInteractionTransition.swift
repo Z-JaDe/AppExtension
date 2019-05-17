@@ -1,5 +1,5 @@
 //
-//  DismissInteractionController.swift
+//  DismissInteractionTransition.swift
 //  PaiBaoTang
 //
 //  Created by 茶古电子商务 on 2017/7/27.
@@ -13,7 +13,7 @@ public enum DismissDirection {
     case vertical(topToBottom: Bool)
 }
 
-open class DismissInteractionController: InteractionController {
+open class DismissInteractionTransition: InteractionTransition {
     public var dismissDirection: DismissDirection = .vertical(topToBottom: true)
 
     open override func handleGestureBegin(_ gesture: UIGestureRecognizer, _ view: UIView) {

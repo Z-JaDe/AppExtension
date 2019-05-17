@@ -85,12 +85,12 @@
 		C910569921A847BB00F87515 /* AnimatedTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = C910569721A847BB00F87515 /* AnimatedTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C910569C21A847BB00F87515 /* AnimatedTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C910569521A847BA00F87515 /* AnimatedTransition.framework */; };
 		C910569D21A847BB00F87515 /* AnimatedTransition.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C910569521A847BA00F87515 /* AnimatedTransition.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C91056A121A8481B00F87515 /* NavInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910563221A844E100F87515 /* NavInteractionController.swift */; };
-		C91056A221A8481B00F87515 /* DismissInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910563321A844E100F87515 /* DismissInteractionController.swift */; };
-		C91056A321A8481B00F87515 /* InteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910563421A844E100F87515 /* InteractionController.swift */; };
-		C91056A421A8481B00F87515 /* TabInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910563521A844E100F87515 /* TabInteractionController.swift */; };
-		C91056A521A8482000F87515 /* ReversibleAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910563721A844E100F87515 /* ReversibleAnimationController.swift */; };
-		C91056A621A8482000F87515 /* PanReversibleAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910563821A844E100F87515 /* PanReversibleAnimationController.swift */; };
+		C91056A121A8481B00F87515 /* NavInteractionTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910563221A844E100F87515 /* NavInteractionTransition.swift */; };
+		C91056A221A8481B00F87515 /* DismissInteractionTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910563321A844E100F87515 /* DismissInteractionTransition.swift */; };
+		C91056A321A8481B00F87515 /* InteractionTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910563421A844E100F87515 /* InteractionTransition.swift */; };
+		C91056A421A8481B00F87515 /* TabInteractionTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910563521A844E100F87515 /* TabInteractionTransition.swift */; };
+		C91056A521A8482000F87515 /* ReversibleAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910563721A844E100F87515 /* ReversibleAnimationTransition.swift */; };
+		C91056A621A8482000F87515 /* PanReversibleAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910563821A844E100F87515 /* PanReversibleAnimationTransition.swift */; };
 		C91056AD21A848B600F87515 /* AnimatedTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91056AB21A8489A00F87515 /* AnimatedTransition.swift */; };
 		C910E63B21AE8A950067B51B /* Updating.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910E63321AE80870067B51B /* Updating.swift */; };
 		C910E63C21AE8A950067B51B /* TableViewUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910E63521AE83BA0067B51B /* TableViewUpdating.swift */; };
@@ -936,12 +936,12 @@
 		C91055AD21A8298200F87515 /* UserNotificationManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserNotificationManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C91055AF21A8298200F87515 /* UserNotificationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserNotificationManager.h; sourceTree = "<group>"; };
 		C91055B021A8298200F87515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C910563221A844E100F87515 /* NavInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavInteractionController.swift; sourceTree = "<group>"; };
-		C910563321A844E100F87515 /* DismissInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissInteractionController.swift; sourceTree = "<group>"; };
-		C910563421A844E100F87515 /* InteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionController.swift; sourceTree = "<group>"; };
-		C910563521A844E100F87515 /* TabInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabInteractionController.swift; sourceTree = "<group>"; };
-		C910563721A844E100F87515 /* ReversibleAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReversibleAnimationController.swift; sourceTree = "<group>"; };
-		C910563821A844E100F87515 /* PanReversibleAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanReversibleAnimationController.swift; sourceTree = "<group>"; };
+		C910563221A844E100F87515 /* NavInteractionTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavInteractionTransition.swift; sourceTree = "<group>"; };
+		C910563321A844E100F87515 /* DismissInteractionTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissInteractionTransition.swift; sourceTree = "<group>"; };
+		C910563421A844E100F87515 /* InteractionTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionTransition.swift; sourceTree = "<group>"; };
+		C910563521A844E100F87515 /* TabInteractionTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabInteractionTransition.swift; sourceTree = "<group>"; };
+		C910563721A844E100F87515 /* ReversibleAnimationTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReversibleAnimationTransition.swift; sourceTree = "<group>"; };
+		C910563821A844E100F87515 /* PanReversibleAnimationTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanReversibleAnimationTransition.swift; sourceTree = "<group>"; };
 		C910569521A847BA00F87515 /* AnimatedTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AnimatedTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C910569721A847BB00F87515 /* AnimatedTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimatedTransition.h; sourceTree = "<group>"; };
 		C910569821A847BB00F87515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1872,31 +1872,31 @@
 			path = UserNotificationManager;
 			sourceTree = "<group>";
 		};
-		C910563121A844E100F87515 /* InteractionController */ = {
+		C910563121A844E100F87515 /* InteractionTransition */ = {
 			isa = PBXGroup;
 			children = (
-				C910563221A844E100F87515 /* NavInteractionController.swift */,
-				C910563321A844E100F87515 /* DismissInteractionController.swift */,
-				C910563421A844E100F87515 /* InteractionController.swift */,
-				C910563521A844E100F87515 /* TabInteractionController.swift */,
+				C910563221A844E100F87515 /* NavInteractionTransition.swift */,
+				C910563321A844E100F87515 /* DismissInteractionTransition.swift */,
+				C910563421A844E100F87515 /* InteractionTransition.swift */,
+				C910563521A844E100F87515 /* TabInteractionTransition.swift */,
 			);
-			path = InteractionController;
+			path = InteractionTransition;
 			sourceTree = "<group>";
 		};
-		C910563621A844E100F87515 /* ReversibleAnimationController */ = {
+		C910563621A844E100F87515 /* ReversibleAnimationTransition */ = {
 			isa = PBXGroup;
 			children = (
-				C910563721A844E100F87515 /* ReversibleAnimationController.swift */,
-				C910563821A844E100F87515 /* PanReversibleAnimationController.swift */,
+				C910563721A844E100F87515 /* ReversibleAnimationTransition.swift */,
+				C910563821A844E100F87515 /* PanReversibleAnimationTransition.swift */,
 			);
-			path = ReversibleAnimationController;
+			path = ReversibleAnimationTransition;
 			sourceTree = "<group>";
 		};
 		C910569621A847BB00F87515 /* AnimatedTransition */ = {
 			isa = PBXGroup;
 			children = (
-				C910563121A844E100F87515 /* InteractionController */,
-				C910563621A844E100F87515 /* ReversibleAnimationController */,
+				C910563121A844E100F87515 /* InteractionTransition */,
+				C910563621A844E100F87515 /* ReversibleAnimationTransition */,
 				C910569721A847BB00F87515 /* AnimatedTransition.h */,
 				C91056AB21A8489A00F87515 /* AnimatedTransition.swift */,
 				C910569821A847BB00F87515 /* Info.plist */,
@@ -4327,13 +4327,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C91056A421A8481B00F87515 /* TabInteractionController.swift in Sources */,
-				C91056A121A8481B00F87515 /* NavInteractionController.swift in Sources */,
-				C91056A521A8482000F87515 /* ReversibleAnimationController.swift in Sources */,
+				C91056A421A8481B00F87515 /* TabInteractionTransition.swift in Sources */,
+				C91056A121A8481B00F87515 /* NavInteractionTransition.swift in Sources */,
+				C91056A521A8482000F87515 /* ReversibleAnimationTransition.swift in Sources */,
 				C91056AD21A848B600F87515 /* AnimatedTransition.swift in Sources */,
-				C91056A621A8482000F87515 /* PanReversibleAnimationController.swift in Sources */,
-				C91056A321A8481B00F87515 /* InteractionController.swift in Sources */,
-				C91056A221A8481B00F87515 /* DismissInteractionController.swift in Sources */,
+				C91056A621A8482000F87515 /* PanReversibleAnimationTransition.swift in Sources */,
+				C91056A321A8481B00F87515 /* InteractionTransition.swift in Sources */,
+				C91056A221A8481B00F87515 /* DismissInteractionTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

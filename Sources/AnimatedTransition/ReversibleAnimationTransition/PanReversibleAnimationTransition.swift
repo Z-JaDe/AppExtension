@@ -1,5 +1,5 @@
 //
-//  PanReversibleAnimationController.swift
+//  PanReversibleAnimationTransition.swift
 //  PaiBaoTang
 //
 //  Created by 茶古电子商务 on 2017/7/28.
@@ -7,7 +7,7 @@
 //
 
 import UIKit
-open class PanReversibleAnimationController: ReversibleAnimationController {
+open class PanReversibleAnimationTransition: ReversibleAnimationTransition {
     var tempFromView: UIView?
     open override func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         super.animateTransition(using: transitionContext)
@@ -96,11 +96,6 @@ extension UIViewControllerContextTransitioning {
     fileprivate func _completeHandle(_ isCancelled: Bool) {
         fromView.isHidden = false
         completeTransition(!isCancelled)
-//        if isCancelled {
-//            toView.removeFromSuperview()
-//        } else {
-//            fromView.removeFromSuperview()
-//        }
     }
 }
 extension UIView {
