@@ -80,7 +80,7 @@ extension Alert {
         currentPresentedViewController(viewCon).present(alertController, animated: true, completion: nil)
     }
     public func hide() {
-        self.alertController.dismiss(animated: true, completion:  {})
+        self.alertController.dismiss(animated: true, completion: {})
     }
 }
 extension Alert {

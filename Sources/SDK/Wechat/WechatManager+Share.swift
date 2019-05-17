@@ -48,13 +48,13 @@ extension WechatManager {
         let webpageObject = WXWebpageObject()
         webpageObject.webpageUrl = shareModel.url
         message.mediaObject = webpageObject
-        
+
         let req = SendMessageToWXReq()
         req.bText = false
         req.message = message
         return req
     }
-    
+
     func onShareResp(_ resp: SendMessageToWXResp) {
         switch WXErrCode(resp.errCode) {
         case WXSuccess:

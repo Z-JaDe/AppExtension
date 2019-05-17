@@ -1,4 +1,4 @@
-//  JDItemAnimationProtocol.swift
+//  ItemAnimationProtocol.swift
 //
 // Copyright (c) 11/10/14 Ramotion Inc. (http: //ramotion.com)
 //
@@ -23,13 +23,13 @@
 import Foundation
 import UIKit
 
-protocol JDItemAnimationProtocol {
+protocol ItemAnimationProtocol {
 
   func playAnimation(_ icon: UIImageView, textLabel: UILabel)
   func deselectAnimation(_ icon: UIImageView, textLabel: UILabel)
 }
 
-open class JDItemAnimation: NSObject, JDItemAnimationProtocol {
+open class ItemAnimation: NSObject, ItemAnimationProtocol {
 
     struct AnimationKeys {
         static let Scale     = "transform.scale"

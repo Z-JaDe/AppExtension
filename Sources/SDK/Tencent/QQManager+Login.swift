@@ -42,7 +42,7 @@ public class QQLoginPlugin: ThirdLoginPlugin {
                            kOPEN_PERMISSION_GET_VIP_RICH_INFO]
         tencentOAuth.authorize(permissions)
     }
-    
+
     // MARK: -
     override func requestLogin() {
         self.qqRefreshToken {

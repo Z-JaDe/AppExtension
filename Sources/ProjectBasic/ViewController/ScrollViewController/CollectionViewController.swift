@@ -7,17 +7,17 @@
 //
 
 import UIKit
-open class NormalCollectionViewController: ListViewController<JDCollectionView> {
-    open override func createView(_ frame: CGRect) -> JDCollectionView {
+open class NormalCollectionViewController: ListViewController<CollectionView> {
+    open override func createView(_ frame: CGRect) -> CollectionView {
         let layout = UICollectionViewFlowLayout()
-        return JDCollectionView(frame: frame, collectionViewLayout: layout)
+        return CollectionView(frame: frame, collectionViewLayout: layout)
     }
 }
-open class AdapterCollectionViewController: AdapterListViewController<JDCollectionView, UICollectionAdapter> {
+open class AdapterCollectionViewController: AdapterListViewController<CollectionView, UICollectionAdapter> {
 
-    open override func createView(_ frame: CGRect) -> JDCollectionView {
+    open override func createView(_ frame: CGRect) -> CollectionView {
         let layout = UICollectionViewFlowLayout()
-        return JDCollectionView(frame: frame, collectionViewLayout: layout)
+        return CollectionView(frame: frame, collectionViewLayout: layout)
     }
 
     open override func viewDidLoad() {

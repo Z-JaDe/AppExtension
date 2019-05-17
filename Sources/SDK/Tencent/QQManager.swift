@@ -19,7 +19,7 @@ public class QQManager: NSObject, ThirdLoginPluginProtocol {
     }
     public typealias LoginPlugin = QQLoginPlugin
     public internal(set) var login: LoginPlugin?
-    
+
     lazy var tencentOAuth: TencentOAuth = {
         let tencentAppid = sdkInfo.tencentAppid
         let tencentOAuth = TencentOAuth(appId: tencentAppid, andDelegate: self)!
