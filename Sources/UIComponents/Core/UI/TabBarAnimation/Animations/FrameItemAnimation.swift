@@ -2,7 +2,7 @@ import UIKit
 import QuartzCore
 
 /// The JDFrameItemAnimation class provides keyframe animation.
-public class JDFrameItemAnimation: JDItemAnimation {
+public class FrameItemAnimation: ItemAnimation {
 
     @nonobjc fileprivate var animationImages: [CGImage] = []
 

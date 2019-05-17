@@ -30,7 +30,7 @@ extension QQManager: ShareItemProtocol {
         self.handleSendResult(sendResult: sent)
     }
 }
-extension QQManager {    
+extension QQManager {
     func getMessageToQQReq(_ shareModel: ShareModel) -> SendMessageToQQReq {
         // swiftlint:disable force_cast
         let newsObj: QQApiNewsObject = QQApiNewsObject.object(with: URL(string: shareModel.url), title: shareModel.title, description: shareModel.content, previewImageURL: URL(string: shareModel.icon)) as! QQApiNewsObject

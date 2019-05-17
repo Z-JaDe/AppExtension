@@ -1,6 +1,6 @@
 import UIKit
 
-open class JDBounceAnimation: JDItemAnimation {
+open class BounceAnimation: ItemAnimation {
     override open func playAnimation(_ icon: UIImageView, textLabel: UILabel) {
         playBounceAnimation(icon)
         playAlphaAnimation(textLabel)

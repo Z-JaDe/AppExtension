@@ -1,5 +1,5 @@
 import UIKit
-open class JDTransitionItemAnimations: JDItemAnimation {
+open class TransitionItemAnimations: ItemAnimation {
 
     open var transitionOptions: UIView.AnimationOptions
 
@@ -21,28 +21,28 @@ open class JDTransitionItemAnimations: JDItemAnimation {
     }
 }
 
-public class JDFlipLeftTransitionItemAnimations: JDTransitionItemAnimations {
+public class FlipLeftTransitionItemAnimations: TransitionItemAnimations {
     public override init() {
         super.init()
         transitionOptions = UIView.AnimationOptions.transitionFlipFromLeft
     }
 }
 
-public class JDFlipRightTransitionItemAnimations: JDTransitionItemAnimations {
+public class FlipRightTransitionItemAnimations: TransitionItemAnimations {
     public override init() {
         super.init()
         transitionOptions = UIView.AnimationOptions.transitionFlipFromRight
     }
 }
 
-public class JDFlipTopTransitionItemAnimations: JDTransitionItemAnimations {
+public class FlipTopTransitionItemAnimations: TransitionItemAnimations {
     public override init() {
         super.init()
         transitionOptions = UIView.AnimationOptions.transitionFlipFromTop
     }
 }
 
-public class JDFlipBottomTransitionItemAnimations: JDTransitionItemAnimations {
+public class FlipBottomTransitionItemAnimations: TransitionItemAnimations {
     public override init() {
         super.init()
         transitionOptions = UIView.AnimationOptions.transitionFlipFromBottom

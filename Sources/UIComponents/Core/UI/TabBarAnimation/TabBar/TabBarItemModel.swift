@@ -16,7 +16,7 @@ public struct TabBarItemModel {
     public var textFont: UIFont?
     public var color: UIColor?
     public var selectedColor: UIColor?
-    public var animation: JDItemAnimation?
+    public var animation: ItemAnimation?
     public var isSelected: Bool = false
     public var badgeValue: String?
 

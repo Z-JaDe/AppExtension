@@ -1,14 +1,14 @@
 import UIKit
 import QuartzCore
 
-open class JDRotationAnimation: JDItemAnimation {
+open class RotationAnimation: ItemAnimation {
 
-    public enum JDRotationDirection {
+    public enum Direction {
         case left
         case right
     }
 
-    open var direction: JDRotationDirection!
+    open var direction: Direction!
 
     override open func playAnimation(_ icon: UIImageView, textLabel: UILabel) {
         playRoatationAnimation(icon)
@@ -25,7 +25,7 @@ open class JDRotationAnimation: JDItemAnimation {
         rotateAnimation.fromValue = 0.0
 
         var toValue: CGFloat = .pi * 2.0
-        if direction != nil && direction == JDRotationDirection.left {
+        if direction != nil && direction == .left {
             toValue *= -1.0
         }
 
@@ -36,15 +36,15 @@ open class JDRotationAnimation: JDItemAnimation {
     }
 }
 
-public class JDLeftRotationAnimation: JDRotationAnimation {
+public class LeftRotationAnimation: RotationAnimation {
     public override init() {
         super.init()
-        direction = JDRotationDirection.left
+        direction = .left
     }
 }
-public class JDRightRotationAnimation: JDRotationAnimation {
+public class RightRotationAnimation: RotationAnimation {
     public override init() {
         super.init()
-        direction = JDRotationDirection.right
+        direction = .right
     }
 }

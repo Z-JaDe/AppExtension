@@ -26,16 +26,16 @@ public class AlipayManager: NSObject {
  其它    其它支付错误
  */
 extension AlipayManager {
-    func onPayResp(_ resultDict:[AnyHashable:Any]?) {
-        if let resultDict = resultDict,let memo = resultDict["memo"] as? String {
+    func onPayResp(_ resultDict: [AnyHashable: Any]?) {
+        if let resultDict = resultDict, let memo = resultDict["memo"] as? String {
             if resultDict["resultStatus"] as? String == "9000" {
                 self.payCallBack(isSuccessful: true)
                 HUD.showSuccess(memo)
-            }else {
+            } else {
                 self.payCallBack(isSuccessful: false)
                 HUD.showError(memo)
             }
-        }else {
+        } else {
             HUD.showError("支付宝支付失败，未知错误")
             self.payCallBack(isSuccessful: false)
         }

@@ -14,6 +14,12 @@
 		18B56D462272CEC000AADA00 /* LockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B56D452272CEC000AADA00 /* LockTest.swift */; };
 		18F81BDF2282B15D00A8A857 /* CreateTableCellrotocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F81BDD2282B15900A8A857 /* CreateTableCellrotocol.swift */; };
 		18F81BE22282B1E200A8A857 /* CreateCollectionCellrotocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F81BE02282B1D900A8A857 /* CreateCollectionCellrotocol.swift */; };
+		18FC8EB0228E5E210013B5B7 /* PresentJumpPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC8EAA228E5E200013B5B7 /* PresentJumpPlugin.swift */; };
+		18FC8EB1228E5E210013B5B7 /* PushJumpPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC8EAB228E5E200013B5B7 /* PushJumpPlugin.swift */; };
+		18FC8EB2228E5E210013B5B7 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC8EAC228E5E200013B5B7 /* Scheduler.swift */; };
+		18FC8EB3228E5E210013B5B7 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC8EAD228E5E200013B5B7 /* Flow.swift */; };
+		18FC8EB4228E5E210013B5B7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC8EAE228E5E210013B5B7 /* Coordinator.swift */; };
+		18FC8EB5228E5E210013B5B7 /* ViewControllerConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC8EAF228E5E210013B5B7 /* ViewControllerConvertible.swift */; };
 		1CBE8225C379D54EBD24ECD9 /* Pods_AnimatedTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8D0708651443C60CC1A051 /* Pods_AnimatedTransition.framework */; };
 		21FBC951A37DD62FCD3E2319 /* Pods_AppExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB786A69356822AA07D7A025 /* Pods_AppExtension.framework */; };
 		22960DB79B988D9A1057B971 /* Pods_Coordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B72F21D5CE3831F5C341674 /* Pods_Coordinator.framework */; };
@@ -135,7 +141,6 @@
 		C918DF0921B52299000F2AAC /* DifferenceKitCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918DF0321B52299000F2AAC /* DifferenceKitCompatible.swift */; };
 		C918DF0B21B524D7000F2AAC /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918DF0A21B524D7000F2AAC /* CoreTests.swift */; };
 		C918DF0D21B5269D000F2AAC /* AssociatedObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918DF0C21B5269D000F2AAC /* AssociatedObjectTests.swift */; };
-		C9196E5821D0EAEE00CB47A1 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9196E5621D0EAEA00CB47A1 /* Scheduler.swift */; };
 		C9196E5B21D0EB3D00CB47A1 /* WindowScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9196E5921D0EB3800CB47A1 /* WindowScheduler.swift */; };
 		C9196E5E21D0EC9C00CB47A1 /* WindowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9196E5C21D0EC9500CB47A1 /* WindowCoordinator.swift */; };
 		C9196E6421D0F10100CB47A1 /* ModalCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BB58921CA14FB001D7789 /* ModalCoordinator.swift */; };
@@ -151,13 +156,7 @@
 		C91BB58421CA1495001D7789 /* Coordinator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C91BB57C21CA1494001D7789 /* Coordinator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C91BB59321CA14FC001D7789 /* HasNavConCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BB58821CA14FB001D7789 /* HasNavConCoordinator.swift */; };
 		C91BB59521CA14FC001D7789 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BB58A21CA14FB001D7789 /* RootCoordinator.swift */; };
-		C91BB59621CA14FC001D7789 /* RouteUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BB58C21CA14FC001D7789 /* RouteUrl.swift */; };
-		C91BB59721CA14FC001D7789 /* CanPresentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BB58D21CA14FC001D7789 /* CanPresentProtocol.swift */; };
-		C91BB59821CA14FC001D7789 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BB58E21CA14FC001D7789 /* Flow.swift */; };
-		C91BB59921CA14FC001D7789 /* CanPushProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BB58F21CA14FC001D7789 /* CanPushProtocol.swift */; };
-		C91BB59A21CA14FC001D7789 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BB59021CA14FC001D7789 /* Coordinator.swift */; };
 		C91BB59B21CA14FC001D7789 /* NavItemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BB59121CA14FC001D7789 /* NavItemCoordinator.swift */; };
-		C91BB59C21CA14FC001D7789 /* PresentedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BB59221CA14FC001D7789 /* PresentedCoordinator.swift */; };
 		C9274ACB20F7205300884B54 /* FontViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9274ACA20F7205300884B54 /* FontViewControllerTest.swift */; };
 		C9274B0320F77F8000884B54 /* ValueProtocol+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9274B0020F77F7700884B54 /* ValueProtocol+Extension.swift */; };
 		C9274B0B20F785F100884B54 /* Value+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9274B0620F785EB00884B54 /* Value+Codable.swift */; };
@@ -200,13 +199,13 @@
 		C9283B8D21BE891A00361B87 /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F87B21006DC500B8DF84 /* TabBarItemView.swift */; };
 		C9283B8E21BE891A00361B87 /* TabBarItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F87C21006DC500B8DF84 /* TabBarItemModel.swift */; };
 		C9283B8F21BE891E00361B87 /* AnimatedTabBarControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F87D21006DC500B8DF84 /* AnimatedTabBarControllerProtocol.swift */; };
-		C9283B9021BE892400361B87 /* JDAlphaAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F87F21006DC500B8DF84 /* JDAlphaAnimation.swift */; };
-		C9283B9121BE892400361B87 /* JDFumeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F88021006DC500B8DF84 /* JDFumeAnimation.swift */; };
-		C9283B9221BE892400361B87 /* JDTransitionItemAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F88121006DC500B8DF84 /* JDTransitionItemAnimations.swift */; };
-		C9283B9321BE892400361B87 /* JDItemAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F88221006DC500B8DF84 /* JDItemAnimationProtocol.swift */; };
-		C9283B9421BE892400361B87 /* JDBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F88321006DC500B8DF84 /* JDBounceAnimation.swift */; };
-		C9283B9521BE892400361B87 /* JDRotationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F88421006DC500B8DF84 /* JDRotationAnimation.swift */; };
-		C9283B9621BE892400361B87 /* JDFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F88521006DC500B8DF84 /* JDFrameItemAnimation.swift */; };
+		C9283B9021BE892400361B87 /* AlphaAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F87F21006DC500B8DF84 /* AlphaAnimation.swift */; };
+		C9283B9121BE892400361B87 /* FumeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F88021006DC500B8DF84 /* FumeAnimation.swift */; };
+		C9283B9221BE892400361B87 /* TransitionItemAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F88121006DC500B8DF84 /* TransitionItemAnimations.swift */; };
+		C9283B9321BE892400361B87 /* ItemAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F88221006DC500B8DF84 /* ItemAnimationProtocol.swift */; };
+		C9283B9421BE892400361B87 /* BounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F88321006DC500B8DF84 /* BounceAnimation.swift */; };
+		C9283B9521BE892400361B87 /* RotationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F88421006DC500B8DF84 /* RotationAnimation.swift */; };
+		C9283B9621BE892400361B87 /* FrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F88521006DC500B8DF84 /* FrameItemAnimation.swift */; };
 		C9283B9721BE893400361B87 /* UIView+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F87221006DC500B8DF84 /* UIView+Gesture.swift */; };
 		C9283B9821BE893400361B87 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F87321006DC500B8DF84 /* Label.swift */; };
 		C9283B9921BE893400361B87 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F87421006DC500B8DF84 /* CollectionView.swift */; };
@@ -777,6 +776,12 @@
 		18B56D452272CEC000AADA00 /* LockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockTest.swift; sourceTree = "<group>"; };
 		18F81BDD2282B15900A8A857 /* CreateTableCellrotocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTableCellrotocol.swift; sourceTree = "<group>"; };
 		18F81BE02282B1D900A8A857 /* CreateCollectionCellrotocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCollectionCellrotocol.swift; sourceTree = "<group>"; };
+		18FC8EAA228E5E200013B5B7 /* PresentJumpPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentJumpPlugin.swift; sourceTree = "<group>"; };
+		18FC8EAB228E5E200013B5B7 /* PushJumpPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushJumpPlugin.swift; sourceTree = "<group>"; };
+		18FC8EAC228E5E200013B5B7 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		18FC8EAD228E5E200013B5B7 /* Flow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
+		18FC8EAE228E5E210013B5B7 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		18FC8EAF228E5E210013B5B7 /* ViewControllerConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerConvertible.swift; sourceTree = "<group>"; };
 		1B033DAE5C3915346DA12475 /* Pods-CommonPods-List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommonPods-List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommonPods-List/Pods-CommonPods-List.debug.xcconfig"; sourceTree = "<group>"; };
 		1C45FE7A5C23783E6ED24218 /* Pods-BaseCore-CommonPods-EmptyDataSet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-CommonPods-EmptyDataSet.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-CommonPods-EmptyDataSet/Pods-BaseCore-CommonPods-EmptyDataSet.release.xcconfig"; sourceTree = "<group>"; };
 		1DFF40A143CFFE7E48CA2EF9 /* Pods-AppExtensionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppExtensionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppExtensionTests/Pods-AppExtensionTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -991,7 +996,6 @@
 		C918DF0321B52299000F2AAC /* DifferenceKitCompatible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifferenceKitCompatible.swift; sourceTree = "<group>"; };
 		C918DF0A21B524D7000F2AAC /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
 		C918DF0C21B5269D000F2AAC /* AssociatedObjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociatedObjectTests.swift; sourceTree = "<group>"; };
-		C9196E5621D0EAEA00CB47A1 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		C9196E5921D0EB3800CB47A1 /* WindowScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowScheduler.swift; sourceTree = "<group>"; };
 		C9196E5C21D0EC9500CB47A1 /* WindowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowCoordinator.swift; sourceTree = "<group>"; };
 		C91A7D0A21D1C16E00720E4F /* LogicScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicScanViewController.swift; sourceTree = "<group>"; };
@@ -1007,13 +1011,7 @@
 		C91BB58821CA14FB001D7789 /* HasNavConCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasNavConCoordinator.swift; sourceTree = "<group>"; };
 		C91BB58921CA14FB001D7789 /* ModalCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalCoordinator.swift; sourceTree = "<group>"; };
 		C91BB58A21CA14FB001D7789 /* RootCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
-		C91BB58C21CA14FC001D7789 /* RouteUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteUrl.swift; sourceTree = "<group>"; };
-		C91BB58D21CA14FC001D7789 /* CanPresentProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanPresentProtocol.swift; sourceTree = "<group>"; };
-		C91BB58E21CA14FC001D7789 /* Flow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
-		C91BB58F21CA14FC001D7789 /* CanPushProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanPushProtocol.swift; sourceTree = "<group>"; };
-		C91BB59021CA14FC001D7789 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C91BB59121CA14FC001D7789 /* NavItemCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavItemCoordinator.swift; sourceTree = "<group>"; };
-		C91BB59221CA14FC001D7789 /* PresentedCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedCoordinator.swift; sourceTree = "<group>"; };
 		C9274ACA20F7205300884B54 /* FontViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontViewControllerTest.swift; sourceTree = "<group>"; };
 		C9274B0020F77F7700884B54 /* ValueProtocol+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ValueProtocol+Extension.swift"; sourceTree = "<group>"; };
 		C9274B0620F785EB00884B54 /* Value+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Value+Codable.swift"; sourceTree = "<group>"; };
@@ -1119,13 +1117,13 @@
 		C932F87B21006DC500B8DF84 /* TabBarItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
 		C932F87C21006DC500B8DF84 /* TabBarItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItemModel.swift; sourceTree = "<group>"; };
 		C932F87D21006DC500B8DF84 /* AnimatedTabBarControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedTabBarControllerProtocol.swift; sourceTree = "<group>"; };
-		C932F87F21006DC500B8DF84 /* JDAlphaAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDAlphaAnimation.swift; sourceTree = "<group>"; };
-		C932F88021006DC500B8DF84 /* JDFumeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDFumeAnimation.swift; sourceTree = "<group>"; };
-		C932F88121006DC500B8DF84 /* JDTransitionItemAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDTransitionItemAnimations.swift; sourceTree = "<group>"; };
-		C932F88221006DC500B8DF84 /* JDItemAnimationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDItemAnimationProtocol.swift; sourceTree = "<group>"; };
-		C932F88321006DC500B8DF84 /* JDBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDBounceAnimation.swift; sourceTree = "<group>"; };
-		C932F88421006DC500B8DF84 /* JDRotationAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDRotationAnimation.swift; sourceTree = "<group>"; };
-		C932F88521006DC500B8DF84 /* JDFrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDFrameItemAnimation.swift; sourceTree = "<group>"; };
+		C932F87F21006DC500B8DF84 /* AlphaAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaAnimation.swift; sourceTree = "<group>"; };
+		C932F88021006DC500B8DF84 /* FumeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FumeAnimation.swift; sourceTree = "<group>"; };
+		C932F88121006DC500B8DF84 /* TransitionItemAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionItemAnimations.swift; sourceTree = "<group>"; };
+		C932F88221006DC500B8DF84 /* ItemAnimationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemAnimationProtocol.swift; sourceTree = "<group>"; };
+		C932F88321006DC500B8DF84 /* BounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimation.swift; sourceTree = "<group>"; };
+		C932F88421006DC500B8DF84 /* RotationAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotationAnimation.swift; sourceTree = "<group>"; };
+		C932F88521006DC500B8DF84 /* FrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameItemAnimation.swift; sourceTree = "<group>"; };
 		C932F88621006DC500B8DF84 /* SegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		C932F88721006DC500B8DF84 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		C932F88921006DC500B8DF84 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
@@ -2079,7 +2077,6 @@
 			children = (
 				C91BB58921CA14FB001D7789 /* ModalCoordinator.swift */,
 				C91A7D0E21D1C5A000720E4F /* CanCancelModalViewController.swift */,
-				C91BB59221CA14FC001D7789 /* PresentedCoordinator.swift */,
 			);
 			path = Present;
 			sourceTree = "<group>";
@@ -2127,12 +2124,12 @@
 		C91BB58B21CA14FC001D7789 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				C91BB58C21CA14FC001D7789 /* RouteUrl.swift */,
-				C9196E5621D0EAEA00CB47A1 /* Scheduler.swift */,
-				C91BB58D21CA14FC001D7789 /* CanPresentProtocol.swift */,
-				C91BB58E21CA14FC001D7789 /* Flow.swift */,
-				C91BB58F21CA14FC001D7789 /* CanPushProtocol.swift */,
-				C91BB59021CA14FC001D7789 /* Coordinator.swift */,
+				18FC8EAE228E5E210013B5B7 /* Coordinator.swift */,
+				18FC8EAD228E5E200013B5B7 /* Flow.swift */,
+				18FC8EAA228E5E200013B5B7 /* PresentJumpPlugin.swift */,
+				18FC8EAB228E5E200013B5B7 /* PushJumpPlugin.swift */,
+				18FC8EAC228E5E200013B5B7 /* Scheduler.swift */,
+				18FC8EAF228E5E210013B5B7 /* ViewControllerConvertible.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -2576,13 +2573,13 @@
 		C932F87E21006DC500B8DF84 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
-				C932F87F21006DC500B8DF84 /* JDAlphaAnimation.swift */,
-				C932F88021006DC500B8DF84 /* JDFumeAnimation.swift */,
-				C932F88121006DC500B8DF84 /* JDTransitionItemAnimations.swift */,
-				C932F88221006DC500B8DF84 /* JDItemAnimationProtocol.swift */,
-				C932F88321006DC500B8DF84 /* JDBounceAnimation.swift */,
-				C932F88421006DC500B8DF84 /* JDRotationAnimation.swift */,
-				C932F88521006DC500B8DF84 /* JDFrameItemAnimation.swift */,
+				C932F87F21006DC500B8DF84 /* AlphaAnimation.swift */,
+				C932F88021006DC500B8DF84 /* FumeAnimation.swift */,
+				C932F88121006DC500B8DF84 /* TransitionItemAnimations.swift */,
+				C932F88221006DC500B8DF84 /* ItemAnimationProtocol.swift */,
+				C932F88321006DC500B8DF84 /* BounceAnimation.swift */,
+				C932F88421006DC500B8DF84 /* RotationAnimation.swift */,
+				C932F88521006DC500B8DF84 /* FrameItemAnimation.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -4391,20 +4388,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9196E5821D0EAEE00CB47A1 /* Scheduler.swift in Sources */,
-				C91BB59A21CA14FC001D7789 /* Coordinator.swift in Sources */,
+				18FC8EB2228E5E210013B5B7 /* Scheduler.swift in Sources */,
+				18FC8EB1228E5E210013B5B7 /* PushJumpPlugin.swift in Sources */,
+				18FC8EB4228E5E210013B5B7 /* Coordinator.swift in Sources */,
 				C9196E6421D0F10100CB47A1 /* ModalCoordinator.swift in Sources */,
 				C91A7D1021D1C5BA00720E4F /* CanCancelModalViewController.swift in Sources */,
 				C9196E5B21D0EB3D00CB47A1 /* WindowScheduler.swift in Sources */,
-				C91BB59721CA14FC001D7789 /* CanPresentProtocol.swift in Sources */,
 				C9196E5E21D0EC9C00CB47A1 /* WindowCoordinator.swift in Sources */,
-				C91BB59C21CA14FC001D7789 /* PresentedCoordinator.swift in Sources */,
+				18FC8EB0228E5E210013B5B7 /* PresentJumpPlugin.swift in Sources */,
 				C91BB59521CA14FC001D7789 /* RootCoordinator.swift in Sources */,
+				18FC8EB5228E5E210013B5B7 /* ViewControllerConvertible.swift in Sources */,
+				18FC8EB3228E5E210013B5B7 /* Flow.swift in Sources */,
 				C91BB59B21CA14FC001D7789 /* NavItemCoordinator.swift in Sources */,
-				C91BB59821CA14FC001D7789 /* Flow.swift in Sources */,
-				C91BB59921CA14FC001D7789 /* CanPushProtocol.swift in Sources */,
 				C91BB59321CA14FC001D7789 /* HasNavConCoordinator.swift in Sources */,
-				C91BB59621CA14FC001D7789 /* RouteUrl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4434,7 +4430,7 @@
 				C90BCB3421D3412B006FC76D /* BoderContext.swift in Sources */,
 				C9283BD721BE8FF100361B87 /* DefaultHeightProtocol.swift in Sources */,
 				C9283BA721BE893400361B87 /* SwitchView.swift in Sources */,
-				C9283B9521BE892400361B87 /* JDRotationAnimation.swift in Sources */,
+				C9283B9521BE892400361B87 /* RotationAnimation.swift in Sources */,
 				C9283BA821BE893400361B87 /* CountdownButton.swift in Sources */,
 				C916E8B721C1F96E002EE339 /* SingleFormProtocol.swift in Sources */,
 				C9283B7E21BE884300361B87 /* ImageLabelView.swift in Sources */,
@@ -4447,14 +4443,14 @@
 				C9283BCF21BE8F2900361B87 /* FilledPageControl.swift in Sources */,
 				C9283BAE21BE8A5B00361B87 /* UpdateLayout.swift in Sources */,
 				C9283BC221BE8E1D00361B87 /* TextDesignable.swift in Sources */,
-				C9283B9321BE892400361B87 /* JDItemAnimationProtocol.swift in Sources */,
+				C9283B9321BE892400361B87 /* ItemAnimationProtocol.swift in Sources */,
 				C9283BD321BE8F5900361B87 /* AttributedStringMaker.swift in Sources */,
 				C9283B7C21BE884300361B87 /* CycleProgress.swift in Sources */,
 				C9283B7F21BE884300361B87 /* JDButton.swift in Sources */,
 				C9283B8D21BE891A00361B87 /* TabBarItemView.swift in Sources */,
 				C916E8B621C1F96E002EE339 /* OneWayScrollProtocol.swift in Sources */,
 				C9283BA321BE893400361B87 /* Slider.swift in Sources */,
-				C9283B9121BE892400361B87 /* JDFumeAnimation.swift in Sources */,
+				C9283B9121BE892400361B87 /* FumeAnimation.swift in Sources */,
 				C9283B8A21BE891300361B87 /* NavigationBar.swift in Sources */,
 				C90BCB3621D34D18006FC76D /* BoderView+Context.swift in Sources */,
 				C9283B8C21BE891A00361B87 /* TabBarItem.swift in Sources */,
@@ -4473,7 +4469,7 @@
 				C916E8C121C228C3002EE339 /* PageItemsView.swift in Sources */,
 				C9283BB221BE8A6900361B87 /* CornerLayoutSpec.swift in Sources */,
 				C9283B7921BE884300361B87 /* BadgeView.swift in Sources */,
-				C9283B9221BE892400361B87 /* JDTransitionItemAnimations.swift in Sources */,
+				C9283B9221BE892400361B87 /* TransitionItemAnimations.swift in Sources */,
 				C9283BA221BE893400361B87 /* TextView.swift in Sources */,
 				C9283B9D21BE893400361B87 /* SearchBar.swift in Sources */,
 				C916E8CD21C23680002EE339 /* SegmentView.swift in Sources */,
@@ -4487,7 +4483,7 @@
 				C916E8B921C1FFB4002EE339 /* MultipleItemsView.swift in Sources */,
 				C9283BB721BE8A6900361B87 /* MutableItemLayoutSpec.swift in Sources */,
 				C9283B8921BE88D700361B87 /* UIComponents.swift in Sources */,
-				C9283B9621BE892400361B87 /* JDFrameItemAnimation.swift in Sources */,
+				C9283B9621BE892400361B87 /* FrameItemAnimation.swift in Sources */,
 				C9283B8F21BE891E00361B87 /* AnimatedTabBarControllerProtocol.swift in Sources */,
 				C916E8B521C1F96E002EE339 /* ScrollProtocol.swift in Sources */,
 				C9283BAC21BE8A5B00361B87 /* ConstraintMaker+Space.swift in Sources */,
@@ -4498,7 +4494,7 @@
 				C9283BD421BE8F5900361B87 /* NSAttributedString.swift in Sources */,
 				C9283B7821BE884300361B87 /* PasswordInputView.swift in Sources */,
 				C9283BA021BE893400361B87 /* TextField.swift in Sources */,
-				C9283B9421BE892400361B87 /* JDBounceAnimation.swift in Sources */,
+				C9283B9421BE892400361B87 /* BounceAnimation.swift in Sources */,
 				C9283BA121BE893400361B87 /* WebView.swift in Sources */,
 				C9283B8E21BE891A00361B87 /* TabBarItemModel.swift in Sources */,
 				C9283B7D21BE884300361B87 /* ProgressView.swift in Sources */,
@@ -4508,7 +4504,7 @@
 				C9283BB121BE8A6900361B87 /* CenterLayoutSpec.swift in Sources */,
 				C9283BC521BE8E1D00361B87 /* BottomItemDesignable.swift in Sources */,
 				C916E8C921C23656002EE339 /* SegmentScrollView.swift in Sources */,
-				C9283B9021BE892400361B87 /* JDAlphaAnimation.swift in Sources */,
+				C9283B9021BE892400361B87 /* AlphaAnimation.swift in Sources */,
 				C916E8C821C23656002EE339 /* LayoutItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5806,7 +5802,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -5835,7 +5831,7 @@
 				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

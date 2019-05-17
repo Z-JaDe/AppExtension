@@ -1,6 +1,6 @@
 import UIKit
 
-open class JDAlphaAnimation: JDItemAnimation {
+open class AlphaAnimation: ItemAnimation {
 
     override open func playAnimation(_ icon: UIImageView, textLabel: UILabel) {
         playAlphaAnimation(icon)
