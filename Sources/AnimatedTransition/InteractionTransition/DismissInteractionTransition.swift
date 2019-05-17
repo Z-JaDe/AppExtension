@@ -14,6 +14,13 @@ public enum DismissDirection {
 }
 
 open class DismissInteractionTransition: InteractionTransition {
+    weak var viewController: UIViewController?
+    public init(_ viewController: UITabBarController) {
+        super.init()
+        self.viewController = viewController
+        self.wire(to: viewController)
+    }
+    
     public var dismissDirection: DismissDirection = .vertical(topToBottom: true)
 
     open override func handleGestureBegin(_ gesture: UIGestureRecognizer, _ view: UIView) {

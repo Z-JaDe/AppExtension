@@ -19,8 +19,7 @@ open class InteractionTransition: UIPercentDrivenInteractiveTransition {
         self.cancel()
         return self.interactionInProgress ? self : nil
     }
-    
-    var viewController: UIViewController?
+
     var shouldCompleteTransition: Bool = false
     public fileprivate(set) var interactionInProgress: Bool = false
 
@@ -32,7 +31,6 @@ open class InteractionTransition: UIPercentDrivenInteractiveTransition {
     public weak var toVC: UIViewController?
 
     open func wire(to viewCon: UIViewController) {
-        self.viewController = viewCon
         prepareGestureRecognizer(in: viewCon)
     }
     func handleGestureBegin(_ gesture: UIGestureRecognizer, _ view: UIView) {

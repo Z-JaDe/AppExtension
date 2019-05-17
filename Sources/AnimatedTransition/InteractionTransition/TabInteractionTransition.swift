@@ -9,14 +9,20 @@
 import UIKit
 
 open class TabInteractionTransition: InteractionTransition {
+    weak var tabbarVC: UITabBarController?
+    public init(_ tabbarVC: UITabBarController) {
+        super.init()
+        self.tabbarVC = tabbarVC
+    }
+    
     var leftToRight: Bool = false
     override func handleGestureBegin(_ gesture: UIGestureRecognizer, _ view: UIView) {
         guard let gesture = gesture as? UIPanGestureRecognizer else {
             fatalError()
         }
+        guard let tabbarVC = self.tabbarVC else {return}
         let velocity = gesture.velocity(in: view)
         self.leftToRight = velocity.x > 0
-        let tabbarVC = viewController!.tabBarController!
         if self.leftToRight {
             if tabbarVC.selectedIndex > 0 {
                 super.handleGestureBegin(gesture, view)

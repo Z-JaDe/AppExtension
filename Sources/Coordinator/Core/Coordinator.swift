@@ -14,8 +14,6 @@ import Foundation
  Coordinator 项目中 一般 一个Coordinator代表UI逻辑
  Coordinator可以由Flow来初始化
  */
-@available(*, deprecated, message: "ViewConCoordinator名称不合适废弃")
-public typealias ViewConCoordinator = Coordinator & Flow
 public protocol Coordinator: class {
 
 }
