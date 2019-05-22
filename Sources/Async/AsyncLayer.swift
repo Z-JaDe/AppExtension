@@ -14,7 +14,7 @@ public class AsyncLayer: CALayer {
     public var displayTask: AsyncLayerDisplayTask = AsyncLayerDisplayTask()
 
     open override class func defaultValue(forKey key: String) -> Any? {
-        if key == "displaysAsynchronously" { return true}
+        if key == "displaysAsynchronously" { return true }
         return super.defaultValue(forKey: key)
     }
 

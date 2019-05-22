@@ -8,13 +8,13 @@
 
 import Foundation
 
-private class WarppedObject {
+private final class WarppedObject {
     var target: Any?
     init(_ target: Any?) {
         self.target = target
     }
 }
-private class WeakWarppedObject {
+private final class WeakWarppedObject {
     weak var target: AnyObject?
     init(_ target: AnyObject?) {
         self.target = target
