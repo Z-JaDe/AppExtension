@@ -11,5 +11,3 @@ import Foundation
 #if !AppExtensionPods
 @_exported import UIComponents
 #endif
-
-@_exported import SnapKit

@@ -63,10 +63,10 @@ extension UIView {
             self.insertSubview(boderView, at: 0)
             boderView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                boderView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-                boderView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-                boderView.topAnchor.constraint(equalTo: self.topAnchor),
-                boderView.leftAnchor.constraint(equalTo: self.leftAnchor)
+                boderView.centerXOffset(self),
+                boderView.centerYOffset(self),
+                boderView.topOffset(self),
+                boderView.leftOffset(self)
                 ])
         }))
     }

@@ -50,22 +50,18 @@ open class SearchView: CustomView {
     }
     // MARK: -
     open func configCancelButton(isShow: Bool, animated: Bool = true) {
-        var array = self.cancelButton.snp.prepareConstraints { (maker) in
-            if isShow {
-                maker.right.equalToSuperview()
-            }
+        var array: [NSLayoutConstraint] = []
+        if isShow {
+            array.append(contentsOf: self.cancelButton.equalToSuperview(.right))
+        } else {
+            array.append(contentsOf: self.textField.equalToSuperview(.right))
         }
-        array += self.textField.snp.prepareConstraints({ (maker) in
-            if isShow == false {
-                maker.right.equalToSuperview()
-            }
-        })
         Animater().duration(animated ? 0.5 : 0).animations {
             self.updateLayouts(tag: "cancel", array)
             self.cancelButton.alpha = isShow ? 1 : 0
             self.setNeedsLayout()
             self.layoutIfNeeded()
-            }.animate()
+        }.animate()
     }
 
     // MARK: -
@@ -75,13 +71,11 @@ open class SearchView: CustomView {
         self.addSubview(self.cancelButton)
     }
     open override func configLayout() {
-        self.textField.snp.makeConstraints { (maker) in
-            maker.left.centerY.top.equalToSuperview()
-        }
-        self.cancelButton.snp.makeConstraints { (maker) in
-            maker.centerY.top.equalToSuperview()
-            maker.leftSpace(self.textField).offset(5)
-        }
+        var array: [NSLayoutConstraint] = []
+        array.append(contentsOf: self.textField.equalToSuperview([.left, .centerY, .top]))
+        array.append(contentsOf: self.cancelButton.equalToSuperview([.centerY, .top]))
+        array.append(self.cancelButton.leftSpace(self.textField, constant: 5))
+        self.updateLayouts(tag: "init", array)
         configCancelButton(isShow: false, animated: false)
     }
     open override var intrinsicContentSize: CGSize {

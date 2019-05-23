@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 
 open class ImageLabelView: CustomControl {
     public convenience init(image: UIImage?, inset: UIEdgeInsets? = nil) {

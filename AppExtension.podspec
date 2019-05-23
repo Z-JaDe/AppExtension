@@ -84,7 +84,6 @@ Pod::Spec.new do |s|
         ss.dependency "AppExtension/Core"
         ss.dependency "AppExtension/Codable"
         ss.dependency "AppExtension/Animater"
-        ss.dependency "SnapKit"
     end
     s.subspec "EmptyDataSet" do |ss|
         ss.source_files  = "Sources/UIComponents/EmptyDataSet/**/*.{swift}"
@@ -109,6 +108,7 @@ Pod::Spec.new do |s|
         ss.dependency "AppExtension/UIComponents"
         ss.dependency "AppExtension/RxExtensions"
         ss.dependency "Alamofire"
+        ss.dependency "SnapKit"
         #List
         ss.dependency "AppExtension/List"
         ss.dependency "AppExtension/EmptyDataSet"

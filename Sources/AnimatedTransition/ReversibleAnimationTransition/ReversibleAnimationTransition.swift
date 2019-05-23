@@ -31,7 +31,6 @@ open class ReversibleAnimationTransition: NSObject, UIViewControllerAnimatedTran
         self.animateTransitionClosure?(transitionContext)
     }
     public func animationEnded(_ transitionCompleted: Bool) {
-        
     }
 }
 extension UIViewControllerContextTransitioning {

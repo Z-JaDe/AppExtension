@@ -8,8 +8,6 @@
 
 import UIKit
 
-import SnapKit
-
 public typealias LayoutElement = UIView
 
 open class LayoutSpec: UIView {
@@ -35,11 +33,11 @@ open class LayoutSpec: UIView {
     }
     internal func addChild() {}
     internal func updateLayout() {
-        var constraintArr: [Constraint] = []
+        var constraintArr: [NSLayoutConstraint] = []
         constraintArr += layoutArr()
         self.updateLayouts(tag: "layoutArr", constraintArr)
     }
-    open func layoutArr() -> [Constraint] {
+    open func layoutArr() -> [NSLayoutConstraint] {
         return []
     }
 }

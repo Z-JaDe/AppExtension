@@ -33,10 +33,10 @@ public class EmptyDataSetContentView: CustomView {
     func addActivityIndicatorIfNeed() {
         if self.activityIndicator.superview == nil {
             self.addSubview(self.activityIndicator)
-            activityIndicator.snp.makeConstraints { (maker) in
-                maker.center.equalToSuperview()
-                maker.left.top.greaterThanOrEqualToSuperview()
-            }
+            NSLayoutConstraint.activate(
+                activityIndicator.equalToSuperview(.center)
+                + activityIndicator.innerToSuperview([.left, .top])
+            )
         }
         self.activityIndicator.isHidden = false
     }
@@ -50,10 +50,11 @@ public class EmptyDataSetContentView: CustomView {
 extension EmptyDataSetContentView {
     public func addButtonIfNeed() {
         self.addButtonIfNeed {
-            self.button.snp.remakeConstraints { (maker) in
-                maker.center.equalToSuperview()
-                maker.left.top.greaterThanOrEqualToSuperview()
-            }
+            self.button.updateLayouts(
+                tag: "remove",
+                self.button.equalToSuperview(.center)
+                + self.button.innerToSuperview([.left, .top])
+            )
         }
     }
     /// ZJaDe: 设置成一个文本

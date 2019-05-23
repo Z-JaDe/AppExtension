@@ -7,27 +7,25 @@
 ////
 
 import UIKit
-import SnapKit
 
-private var updateLayoutArrKey: UInt8 = 0
+// MARK: -
+public protocol ConstraintProtocol: class {
+    var isActive: Bool { get set }
+}
+extension NSLayoutConstraint: ConstraintProtocol {}
 extension UIView {
-    public var jdLayout: UpdateLayout {
+    public var autoLayout: UpdateLayout<NSLayoutConstraint> {
         return UpdateLayout(view: self)
     }
-    public func updateLayouts(tag: String = UpdateLayout.defaultTag, _ closure: @autoclosure () -> ([Constraint])) {
-        jdLayout.deactivate(tag: tag)
-        var constraintArr = jdLayout.constraintDict[tag] ?? []
-        constraintArr += closure()
-        jdLayout.constraintDict[tag] = constraintArr
-        jdLayout.activate(tag: tag)
-    }
-    public func updateLayoutsMaker(tag: String = UpdateLayout.defaultTag, _ closure: (ConstraintMaker) -> Void) {
-        self.updateLayouts(tag: tag, self.snp.prepareConstraints(closure))
+    public func updateLayouts(tag: String? = nil, _ closure: @autoclosure () -> ([NSLayoutConstraint])) {
+        autoLayout.updateLayouts(tag: tag, closure())
     }
 }
-public class UpdateLayout: CustomDebugStringConvertible {
+// MARK: -
+private var updateLayoutArrKey: UInt8 = 0
+private let defaultLayoutTag: String = "_default"
+public class UpdateLayout<Constraint: ConstraintProtocol>: CustomDebugStringConvertible {
     public let view: UIView
-    public static let defaultTag: String = "_default"
     public var constraintDict: [String: [Constraint]] {
         get { return self.view.associatedObject(&updateLayoutArrKey, createIfNeed: [: ]) }
         set { self.view.setAssociatedObject(&updateLayoutArrKey, newValue) }
@@ -37,11 +35,20 @@ public class UpdateLayout: CustomDebugStringConvertible {
     }
     // MARK: -
     public func activate(tag: String) {
-        self.constraintDict[tag]?.forEach {$0.activate()}
+        self.constraintDict[tag]?.forEach {$0.isActive = true}
     }
     public func deactivate(tag: String) {
-        self.constraintDict[tag]?.lazy.filter({$0.isActive}).forEach {$0.deactivate()}
+        self.constraintDict[tag]?.lazy.filter({$0.isActive}).forEach {$0.isActive = false}
         self.constraintDict[tag] = nil
+    }
+    // MARK: -
+    public func updateLayouts(tag: String? = nil, _ closure: @autoclosure () -> ([Constraint])) {
+        let tag = tag ?? defaultLayoutTag
+        deactivate(tag: tag)
+        var constraintArr = constraintDict[tag] ?? []
+        constraintArr += closure()
+        constraintDict[tag] = constraintArr
+        activate(tag: tag)
     }
     // MARK: - 
     public var debugDescription: String {

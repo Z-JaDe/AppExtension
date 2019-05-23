@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SnapKit
+
 extension UIControl.State: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(self.rawValue)
@@ -81,11 +81,9 @@ open class JDButton: ImageLabelView {
         backgroundImageView.image = self.backgroundImageInfo[self.state] ?? self.backgroundImageInfo[.normal]
     }
     func updateBackgroundLayout() {
-        var layoutArr: [Constraint] = []
+        var layoutArr: [NSLayoutConstraint] = []
         if let backgroundImageView = _backgroundImageView, backgroundImageView.superview != nil {
-            layoutArr += backgroundImageView.snp.prepareConstraints({ (maker) in
-                maker.edges.equalToSuperview()
-            })
+            layoutArr.append(contentsOf: backgroundImageView.equalToSuperview(.edges))
         }
         self.updateLayouts(tag: "backgroundImageView", layoutArr)
     }

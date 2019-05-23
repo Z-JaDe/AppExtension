@@ -14,7 +14,7 @@ open class TabInteractionTransition: InteractionTransition {
         super.init()
         self.tabbarVC = tabbarVC
     }
-    
+
     var leftToRight: Bool = false
     override func handleGestureBegin(_ gesture: UIGestureRecognizer, _ view: UIView) {
         guard let gesture = gesture as? UIPanGestureRecognizer else {

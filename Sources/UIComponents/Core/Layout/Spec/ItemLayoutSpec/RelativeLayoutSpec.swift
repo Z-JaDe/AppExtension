@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SnapKit
 
 public enum RelativeLayoutSpecOptions {
     case none
@@ -32,64 +31,55 @@ open class RelativeLayoutSpec: SizeLayoutSpec {
         setNeedUpdateLayout()
     }
 
-    open override func layout(_ maker: ConstraintMaker) {
-        super.layout(maker)
-        layoutHorizontal(maker)
-        layoutVertical(maker)
+    open override func layoutArr() -> [NSLayoutConstraint] {
+        return super.layoutArr()
+            + layoutHorizontal()
+            + layoutVertical()
     }
-    func layoutHorizontal(_ maker: ConstraintMaker) {
+    func layoutHorizontal() -> [NSLayoutConstraint] {
+        var array: [NSLayoutConstraint] = []
         switch self.horizontal {
         case .none:
-            return
+            return array
         case .start(let offset):
-            maker.horizontal(self, .start(offset))
-            maker.right.lessThanOrEqualTo(self)
+            array += child.horizontal(self, .start(offset))
+            array.append(contentsOf: child.innerTo(view: self, .right))
         case .centerOffset(let offset):
-            maker.horizontal(self, .centerOffset(offset))
-            maker.left.greaterThanOrEqualTo(self)
-            maker.right.lessThanOrEqualTo(self)
+            array += child.horizontal(self, .centerOffset(offset))
+            array.append(contentsOf: child.innerTo(view: self, [.left, .right]))
         case .centerInset(let inset):
-            maker.horizontal(self, .centerOffset(0))
-            maker.horizontal(self, .start(inset))
+            array += child.horizontal(self, .centerOffset(0))
+            array += child.horizontal(self, .start(inset))
         case .end(let offset):
-            maker.horizontal(self, .end(offset))
-            maker.left.greaterThanOrEqualTo(self)
+            array += child.horizontal(self, .end(offset))
+            array.append(contentsOf: child.innerTo(view: self, [.left]))
         case .fill(let left, let right):
-            maker.horizontal(self, .fill(left, right))
+            array += child.horizontal(self, .fill(left, right))
         }
+        return array
     }
-    func layoutVertical(_ maker: ConstraintMaker) {
+    func layoutVertical() -> [NSLayoutConstraint] {
+        var array: [NSLayoutConstraint] = []
         switch self.vertical {
         case .none:
-            return
+            return array
         case .start(let offset):
-            maker.vertical(self, .start(offset))
-            maker.bottom.lessThanOrEqualTo(self)
+            array += child.vertical(self, .start(offset))
+            array.append(contentsOf: child.innerTo(view: self, [.bottom]))
         case .centerOffset(let offset):
-            maker.vertical(self, .centerOffset(offset))
-            maker.top.greaterThanOrEqualTo(self)
-            maker.bottom.lessThanOrEqualTo(self)
+            array += child.vertical(self, .centerOffset(offset))
+            array.append(contentsOf: child.innerTo(view: self, [.top, .bottom]))
         case .centerInset(let inset):
-            maker.vertical(self, .centerOffset(0))
-            maker.vertical(self, .start(inset))
+            array += child.vertical(self, .centerOffset(0))
+            array += child.vertical(self, .start(inset))
         case .end(let offset):
-            maker.vertical(self, .end(offset))
-            maker.top.greaterThanOrEqualTo(self)
+            array += child.vertical(self, .end(offset))
+            array.append(contentsOf: child.innerTo(view: self, [.top]))
         case .fill(let top, let bottom):
-            maker.vertical(self, .fill(top, bottom))
+            array += child.vertical(self, .fill(top, bottom))
         }
+        return array
     }
-
-//    private func makerOption(_ layoutOption: RelativeLayoutSpecOptions) -> MakerLayoutOptions? {
-//        switch layoutOption {
-//        case .none: 
-//            return nil
-//        case .start(let offset): return .start(offset)
-//        case .center(let offset): return .center(offset)
-//        case .end(let offset): return .end(offset)
-//        case .fill(let inset): return .fill(inset.0, inset.1)
-//        }
-//    }
 }
 
 extension LayoutElement {

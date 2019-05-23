@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SnapKit
 
 public enum StackLayoutDirection {
     case vertical
@@ -66,31 +65,29 @@ public class StackLayoutSpec: MutableItemLayoutSpec {
             self.stackView.axis = .vertical
         }
     }
-    public override func layoutArr() -> [Constraint] {
-        return super.layoutArr() + self.stackView.snp.prepareConstraints({ (maker) in
-            layoutJustifyContent(maker)
-        })
+    public override func layoutArr() -> [NSLayoutConstraint] {
+        return super.layoutArr() + layoutJustifyContent()
     }
-    func layoutJustifyContent(_ maker: ConstraintMaker) {
-        func layout(_ makerOptions: MakerLayoutOptions) {
+    func layoutJustifyContent() -> [NSLayoutConstraint] {
+        func layout(_ makerOptions: LayoutOptions) -> [NSLayoutConstraint] {
             switch self.direction {
             case .horizontal:
-                maker.horizontal(self, makerOptions)
-                maker.vertical(self, .fill(0, 0))
+                return self.horizontal(self, makerOptions)
+                + self.vertical(self, .fill(0, 0))
             case .vertical:
-                maker.horizontal(self, .fill(0, 0))
-                maker.vertical(self, makerOptions)
+                return self.horizontal(self, .fill(0, 0))
+                + self.vertical(self, makerOptions)
             }
         }
         switch self.justifyContent {
         case .start(let offSet):
-            layout(.start(offSet))
+            return layout(.start(offSet))
         case .center(let offSet):
-            layout(.centerOffset(offSet))
+            return layout(.centerOffset(offSet))
         case .end(let offSet):
-            layout(.end(offSet))
+            return layout(.end(offSet))
         case .spaceBetween(let inset):
-            layout(.fill(inset.0, inset.1))
+            return layout(.fill(inset.0, inset.1))
         }
     }
 }

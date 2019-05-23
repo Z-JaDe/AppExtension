@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import SnapKit
+
 open class CustomControl: UIControl {
     public override init(frame: CGRect = CGRect.zero) {
         super.init(frame: frame)
@@ -73,10 +73,10 @@ open class CustomControl: UIControl {
         guard let contentItem = self.contentItem else {
             return
         }
-        self.updateLayouts(tag: "contentAlignment", contentItem.snp.prepareConstraints({ (maker) in
-            self.layoutVertical(maker)
-            self.layoutHorizontal(maker)
-        }))
+        self.updateLayouts(
+            tag: "contentAlignment",
+            self.layoutVertical(contentItem) + self.layoutHorizontal(contentItem)
+        )
     }
 }
 extension CustomControl {
@@ -89,44 +89,48 @@ extension CustomControl {
     }
 }
 extension CustomControl {
-    private func layoutVertical(_ maker: ConstraintMaker) {
-        let options: MakerLayoutOptions
+    private func layoutVertical(_ contentItem: UIView) -> [NSLayoutConstraint] {
+        var array: [NSLayoutConstraint] = []
+        let options: LayoutOptions
         switch self.contentVerticalAlignment {
         case .top:
-            maker.bottom.lessThanOrEqualToSuperview().offset(-self.contentEdgeInsets.bottom)
+            array.append(contentsOf: contentItem.innerToSuperview(.bottom, insets: self.contentEdgeInsets))
             options = .start(self.contentEdgeInsets.top)
         case .bottom:
-            maker.top.greaterThanOrEqualToSuperview().offset(self.contentEdgeInsets.top)
+            array.append(contentsOf: contentItem.innerToSuperview(.top, insets: self.contentEdgeInsets))
             options = .end(self.contentEdgeInsets.bottom)
         case .center:
-            maker.top.greaterThanOrEqualToSuperview().offset(self.contentEdgeInsets.top)
-            maker.bottom.lessThanOrEqualToSuperview().offset(-self.contentEdgeInsets.bottom)
+            array.append(contentsOf: contentItem.innerToSuperview(.top, insets: self.contentEdgeInsets))
+            array.append(contentsOf: contentItem.innerToSuperview(.bottom, insets: self.contentEdgeInsets))
             options = .centerOffset(0)
         case .fill:
             options = .fill(self.contentEdgeInsets.top, self.contentEdgeInsets.bottom)
         @unknown default:
             fatalError()
         }
-        maker.vertical(self, options)
+        array.append(contentsOf: contentItem.vertical(self, options))
+        return array
     }
-    private func layoutHorizontal(_ maker: ConstraintMaker) {
-        let options: MakerLayoutOptions
+    private func layoutHorizontal(_ contentItem: UIView) -> [NSLayoutConstraint] {
+        var array: [NSLayoutConstraint] = []
+        let options: LayoutOptions
         switch self.contentHorizontalAlignment {
         case .left, .leading:
-            maker.right.lessThanOrEqualToSuperview().offset(-self.contentEdgeInsets.right)
+            array.append(contentsOf: contentItem.innerToSuperview(.right, insets: self.contentEdgeInsets))
             options = .start(self.contentEdgeInsets.left)
         case .right, .trailing:
-            maker.left.greaterThanOrEqualToSuperview().offset(self.contentEdgeInsets.left)
+            array.append(contentsOf: contentItem.innerToSuperview(.left, insets: self.contentEdgeInsets))
             options = .end(self.contentEdgeInsets.right)
         case .center:
-            maker.left.greaterThanOrEqualToSuperview().offset(self.contentEdgeInsets.left)
-            maker.right.lessThanOrEqualToSuperview().offset(-self.contentEdgeInsets.right)
+            array.append(contentsOf: contentItem.innerToSuperview(.left, insets: self.contentEdgeInsets))
+            array.append(contentsOf: contentItem.innerToSuperview(.right, insets: self.contentEdgeInsets))
             options = .centerOffset(0)
         case .fill:
             options = .fill(self.contentEdgeInsets.left, self.contentEdgeInsets.right)
         @unknown default:
             fatalError()
         }
-        maker.horizontal(self, options)
+        array.append(contentsOf: contentItem.horizontal(self, options))
+        return array
     }
 }

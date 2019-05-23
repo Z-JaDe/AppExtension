@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SnapKit
+
 open class ItemLayoutSpec: LayoutSpec {
     public let child: LayoutElement
     public init(_ child: LayoutElement) {
@@ -22,14 +22,5 @@ open class ItemLayoutSpec: LayoutSpec {
         if self.child.superview == nil {
             self.addSubview(self.child)
         }
-    }
-
-    open override func layoutArr() -> [Constraint] {
-        return super.layoutArr() + self.child.snp.prepareConstraints({ (maker) in
-            layout(maker)
-        })
-    }
-    open func layout(_ maker: ConstraintMaker) {
-
     }
 }

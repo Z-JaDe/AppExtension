@@ -20,7 +20,7 @@ open class DismissInteractionTransition: InteractionTransition {
         self.viewController = viewController
         self.wire(to: viewController)
     }
-    
+
     public var dismissDirection: DismissDirection = .vertical(topToBottom: true)
 
     open override func handleGestureBegin(_ gesture: UIGestureRecognizer, _ view: UIView) {

@@ -39,9 +39,7 @@ public class EmptyDataSetView: CustomView {
     public override func addChildView() {
         super.addChildView()
         self.addSubview(self.contentItem)
-        self.contentItem.snp.makeConstraints { (maker) in
-            maker.center.equalToSuperview()
-        }
+        NSLayoutConstraint.activate(self.contentItem.equalToSuperview(.center))
     }
     // MARK: -
     var emptyStateChanged: CallBack<EmptyViewState>?

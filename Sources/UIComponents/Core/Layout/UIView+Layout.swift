@@ -7,7 +7,6 @@
 ////
 
 import UIKit
-import SnapKit
 
 extension UIViewController {
     public func edgesToVC(_ viewController: UIViewController) {
@@ -25,13 +24,14 @@ extension UIView {
         if self.superview == nil {
             viewController.view.addSubview(self)
         }
-        self.snp.makeConstraints { (maker) in
-            maker.margins.equalTo(viewController.view)
-        }
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint.equal(item: self, toItem: viewController.view, attribute: .leftMargin),
+            NSLayoutConstraint.equal(item: self, toItem: viewController.view, attribute: .rightMargin),
+            NSLayoutConstraint.equal(item: self, toItem: viewController.view, attribute: .topMargin),
+            NSLayoutConstraint.equal(item: self, toItem: viewController.view, attribute: .bottomMargin)
+            ])
     }
     public func edgesToSuper() {
-        self.snp.makeConstraints { (maker) in
-            maker.edges.equalToSuperview()
-        }
+        NSLayoutConstraint.activate(self.equalToSuperview(.edges))
     }
 }

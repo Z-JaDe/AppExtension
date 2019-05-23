@@ -9,16 +9,9 @@
 import Foundation
 import SnapKit
 
-public enum MakerLayoutOptions {
-    case start(CGFloat)
-    case centerOffset(CGFloat)
-    case end(CGFloat)
-    case fill(CGFloat, CGFloat)
-}
-
 extension ConstraintMaker {
     @discardableResult
-    public func horizontal(_ other: ConstraintRelatableTarget, _ position: MakerLayoutOptions) -> ConstraintMakerEditable {
+    public func horizontal(_ other: ConstraintRelatableTarget, _ position: LayoutOptions) -> ConstraintMakerEditable {
         switch position {
         case .start(let offset):
             return self.left.equalTo(other).offset(offset)
@@ -31,7 +24,7 @@ extension ConstraintMaker {
         }
     }
     @discardableResult
-    public func vertical(_ other: ConstraintRelatableTarget, _ position: MakerLayoutOptions) -> ConstraintMakerEditable {
+    public func vertical(_ other: ConstraintRelatableTarget, _ position: LayoutOptions) -> ConstraintMakerEditable {
         switch position {
         case .start(let offset):
             return self.top.equalTo(other).offset(offset)
