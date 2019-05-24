@@ -28,3 +28,6 @@
 [submodule "BaseSupport/Validation"]
 	path = BaseSupport/Validation
 	url = git@github.com:Z-JaDe/Validation.git
+[submodule "BaseSupport/YogaFlexBoxKit"]
+	path = BaseSupport/YogaFlexBoxKit
+	url = git@github.com:Z-JaDe/YogaFlexBoxKit.git
