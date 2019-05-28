@@ -2834,8 +2834,8 @@
 			isa = PBXGroup;
 			children = (
 				C910FEBC20CFF55600761301 /* AppExtension.podspec */,
-				C962C19220CE17990061FC20 /* AppExtension */,
 				C9640E2B20DB49BD00528E7A /* Sources */,
+				C962C19220CE17990061FC20 /* AppExtension */,
 				C918DEE521B5205F000F2AAC /* AppExtensionUITests */,
 				C918DEF321B52068000F2AAC /* AppExtensionTests */,
 				C962C19120CE17990061FC20 /* Products */,
