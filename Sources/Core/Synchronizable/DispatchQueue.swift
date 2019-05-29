@@ -15,11 +15,12 @@ public func performInMainAsync(_ action: @escaping () -> Void) {
         return DispatchQueue.main.async(execute: action)
     }
 }
+private let labelSpec = DispatchSpecificKey<Int>()
 extension DispatchQueue {
     public var isInCurrentQueue: Bool {
-        let labelSpec = DispatchSpecificKey<()>()
-        setSpecific(key: labelSpec, value: ())
-        if DispatchQueue.getSpecific(key: labelSpec) != nil {
+        let value = Int.random(in: 1..<1000)
+        setSpecific(key: labelSpec, value: value)
+        if DispatchQueue.getSpecific(key: labelSpec) != value {
             setSpecific(key: labelSpec, value: nil)
             return true
         } else {
@@ -32,11 +33,14 @@ extension DispatchQueue {
         是因为api没有提供查询当前队列的targetQueue是什么队列
      */
     public func syncIfNeed<T>(_ action: () throws -> T) rethrows -> T {
-        if self == DispatchQueue.main && Thread.isMainThread {
-            //self是main队列且在主线程时，可以直接执行action。即使当前是在其他队列的任务代码中，也不影响。
-            return try action()
-        }
-        if self.isInCurrentQueue {
+        if self == DispatchQueue.main {
+            if Thread.isMainThread {
+                //self是main队列且在主线程时，可以直接执行action。即使当前是在其他队列的任务代码中，也不影响。
+                return try action()
+            } else {
+                return try sync(execute: action)
+            }
+        } else if self.isInCurrentQueue {
             //当前是在self队列的任务代码执行中时，可以直接执行action。
             return try action()
         } else {
