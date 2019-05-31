@@ -88,29 +88,6 @@ public class SwiftTimer {
     }
 }
 
-// MARK: Throttle
-public extension SwiftTimer {
-
-    private static var timers = [String: DispatchSourceTimer]()
-
-    static func throttle(interval: DispatchTimeInterval, identifier: String, queue: DispatchQueue = .main, handler: @escaping () -> Void ) {
-
-        if let previousTimer = timers[identifier] {
-            previousTimer.cancel()
-        }
-
-        let timer = DispatchSource.makeTimerSource(queue: queue)
-        timer.schedule(deadline: .now() + interval)
-        timer.setEventHandler {
-            handler()
-            timer.cancel()
-            timers.removeValue(forKey: identifier)
-        }
-        timer.resume()
-        timers[identifier] = timer
-    }
-}
-
 // MARK: Count Down
 public class SwiftCountDownTimer {
 
