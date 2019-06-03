@@ -24,6 +24,8 @@ extension ExpressibleValueProtocol where Self: Decodable {
             self.init(integerLiteral: value)
         } else if let value = try? container.decode(String.self) {
             self.init(stringLiteral: value)
+        } else if let value = try? container.decode(Bool.self) {
+            self.init(booleanLiteral: value)
         } else {
             self.init(nilLiteral: ())
         }
