@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 extension Observable where Element: RequestContextCompatible {
     public func callback(_ closure: @escaping (Element.ValueType?) -> Void) -> Disposable {
-        return self.logDebug("请求回调").subscribe(onNext: { (element) in
+        return self.logDebug("_请求回调_").subscribe(onNext: { (element) in
             closure(element.value)
         }, onError: { (error) in
             #if DEBUG
