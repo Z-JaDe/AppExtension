@@ -30,9 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = UIColor.white
 //        let result = "6226095711104732".isValidBankCard
 //        logDebug(result)
-        swiftTest()
+//        swiftTest()
 //        lockTest()
-        gcdTest()
+//        gcdTest()
         return true
     }
 

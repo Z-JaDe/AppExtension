@@ -55,11 +55,6 @@ protocol AAAA {
 }
 extension AAAA {
     func a() {
-        let a = 2
-        if a > 3 {
-            let a = 0
-        }
-        
     }
 }
 protocol BBBB {
