@@ -40,25 +40,25 @@ public class ThirdLoginPlugin: NSObject {
 }
 public protocol ThirdLoginPluginProtocol: class {
     associatedtype LoginPlugin: ThirdLoginPlugin
+    /// ZJaDe: 跳转第三方app并请求绑定
+    static func jumpBinding(_ callback: @escaping () -> Void)
+    /// ZJaDe: 跳转第三方app并请求登录
+    static func jumpLoginAndAuth(_ callback: @escaping () -> Void)
+    static func requestLoginAndRefreshParams(_ callback: @escaping () -> Void)
 }
 public extension ThirdLoginPluginProtocol {
     // MARK: -
-    /// ZJaDe: 跳转第三方app并请求绑定
-    public func jumpBinding(_ callback: @escaping () -> Void) -> LoginPlugin {
+    public static func jumpBinding(_ callback: @escaping () -> Void) {
         let plugin = LoginPlugin.init(.binding, callback)
         plugin.jumpAndAuth()
-        return plugin
     }
-    /// ZJaDe: 跳转第三方app并请求登录
-    public func jumpLoginAndAuth(_ callback: @escaping () -> Void) -> LoginPlugin {
+    public static func jumpLoginAndAuth(_ callback: @escaping () -> Void) {
         let plugin = LoginPlugin.init(.login, callback)
         plugin.jumpAndAuth()
-        return plugin
     }
     /// ZJaDe: 请求登录并检查参数有效期
-    public func requestLoginAndRefreshParams(_ callback: @escaping () -> Void) -> LoginPlugin {
+    public static func requestLoginAndRefreshParams(_ callback: @escaping () -> Void) {
         let plugin = LoginPlugin.init(.requestLogin, callback)
         plugin.requestLogin()
-        return plugin
     }
 }

@@ -9,28 +9,28 @@
 import Foundation
 // MARK: -
 extension QQManager: ShareItemProtocol {
-    public func shareToQQ(_ shareModel: ShareModel, _ callback:@escaping CallbackType) {
-        self.setShareCallback(callback)
+    public static func shareToQQ(_ shareModel: ShareModel, _ callback:@escaping CallbackType) {
+        shared.setShareCallback(callback)
         guard QQManager.canUseQQShare() else {
             Alert.showPrompt(title: "QQ分享", "请安装QQ客户端")
             return
         }
-        let req = getMessageToQQReq(shareModel)
+        let req = shared.getMessageToQQReq(shareModel)
         let sent = QQApiInterface.send(req)
-        self.handleSendResult(sendResult: sent)
+        shared.handleSendResult(sendResult: sent)
     }
-    public func shareToQzone(_ shareModel: ShareModel, _ callback:@escaping CallbackType) {
-        self.setShareCallback(callback)
+    public static func shareToQzone(_ shareModel: ShareModel, _ callback:@escaping CallbackType) {
+        shared.setShareCallback(callback)
         guard QQManager.canUseQzoneShare() else {
             Alert.showPrompt(title: "QQ空间分享", "请安装QQ客户端或者QZone客户端")
             return
         }
-        let req = getMessageToQQReq(shareModel)
+        let req = shared.getMessageToQQReq(shareModel)
         let sent = QQApiInterface.sendReq(toQZone: req)
-        self.handleSendResult(sendResult: sent)
+        shared.handleSendResult(sendResult: sent)
     }
 }
-extension QQManager {
+extension QQManager {    
     func getMessageToQQReq(_ shareModel: ShareModel) -> SendMessageToQQReq {
         // swiftlint:disable force_cast
         let newsObj: QQApiNewsObject = QQApiNewsObject.object(with: URL(string: shareModel.url), title: shareModel.title, description: shareModel.content, previewImageURL: URL(string: shareModel.icon)) as! QQApiNewsObject

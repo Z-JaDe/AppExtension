@@ -20,11 +20,11 @@ public class WechatPayReqModel: Codable {
 
 extension WechatManager: PayItemProtocol {
     // MARK: - 支付
-    public func requestToPay(_ payReqModel: WechatPayReqModel, _ callback:@escaping CallbackType) {
-        self.setPayCallback(callback)
+    public static func requestToPay(_ payReqModel: WechatPayReqModel, _ callback:@escaping CallbackType) {
+        shared.setPayCallback(callback)
         guard WechatManager.canUseWeChat() else {
             Alert.showPrompt(title: "微信支付", "请检查是否已经安装微信客户端")
-            self.payCallBack(isSuccessful: false)
+            self.shared.payCallBack(isSuccessful: false)
             return
         }
         let request = PayReq()
@@ -36,7 +36,7 @@ extension WechatManager: PayItemProtocol {
         request.sign = payReqModel.sign ?? ""
         let result = WXApi.send(request)
         if result == false {
-            self.payCallBack(isSuccessful: false)
+            shared.payCallBack(isSuccessful: false)
         }
     }
 }

@@ -11,12 +11,9 @@ import Foundation
  Manager作为起始 调用分享、登录或者支付等。
  代理处理放在Manager类中
  */
-public class WechatManager: NSObject, ThirdLoginPluginProtocol {
-    public static var shared: WechatManager = WechatManager()
+public class WechatManager: NSObject {
+    static var shared: WechatManager = WechatManager()
     private override init() {}
-    public typealias LoginPlugin = WeChatLoginPlugin
-    public internal(set) var login: LoginPlugin?
-
 }
 
 extension WechatManager {
@@ -30,7 +27,7 @@ extension WechatManager: WXApiDelegate {
     public func onResp(_ resp: BaseResp) {
         if let resp = resp as? SendAuthResp {
             // MARK: - 登录回调
-            self.login?.wechatAccessToken(resp)
+            WechatManager.login?.wechatAccessToken(resp)
         } else if let resp = resp as? PayResp {
             self.onPayResp(resp)
         } else if let resp = resp as? SendMessageToWXResp {

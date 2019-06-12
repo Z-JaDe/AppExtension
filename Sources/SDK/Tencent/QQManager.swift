@@ -11,15 +11,12 @@ import Foundation
  Manager作为起始 调用分享、登录或者支付等。
  代理处理放在Manager类中
  */
-public class QQManager: NSObject, ThirdLoginPluginProtocol {
-    public static var shared: QQManager = QQManager()
+public class QQManager: NSObject {
+    static var shared: QQManager = QQManager()
     private override init() {
         super.init()
         tencentOAuth.authShareType = AuthShareType_QQ
     }
-    public typealias LoginPlugin = QQLoginPlugin
-    public internal(set) var login: LoginPlugin?
-
     lazy var tencentOAuth: TencentOAuth = {
         let tencentAppid = sdkInfo.tencentAppid
         let tencentOAuth = TencentOAuth(appId: tencentAppid, andDelegate: self)!
@@ -47,7 +44,7 @@ extension QQManager: TencentSessionDelegate {
         Defaults[.qq_access_token] = self.tencentOAuth.accessToken
         Defaults[.qq_openId] = self.tencentOAuth.openId
         Defaults[.qq_expirationDate] = self.tencentOAuth.expirationDate
-        self.login?.request()
+        QQManager.login?.request()
     }
     public func tencentDidNotLogin(_ cancelled: Bool) { }
     public func tencentDidNotNetWork() { }

@@ -25,7 +25,7 @@ public class SDKInfo {
     public var wechatAppid: String = ""
     public var wechatAppSecret: String = ""
     public var wechatAuthScope: String = "snsapi_message,snsapi_userinfo,snsapi_friend,snsapi_contact"
-
+    
     public func register() {
         if !wechatAppid.isEmpty {
             WXApi.registerApp(wechatAppid)

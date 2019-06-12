@@ -9,23 +9,26 @@ import Foundation
 import Alamofire
 extension DefaultsKeys {
     // MARK: - wechat
-    static let wx_refresh_token = DefaultsKey<String>("wx_refresh_token", defaultValue: "")
-    static let wx_access_token = DefaultsKey<String>("wx_access_token", defaultValue: "")
-    static let wx_openId = DefaultsKey<String>("wx_openId", defaultValue: "")
-    static let wx_unionId = DefaultsKey<String>("wx_unionId", defaultValue: "")
+    public static let wx_refresh_token = DefaultsKey<String>("wx_refresh_token", defaultValue: "")
+    public static let wx_access_token = DefaultsKey<String>("wx_access_token", defaultValue: "")
+    public static let wx_openId = DefaultsKey<String>("wx_openId", defaultValue: "")
+    public static let wx_unionId = DefaultsKey<String>("wx_unionId", defaultValue: "")
 }
-
+extension WechatManager: ThirdLoginPluginProtocol {
+    public typealias LoginPlugin = WeChatLoginPlugin
+    public internal(set) static var login: LoginPlugin?
+}
 public class WeChatLoginPlugin: ThirdLoginPlugin {
     override func configInit() {
         super.configInit()
-        WechatManager.shared.login = self
+        WechatManager.login = self
     }
     // MARK: -
     let openId_key: String = "openid"
     let unionId_key: String = "unionid"
     let access_token_key: String = "access_token"
     let refresh_token_key: String = "refresh_token"
-
+    
     let errcode_key: String = "errcode"
     let errmsg_key: String = "errmsg"
     // MARK: - 登录

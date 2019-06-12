@@ -9,15 +9,18 @@ import Foundation
 
 extension DefaultsKeys {
     // MARK: - QQ
-    static let qq_access_token = DefaultsKey<String>("qq_access_token", defaultValue: "")
-    static let qq_openId = DefaultsKey<String>("qq_openId", defaultValue: "")
-    static let qq_expirationDate = DefaultsKey<Date?>("qq_expirationDate")
+    public static let qq_access_token = DefaultsKey<String>("qq_access_token", defaultValue: "")
+    public static let qq_openId = DefaultsKey<String>("qq_openId", defaultValue: "")
+    public static let qq_expirationDate = DefaultsKey<Date?>("qq_expirationDate")
 }
-
+extension QQManager: ThirdLoginPluginProtocol {
+    public internal(set) static var login: LoginPlugin?
+    public typealias LoginPlugin = QQLoginPlugin
+}
 public class QQLoginPlugin: ThirdLoginPlugin {
     override func configInit() {
         super.configInit()
-        QQManager.shared.login = self
+        QQManager.login = self
     }
     var tencentOAuth: TencentOAuth {
         return QQManager.shared.tencentOAuth
@@ -42,7 +45,7 @@ public class QQLoginPlugin: ThirdLoginPlugin {
                            kOPEN_PERMISSION_GET_VIP_RICH_INFO]
         tencentOAuth.authorize(permissions)
     }
-
+    
     // MARK: -
     override func requestLogin() {
         self.qqRefreshToken {
