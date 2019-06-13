@@ -28,7 +28,7 @@ public class WeChatLoginPlugin: ThirdLoginPlugin {
     let unionId_key: String = "unionid"
     let access_token_key: String = "access_token"
     let refresh_token_key: String = "refresh_token"
-    
+
     let errcode_key: String = "errcode"
     let errmsg_key: String = "errmsg"
     // MARK: - 登录

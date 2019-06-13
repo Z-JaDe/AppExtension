@@ -9,7 +9,7 @@ import Foundation
 
 extension AlipayManager: PayItemProtocol {
     // MARK: - 支付
-    public static func requestToPay(_ orderStr:String, _ callback:@escaping CallbackType) {
+    public static func requestToPay(_ orderStr: String, _ callback:@escaping CallbackType) {
         shared.setPayCallback(callback)
         AlipaySDK.defaultService().payOrder(orderStr, fromScheme: sdkInfo.scheme) { (resultDict) in
             shared.onPayResp(resultDict)

@@ -54,7 +54,7 @@ target:'UIComponents' do
   target:'ScrollExtensions' do
   end
   target:'CollectionKitExtensions' do
-    pod 'CollectionKit', :git => 'https://github.com/SoySauceLab/CollectionKit'
+    pod 'CollectionKit', :git => 'https://github.com/SoySauceLab/CollectionKit.git'
   end
 end
 target:'EmptyDataSet' do
@@ -84,8 +84,8 @@ def commonPods
   pod 'MBProgressHUD'
   pod 'SwiftyUserDefaults'
   
-  pod 'Hero' #仅测试
-  pod 'CollectionKit', :git => 'https://github.com/SoySauceLab/CollectionKit'  #仅测试
+  pod 'Motion'
+  pod 'CollectionKit', :git => 'https://github.com/SoySauceLab/CollectionKit.git'  #仅测试
   
   pod 'MJRefresh'
   pod 'DifferenceKit'

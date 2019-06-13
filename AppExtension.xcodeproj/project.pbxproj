@@ -452,6 +452,7 @@
 		C9DF833E2179D1640044334E /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DF833D2179D1640044334E /* Core.swift */; };
 		E87C618F4B3BE06A26771C95 /* Pods_AppExtensionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AE030F6C0EAB67632202A9 /* Pods_AppExtensionTests.framework */; };
 		F07B7D4261FF1E0E896A2386 /* Pods_UserNotificationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8259DE5E679FB6045C03FD7F /* Pods_UserNotificationManager.framework */; };
+		F960719922B2B4DC00D2C88D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F960719722B2B4DC00D2C88D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1351,6 +1352,7 @@
 		F2EDE1719CD8900446713BC0 /* Pods-BaseCore-Coordinator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-Coordinator.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-Coordinator/Pods-BaseCore-Coordinator.release.xcconfig"; sourceTree = "<group>"; };
 		F6E57D3300B9F747CFFC950A /* Pods_UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7AE32BA071C16D86EABE7A9 /* Pods-BaseCore-Custom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-Custom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-Custom/Pods-BaseCore-Custom.debug.xcconfig"; sourceTree = "<group>"; };
+		F960719822B2B4DC00D2C88D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../SwiftUIDemo/SwiftUIDemo/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBB540AD4ED8A9E82B48CF5B /* Pods-CommonPods-AppExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommonPods-AppExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommonPods-AppExtension/Pods-CommonPods-AppExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		FBCBCB1712395EBA19B5669C /* Pods-BaseCore-CommonPods-AppExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-CommonPods-AppExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-CommonPods-AppExtension/Pods-BaseCore-CommonPods-AppExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		FEE8800DC0CBEB99332A4CE8 /* Pods-BaseCore-CommonPods-Third.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-CommonPods-Third.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-CommonPods-Third/Pods-BaseCore-CommonPods-Third.release.xcconfig"; sourceTree = "<group>"; };
@@ -2883,6 +2885,7 @@
 				C90D85F320E2541500A4D0FD /* CycleViewViewControllerTest.swift */,
 				C90D85F120E228C600A4D0FD /* PageViewControllerTest.swift */,
 				C90D85F920E26B8F00A4D0FD /* ItemViewController.swift */,
+				F960719722B2B4DC00D2C88D /* LaunchScreen.storyboard */,
 				C930DAB820D3E3ED002D87D1 /* Test.storyboard */,
 				C962C19A20CE179A0061FC20 /* Assets.xcassets */,
 				C962C19F20CE179A0061FC20 /* Info.plist */,
@@ -3911,6 +3914,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C930DAB920D3E3ED002D87D1 /* Test.storyboard in Resources */,
+				F960719922B2B4DC00D2C88D /* LaunchScreen.storyboard in Resources */,
 				C910FEBD20CFF55600761301 /* AppExtension.podspec in Resources */,
 				C962C19B20CE179A0061FC20 /* Assets.xcassets in Resources */,
 			);
@@ -5040,6 +5044,17 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		F960719722B2B4DC00D2C88D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F960719822B2B4DC00D2C88D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		C91055B721A8298200F87515 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -5808,7 +5823,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_OPTIMIZATION_PROFILE_FILE = "";
 				CLANG_USE_OPTIMIZATION_PROFILE = YES;
@@ -5840,7 +5854,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_OPTIMIZATION_PROFILE_FILE = "";
 				CLANG_USE_OPTIMIZATION_PROFILE = YES;
