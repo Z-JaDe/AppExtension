@@ -20,7 +20,7 @@ extension EmptyDataSetProtocol {
         return associatedObject(&emptyDataSetViewKey, createIfNeed: EmptyDataSetView().then({ (node) in
             node.container = self
             node.whenEmptyStateChanged {[weak self, weak node] (_) in
-                guard let `self` = self else { return }
+                guard let self = self else { return }
                 guard let node = node else { return }
                 self.addEmptyItemToSuperItemIfNeed(node)
                 node.reloadData()

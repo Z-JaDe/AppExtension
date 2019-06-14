@@ -200,7 +200,7 @@ internal class Context: NSObject, WKScriptMessageHandler {
         Observable.just(()).flatMapLatest({
             try fn(params)
         }).subscribe({[weak self] (event) in
-            guard let `self` = self else { return }
+            guard let self = self else { return }
             switch event {
             case .next(let value):
                 self.webView?.evaluateJavaScript("__JSBridge__resolve__(\(id), \(value))")
@@ -224,7 +224,7 @@ internal class Context: NSObject, WKScriptMessageHandler {
             readySubject = self.readySubject
         }
         readySubject.subscribe { [weak self] (event) in
-            guard let `self` = self else { return }
+            guard let self = self else { return }
             switch event {
             case .error(let error):
                 completionHandler?(nil, error)
@@ -243,7 +243,7 @@ internal class Context: NSObject, WKScriptMessageHandler {
 
     internal func rawCall(function: String, args: String) -> Observable<String> {
         return Observable.create({ [weak self] (observer) -> Disposable in
-            guard let `self` = self else { return Disposables.create() }
+            guard let self = self else { return Disposables.create() }
             let id = self.nextIdentifier
             self.nextIdentifier += 1
             self.handlers[id] = observer

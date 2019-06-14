@@ -83,7 +83,7 @@ public extension HeaderViewContainerProtocol where ScrollViewType: UIScrollView 
     }
     func whenScroll() {
         subscribeWhenScroll {[weak self] (offSet) in
-            guard let `self` = self else { return }
+            guard let self = self else { return }
             let height = self.headerView.defaultHeight - offSet
             self.update(viewHeight: height)
         }
@@ -93,7 +93,7 @@ public extension HeaderViewContainerProtocol where ScrollViewType: UIScrollView 
         self.scrollView.rx.contentOffset
             .observeOn(MainScheduler.asyncInstance)
             .subscribeOnNext {[weak self] (contentOffset) in
-                guard let `self` = self else { return }
+                guard let self = self else { return }
                 updateClosure(contentOffset.y + self.scrollView.contentInset.top)
             }.disposed(by: disposeBag)
     }

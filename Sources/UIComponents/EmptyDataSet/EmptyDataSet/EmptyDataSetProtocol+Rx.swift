@@ -32,7 +32,7 @@ extension EmptyDataSetProtocol where Self: ScrollProtocol & UIView {
 
             let disposeBag = emptyDataSet.resetDisposeBagWithTag("_emptySetUpdate")
             combineLatest.subscribeOnNext({ [weak self, weak emptyDataSet] (_) in
-                guard let `self` = self else { return }
+                guard let self = self else { return }
                 guard let emptyDataSet = emptyDataSet else { return }
                 var height = self.height - self.contentInset.top
                 if height <= 0 {

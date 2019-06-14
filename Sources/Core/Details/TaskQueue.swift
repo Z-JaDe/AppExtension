@@ -170,7 +170,7 @@ private extension TaskQueue {
         guard let task = self.taskArr.first else { return }
         self.taskState = .working
         self.execute(task: task) {[weak self] in
-            guard let `self` = self else { return }
+            guard let self = self else { return }
             self.queue.async {
                 _ = self.removeTask(task)
                 self.taskState = .free

@@ -24,7 +24,7 @@ extension ModalContainerProtocol where Self: UIViewController & TaskQueueProtoco
             return
         }
         let task = self.taskQueue.addAsyncTask({[weak self] (closure) in
-            guard let `self` = self else { return }
+            guard let self = self else { return }
             self.setAssociatedObject(&modalClosureKey, closure)
             self._show(viewCon, animated: animated)
         })

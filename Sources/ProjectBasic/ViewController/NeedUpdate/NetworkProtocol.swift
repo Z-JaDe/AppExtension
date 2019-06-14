@@ -28,7 +28,7 @@ public extension NetworkProtocol {
 public extension NetworkProtocol where Self: UIViewController {
     func setNeedRequest<P: ObservableType>(_ pauser: P) where P.Element == Bool {
         setNeedUpdate(pauser, tag: "isNeedUpdateNetwork") { [weak self] in
-            guard let `self` = self else { return }
+            guard let self = self else { return }
             self.request()
         }
     }

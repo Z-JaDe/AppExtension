@@ -57,7 +57,7 @@ extension BlurModalViewController {
         /// ZJaDe: 因为有可能出现显示控制器的过程中 键盘弹出的情况 所以需要添加一个keyboardHeightSubject 做个中转
         NotificationCenter.default.rx.notificationKeyboardWillChangeFrame()
             .subscribeOnNext {[weak self] (arg) in
-                guard let `self` = self else { return }
+                guard let self = self else { return }
                 let (beginFrame, endFrame, animationDuration) = arg
                 let height = endFrame.size.height
                 let keyboardHeight: CGFloat
@@ -119,7 +119,7 @@ open class BlurPresentationController: PresentationController {
 //        Observable<Int>.timer(0.1, period: 0.5, scheduler: MainScheduler.asyncInstance)
 //            .take(5)
 //            .subscribeOnNext {[weak self] (_) in
-//                guard let `self` = self else { return }
+//                guard let self = self else { return }
 //                let dimmingBgView = self.gaussianBlurPresentationCon?.dimmingBgView
 //                if let image = container.screenshotsImage()?.blurImage(tintColor: Color.blackMask) {
 //                    dimmingBgView?.image = image

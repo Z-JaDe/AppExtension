@@ -19,7 +19,7 @@ extension EmptyDataSetView {
     }
     func emptyStateChangedObserver() -> Observable<EmptyViewState> {
         return Observable.create({ [weak self] (observer) -> Disposable in
-            guard let `self` = self else { return Disposables.create() }
+            guard let self = self else { return Disposables.create() }
             self.emptyStateChanged = { (state) in
                 observer.onNext(state)
             }

@@ -22,7 +22,7 @@ open class PageItemsView<CellView, ItemData, ScrollView>: MultipleItemsView<Cell
     public let pageControl = SnakePageControl()
     // MARK: - 自动滚动
     private lazy var timer: SwiftTimer = SwiftTimer.repeaticTimer(interval: .seconds(5)) {[weak self] (_) in
-        guard let `self` = self else { return }
+        guard let self = self else { return }
         guard self.dataArray.count > 1 else { return }
         if self.scrollView.isDragging { return }
         self.scrollNextIndex()

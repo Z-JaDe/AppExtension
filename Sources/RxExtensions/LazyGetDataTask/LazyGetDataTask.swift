@@ -76,7 +76,7 @@ public class LazyGetDataTask<Value: Equatable>: DisposeBagProtocol {
         return self.valueSubject
             .observeOn(MainScheduler.asyncInstance)
             .flatMapLatest({[weak self] (_) -> Observable<Value> in
-                guard let `self` = self else {
+                guard let self = self else {
                     throw AppError.deallocError
                 }
                 switch self.result {
@@ -94,7 +94,7 @@ public class LazyGetDataTask<Value: Equatable>: DisposeBagProtocol {
                     }
                 }
             }).do(onSubscribed: { [weak self] in
-                guard let `self` = self else { return }
+                guard let self = self else { return }
                 if let value = self.value {
                     DispatchQueue.main.async {
                         self.result = .success(value)

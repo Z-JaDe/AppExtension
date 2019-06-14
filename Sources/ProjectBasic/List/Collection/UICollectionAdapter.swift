@@ -59,7 +59,7 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionS
             return item.createCell(in: collectionView, at: indexPath)
         }
         dataSource.didMoveItem = { [weak self] (dataSource, source, destination) in
-            guard let `self` = self else { return }
+            guard let self = self else { return }
             self.lastListDataInfo = self.lastListDataInfo.map({$0.exchange(source, destination)})
         }
         return dataSource
@@ -75,7 +75,7 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionS
         dataArrayObservable()
             .map({$0.map({$0.compactMapToSectionModels()})})
             .do(onNext: {[weak self] (element) -> Void in
-                guard let `self` = self else {return}
+                guard let self = self else {return}
                 self.addBufferPool(at: element.data)
             })
             .bind(to: collectionView.rx.items(dataSource: self.rxDataSource))

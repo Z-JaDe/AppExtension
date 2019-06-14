@@ -97,7 +97,7 @@ class FlowItemCoordinator: DisposeBagProtocol {
             .pausableBuffered(self.flow.rxVisible)
             .asDriver(onErrorJustReturn: NoneStep())
             .drive(onNext: { [weak self] (step) in
-                guard let `self` = self else { return }
+                guard let self = self else { return }
                 let newStepContext = StepContext(with: step)
                 newStepContext.withinFlow = self.flow
                 self.steps.onNext(newStepContext)
@@ -106,7 +106,7 @@ class FlowItemCoordinator: DisposeBagProtocol {
     /// ZJaDe: 界面消失后 结束流
     private func subscribeFlowDismissed() {
         self.flow.rxDismissed.subscribe(onSuccess: { [weak self] in
-            guard let `self` = self else { return }
+            guard let self = self else { return }
             self.delegate.endFlowCoordinator(withIdentifier: self.identifier)
         }).disposed(by: flow.disposeBag)
     }

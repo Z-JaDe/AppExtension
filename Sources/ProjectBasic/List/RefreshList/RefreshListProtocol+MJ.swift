@@ -74,7 +74,7 @@ extension RefreshListProtocol {
         scrollView.rx.observeWeakly(CGPoint.self, "contentOffset")
             .observeOn(MainScheduler.asyncInstance)
             .subscribeOnNext {[weak self] (_) in
-                guard let `self` = self else { return }
+                guard let self = self else { return }
                 guard self.preloadEnabled == true else { return }
                 let scrollItem = self.scrollItem
                 // ZJaDe: 内容超过一个屏幕时

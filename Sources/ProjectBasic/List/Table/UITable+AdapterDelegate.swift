@@ -120,7 +120,7 @@ extension UITableAdapter {
     internal func _didSelectItem(at indexPath: IndexPath) {
         let item = dataController[indexPath]
         self.checkCanSelected(item) {[weak self] (isCanSelected) in
-            guard let `self` = self else { return }
+            guard let self = self else { return }
             if isCanSelected {
                 self.whenItemSelected(item)
             } else {

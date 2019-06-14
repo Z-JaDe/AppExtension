@@ -16,7 +16,7 @@ public class PermissionScope: TaskQueueProtocol {
     private var cancelTaskClosure: (() -> Void)?
     public func request(_ permission: Permission, _ callback: @escaping PermissionScopeCallback) {
         self.taskQueue.addAsyncTask({[weak self] (closure) in
-            guard let `self` = self else { return }
+            guard let self = self else { return }
             self.cancelTaskClosure = closure
             switch permission {
             case .camera:

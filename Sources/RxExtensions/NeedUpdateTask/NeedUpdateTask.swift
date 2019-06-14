@@ -48,7 +48,7 @@ public class NeedUpdateTask {
         updateStreamDisposeBag = DisposeBag()
 
         needUpdateSubject.flatMapLatest {[weak self] () -> Observable<Void> in
-            guard let `self` = self else {
+            guard let self = self else {
                 throw AppError.deallocError
             }
             return Observable.merge(Observable.combineLatest(self.limitObservableArr)
@@ -57,7 +57,7 @@ public class NeedUpdateTask {
             }
             .throttle(self.buffer, scheduler: MainScheduler.asyncInstance)
             .subscribeOnNext({[weak self] () in
-                guard let `self` = self else { return }
+                guard let self = self else { return }
                 guard self.isNeedUpdate else { return }
                 self.updateClosure?()
                 self.isNeedUpdate = false

@@ -64,13 +64,13 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
     override func loadRxDataSource() -> DataSource {
         let dataSource = DataSource(dataController: DataController())
         dataSource.configureCell = {[weak self] (_, tableView, indexPath, item) in
-            guard let `self` = self else {
+            guard let self = self else {
                 return item.createCell(in: tableView, for: indexPath)
             }
             return self.createCell(in: tableView, for: indexPath, item: item)
         }
         dataSource.didMoveItem = { [weak self] (dataSource, source, destination) in
-            guard let `self` = self else { return }
+            guard let self = self else { return }
             self.lastListDataInfo = self.lastListDataInfo.map({$0.exchange(source, destination)})
         }
         return dataSource
@@ -97,7 +97,7 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
                 return dataArray.compactMapToSectionModels()
             })})
             .do(onNext: { [weak self] (element) -> Void in
-                guard let `self` = self else {return}
+                guard let self = self else {return}
                 self.updateItemsIfNeed()
                 self.addBufferPool(at: element.data)
             })
@@ -121,7 +121,7 @@ extension UITableAdapter {
             .forEach(modelTable.add)
         self.timer?.invalidate()
         self.timer = Timer.scheduleTimer(0.01) {[weak self] (timer) in
-            guard let `self` = self else { return }
+            guard let self = self else { return }
             guard let item = modelTable.anyObject else {
                 timer?.invalidate()
                 return

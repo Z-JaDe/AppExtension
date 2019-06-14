@@ -47,7 +47,7 @@ public extension UpdateModelProtocol where Self: NSObject {
         self.resetDisposeBagWithTag(tag)
         Observable<Void>.setNeedUpdate(pauser, .milliseconds(10))
             .subscribeOnNext { [weak self] in
-                guard let `self` = self else { return }
+                guard let self = self else { return }
                 self.configDataWithModel()
             }.disposed(by: self.disposeBagWithTag(tag))
     }

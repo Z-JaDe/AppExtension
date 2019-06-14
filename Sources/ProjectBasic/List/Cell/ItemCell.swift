@@ -101,7 +101,7 @@ open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable
             self?.updateSelectedState(isSelected)
         }.disposed(by: disposeBag)
         observerHighlightedStateChanged(self.isHighlightedSubject).subscribeOnNext {[weak self] (isHighlighted) in
-            guard let `self` = self else { return }
+            guard let self = self else { return }
             self.updateHighlightedState(isHighlighted)
             self.configHighlightedAnimate(isHighlighted)
         } .disposed(by: disposeBag)

@@ -66,7 +66,7 @@ class JDProgressHUD: MBProgressHUD {
     func hide(hideType: HUDHideType, delay: TimeInterval, completion: (() -> Void)?) {
         lock.lock(); defer {lock.unlock()}
         super.completionBlock = { [weak self] in
-            guard let `self` = self else { return }
+            guard let self = self else { return }
             self.showState = .已经隐藏
             self.clearCompletionBlock()
             completion?()
