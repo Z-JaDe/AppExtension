@@ -27,7 +27,7 @@ public class AlipayManager: NSObject {
  */
 extension AlipayManager {
     func onPayResp(_ resultDict: [AnyHashable: Any]?) {
-        if let resultDict = resultDict,let memo = resultDict["memo"] as? String {
+        if let resultDict = resultDict, let memo = resultDict["memo"] as? String {
             if resultDict["resultStatus"] as? String == "9000" {
                 self.payCallBack(isSuccessful: true)
                 HUD.showSuccess(memo)
