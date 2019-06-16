@@ -118,7 +118,7 @@ extension EntityManager {
     /// ZJaDe: 查找所有相关model，根据keyValues查找
     public func search<T>(keyValues: [(String, Any)]) -> [T] where T: NSManagedObject {
         let objects: [T]
-        if keyValues.count > 0 {
+        if keyValues.isNotEmpty {
             let predicateFormat = keyValues.map {"\($0.0) == %@"}.joined(separator: "&&")
             let predicate: NSPredicate = NSPredicate(format: predicateFormat, argumentArray: keyValues.map {$0.1})
             objects = search(predicate: predicate)

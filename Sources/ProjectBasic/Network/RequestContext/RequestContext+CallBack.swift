@@ -21,7 +21,7 @@ extension Observable where Element: RequestContextCompatible {
             #else
             /// ZJaDe: 如果返回的error字符串为空则不处理
             let errorStr = error.localizedDescription
-            if errorStr.count > 0 {
+            if errorStr.isNotEmpty {
                 HUD.showError(errorStr)
                 logError(errorStr)
             }

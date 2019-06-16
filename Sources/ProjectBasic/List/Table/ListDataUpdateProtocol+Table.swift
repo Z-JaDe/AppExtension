@@ -25,7 +25,7 @@ extension ListDataUpdateProtocol where Section: Equatable & InitProtocol, Item =
         var newData = self.dataArray
         if isRefresh {
             newData.reset(section: section, items: _itemArray)
-        } else if _itemArray.count > 0 {
+        } else if _itemArray.isNotEmpty {
             newData.append(section: section, items: _itemArray)
         }
         let result = newData.updateInfo()

@@ -68,7 +68,7 @@ open class TextFieldCell: TitleCell, CheckAndCatchParamsProtocol {
 }
 extension TextField {
     public func checkIsVerificationCode() -> Bool {
-        guard let text = self.text, text.count > 0 else {
+        guard let text = self.text, text.isNotEmpty else {
             HUD.showError("请输入验证码")
             return false
         }
@@ -79,7 +79,7 @@ extension TextField {
         return true
     }
     public func checkIsPhone() -> Bool {
-        guard let text = self.text, text.count > 0 else {
+        guard let text = self.text, text.isNotEmpty else {
             HUD.showError("请输入手机号码")
             return false
         }
@@ -90,7 +90,7 @@ extension TextField {
         return true
     }
     public func checkIsRealName() -> Bool {
-        guard let text = self.text, text.count > 0 else {
+        guard let text = self.text, text.isNotEmpty else {
             HUD.showError("请输入姓名")
             return false
         }
@@ -101,7 +101,7 @@ extension TextField {
         return true
     }
     public func checkIsIDCard() -> Bool {
-        guard let text = self.text, text.count > 0 else {
+        guard let text = self.text, text.isNotEmpty else {
             HUD.showError("请输入身份证号")
             return false
         }
@@ -112,7 +112,7 @@ extension TextField {
         return true
     }
     public func checkIsBankCode() -> Bool {
-        guard let text = self.text, text.count > 0 else {
+        guard let text = self.text, text.isNotEmpty else {
             HUD.showError("请输入银行卡号")
             return false
         }

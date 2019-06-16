@@ -144,7 +144,7 @@ extension SegmentScrollView {
         guard layoutCells.indexCanBound(index) else { return }
         removeLayoutCell(at: index)
         // ZJaDe: layout
-        if  layoutCells.count > 0 {
+        if  layoutCells.isEmpty == false {
             let needUpdateOriginCells = Array(self.layoutCells.suffix(from: index))
             let startOrigin: CGFloat = index > 0 ? self.layoutCells[index - 1].trailing : 0
             layoutCellsOrigin(needUpdateOriginCells, startOrigin)

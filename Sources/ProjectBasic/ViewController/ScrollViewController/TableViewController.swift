@@ -44,7 +44,7 @@ open class AdapterTableViewController: AdapterListViewController<TableView, UITa
         get { return self.tableHeaderCell.customView }
         set {
             self.tableHeaderCell.customView = newValue
-            if self.adapter.dataArray.count > 0 {
+            if self.adapter.dataArray.isEmpty == false {
                 self.adapter.updateData()
             }
         }
@@ -53,7 +53,7 @@ open class AdapterTableViewController: AdapterListViewController<TableView, UITa
         get { return self.tableFooterCell.customView }
         set {
             self.tableFooterCell.customView = newValue
-            if self.adapter.dataArray.count > 0 {
+            if self.adapter.dataArray.isEmpty == false {
                 self.adapter.updateData()
             }
         }

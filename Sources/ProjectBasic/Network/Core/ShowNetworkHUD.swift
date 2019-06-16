@@ -21,7 +21,7 @@ public enum ShowNetworkHUD<ResultCodeType> where ResultCodeType: RawRepresentabl
 
 public extension ShowNetworkHUD {
     func showResultSuccessful(_ text: String) {
-        guard text.count > 0 else {
+        guard text.isNotEmpty else {
             return
         }
         switch self {
@@ -36,7 +36,7 @@ public extension ShowNetworkHUD {
         }
     }
     func showResultError(_ text: String, resultCode: ResultCodeType? = nil) {
-        guard text.count > 0 else {
+        guard text.isNotEmpty else {
             return
         }
         switch self {

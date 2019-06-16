@@ -132,7 +132,7 @@ open class BlurPresentationController: PresentationController {
 //}
 //extension ModalContainerScreenshotsProtocol where Self: UIViewController {
 //    public func screenshotsImage() -> UIImage? {
-//        if self.view.subviews.count > 0 {
+//        if self.view.subviews.isNotEmpty {
 //            return self.view.toImage()
 //        } else {
 //            return nil
@@ -141,7 +141,7 @@ open class BlurPresentationController: PresentationController {
 //}
 //extension NavItemSingleContainerViewController {
 //    public func screenshotsImage() -> UIImage? {
-//        if self.contentView.subviews.count > 0 {
+//        if self.contentView.subviews.isNotEmpty {
 //            return self.contentView.toImage()
 //        } else {
 //            return nil

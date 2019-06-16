@@ -76,7 +76,7 @@ public class PasswordInputView: CustomView {
 }
 extension PasswordInputView: UITextFieldDelegate {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if string.count == 0 {
+        if string.isEmpty {
             return true
         }
         let oldText = textField.text ?? ""

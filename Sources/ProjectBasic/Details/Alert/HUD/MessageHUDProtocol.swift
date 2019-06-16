@@ -44,7 +44,7 @@ extension MessageHUDProtocol where Self: UIViewController {
         }
     }
     fileprivate func update() {
-        if self.messageArr.count > 0 {
+        if self.messageArr.isNotEmpty {
             self.show()
         } else {
             self.hide()

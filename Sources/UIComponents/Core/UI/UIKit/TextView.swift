@@ -88,7 +88,7 @@ open class TextView: UITextView {
     // MARK: /*************** drawRect ***************/
     open override func draw(_ rect: CGRect) {
         super.draw(rect)
-        guard self.text.count == 0 else {
+        guard self.text.isEmpty else {
             return
         }
         var attributedStr: NSAttributedString
@@ -110,7 +110,7 @@ open class TextView: UITextView {
     }
     open override func layoutSubviews() {
         super.layoutSubviews()
-        if self.text.count == 0 && (self.placeholder.count > 0 || self.attributedPlaceholder != nil) {
+        if self.text.isEmpty && (self.placeholder.isEmpty == false || self.attributedPlaceholder != nil) {
             setNeedsDisplay()
         }
     }

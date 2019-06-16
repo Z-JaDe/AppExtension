@@ -14,7 +14,7 @@ open class PageItemsView<CellView, ItemData, ScrollView>: MultipleItemsView<Cell
     where CellView: UIView, ScrollView: UIScrollView & OneWayScrollProtocol {
     open var placeholderItem: ItemData? {
         didSet {
-            if self.dataArray.count == 0 || self.placeholderItem != nil {
+            if self.dataArray.isEmpty || self.placeholderItem != nil {
                 configData(self.dataArray)
             }
         }
@@ -48,7 +48,7 @@ open class PageItemsView<CellView, ItemData, ScrollView>: MultipleItemsView<Cell
     // MARK: -
     open override func configData(_ dataArray: [CellData]) {
         var dataArray = dataArray
-        if let placeholderItem = self.placeholderItem, dataArray.count == 0 {
+        if let placeholderItem = self.placeholderItem, dataArray.isEmpty {
             dataArray = [placeholderItem]
         }
         super.configData(dataArray)

@@ -77,12 +77,12 @@ open class AssetGridViewController: AdapterCollectionViewController, PHPhotoLibr
     }
     open func requestSelectedImages(_ closure: @escaping ([UIImage]) -> Void) {
         let assets: [PHAsset] = self.adapter.selectedItemArray.compactMap({($0 as? AssetGridModel)?.asset})
-        guard assets.count > 0 else {
+        guard assets.isNotEmpty else {
             closure([])
             return
         }
         requestAllImage(assets: assets) { (dataArr) in
-            if dataArr.count == 0 {
+            if dataArr.isEmpty {
                 HUD.showError("图片选择失败")
             } else if dataArr.count < assets.count {
                 HUD.showError("部分图片选择失败")
@@ -133,7 +133,7 @@ extension AssetGridViewController {
 //                if let data = data {
 //                    dataArr.insert(data, at: 0)
 //                }
-//                if assets.count > 0 {
+//                if assets.isNotEmpty {
 //                    self.requestAllImageData(assets: assets, dataArr: dataArr, callback: callback)
 //                } else {
 //                    callback(dataArr)

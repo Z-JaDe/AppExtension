@@ -32,7 +32,7 @@ extension RequestContext {
         guard let url = target as? TargetType else {
             return (try? target?.asURLRequest())??.url?.absoluteString ?? "未知"
         }
-        guard url.path.count > 0 else {
+        guard url.path.isNotEmpty else {
             return url.baseURL.absoluteString
         }
         return url.path

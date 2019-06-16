@@ -21,7 +21,7 @@ public struct ListData<Section: Diffable, Item: Diffable>: CollectionProtocol {
     public func filter(_ transform: (Item) throws -> Bool) rethrows -> ListData {
         let value = try self.value.lazy.map({
             ($0.section, try $0.items.filter(transform))
-        }).filter({$0.1.count > 0})
+        }).filter({$0.1.isEmpty == false})
         return ListData(value)
     }
 

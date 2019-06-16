@@ -24,7 +24,7 @@ open class CycleView<CellView, CellData>: PageItemsView<CellView, CellData, Page
     /// ZJaDe: 设置数据
     open override func configData(_ dataArray: [CellData]) {
         super.configData(dataArray)
-        if dataArray.count > 0 {
+        if dataArray.isEmpty == false {
             let cell = createCell()
             self.config(cell: cell, index: 0)
             scrollView.add(cell, offSet: 0, isToRight: false)

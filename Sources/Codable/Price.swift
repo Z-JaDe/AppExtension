@@ -50,7 +50,7 @@ public struct Price: FloatLiteralTypeValueProtocol,
     }
     public var descriptionWithUnit: String {
         let result = valueFormatAutoUnit(0)
-        if result.unit.count > 0 {
+        if result.unit.isEmpty == false {
             return "\(result.value)\(result.unit)"
         } else {
             return valueFormat(2)
