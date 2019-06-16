@@ -131,13 +131,13 @@ extension LogicScanViewController {
         }
     }
     func addScanInputAntOutput() {
-        guard session.inputs.count <= 0 else { return }
+        guard session.inputs.isEmpty else { return }
         if let device = device, let input = try? AVCaptureDeviceInput(device: device) {
             if session.canAddInput(input) {
                 session.addInput(input)
             }
         }
-        guard session.outputs.count <= 0 else { return }
+        guard session.outputs.isEmpty else { return }
         let output = AVCaptureMetadataOutput()
         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         output.rectOfInterest = self.rectOfInterest(scanViewRect: self.scanViewRect())

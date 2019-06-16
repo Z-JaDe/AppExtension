@@ -60,7 +60,7 @@ extension ListData {
                 return true
             }
         })
-        if items.count <= 0 {
+        if items.isEmpty {
             return nil
         }
         return SectionModelItem(element.0, items)

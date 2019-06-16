@@ -48,7 +48,7 @@ extension SectionModelItem {
                 return true
             }
         })
-        if items.count <= 0 {
+        if items.isEmpty {
             return nil
         }
         return SectionModelItem(section, items)

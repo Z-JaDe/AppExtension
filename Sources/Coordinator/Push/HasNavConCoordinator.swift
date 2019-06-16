@@ -26,7 +26,7 @@ open class HasNavConCoordinator: Coordinator, Flow,
 public extension ViewControllerConvertible where Self: PushJumpPlugin {
     func jump(viewCon: UIViewController) {
         guard let navCon = navCon else { return }
-        if navCon.viewControllers.count <= 0 {
+        if navCon.viewControllers.isEmpty {
             navCon.viewControllers = [viewCon]
         } else {
             push(viewCon)
