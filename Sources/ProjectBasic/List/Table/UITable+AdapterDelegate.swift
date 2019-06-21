@@ -121,18 +121,27 @@ extension UITableAdapter {
         let item = dataController[indexPath]
         self.checkCanSelected(item) {[weak self] (isCanSelected) in
             guard let self = self else { return }
+            if let isCanSelected = isCanSelected {
+                self.updateIsCanSelectedState(indexPath: indexPath)(isCanSelected)
+            } else if let value = item.value as? CanSelectedStateDesignable {
+                value.checkCanSelected(self.updateIsCanSelectedState(indexPath: indexPath))
+            }
+        }
+        item.didSelectItem()
+    }
+    private func updateIsCanSelectedState(indexPath: IndexPath) -> (Bool) -> Void {
+        return {[weak self] (isCanSelected) in
+            guard let self = self else { return }
             if isCanSelected {
-                self.whenItemSelected(item)
+                self.whenItemSelected(&self.dataController[indexPath])
             } else {
                 if self.autoDeselectRow {
                     self.tableView?.deselectRow(at: indexPath, animated: true)
                 }
             }
         }
-        item.didSelectItem()
     }
     internal func _didDeselectItem(at indexPath: IndexPath) {
-        let item = dataController[indexPath]
-        whenItemUnSelected(item)
+        whenItemUnSelected(&dataController[indexPath])
     }
 }

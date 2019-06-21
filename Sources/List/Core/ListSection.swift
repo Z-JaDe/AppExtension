@@ -8,15 +8,13 @@
 
 import UIKit
 
-open class ListSection: Hashable,
-    ClassNameDesignable,
-    AdapterSectionType {
+open class ListSection: AdapterSectionType {
     public required init() {}
 
     // MARK: - HiddenStateDesignable
     open var isHidden: Bool = false
 }
-extension ListSection {
+extension ListSection: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(ObjectIdentifier(self))
     }

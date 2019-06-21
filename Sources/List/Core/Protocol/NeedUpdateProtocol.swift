@@ -7,6 +7,6 @@
 //
 
 import Foundation
-public protocol NeedUpdateProtocol: class {
+public protocol NeedUpdateProtocol {
     func setNeedUpdate()
 }

@@ -59,8 +59,8 @@ extension UICollectionAdapter {
         let item = self.dataController[indexPath]
         self.checkCanSelected(item) {[weak self] (isCanSelected) in
             guard let self = self else { return }
-            if isCanSelected {
-                self.whenItemSelected(item)
+            if isCanSelected != false {
+                self.whenItemSelected(&self.dataController[indexPath])
             } else {
                 if self.autoDeselectRow {
                     self.collectionView?.deselectItem(at: indexPath, animated: true)
@@ -70,8 +70,7 @@ extension UICollectionAdapter {
         item.didSelectItem()
     }
     internal func _didDeselectItem(at indexPath: IndexPath) {
-        let item = self.dataController[indexPath]
-        whenItemUnSelected(item)
+        whenItemUnSelected(&dataController[indexPath])
     }
 
 }

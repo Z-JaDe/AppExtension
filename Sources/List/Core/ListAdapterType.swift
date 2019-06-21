@@ -10,7 +10,7 @@ import Foundation
 
 public protocol DataSourceSectiontype: Diffable {}
 public protocol DataSourceItemtype: Diffable, Equatable {}
-public protocol AdapterItemType: DataSourceItemtype & CanSelectedStateDesignable {}
+public protocol AdapterItemType: DataSourceItemtype & SelectedStateDesignable {}
 public protocol AdapterSectionType: DataSourceSectiontype & InitProtocol & HiddenStateDesignable {}
 
 public protocol ListAdapterType {

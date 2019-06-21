@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol EnabledStateDesignable: class {
+public protocol EnabledStateDesignable {
     var isEnabled: Bool? {get set}
     /// ZJaDe: 刷新enabld状态 只有当self.isEnabled为空时设置才有效，self.isEnabled不为空时，self.isEnabled有效
     func refreshEnabledState(_ isEnabled: Bool)

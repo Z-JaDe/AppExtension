@@ -8,11 +8,11 @@
 
 import Foundation
 
-open class Model: Hashable, InitProtocol, ClassNameDesignable {
+open class Model: Hashable {
 
-    public required init() {
-
-    }
+//    public required init() {
+//
+//    }
     // MARK: - Hashable
     public func hash(into hasher: inout Hasher) {
         hasher.combine(ObjectIdentifier(self))

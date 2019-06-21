@@ -12,7 +12,6 @@ import RxCocoa
 
 open class ListAdapter<DataSource: SectionedDataSourceType>: ListAdapterType,
     EnabledStateDesignable,
-    DisposeBagProtocol,
     MultipleSelectionProtocol
 where DataSource.S.Item: AdapterItemType, DataSource.S.Section: AdapterSectionType {
     public typealias Section = DataSource.S.Section
@@ -60,7 +59,7 @@ where DataSource.S.Item: AdapterItemType, DataSource.S.Section: AdapterSectionTy
 
     }
 }
-
+extension ListAdapter: DisposeBagProtocol {}
 extension ListAdapter: ListDataUpdateProtocol {
     public var dataArray: ListDataType {
         return self.lastListDataInfo.data

@@ -20,18 +20,14 @@ open class CollectionModelCell<ModelType: CollectionItemModel>: DynamicCollectio
     public var model: ModelType {
         didSet { setNeedUpdateModel() }
     }
-    public convenience init() {
-        self.init(model: ModelType())
-    }
+
     public required init(model: ModelType) {
         self.model = model
         super.init(frame: CGRect.zero)
         setNeedUpdateModel()
     }
     public required init?(coder aDecoder: NSCoder) {
-        self.model = ModelType()
-        super.init(coder: aDecoder)
-        setNeedUpdateModel()
+        fatalError("父类不实现")
     }
 
     open func configData(with model: ModelType) {

@@ -8,22 +8,13 @@
 
 import UIKit
 
-open class ListItemModel: Hashable,
-    ClassNameDesignable,
-    AdapterItemType & CanSelectedStateDesignable & HiddenStateDesignable & EnabledStateDesignable,
-    NeedUpdateProtocol {
-    public required init() {}
+open class ListItemModel: AdapterItemType & CanSelectedStateDesignable & HiddenStateDesignable & EnabledStateDesignable {
     var hasLoad: Bool = false
     // MARK: - ID
-    open lazy var reuseIdentifier: String = self.cellFullName
-
     open lazy var cellFullName: String = {
         var name: String = self.getCellName(self.classFullName)
         return name
     }()
-    open func cellClass(_ reuseIdentifier: String) -> AnyClass {
-        jdAbstractMethod()
-    }
     open var viewNameSuffix: String {
         return "Cell"
     }
@@ -31,15 +22,9 @@ open class ListItemModel: Hashable,
     open func isContentEqual(to source: ListItemModel) -> Bool {
         return self.identity == source.identity
     }
-    private var identity: String {
-        return "\(self.hashValue)\(self.needUpdateSentinel.value)"
-    }
     public var isHidden: Bool = false
     // MARK: -
     private var needUpdateSentinel: Sentinel = Sentinel()
-    public func setNeedUpdate() {
-        self.needUpdateSentinel.increase()
-    }
     // MARK: -
     public var isSelected: Bool = false
     public var canSelected: Bool = false
@@ -61,7 +46,15 @@ open class ListItemModel: Hashable,
 
     }
 }
-extension ListItemModel {
+extension ListItemModel: NeedUpdateProtocol {
+    public func setNeedUpdate() {
+        self.needUpdateSentinel.increase()
+    }
+}
+extension ListItemModel: Hashable {
+    private var identity: String {
+        return "\(self.hashValue)\(self.needUpdateSentinel.value)"
+    }
     public func hash(into hasher: inout Hasher) {
         hasher.combine(ObjectIdentifier(self))
     }
@@ -69,7 +62,7 @@ extension ListItemModel {
         return lhs.hashValue == rhs.hashValue
     }
 }
-extension ListItemModel {
+extension ListItemModel: ClassNameDesignable {
     public func getCellName(_ modelName: String) -> String {
         let range = modelName.index(modelName.endIndex, offsetBy: -5) ..<  modelName.endIndex
         return modelName.replacingCharacters(in: range, with: self.viewNameSuffix)

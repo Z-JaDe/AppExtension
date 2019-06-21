@@ -84,18 +84,16 @@ public class TaskQueue {
 public extension TaskQueue {
     func taskSuspend() {
         performInMainAsync {
-            if self.taskIsSuspend == false {
-                self.taskIsSuspend = true
-                self.queue.suspend()
-            }
+            guard self.taskIsSuspend == false else { return }
+            self.taskIsSuspend = true
+            self.queue.suspend()
         }
     }
     func taskResume() {
         performInMainAsync {
-            if self.taskIsSuspend {
-                self.taskIsSuspend = false
-                self.queue.resume()
-            }
+            guard self.taskIsSuspend else { return }
+            self.taskIsSuspend = false
+            self.queue.resume()
         }
     }
 }
