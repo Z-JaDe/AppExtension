@@ -24,6 +24,7 @@ extension UIView {
         if self.superview == nil {
             viewController.view.addSubview(self)
         }
+        self.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             NSLayoutConstraint.equal(item: self, toItem: viewController.view, attribute: .leftMargin),
             NSLayoutConstraint.equal(item: self, toItem: viewController.view, attribute: .rightMargin),
@@ -32,6 +33,7 @@ extension UIView {
             ])
     }
     public func edgesToSuper() {
+        self.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(self.equalToSuperview(.edges))
     }
 }

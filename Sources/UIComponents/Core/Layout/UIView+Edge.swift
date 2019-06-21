@@ -58,6 +58,7 @@ extension UIView {
         return equalTo(view: superView, option, offset: offset)
     }
     public func innerTo(view: UIView, _ option: LayoutEdgeOptions, insets: UIEdgeInsets) -> [NSLayoutConstraint] {
+        self.translatesAutoresizingMaskIntoConstraints = false
         var array: [NSLayoutConstraint] = []
         if option.contains(.left) {
             array.append(self.leftAnchor.constraint(greaterThanOrEqualTo: view.leftAnchor, constant: insets.left))
@@ -86,6 +87,7 @@ extension UIView {
         return innerTo(view: superView, option, insets: insets)
     }
     public func innerTo(view: UIView, _ option: LayoutEdgeOptions, offset: CGFloat = 0) -> [NSLayoutConstraint] {
+        self.translatesAutoresizingMaskIntoConstraints = false
         var array: [NSLayoutConstraint] = []
         if option.contains(.left) {
             array.append(self.leftAnchor.constraint(greaterThanOrEqualTo: view.leftAnchor, constant: offset))
