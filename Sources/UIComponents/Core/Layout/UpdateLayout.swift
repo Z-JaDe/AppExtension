@@ -15,6 +15,7 @@ public protocol ConstraintProtocol: class {
 extension NSLayoutConstraint: ConstraintProtocol {}
 extension UIView {
     public var autoLayout: UpdateLayout<NSLayoutConstraint> {
+        self.translatesAutoresizingMaskIntoConstraints = true
         return UpdateLayout(view: self)
     }
     public func updateLayouts(tag: String? = nil, _ closure: @autoclosure () -> ([NSLayoutConstraint])) {

@@ -10,6 +10,7 @@ import UIKit
 
 open class ListItemModel: AdapterItemType & CanSelectedStateDesignable & HiddenStateDesignable & EnabledStateDesignable {
     var hasLoad: Bool = false
+    public init() {}
     // MARK: - ID
     open lazy var cellFullName: String = {
         var name: String = self.getCellName(self.classFullName)

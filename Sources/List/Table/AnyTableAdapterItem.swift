@@ -11,7 +11,7 @@ import Foundation
 public struct AnyTableAdapterItem {
     public typealias ValueType = AnyObject
         & HiddenStateDesignable
-        & SelectedStateDesignable
+        & CellSelectedStateDesignable
         & CreateTableCellrotocol
     public var value: ValueType
     public init(_ value: ValueType) {
@@ -26,7 +26,7 @@ extension AnyTableAdapterItem: HiddenStateDesignable {
     }
 }
 // MARK: - SelectedStateDesignable
-extension AnyTableAdapterItem: SelectedStateDesignable {
+extension AnyTableAdapterItem: CellSelectedStateDesignable {
     public var isSelected: Bool {
         get { return value.isSelected }
         set { value.isSelected = newValue }

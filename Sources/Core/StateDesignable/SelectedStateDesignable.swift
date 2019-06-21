@@ -10,7 +10,6 @@ import Foundation
 
 public protocol SelectedStateDesignable {
     var isSelected: Bool {get set}
-    func didSelectItem()
 }
 public protocol CanSelectedStateDesignable: SelectedStateDesignable {
 
