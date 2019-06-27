@@ -282,7 +282,6 @@
 		C932F823210069AD00B8DF84 /* JDProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F7F8210069AC00B8DF84 /* JDProgressHUD.swift */; };
 		C932F824210069AD00B8DF84 /* MessageHUDProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F7F9210069AC00B8DF84 /* MessageHUDProtocol.swift */; };
 		C932F825210069AD00B8DF84 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F7FA210069AC00B8DF84 /* HUD.swift */; };
-		C932F828210069AD00B8DF84 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C932F7FE210069AC00B8DF84 /* MBProgressHUD.bundle */; };
 		C932F83A210069AD00B8DF84 /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F81A210069AC00B8DF84 /* Permission.swift */; };
 		C932F83B210069AD00B8DF84 /* PermissionScope+AVFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F81B210069AC00B8DF84 /* PermissionScope+AVFoundation.swift */; };
 		C932F83C210069AD00B8DF84 /* PermissionScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F81C210069AC00B8DF84 /* PermissionScope.swift */; };
@@ -1077,7 +1076,6 @@
 		C932F7F8210069AC00B8DF84 /* JDProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDProgressHUD.swift; sourceTree = "<group>"; };
 		C932F7F9210069AC00B8DF84 /* MessageHUDProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHUDProtocol.swift; sourceTree = "<group>"; };
 		C932F7FA210069AC00B8DF84 /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
-		C932F7FE210069AC00B8DF84 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		C932F800210069AC00B8DF84 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		C932F801210069AC00B8DF84 /* SwiftTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTimer.swift; sourceTree = "<group>"; };
 		C932F806210069AC00B8DF84 /* ImageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
@@ -2445,7 +2443,6 @@
 				C932F7F8210069AC00B8DF84 /* JDProgressHUD.swift */,
 				C932F7F9210069AC00B8DF84 /* MessageHUDProtocol.swift */,
 				C932F7FA210069AC00B8DF84 /* HUD.swift */,
-				C932F7FE210069AC00B8DF84 /* MBProgressHUD.bundle */,
 			);
 			path = HUD;
 			sourceTree = "<group>";
@@ -3905,7 +3902,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C932F828210069AD00B8DF84 /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

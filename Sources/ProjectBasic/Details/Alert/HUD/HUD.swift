@@ -84,7 +84,7 @@ extension HUD {
         }
     }
     private static func image(_ name: String) -> UIImage? {
-        return UIImage(named: "ic_hud_\(name)") ?? UIImage(named: "MBProgressHUD.bundle/\(name)", in: Bundle(for: HUD.self), compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
+        return UIImage(named: "ic_hud_\(name)")
     }
 }
 extension HUD: Equatable {
