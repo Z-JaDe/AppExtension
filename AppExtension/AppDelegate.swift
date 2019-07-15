@@ -38,6 +38,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        swiftTest()
 //        lockTest()
 //        gcdTest()
+        print("Int")
+        print(MemoryLayout<Int8>.size)
+        print(MemoryLayout<Int16>.size)
+        print(MemoryLayout<Int32>.size)
+        print(MemoryLayout<Int64>.size)
+        print(MemoryLayout<Int>.size)
+        print("Float")
+        print(MemoryLayout<Float32>.size)
+        print(MemoryLayout<Float64>.size)
+        print(MemoryLayout<Float>.size)
+        print("Double")
+        print(MemoryLayout<Double>.size)
+        print("CGFloat")
+        print(MemoryLayout<CGFloat>.size)
         return true
     }
 
