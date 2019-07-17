@@ -39,7 +39,7 @@ public struct JDBool: BooleanLiteralTypeValueProtocol,
     /// ZJaDe: Bool取反
     @discardableResult
     public mutating func toggle() -> JDBool {
-        self.value = !self.value
+        self.value.toggle()
         return self
     }
 }

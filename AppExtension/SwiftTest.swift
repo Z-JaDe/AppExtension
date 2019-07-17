@@ -117,3 +117,43 @@ func mainColor() {
 //        let value = Regex(regex.joined(separator: "|")).test(testStr: "我们我们我们我们我们1")
 //        logDebug(value)
 //    }
+
+func memoryLayoutTest() {
+    print("Int")
+    print(MemoryLayout<Int8>.size)
+    print(MemoryLayout<Int16>.size)
+    print(MemoryLayout<Int32>.size)
+    print(MemoryLayout<Int64>.size)
+    print(MemoryLayout<Int>.size)
+    print("Float")
+    print(MemoryLayout<Float32>.size)
+    print(MemoryLayout<Float64>.size)
+    print(MemoryLayout<Float>.size)
+    print("Double")
+    print(MemoryLayout<Double>.size)
+    print("CGFloat")
+    print(MemoryLayout<CGFloat>.size)
+}
+
+// MARK: -
+func copyTest() {
+    let a = TestArr()
+    print("准备设置")
+    a.array.countIsEqual(count: 6, append: {$0}, remove: {_ in })
+    print("设置完成")
+    
+    print("准备设置")
+    a.array.countIsEqual(count: 10, append: {$0}, remove: {_ in })
+    print("设置完成")
+    
+    print("准备设置")
+    a.array.countIsEqual(count: 3, append: {$0}, remove: {_ in })
+    print("设置完成")
+}
+class TestArr {
+    var array: [Int] = [] {
+        didSet {
+            print(self.array)
+        }
+    }
+}
