@@ -1,6 +1,6 @@
 {
   "name": "ReSwift",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "summary": "Unidirectional Data Flow in Swift",
   "description": "ReSwift is a Redux-like implementation of the unidirectional data flow architecture in Swift.\nIt embraces a unidirectional data flow that only allows state mutations through declarative actions.",
   "homepage": "https://github.com/ReSwift/ReSwift",
@@ -9,13 +9,16 @@
     "file": "LICENSE.md"
   },
   "authors": {
-    "Benjamin Encz": "me@benjamin-encz.de"
+    "Benjamin Encz": "me@benjamin-encz.de",
+    "Karl Bowden": "karl@karlbowden.com",
+    "Malcolm Jarvis": "malcolm@boolable.ca",
+    "Christian Tietze": "me@christiantietze.de"
   },
   "documentation_url": "http://reswift.github.io/ReSwift/",
   "social_media_url": "http://twitter.com/benjaminencz",
   "source": {
     "git": "https://github.com/ReSwift/ReSwift.git",
-    "tag": "4.0.1"
+    "tag": "5.0.0"
   },
   "platforms": {
     "ios": "8.0",
@@ -24,5 +27,11 @@
     "watchos": "2.0"
   },
   "requires_arc": true,
-  "source_files": "ReSwift/**/*.swift"
+  "source_files": "ReSwift/**/*.swift",
+  "swift_versions": [
+    "5.0",
+    "4.2",
+    "3.2"
+  ],
+  "swift_version": "5.0"
 }
