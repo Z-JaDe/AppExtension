@@ -1,0 +1,581 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E3487C00000450 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3487C00000440 /* Foundation.framework */; };
+		E3487C00000460 /* MotionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C000000D0 /* MotionAnimator.swift */; };
+		E3487C00000470 /* MotionAnimatorViewContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C000000E0 /* MotionAnimatorViewContext.swift */; };
+		E3487C00000480 /* MotionCoreAnimationViewContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C000000F0 /* MotionCoreAnimationViewContext.swift */; };
+		E3487C00000490 /* MotionCoreAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000100 /* MotionCoreAnimator.swift */; };
+		E3487C000004A0 /* MotionViewPropertyViewContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000110 /* MotionViewPropertyViewContext.swift */; };
+		E3487C000004B0 /* MotionViewTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000120 /* MotionViewTransitionAnimator.swift */; };
+		E3487C000004C0 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000130 /* Application.swift */; };
+		E3487C000004D0 /* Motion+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000140 /* Motion+Array.swift */; };
+		E3487C000004E0 /* Motion+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000150 /* Motion+CALayer.swift */; };
+		E3487C000004F0 /* Motion+CAMediaTimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000160 /* Motion+CAMediaTimingFunction.swift */; };
+		E3487C00000500 /* Motion+CG.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000170 /* Motion+CG.swift */; };
+		E3487C00000510 /* Motion+Obj-C.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000180 /* Motion+Obj-C.swift */; };
+		E3487C00000520 /* Motion+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000190 /* Motion+UIKit.swift */; };
+		E3487C00000530 /* Motion+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C000001A0 /* Motion+UIView.swift */; };
+		E3487C00000540 /* Motion+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C000001B0 /* Motion+UIViewController.swift */; };
+		E3487C00000550 /* MotionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C000001C0 /* MotionAnimation.swift */; };
+		E3487C00000560 /* MotionAnimationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C000001D0 /* MotionAnimationState.swift */; };
+		E3487C00000570 /* MotionCAAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C000001E0 /* MotionCAAnimation.swift */; };
+		E3487C00000580 /* MotionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C000001F0 /* MotionContext.swift */; };
+		E3487C00000590 /* MotionCoordinateSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000200 /* MotionCoordinateSpace.swift */; };
+		E3487C000005A0 /* MotionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000210 /* MotionModifier.swift */; };
+		E3487C000005B0 /* MotionPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000220 /* MotionPlugin.swift */; };
+		E3487C000005C0 /* MotionSnapshotType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000230 /* MotionSnapshotType.swift */; };
+		E3487C000005D0 /* MotionTargetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000240 /* MotionTargetState.swift */; };
+		E3487C000005E0 /* MotionTransitionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000250 /* MotionTransitionObserver.swift */; };
+		E3487C000005F0 /* MotionViewOrderStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000260 /* MotionViewOrderStrategy.swift */; };
+		E3487C00000600 /* MotionViewTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000270 /* MotionViewTransition.swift */; };
+		E3487C00000610 /* CascadePreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000280 /* CascadePreprocessor.swift */; };
+		E3487C00000620 /* ConditionalPreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000290 /* ConditionalPreprocessor.swift */; };
+		E3487C00000630 /* IgnoreSubviewModifiersPreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C000002A0 /* IgnoreSubviewModifiersPreprocessor.swift */; };
+		E3487C00000640 /* MatchPreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C000002B0 /* MatchPreprocessor.swift */; };
+		E3487C00000650 /* MotionCorePreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C000002C0 /* MotionCorePreprocessor.swift */; };
+		E3487C00000660 /* MotionPreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C000002D0 /* MotionPreprocessor.swift */; };
+		E3487C00000670 /* SourcePreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C000002E0 /* SourcePreprocessor.swift */; };
+		E3487C00000680 /* TransitionPreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C000002F0 /* TransitionPreprocessor.swift */; };
+		E3487C00000690 /* MotionProgressRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000300 /* MotionProgressRunner.swift */; };
+		E3487C000006A0 /* MotionTransition+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000310 /* MotionTransition+Animate.swift */; };
+		E3487C000006B0 /* MotionTransition+Complete.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000320 /* MotionTransition+Complete.swift */; };
+		E3487C000006C0 /* MotionTransition+CustomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000330 /* MotionTransition+CustomTransition.swift */; };
+		E3487C000006D0 /* MotionTransition+Interactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000340 /* MotionTransition+Interactive.swift */; };
+		E3487C000006E0 /* MotionTransition+Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000350 /* MotionTransition+Start.swift */; };
+		E3487C000006F0 /* MotionTransition+UINavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000360 /* MotionTransition+UINavigationControllerDelegate.swift */; };
+		E3487C00000700 /* MotionTransition+UITabBarControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000370 /* MotionTransition+UITabBarControllerDelegate.swift */; };
+		E3487C00000710 /* MotionTransition+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000380 /* MotionTransition+UIViewControllerTransitioningDelegate.swift */; };
+		E3487C00000720 /* MotionTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000390 /* MotionTransition.swift */; };
+		E3487C00000770 /* Motion-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E3487C00000760 /* Motion-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3487C000007B0 /* Motion-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E3487C000007A0 /* Motion-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C61B778F10E900D400CB00E387343BAC /* Motion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Motion.framework; path = Motion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3487C000000D0 /* MotionAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionAnimator.swift; path = Sources/Animator/MotionAnimator.swift; sourceTree = "<group>"; };
+		E3487C000000E0 /* MotionAnimatorViewContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionAnimatorViewContext.swift; path = Sources/Animator/MotionAnimatorViewContext.swift; sourceTree = "<group>"; };
+		E3487C000000F0 /* MotionCoreAnimationViewContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionCoreAnimationViewContext.swift; path = Sources/Animator/MotionCoreAnimationViewContext.swift; sourceTree = "<group>"; };
+		E3487C00000100 /* MotionCoreAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionCoreAnimator.swift; path = Sources/Animator/MotionCoreAnimator.swift; sourceTree = "<group>"; };
+		E3487C00000110 /* MotionViewPropertyViewContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionViewPropertyViewContext.swift; path = Sources/Animator/MotionViewPropertyViewContext.swift; sourceTree = "<group>"; };
+		E3487C00000120 /* MotionViewTransitionAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionViewTransitionAnimator.swift; path = Sources/Animator/MotionViewTransitionAnimator.swift; sourceTree = "<group>"; };
+		E3487C00000130 /* Application.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Application.swift; path = Sources/Application.swift; sourceTree = "<group>"; };
+		E3487C00000140 /* Motion+Array.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Motion+Array.swift"; path = "Sources/Extensions/Motion+Array.swift"; sourceTree = "<group>"; };
+		E3487C00000150 /* Motion+CALayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Motion+CALayer.swift"; path = "Sources/Extensions/Motion+CALayer.swift"; sourceTree = "<group>"; };
+		E3487C00000160 /* Motion+CAMediaTimingFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Motion+CAMediaTimingFunction.swift"; path = "Sources/Extensions/Motion+CAMediaTimingFunction.swift"; sourceTree = "<group>"; };
+		E3487C00000170 /* Motion+CG.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Motion+CG.swift"; path = "Sources/Extensions/Motion+CG.swift"; sourceTree = "<group>"; };
+		E3487C00000180 /* Motion+Obj-C.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Motion+Obj-C.swift"; path = "Sources/Extensions/Motion+Obj-C.swift"; sourceTree = "<group>"; };
+		E3487C00000190 /* Motion+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Motion+UIKit.swift"; path = "Sources/Extensions/Motion+UIKit.swift"; sourceTree = "<group>"; };
+		E3487C000001A0 /* Motion+UIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Motion+UIView.swift"; path = "Sources/Extensions/Motion+UIView.swift"; sourceTree = "<group>"; };
+		E3487C000001B0 /* Motion+UIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Motion+UIViewController.swift"; path = "Sources/Extensions/Motion+UIViewController.swift"; sourceTree = "<group>"; };
+		E3487C000001C0 /* MotionAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionAnimation.swift; path = Sources/MotionAnimation.swift; sourceTree = "<group>"; };
+		E3487C000001D0 /* MotionAnimationState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionAnimationState.swift; path = Sources/MotionAnimationState.swift; sourceTree = "<group>"; };
+		E3487C000001E0 /* MotionCAAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionCAAnimation.swift; path = Sources/MotionCAAnimation.swift; sourceTree = "<group>"; };
+		E3487C000001F0 /* MotionContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionContext.swift; path = Sources/MotionContext.swift; sourceTree = "<group>"; };
+		E3487C00000200 /* MotionCoordinateSpace.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionCoordinateSpace.swift; path = Sources/MotionCoordinateSpace.swift; sourceTree = "<group>"; };
+		E3487C00000210 /* MotionModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionModifier.swift; path = Sources/MotionModifier.swift; sourceTree = "<group>"; };
+		E3487C00000220 /* MotionPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionPlugin.swift; path = Sources/MotionPlugin.swift; sourceTree = "<group>"; };
+		E3487C00000230 /* MotionSnapshotType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionSnapshotType.swift; path = Sources/MotionSnapshotType.swift; sourceTree = "<group>"; };
+		E3487C00000240 /* MotionTargetState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionTargetState.swift; path = Sources/MotionTargetState.swift; sourceTree = "<group>"; };
+		E3487C00000250 /* MotionTransitionObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionTransitionObserver.swift; path = Sources/MotionTransitionObserver.swift; sourceTree = "<group>"; };
+		E3487C00000260 /* MotionViewOrderStrategy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionViewOrderStrategy.swift; path = Sources/MotionViewOrderStrategy.swift; sourceTree = "<group>"; };
+		E3487C00000270 /* MotionViewTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionViewTransition.swift; path = Sources/MotionViewTransition.swift; sourceTree = "<group>"; };
+		E3487C00000280 /* CascadePreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CascadePreprocessor.swift; path = Sources/Preprocessors/CascadePreprocessor.swift; sourceTree = "<group>"; };
+		E3487C00000290 /* ConditionalPreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConditionalPreprocessor.swift; path = Sources/Preprocessors/ConditionalPreprocessor.swift; sourceTree = "<group>"; };
+		E3487C000002A0 /* IgnoreSubviewModifiersPreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IgnoreSubviewModifiersPreprocessor.swift; path = Sources/Preprocessors/IgnoreSubviewModifiersPreprocessor.swift; sourceTree = "<group>"; };
+		E3487C000002B0 /* MatchPreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatchPreprocessor.swift; path = Sources/Preprocessors/MatchPreprocessor.swift; sourceTree = "<group>"; };
+		E3487C000002C0 /* MotionCorePreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionCorePreprocessor.swift; path = Sources/Preprocessors/MotionCorePreprocessor.swift; sourceTree = "<group>"; };
+		E3487C000002D0 /* MotionPreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionPreprocessor.swift; path = Sources/Preprocessors/MotionPreprocessor.swift; sourceTree = "<group>"; };
+		E3487C000002E0 /* SourcePreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SourcePreprocessor.swift; path = Sources/Preprocessors/SourcePreprocessor.swift; sourceTree = "<group>"; };
+		E3487C000002F0 /* TransitionPreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionPreprocessor.swift; path = Sources/Preprocessors/TransitionPreprocessor.swift; sourceTree = "<group>"; };
+		E3487C00000300 /* MotionProgressRunner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionProgressRunner.swift; path = Sources/Transition/MotionProgressRunner.swift; sourceTree = "<group>"; };
+		E3487C00000310 /* MotionTransition+Animate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MotionTransition+Animate.swift"; path = "Sources/Transition/MotionTransition+Animate.swift"; sourceTree = "<group>"; };
+		E3487C00000320 /* MotionTransition+Complete.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MotionTransition+Complete.swift"; path = "Sources/Transition/MotionTransition+Complete.swift"; sourceTree = "<group>"; };
+		E3487C00000330 /* MotionTransition+CustomTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MotionTransition+CustomTransition.swift"; path = "Sources/Transition/MotionTransition+CustomTransition.swift"; sourceTree = "<group>"; };
+		E3487C00000340 /* MotionTransition+Interactive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MotionTransition+Interactive.swift"; path = "Sources/Transition/MotionTransition+Interactive.swift"; sourceTree = "<group>"; };
+		E3487C00000350 /* MotionTransition+Start.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MotionTransition+Start.swift"; path = "Sources/Transition/MotionTransition+Start.swift"; sourceTree = "<group>"; };
+		E3487C00000360 /* MotionTransition+UINavigationControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MotionTransition+UINavigationControllerDelegate.swift"; path = "Sources/Transition/MotionTransition+UINavigationControllerDelegate.swift"; sourceTree = "<group>"; };
+		E3487C00000370 /* MotionTransition+UITabBarControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MotionTransition+UITabBarControllerDelegate.swift"; path = "Sources/Transition/MotionTransition+UITabBarControllerDelegate.swift"; sourceTree = "<group>"; };
+		E3487C00000380 /* MotionTransition+UIViewControllerTransitioningDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MotionTransition+UIViewControllerTransitioningDelegate.swift"; path = "Sources/Transition/MotionTransition+UIViewControllerTransitioningDelegate.swift"; sourceTree = "<group>"; };
+		E3487C00000390 /* MotionTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionTransition.swift; path = Sources/Transition/MotionTransition.swift; sourceTree = "<group>"; };
+		E3487C00000440 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E3487C00000740 /* Motion.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Motion.xcconfig; sourceTree = "<group>"; };
+		E3487C00000750 /* Motion.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Motion.modulemap; sourceTree = "<group>"; };
+		E3487C00000760 /* Motion-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Motion-umbrella.h"; sourceTree = "<group>"; };
+		E3487C00000780 /* Motion-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Motion-Info.plist"; sourceTree = "<group>"; };
+		E3487C00000790 /* Motion-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Motion-prefix.pch"; sourceTree = "<group>"; };
+		E3487C000007A0 /* Motion-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Motion-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E3487C00000410 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3487C00000450 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E3487C00000010 = {
+			isa = PBXGroup;
+			children = (
+				E3487C00000060 /* Frameworks */,
+				E3487C000000B0 /* Motion */,
+				E3487C00000020 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E3487C00000020 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C61B778F10E900D400CB00E387343BAC /* Motion.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E3487C00000060 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3487C00000430 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3487C000000B0 /* Motion */ = {
+			isa = PBXGroup;
+			children = (
+				E3487C000000C0 /* Core */,
+				E3487C00000730 /* Support Files */,
+			);
+			name = Motion;
+			path = Motion;
+			sourceTree = "<group>";
+		};
+		E3487C000000C0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E3487C00000130 /* Application.swift */,
+				E3487C00000280 /* CascadePreprocessor.swift */,
+				E3487C00000290 /* ConditionalPreprocessor.swift */,
+				E3487C000002A0 /* IgnoreSubviewModifiersPreprocessor.swift */,
+				E3487C000002B0 /* MatchPreprocessor.swift */,
+				E3487C00000140 /* Motion+Array.swift */,
+				E3487C00000150 /* Motion+CALayer.swift */,
+				E3487C00000160 /* Motion+CAMediaTimingFunction.swift */,
+				E3487C00000170 /* Motion+CG.swift */,
+				E3487C00000180 /* Motion+Obj-C.swift */,
+				E3487C00000190 /* Motion+UIKit.swift */,
+				E3487C000001A0 /* Motion+UIView.swift */,
+				E3487C000001B0 /* Motion+UIViewController.swift */,
+				E3487C000001C0 /* MotionAnimation.swift */,
+				E3487C000001D0 /* MotionAnimationState.swift */,
+				E3487C000000D0 /* MotionAnimator.swift */,
+				E3487C000000E0 /* MotionAnimatorViewContext.swift */,
+				E3487C000001E0 /* MotionCAAnimation.swift */,
+				E3487C000001F0 /* MotionContext.swift */,
+				E3487C00000200 /* MotionCoordinateSpace.swift */,
+				E3487C000000F0 /* MotionCoreAnimationViewContext.swift */,
+				E3487C00000100 /* MotionCoreAnimator.swift */,
+				E3487C000002C0 /* MotionCorePreprocessor.swift */,
+				E3487C00000210 /* MotionModifier.swift */,
+				E3487C00000220 /* MotionPlugin.swift */,
+				E3487C000002D0 /* MotionPreprocessor.swift */,
+				E3487C00000300 /* MotionProgressRunner.swift */,
+				E3487C00000230 /* MotionSnapshotType.swift */,
+				E3487C00000240 /* MotionTargetState.swift */,
+				E3487C00000390 /* MotionTransition.swift */,
+				E3487C00000310 /* MotionTransition+Animate.swift */,
+				E3487C00000320 /* MotionTransition+Complete.swift */,
+				E3487C00000330 /* MotionTransition+CustomTransition.swift */,
+				E3487C00000340 /* MotionTransition+Interactive.swift */,
+				E3487C00000350 /* MotionTransition+Start.swift */,
+				E3487C00000360 /* MotionTransition+UINavigationControllerDelegate.swift */,
+				E3487C00000370 /* MotionTransition+UITabBarControllerDelegate.swift */,
+				E3487C00000380 /* MotionTransition+UIViewControllerTransitioningDelegate.swift */,
+				E3487C00000250 /* MotionTransitionObserver.swift */,
+				E3487C00000260 /* MotionViewOrderStrategy.swift */,
+				E3487C00000110 /* MotionViewPropertyViewContext.swift */,
+				E3487C00000270 /* MotionViewTransition.swift */,
+				E3487C00000120 /* MotionViewTransitionAnimator.swift */,
+				E3487C000002E0 /* SourcePreprocessor.swift */,
+				E3487C000002F0 /* TransitionPreprocessor.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		E3487C00000430 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E3487C00000440 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E3487C00000730 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E3487C00000750 /* Motion.modulemap */,
+				E3487C00000740 /* Motion.xcconfig */,
+				E3487C000007A0 /* Motion-dummy.m */,
+				E3487C00000780 /* Motion-Info.plist */,
+				E3487C00000790 /* Motion-prefix.pch */,
+				E3487C00000760 /* Motion-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Motion";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E3487C000003F0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3487C00000770 /* Motion-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		86B4EC2291DDB6B1C43A9FB029DB6C66 /* Motion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3487C000003B0 /* Build configuration list for PBXNativeTarget "Motion" */;
+			buildPhases = (
+				E3487C000003F0 /* Headers */,
+				E3487C00000400 /* Sources */,
+				E3487C00000410 /* Frameworks */,
+				E3487C00000420 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Motion;
+			productName = Motion;
+			productReference = C61B778F10E900D400CB00E387343BAC /* Motion.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E3487C00000000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+			};
+			buildConfigurationList = E3487C00000030 /* Build configuration list for PBXProject "Motion" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E3487C00000010;
+			productRefGroup = E3487C00000020 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				86B4EC2291DDB6B1C43A9FB029DB6C66 /* Motion */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E3487C00000420 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E3487C00000400 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3487C000004C0 /* Application.swift in Sources */,
+				E3487C00000610 /* CascadePreprocessor.swift in Sources */,
+				E3487C00000620 /* ConditionalPreprocessor.swift in Sources */,
+				E3487C00000630 /* IgnoreSubviewModifiersPreprocessor.swift in Sources */,
+				E3487C00000640 /* MatchPreprocessor.swift in Sources */,
+				E3487C000004D0 /* Motion+Array.swift in Sources */,
+				E3487C000004E0 /* Motion+CALayer.swift in Sources */,
+				E3487C000004F0 /* Motion+CAMediaTimingFunction.swift in Sources */,
+				E3487C00000500 /* Motion+CG.swift in Sources */,
+				E3487C00000510 /* Motion+Obj-C.swift in Sources */,
+				E3487C00000520 /* Motion+UIKit.swift in Sources */,
+				E3487C00000530 /* Motion+UIView.swift in Sources */,
+				E3487C00000540 /* Motion+UIViewController.swift in Sources */,
+				E3487C000007B0 /* Motion-dummy.m in Sources */,
+				E3487C00000550 /* MotionAnimation.swift in Sources */,
+				E3487C00000560 /* MotionAnimationState.swift in Sources */,
+				E3487C00000460 /* MotionAnimator.swift in Sources */,
+				E3487C00000470 /* MotionAnimatorViewContext.swift in Sources */,
+				E3487C00000570 /* MotionCAAnimation.swift in Sources */,
+				E3487C00000580 /* MotionContext.swift in Sources */,
+				E3487C00000590 /* MotionCoordinateSpace.swift in Sources */,
+				E3487C00000480 /* MotionCoreAnimationViewContext.swift in Sources */,
+				E3487C00000490 /* MotionCoreAnimator.swift in Sources */,
+				E3487C00000650 /* MotionCorePreprocessor.swift in Sources */,
+				E3487C000005A0 /* MotionModifier.swift in Sources */,
+				E3487C000005B0 /* MotionPlugin.swift in Sources */,
+				E3487C00000660 /* MotionPreprocessor.swift in Sources */,
+				E3487C00000690 /* MotionProgressRunner.swift in Sources */,
+				E3487C000005C0 /* MotionSnapshotType.swift in Sources */,
+				E3487C000005D0 /* MotionTargetState.swift in Sources */,
+				E3487C000006A0 /* MotionTransition+Animate.swift in Sources */,
+				E3487C000006B0 /* MotionTransition+Complete.swift in Sources */,
+				E3487C000006C0 /* MotionTransition+CustomTransition.swift in Sources */,
+				E3487C000006D0 /* MotionTransition+Interactive.swift in Sources */,
+				E3487C000006E0 /* MotionTransition+Start.swift in Sources */,
+				E3487C000006F0 /* MotionTransition+UINavigationControllerDelegate.swift in Sources */,
+				E3487C00000700 /* MotionTransition+UITabBarControllerDelegate.swift in Sources */,
+				E3487C00000710 /* MotionTransition+UIViewControllerTransitioningDelegate.swift in Sources */,
+				E3487C00000720 /* MotionTransition.swift in Sources */,
+				E3487C000005E0 /* MotionTransitionObserver.swift in Sources */,
+				E3487C000005F0 /* MotionViewOrderStrategy.swift in Sources */,
+				E3487C000004A0 /* MotionViewPropertyViewContext.swift in Sources */,
+				E3487C00000600 /* MotionViewTransition.swift in Sources */,
+				E3487C000004B0 /* MotionViewTransitionAnimator.swift in Sources */,
+				E3487C00000670 /* SourcePreprocessor.swift in Sources */,
+				E3487C00000680 /* TransitionPreprocessor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E3487C00000040 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		E3487C00000050 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		E3487C000003C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3487C00000740 /* Motion.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Motion/Motion-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Motion/Motion-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Motion/Motion.modulemap";
+				PRODUCT_MODULE_NAME = Motion;
+				PRODUCT_NAME = Motion;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E3487C000003D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3487C00000740 /* Motion.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Motion/Motion-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Motion/Motion-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Motion/Motion.modulemap";
+				PRODUCT_MODULE_NAME = Motion;
+				PRODUCT_NAME = Motion;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E3487C00000030 /* Build configuration list for PBXProject "Motion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3487C00000040 /* Debug */,
+				E3487C00000050 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3487C000003B0 /* Build configuration list for PBXNativeTarget "Motion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3487C000003D0 /* Debug */,
+				E3487C000003C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E3487C00000000 /* Project object */;
+}

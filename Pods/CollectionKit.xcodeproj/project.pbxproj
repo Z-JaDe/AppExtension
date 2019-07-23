@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B3FBA000004B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3FBA000004A0 /* Foundation.framework */; };
+		3B3FBA000004C0 /* EmptyStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000000D0 /* EmptyStateProvider.swift */; };
+		3B3FBA000004D0 /* SimpleViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000000E0 /* SimpleViewProvider.swift */; };
+		3B3FBA000004E0 /* SpaceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000000F0 /* SpaceProvider.swift */; };
+		3B3FBA000004F0 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000100 /* Animator.swift */; };
+		3B3FBA00000500 /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000110 /* FadeAnimator.swift */; };
+		3B3FBA00000510 /* ScaleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000120 /* ScaleAnimator.swift */; };
+		3B3FBA00000520 /* SimpleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000130 /* SimpleAnimator.swift */; };
+		3B3FBA00000530 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000140 /* CollectionView.swift */; };
+		3B3FBA00000540 /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000150 /* ArrayDataSource.swift */; };
+		3B3FBA00000550 /* ClosureDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000160 /* ClosureDataSource.swift */; };
+		3B3FBA00000560 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000170 /* DataSource.swift */; };
+		3B3FBA00000570 /* UIScrollView+CollectionKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000180 /* UIScrollView+CollectionKit.swift */; };
+		3B3FBA00000580 /* UIView+CollectionKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000190 /* UIView+CollectionKit.swift */; };
+		3B3FBA00000590 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000001A0 /* Util.swift */; };
+		3B3FBA000005A0 /* ClosureLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000001B0 /* ClosureLayout.swift */; };
+		3B3FBA000005B0 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000001C0 /* FlowLayout.swift */; };
+		3B3FBA000005C0 /* InsetLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000001D0 /* InsetLayout.swift */; };
+		3B3FBA000005D0 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000001E0 /* Layout.swift */; };
+		3B3FBA000005E0 /* LayoutContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000001F0 /* LayoutContext.swift */; };
+		3B3FBA000005F0 /* OverlayLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000200 /* OverlayLayout.swift */; };
+		3B3FBA00000600 /* RowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000210 /* RowLayout.swift */; };
+		3B3FBA00000610 /* SimpleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000220 /* SimpleLayout.swift */; };
+		3B3FBA00000620 /* StickyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000230 /* StickyLayout.swift */; };
+		3B3FBA00000630 /* TransposeLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000240 /* TransposeLayout.swift */; };
+		3B3FBA00000640 /* VisibleFrameInsetLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000250 /* VisibleFrameInsetLayout.swift */; };
+		3B3FBA00000650 /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000260 /* WaterfallLayout.swift */; };
+		3B3FBA00000660 /* WrapperLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000270 /* WrapperLayout.swift */; };
+		3B3FBA00000670 /* CollectionReloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000280 /* CollectionReloadable.swift */; };
+		3B3FBA00000680 /* CollectionReuseViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000290 /* CollectionReuseViewManager.swift */; };
+		3B3FBA00000690 /* Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000002A0 /* Deprecated.swift */; };
+		3B3FBA000006A0 /* LayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000002B0 /* LayoutHelper.swift */; };
+		3B3FBA000006B0 /* ItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000002C0 /* ItemProvider.swift */; };
+		3B3FBA000006C0 /* LayoutableProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000002D0 /* LayoutableProvider.swift */; };
+		3B3FBA000006D0 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000002E0 /* Provider.swift */; };
+		3B3FBA000006E0 /* SectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000002F0 /* SectionProvider.swift */; };
+		3B3FBA000006F0 /* BasicProvider+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000300 /* BasicProvider+Convenience.swift */; };
+		3B3FBA00000700 /* BasicProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000310 /* BasicProvider.swift */; };
+		3B3FBA00000710 /* ComposedHeaderProvider+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000320 /* ComposedHeaderProvider+Convenience.swift */; };
+		3B3FBA00000720 /* ComposedHeaderProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000330 /* ComposedHeaderProvider.swift */; };
+		3B3FBA00000730 /* ComposedProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000340 /* ComposedProvider.swift */; };
+		3B3FBA00000740 /* EmptyCollectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000350 /* EmptyCollectionProvider.swift */; };
+		3B3FBA00000750 /* FlattenedProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000360 /* FlattenedProvider.swift */; };
+		3B3FBA00000760 /* AutoLayoutSizeSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000370 /* AutoLayoutSizeSource.swift */; };
+		3B3FBA00000770 /* ClosureSizeSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000380 /* ClosureSizeSource.swift */; };
+		3B3FBA00000780 /* SimpleViewSizeSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000390 /* SimpleViewSizeSource.swift */; };
+		3B3FBA00000790 /* SizeSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000003A0 /* SizeSource.swift */; };
+		3B3FBA000007A0 /* UIImageSizeSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000003B0 /* UIImageSizeSource.swift */; };
+		3B3FBA000007B0 /* AnyViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000003C0 /* AnyViewSource.swift */; };
+		3B3FBA000007C0 /* ClosureViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000003D0 /* ClosureViewSource.swift */; };
+		3B3FBA000007D0 /* ComposedViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000003E0 /* ComposedViewSource.swift */; };
+		3B3FBA000007E0 /* ViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000003F0 /* ViewSource.swift */; };
+		3B3FBA00000830 /* CollectionKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000820 /* CollectionKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3FBA00000870 /* CollectionKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000860 /* CollectionKit-dummy.m */; };
+		3B3FBA00000890 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000880 /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		30E7B466130519665A36DFE78434EF5E /* CollectionKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CollectionKit.framework; path = CollectionKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B3FBA000000D0 /* EmptyStateProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmptyStateProvider.swift; path = Sources/Addon/EmptyStateProvider.swift; sourceTree = "<group>"; };
+		3B3FBA000000E0 /* SimpleViewProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SimpleViewProvider.swift; path = Sources/Addon/SimpleViewProvider.swift; sourceTree = "<group>"; };
+		3B3FBA000000F0 /* SpaceProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpaceProvider.swift; path = Sources/Addon/SpaceProvider.swift; sourceTree = "<group>"; };
+		3B3FBA00000100 /* Animator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animator.swift; path = Sources/Animator/Animator.swift; sourceTree = "<group>"; };
+		3B3FBA00000110 /* FadeAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FadeAnimator.swift; path = Sources/Animator/FadeAnimator.swift; sourceTree = "<group>"; };
+		3B3FBA00000120 /* ScaleAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScaleAnimator.swift; path = Sources/Animator/ScaleAnimator.swift; sourceTree = "<group>"; };
+		3B3FBA00000130 /* SimpleAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SimpleAnimator.swift; path = Sources/Animator/SimpleAnimator.swift; sourceTree = "<group>"; };
+		3B3FBA00000140 /* CollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollectionView.swift; path = Sources/CollectionView.swift; sourceTree = "<group>"; };
+		3B3FBA00000150 /* ArrayDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ArrayDataSource.swift; path = Sources/DataSource/ArrayDataSource.swift; sourceTree = "<group>"; };
+		3B3FBA00000160 /* ClosureDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ClosureDataSource.swift; path = Sources/DataSource/ClosureDataSource.swift; sourceTree = "<group>"; };
+		3B3FBA00000170 /* DataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataSource.swift; path = Sources/DataSource/DataSource.swift; sourceTree = "<group>"; };
+		3B3FBA00000180 /* UIScrollView+CollectionKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIScrollView+CollectionKit.swift"; path = "Sources/Extensions/UIScrollView+CollectionKit.swift"; sourceTree = "<group>"; };
+		3B3FBA00000190 /* UIView+CollectionKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+CollectionKit.swift"; path = "Sources/Extensions/UIView+CollectionKit.swift"; sourceTree = "<group>"; };
+		3B3FBA000001A0 /* Util.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Util.swift; path = Sources/Extensions/Util.swift; sourceTree = "<group>"; };
+		3B3FBA000001B0 /* ClosureLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ClosureLayout.swift; path = Sources/Layout/ClosureLayout.swift; sourceTree = "<group>"; };
+		3B3FBA000001C0 /* FlowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlowLayout.swift; path = Sources/Layout/FlowLayout.swift; sourceTree = "<group>"; };
+		3B3FBA000001D0 /* InsetLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InsetLayout.swift; path = Sources/Layout/InsetLayout.swift; sourceTree = "<group>"; };
+		3B3FBA000001E0 /* Layout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Layout.swift; path = Sources/Layout/Layout.swift; sourceTree = "<group>"; };
+		3B3FBA000001F0 /* LayoutContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutContext.swift; path = Sources/Layout/LayoutContext.swift; sourceTree = "<group>"; };
+		3B3FBA00000200 /* OverlayLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OverlayLayout.swift; path = Sources/Layout/OverlayLayout.swift; sourceTree = "<group>"; };
+		3B3FBA00000210 /* RowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RowLayout.swift; path = Sources/Layout/RowLayout.swift; sourceTree = "<group>"; };
+		3B3FBA00000220 /* SimpleLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SimpleLayout.swift; path = Sources/Layout/SimpleLayout.swift; sourceTree = "<group>"; };
+		3B3FBA00000230 /* StickyLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StickyLayout.swift; path = Sources/Layout/StickyLayout.swift; sourceTree = "<group>"; };
+		3B3FBA00000240 /* TransposeLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransposeLayout.swift; path = Sources/Layout/TransposeLayout.swift; sourceTree = "<group>"; };
+		3B3FBA00000250 /* VisibleFrameInsetLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VisibleFrameInsetLayout.swift; path = Sources/Layout/VisibleFrameInsetLayout.swift; sourceTree = "<group>"; };
+		3B3FBA00000260 /* WaterfallLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WaterfallLayout.swift; path = Sources/Layout/WaterfallLayout.swift; sourceTree = "<group>"; };
+		3B3FBA00000270 /* WrapperLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WrapperLayout.swift; path = Sources/Layout/WrapperLayout.swift; sourceTree = "<group>"; };
+		3B3FBA00000280 /* CollectionReloadable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollectionReloadable.swift; path = Sources/Other/CollectionReloadable.swift; sourceTree = "<group>"; };
+		3B3FBA00000290 /* CollectionReuseViewManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollectionReuseViewManager.swift; path = Sources/Other/CollectionReuseViewManager.swift; sourceTree = "<group>"; };
+		3B3FBA000002A0 /* Deprecated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecated.swift; path = Sources/Other/Deprecated.swift; sourceTree = "<group>"; };
+		3B3FBA000002B0 /* LayoutHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutHelper.swift; path = Sources/Other/LayoutHelper.swift; sourceTree = "<group>"; };
+		3B3FBA000002C0 /* ItemProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ItemProvider.swift; path = Sources/Protocol/ItemProvider.swift; sourceTree = "<group>"; };
+		3B3FBA000002D0 /* LayoutableProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutableProvider.swift; path = Sources/Protocol/LayoutableProvider.swift; sourceTree = "<group>"; };
+		3B3FBA000002E0 /* Provider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Provider.swift; path = Sources/Protocol/Provider.swift; sourceTree = "<group>"; };
+		3B3FBA000002F0 /* SectionProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SectionProvider.swift; path = Sources/Protocol/SectionProvider.swift; sourceTree = "<group>"; };
+		3B3FBA00000300 /* BasicProvider+Convenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BasicProvider+Convenience.swift"; path = "Sources/Provider/BasicProvider+Convenience.swift"; sourceTree = "<group>"; };
+		3B3FBA00000310 /* BasicProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BasicProvider.swift; path = Sources/Provider/BasicProvider.swift; sourceTree = "<group>"; };
+		3B3FBA00000320 /* ComposedHeaderProvider+Convenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ComposedHeaderProvider+Convenience.swift"; path = "Sources/Provider/ComposedHeaderProvider+Convenience.swift"; sourceTree = "<group>"; };
+		3B3FBA00000330 /* ComposedHeaderProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ComposedHeaderProvider.swift; path = Sources/Provider/ComposedHeaderProvider.swift; sourceTree = "<group>"; };
+		3B3FBA00000340 /* ComposedProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ComposedProvider.swift; path = Sources/Provider/ComposedProvider.swift; sourceTree = "<group>"; };
+		3B3FBA00000350 /* EmptyCollectionProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmptyCollectionProvider.swift; path = Sources/Provider/EmptyCollectionProvider.swift; sourceTree = "<group>"; };
+		3B3FBA00000360 /* FlattenedProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlattenedProvider.swift; path = Sources/Provider/FlattenedProvider.swift; sourceTree = "<group>"; };
+		3B3FBA00000370 /* AutoLayoutSizeSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoLayoutSizeSource.swift; path = Sources/SizeSource/AutoLayoutSizeSource.swift; sourceTree = "<group>"; };
+		3B3FBA00000380 /* ClosureSizeSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ClosureSizeSource.swift; path = Sources/SizeSource/ClosureSizeSource.swift; sourceTree = "<group>"; };
+		3B3FBA00000390 /* SimpleViewSizeSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SimpleViewSizeSource.swift; path = Sources/SizeSource/SimpleViewSizeSource.swift; sourceTree = "<group>"; };
+		3B3FBA000003A0 /* SizeSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SizeSource.swift; path = Sources/SizeSource/SizeSource.swift; sourceTree = "<group>"; };
+		3B3FBA000003B0 /* UIImageSizeSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIImageSizeSource.swift; path = Sources/SizeSource/UIImageSizeSource.swift; sourceTree = "<group>"; };
+		3B3FBA000003C0 /* AnyViewSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyViewSource.swift; path = Sources/ViewSource/AnyViewSource.swift; sourceTree = "<group>"; };
+		3B3FBA000003D0 /* ClosureViewSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ClosureViewSource.swift; path = Sources/ViewSource/ClosureViewSource.swift; sourceTree = "<group>"; };
+		3B3FBA000003E0 /* ComposedViewSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ComposedViewSource.swift; path = Sources/ViewSource/ComposedViewSource.swift; sourceTree = "<group>"; };
+		3B3FBA000003F0 /* ViewSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewSource.swift; path = Sources/ViewSource/ViewSource.swift; sourceTree = "<group>"; };
+		3B3FBA000004A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3B3FBA00000800 /* CollectionKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CollectionKit.xcconfig; sourceTree = "<group>"; };
+		3B3FBA00000810 /* CollectionKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CollectionKit.modulemap; sourceTree = "<group>"; };
+		3B3FBA00000820 /* CollectionKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollectionKit-umbrella.h"; sourceTree = "<group>"; };
+		3B3FBA00000840 /* CollectionKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CollectionKit-Info.plist"; sourceTree = "<group>"; };
+		3B3FBA00000850 /* CollectionKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollectionKit-prefix.pch"; sourceTree = "<group>"; };
+		3B3FBA00000860 /* CollectionKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CollectionKit-dummy.m"; sourceTree = "<group>"; };
+		3B3FBA00000880 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B3FBA00000470 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B3FBA000004B0 /* Foundation.framework in Frameworks */,
+				3B3FBA00000890 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B3FBA00000010 = {
+			isa = PBXGroup;
+			children = (
+				3B3FBA000000B0 /* CollectionKit */,
+				3B3FBA00000060 /* Frameworks */,
+				3B3FBA00000020 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3B3FBA00000020 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				30E7B466130519665A36DFE78434EF5E /* CollectionKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B3FBA00000060 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B3FBA00000490 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3B3FBA000000B0 /* CollectionKit */ = {
+			isa = PBXGroup;
+			children = (
+				3B3FBA000000C0 /* Core */,
+				3B3FBA000007F0 /* Support Files */,
+			);
+			name = CollectionKit;
+			path = CollectionKit;
+			sourceTree = "<group>";
+		};
+		3B3FBA000000C0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3B3FBA00000100 /* Animator.swift */,
+				3B3FBA000003C0 /* AnyViewSource.swift */,
+				3B3FBA00000150 /* ArrayDataSource.swift */,
+				3B3FBA00000370 /* AutoLayoutSizeSource.swift */,
+				3B3FBA00000310 /* BasicProvider.swift */,
+				3B3FBA00000300 /* BasicProvider+Convenience.swift */,
+				3B3FBA00000160 /* ClosureDataSource.swift */,
+				3B3FBA000001B0 /* ClosureLayout.swift */,
+				3B3FBA00000380 /* ClosureSizeSource.swift */,
+				3B3FBA000003D0 /* ClosureViewSource.swift */,
+				3B3FBA00000280 /* CollectionReloadable.swift */,
+				3B3FBA00000290 /* CollectionReuseViewManager.swift */,
+				3B3FBA00000140 /* CollectionView.swift */,
+				3B3FBA00000330 /* ComposedHeaderProvider.swift */,
+				3B3FBA00000320 /* ComposedHeaderProvider+Convenience.swift */,
+				3B3FBA00000340 /* ComposedProvider.swift */,
+				3B3FBA000003E0 /* ComposedViewSource.swift */,
+				3B3FBA00000170 /* DataSource.swift */,
+				3B3FBA000002A0 /* Deprecated.swift */,
+				3B3FBA00000350 /* EmptyCollectionProvider.swift */,
+				3B3FBA000000D0 /* EmptyStateProvider.swift */,
+				3B3FBA00000110 /* FadeAnimator.swift */,
+				3B3FBA00000360 /* FlattenedProvider.swift */,
+				3B3FBA000001C0 /* FlowLayout.swift */,
+				3B3FBA000001D0 /* InsetLayout.swift */,
+				3B3FBA000002C0 /* ItemProvider.swift */,
+				3B3FBA000001E0 /* Layout.swift */,
+				3B3FBA000002D0 /* LayoutableProvider.swift */,
+				3B3FBA000001F0 /* LayoutContext.swift */,
+				3B3FBA000002B0 /* LayoutHelper.swift */,
+				3B3FBA00000200 /* OverlayLayout.swift */,
+				3B3FBA000002E0 /* Provider.swift */,
+				3B3FBA00000210 /* RowLayout.swift */,
+				3B3FBA00000120 /* ScaleAnimator.swift */,
+				3B3FBA000002F0 /* SectionProvider.swift */,
+				3B3FBA00000130 /* SimpleAnimator.swift */,
+				3B3FBA00000220 /* SimpleLayout.swift */,
+				3B3FBA000000E0 /* SimpleViewProvider.swift */,
+				3B3FBA00000390 /* SimpleViewSizeSource.swift */,
+				3B3FBA000003A0 /* SizeSource.swift */,
+				3B3FBA000000F0 /* SpaceProvider.swift */,
+				3B3FBA00000230 /* StickyLayout.swift */,
+				3B3FBA00000240 /* TransposeLayout.swift */,
+				3B3FBA000003B0 /* UIImageSizeSource.swift */,
+				3B3FBA00000180 /* UIScrollView+CollectionKit.swift */,
+				3B3FBA00000190 /* UIView+CollectionKit.swift */,
+				3B3FBA000001A0 /* Util.swift */,
+				3B3FBA000003F0 /* ViewSource.swift */,
+				3B3FBA00000250 /* VisibleFrameInsetLayout.swift */,
+				3B3FBA00000260 /* WaterfallLayout.swift */,
+				3B3FBA00000270 /* WrapperLayout.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		3B3FBA00000490 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3B3FBA000004A0 /* Foundation.framework */,
+				3B3FBA00000880 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		3B3FBA000007F0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B3FBA00000810 /* CollectionKit.modulemap */,
+				3B3FBA00000800 /* CollectionKit.xcconfig */,
+				3B3FBA00000860 /* CollectionKit-dummy.m */,
+				3B3FBA00000840 /* CollectionKit-Info.plist */,
+				3B3FBA00000850 /* CollectionKit-prefix.pch */,
+				3B3FBA00000820 /* CollectionKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CollectionKit";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3B3FBA00000450 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B3FBA00000830 /* CollectionKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C914F41EF29629279F1362AED9CBF87B /* CollectionKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B3FBA00000410 /* Build configuration list for PBXNativeTarget "CollectionKit" */;
+			buildPhases = (
+				3B3FBA00000450 /* Headers */,
+				3B3FBA00000460 /* Sources */,
+				3B3FBA00000470 /* Frameworks */,
+				3B3FBA00000480 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CollectionKit;
+			productName = CollectionKit;
+			productReference = 30E7B466130519665A36DFE78434EF5E /* CollectionKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3B3FBA00000000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+			};
+			buildConfigurationList = 3B3FBA00000030 /* Build configuration list for PBXProject "CollectionKit" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3B3FBA00000010;
+			productRefGroup = 3B3FBA00000020 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C914F41EF29629279F1362AED9CBF87B /* CollectionKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3B3FBA00000480 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B3FBA00000460 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B3FBA000004F0 /* Animator.swift in Sources */,
+				3B3FBA000007B0 /* AnyViewSource.swift in Sources */,
+				3B3FBA00000540 /* ArrayDataSource.swift in Sources */,
+				3B3FBA00000760 /* AutoLayoutSizeSource.swift in Sources */,
+				3B3FBA000006F0 /* BasicProvider+Convenience.swift in Sources */,
+				3B3FBA00000700 /* BasicProvider.swift in Sources */,
+				3B3FBA00000550 /* ClosureDataSource.swift in Sources */,
+				3B3FBA000005A0 /* ClosureLayout.swift in Sources */,
+				3B3FBA00000770 /* ClosureSizeSource.swift in Sources */,
+				3B3FBA000007C0 /* ClosureViewSource.swift in Sources */,
+				3B3FBA00000870 /* CollectionKit-dummy.m in Sources */,
+				3B3FBA00000670 /* CollectionReloadable.swift in Sources */,
+				3B3FBA00000680 /* CollectionReuseViewManager.swift in Sources */,
+				3B3FBA00000530 /* CollectionView.swift in Sources */,
+				3B3FBA00000710 /* ComposedHeaderProvider+Convenience.swift in Sources */,
+				3B3FBA00000720 /* ComposedHeaderProvider.swift in Sources */,
+				3B3FBA00000730 /* ComposedProvider.swift in Sources */,
+				3B3FBA000007D0 /* ComposedViewSource.swift in Sources */,
+				3B3FBA00000560 /* DataSource.swift in Sources */,
+				3B3FBA00000690 /* Deprecated.swift in Sources */,
+				3B3FBA00000740 /* EmptyCollectionProvider.swift in Sources */,
+				3B3FBA000004C0 /* EmptyStateProvider.swift in Sources */,
+				3B3FBA00000500 /* FadeAnimator.swift in Sources */,
+				3B3FBA00000750 /* FlattenedProvider.swift in Sources */,
+				3B3FBA000005B0 /* FlowLayout.swift in Sources */,
+				3B3FBA000005C0 /* InsetLayout.swift in Sources */,
+				3B3FBA000006B0 /* ItemProvider.swift in Sources */,
+				3B3FBA000005D0 /* Layout.swift in Sources */,
+				3B3FBA000006C0 /* LayoutableProvider.swift in Sources */,
+				3B3FBA000005E0 /* LayoutContext.swift in Sources */,
+				3B3FBA000006A0 /* LayoutHelper.swift in Sources */,
+				3B3FBA000005F0 /* OverlayLayout.swift in Sources */,
+				3B3FBA000006D0 /* Provider.swift in Sources */,
+				3B3FBA00000600 /* RowLayout.swift in Sources */,
+				3B3FBA00000510 /* ScaleAnimator.swift in Sources */,
+				3B3FBA000006E0 /* SectionProvider.swift in Sources */,
+				3B3FBA00000520 /* SimpleAnimator.swift in Sources */,
+				3B3FBA00000610 /* SimpleLayout.swift in Sources */,
+				3B3FBA000004D0 /* SimpleViewProvider.swift in Sources */,
+				3B3FBA00000780 /* SimpleViewSizeSource.swift in Sources */,
+				3B3FBA00000790 /* SizeSource.swift in Sources */,
+				3B3FBA000004E0 /* SpaceProvider.swift in Sources */,
+				3B3FBA00000620 /* StickyLayout.swift in Sources */,
+				3B3FBA00000630 /* TransposeLayout.swift in Sources */,
+				3B3FBA000007A0 /* UIImageSizeSource.swift in Sources */,
+				3B3FBA00000570 /* UIScrollView+CollectionKit.swift in Sources */,
+				3B3FBA00000580 /* UIView+CollectionKit.swift in Sources */,
+				3B3FBA00000590 /* Util.swift in Sources */,
+				3B3FBA000007E0 /* ViewSource.swift in Sources */,
+				3B3FBA00000640 /* VisibleFrameInsetLayout.swift in Sources */,
+				3B3FBA00000650 /* WaterfallLayout.swift in Sources */,
+				3B3FBA00000660 /* WrapperLayout.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3B3FBA00000040 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		3B3FBA00000050 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		3B3FBA00000420 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B3FBA00000800 /* CollectionKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CollectionKit/CollectionKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CollectionKit/CollectionKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CollectionKit/CollectionKit.modulemap";
+				PRODUCT_MODULE_NAME = CollectionKit;
+				PRODUCT_NAME = CollectionKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3B3FBA00000430 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B3FBA00000800 /* CollectionKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CollectionKit/CollectionKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CollectionKit/CollectionKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CollectionKit/CollectionKit.modulemap";
+				PRODUCT_MODULE_NAME = CollectionKit;
+				PRODUCT_NAME = CollectionKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B3FBA00000030 /* Build configuration list for PBXProject "CollectionKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B3FBA00000040 /* Debug */,
+				3B3FBA00000050 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B3FBA00000410 /* Build configuration list for PBXNativeTarget "CollectionKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B3FBA00000430 /* Debug */,
+				3B3FBA00000420 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3B3FBA00000000 /* Project object */;
+}

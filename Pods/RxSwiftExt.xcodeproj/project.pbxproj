@@ -1,0 +1,707 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A3D67100000460 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3D67100000450 /* Foundation.framework */; };
+		A3D67100000470 /* and.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000000E0 /* and.swift */; };
+		A3D67100000480 /* apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000000F0 /* apply.swift */; };
+		A3D67100000490 /* bufferWithTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000100 /* bufferWithTrigger.swift */; };
+		A3D671000004A0 /* cascade.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000110 /* cascade.swift */; };
+		A3D671000004B0 /* catchErrorJustComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000120 /* catchErrorJustComplete.swift */; };
+		A3D671000004C0 /* count.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000130 /* count.swift */; };
+		A3D671000004D0 /* distinct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000140 /* distinct.swift */; };
+		A3D671000004E0 /* filterMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000150 /* filterMap.swift */; };
+		A3D671000004F0 /* flatMapSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000160 /* flatMapSync.swift */; };
+		A3D67100000500 /* fromAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000170 /* fromAsync.swift */; };
+		A3D67100000510 /* ignore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000180 /* ignore.swift */; };
+		A3D67100000520 /* ignoreErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000190 /* ignoreErrors.swift */; };
+		A3D67100000530 /* ignoreWhen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000001A0 /* ignoreWhen.swift */; };
+		A3D67100000540 /* mapAt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000001B0 /* mapAt.swift */; };
+		A3D67100000550 /* mapMany.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000001C0 /* mapMany.swift */; };
+		A3D67100000560 /* mapTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000001D0 /* mapTo.swift */; };
+		A3D67100000570 /* materialized+elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000001E0 /* materialized+elements.swift */; };
+		A3D67100000580 /* not.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000001F0 /* not.swift */; };
+		A3D67100000590 /* nwise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000200 /* nwise.swift */; };
+		A3D671000005A0 /* ObservableType+Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000210 /* ObservableType+Weak.swift */; };
+		A3D671000005B0 /* ofType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000220 /* ofType.swift */; };
+		A3D671000005C0 /* once.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000230 /* once.swift */; };
+		A3D671000005D0 /* partition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000240 /* partition.swift */; };
+		A3D671000005E0 /* pausable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000250 /* pausable.swift */; };
+		A3D671000005F0 /* pausableBuffered.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000260 /* pausableBuffered.swift */; };
+		A3D67100000600 /* repeatWithBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000270 /* repeatWithBehavior.swift */; };
+		A3D67100000610 /* retryWithBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000280 /* retryWithBehavior.swift */; };
+		A3D67100000620 /* toSortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000290 /* toSortedArray.swift */; };
+		A3D67100000630 /* unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000002A0 /* unwrap.swift */; };
+		A3D67100000640 /* withUnretained.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000002B0 /* withUnretained.swift */; };
+		A3D67100000650 /* zipWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000002C0 /* zipWith.swift */; };
+		A3D67100000660 /* curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000002E0 /* curry.swift */; };
+		A3D67100000670 /* distinct+RxCocoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000300 /* distinct+RxCocoa.swift */; };
+		A3D67100000680 /* mapTo+RxCocoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000310 /* mapTo+RxCocoa.swift */; };
+		A3D67100000690 /* not+RxCocoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000320 /* not+RxCocoa.swift */; };
+		A3D671000006A0 /* partition+RxCocoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000330 /* partition+RxCocoa.swift */; };
+		A3D671000006B0 /* UIScrollView+reachedBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000340 /* UIScrollView+reachedBottom.swift */; };
+		A3D671000006C0 /* UIViewPropertyAnimator+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000350 /* UIViewPropertyAnimator+Rx.swift */; };
+		A3D671000006D0 /* unwrap+SharedSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000360 /* unwrap+SharedSequence.swift */; };
+		A3D67100000720 /* RxSwiftExt-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A3D67100000710 /* RxSwiftExt-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3D67100000760 /* RxSwiftExt-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000750 /* RxSwiftExt-dummy.m */; };
+		A3D671000007B0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3D671000007A0 /* RxSwift.framework */; };
+		A3D67100000800 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3D671000007F0 /* RxCocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A3D67100000780 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3D67100000770 /* RxSwift */;
+			proxyType = 1;
+			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
+			remoteInfo = RxSwift;
+		};
+		A3D671000007D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3D671000007C0 /* RxCocoa */;
+			proxyType = 1;
+			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
+			remoteInfo = RxCocoa;
+		};
+		F9152E0322E768D900E2BAA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3D671000007C0 /* RxCocoa */;
+			proxyType = 2;
+			remoteGlobalIDString = F49FD34447716E9C149BEC0B4BF25379;
+			remoteInfo = RxCocoa;
+		};
+		F9152E0522E768D900E2BAA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3D67100000770 /* RxSwift */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DE4C0E7DB0FAED8D254CFA338432B04;
+			remoteInfo = RxSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A0A44F845E825B1A2CE3C1527EB9DE8D /* RxSwiftExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwiftExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3D671000000E0 /* and.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = and.swift; sourceTree = "<group>"; };
+		A3D671000000F0 /* apply.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = apply.swift; sourceTree = "<group>"; };
+		A3D67100000100 /* bufferWithTrigger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = bufferWithTrigger.swift; sourceTree = "<group>"; };
+		A3D67100000110 /* cascade.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = cascade.swift; sourceTree = "<group>"; };
+		A3D67100000120 /* catchErrorJustComplete.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = catchErrorJustComplete.swift; sourceTree = "<group>"; };
+		A3D67100000130 /* count.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = count.swift; sourceTree = "<group>"; };
+		A3D67100000140 /* distinct.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = distinct.swift; sourceTree = "<group>"; };
+		A3D67100000150 /* filterMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = filterMap.swift; sourceTree = "<group>"; };
+		A3D67100000160 /* flatMapSync.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = flatMapSync.swift; sourceTree = "<group>"; };
+		A3D67100000170 /* fromAsync.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = fromAsync.swift; sourceTree = "<group>"; };
+		A3D67100000180 /* ignore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ignore.swift; sourceTree = "<group>"; };
+		A3D67100000190 /* ignoreErrors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ignoreErrors.swift; sourceTree = "<group>"; };
+		A3D671000001A0 /* ignoreWhen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ignoreWhen.swift; sourceTree = "<group>"; };
+		A3D671000001B0 /* mapAt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = mapAt.swift; sourceTree = "<group>"; };
+		A3D671000001C0 /* mapMany.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = mapMany.swift; sourceTree = "<group>"; };
+		A3D671000001D0 /* mapTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = mapTo.swift; sourceTree = "<group>"; };
+		A3D671000001E0 /* materialized+elements.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "materialized+elements.swift"; sourceTree = "<group>"; };
+		A3D671000001F0 /* not.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = not.swift; sourceTree = "<group>"; };
+		A3D67100000200 /* nwise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = nwise.swift; sourceTree = "<group>"; };
+		A3D67100000210 /* ObservableType+Weak.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ObservableType+Weak.swift"; sourceTree = "<group>"; };
+		A3D67100000220 /* ofType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ofType.swift; sourceTree = "<group>"; };
+		A3D67100000230 /* once.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = once.swift; sourceTree = "<group>"; };
+		A3D67100000240 /* partition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = partition.swift; sourceTree = "<group>"; };
+		A3D67100000250 /* pausable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = pausable.swift; sourceTree = "<group>"; };
+		A3D67100000260 /* pausableBuffered.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = pausableBuffered.swift; sourceTree = "<group>"; };
+		A3D67100000270 /* repeatWithBehavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = repeatWithBehavior.swift; sourceTree = "<group>"; };
+		A3D67100000280 /* retryWithBehavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = retryWithBehavior.swift; sourceTree = "<group>"; };
+		A3D67100000290 /* toSortedArray.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = toSortedArray.swift; sourceTree = "<group>"; };
+		A3D671000002A0 /* unwrap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = unwrap.swift; sourceTree = "<group>"; };
+		A3D671000002B0 /* withUnretained.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = withUnretained.swift; sourceTree = "<group>"; };
+		A3D671000002C0 /* zipWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = zipWith.swift; sourceTree = "<group>"; };
+		A3D671000002E0 /* curry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = curry.swift; sourceTree = "<group>"; };
+		A3D67100000300 /* distinct+RxCocoa.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "distinct+RxCocoa.swift"; path = "Source/RxCocoa/distinct+RxCocoa.swift"; sourceTree = "<group>"; };
+		A3D67100000310 /* mapTo+RxCocoa.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "mapTo+RxCocoa.swift"; path = "Source/RxCocoa/mapTo+RxCocoa.swift"; sourceTree = "<group>"; };
+		A3D67100000320 /* not+RxCocoa.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "not+RxCocoa.swift"; path = "Source/RxCocoa/not+RxCocoa.swift"; sourceTree = "<group>"; };
+		A3D67100000330 /* partition+RxCocoa.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "partition+RxCocoa.swift"; path = "Source/RxCocoa/partition+RxCocoa.swift"; sourceTree = "<group>"; };
+		A3D67100000340 /* UIScrollView+reachedBottom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIScrollView+reachedBottom.swift"; path = "Source/RxCocoa/UIScrollView+reachedBottom.swift"; sourceTree = "<group>"; };
+		A3D67100000350 /* UIViewPropertyAnimator+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewPropertyAnimator+Rx.swift"; path = "Source/RxCocoa/UIViewPropertyAnimator+Rx.swift"; sourceTree = "<group>"; };
+		A3D67100000360 /* unwrap+SharedSequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "unwrap+SharedSequence.swift"; path = "Source/RxCocoa/unwrap+SharedSequence.swift"; sourceTree = "<group>"; };
+		A3D67100000380 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		A3D67100000390 /* Readme.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		A3D671000003A0 /* RxSwiftExt.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = RxSwiftExt.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A3D67100000450 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		A3D671000006F0 /* RxSwiftExt.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxSwiftExt.xcconfig; sourceTree = "<group>"; };
+		A3D67100000700 /* RxSwiftExt.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RxSwiftExt.modulemap; sourceTree = "<group>"; };
+		A3D67100000710 /* RxSwiftExt-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxSwiftExt-umbrella.h"; sourceTree = "<group>"; };
+		A3D67100000730 /* RxSwiftExt-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RxSwiftExt-Info.plist"; sourceTree = "<group>"; };
+		A3D67100000740 /* RxSwiftExt-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxSwiftExt-prefix.pch"; sourceTree = "<group>"; };
+		A3D67100000750 /* RxSwiftExt-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxSwiftExt-dummy.m"; sourceTree = "<group>"; };
+		A3D67100000770 /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxSwift; path = RxSwift.xcodeproj; sourceTree = "<group>"; };
+		A3D671000007A0 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3D671000007C0 /* RxCocoa */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxCocoa; path = RxCocoa.xcodeproj; sourceTree = "<group>"; };
+		A3D671000007F0 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A3D67100000420 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3D67100000460 /* Foundation.framework in Frameworks */,
+				A3D67100000800 /* RxCocoa.framework in Frameworks */,
+				A3D671000007B0 /* RxSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A3D67100000010 = {
+			isa = PBXGroup;
+			children = (
+				A3D671000000A0 /* Dependencies */,
+				A3D67100000060 /* Frameworks */,
+				A3D67100000020 /* Products */,
+				A3D671000000B0 /* RxSwiftExt */,
+			);
+			sourceTree = "<group>";
+		};
+		A3D67100000020 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A0A44F845E825B1A2CE3C1527EB9DE8D /* RxSwiftExt.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A3D67100000060 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3D671000007F0 /* RxCocoa.framework */,
+				A3D671000007A0 /* RxSwift.framework */,
+				A3D67100000440 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A3D671000000A0 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				A3D671000007C0 /* RxCocoa */,
+				A3D67100000770 /* RxSwift */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		A3D671000000B0 /* RxSwiftExt */ = {
+			isa = PBXGroup;
+			children = (
+				A3D671000000C0 /* Core */,
+				A3D67100000370 /* Pod */,
+				A3D671000002F0 /* RxCocoa */,
+				A3D671000006E0 /* Support Files */,
+			);
+			name = RxSwiftExt;
+			path = ../BaseSupport/RxSwiftExt;
+			sourceTree = "<group>";
+		};
+		A3D671000000C0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A3D671000000D0 /* RxSwift */,
+				A3D671000002D0 /* Tools */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		A3D671000000D0 /* RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				A3D671000000E0 /* and.swift */,
+				A3D671000000F0 /* apply.swift */,
+				A3D67100000100 /* bufferWithTrigger.swift */,
+				A3D67100000110 /* cascade.swift */,
+				A3D67100000120 /* catchErrorJustComplete.swift */,
+				A3D67100000130 /* count.swift */,
+				A3D67100000140 /* distinct.swift */,
+				A3D67100000150 /* filterMap.swift */,
+				A3D67100000160 /* flatMapSync.swift */,
+				A3D67100000170 /* fromAsync.swift */,
+				A3D67100000180 /* ignore.swift */,
+				A3D67100000190 /* ignoreErrors.swift */,
+				A3D671000001A0 /* ignoreWhen.swift */,
+				A3D671000001B0 /* mapAt.swift */,
+				A3D671000001C0 /* mapMany.swift */,
+				A3D671000001D0 /* mapTo.swift */,
+				A3D671000001E0 /* materialized+elements.swift */,
+				A3D671000001F0 /* not.swift */,
+				A3D67100000200 /* nwise.swift */,
+				A3D67100000210 /* ObservableType+Weak.swift */,
+				A3D67100000220 /* ofType.swift */,
+				A3D67100000230 /* once.swift */,
+				A3D67100000240 /* partition.swift */,
+				A3D67100000250 /* pausable.swift */,
+				A3D67100000260 /* pausableBuffered.swift */,
+				A3D67100000270 /* repeatWithBehavior.swift */,
+				A3D67100000280 /* retryWithBehavior.swift */,
+				A3D67100000290 /* toSortedArray.swift */,
+				A3D671000002A0 /* unwrap.swift */,
+				A3D671000002B0 /* withUnretained.swift */,
+				A3D671000002C0 /* zipWith.swift */,
+			);
+			name = RxSwift;
+			path = Source/RxSwift;
+			sourceTree = "<group>";
+		};
+		A3D671000002D0 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				A3D671000002E0 /* curry.swift */,
+			);
+			name = Tools;
+			path = Source/Tools;
+			sourceTree = "<group>";
+		};
+		A3D671000002F0 /* RxCocoa */ = {
+			isa = PBXGroup;
+			children = (
+				A3D67100000300 /* distinct+RxCocoa.swift */,
+				A3D67100000310 /* mapTo+RxCocoa.swift */,
+				A3D67100000320 /* not+RxCocoa.swift */,
+				A3D67100000330 /* partition+RxCocoa.swift */,
+				A3D67100000340 /* UIScrollView+reachedBottom.swift */,
+				A3D67100000350 /* UIViewPropertyAnimator+Rx.swift */,
+				A3D67100000360 /* unwrap+SharedSequence.swift */,
+			);
+			name = RxCocoa;
+			sourceTree = "<group>";
+		};
+		A3D67100000370 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				A3D67100000380 /* LICENSE */,
+				A3D67100000390 /* Readme.md */,
+				A3D671000003A0 /* RxSwiftExt.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		A3D67100000440 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A3D67100000450 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		A3D671000006E0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A3D67100000700 /* RxSwiftExt.modulemap */,
+				A3D671000006F0 /* RxSwiftExt.xcconfig */,
+				A3D67100000750 /* RxSwiftExt-dummy.m */,
+				A3D67100000730 /* RxSwiftExt-Info.plist */,
+				A3D67100000740 /* RxSwiftExt-prefix.pch */,
+				A3D67100000710 /* RxSwiftExt-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../../Pods/Target Support Files/RxSwiftExt";
+			sourceTree = "<group>";
+		};
+		F9152DF122E767EE00E2BAA2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F9152E0622E768D900E2BAA2 /* RxSwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F9152DF322E767EE00E2BAA2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F9152E0422E768D900E2BAA2 /* RxCocoa.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A3D67100000400 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3D67100000720 /* RxSwiftExt-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		27EB8A78CD48CBA869F1CD0C2E3E61B8 /* RxSwiftExt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3D671000003C0 /* Build configuration list for PBXNativeTarget "RxSwiftExt" */;
+			buildPhases = (
+				A3D67100000400 /* Headers */,
+				A3D67100000410 /* Sources */,
+				A3D67100000420 /* Frameworks */,
+				A3D67100000430 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A3D671000007E0 /* PBXTargetDependency */,
+				A3D67100000790 /* PBXTargetDependency */,
+			);
+			name = RxSwiftExt;
+			productName = RxSwiftExt;
+			productReference = A0A44F845E825B1A2CE3C1527EB9DE8D /* RxSwiftExt.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A3D67100000000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+			};
+			buildConfigurationList = A3D67100000030 /* Build configuration list for PBXProject "RxSwiftExt" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A3D67100000010;
+			productRefGroup = A3D67100000020 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F9152DF322E767EE00E2BAA2 /* Products */;
+					ProjectRef = A3D671000007C0 /* RxCocoa */;
+				},
+				{
+					ProductGroup = F9152DF122E767EE00E2BAA2 /* Products */;
+					ProjectRef = A3D67100000770 /* RxSwift */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				27EB8A78CD48CBA869F1CD0C2E3E61B8 /* RxSwiftExt */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F9152E0422E768D900E2BAA2 /* RxCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxCocoa.framework;
+			remoteRef = F9152E0322E768D900E2BAA2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F9152E0622E768D900E2BAA2 /* RxSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxSwift.framework;
+			remoteRef = F9152E0522E768D900E2BAA2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A3D67100000430 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A3D67100000410 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3D67100000470 /* and.swift in Sources */,
+				A3D67100000480 /* apply.swift in Sources */,
+				A3D67100000490 /* bufferWithTrigger.swift in Sources */,
+				A3D671000004A0 /* cascade.swift in Sources */,
+				A3D671000004B0 /* catchErrorJustComplete.swift in Sources */,
+				A3D671000004C0 /* count.swift in Sources */,
+				A3D67100000660 /* curry.swift in Sources */,
+				A3D67100000670 /* distinct+RxCocoa.swift in Sources */,
+				A3D671000004D0 /* distinct.swift in Sources */,
+				A3D671000004E0 /* filterMap.swift in Sources */,
+				A3D671000004F0 /* flatMapSync.swift in Sources */,
+				A3D67100000500 /* fromAsync.swift in Sources */,
+				A3D67100000510 /* ignore.swift in Sources */,
+				A3D67100000520 /* ignoreErrors.swift in Sources */,
+				A3D67100000530 /* ignoreWhen.swift in Sources */,
+				A3D67100000540 /* mapAt.swift in Sources */,
+				A3D67100000550 /* mapMany.swift in Sources */,
+				A3D67100000680 /* mapTo+RxCocoa.swift in Sources */,
+				A3D67100000560 /* mapTo.swift in Sources */,
+				A3D67100000570 /* materialized+elements.swift in Sources */,
+				A3D67100000690 /* not+RxCocoa.swift in Sources */,
+				A3D67100000580 /* not.swift in Sources */,
+				A3D67100000590 /* nwise.swift in Sources */,
+				A3D671000005A0 /* ObservableType+Weak.swift in Sources */,
+				A3D671000005B0 /* ofType.swift in Sources */,
+				A3D671000005C0 /* once.swift in Sources */,
+				A3D671000006A0 /* partition+RxCocoa.swift in Sources */,
+				A3D671000005D0 /* partition.swift in Sources */,
+				A3D671000005E0 /* pausable.swift in Sources */,
+				A3D671000005F0 /* pausableBuffered.swift in Sources */,
+				A3D67100000600 /* repeatWithBehavior.swift in Sources */,
+				A3D67100000610 /* retryWithBehavior.swift in Sources */,
+				A3D67100000760 /* RxSwiftExt-dummy.m in Sources */,
+				A3D67100000620 /* toSortedArray.swift in Sources */,
+				A3D671000006B0 /* UIScrollView+reachedBottom.swift in Sources */,
+				A3D671000006C0 /* UIViewPropertyAnimator+Rx.swift in Sources */,
+				A3D671000006D0 /* unwrap+SharedSequence.swift in Sources */,
+				A3D67100000630 /* unwrap.swift in Sources */,
+				A3D67100000640 /* withUnretained.swift in Sources */,
+				A3D67100000650 /* zipWith.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A3D67100000790 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxSwift;
+			targetProxy = A3D67100000780 /* PBXContainerItemProxy */;
+		};
+		A3D671000007E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxCocoa;
+			targetProxy = A3D671000007D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A3D67100000040 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A3D67100000050 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		A3D671000003D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3D671000006F0 /* RxSwiftExt.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RxSwiftExt/RxSwiftExt-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RxSwiftExt/RxSwiftExt-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/RxSwiftExt/RxSwiftExt.modulemap";
+				PRODUCT_MODULE_NAME = RxSwiftExt;
+				PRODUCT_NAME = RxSwiftExt;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A3D671000003E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3D671000006F0 /* RxSwiftExt.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RxSwiftExt/RxSwiftExt-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RxSwiftExt/RxSwiftExt-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/RxSwiftExt/RxSwiftExt.modulemap";
+				PRODUCT_MODULE_NAME = RxSwiftExt;
+				PRODUCT_NAME = RxSwiftExt;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A3D67100000030 /* Build configuration list for PBXProject "RxSwiftExt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3D67100000040 /* Debug */,
+				A3D67100000050 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3D671000003C0 /* Build configuration list for PBXNativeTarget "RxSwiftExt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3D671000003E0 /* Debug */,
+				A3D671000003D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A3D67100000000 /* Project object */;
+}

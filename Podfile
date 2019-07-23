@@ -4,7 +4,7 @@ platform :ios, '10.0'
 use_frameworks!
 #Framework
 
-install! 'cocoapods', :deterministic_uuids => false
+install! 'cocoapods', deterministic_uuids: false, generate_multiple_pod_projects: true
 
 def baseCore
   pod 'Validation', :path => 'BaseSupport/Validation'
