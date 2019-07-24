@@ -18,9 +18,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1893CE8822E7FD7700FDA3A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7943B600000290 /* RxSwift */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DE4C0E7DB0FAED8D254CFA338432B04;
+			remoteInfo = RxSwift;
+		};
 		7943B6000002A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7943B600000290 /* RxSwift.xcodeproj */;
+			containerPortal = 7943B600000290 /* RxSwift */;
 			proxyType = 1;
 			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
 			remoteInfo = RxSwift;
@@ -41,7 +48,7 @@
 		7943B600000270 /* RxRelay-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxRelay-dummy.m"; sourceTree = "<group>"; };
 		7943B600000290 /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxSwift; path = RxSwift.xcodeproj; sourceTree = "<group>"; };
 		7943B6000002C0 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B546861C56544DEBBDF2AD71F1BDF8F2 /* RxRelay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RxRelay.framework; path = RxRelay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B546861C56544DEBBDF2AD71F1BDF8F2 /* RxRelay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxRelay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1893CE4822E7FC1E00FDA3A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1893CE8922E7FD7700FDA3A3 /* RxSwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7943B600000010 = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +116,6 @@
 				7943B6000000F0 /* Utils.swift */,
 				7943B600000200 /* Support Files */,
 			);
-			name = RxRelay;
 			path = RxRelay;
 			sourceTree = "<group>";
 		};
@@ -175,12 +189,14 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 7943B600000010;
 			productRefGroup = 7943B600000020 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 1893CE4822E7FC1E00FDA3A3 /* Products */;
 					ProjectRef = 7943B600000290 /* RxSwift */;
 				},
 			);
@@ -190,6 +206,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1893CE8922E7FD7700FDA3A3 /* RxSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxSwift.framework;
+			remoteRef = 1893CE8822E7FD7700FDA3A3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		7943B600000180 /* Resources */ = {

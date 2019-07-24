@@ -22,16 +22,30 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1893CE8022E7FD4D00FDA3A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AA2AC00000380 /* RxCocoa */;
+			proxyType = 2;
+			remoteGlobalIDString = F49FD34447716E9C149BEC0B4BF25379;
+			remoteInfo = RxCocoa;
+		};
+		1893CE8222E7FD4D00FDA3A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AA2AC00000330 /* RxSwift */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DE4C0E7DB0FAED8D254CFA338432B04;
+			remoteInfo = RxSwift;
+		};
 		8AA2AC00000340 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8AA2AC00000330 /* RxSwift.xcodeproj */;
+			containerPortal = 8AA2AC00000330 /* RxSwift */;
 			proxyType = 1;
 			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
 			remoteInfo = RxSwift;
 		};
 		8AA2AC00000390 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8AA2AC00000380 /* RxCocoa.xcodeproj */;
+			containerPortal = 8AA2AC00000380 /* RxCocoa */;
 			proxyType = 1;
 			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
 			remoteInfo = RxCocoa;
@@ -39,7 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		88D2EFC6A9028298A2DF0E232A060AE1 /* RxOptional.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RxOptional.framework; path = RxOptional.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88D2EFC6A9028298A2DF0E232A060AE1 /* RxOptional.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxOptional.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA2AC000000C0 /* Observable+Occupiable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Observable+Occupiable.swift"; path = "Source/Observable+Occupiable.swift"; sourceTree = "<group>"; };
 		8AA2AC000000D0 /* Observable+Optional.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Observable+Optional.swift"; path = "Source/Observable+Optional.swift"; sourceTree = "<group>"; };
 		8AA2AC000000E0 /* Occupiable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Occupiable.swift; path = Source/Occupiable.swift; sourceTree = "<group>"; };
@@ -47,9 +61,9 @@
 		8AA2AC00000100 /* RxOptionalError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxOptionalError.swift; path = Source/RxOptionalError.swift; sourceTree = "<group>"; };
 		8AA2AC00000110 /* SharedSequence+Occupiable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SharedSequence+Occupiable.swift"; path = "Source/SharedSequence+Occupiable.swift"; sourceTree = "<group>"; };
 		8AA2AC00000120 /* SharedSequence+Optional.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SharedSequence+Optional.swift"; path = "Source/SharedSequence+Optional.swift"; sourceTree = "<group>"; };
-		8AA2AC00000140 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		8AA2AC00000150 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		8AA2AC00000160 /* RxOptional.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = RxOptional.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8AA2AC00000140 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8AA2AC00000150 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8AA2AC00000160 /* RxOptional.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = RxOptional.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8AA2AC00000210 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		8AA2AC000002B0 /* RxOptional.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxOptional.xcconfig; sourceTree = "<group>"; };
 		8AA2AC000002C0 /* RxOptional.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RxOptional.modulemap; sourceTree = "<group>"; };
@@ -77,6 +91,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1893CE4A22E7FC1E00FDA3A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1893CE8122E7FD4D00FDA3A3 /* RxCocoa.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1893CE4C22E7FC1E00FDA3A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1893CE8322E7FD4D00FDA3A3 /* RxSwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		8AA2AC00000010 = {
 			isa = PBXGroup;
 			children = (
@@ -212,16 +242,19 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 8AA2AC00000010;
 			productRefGroup = 8AA2AC00000020 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProjectRef = 8AA2AC00000330 /* RxSwift */;
+					ProductGroup = 1893CE4A22E7FC1E00FDA3A3 /* Products */;
+					ProjectRef = 8AA2AC00000380 /* RxCocoa */;
 				},
 				{
-					ProjectRef = 8AA2AC00000380 /* RxCocoa */;
+					ProductGroup = 1893CE4C22E7FC1E00FDA3A3 /* Products */;
+					ProjectRef = 8AA2AC00000330 /* RxSwift */;
 				},
 			);
 			projectRoot = "";
@@ -230,6 +263,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1893CE8122E7FD4D00FDA3A3 /* RxCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxCocoa.framework;
+			remoteRef = 1893CE8022E7FD4D00FDA3A3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1893CE8322E7FD4D00FDA3A3 /* RxSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxSwift.framework;
+			remoteRef = 1893CE8222E7FD4D00FDA3A3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8AA2AC000001F0 /* Resources */ = {

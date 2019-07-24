@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		954264E99DF1CE4D6121B7AC578C40C6 /* ModalManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ModalManager.framework; path = ModalManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		954264E99DF1CE4D6121B7AC578C40C6 /* ModalManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ModalManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADEEA8000000D0 /* ModalAnimatedTransitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ModalAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		ADEEA8000000E0 /* ModalViewController+ContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ModalViewController+ContentView.swift"; sourceTree = "<group>"; };
 		ADEEA8000000F0 /* ModalViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
@@ -28,8 +28,8 @@
 		ADEEA800000110 /* ModalAnimatedTransitioningDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModalAnimatedTransitioningDelegate.swift; path = Sources/ModalAnimatedTransitioningDelegate.swift; sourceTree = "<group>"; };
 		ADEEA800000120 /* ModalContainerProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModalContainerProtocol.swift; path = Sources/ModalContainerProtocol.swift; sourceTree = "<group>"; };
 		ADEEA800000130 /* ModalPresentationDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModalPresentationDelegate.swift; path = Sources/ModalPresentationDelegate.swift; sourceTree = "<group>"; };
-		ADEEA800000150 /* ModalManager.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ModalManager.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		ADEEA800000160 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		ADEEA800000150 /* ModalManager.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = ModalManager.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		ADEEA800000160 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		ADEEA800000210 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		ADEEA8000002B0 /* ModalManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ModalManager.xcconfig; sourceTree = "<group>"; };
 		ADEEA8000002C0 /* ModalManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ModalManager.modulemap; sourceTree = "<group>"; };
@@ -180,6 +180,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = ADEEA800000010;
 			productRefGroup = ADEEA800000020 /* Products */;

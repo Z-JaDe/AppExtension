@@ -138,16 +138,30 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1893CE8A22E7FD7A00FDA3A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7649F0000011C0 /* RxRelay */;
+			proxyType = 2;
+			remoteGlobalIDString = B546861C56544DEBBDF2AD71F1BDF8F2;
+			remoteInfo = RxRelay;
+		};
+		1893CE8C22E7FD7A00FDA3A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7649F000001170 /* RxSwift */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DE4C0E7DB0FAED8D254CFA338432B04;
+			remoteInfo = RxSwift;
+		};
 		7649F000001180 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7649F000001170 /* RxSwift.xcodeproj */;
+			containerPortal = 7649F000001170 /* RxSwift */;
 			proxyType = 1;
 			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
 			remoteInfo = RxSwift;
 		};
 		7649F0000011D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7649F0000011C0 /* RxRelay.xcodeproj */;
+			containerPortal = 7649F0000011C0 /* RxRelay */;
 			proxyType = 1;
 			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
 			remoteInfo = RxRelay;
@@ -289,7 +303,7 @@
 		7649F0000011A0 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7649F0000011C0 /* RxRelay */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxRelay; path = RxRelay.xcodeproj; sourceTree = "<group>"; };
 		7649F0000011F0 /* RxRelay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxRelay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F49FD34447716E9C149BEC0B4BF25379 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RxCocoa.framework; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F49FD34447716E9C149BEC0B4BF25379 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +320,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1893CE4422E7FC1E00FDA3A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1893CE8D22E7FD7A00FDA3A3 /* RxSwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1893CE4622E7FC1E00FDA3A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1893CE8B22E7FD7A00FDA3A3 /* RxRelay.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7649F000000010 = {
 			isa = PBXGroup;
 			children = (
@@ -471,7 +501,6 @@
 				7649F000000200 /* URLSession+Rx.swift */,
 				7649F0000010E0 /* Support Files */,
 			);
-			name = RxCocoa;
 			path = RxCocoa;
 			sourceTree = "<group>";
 		};
@@ -552,16 +581,19 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 7649F000000010;
 			productRefGroup = 7649F000000020 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProjectRef = 7649F000001170 /* RxSwift */;
+					ProductGroup = 1893CE4622E7FC1E00FDA3A3 /* Products */;
+					ProjectRef = 7649F0000011C0 /* RxRelay */;
 				},
 				{
-					ProjectRef = 7649F0000011C0 /* RxRelay */;
+					ProductGroup = 1893CE4422E7FC1E00FDA3A3 /* Products */;
+					ProjectRef = 7649F000001170 /* RxSwift */;
 				},
 			);
 			projectRoot = "";
@@ -570,6 +602,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1893CE8B22E7FD7A00FDA3A3 /* RxRelay.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxRelay.framework;
+			remoteRef = 1893CE8A22E7FD7A00FDA3A3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1893CE8D22E7FD7A00FDA3A3 /* RxSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxSwift.framework;
+			remoteRef = 1893CE8C22E7FD7A00FDA3A3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		7649F0000008F0 /* Resources */ = {

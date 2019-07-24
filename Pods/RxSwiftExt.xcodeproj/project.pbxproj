@@ -54,16 +54,30 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1893CE7C22E7FD4600FDA3A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3D671000007C0 /* RxCocoa */;
+			proxyType = 2;
+			remoteGlobalIDString = F49FD34447716E9C149BEC0B4BF25379;
+			remoteInfo = RxCocoa;
+		};
+		1893CE7E22E7FD4600FDA3A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3D67100000770 /* RxSwift */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DE4C0E7DB0FAED8D254CFA338432B04;
+			remoteInfo = RxSwift;
+		};
 		A3D67100000780 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A3D67100000770 /* RxSwift.xcodeproj */;
+			containerPortal = A3D67100000770 /* RxSwift */;
 			proxyType = 1;
 			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
 			remoteInfo = RxSwift;
 		};
 		A3D671000007D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A3D671000007C0 /* RxCocoa.xcodeproj */;
+			containerPortal = A3D671000007C0 /* RxCocoa */;
 			proxyType = 1;
 			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
 			remoteInfo = RxCocoa;
@@ -71,7 +85,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A0A44F845E825B1A2CE3C1527EB9DE8D /* RxSwiftExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RxSwiftExt.framework; path = RxSwiftExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0A44F845E825B1A2CE3C1527EB9DE8D /* RxSwiftExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwiftExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D671000000E0 /* and.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = and.swift; sourceTree = "<group>"; };
 		A3D671000000F0 /* apply.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = apply.swift; sourceTree = "<group>"; };
 		A3D67100000100 /* bufferWithTrigger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = bufferWithTrigger.swift; sourceTree = "<group>"; };
@@ -111,9 +125,9 @@
 		A3D67100000340 /* UIScrollView+reachedBottom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIScrollView+reachedBottom.swift"; path = "Source/RxCocoa/UIScrollView+reachedBottom.swift"; sourceTree = "<group>"; };
 		A3D67100000350 /* UIViewPropertyAnimator+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewPropertyAnimator+Rx.swift"; path = "Source/RxCocoa/UIViewPropertyAnimator+Rx.swift"; sourceTree = "<group>"; };
 		A3D67100000360 /* unwrap+SharedSequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "unwrap+SharedSequence.swift"; path = "Source/RxCocoa/unwrap+SharedSequence.swift"; sourceTree = "<group>"; };
-		A3D67100000380 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		A3D67100000390 /* Readme.md */ = {isa = PBXFileReference; includeInIndex = 1; path = Readme.md; sourceTree = "<group>"; };
-		A3D671000003A0 /* RxSwiftExt.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = RxSwiftExt.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A3D67100000380 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		A3D67100000390 /* Readme.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		A3D671000003A0 /* RxSwiftExt.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = RxSwiftExt.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A3D67100000450 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		A3D671000006F0 /* RxSwiftExt.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxSwiftExt.xcconfig; sourceTree = "<group>"; };
 		A3D67100000700 /* RxSwiftExt.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RxSwiftExt.modulemap; sourceTree = "<group>"; };
@@ -141,6 +155,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1893CE4E22E7FC1E00FDA3A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1893CE7F22E7FD4600FDA3A3 /* RxSwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1893CE5022E7FC1E00FDA3A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1893CE7D22E7FD4600FDA3A3 /* RxCocoa.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A3D67100000010 = {
 			isa = PBXGroup;
 			children = (
@@ -342,16 +372,19 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = A3D67100000010;
 			productRefGroup = A3D67100000020 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProjectRef = A3D67100000770 /* RxSwift */;
+					ProductGroup = 1893CE5022E7FC1E00FDA3A3 /* Products */;
+					ProjectRef = A3D671000007C0 /* RxCocoa */;
 				},
 				{
-					ProjectRef = A3D671000007C0 /* RxCocoa */;
+					ProductGroup = 1893CE4E22E7FC1E00FDA3A3 /* Products */;
+					ProjectRef = A3D67100000770 /* RxSwift */;
 				},
 			);
 			projectRoot = "";
@@ -360,6 +393,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1893CE7D22E7FD4600FDA3A3 /* RxCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxCocoa.framework;
+			remoteRef = 1893CE7C22E7FD4600FDA3A3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1893CE7F22E7FD4600FDA3A3 /* RxSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxSwift.framework;
+			remoteRef = 1893CE7E22E7FD4600FDA3A3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A3D67100000430 /* Resources */ = {
