@@ -82,7 +82,7 @@ def commonPods
   
   pod 'Kingfisher'
   pod 'MBProgressHUD'
-  pod 'SwiftyUserDefaults'
+  pod 'SwiftyUserDefaults', :path => 'BaseSupport/SwiftyUserDefaults'
   
   pod 'Motion'
   pod 'CollectionKit', :git => 'https://github.com/SoySauceLab/CollectionKit.git'  #仅测试
@@ -97,7 +97,6 @@ def projectBasic
   
   pod 'Kingfisher'
   pod 'MBProgressHUD'
-  pod 'SwiftyUserDefaults'
   pod 'ReSwift', :git => 'https://github.com/ReSwift/ReSwift.git'
 end
 target:'ProjectBasic' do

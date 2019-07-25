@@ -108,7 +108,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CD322E542F822E3F28F0F747477B1FC0 /* Encryption.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Encryption.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD322E542F822E3F28F0F747477B1FC0 /* Encryption.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Encryption.framework; path = Encryption.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F54765000000C0 /* Dictionary+RSA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Dictionary+RSA.swift"; path = "Sources/Dictionary+RSA.swift"; sourceTree = "<group>"; };
 		F54765000000F0 /* GTMBase64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		F5476500000100 /* GTMBase64.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
@@ -206,9 +206,9 @@
 		F54765000006F0 /* FSOpenSSL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FSOpenSSL.m; sourceTree = "<group>"; };
 		F5476500000710 /* libcrypto.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libcrypto.a; path = Sources/openssl/lib/libcrypto.a; sourceTree = "<group>"; };
 		F5476500000720 /* libssl.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libssl.a; path = Sources/openssl/lib/libssl.a; sourceTree = "<group>"; };
-		F5476500000740 /* Encryption.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Encryption.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		F5476500000750 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		F5476500000760 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F5476500000740 /* Encryption.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Encryption.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F5476500000750 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		F5476500000760 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		F5476500000810 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		F5476500000E30 /* Encryption.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Encryption.xcconfig; sourceTree = "<group>"; };
 		F5476500000E40 /* Encryption.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Encryption.modulemap; sourceTree = "<group>"; };
@@ -290,6 +290,7 @@
 				F5476500000100 /* GTMBase64.m */,
 				F5476500000110 /* GTMDefines.h */,
 			);
+			name = GTMBase64;
 			path = GTMBase64;
 			sourceTree = "<group>";
 		};
@@ -299,6 +300,7 @@
 				F5476500000660 /* opensslconf-template.h */,
 				F5476500000130 /* openssl */,
 			);
+			name = include;
 			path = include;
 			sourceTree = "<group>";
 		};
@@ -388,6 +390,7 @@
 				F5476500000650 /* x509_vfy.h */,
 				F5476500000640 /* x509v3.h */,
 			);
+			name = openssl;
 			path = openssl;
 			sourceTree = "<group>";
 		};
@@ -578,7 +581,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = F5476500000010;
 			productRefGroup = F5476500000020 /* Products */;

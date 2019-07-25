@@ -31,3 +31,6 @@
 [submodule "BaseSupport/YogaFlexBoxKit"]
 	path = BaseSupport/YogaFlexBoxKit
 	url = git@github.com:Z-JaDe/YogaFlexBoxKit.git
+[submodule "BaseSupport/SwiftyUserDefaults"]
+	path = BaseSupport/SwiftyUserDefaults
+	url = git@github.com:Z-JaDe/SwiftyUserDefaults.git
