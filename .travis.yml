@@ -1,2 +1,6 @@
-language: objective-c
+
+language: swift
 osx_image: xcode10.2
+xcode_workspace: AppExtension.xcworkspace
+xcode_scheme: AppExtensionTests
+xcode_destination: platform=iOS Simulator,OS=12.1,name=iPhone X
