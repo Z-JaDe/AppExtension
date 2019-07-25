@@ -6,4 +6,4 @@ xcode_scheme: AppExtensionTests
 xcode_destination: platform=iOS Simulator,OS=12.1,name=iPhone X
 
 before_install:
- - sed -i 's/git@github.com:/https://github.com//'. gitmodules
+ - sed -i 's/git@github.com:/https://zjade:{GITHUB_TOKEN}@github.com//'. gitmodules
