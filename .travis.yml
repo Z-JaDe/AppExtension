@@ -5,5 +5,10 @@ xcode_workspace: AppExtension.xcworkspace
 xcode_scheme: AppExtensionTests
 xcode_destination: platform=iOS Simulator,OS=12.1,name=iPhone X
 
+git:
+    submodules: false
+
 before_install:
- - sed -i 's/git@github.com:/https://zjade:{GITHUB_TOKEN}@github.com//'. gitmodules
+ # Use sed to replace the SSH URL with the public URL, then initialize submodules
+ - sed -i 's/git@github.com:/https:\/\/zjade:{GITHUB_TOKEN}@github.com\//'. gitmodules
+ - git submodule update --init --recursive
