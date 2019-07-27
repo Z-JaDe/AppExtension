@@ -203,8 +203,8 @@
 		8AA2AC00000000 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 8AA2AC00000030 /* Build configuration list for PBXProject "RxOptional" */;
 			compatibilityVersion = "Xcode 10.0";

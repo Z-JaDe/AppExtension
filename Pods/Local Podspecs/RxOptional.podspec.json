@@ -21,10 +21,10 @@
   "source_files": "Source/*.swift",
   "dependencies": {
     "RxSwift": [
-      "~> 5"
+
     ],
     "RxCocoa": [
-      "~> 5"
+
     ]
   },
   "frameworks": "Foundation"

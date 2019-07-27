@@ -31,7 +31,7 @@
       "frameworks": "Foundation",
       "dependencies": {
         "RxSwift": [
-          "~> 5.0"
+
         ]
       }
     },
@@ -41,7 +41,7 @@
       "frameworks": "Foundation",
       "dependencies": {
         "RxCocoa": [
-          "~> 5.0"
+
         ],
         "RxSwiftExt/Core": [
 

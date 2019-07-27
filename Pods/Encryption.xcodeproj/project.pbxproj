@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		F5476500000820 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5476500000810 /* Foundation.framework */; };
-		F5476500000830 /* Dictionary+RSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000000C0 /* Dictionary+RSA.swift */; };
-		F5476500000840 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000100 /* GTMBase64.m */; };
-		F5476500000850 /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000670 /* Params.swift */; };
-		F5476500000860 /* String+Encrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000680 /* String+Encrypt.swift */; };
-		F5476500000870 /* String+RSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000690 /* String+RSA.swift */; };
-		F5476500000880 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000006A0 /* URLRequest.swift */; };
-		F5476500000890 /* BBRSACryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = F54765000006D0 /* BBRSACryptor.m */; };
-		F54765000008A0 /* FSOpenSSL.m in Sources */ = {isa = PBXBuildFile; fileRef = F54765000006F0 /* FSOpenSSL.m */; };
+		F5476500000830 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000100 /* GTMBase64.m */; };
+		F5476500000840 /* BBRSACryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = F54765000006D0 /* BBRSACryptor.m */; };
+		F5476500000850 /* FSOpenSSL.m in Sources */ = {isa = PBXBuildFile; fileRef = F54765000006F0 /* FSOpenSSL.m */; };
+		F5476500000860 /* Dictionary+RSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000000C0 /* Dictionary+RSA.swift */; };
+		F5476500000870 /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000670 /* Params.swift */; };
+		F5476500000880 /* String+Encrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000680 /* String+Encrypt.swift */; };
+		F5476500000890 /* String+RSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000690 /* String+RSA.swift */; };
+		F54765000008A0 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000006A0 /* URLRequest.swift */; };
 		F54765000008B0 /* GTMBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000000F0 /* GTMBase64.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		F54765000008C0 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000110 /* GTMDefines.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		F54765000008D0 /* aes.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000140 /* aes.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -572,8 +572,8 @@
 		F5476500000000 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = F5476500000030 /* Build configuration list for PBXProject "Encryption" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -607,15 +607,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5476500000890 /* BBRSACryptor.m in Sources */,
-				F5476500000830 /* Dictionary+RSA.swift in Sources */,
+				F5476500000840 /* BBRSACryptor.m in Sources */,
+				F5476500000860 /* Dictionary+RSA.swift in Sources */,
 				F5476500000EA0 /* Encryption-dummy.m in Sources */,
-				F54765000008A0 /* FSOpenSSL.m in Sources */,
-				F5476500000840 /* GTMBase64.m in Sources */,
-				F5476500000850 /* Params.swift in Sources */,
-				F5476500000860 /* String+Encrypt.swift in Sources */,
-				F5476500000870 /* String+RSA.swift in Sources */,
-				F5476500000880 /* URLRequest.swift in Sources */,
+				F5476500000850 /* FSOpenSSL.m in Sources */,
+				F5476500000830 /* GTMBase64.m in Sources */,
+				F5476500000870 /* Params.swift in Sources */,
+				F5476500000880 /* String+Encrypt.swift in Sources */,
+				F5476500000890 /* String+RSA.swift in Sources */,
+				F54765000008A0 /* URLRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

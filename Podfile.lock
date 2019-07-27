@@ -27,8 +27,8 @@ PODS:
     - RxCocoa
     - RxSwift
   - RxOptional (4.0.0):
-    - RxCocoa (~> 5)
-    - RxSwift (~> 5)
+    - RxCocoa
+    - RxSwift
   - RxRelay (5.0.0):
     - RxSwift (~> 5)
   - RxSwift (5.0.1)
@@ -36,9 +36,9 @@ PODS:
     - RxSwiftExt/Core (= 5.0.0)
     - RxSwiftExt/RxCocoa (= 5.0.0)
   - RxSwiftExt/Core (5.0.0):
-    - RxSwift (~> 5.0)
+    - RxSwift
   - RxSwiftExt/RxCocoa (5.0.0):
-    - RxCocoa (~> 5.0)
+    - RxCocoa
     - RxSwiftExt/Core
   - SnapKit (5.0.0)
   - SwiftLint (0.34.0)
@@ -141,10 +141,10 @@ SPEC CHECKSUMS:
   ReSwift: 820555642f938e2e6c79f3ff75d70a2f45d4ef80
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxGesture: b37434fb6d171882ef112d22ba171e03cb441548
-  RxOptional: 9904e2219d59260c3c171273d475b2126de187e8
+  RxOptional: 97997cced25e116c1d85d7199abf5a22bb9a7699
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
-  RxSwiftExt: 4564187392cc53823ef241fa4a11647861567026
+  RxSwiftExt: c5fe5bd8577efc9bb5562a3437b561f35b52f439
   SnapKit: 35a041d1f0b03807aa60d5b76746b2951588df43
   SwiftLint: 79d48a17c6565dc286c37efb8322c7b450f95c67
   SwiftyUserDefaults: 04cb7f3a78082e17a9af55f67f55c539f3dbdaab
@@ -152,4 +152,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 03fa96988336c3b3990255c505edb251a904e9b8
 
-COCOAPODS: 1.7.1
+COCOAPODS: 1.7.5

@@ -8,36 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		BF6836000005E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6836000005D0 /* Foundation.framework */; };
-		BF6836000005F0 /* CalendarMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000000D0 /* CalendarMath.swift */; };
-		BF683600000600 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000000F0 /* Array.swift */; };
-		BF683600000610 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000100 /* Bool.swift */; };
-		BF683600000620 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000110 /* Bundle.swift */; };
-		BF683600000630 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000120 /* CGFloat.swift */; };
-		BF683600000640 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000130 /* CGRect.swift */; };
-		BF683600000650 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000140 /* Character.swift */; };
-		BF683600000660 /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000150 /* Comparable.swift */; };
-		BF683600000670 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000160 /* Date.swift */; };
-		BF683600000680 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000170 /* Dictionary.swift */; };
-		BF683600000690 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000180 /* Double.swift */; };
-		BF6836000006A0 /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000190 /* ErrorType.swift */; };
-		BF6836000006B0 /* FloatingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000001A0 /* FloatingPoint.swift */; };
-		BF6836000006C0 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000001B0 /* Int.swift */; };
-		BF6836000006D0 /* String+Encrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000001D0 /* String+Encrypt.swift */; };
-		BF6836000006E0 /* String+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000001E0 /* String+Hex.swift */; };
-		BF6836000006F0 /* String+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000001F0 /* String+Random.swift */; };
-		BF683600000700 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000200 /* String.swift */; };
-		BF683600000710 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000210 /* URL.swift */; };
-		BF683600000720 /* CIImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000240 /* CIImageFilter.swift */; };
-		BF683600000730 /* GraphicsImageContext+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000260 /* GraphicsImageContext+UIKit.swift */; };
-		BF683600000740 /* GraphicsImageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000270 /* GraphicsImageContext.swift */; };
-		BF683600000750 /* UIImage+Blend.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000280 /* UIImage+Blend.swift */; };
-		BF683600000760 /* UIImage+GraphicsImageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000290 /* UIImage+GraphicsImageContext.swift */; };
-		BF683600000770 /* ImageDrawer+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000002B0 /* ImageDrawer+Image.swift */; };
-		BF683600000780 /* ImageDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000002C0 /* ImageDrawer.swift */; };
-		BF683600000790 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000002F0 /* UIImage+GIF.m */; };
-		BF6836000007A0 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000310 /* UIImage+ImageEffects.m */; };
-		BF6836000007B0 /* UIImage+ImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000320 /* UIImage+ImageEffects.swift */; };
-		BF6836000007C0 /* UIImage+vImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000340 /* UIImage+vImage.m */; };
+		BF6836000005F0 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000002F0 /* UIImage+GIF.m */; };
+		BF683600000600 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000310 /* UIImage+ImageEffects.m */; };
+		BF683600000610 /* UIImage+vImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000340 /* UIImage+vImage.m */; };
+		BF683600000620 /* CalendarMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000000D0 /* CalendarMath.swift */; };
+		BF683600000630 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000000F0 /* Array.swift */; };
+		BF683600000640 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000100 /* Bool.swift */; };
+		BF683600000650 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000110 /* Bundle.swift */; };
+		BF683600000660 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000120 /* CGFloat.swift */; };
+		BF683600000670 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000130 /* CGRect.swift */; };
+		BF683600000680 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000140 /* Character.swift */; };
+		BF683600000690 /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000150 /* Comparable.swift */; };
+		BF6836000006A0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000160 /* Date.swift */; };
+		BF6836000006B0 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000170 /* Dictionary.swift */; };
+		BF6836000006C0 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000180 /* Double.swift */; };
+		BF6836000006D0 /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000190 /* ErrorType.swift */; };
+		BF6836000006E0 /* FloatingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000001A0 /* FloatingPoint.swift */; };
+		BF6836000006F0 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000001B0 /* Int.swift */; };
+		BF683600000700 /* String+Encrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000001D0 /* String+Encrypt.swift */; };
+		BF683600000710 /* String+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000001E0 /* String+Hex.swift */; };
+		BF683600000720 /* String+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000001F0 /* String+Random.swift */; };
+		BF683600000730 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000200 /* String.swift */; };
+		BF683600000740 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000210 /* URL.swift */; };
+		BF683600000750 /* CIImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000240 /* CIImageFilter.swift */; };
+		BF683600000760 /* GraphicsImageContext+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000260 /* GraphicsImageContext+UIKit.swift */; };
+		BF683600000770 /* GraphicsImageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000270 /* GraphicsImageContext.swift */; };
+		BF683600000780 /* UIImage+Blend.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000280 /* UIImage+Blend.swift */; };
+		BF683600000790 /* UIImage+GraphicsImageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000290 /* UIImage+GraphicsImageContext.swift */; };
+		BF6836000007A0 /* ImageDrawer+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000002B0 /* ImageDrawer+Image.swift */; };
+		BF6836000007B0 /* ImageDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000002C0 /* ImageDrawer.swift */; };
+		BF6836000007C0 /* UIImage+ImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000320 /* UIImage+ImageEffects.swift */; };
 		BF6836000007D0 /* UIImage+vImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000350 /* UIImage+vImage.swift */; };
 		BF6836000007E0 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000360 /* UIImage.swift */; };
 		BF6836000007F0 /* JDSwiftFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000370 /* JDSwiftFunctions.swift */; };
@@ -407,8 +407,8 @@
 		BF683600000000 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = BF683600000030 /* Build configuration list for PBXProject "CocoaExtension" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -442,42 +442,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF683600000600 /* Array.swift in Sources */,
-				BF683600000610 /* Bool.swift in Sources */,
-				BF683600000620 /* Bundle.swift in Sources */,
-				BF6836000005F0 /* CalendarMath.swift in Sources */,
-				BF683600000630 /* CGFloat.swift in Sources */,
-				BF683600000640 /* CGRect.swift in Sources */,
-				BF683600000650 /* Character.swift in Sources */,
-				BF683600000720 /* CIImageFilter.swift in Sources */,
+				BF683600000630 /* Array.swift in Sources */,
+				BF683600000640 /* Bool.swift in Sources */,
+				BF683600000650 /* Bundle.swift in Sources */,
+				BF683600000620 /* CalendarMath.swift in Sources */,
+				BF683600000660 /* CGFloat.swift in Sources */,
+				BF683600000670 /* CGRect.swift in Sources */,
+				BF683600000680 /* Character.swift in Sources */,
+				BF683600000750 /* CIImageFilter.swift in Sources */,
 				BF683600000A00 /* CocoaExtension-dummy.m in Sources */,
-				BF683600000660 /* Comparable.swift in Sources */,
-				BF683600000670 /* Date.swift in Sources */,
-				BF683600000680 /* Dictionary.swift in Sources */,
-				BF683600000690 /* Double.swift in Sources */,
-				BF6836000006A0 /* ErrorType.swift in Sources */,
-				BF6836000006B0 /* FloatingPoint.swift in Sources */,
+				BF683600000690 /* Comparable.swift in Sources */,
+				BF6836000006A0 /* Date.swift in Sources */,
+				BF6836000006B0 /* Dictionary.swift in Sources */,
+				BF6836000006C0 /* Double.swift in Sources */,
+				BF6836000006D0 /* ErrorType.swift in Sources */,
+				BF6836000006E0 /* FloatingPoint.swift in Sources */,
 				BF683600000800 /* Frameable.swift in Sources */,
-				BF683600000730 /* GraphicsImageContext+UIKit.swift in Sources */,
-				BF683600000740 /* GraphicsImageContext.swift in Sources */,
-				BF683600000770 /* ImageDrawer+Image.swift in Sources */,
-				BF683600000780 /* ImageDrawer.swift in Sources */,
-				BF6836000006C0 /* Int.swift in Sources */,
+				BF683600000760 /* GraphicsImageContext+UIKit.swift in Sources */,
+				BF683600000770 /* GraphicsImageContext.swift in Sources */,
+				BF6836000007A0 /* ImageDrawer+Image.swift in Sources */,
+				BF6836000007B0 /* ImageDrawer.swift in Sources */,
+				BF6836000006F0 /* Int.swift in Sources */,
 				BF6836000007F0 /* JDSwiftFunctions.swift in Sources */,
-				BF6836000006D0 /* String+Encrypt.swift in Sources */,
-				BF6836000006E0 /* String+Hex.swift in Sources */,
-				BF6836000006F0 /* String+Random.swift in Sources */,
-				BF683600000700 /* String.swift in Sources */,
+				BF683600000700 /* String+Encrypt.swift in Sources */,
+				BF683600000710 /* String+Hex.swift in Sources */,
+				BF683600000720 /* String+Random.swift in Sources */,
+				BF683600000730 /* String.swift in Sources */,
 				BF683600000810 /* UIButton.swift in Sources */,
 				BF683600000820 /* UIColor.swift in Sources */,
 				BF683600000830 /* UIDevice.swift in Sources */,
 				BF683600000840 /* UIFont.swift in Sources */,
-				BF683600000750 /* UIImage+Blend.swift in Sources */,
-				BF683600000790 /* UIImage+GIF.m in Sources */,
-				BF683600000760 /* UIImage+GraphicsImageContext.swift in Sources */,
-				BF6836000007A0 /* UIImage+ImageEffects.m in Sources */,
-				BF6836000007B0 /* UIImage+ImageEffects.swift in Sources */,
-				BF6836000007C0 /* UIImage+vImage.m in Sources */,
+				BF683600000780 /* UIImage+Blend.swift in Sources */,
+				BF6836000005F0 /* UIImage+GIF.m in Sources */,
+				BF683600000790 /* UIImage+GraphicsImageContext.swift in Sources */,
+				BF683600000600 /* UIImage+ImageEffects.m in Sources */,
+				BF6836000007C0 /* UIImage+ImageEffects.swift in Sources */,
+				BF683600000610 /* UIImage+vImage.m in Sources */,
 				BF6836000007D0 /* UIImage+vImage.swift in Sources */,
 				BF6836000007E0 /* UIImage.swift in Sources */,
 				BF683600000850 /* UIImageView.swift in Sources */,
@@ -496,7 +496,7 @@
 				BF683600000920 /* UIView.swift in Sources */,
 				BF683600000930 /* UIViewController.swift in Sources */,
 				BF683600000940 /* UIWindow.swift in Sources */,
-				BF683600000710 /* URL.swift in Sources */,
+				BF683600000740 /* URL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
