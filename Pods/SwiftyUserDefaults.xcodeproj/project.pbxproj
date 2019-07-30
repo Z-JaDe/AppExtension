@@ -13,7 +13,7 @@
 		C0231A00000280 /* Defaults+Subscripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A000000E0 /* Defaults+Subscripts.swift */; };
 		C0231A00000290 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A000000F0 /* Defaults.swift */; };
 		C0231A000002A0 /* DefaultsBridges.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000100 /* DefaultsBridges.swift */; };
-		C0231A000002B0 /* DefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000110 /* DefaultsKey.swift */; };
+		C0231A000002B0 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000110 /* DefaultsKeys.swift */; };
 		C0231A000002C0 /* DefaultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000120 /* DefaultsObserver.swift */; };
 		C0231A000002D0 /* DefaultsSerializable+BuiltIns.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000130 /* DefaultsSerializable+BuiltIns.swift */; };
 		C0231A000002E0 /* DefaultsSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000140 /* DefaultsSerializable.swift */; };
@@ -29,7 +29,7 @@
 		C0231A000000E0 /* Defaults+Subscripts.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Defaults+Subscripts.swift"; path = "Sources/Defaults+Subscripts.swift"; sourceTree = "<group>"; };
 		C0231A000000F0 /* Defaults.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Defaults.swift; path = Sources/Defaults.swift; sourceTree = "<group>"; };
 		C0231A00000100 /* DefaultsBridges.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultsBridges.swift; path = Sources/DefaultsBridges.swift; sourceTree = "<group>"; };
-		C0231A00000110 /* DefaultsKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultsKey.swift; path = Sources/DefaultsKey.swift; sourceTree = "<group>"; };
+		C0231A00000110 /* DefaultsKeys.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultsKeys.swift; path = Sources/DefaultsKeys.swift; sourceTree = "<group>"; };
 		C0231A00000120 /* DefaultsObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultsObserver.swift; path = Sources/DefaultsObserver.swift; sourceTree = "<group>"; };
 		C0231A00000130 /* DefaultsSerializable+BuiltIns.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DefaultsSerializable+BuiltIns.swift"; path = "Sources/DefaultsSerializable+BuiltIns.swift"; sourceTree = "<group>"; };
 		C0231A00000140 /* DefaultsSerializable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultsSerializable.swift; path = Sources/DefaultsSerializable.swift; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 				C0231A000000D0 /* Defaults+StringToBool.swift */,
 				C0231A000000E0 /* Defaults+Subscripts.swift */,
 				C0231A00000100 /* DefaultsBridges.swift */,
-				C0231A00000110 /* DefaultsKey.swift */,
+				C0231A00000110 /* DefaultsKeys.swift */,
 				C0231A00000120 /* DefaultsObserver.swift */,
 				C0231A00000140 /* DefaultsSerializable.swift */,
 				C0231A00000130 /* DefaultsSerializable+BuiltIns.swift */,
@@ -213,7 +213,7 @@
 				C0231A00000280 /* Defaults+Subscripts.swift in Sources */,
 				C0231A00000290 /* Defaults.swift in Sources */,
 				C0231A000002A0 /* DefaultsBridges.swift in Sources */,
-				C0231A000002B0 /* DefaultsKey.swift in Sources */,
+				C0231A000002B0 /* DefaultsKeys.swift in Sources */,
 				C0231A000002C0 /* DefaultsObserver.swift in Sources */,
 				C0231A000002D0 /* DefaultsSerializable+BuiltIns.swift in Sources */,
 				C0231A000002E0 /* DefaultsSerializable.swift in Sources */,

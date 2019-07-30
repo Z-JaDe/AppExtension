@@ -6,75 +6,88 @@ use_frameworks!
 
 install! 'cocoapods', deterministic_uuids: false, generate_multiple_pod_projects: true
 
-def baseCore
-  pod 'Validation', :path => 'BaseSupport/Validation'
-  pod 'Encryption', :path => 'BaseSupport/Encryption'
-  pod 'FunctionalSwift', :path => 'BaseSupport/FunctionalSwift'
-  pod 'CocoaExtension', :path => 'BaseSupport/CocoaExtension'
-  pod 'ModalManager', :path => 'BaseSupport/ModalManager'
+def userPod (name)
+  pod name, :path => "BaseSupport/#{name}"
 end
-def rx
+
+def baseCorePod
+  userPod 'Validation'
+  userPod 'Encryption'
+  userPod 'FunctionalSwift'
+  userPod 'CocoaExtension'
+  userPod 'ModalManager'
+end
+
+def collectionKitPod
+  pod 'CollectionKit', :git => 'https://github.com/SoySauceLab/CollectionKit.git'
+end
+
+def rxPod (hasCocoa = true)
   pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
-  pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift'
+  if hasCocoa
+    pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift'
+  end
 end
-def rxExtension
-  rx
-  pod 'RxGesture', :path => 'BaseSupport/RxGesture'
-  pod 'RxSwiftExt', :path => 'BaseSupport/RxSwiftExt'
-  pod 'RxOptional', :path => 'BaseSupport/RxOptional'
+
+def rxExtensionPod
+  rxPod
+  userPod 'RxGesture'
+  userPod 'RxSwiftExt'
+  userPod 'RxOptional'
   #    pod 'RxAnimated'
   #    pod 'RxKeyboard'
 end
-def snapKit
+
+def snapKitPod
   pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
 end
 
 target:'Core' do
-  baseCore
+  baseCorePod
 end
 target:'Coordinator' do
-  baseCore
+  baseCorePod
 end
 target:'AnimatedTransition' do
-  baseCore
+  baseCorePod
 end
 target:'UserNotificationManager' do
-  baseCore
-  pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
+  baseCorePod
+  rxPod hasCocoa = false
 end
 target:'List' do
-  baseCore
-  rx
+  baseCorePod
+  rxPod
   pod 'DifferenceKit'
 end
 target:'UIComponents' do
-  baseCore
-  rx
-  snapKit
+  baseCorePod
+  rxPod
+  snapKitPod
   target:'ScrollExtensions' do
   end
   target:'CollectionKitExtensions' do
-    pod 'CollectionKit', :git => 'https://github.com/SoySauceLab/CollectionKit.git'
+    collectionKitPod
   end
 end
 target:'EmptyDataSet' do
-  baseCore
-  rx
-  snapKit
+  baseCorePod
+  rxPod
+  snapKitPod
 end
 target:'RxExtensions' do
-  baseCore
-  rxExtension
+  baseCorePod
+  rxExtensionPod
 end
 target:'NavigationFlow' do
-  baseCore
-  rxExtension
+  baseCorePod
+  rxExtensionPod
 end
 
 def commonPods
-  baseCore
-  rxExtension
-  snapKit
+  baseCorePod
+  rxExtensionPod
+  snapKitPod
   
   pod 'SwiftLint'
   
@@ -82,16 +95,16 @@ def commonPods
   
   pod 'Kingfisher'
   pod 'MBProgressHUD'
-  pod 'SwiftyUserDefaults', :path => 'BaseSupport/SwiftyUserDefaults'
+  userPod 'SwiftyUserDefaults'
   
   pod 'Motion'
-  pod 'CollectionKit', :git => 'https://github.com/SoySauceLab/CollectionKit.git'  #仅测试
+  collectionKitPod #仅测试
   
   pod 'MJRefresh'
   pod 'DifferenceKit'
 end
 
-def projectBasic
+def projectBasicPod
   commonPods
   pod 'Alamofire'
   
@@ -100,11 +113,11 @@ def projectBasic
   pod 'ReSwift', :git => 'https://github.com/ReSwift/ReSwift.git'
 end
 target:'ProjectBasic' do
-  projectBasic
+  projectBasicPod
 end
 
 target:'AppExtension' do
-  projectBasic
+  projectBasicPod
   target 'AppExtensionUITests' do
     inherit! :search_paths
   end
