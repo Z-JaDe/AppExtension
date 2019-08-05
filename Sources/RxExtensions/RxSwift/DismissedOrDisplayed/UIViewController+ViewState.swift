@@ -13,22 +13,14 @@ import RxCocoa
 public protocol RootViewStateProtocol: class {
     var viewState: BehaviorSubject<RootViewState> {get}
 }
+
 private var viewStateKey: UInt8 = 0
 public extension RootViewStateProtocol where Self: UIViewController {
     var viewState: BehaviorSubject<RootViewState> {
         return associatedObject(&viewStateKey, createIfNeed: BehaviorSubject(value: .viewNoLoad))
     }
-    func registerViewState() {
-        Observable<RootViewState>.merge(
-            self.rx.sentMessage(#selector(UIViewController.viewDidLoad)).map({_ in .viewDidLoad}),
-            self.rx.sentMessage(#selector(UIViewController.viewWillAppear)).map({_ in .viewWillAppear}),
-            self.rx.sentMessage(#selector(UIViewController.viewDidAppear)).map({_ in .viewDidAppear}),
-            self.rx.sentMessage(#selector(UIViewController.viewWillDisappear)).map({_ in .viewWillDisappear}),
-            self.rx.sentMessage(#selector(UIViewController.viewDidDisappear)).map({_ in .viewDidDisappear})
-            ).bind(to: self.viewState)
-            .disposed(by: self.disposeBag)
-    }
 }
+
 public extension Reactive where Base: UIViewController & RootViewStateProtocol {
     // MARK: - 下面几个关于viewState的信号 默认会调用distinctUntilChanged 每次发送的信号都和上次的不同
     /// ZJaDe: 每次界面将要出现会发送一次信号

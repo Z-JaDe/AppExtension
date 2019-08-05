@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-open class BaseWebViewController<ViewType>: ViewController<ViewType> where ViewType: UIView & WebViewProtocol & WritableDefaultHeightProtocol {
+open class BaseWebViewController<ViewType>: GenericsViewController<ViewType> where ViewType: UIView & WebViewProtocol & WritableDefaultHeightProtocol {
     // MARK: -
     /// ZJaDe: 需要手动实现，内部无实现
     public var needURLParam: Bool = true {

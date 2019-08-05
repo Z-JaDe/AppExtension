@@ -12,7 +12,7 @@ import FunctionalSwift
 
 typealias ViewControllerProtocol = RootViewStateProtocol & NetworkProtocol & UpdateDataProtocol
 
-open class ViewController<ViewType>: UIViewController, ViewControllerProtocol where ViewType: UIView {
+open class ViewController: UIViewController, ViewControllerProtocol {
     // MARK: - init
     public init() {
         super.init(nibName: nil, bundle: nil)
@@ -23,27 +23,13 @@ open class ViewController<ViewType>: UIViewController, ViewControllerProtocol wh
         super.init(nibName: nil, bundle: nil)
         configInit()
     }
-    private var isCoderLoad: Bool = false
+    fileprivate var isCoderLoad: Bool = false
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.isCoderLoad = true
         configInit()
     }
-    // MARK: - view
-    open override func loadView() {
-        super.loadView()
-        if self.isCoderLoad == false {
-            self.view = createView(self.view.frame)
-        }
-    }
-    /// ZJaDe: 重写该方法 返回根视图
-    open func createView(_ frame: CGRect) -> ViewType {
-        return ViewType(frame: frame)
-    }
-    open var rootView: ViewType {
-        // swiftlint:disable force_cast
-        return self.view as! ViewType
-    }
+
     // MARK: - 以下几个方法在不同的时候重写
     open func configInit() {
 
@@ -97,5 +83,23 @@ open class ViewController<ViewType>: UIViewController, ViewControllerProtocol wh
     open override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         viewState.onNext(.viewDidDisappear)
+    }
+}
+
+open class GenericsViewController<ViewType>: ViewController where ViewType: UIView {
+    // MARK: - view
+    open override func loadView() {
+        super.loadView()
+        if self.isCoderLoad == false {
+            self.view = createView(self.view.frame)
+        }
+    }
+    /// ZJaDe: 重写该方法 返回根视图
+    open func createView(_ frame: CGRect) -> ViewType {
+        return ViewType(frame: frame)
+    }
+    open var rootView: ViewType {
+        // swiftlint:disable force_cast
+        return self.view as! ViewType
     }
 }

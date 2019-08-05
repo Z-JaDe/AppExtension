@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class ItemViewController: ViewController<UIView>, TaskQueueProtocol {
+open class ItemViewController: ViewController, TaskQueueProtocol {
     public lazy var taskQueue: TaskQueue = TaskQueue()
     open override func configInit() {
         super.configInit()

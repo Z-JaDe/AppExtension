@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        lockTest()
 //        gcdTest()
 //        copyTest()
-
+        Foo().bar()
         return true
     }
 
@@ -61,5 +61,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         
+    }
+}
+
+class Foo {
+    dynamic func bar() {
+        print("--")
+    }
+}
+extension Foo {
+    @_dynamicReplacement(for: bar)
+    func barA() {
+        print("A")
+        bar()
+    }
+}
+
+
+extension Foo {
+    @_dynamicReplacement(for: bar)
+    func barB() {
+        print("B")
+        bar()
     }
 }
