@@ -777,6 +777,10 @@
 		1805B3CD2276A82900F0574D /* GCDTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDTest.swift; sourceTree = "<group>"; };
 		1805B3D222772E9C00F0574D /* DispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueue.swift; sourceTree = "<group>"; };
 		180B46B522812B2A001AE9B1 /* NeedUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedUpdate.swift; sourceTree = "<group>"; };
+		1892196023016F4B008A6BC3 /* Playground_Blank.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground_Blank.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1892196123016F4B008A6BC3 /* Playground_View.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground_View.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1892196323016FD4008A6BC3 /* Playground_Game.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground_Game.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1892196423016FF5008A6BC3 /* Playground_Map.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground_Map.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		18B56D452272CEC000AADA00 /* LockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockTest.swift; sourceTree = "<group>"; };
 		18F81BDD2282B15900A8A857 /* CreateTableCellrotocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTableCellrotocol.swift; sourceTree = "<group>"; };
 		18F81BE02282B1D900A8A857 /* CreateCollectionCellrotocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCollectionCellrotocol.swift; sourceTree = "<group>"; };
@@ -2829,6 +2833,10 @@
 		C962C18720CE17990061FC20 = {
 			isa = PBXGroup;
 			children = (
+				1892196423016FF5008A6BC3 /* Playground_Map.playground */,
+				1892196023016F4B008A6BC3 /* Playground_Blank.playground */,
+				1892196323016FD4008A6BC3 /* Playground_Game.playground */,
+				1892196123016F4B008A6BC3 /* Playground_View.playground */,
 				C910FEBC20CFF55600761301 /* AppExtension.podspec */,
 				C9640E2B20DB49BD00528E7A /* Sources */,
 				C962C19220CE17990061FC20 /* AppExtension */,
