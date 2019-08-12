@@ -7,133 +7,136 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B3FBA000004B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3FBA000004A0 /* Foundation.framework */; };
-		3B3FBA000004C0 /* EmptyStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000000D0 /* EmptyStateProvider.swift */; };
-		3B3FBA000004D0 /* SimpleViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000000E0 /* SimpleViewProvider.swift */; };
-		3B3FBA000004E0 /* SpaceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000000F0 /* SpaceProvider.swift */; };
-		3B3FBA000004F0 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000100 /* Animator.swift */; };
-		3B3FBA00000500 /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000110 /* FadeAnimator.swift */; };
-		3B3FBA00000510 /* ScaleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000120 /* ScaleAnimator.swift */; };
-		3B3FBA00000520 /* SimpleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000130 /* SimpleAnimator.swift */; };
-		3B3FBA00000530 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000140 /* CollectionView.swift */; };
-		3B3FBA00000540 /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000150 /* ArrayDataSource.swift */; };
-		3B3FBA00000550 /* ClosureDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000160 /* ClosureDataSource.swift */; };
-		3B3FBA00000560 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000170 /* DataSource.swift */; };
-		3B3FBA00000570 /* UIScrollView+CollectionKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000180 /* UIScrollView+CollectionKit.swift */; };
-		3B3FBA00000580 /* UIView+CollectionKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000190 /* UIView+CollectionKit.swift */; };
-		3B3FBA00000590 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000001A0 /* Util.swift */; };
-		3B3FBA000005A0 /* ClosureLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000001B0 /* ClosureLayout.swift */; };
-		3B3FBA000005B0 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000001C0 /* FlowLayout.swift */; };
-		3B3FBA000005C0 /* InsetLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000001D0 /* InsetLayout.swift */; };
-		3B3FBA000005D0 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000001E0 /* Layout.swift */; };
-		3B3FBA000005E0 /* LayoutContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000001F0 /* LayoutContext.swift */; };
-		3B3FBA000005F0 /* OverlayLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000200 /* OverlayLayout.swift */; };
-		3B3FBA00000600 /* RowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000210 /* RowLayout.swift */; };
-		3B3FBA00000610 /* SimpleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000220 /* SimpleLayout.swift */; };
-		3B3FBA00000620 /* StickyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000230 /* StickyLayout.swift */; };
-		3B3FBA00000630 /* TransposeLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000240 /* TransposeLayout.swift */; };
-		3B3FBA00000640 /* VisibleFrameInsetLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000250 /* VisibleFrameInsetLayout.swift */; };
-		3B3FBA00000650 /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000260 /* WaterfallLayout.swift */; };
-		3B3FBA00000660 /* WrapperLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000270 /* WrapperLayout.swift */; };
-		3B3FBA00000670 /* CollectionReloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000280 /* CollectionReloadable.swift */; };
-		3B3FBA00000680 /* CollectionReuseViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000290 /* CollectionReuseViewManager.swift */; };
-		3B3FBA00000690 /* Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000002A0 /* Deprecated.swift */; };
-		3B3FBA000006A0 /* LayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000002B0 /* LayoutHelper.swift */; };
-		3B3FBA000006B0 /* ItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000002C0 /* ItemProvider.swift */; };
-		3B3FBA000006C0 /* LayoutableProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000002D0 /* LayoutableProvider.swift */; };
-		3B3FBA000006D0 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000002E0 /* Provider.swift */; };
-		3B3FBA000006E0 /* SectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000002F0 /* SectionProvider.swift */; };
-		3B3FBA000006F0 /* BasicProvider+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000300 /* BasicProvider+Convenience.swift */; };
-		3B3FBA00000700 /* BasicProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000310 /* BasicProvider.swift */; };
-		3B3FBA00000710 /* ComposedHeaderProvider+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000320 /* ComposedHeaderProvider+Convenience.swift */; };
-		3B3FBA00000720 /* ComposedHeaderProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000330 /* ComposedHeaderProvider.swift */; };
-		3B3FBA00000730 /* ComposedProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000340 /* ComposedProvider.swift */; };
-		3B3FBA00000740 /* EmptyCollectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000350 /* EmptyCollectionProvider.swift */; };
-		3B3FBA00000750 /* FlattenedProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000360 /* FlattenedProvider.swift */; };
-		3B3FBA00000760 /* AutoLayoutSizeSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000370 /* AutoLayoutSizeSource.swift */; };
-		3B3FBA00000770 /* ClosureSizeSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000380 /* ClosureSizeSource.swift */; };
-		3B3FBA00000780 /* SimpleViewSizeSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000390 /* SimpleViewSizeSource.swift */; };
-		3B3FBA00000790 /* SizeSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000003A0 /* SizeSource.swift */; };
-		3B3FBA000007A0 /* UIImageSizeSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000003B0 /* UIImageSizeSource.swift */; };
-		3B3FBA000007B0 /* AnyViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000003C0 /* AnyViewSource.swift */; };
-		3B3FBA000007C0 /* ClosureViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000003D0 /* ClosureViewSource.swift */; };
-		3B3FBA000007D0 /* ComposedViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000003E0 /* ComposedViewSource.swift */; };
-		3B3FBA000007E0 /* ViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000003F0 /* ViewSource.swift */; };
-		3B3FBA00000830 /* CollectionKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000820 /* CollectionKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3B3FBA00000870 /* CollectionKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000860 /* CollectionKit-dummy.m */; };
-		3B3FBA00000890 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000880 /* UIKit.framework */; };
+		3B3FBA00000590 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000580 /* Foundation.framework */; };
+		3B3FBA000005A0 /* EmptyStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000000E0 /* EmptyStateProvider.swift */; };
+		3B3FBA000005B0 /* SimpleViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000000F0 /* SimpleViewProvider.swift */; };
+		3B3FBA000005C0 /* SpaceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000100 /* SpaceProvider.swift */; };
+		3B3FBA000005D0 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000120 /* Animator.swift */; };
+		3B3FBA000005E0 /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000130 /* FadeAnimator.swift */; };
+		3B3FBA000005F0 /* ScaleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000140 /* ScaleAnimator.swift */; };
+		3B3FBA00000600 /* SimpleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000150 /* SimpleAnimator.swift */; };
+		3B3FBA00000610 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000160 /* CollectionView.swift */; };
+		3B3FBA00000620 /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000180 /* ArrayDataSource.swift */; };
+		3B3FBA00000630 /* ClosureDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000190 /* ClosureDataSource.swift */; };
+		3B3FBA00000640 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000001A0 /* DataSource.swift */; };
+		3B3FBA00000650 /* UIScrollView+CollectionKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000001C0 /* UIScrollView+CollectionKit.swift */; };
+		3B3FBA00000660 /* UIView+CollectionKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000001D0 /* UIView+CollectionKit.swift */; };
+		3B3FBA00000670 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000001E0 /* Util.swift */; };
+		3B3FBA00000680 /* ClosureLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000200 /* ClosureLayout.swift */; };
+		3B3FBA00000690 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000210 /* FlowLayout.swift */; };
+		3B3FBA000006A0 /* InsetLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000220 /* InsetLayout.swift */; };
+		3B3FBA000006B0 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000230 /* Layout.swift */; };
+		3B3FBA000006C0 /* LayoutContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000240 /* LayoutContext.swift */; };
+		3B3FBA000006D0 /* OverlayLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000250 /* OverlayLayout.swift */; };
+		3B3FBA000006E0 /* RowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000260 /* RowLayout.swift */; };
+		3B3FBA000006F0 /* SimpleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000270 /* SimpleLayout.swift */; };
+		3B3FBA00000700 /* StickyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000280 /* StickyLayout.swift */; };
+		3B3FBA00000710 /* TransposeLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000290 /* TransposeLayout.swift */; };
+		3B3FBA00000720 /* VisibleFrameInsetLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000002A0 /* VisibleFrameInsetLayout.swift */; };
+		3B3FBA00000730 /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000002B0 /* WaterfallLayout.swift */; };
+		3B3FBA00000740 /* WrapperLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000002C0 /* WrapperLayout.swift */; };
+		3B3FBA00000750 /* CollectionReloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000002E0 /* CollectionReloadable.swift */; };
+		3B3FBA00000760 /* CollectionReuseViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000002F0 /* CollectionReuseViewManager.swift */; };
+		3B3FBA00000770 /* Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000300 /* Deprecated.swift */; };
+		3B3FBA00000780 /* LayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000310 /* LayoutHelper.swift */; };
+		3B3FBA00000790 /* ItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000330 /* ItemProvider.swift */; };
+		3B3FBA000007A0 /* LayoutableProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000340 /* LayoutableProvider.swift */; };
+		3B3FBA000007B0 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000350 /* Provider.swift */; };
+		3B3FBA000007C0 /* SectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000360 /* SectionProvider.swift */; };
+		3B3FBA000007D0 /* BasicProvider+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000380 /* BasicProvider+Convenience.swift */; };
+		3B3FBA000007E0 /* BasicProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000390 /* BasicProvider.swift */; };
+		3B3FBA000007F0 /* ComposedHeaderProvider+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000003A0 /* ComposedHeaderProvider+Convenience.swift */; };
+		3B3FBA00000800 /* ComposedHeaderProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000003B0 /* ComposedHeaderProvider.swift */; };
+		3B3FBA00000810 /* ComposedProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000003C0 /* ComposedProvider.swift */; };
+		3B3FBA00000820 /* EmptyCollectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000003D0 /* EmptyCollectionProvider.swift */; };
+		3B3FBA00000830 /* FlattenedProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA000003E0 /* FlattenedProvider.swift */; };
+		3B3FBA00000840 /* AutoLayoutSizeSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000400 /* AutoLayoutSizeSource.swift */; };
+		3B3FBA00000850 /* ClosureSizeSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000410 /* ClosureSizeSource.swift */; };
+		3B3FBA00000860 /* SimpleViewSizeSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000420 /* SimpleViewSizeSource.swift */; };
+		3B3FBA00000870 /* SizeSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000430 /* SizeSource.swift */; };
+		3B3FBA00000880 /* UIImageSizeSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000440 /* UIImageSizeSource.swift */; };
+		3B3FBA00000890 /* AnyViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000460 /* AnyViewSource.swift */; };
+		3B3FBA000008A0 /* ClosureViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000470 /* ClosureViewSource.swift */; };
+		3B3FBA000008B0 /* ComposedViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000480 /* ComposedViewSource.swift */; };
+		3B3FBA000008C0 /* ViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000490 /* ViewSource.swift */; };
+		3B3FBA00000910 /* CollectionKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000900 /* CollectionKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3FBA00000950 /* CollectionKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000940 /* CollectionKit-dummy.m */; };
+		3B3FBA00000970 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000960 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		30E7B466130519665A36DFE78434EF5E /* CollectionKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CollectionKit.framework; path = CollectionKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B3FBA000000D0 /* EmptyStateProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmptyStateProvider.swift; path = Sources/Addon/EmptyStateProvider.swift; sourceTree = "<group>"; };
-		3B3FBA000000E0 /* SimpleViewProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SimpleViewProvider.swift; path = Sources/Addon/SimpleViewProvider.swift; sourceTree = "<group>"; };
-		3B3FBA000000F0 /* SpaceProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpaceProvider.swift; path = Sources/Addon/SpaceProvider.swift; sourceTree = "<group>"; };
-		3B3FBA00000100 /* Animator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animator.swift; path = Sources/Animator/Animator.swift; sourceTree = "<group>"; };
-		3B3FBA00000110 /* FadeAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FadeAnimator.swift; path = Sources/Animator/FadeAnimator.swift; sourceTree = "<group>"; };
-		3B3FBA00000120 /* ScaleAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScaleAnimator.swift; path = Sources/Animator/ScaleAnimator.swift; sourceTree = "<group>"; };
-		3B3FBA00000130 /* SimpleAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SimpleAnimator.swift; path = Sources/Animator/SimpleAnimator.swift; sourceTree = "<group>"; };
-		3B3FBA00000140 /* CollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollectionView.swift; path = Sources/CollectionView.swift; sourceTree = "<group>"; };
-		3B3FBA00000150 /* ArrayDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ArrayDataSource.swift; path = Sources/DataSource/ArrayDataSource.swift; sourceTree = "<group>"; };
-		3B3FBA00000160 /* ClosureDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ClosureDataSource.swift; path = Sources/DataSource/ClosureDataSource.swift; sourceTree = "<group>"; };
-		3B3FBA00000170 /* DataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataSource.swift; path = Sources/DataSource/DataSource.swift; sourceTree = "<group>"; };
-		3B3FBA00000180 /* UIScrollView+CollectionKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIScrollView+CollectionKit.swift"; path = "Sources/Extensions/UIScrollView+CollectionKit.swift"; sourceTree = "<group>"; };
-		3B3FBA00000190 /* UIView+CollectionKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+CollectionKit.swift"; path = "Sources/Extensions/UIView+CollectionKit.swift"; sourceTree = "<group>"; };
-		3B3FBA000001A0 /* Util.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Util.swift; path = Sources/Extensions/Util.swift; sourceTree = "<group>"; };
-		3B3FBA000001B0 /* ClosureLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ClosureLayout.swift; path = Sources/Layout/ClosureLayout.swift; sourceTree = "<group>"; };
-		3B3FBA000001C0 /* FlowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlowLayout.swift; path = Sources/Layout/FlowLayout.swift; sourceTree = "<group>"; };
-		3B3FBA000001D0 /* InsetLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InsetLayout.swift; path = Sources/Layout/InsetLayout.swift; sourceTree = "<group>"; };
-		3B3FBA000001E0 /* Layout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Layout.swift; path = Sources/Layout/Layout.swift; sourceTree = "<group>"; };
-		3B3FBA000001F0 /* LayoutContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutContext.swift; path = Sources/Layout/LayoutContext.swift; sourceTree = "<group>"; };
-		3B3FBA00000200 /* OverlayLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OverlayLayout.swift; path = Sources/Layout/OverlayLayout.swift; sourceTree = "<group>"; };
-		3B3FBA00000210 /* RowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RowLayout.swift; path = Sources/Layout/RowLayout.swift; sourceTree = "<group>"; };
-		3B3FBA00000220 /* SimpleLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SimpleLayout.swift; path = Sources/Layout/SimpleLayout.swift; sourceTree = "<group>"; };
-		3B3FBA00000230 /* StickyLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StickyLayout.swift; path = Sources/Layout/StickyLayout.swift; sourceTree = "<group>"; };
-		3B3FBA00000240 /* TransposeLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransposeLayout.swift; path = Sources/Layout/TransposeLayout.swift; sourceTree = "<group>"; };
-		3B3FBA00000250 /* VisibleFrameInsetLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VisibleFrameInsetLayout.swift; path = Sources/Layout/VisibleFrameInsetLayout.swift; sourceTree = "<group>"; };
-		3B3FBA00000260 /* WaterfallLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WaterfallLayout.swift; path = Sources/Layout/WaterfallLayout.swift; sourceTree = "<group>"; };
-		3B3FBA00000270 /* WrapperLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WrapperLayout.swift; path = Sources/Layout/WrapperLayout.swift; sourceTree = "<group>"; };
-		3B3FBA00000280 /* CollectionReloadable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollectionReloadable.swift; path = Sources/Other/CollectionReloadable.swift; sourceTree = "<group>"; };
-		3B3FBA00000290 /* CollectionReuseViewManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollectionReuseViewManager.swift; path = Sources/Other/CollectionReuseViewManager.swift; sourceTree = "<group>"; };
-		3B3FBA000002A0 /* Deprecated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecated.swift; path = Sources/Other/Deprecated.swift; sourceTree = "<group>"; };
-		3B3FBA000002B0 /* LayoutHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutHelper.swift; path = Sources/Other/LayoutHelper.swift; sourceTree = "<group>"; };
-		3B3FBA000002C0 /* ItemProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ItemProvider.swift; path = Sources/Protocol/ItemProvider.swift; sourceTree = "<group>"; };
-		3B3FBA000002D0 /* LayoutableProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutableProvider.swift; path = Sources/Protocol/LayoutableProvider.swift; sourceTree = "<group>"; };
-		3B3FBA000002E0 /* Provider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Provider.swift; path = Sources/Protocol/Provider.swift; sourceTree = "<group>"; };
-		3B3FBA000002F0 /* SectionProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SectionProvider.swift; path = Sources/Protocol/SectionProvider.swift; sourceTree = "<group>"; };
-		3B3FBA00000300 /* BasicProvider+Convenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BasicProvider+Convenience.swift"; path = "Sources/Provider/BasicProvider+Convenience.swift"; sourceTree = "<group>"; };
-		3B3FBA00000310 /* BasicProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BasicProvider.swift; path = Sources/Provider/BasicProvider.swift; sourceTree = "<group>"; };
-		3B3FBA00000320 /* ComposedHeaderProvider+Convenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ComposedHeaderProvider+Convenience.swift"; path = "Sources/Provider/ComposedHeaderProvider+Convenience.swift"; sourceTree = "<group>"; };
-		3B3FBA00000330 /* ComposedHeaderProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ComposedHeaderProvider.swift; path = Sources/Provider/ComposedHeaderProvider.swift; sourceTree = "<group>"; };
-		3B3FBA00000340 /* ComposedProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ComposedProvider.swift; path = Sources/Provider/ComposedProvider.swift; sourceTree = "<group>"; };
-		3B3FBA00000350 /* EmptyCollectionProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmptyCollectionProvider.swift; path = Sources/Provider/EmptyCollectionProvider.swift; sourceTree = "<group>"; };
-		3B3FBA00000360 /* FlattenedProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlattenedProvider.swift; path = Sources/Provider/FlattenedProvider.swift; sourceTree = "<group>"; };
-		3B3FBA00000370 /* AutoLayoutSizeSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoLayoutSizeSource.swift; path = Sources/SizeSource/AutoLayoutSizeSource.swift; sourceTree = "<group>"; };
-		3B3FBA00000380 /* ClosureSizeSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ClosureSizeSource.swift; path = Sources/SizeSource/ClosureSizeSource.swift; sourceTree = "<group>"; };
-		3B3FBA00000390 /* SimpleViewSizeSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SimpleViewSizeSource.swift; path = Sources/SizeSource/SimpleViewSizeSource.swift; sourceTree = "<group>"; };
-		3B3FBA000003A0 /* SizeSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SizeSource.swift; path = Sources/SizeSource/SizeSource.swift; sourceTree = "<group>"; };
-		3B3FBA000003B0 /* UIImageSizeSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIImageSizeSource.swift; path = Sources/SizeSource/UIImageSizeSource.swift; sourceTree = "<group>"; };
-		3B3FBA000003C0 /* AnyViewSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyViewSource.swift; path = Sources/ViewSource/AnyViewSource.swift; sourceTree = "<group>"; };
-		3B3FBA000003D0 /* ClosureViewSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ClosureViewSource.swift; path = Sources/ViewSource/ClosureViewSource.swift; sourceTree = "<group>"; };
-		3B3FBA000003E0 /* ComposedViewSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ComposedViewSource.swift; path = Sources/ViewSource/ComposedViewSource.swift; sourceTree = "<group>"; };
-		3B3FBA000003F0 /* ViewSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewSource.swift; path = Sources/ViewSource/ViewSource.swift; sourceTree = "<group>"; };
-		3B3FBA000004A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3B3FBA00000800 /* CollectionKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CollectionKit.xcconfig; sourceTree = "<group>"; };
-		3B3FBA00000810 /* CollectionKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CollectionKit.modulemap; sourceTree = "<group>"; };
-		3B3FBA00000820 /* CollectionKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollectionKit-umbrella.h"; sourceTree = "<group>"; };
-		3B3FBA00000840 /* CollectionKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CollectionKit-Info.plist"; sourceTree = "<group>"; };
-		3B3FBA00000850 /* CollectionKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollectionKit-prefix.pch"; sourceTree = "<group>"; };
-		3B3FBA00000860 /* CollectionKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CollectionKit-dummy.m"; sourceTree = "<group>"; };
-		3B3FBA00000880 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		3B3FBA000000E0 /* EmptyStateProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EmptyStateProvider.swift; sourceTree = "<group>"; };
+		3B3FBA000000F0 /* SimpleViewProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimpleViewProvider.swift; sourceTree = "<group>"; };
+		3B3FBA00000100 /* SpaceProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpaceProvider.swift; sourceTree = "<group>"; };
+		3B3FBA00000120 /* Animator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		3B3FBA00000130 /* FadeAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
+		3B3FBA00000140 /* ScaleAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScaleAnimator.swift; sourceTree = "<group>"; };
+		3B3FBA00000150 /* SimpleAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimpleAnimator.swift; sourceTree = "<group>"; };
+		3B3FBA00000160 /* CollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollectionView.swift; path = Sources/CollectionView.swift; sourceTree = "<group>"; };
+		3B3FBA00000180 /* ArrayDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ArrayDataSource.swift; sourceTree = "<group>"; };
+		3B3FBA00000190 /* ClosureDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ClosureDataSource.swift; sourceTree = "<group>"; };
+		3B3FBA000001A0 /* DataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		3B3FBA000001C0 /* UIScrollView+CollectionKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIScrollView+CollectionKit.swift"; sourceTree = "<group>"; };
+		3B3FBA000001D0 /* UIView+CollectionKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+CollectionKit.swift"; sourceTree = "<group>"; };
+		3B3FBA000001E0 /* Util.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		3B3FBA00000200 /* ClosureLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ClosureLayout.swift; sourceTree = "<group>"; };
+		3B3FBA00000210 /* FlowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
+		3B3FBA00000220 /* InsetLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InsetLayout.swift; sourceTree = "<group>"; };
+		3B3FBA00000230 /* Layout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		3B3FBA00000240 /* LayoutContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LayoutContext.swift; sourceTree = "<group>"; };
+		3B3FBA00000250 /* OverlayLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OverlayLayout.swift; sourceTree = "<group>"; };
+		3B3FBA00000260 /* RowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RowLayout.swift; sourceTree = "<group>"; };
+		3B3FBA00000270 /* SimpleLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimpleLayout.swift; sourceTree = "<group>"; };
+		3B3FBA00000280 /* StickyLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StickyLayout.swift; sourceTree = "<group>"; };
+		3B3FBA00000290 /* TransposeLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TransposeLayout.swift; sourceTree = "<group>"; };
+		3B3FBA000002A0 /* VisibleFrameInsetLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VisibleFrameInsetLayout.swift; sourceTree = "<group>"; };
+		3B3FBA000002B0 /* WaterfallLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
+		3B3FBA000002C0 /* WrapperLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WrapperLayout.swift; sourceTree = "<group>"; };
+		3B3FBA000002E0 /* CollectionReloadable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CollectionReloadable.swift; sourceTree = "<group>"; };
+		3B3FBA000002F0 /* CollectionReuseViewManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CollectionReuseViewManager.swift; sourceTree = "<group>"; };
+		3B3FBA00000300 /* Deprecated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Deprecated.swift; sourceTree = "<group>"; };
+		3B3FBA00000310 /* LayoutHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LayoutHelper.swift; sourceTree = "<group>"; };
+		3B3FBA00000330 /* ItemProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ItemProvider.swift; sourceTree = "<group>"; };
+		3B3FBA00000340 /* LayoutableProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LayoutableProvider.swift; sourceTree = "<group>"; };
+		3B3FBA00000350 /* Provider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		3B3FBA00000360 /* SectionProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SectionProvider.swift; sourceTree = "<group>"; };
+		3B3FBA00000380 /* BasicProvider+Convenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "BasicProvider+Convenience.swift"; sourceTree = "<group>"; };
+		3B3FBA00000390 /* BasicProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BasicProvider.swift; sourceTree = "<group>"; };
+		3B3FBA000003A0 /* ComposedHeaderProvider+Convenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ComposedHeaderProvider+Convenience.swift"; sourceTree = "<group>"; };
+		3B3FBA000003B0 /* ComposedHeaderProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ComposedHeaderProvider.swift; sourceTree = "<group>"; };
+		3B3FBA000003C0 /* ComposedProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ComposedProvider.swift; sourceTree = "<group>"; };
+		3B3FBA000003D0 /* EmptyCollectionProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EmptyCollectionProvider.swift; sourceTree = "<group>"; };
+		3B3FBA000003E0 /* FlattenedProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FlattenedProvider.swift; sourceTree = "<group>"; };
+		3B3FBA00000400 /* AutoLayoutSizeSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AutoLayoutSizeSource.swift; sourceTree = "<group>"; };
+		3B3FBA00000410 /* ClosureSizeSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ClosureSizeSource.swift; sourceTree = "<group>"; };
+		3B3FBA00000420 /* SimpleViewSizeSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimpleViewSizeSource.swift; sourceTree = "<group>"; };
+		3B3FBA00000430 /* SizeSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SizeSource.swift; sourceTree = "<group>"; };
+		3B3FBA00000440 /* UIImageSizeSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImageSizeSource.swift; sourceTree = "<group>"; };
+		3B3FBA00000460 /* AnyViewSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AnyViewSource.swift; sourceTree = "<group>"; };
+		3B3FBA00000470 /* ClosureViewSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ClosureViewSource.swift; sourceTree = "<group>"; };
+		3B3FBA00000480 /* ComposedViewSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ComposedViewSource.swift; sourceTree = "<group>"; };
+		3B3FBA00000490 /* ViewSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewSource.swift; sourceTree = "<group>"; };
+		3B3FBA000004B0 /* CollectionKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = CollectionKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3B3FBA000004C0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		3B3FBA000004D0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		3B3FBA00000580 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3B3FBA000008E0 /* CollectionKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CollectionKit.xcconfig; sourceTree = "<group>"; };
+		3B3FBA000008F0 /* CollectionKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CollectionKit.modulemap; sourceTree = "<group>"; };
+		3B3FBA00000900 /* CollectionKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollectionKit-umbrella.h"; sourceTree = "<group>"; };
+		3B3FBA00000920 /* CollectionKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CollectionKit-Info.plist"; sourceTree = "<group>"; };
+		3B3FBA00000930 /* CollectionKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollectionKit-prefix.pch"; sourceTree = "<group>"; };
+		3B3FBA00000940 /* CollectionKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CollectionKit-dummy.m"; sourceTree = "<group>"; };
+		3B3FBA00000960 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3B3FBA00000470 /* Frameworks */ = {
+		3B3FBA00000550 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B3FBA000004B0 /* Foundation.framework in Frameworks */,
-				3B3FBA00000890 /* UIKit.framework in Frameworks */,
+				3B3FBA00000590 /* Foundation.framework in Frameworks */,
+				3B3FBA00000970 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +163,7 @@
 		3B3FBA00000060 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3B3FBA00000490 /* iOS */,
+				3B3FBA00000570 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -169,101 +172,202 @@
 			isa = PBXGroup;
 			children = (
 				3B3FBA000000C0 /* Core */,
-				3B3FBA000007F0 /* Support Files */,
+				3B3FBA000004A0 /* Pod */,
+				3B3FBA000008D0 /* Support Files */,
 			);
 			name = CollectionKit;
-			path = CollectionKit;
+			path = ../BaseSupport/CollectionKit;
 			sourceTree = "<group>";
 		};
 		3B3FBA000000C0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				3B3FBA00000100 /* Animator.swift */,
-				3B3FBA000003C0 /* AnyViewSource.swift */,
-				3B3FBA00000150 /* ArrayDataSource.swift */,
-				3B3FBA00000370 /* AutoLayoutSizeSource.swift */,
-				3B3FBA00000310 /* BasicProvider.swift */,
-				3B3FBA00000300 /* BasicProvider+Convenience.swift */,
-				3B3FBA00000160 /* ClosureDataSource.swift */,
-				3B3FBA000001B0 /* ClosureLayout.swift */,
-				3B3FBA00000380 /* ClosureSizeSource.swift */,
-				3B3FBA000003D0 /* ClosureViewSource.swift */,
-				3B3FBA00000280 /* CollectionReloadable.swift */,
-				3B3FBA00000290 /* CollectionReuseViewManager.swift */,
-				3B3FBA00000140 /* CollectionView.swift */,
-				3B3FBA00000330 /* ComposedHeaderProvider.swift */,
-				3B3FBA00000320 /* ComposedHeaderProvider+Convenience.swift */,
-				3B3FBA00000340 /* ComposedProvider.swift */,
-				3B3FBA000003E0 /* ComposedViewSource.swift */,
-				3B3FBA00000170 /* DataSource.swift */,
-				3B3FBA000002A0 /* Deprecated.swift */,
-				3B3FBA00000350 /* EmptyCollectionProvider.swift */,
-				3B3FBA000000D0 /* EmptyStateProvider.swift */,
-				3B3FBA00000110 /* FadeAnimator.swift */,
-				3B3FBA00000360 /* FlattenedProvider.swift */,
-				3B3FBA000001C0 /* FlowLayout.swift */,
-				3B3FBA000001D0 /* InsetLayout.swift */,
-				3B3FBA000002C0 /* ItemProvider.swift */,
-				3B3FBA000001E0 /* Layout.swift */,
-				3B3FBA000002D0 /* LayoutableProvider.swift */,
-				3B3FBA000001F0 /* LayoutContext.swift */,
-				3B3FBA000002B0 /* LayoutHelper.swift */,
-				3B3FBA00000200 /* OverlayLayout.swift */,
-				3B3FBA000002E0 /* Provider.swift */,
-				3B3FBA00000210 /* RowLayout.swift */,
-				3B3FBA00000120 /* ScaleAnimator.swift */,
-				3B3FBA000002F0 /* SectionProvider.swift */,
-				3B3FBA00000130 /* SimpleAnimator.swift */,
-				3B3FBA00000220 /* SimpleLayout.swift */,
-				3B3FBA000000E0 /* SimpleViewProvider.swift */,
-				3B3FBA00000390 /* SimpleViewSizeSource.swift */,
-				3B3FBA000003A0 /* SizeSource.swift */,
-				3B3FBA000000F0 /* SpaceProvider.swift */,
-				3B3FBA00000230 /* StickyLayout.swift */,
-				3B3FBA00000240 /* TransposeLayout.swift */,
-				3B3FBA000003B0 /* UIImageSizeSource.swift */,
-				3B3FBA00000180 /* UIScrollView+CollectionKit.swift */,
-				3B3FBA00000190 /* UIView+CollectionKit.swift */,
-				3B3FBA000001A0 /* Util.swift */,
-				3B3FBA000003F0 /* ViewSource.swift */,
-				3B3FBA00000250 /* VisibleFrameInsetLayout.swift */,
-				3B3FBA00000260 /* WaterfallLayout.swift */,
-				3B3FBA00000270 /* WrapperLayout.swift */,
+				3B3FBA00000160 /* CollectionView.swift */,
+				3B3FBA000000D0 /* Addon */,
+				3B3FBA00000110 /* Animator */,
+				3B3FBA00000170 /* DataSource */,
+				3B3FBA000001B0 /* Extensions */,
+				3B3FBA000001F0 /* Layout */,
+				3B3FBA000002D0 /* Other */,
+				3B3FBA00000320 /* Protocol */,
+				3B3FBA00000370 /* Provider */,
+				3B3FBA000003F0 /* SizeSource */,
+				3B3FBA00000450 /* ViewSource */,
 			);
 			name = Core;
 			sourceTree = "<group>";
 		};
-		3B3FBA00000490 /* iOS */ = {
+		3B3FBA000000D0 /* Addon */ = {
 			isa = PBXGroup;
 			children = (
-				3B3FBA000004A0 /* Foundation.framework */,
-				3B3FBA00000880 /* UIKit.framework */,
+				3B3FBA000000E0 /* EmptyStateProvider.swift */,
+				3B3FBA000000F0 /* SimpleViewProvider.swift */,
+				3B3FBA00000100 /* SpaceProvider.swift */,
+			);
+			name = Addon;
+			path = Sources/Addon;
+			sourceTree = "<group>";
+		};
+		3B3FBA00000110 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				3B3FBA00000120 /* Animator.swift */,
+				3B3FBA00000130 /* FadeAnimator.swift */,
+				3B3FBA00000140 /* ScaleAnimator.swift */,
+				3B3FBA00000150 /* SimpleAnimator.swift */,
+			);
+			name = Animator;
+			path = Sources/Animator;
+			sourceTree = "<group>";
+		};
+		3B3FBA00000170 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				3B3FBA00000180 /* ArrayDataSource.swift */,
+				3B3FBA00000190 /* ClosureDataSource.swift */,
+				3B3FBA000001A0 /* DataSource.swift */,
+			);
+			name = DataSource;
+			path = Sources/DataSource;
+			sourceTree = "<group>";
+		};
+		3B3FBA000001B0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3B3FBA000001C0 /* UIScrollView+CollectionKit.swift */,
+				3B3FBA000001D0 /* UIView+CollectionKit.swift */,
+				3B3FBA000001E0 /* Util.swift */,
+			);
+			name = Extensions;
+			path = Sources/Extensions;
+			sourceTree = "<group>";
+		};
+		3B3FBA000001F0 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				3B3FBA00000200 /* ClosureLayout.swift */,
+				3B3FBA00000210 /* FlowLayout.swift */,
+				3B3FBA00000220 /* InsetLayout.swift */,
+				3B3FBA00000230 /* Layout.swift */,
+				3B3FBA00000240 /* LayoutContext.swift */,
+				3B3FBA00000250 /* OverlayLayout.swift */,
+				3B3FBA00000260 /* RowLayout.swift */,
+				3B3FBA00000270 /* SimpleLayout.swift */,
+				3B3FBA00000280 /* StickyLayout.swift */,
+				3B3FBA00000290 /* TransposeLayout.swift */,
+				3B3FBA000002A0 /* VisibleFrameInsetLayout.swift */,
+				3B3FBA000002B0 /* WaterfallLayout.swift */,
+				3B3FBA000002C0 /* WrapperLayout.swift */,
+			);
+			name = Layout;
+			path = Sources/Layout;
+			sourceTree = "<group>";
+		};
+		3B3FBA000002D0 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				3B3FBA000002E0 /* CollectionReloadable.swift */,
+				3B3FBA000002F0 /* CollectionReuseViewManager.swift */,
+				3B3FBA00000300 /* Deprecated.swift */,
+				3B3FBA00000310 /* LayoutHelper.swift */,
+			);
+			name = Other;
+			path = Sources/Other;
+			sourceTree = "<group>";
+		};
+		3B3FBA00000320 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				3B3FBA00000330 /* ItemProvider.swift */,
+				3B3FBA00000340 /* LayoutableProvider.swift */,
+				3B3FBA00000350 /* Provider.swift */,
+				3B3FBA00000360 /* SectionProvider.swift */,
+			);
+			name = Protocol;
+			path = Sources/Protocol;
+			sourceTree = "<group>";
+		};
+		3B3FBA00000370 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				3B3FBA00000390 /* BasicProvider.swift */,
+				3B3FBA00000380 /* BasicProvider+Convenience.swift */,
+				3B3FBA000003B0 /* ComposedHeaderProvider.swift */,
+				3B3FBA000003A0 /* ComposedHeaderProvider+Convenience.swift */,
+				3B3FBA000003C0 /* ComposedProvider.swift */,
+				3B3FBA000003D0 /* EmptyCollectionProvider.swift */,
+				3B3FBA000003E0 /* FlattenedProvider.swift */,
+			);
+			name = Provider;
+			path = Sources/Provider;
+			sourceTree = "<group>";
+		};
+		3B3FBA000003F0 /* SizeSource */ = {
+			isa = PBXGroup;
+			children = (
+				3B3FBA00000400 /* AutoLayoutSizeSource.swift */,
+				3B3FBA00000410 /* ClosureSizeSource.swift */,
+				3B3FBA00000420 /* SimpleViewSizeSource.swift */,
+				3B3FBA00000430 /* SizeSource.swift */,
+				3B3FBA00000440 /* UIImageSizeSource.swift */,
+			);
+			name = SizeSource;
+			path = Sources/SizeSource;
+			sourceTree = "<group>";
+		};
+		3B3FBA00000450 /* ViewSource */ = {
+			isa = PBXGroup;
+			children = (
+				3B3FBA00000460 /* AnyViewSource.swift */,
+				3B3FBA00000470 /* ClosureViewSource.swift */,
+				3B3FBA00000480 /* ComposedViewSource.swift */,
+				3B3FBA00000490 /* ViewSource.swift */,
+			);
+			name = ViewSource;
+			path = Sources/ViewSource;
+			sourceTree = "<group>";
+		};
+		3B3FBA000004A0 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				3B3FBA000004B0 /* CollectionKit.podspec */,
+				3B3FBA000004C0 /* LICENSE */,
+				3B3FBA000004D0 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		3B3FBA00000570 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3B3FBA00000580 /* Foundation.framework */,
+				3B3FBA00000960 /* UIKit.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		3B3FBA000007F0 /* Support Files */ = {
+		3B3FBA000008D0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				3B3FBA00000810 /* CollectionKit.modulemap */,
-				3B3FBA00000800 /* CollectionKit.xcconfig */,
-				3B3FBA00000860 /* CollectionKit-dummy.m */,
-				3B3FBA00000840 /* CollectionKit-Info.plist */,
-				3B3FBA00000850 /* CollectionKit-prefix.pch */,
-				3B3FBA00000820 /* CollectionKit-umbrella.h */,
+				3B3FBA000008F0 /* CollectionKit.modulemap */,
+				3B3FBA000008E0 /* CollectionKit.xcconfig */,
+				3B3FBA00000940 /* CollectionKit-dummy.m */,
+				3B3FBA00000920 /* CollectionKit-Info.plist */,
+				3B3FBA00000930 /* CollectionKit-prefix.pch */,
+				3B3FBA00000900 /* CollectionKit-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/CollectionKit";
+			path = "../../Pods/Target Support Files/CollectionKit";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3B3FBA00000450 /* Headers */ = {
+		3B3FBA00000530 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B3FBA00000830 /* CollectionKit-umbrella.h in Headers */,
+				3B3FBA00000910 /* CollectionKit-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,12 +376,12 @@
 /* Begin PBXNativeTarget section */
 		C914F41EF29629279F1362AED9CBF87B /* CollectionKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3B3FBA00000410 /* Build configuration list for PBXNativeTarget "CollectionKit" */;
+			buildConfigurationList = 3B3FBA000004F0 /* Build configuration list for PBXNativeTarget "CollectionKit" */;
 			buildPhases = (
-				3B3FBA00000450 /* Headers */,
-				3B3FBA00000460 /* Sources */,
-				3B3FBA00000470 /* Frameworks */,
-				3B3FBA00000480 /* Resources */,
+				3B3FBA00000530 /* Headers */,
+				3B3FBA00000540 /* Sources */,
+				3B3FBA00000550 /* Frameworks */,
+				3B3FBA00000560 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -315,7 +419,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3B3FBA00000480 /* Resources */ = {
+		3B3FBA00000560 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -325,62 +429,62 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3B3FBA00000460 /* Sources */ = {
+		3B3FBA00000540 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B3FBA000004F0 /* Animator.swift in Sources */,
-				3B3FBA000007B0 /* AnyViewSource.swift in Sources */,
-				3B3FBA00000540 /* ArrayDataSource.swift in Sources */,
-				3B3FBA00000760 /* AutoLayoutSizeSource.swift in Sources */,
-				3B3FBA000006F0 /* BasicProvider+Convenience.swift in Sources */,
-				3B3FBA00000700 /* BasicProvider.swift in Sources */,
-				3B3FBA00000550 /* ClosureDataSource.swift in Sources */,
-				3B3FBA000005A0 /* ClosureLayout.swift in Sources */,
-				3B3FBA00000770 /* ClosureSizeSource.swift in Sources */,
-				3B3FBA000007C0 /* ClosureViewSource.swift in Sources */,
-				3B3FBA00000870 /* CollectionKit-dummy.m in Sources */,
-				3B3FBA00000670 /* CollectionReloadable.swift in Sources */,
-				3B3FBA00000680 /* CollectionReuseViewManager.swift in Sources */,
-				3B3FBA00000530 /* CollectionView.swift in Sources */,
-				3B3FBA00000710 /* ComposedHeaderProvider+Convenience.swift in Sources */,
-				3B3FBA00000720 /* ComposedHeaderProvider.swift in Sources */,
-				3B3FBA00000730 /* ComposedProvider.swift in Sources */,
-				3B3FBA000007D0 /* ComposedViewSource.swift in Sources */,
-				3B3FBA00000560 /* DataSource.swift in Sources */,
-				3B3FBA00000690 /* Deprecated.swift in Sources */,
-				3B3FBA00000740 /* EmptyCollectionProvider.swift in Sources */,
-				3B3FBA000004C0 /* EmptyStateProvider.swift in Sources */,
-				3B3FBA00000500 /* FadeAnimator.swift in Sources */,
-				3B3FBA00000750 /* FlattenedProvider.swift in Sources */,
-				3B3FBA000005B0 /* FlowLayout.swift in Sources */,
-				3B3FBA000005C0 /* InsetLayout.swift in Sources */,
-				3B3FBA000006B0 /* ItemProvider.swift in Sources */,
-				3B3FBA000005D0 /* Layout.swift in Sources */,
-				3B3FBA000006C0 /* LayoutableProvider.swift in Sources */,
-				3B3FBA000005E0 /* LayoutContext.swift in Sources */,
-				3B3FBA000006A0 /* LayoutHelper.swift in Sources */,
-				3B3FBA000005F0 /* OverlayLayout.swift in Sources */,
-				3B3FBA000006D0 /* Provider.swift in Sources */,
-				3B3FBA00000600 /* RowLayout.swift in Sources */,
-				3B3FBA00000510 /* ScaleAnimator.swift in Sources */,
-				3B3FBA000006E0 /* SectionProvider.swift in Sources */,
-				3B3FBA00000520 /* SimpleAnimator.swift in Sources */,
-				3B3FBA00000610 /* SimpleLayout.swift in Sources */,
-				3B3FBA000004D0 /* SimpleViewProvider.swift in Sources */,
-				3B3FBA00000780 /* SimpleViewSizeSource.swift in Sources */,
-				3B3FBA00000790 /* SizeSource.swift in Sources */,
-				3B3FBA000004E0 /* SpaceProvider.swift in Sources */,
-				3B3FBA00000620 /* StickyLayout.swift in Sources */,
-				3B3FBA00000630 /* TransposeLayout.swift in Sources */,
-				3B3FBA000007A0 /* UIImageSizeSource.swift in Sources */,
-				3B3FBA00000570 /* UIScrollView+CollectionKit.swift in Sources */,
-				3B3FBA00000580 /* UIView+CollectionKit.swift in Sources */,
-				3B3FBA00000590 /* Util.swift in Sources */,
-				3B3FBA000007E0 /* ViewSource.swift in Sources */,
-				3B3FBA00000640 /* VisibleFrameInsetLayout.swift in Sources */,
-				3B3FBA00000650 /* WaterfallLayout.swift in Sources */,
-				3B3FBA00000660 /* WrapperLayout.swift in Sources */,
+				3B3FBA000005D0 /* Animator.swift in Sources */,
+				3B3FBA00000890 /* AnyViewSource.swift in Sources */,
+				3B3FBA00000620 /* ArrayDataSource.swift in Sources */,
+				3B3FBA00000840 /* AutoLayoutSizeSource.swift in Sources */,
+				3B3FBA000007D0 /* BasicProvider+Convenience.swift in Sources */,
+				3B3FBA000007E0 /* BasicProvider.swift in Sources */,
+				3B3FBA00000630 /* ClosureDataSource.swift in Sources */,
+				3B3FBA00000680 /* ClosureLayout.swift in Sources */,
+				3B3FBA00000850 /* ClosureSizeSource.swift in Sources */,
+				3B3FBA000008A0 /* ClosureViewSource.swift in Sources */,
+				3B3FBA00000950 /* CollectionKit-dummy.m in Sources */,
+				3B3FBA00000750 /* CollectionReloadable.swift in Sources */,
+				3B3FBA00000760 /* CollectionReuseViewManager.swift in Sources */,
+				3B3FBA00000610 /* CollectionView.swift in Sources */,
+				3B3FBA000007F0 /* ComposedHeaderProvider+Convenience.swift in Sources */,
+				3B3FBA00000800 /* ComposedHeaderProvider.swift in Sources */,
+				3B3FBA00000810 /* ComposedProvider.swift in Sources */,
+				3B3FBA000008B0 /* ComposedViewSource.swift in Sources */,
+				3B3FBA00000640 /* DataSource.swift in Sources */,
+				3B3FBA00000770 /* Deprecated.swift in Sources */,
+				3B3FBA00000820 /* EmptyCollectionProvider.swift in Sources */,
+				3B3FBA000005A0 /* EmptyStateProvider.swift in Sources */,
+				3B3FBA000005E0 /* FadeAnimator.swift in Sources */,
+				3B3FBA00000830 /* FlattenedProvider.swift in Sources */,
+				3B3FBA00000690 /* FlowLayout.swift in Sources */,
+				3B3FBA000006A0 /* InsetLayout.swift in Sources */,
+				3B3FBA00000790 /* ItemProvider.swift in Sources */,
+				3B3FBA000006B0 /* Layout.swift in Sources */,
+				3B3FBA000007A0 /* LayoutableProvider.swift in Sources */,
+				3B3FBA000006C0 /* LayoutContext.swift in Sources */,
+				3B3FBA00000780 /* LayoutHelper.swift in Sources */,
+				3B3FBA000006D0 /* OverlayLayout.swift in Sources */,
+				3B3FBA000007B0 /* Provider.swift in Sources */,
+				3B3FBA000006E0 /* RowLayout.swift in Sources */,
+				3B3FBA000005F0 /* ScaleAnimator.swift in Sources */,
+				3B3FBA000007C0 /* SectionProvider.swift in Sources */,
+				3B3FBA00000600 /* SimpleAnimator.swift in Sources */,
+				3B3FBA000006F0 /* SimpleLayout.swift in Sources */,
+				3B3FBA000005B0 /* SimpleViewProvider.swift in Sources */,
+				3B3FBA00000860 /* SimpleViewSizeSource.swift in Sources */,
+				3B3FBA00000870 /* SizeSource.swift in Sources */,
+				3B3FBA000005C0 /* SpaceProvider.swift in Sources */,
+				3B3FBA00000700 /* StickyLayout.swift in Sources */,
+				3B3FBA00000710 /* TransposeLayout.swift in Sources */,
+				3B3FBA00000880 /* UIImageSizeSource.swift in Sources */,
+				3B3FBA00000650 /* UIScrollView+CollectionKit.swift in Sources */,
+				3B3FBA00000660 /* UIView+CollectionKit.swift in Sources */,
+				3B3FBA00000670 /* Util.swift in Sources */,
+				3B3FBA000008C0 /* ViewSource.swift in Sources */,
+				3B3FBA00000720 /* VisibleFrameInsetLayout.swift in Sources */,
+				3B3FBA00000730 /* WaterfallLayout.swift in Sources */,
+				3B3FBA00000740 /* WrapperLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,9 +615,9 @@
 			};
 			name = Release;
 		};
-		3B3FBA00000420 /* Release */ = {
+		3B3FBA00000500 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B3FBA00000800 /* CollectionKit.xcconfig */;
+			baseConfigurationReference = 3B3FBA000008E0 /* CollectionKit.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -547,9 +651,9 @@
 			};
 			name = Release;
 		};
-		3B3FBA00000430 /* Debug */ = {
+		3B3FBA00000510 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B3FBA00000800 /* CollectionKit.xcconfig */;
+			baseConfigurationReference = 3B3FBA000008E0 /* CollectionKit.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -594,11 +698,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3B3FBA00000410 /* Build configuration list for PBXNativeTarget "CollectionKit" */ = {
+		3B3FBA000004F0 /* Build configuration list for PBXNativeTarget "CollectionKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3B3FBA00000430 /* Debug */,
-				3B3FBA00000420 /* Release */,
+				3B3FBA00000510 /* Debug */,
+				3B3FBA00000500 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

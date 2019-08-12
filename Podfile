@@ -19,7 +19,7 @@ def baseCorePod
 end
 
 def collectionKitPod
-  pod 'CollectionKit', :git => 'https://github.com/SoySauceLab/CollectionKit.git'
+  userPod 'CollectionKit'
 end
 
 def rxPod (hasCocoa = true)

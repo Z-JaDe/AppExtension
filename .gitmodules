@@ -34,3 +34,6 @@
 [submodule "BaseSupport/SwiftyUserDefaults"]
 	path = BaseSupport/SwiftyUserDefaults
 	url = git@github.com:Z-JaDe/SwiftyUserDefaults.git
+[submodule "BaseSupport/CollectionKit"]
+	path = BaseSupport/CollectionKit
+	url = git@github.com:Z-JaDe/CollectionKit.git

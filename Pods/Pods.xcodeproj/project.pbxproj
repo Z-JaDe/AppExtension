@@ -1357,7 +1357,6 @@
 			isa = PBXGroup;
 			children = (
 				46EB2E00000190 /* Alamofire */,
-				46EB2E000001A0 /* CollectionKit */,
 				46EB2E00000120 /* DifferenceKit */,
 				46EB2E000001B0 /* Kingfisher */,
 				46EB2E000001C0 /* MBProgressHUD */,
@@ -1377,6 +1376,7 @@
 			isa = PBXGroup;
 			children = (
 				46EB2E000000C0 /* CocoaExtension */,
+				46EB2E000001A0 /* CollectionKit */,
 				46EB2E000000D0 /* Encryption */,
 				46EB2E000000E0 /* FunctionalSwift */,
 				46EB2E000000F0 /* ModalManager */,
