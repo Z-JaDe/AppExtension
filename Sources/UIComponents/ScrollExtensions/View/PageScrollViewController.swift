@@ -29,7 +29,7 @@ open class PageScrollViewController: UIViewController, CyclePageFormProtocol, UI
             viewConArr.forEach { (viewCon) in
                 self.addChild(viewCon)
             }
-            checkCellsLifeCycle(isNeedReset: true)
+            checkCellsLifeCycle(isNeedUpdate: true)
             whenCurrentIndexChanged(self.currentIndex, self.currentIndex)
 
         }
@@ -66,7 +66,7 @@ open class PageScrollViewController: UIViewController, CyclePageFormProtocol, UI
     internal func whenCurrentIndexChanged(_ from: Int, _ to: Int) {
         self.scroll(to: to)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.checkCellsLifeCycle(isNeedReset: true)
+            self.checkCellsLifeCycle(isNeedUpdate: true)
         }
     }
     // MARK: -
@@ -86,14 +86,12 @@ open class PageScrollViewController: UIViewController, CyclePageFormProtocol, UI
     }
     // MARK: -
     func whenScroll() {
-        checkDidDisAppearCells()
-        checkWillAppearCells(isNeedReset: false)
+        checkCellsLifeCycle(isNeedUpdate: false)
     }
     func whenScrollBegin() {
-
     }
     func whenScrollEnd() {
-        checkDidDisAppearCells()
+        checkCellsLifeCycle(isNeedUpdate: false)
         let index = realProgress(offSet: self.scrollView.viewHeadOffset(), length: self.scrollView.length).toInt
         self.scrollEndClosure?(index)
     }
@@ -103,14 +101,14 @@ open class PageScrollViewController: UIViewController, CyclePageFormProtocol, UI
     //    }
 }
 extension PageScrollViewController {
-    public func loadCell(_ currentOffset: CGFloat, _ indexOffset: Int, _ isNeedResetData: Bool) {
+    public func loadCell(_ currentOffset: CGFloat, _ indexOffset: Int, _ isNeedUpdate: Bool) {
         let length = self.scrollView.length
         let currentIndex = (currentOffset / length).toInt
         let offSet = currentOffset + indexOffset.toCGFloat * length
         let itemIndex = currentIndex + indexOffset
-        guard offSet >= 0 && offSet < self.scrollView.contentLength || isNeedResetData == true else {
+        guard (0..<self.scrollView.contentLength).contains(offSet) || isNeedUpdate == true else {
             /// ZJaDe: 防止滑动到开始或者结尾的时候 还加载了cell
-            /// ZJaDe: isNeedResetData为true时说明是手动加载的所以可以往下走。
+            /// ZJaDe: isNeedUpdate为true时说明是手动加载的所以可以往下走。
             return
         }
         let viewCon = self.viewConArr[realIndex(itemIndex)]

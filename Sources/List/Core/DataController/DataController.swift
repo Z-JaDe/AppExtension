@@ -68,12 +68,8 @@ extension DataController {
         return _data.indexCanBound(sectionIndex)
     }
     public func indexPathCanBound(_ indexpath: IndexPath) -> Bool {
-        guard _data.indexCanBound(indexpath.section) else {
-            return false
-        }
-        guard _data[indexpath.section].items.indexCanBound(indexpath.row) else {
-            return false
-        }
+        guard _data.indexCanBound(indexpath.section) else { return false }
+        guard _data[indexpath.section].items.indexCanBound(indexpath.row) else { return false }
         return true
     }
 }

@@ -26,13 +26,13 @@ open class CycleView<CellView, CellData>: PageItemsView<CellView, CellData, Page
         super.configData(dataArray)
         if dataArray.isEmpty == false {
             let cell = createCell()
-            self.config(cell: cell, index: 0)
+            self.update(cell: cell, index: 0)
             scrollView.add(cell, offSet: 0, isToRight: false)
         }
         setNeedsLayout()
         layoutIfNeeded()
         scrollView.setNeedsLayoutCells()
-        checkCellsLifeCycle(isNeedReset: true)
+        checkCellsLifeCycle(isNeedUpdate: true)
         /// ZJaDe: 检查并更新cells
         resetCellsOrigin()
     }
@@ -43,7 +43,7 @@ open class CycleView<CellView, CellData>: PageItemsView<CellView, CellData, Page
         let repeatValue: CGFloat = self.dataArray.count > 1 ? repeatCount.toCGFloat : 1
         self.scrollView.contentLength = repeatValue * self.scrollView.length * self.totalCount.toCGFloat
         /// ZJaDe: 布局更新时重新检查需要显示和消失的cells
-        checkCellsLifeCycle(isNeedReset: false)
+        checkCellsLifeCycle(isNeedUpdate: false)
     }
     /// ZJaDe: 创建cell
     internal func createCell() -> CellView {
@@ -59,7 +59,7 @@ open class CycleView<CellView, CellData>: PageItemsView<CellView, CellData, Page
     }
     open override func whenScroll() {
         super.whenScroll()
-        checkCellsLifeCycle(isNeedReset: false)
+        checkCellsLifeCycle(isNeedUpdate: false)
     }
 
     // MARK: -
@@ -79,18 +79,18 @@ extension CycleView {
     }
 }
 extension CycleView: CyclePageFormProtocol {
-    public func loadCell(_ currentOffset: CGFloat, _ indexOffset: Int, _ isNeedResetData: Bool) {
+    public func loadCell(_ currentOffset: CGFloat, _ indexOffset: Int, _ isNeedUpdate: Bool) {
         let length = self.scrollView.length
         let currentIndex = (currentOffset / length).toInt
         let offSet = currentOffset + indexOffset.toCGFloat * length
         let itemIndex = realIndex(currentIndex + indexOffset)
         if let cell = self.scrollView.getCell(offSet) {
-            if isNeedResetData {// || self.modelAndCells[cell] == nil {
-                config(cell: cell, index: itemIndex)
+            if isNeedUpdate {
+                update(cell: cell, index: itemIndex)
             }
         } else {
             let cell = createCell()
-            self.config(cell: cell, index: itemIndex)
+            update(cell: cell, index: itemIndex)
             scrollView.add(cell, offSet: offSet, isToRight: indexOffset >= 0)
         }
     }

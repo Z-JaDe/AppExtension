@@ -8,25 +8,18 @@
 import Foundation
 
 public protocol ScrollPageFormProtocol: PageFormProtocol {
-    /// ZJaDe: 检查cells的消失和出现
-    func checkCellsLifeCycle(isNeedReset: Bool)
-
     /// ZJaDe: 提前加载cell的数量
     var cacheAppearCellCount: Int {get}
     /// ZJaDe: 加载cell
-    func loadCell(_ currentOffset: CGFloat, _ indexOffset: Int, _ isNeedResetData: Bool)
+    func loadCell(_ currentOffset: CGFloat, _ indexOffset: Int, _ isNeedUpdate: Bool)
 }
 
 public extension ScrollPageFormProtocol {
-    /// ZJaDe: 检查cells的消失和出现
-    func checkCellsLifeCycle(isNeedReset: Bool) {
-        checkWillAppearCells(isNeedReset: isNeedReset)
-    }
     var cacheAppearCellCount: Int {
         return 0
     }
     /// ZJaDe: 检查快出现的cells
-    func checkWillAppearCells(isNeedReset: Bool) {
+    func checkWillAppearCells(isNeedUpdate: Bool) {
         let length = self.scrollView.length
         guard self.totalCount > 0 && length > 0 else {
             return
@@ -41,16 +34,16 @@ public extension ScrollPageFormProtocol {
             /// ZJaDe: 左边的cells加载
             let itemOffSet = self.scrollView.viewHeadOffset().floorToNearest(increment: length)
             (-count...0).forEach {
-//                logDebug("加载左边cell\(itemOffSet)->\($0)->isNeedResetData: \(isNeedResetData)")
-                loadCell(itemOffSet, $0, isNeedReset)
+//                logDebug("加载左边cell\(itemOffSet)->\($0)->isNeedUpdate: \(isNeedUpdate)")
+                loadCell(itemOffSet, $0, isNeedUpdate)
             }
         }
         do {
             /// ZJaDe: 右边的cells加载
             let itemOffSet = (self.scrollView.viewTailOffset() - 1).floorToNearest(increment: length)
             (0...count).forEach {
-//                logDebug("加载右边cell\(itemOffSet)->\($0)->isNeedResetData: \(isNeedResetData)")
-                loadCell(itemOffSet, $0, isNeedReset)
+//                logDebug("加载右边cell\(itemOffSet)->\($0)->isNeedUpdate: \(isNeedUpdate)")
+                loadCell(itemOffSet, $0, isNeedUpdate)
             }
         }
     }

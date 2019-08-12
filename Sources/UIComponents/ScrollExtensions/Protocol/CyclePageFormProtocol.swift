@@ -15,10 +15,10 @@ public protocol CyclePageFormProtocol: ScrollPageFormProtocol {
     func didDisAppear(_ cell: CellView)
 }
 public extension CyclePageFormProtocol where ScrollViewType == PageScrollView<CellView> {
-    /// ZJaDe: 检查cells的消失和出现
-    func checkCellsLifeCycle(isNeedReset: Bool) {
+    /// 检查更新cells的声明周期 释放或者创建
+    func checkCellsLifeCycle(isNeedUpdate: Bool) {
         checkDidDisAppearCells()
-        checkWillAppearCells(isNeedReset: isNeedReset)
+        checkWillAppearCells(isNeedUpdate: isNeedUpdate)
     }
     var cacheDisappearCellCount: Int {
         return 0
@@ -31,9 +31,7 @@ public extension CyclePageFormProtocol where ScrollViewType == PageScrollView<Ce
         }
         // ZJaDe: 单边延迟释放的个数
         let count: CGFloat = max(cacheAppearCellCount, cacheDisappearCellCount).toCGFloat
-        guard count >= 0 else {
-            return
-        }
+        guard count >= 0 else { return }
         /** ZJaDe:
          释放cell条件：需要cell的边界在设定的边界之外才会释放
          */

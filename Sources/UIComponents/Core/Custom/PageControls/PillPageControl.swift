@@ -89,7 +89,7 @@ import UIKit
 
     fileprivate func layoutActivePageIndicator(_ progress: CGFloat) {
         // ignore if progress is outside of page indicators' bounds
-        guard progress >= 0 && progress <= CGFloat(pageCount - 1) else { return }
+        guard (0...CGFloat(pageCount - 1)).contains(progress) else { return }
         let denormalizedProgress = progress * (pillSize.width + indicatorPadding)
         activeLayer.frame.origin.x = denormalizedProgress
     }

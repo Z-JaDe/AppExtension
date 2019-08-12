@@ -9,7 +9,6 @@
 import UIKit
 
 open class PageItemsView<CellView, ItemData, ScrollView>: MultipleItemsView<CellView, ItemData, ScrollView>,
-    PageFormProtocol,
     UIScrollViewDelegate
     where CellView: UIView, ScrollView: UIScrollView & OneWayScrollProtocol {
     open var placeholderItem: ItemData? {

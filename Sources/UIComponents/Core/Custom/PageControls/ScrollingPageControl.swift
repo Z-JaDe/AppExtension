@@ -206,7 +206,7 @@ import UIKit
 
     fileprivate func layoutFor(_ progress: CGFloat) {
         // ignore if progress is outside of page indicators' bounds
-        guard progress >= 0 && progress <= CGFloat(pageCount - 1) else { return }
+        guard (0...CGFloat(pageCount - 1)).contains(progress) else { return }
         let offsetFromCenter = progress * (indicatorDiameter + indicatorPadding)
         let containerOffset = self.bounds.size.width/2 - indicatorRadius - offsetFromCenter
         inactiveLayersContainer.frame.origin.x = containerOffset

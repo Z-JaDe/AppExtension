@@ -17,7 +17,7 @@ import UIKit
 
 // MARK: 抽象类 需要继承
 open class MultipleItemsView<CellView, CellData, ScrollView>: CustomControl,
-    SingleFormProtocol
+    PageFormProtocol
     where CellView: UIView, ScrollView: UIScrollView & OneWayScrollProtocol {
     public var inset: UIEdgeInsets = UIEdgeInsets.zero {
         didSet {setNeedsLayout()}
@@ -25,12 +25,12 @@ open class MultipleItemsView<CellView, CellData, ScrollView>: CustomControl,
     /// ZJaDe: viewUpdater
     open var viewUpdater: ((CellView, CellData, Int) -> Void) = {_, _, _ in}
     /// ZJaDe: 当item数据需要更新时会调用该方法 子类调用
-    public func config(cell: CellView, index: Int) {
+    public func update(cell: CellView, index: Int) {
         self.viewUpdater(cell, dataArray[index], index)
     }
     public private(set) var dataArray: [CellData] = []
     public var itemViewArr: [CellView] = []
-    // MARK: - SingleFormProtocol
+    // MARK: - PageFormProtocol
     public lazy var scrollView: ScrollView = createScrollView()
     open func createScrollView() -> ScrollView {
         return ScrollView()

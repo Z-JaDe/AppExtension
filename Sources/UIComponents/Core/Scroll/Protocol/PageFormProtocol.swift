@@ -1,16 +1,29 @@
 //
-//  File.swift
+//  PageFormProtocol.swift
 //  AppExtension
 //
-//  Created by 郑军铎 on 2018/12/13.
-//  Copyright © 2018 ZJaDe. All rights reserved.
+//  Created by 郑军铎 on 2018/6/25.
+//  Copyright © 2018年 ZJaDe. All rights reserved.
 //
 
 import Foundation
-
-public protocol PageFormProtocol: SingleFormProtocol {
-
+public struct TapContext<View: UIView, Data> {
+    public let view: View
+    public let data: Data
+    public let index: Int
+    public init(view: View, data: Data, index: Int) {
+        self.view = view
+        self.data = data
+        self.index = index
+    }
 }
+public protocol PageFormProtocol: CurrentIndexProtocol, TotalCountProtocol {
+    associatedtype ScrollViewType: OneWayScrollProtocol
+    var scrollView: ScrollViewType {get}
+    associatedtype CellView: UIView
+    associatedtype CellData
+}
+
 extension PageFormProtocol {
     public func getCurrentProgress() -> CGFloat {
         return realProgress(offSet: self.scrollView.viewHeadOffset(), length: self.scrollView.length)

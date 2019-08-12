@@ -33,12 +33,7 @@ public extension TotalCountProtocol {
      realProgress可以直接toInt转换成realIndex
      */
     func realProgress(offSet: CGFloat, length: CGFloat) -> CGFloat {
-        guard self.totalCount > 0 else {
-            return 0
-        }
-        guard length > 0 else {
-            return 0
-        }
+        guard self.totalCount > 0 && length > 0 else { return 0 }
         let realOffset = offSet.truncatingRemainder(dividingBy: length * self.totalCount.toCGFloat)
         return realOffset / length
     }

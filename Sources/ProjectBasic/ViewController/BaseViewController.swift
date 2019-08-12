@@ -60,7 +60,7 @@ open class ViewController: UIViewController, ViewControllerProtocol {
 
     }
     // MARK: -
-    override open func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         viewState.onNext(.viewDidLoad)
         addChildView()

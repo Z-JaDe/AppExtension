@@ -26,7 +26,7 @@ open class SegmentView<CellView, CellData>: MultipleItemsView<CellView, CellData
     open override func configData(_ dataArray: [CellData]) {
         super.configData(dataArray)
         func bind(itemView: CellView, itemData: CellData, index: Int) {
-            config(cell: itemView, index: index)
+            update(cell: itemView, index: index)
             if var itemView = itemView as? SelectedStateDesignable {
                 itemView.isSelected = false
             }
