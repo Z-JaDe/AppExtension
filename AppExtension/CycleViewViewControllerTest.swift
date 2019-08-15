@@ -35,13 +35,12 @@ class CycleViewViewControllerTest: UIViewController {
     }
     
     let segmentView: CycleView<ItemView, String> = {
-        let segment = CycleView<ItemView, String>()
-        segment.viewUpdater = { (itemView, data, _) in
+        let segment = CycleView<ItemView, String>(viewUpdater: { (itemView, data, _) in
             itemView.label.text = "\(data)"
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 //            label.superview?.superview?.setNeedsLayout()
             }
-        }
+        })
         return segment
     }()
     

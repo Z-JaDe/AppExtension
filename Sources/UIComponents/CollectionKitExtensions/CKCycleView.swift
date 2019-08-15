@@ -10,25 +10,29 @@ import Foundation
 import CollectionKit
 open class CKCycleView<View: UIView, Data>: PageItemsView<View, Data, CKCollectionView> {
     /// ZJaDe: 点击item
-    public var didSelectItem: ((BasicProvider<Data, View>.TapContext) -> Void)?
-    /// ZJaDe: 配置model
-    open override var viewUpdater: ((View, Data, Int) -> Void) {
-        get {return super.viewUpdater}
-        set {
-            super.viewUpdater = newValue
+    public var didSelectItem: ((ProviderType.TapContext) -> Void)? {
+        get { return self.provider.tapHandler }
+        set { self.provider.tapHandler = newValue }
+    }
+    /// ZJaDe: 数据绑定
+    open override var viewUpdater: ViewUpdaterFn {
+        didSet {
             self.provider.viewSource = ClosureViewSource(viewUpdater: viewUpdater)
-            self.provider.sizeSource = FitHeightAutoLayoutSizeSource(dummyView: View.self, viewUpdater: viewUpdater)
+            self.provider.sizeSource = CKCycleView.createSizeSource(viewUpdater: viewUpdater)
         }
     }
-
-    lazy var dataSource: CycleDataSource<Data> = CycleDataSource(data: [])
-    private lazy var provider = BasicProvider(
-        dataSource: dataSource,
-        viewSource: ClosureViewSource(viewUpdater: viewUpdater),
-        sizeSource: FitHeightAutoLayoutSizeSource(dummyView: View.self, viewUpdater: viewUpdater),
-        layout: RowLayout()
-    )
-
+    /// ZJaDe:
+    let dataSource: CycleDataSource<Data> = CycleDataSource(data: [])
+    public typealias ProviderType = BasicProvider<Data, View>
+    private let provider: ProviderType
+    public override init(viewUpdater: @escaping ViewUpdaterFn) {
+        self.provider = CKCycleView.createProvider(dataSource: dataSource, viewUpdater: viewUpdater)
+        super.init(viewUpdater: viewUpdater)
+    }
+    public required init?(coder aDecoder: NSCoder) {
+        self.provider = CKCycleView.createProvider(dataSource: dataSource, viewUpdater: { _, _, _ in })
+        super.init(coder: aDecoder)
+    }
     open override func configInit() {
         super.configInit()
         self.addSubview(self.scrollView)
@@ -37,7 +41,6 @@ open class CKCycleView<View: UIView, Data>: PageItemsView<View, Data, CKCollecti
         self.scrollView.showsVerticalScrollIndicator = false
         self.scrollView.showsHorizontalScrollIndicator = false
         self.scrollView.provider = self.provider
-        self.provider.tapHandler = self.didSelectItem
     }
 
     open override func layoutSubviews() {
@@ -48,7 +51,7 @@ open class CKCycleView<View: UIView, Data>: PageItemsView<View, Data, CKCollecti
     open override func configData(_ dataArray: [Data]) {
         super.configData(dataArray)
         if let data = dataArray.first {
-            self.calculateHeight = FitHeightAutoLayoutSizeSource(dummyView: View.self, viewUpdater: viewUpdater).size(at: 0, data: data, collectionSize: self.bounds.size).height
+            self.calculateHeight = self.provider.sizeSource.size(at: 0, data: data, collectionSize: self.bounds.size).height
         }
         self.dataSource.data = dataArray
         self.scrollView.reloadData()
@@ -67,7 +70,21 @@ open class CKCycleView<View: UIView, Data>: PageItemsView<View, Data, CKCollecti
     }
     // MARK: -
     open override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        super.scrollViewWillBeginDragging(scrollView)
         resetCellsOrigin()
+    }
+}
+extension CKCycleView {
+    private static func createProvider(dataSource: CycleDataSource<Data>, viewUpdater: @escaping ViewUpdaterFn) -> ProviderType {
+        return ProviderType(
+            dataSource: dataSource,
+            viewSource: ClosureViewSource(viewUpdater: viewUpdater),
+            sizeSource: self.createSizeSource(viewUpdater: viewUpdater),
+            layout: RowLayout()
+        )
+    }
+    private static func createSizeSource(viewUpdater: @escaping ViewUpdaterFn) -> AutoLayoutSizeSource<Data, View> {
+        return AutoLayoutSizeSource(dummyView: View.self, horizontalFittingPriority: .init(999.1), viewUpdater: viewUpdater)
     }
 }
 extension CKCycleView {
@@ -75,7 +92,7 @@ extension CKCycleView {
         resetCellsOrigin(repeatCount: self.dataSource.repeatCount)
     }
 }
-extension CKCollectionView: OneWayScrollProtocol {
+extension CKCollectionView: OneWayScrollable {
     public var scrollDirection: ScrollDirection {
         return .horizontal
     }

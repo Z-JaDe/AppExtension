@@ -83,17 +83,6 @@ open class SegmentView<CellView, CellData>: MultipleItemsView<CellView, CellData
             self.scrollView.layer.addSublayer(self.currentLayer)
         }
     }
-    private func currentLayerUpdate(_ currentCell: CellView) {
-        if _currentLayer == nil {
-            self.currentLayer = CALayer()
-        }
-        if let updater = self.currentLayerUpdater {
-            self.currentLayer.position = CGPoint(x: currentCell.centerX, y: currentCell.bottom)
-            updater(self.currentLayer, currentCell.frame)
-        } else {
-            self.currentLayer.position = CGPoint(x: currentCell.centerX, y: currentCell.bottom - currentLayer.height / 2)
-        }
-    }
     // MARK: - isSelected
     public private(set) var currentItem: CellView? {
         didSet {
@@ -129,6 +118,23 @@ open class SegmentView<CellView, CellData>: MultipleItemsView<CellView, CellData
             guard self.shouldSelectItem?(context) != false else { return }
             self.currentIndex = offset
             didSelectItem?(context)
+        }
+    }
+}
+extension SegmentView {
+    /// ZJaDe: 当item数据需要更新时会调用该方法
+    private func update(cell: CellView, index: Int) {
+        self.viewUpdater(cell, dataArray[index], index)
+    }
+    private func currentLayerUpdate(_ currentCell: CellView) {
+        if _currentLayer == nil {
+            self.currentLayer = CALayer()
+        }
+        if let updater = self.currentLayerUpdater {
+            self.currentLayer.position = CGPoint(x: currentCell.centerX, y: currentCell.bottom)
+            updater(self.currentLayer, currentCell.frame)
+        } else {
+            self.currentLayer.position = CGPoint(x: currentCell.centerX, y: currentCell.bottom - currentLayer.height / 2)
         }
     }
 }

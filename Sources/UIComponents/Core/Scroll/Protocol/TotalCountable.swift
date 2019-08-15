@@ -1,18 +1,18 @@
 //
-//  TotalCountProtocol.swift
-//  AppExtension
+//  TotalCountable.swift
+//  UIComponents
 //
-//  Created by 郑军铎 on 2018/12/12.
-//  Copyright © 2018 ZJaDe. All rights reserved.
+//  Created by Apple on 2019/8/15.
+//  Copyright © 2019 ZJaDe. All rights reserved.
 //
 
 import Foundation
 
-public protocol TotalCountProtocol {
+public protocol TotalCountable {
     /// ZJaDe: item总数量
     var totalCount: Int {get}
 }
-public extension TotalCountProtocol {
+public extension TotalCountable {
     /// ZJaDe: 是否是多个数据
     var isMultipleData: Bool {
         return self.totalCount > 1

@@ -1,5 +1,5 @@
 //
-//  OneWayScrollProtocol.swift
+//  OneWayScrollable.swift
 //  AppExtension
 //
 //  Created by 郑军铎 on 2018/6/26.
@@ -12,10 +12,10 @@ public enum ScrollDirection {
     case horizontal
     case vertical
 }
-public protocol OneWayScrollProtocol: ScrollProtocol {
+public protocol OneWayScrollable: Scrollable {
     var scrollDirection: ScrollDirection {get}
 }
-public extension OneWayScrollProtocol {
+public extension OneWayScrollable {
     /// ZJaDe: 视图中心的contentOffset
     func viewCenterOffset() -> CGFloat {
         switch self.scrollDirection {
@@ -86,7 +86,7 @@ public extension OneWayScrollProtocol {
         }
     }
 }
-public extension OneWayScrollProtocol where Self: UIScrollView {
+public extension OneWayScrollable where Self: UIScrollView {
     func adjustAlwaysBounce() {
         switch scrollDirection {
         case .horizontal:

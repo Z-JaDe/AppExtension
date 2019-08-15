@@ -16,22 +16,28 @@ import UIKit
  */
 
 // MARK: 抽象类 需要继承
-open class MultipleItemsView<CellView, CellData, ScrollView>: CustomControl,
-    PageFormProtocol
-    where CellView: UIView, ScrollView: UIScrollView & OneWayScrollProtocol {
+open class MultipleItemsView<CellView, CellData, ScrollView>: CustomControl, CollectionViewable
+    where CellView: UIView, ScrollView: UIView & OneWayScrollable {
     public var inset: UIEdgeInsets = UIEdgeInsets.zero {
         didSet {setNeedsLayout()}
     }
     /// ZJaDe: viewUpdater
-    open var viewUpdater: ((CellView, CellData, Int) -> Void) = {_, _, _ in}
-    /// ZJaDe: 当item数据需要更新时会调用该方法 子类调用
-    public func update(cell: CellView, index: Int) {
-        self.viewUpdater(cell, dataArray[index], index)
+    public typealias ViewUpdaterFn = (CellView, CellData, Int) -> Void
+    /// ZJaDe: 数据绑定
+    open var viewUpdater: ViewUpdaterFn = { _, _, _ in }
+
+    public init(viewUpdater: @escaping ViewUpdaterFn) {
+        self.viewUpdater = viewUpdater
+        super.init(frame: .zero)
     }
+    public required init?(coder aDecoder: NSCoder) {
+        self.viewUpdater = { _, _, _ in }
+        super.init(coder: aDecoder)
+    }
+
     public private(set) var dataArray: [CellData] = []
-    public var itemViewArr: [CellView] = []
-    // MARK: - PageFormProtocol
-    public lazy var scrollView: ScrollView = createScrollView()
+    // MARK: - PageViewable
+    public private(set) lazy var scrollView: ScrollView = createScrollView()
     open func createScrollView() -> ScrollView {
         return ScrollView()
     }
@@ -47,8 +53,6 @@ open class MultipleItemsView<CellView, CellData, ScrollView>: CustomControl,
     // MARK: - 初始化
     open override func configInit() {
         super.configInit()
-        self.scrollView.showsVerticalScrollIndicator = false
-        self.scrollView.showsHorizontalScrollIndicator = false
     }
     open override func addChildView() {
         super.addChildView()

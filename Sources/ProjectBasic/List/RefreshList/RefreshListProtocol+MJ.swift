@@ -9,11 +9,11 @@
 import Foundation
 #if canImport(MJRefresh)
 import MJRefresh
-public protocol MJScrollProtocol: ScrollProtocol {
+public protocol MJScrollable: Scrollable {
     var mj_header: MJRefreshHeader! {get set}
     var mj_footer: MJRefreshFooter! {get set}
 }
-extension UIScrollView: MJScrollProtocol {}
+extension UIScrollView: MJScrollable {}
 extension RefreshListProtocol {
     /// ZJaDe: 调用此方法来设置是否可以上拉加载或者是否下拉刷新
     public func configRefresh(refreshHeader: Bool, refreshFooter: Bool, preload: Bool = true) {

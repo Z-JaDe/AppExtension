@@ -1,18 +1,14 @@
 //
-//  CurrentIndexProtocol.swift
-//  AppExtension
+//  CollectionViewable+CurrentIndex.swift
+//  UIComponents
 //
-//  Created by 郑军铎 on 2018/12/12.
-//  Copyright © 2018 ZJaDe. All rights reserved.
+//  Created by Apple on 2019/8/15.
+//  Copyright © 2019 ZJaDe. All rights reserved.
 //
 
 import Foundation
 
-public protocol CurrentIndexProtocol: class {
-    /// ZJaDe: 当前index
-    var currentIndex: Int {get set}
-}
-public extension CurrentIndexProtocol {
+public extension CollectionViewable {
     //    /// ZJaDe: 根据item数量计算出的真实currentIndex
     //    var currentIndex: Int {
     //        get {return self.realIndex(self._currentIndex)}

@@ -14,7 +14,7 @@ import RxCocoa
 import RxExtensions
 #endif
 
-extension EmptyDataSetProtocol where Self: ScrollProtocol & UIView {
+extension EmptyDataSetProtocol where Self: Scrollable & UIView {
     public func addEmptyItemToSuperItemIfNeed(_ emptyDataSet: EmptyDataSetView) {
         defer {
             self.insertSubview(emptyDataSet, at: 0)

@@ -16,7 +16,7 @@ extension SegmentScrollView.CellLength: ExpressibleByIntegerLiteral, Expressible
         self = .length(value.toCGFloat)
     }
 }
-public class SegmentScrollView<CellView>: MultipleItemScrollView<CellView>, TotalCountProtocol where CellView: UIView {
+public class SegmentScrollView<CellView>: MultipleItemScrollView<CellView>, TotalCountable where CellView: UIView {
     public enum CellLength {
         /// ZJaDe: 最多显示几个，少的时候平铺，多的时候滑动
         case showMaxCount(Int)
@@ -82,9 +82,7 @@ public class SegmentScrollView<CellView>: MultipleItemScrollView<CellView>, Tota
 extension SegmentScrollView {
     /// ZJaDe: 滚动到指定的cell
     public func scrollTo(_ cell: CellView) {
-        guard self.layoutState == .end else {
-            return
-        }
+        guard self.layoutState == .end else { return }
         let layoutCell = createLayoutCell(cell)
         switch self.autoScrollItem {
         case .edge:

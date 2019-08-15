@@ -8,9 +8,10 @@
 
 import UIKit
 
+// MARK: 抽象类 需要继承
 open class PageItemsView<CellView, ItemData, ScrollView>: MultipleItemsView<CellView, ItemData, ScrollView>,
     UIScrollViewDelegate
-    where CellView: UIView, ScrollView: UIScrollView & OneWayScrollProtocol {
+    where CellView: UIView, ScrollView: UIScrollView & OneWayScrollable {
     open var placeholderItem: ItemData? {
         didSet {
             if self.dataArray.isEmpty || self.placeholderItem != nil {
@@ -45,6 +46,7 @@ open class PageItemsView<CellView, ItemData, ScrollView>: MultipleItemsView<Cell
     }
 
     // MARK: -
+    /// ZJaDe: 子类实现数据绑定 布局更新
     open override func configData(_ dataArray: [CellData]) {
         var dataArray = dataArray
         if let placeholderItem = self.placeholderItem, dataArray.isEmpty {
@@ -69,7 +71,7 @@ open class PageItemsView<CellView, ItemData, ScrollView>: MultipleItemsView<Cell
     // MARK: - UIScrollViewDelegate
     open func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
     }
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public final func scrollViewDidScroll(_ scrollView: UIScrollView) {
     }
     open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if decelerate == false {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class PageScrollViewController: UIViewController, CyclePageFormProtocol, UIScrollViewDelegate {
+open class PageScrollViewController: UIViewController, UIScrollViewDelegate {
     open override func loadView() {
         super.loadView()
         self.scrollView.frame = self.view.frame
@@ -100,7 +100,7 @@ open class PageScrollViewController: UIViewController, CyclePageFormProtocol, UI
     //        return false
     //    }
 }
-extension PageScrollViewController {
+extension PageScrollViewController: CollectionReusableViewable {
     public func loadCell(_ currentOffset: CGFloat, _ indexOffset: Int, _ isNeedUpdate: Bool) {
         let length = self.scrollView.length
         let currentIndex = (currentOffset / length).toInt

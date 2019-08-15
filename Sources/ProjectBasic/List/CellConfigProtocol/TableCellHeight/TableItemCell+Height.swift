@@ -52,16 +52,6 @@ extension TableItemCell {
         }
     }
     fileprivate func autoLayoutHeight(_ contentWidth: CGFloat) -> CGFloat {
-        let constraint = self.widthAnchor.constraint(equalToConstant: contentWidth)
-        constraint.priority = UILayoutPriority(rawValue: 999.1)
-        constraint.isActive = true
-        let _translates = self.translatesAutoresizingMaskIntoConstraints
-        self.translatesAutoresizingMaskIntoConstraints = false
-        let cellHeight = self.systemLayoutSizeFitting(CGSize(width: contentWidth, height: 0)).height
-
-        constraint.isActive = false
-        self.translatesAutoresizingMaskIntoConstraints = _translates
-
-        return cellHeight
+        return self.calculateAutoLayoutHeight(contentWidth)
     }
 }

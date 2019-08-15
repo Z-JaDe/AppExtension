@@ -9,9 +9,9 @@
 import UIKit
 
 open class CycleView<CellView, CellData>: PageItemsView<CellView, CellData, PageScrollView<CellView>> where CellView: UIView {
-    /// ZJaDe: 下面属性需要加载数据之前提前设置好
+    /// ZJaDe: 需要加载数据之前提前设置好
     public var cacheAppearCellCount: Int = 1
-    /// ZJaDe: 下面属性需要加载数据之前提前设置好
+    /// ZJaDe: 需要加载数据之前提前设置好
     public var cacheDisappearCellCount: Int = 1
 
     // MARK: - 初始化
@@ -55,6 +55,7 @@ open class CycleView<CellView, CellData>: PageItemsView<CellView, CellData, Page
     }
     // MARK: - UIScrollViewDelegate
     open override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        super.scrollViewWillBeginDragging(scrollView)
         resetCellsOrigin()
     }
     open override func whenScroll() {
@@ -77,8 +78,12 @@ extension CycleView {
     private func resetCellsOrigin() {
         resetCellsOrigin(repeatCount: repeatCount)
     }
+    /// ZJaDe: 当item数据需要更新时会调用该方法
+    private func update(cell: CellView, index: Int) {
+        self.viewUpdater(cell, dataArray[index], index)
+    }
 }
-extension CycleView: CyclePageFormProtocol {
+extension CycleView: CollectionReusableViewable {
     public func loadCell(_ currentOffset: CGFloat, _ indexOffset: Int, _ isNeedUpdate: Bool) {
         let length = self.scrollView.length
         let currentIndex = (currentOffset / length).toInt

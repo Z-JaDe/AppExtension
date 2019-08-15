@@ -1,5 +1,5 @@
 //
-//  PageFormProtocol.swift
+//  PageViewable.swift
 //  AppExtension
 //
 //  Created by 郑军铎 on 2018/6/25.
@@ -17,34 +17,39 @@ public struct TapContext<View: UIView, Data> {
         self.index = index
     }
 }
-public protocol PageFormProtocol: CurrentIndexProtocol, TotalCountProtocol {
-    associatedtype ScrollViewType: OneWayScrollProtocol
+public protocol CollectionViewable: class, TotalCountable {
+    associatedtype ScrollViewType: OneWayScrollable
     var scrollView: ScrollViewType {get}
     associatedtype CellView: UIView
     associatedtype CellData
+
+    /// ZJaDe: 当前index
+    var currentIndex: Int {get set}
 }
 
-extension PageFormProtocol {
-    public func getCurrentProgress() -> CGFloat {
+public extension CollectionViewable {
+    func getCurrentProgress() -> CGFloat {
         return realProgress(offSet: self.scrollView.viewHeadOffset(), length: self.scrollView.length)
     }
-    public func getCurrentIndex() -> Int {
+    func getCurrentIndex() -> Int {
         return getCurrentProgress().toInt
     }
     /// ZJaDe: 重新设置visibleCells在scrollView里的位置
-    public func resetCellsOrigin(repeatCount: Int) {
+    func resetCellsOrigin(repeatCount: Int) {
+        let totalCount = self.totalCount
         let length = scrollView.length
-        guard self.totalCount > 0 && length > 0 else { return }
+        guard totalCount > 0 && length > 0 else { return }
         guard repeatCount % 2 == 0 else { return }
         let scrollViewOffSet = scrollView.viewHeadOffset()
         let offSet: CGFloat
-        if self.totalCount == 1 {
+        if totalCount == 1 {
             offSet = 0
         } else {
-            if scrollViewOffSet > length * repeatCount.toCGFloat * 0.75 * self.totalCount.toCGFloat {
-                offSet = -length * (repeatCount / 2).toCGFloat * self.totalCount.toCGFloat
-            } else if scrollViewOffSet < length * repeatCount.toCGFloat * 0.25 * self.totalCount.toCGFloat {
-                offSet = length * (repeatCount / 2).toCGFloat * self.totalCount.toCGFloat
+            let totalOffset = length * repeatCount.toCGFloat * totalCount.toCGFloat
+            if scrollViewOffSet > totalOffset * 0.75 {
+                offSet = -totalOffset * 0.5
+            } else if scrollViewOffSet < totalOffset * 0.25 {
+                offSet = totalOffset * 0.5
             } else {
                 offSet = 0
             }
@@ -54,7 +59,7 @@ extension PageFormProtocol {
         }
     }
 }
-public extension PageFormProtocol {
+public extension CollectionViewable {
     /// ZJaDe: 当currentIndex改变时调用，只针对Cell长度和ScrollView长度相等时
     func scroll(_ from: Int, _ to: Int) {
         let length = self.scrollView.length

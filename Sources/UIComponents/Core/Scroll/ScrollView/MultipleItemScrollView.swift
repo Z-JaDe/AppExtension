@@ -7,7 +7,7 @@
 
 import Foundation
 
-open class MultipleItemScrollView<CellView>: ScrollView, ItemsOneWayScrollProtocol where CellView: UIView {
+open class MultipleItemScrollView<CellView>: ScrollView, ItemsOneWayScrollable where CellView: UIView {
     private var _layoutCells: [LayoutItemType] = []
     public var itemSpace: ItemSpace = .leading(0) {
         didSet {setNeedsLayoutCells()}
@@ -19,15 +19,17 @@ open class MultipleItemScrollView<CellView>: ScrollView, ItemsOneWayScrollProtoc
         }
     }
     // MARK: -
-    enum SelfLayoutState {
+    enum LayoutState {
         case none
         case loading
         case end
     }
-    internal var layoutState: SelfLayoutState = .none
+    internal var layoutState: LayoutState = .none
     // MARK: -
     open override func configInit() {
         super.configInit()
+        self.showsVerticalScrollIndicator = false
+        self.showsHorizontalScrollIndicator = false
         adjustAlwaysBounce()
     }
     /// ZJaDe: 布局
@@ -45,9 +47,7 @@ open class MultipleItemScrollView<CellView>: ScrollView, ItemsOneWayScrollProtoc
     /// ZJaDe: 子类需要实现
     open func layoutAllCells() {
         self.layoutState = .loading
-        self.layoutCells.forEach { (cell) in
-            cell.update(self.itemSpace, self.scrollDirection)
-        }
+        self._layoutCells = self._layoutCells.map({$0.map(self.itemSpace, self.scrollDirection)})
     }
     private var isNeedsLayoutCells: Bool = false
     public func setNeedsLayoutCells() {

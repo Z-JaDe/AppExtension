@@ -1,5 +1,5 @@
 //
-//  CyclePageFormProtocol.swift
+//  CollectionReusableViewable.swift
 //  AppExtension
 //
 //  Created by 郑军铎 on 2018/6/26.
@@ -8,13 +8,13 @@
 
 import Foundation
 
-public protocol CyclePageFormProtocol: ScrollPageFormProtocol {
+public protocol CollectionReusableViewable: LazyCollectionViewable {
     /// ZJaDe: cell单边延迟释放的个数
     var cacheDisappearCellCount: Int {get}
     /// ZJaDe: cell消失后回收
     func didDisAppear(_ cell: CellView)
 }
-public extension CyclePageFormProtocol where ScrollViewType == PageScrollView<CellView> {
+public extension CollectionReusableViewable where ScrollViewType == PageScrollView<CellView> {
     /// 检查更新cells的声明周期 释放或者创建
     func checkCellsLifeCycle(isNeedUpdate: Bool) {
         checkDidDisAppearCells()

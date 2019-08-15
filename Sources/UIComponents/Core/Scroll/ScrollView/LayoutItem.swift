@@ -17,19 +17,18 @@ extension ItemSpace {
     }
 }
 
-public final class LayoutItem<View: UIView>: Equatable {
+public struct LayoutItem<View: UIView>: Equatable {
 
-    private var itemSpace: ItemSpace
-    private var scrollDirection: ScrollDirection
+    private let itemSpace: ItemSpace
+    private let scrollDirection: ScrollDirection
     public let view: View
     internal init(_ view: View, _ itemSpace: ItemSpace, _ scrollDirection: ScrollDirection) {
         self.view = view
         self.itemSpace = itemSpace
         self.scrollDirection = scrollDirection
     }
-    func update(_ itemSpace: ItemSpace, _ scrollDirection: ScrollDirection) {
-        self.itemSpace = itemSpace
-        self.scrollDirection = scrollDirection
+    func map(_ itemSpace: ItemSpace, _ scrollDirection: ScrollDirection) -> LayoutItem {
+        return LayoutItem(view, itemSpace, scrollDirection)
     }
     public func sizeThatFits() -> CGSize {
         var resultSize = self.view.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
@@ -47,34 +46,33 @@ public final class LayoutItem<View: UIView>: Equatable {
     }
     /// ZJaDe: 
     public var leading: CGFloat {
-        get {
-            let offset: CGFloat
-            switch self.itemSpace {
-            case .leading:
-                offset = 0
-            case .center(let space):
-                offset = space / 2
-            }
-            switch self.scrollDirection {
-            case .horizontal:
-                return self.view.left - offset
-            case .vertical:
-                return self.view.top - offset
-            }
-        } set {
-            let offset: CGFloat
-            switch self.itemSpace {
-            case .leading:
-                offset = 0
-            case .center(let space):
-                offset = space / 2
-            }
-            switch self.scrollDirection {
-            case .horizontal:
-                 self.view.left = newValue + offset
-            case .vertical:
-                self.view.top = newValue + offset
-            }
+        let offset: CGFloat
+        switch self.itemSpace {
+        case .leading:
+        offset = 0
+        case .center(let space):
+        offset = space / 2
+        }
+        switch self.scrollDirection {
+        case .horizontal:
+        return self.view.left - offset
+        case .vertical:
+        return self.view.top - offset
+        }
+    }
+    func setLeading(_ newValue: CGFloat) {
+        let offset: CGFloat
+        switch self.itemSpace {
+        case .leading:
+            offset = 0
+        case .center(let space):
+            offset = space / 2
+        }
+        switch self.scrollDirection {
+        case .horizontal:
+            self.view.left = newValue + offset
+        case .vertical:
+            self.view.top = newValue + offset
         }
     }
     public var trailing: CGFloat {

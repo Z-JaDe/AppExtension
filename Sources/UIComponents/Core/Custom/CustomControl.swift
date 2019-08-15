@@ -68,6 +68,8 @@ open class CustomControl: UIControl {
     public func getContentItem() -> UIView? {
         return self.contentItem
     }
+}
+extension CustomControl {
     /// ZJaDe: contentItem改变时会调用该方法更新约束
     private func updateContentAlignmentLayout() {
         guard let contentItem = self.contentItem else {
@@ -78,8 +80,6 @@ open class CustomControl: UIControl {
             self.layoutVertical(contentItem) + self.layoutHorizontal(contentItem)
         )
     }
-}
-extension CustomControl {
     internal func bindingView(_ view: UIView, _ hasData: Bool) {
         if hasData {
             self.addSubview(view)

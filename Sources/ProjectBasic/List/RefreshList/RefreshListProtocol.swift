@@ -12,7 +12,7 @@ import EmptyDataSet
 #endif
 public protocol RefreshListProtocol: NetworkProtocol, AssociatedObjectProtocol {
     #if canImport(MJRefresh)
-    associatedtype ScrollViewType: MJScrollProtocol, EmptyDataSetProtocol
+    associatedtype ScrollViewType: MJScrollable, EmptyDataSetProtocol
     #else
     associatedtype ScrollViewType: EmptyDataSetProtocol
     #endif

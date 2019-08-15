@@ -1,5 +1,5 @@
 //
-//  ScrollPageFormProtocol.swift
+//  LazyCollectionViewable.swift
 //  Alamofire
 //
 //  Created by 郑军铎 on 2018/6/27.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-public protocol ScrollPageFormProtocol: PageFormProtocol {
+public protocol LazyCollectionViewable: CollectionViewable {
     /// ZJaDe: 提前加载cell的数量
     var cacheAppearCellCount: Int {get}
     /// ZJaDe: 加载cell
     func loadCell(_ currentOffset: CGFloat, _ indexOffset: Int, _ isNeedUpdate: Bool)
 }
 
-public extension ScrollPageFormProtocol {
+public extension CollectionReusableViewable {
     var cacheAppearCellCount: Int {
         return 0
     }
