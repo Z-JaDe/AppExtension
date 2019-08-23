@@ -1,6 +1,6 @@
 {
   "name": "SnapKit",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "license": "MIT",
   "summary": "Harness the power of auto layout with a simplified, chainable, and compile time safe syntax.",
   "homepage": "https://github.com/SnapKit/SnapKit",
