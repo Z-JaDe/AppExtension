@@ -1,6 +1,6 @@
 {
   "name": "SwiftyUserDefaults",
-  "version": "4.0.0",
+  "version": "5.0.0-beta.1",
   "license": "MIT",
   "summary": "Swifty API for NSUserDefaults",
   "homepage": "https://github.com/radex/SwiftyUserDefaults",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/radex/SwiftyUserDefaults.git",
-    "tag": "4.0.0"
+    "tag": "5.0.0-beta.1"
   },
   "requires_arc": true,
   "platforms": {
@@ -22,9 +22,10 @@
   "swift_versions": [
     "4.1",
     "4.2",
-    "5.0"
+    "5.0",
+    "5.1"
   ],
   "cocoapods_version": ">= 1.4.0",
   "source_files": "Sources/*.swift",
-  "swift_version": "5.0"
+  "swift_version": "5.1"
 }

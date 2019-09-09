@@ -40,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        gcdTest()
 //        copyTest()
         Foo().bar()
+        
         return true
     }
 
