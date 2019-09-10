@@ -1,5 +1,5 @@
 //
-//  ListUpdateInfo.swift
+//  ListDataInfo.swift
 //  Codable
 //
 //  Created by 郑军铎 on 2018/11/29.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class ListUpdateInfo<DataType> {
+public class ListDataInfo<DataType> {
     public let data: DataType
     public var updateMode: ListUpdateMode
     public init(data: DataType) {
@@ -16,15 +16,15 @@ public class ListUpdateInfo<DataType> {
         self.updateMode = .partial(animation: .automatic)
         self.completionHandle = {}
     }
-    private init<T>(original: ListUpdateInfo<T>, data: DataType) {
+    private init<T>(original: ListDataInfo<T>, data: DataType) {
         self.data = data
         self.updateMode = original.updateMode
         self.completionHandle = original.completionHandle
         original.completionHandle = {}
     }
 
-    public func map<U>(_ transform: (DataType) throws -> U) rethrows -> ListUpdateInfo<U> {
-        return ListUpdateInfo<U>(original: self, data: try transform(data))
+    public func map<U>(_ transform: (DataType) throws -> U) rethrows -> ListDataInfo<U> {
+        return ListDataInfo<U>(original: self, data: try transform(data))
     }
     /// ZJaDe: 局部(无)动画刷新 or 全局刷新
     public func configUpdateMode(_ updateMode: ListUpdateMode) -> Self {
@@ -32,7 +32,7 @@ public class ListUpdateInfo<DataType> {
         return self
     }
     // MARK: -
-    /// ZJaDe: 私有化，ListUpdateInfo传递时，只能有一个ListUpdateInfo持有completion
+    /// ZJaDe: 私有化，ListDataInfo传递时，只能有一个ListDataInfo持有completion
     private var completionHandle: () -> Void
     /// ZJaDe: 刷新完成后 会自动释放闭包
     public func completion(_ closure: @escaping () -> Void) -> Self {
@@ -48,7 +48,7 @@ public class ListUpdateInfo<DataType> {
     }
 }
 extension ListData {
-    public func updateInfo() -> ListUpdateInfo<ListData> {
-        return ListUpdateInfo(data: self)
+    public func updateInfo() -> ListDataInfo<ListData> {
+        return ListDataInfo(data: self)
     }
 }

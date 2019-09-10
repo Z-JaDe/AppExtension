@@ -13,10 +13,10 @@ public protocol ListDataUpdateProtocol: class {
     associatedtype Section: Diffable
     associatedtype Item: Diffable
     typealias ListDataType = ListData<Section, Item>
-    typealias ListUpdateInfoType = ListUpdateInfo<ListDataType>
+    typealias ListDataInfoType = ListDataInfo<ListDataType>
 
     var dataArray: ListDataType {get}
-    func changeListDataInfo(_ newData: ListUpdateInfoType)
+    func changeListDataInfo(_ newData: ListDataInfoType)
 }
 extension ListDataUpdateProtocol {
     /// ZJaDe: 更新
@@ -27,17 +27,17 @@ extension ListDataUpdateProtocol {
     public func reloadData(_ listData: ListDataType?) {
         self.reloadData(listData?.updateInfo())
     }
-    /// ZJaDe: 重新刷新 传入 listUpdateInfo
-    public func reloadData(_ listUpdateInfo: ListUpdateInfoType?) {
-        if let listUpdateInfo = listUpdateInfo {
-            self.changeListDataInfo(listUpdateInfo)
+    /// ZJaDe: 重新刷新 传入 listDataInfo
+    public func reloadData(_ listDataInfo: ListDataInfoType?) {
+        if let listDataInfo = listDataInfo {
+            self.changeListDataInfo(listDataInfo)
         }
     }
 }
 extension ListDataUpdateProtocol where Section: Equatable & InitProtocol {
     // TODO: Async/Await 出来后需优化
-    /// ZJaDe: 重新刷新 返回 ListUpdateInfoType
-    public func reloadData(section: Section? = nil, _ itemArray: [Item]?, isRefresh: Bool, _ closure: ((ListUpdateInfo<ListDataType>) -> (ListUpdateInfo<ListDataType>))? = nil) {
+    /// ZJaDe: 重新刷新 返回 ListDataInfoType
+    public func reloadData(section: Section? = nil, _ itemArray: [Item]?, isRefresh: Bool, _ closure: ((ListDataInfo<ListDataType>) -> (ListDataInfo<ListDataType>))? = nil) {
         let _itemArray = itemArray ?? []
         var newData = self.dataArray
         if isRefresh {
@@ -47,16 +47,5 @@ extension ListDataUpdateProtocol where Section: Equatable & InitProtocol {
         }
         let result = newData.updateInfo()
         self.reloadData(closure?(result) ?? result)
-    }
-}
-// MARK: - Deprecated
-extension ListDataUpdateProtocol {
-    @available(*, deprecated, message: "请使用reloadData")
-    public func reloadDataWithInfo(_ closure: (ListDataType) -> ListUpdateInfoType?) {
-        self.reloadData(closure(self.dataArray))
-    }
-    @available(*, deprecated, message: "请使用reloadData")
-    public func reloadDataWithInfo(_ closure: (ListDataType) -> ListDataType?) {
-        self.reloadData(closure(self.dataArray))
     }
 }

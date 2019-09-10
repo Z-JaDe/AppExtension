@@ -8,7 +8,30 @@
 
 import UIKit
 
-open class StaticTableItemCell: TableItemCell, AdapterItemType {
+extension AnyTableAdapterItem {
+    public var cell: StaticTableItemCell? {
+        return self.value as? StaticTableItemCell
+    }
+    public static func cell(_ value: StaticTableItemCell) -> AnyTableAdapterItem {
+        return AnyTableAdapterItem(value)
+    }
+}
+extension StaticTableItemCell: TableAdapterItemDiffable {
+    public func isEqual(to source: AnyTableAdapterItem) -> Bool {
+        guard let source = source.cell else {
+            return false
+        }
+        return self == source
+    }
+    public func isContentEqual(to source: AnyTableAdapterItem) -> Bool {
+        guard let source = source.cell else {
+            return false
+        }
+        return self.isContentEqual(to: source)
+    }
+}
+
+open class StaticTableItemCell: TableItemCell {
 
     open var canSelected: Bool = false
     public func checkCanSelected(_ closure: @escaping (Bool) -> Void) {
@@ -40,7 +63,7 @@ extension StaticTableItemCell: TableCellConfigProtocol {
         return cell
     }
     func willAppear(in cell: UITableViewCell) {
-        guard let cell = cell as? SNTableViewCell else {
+        guard let cell = cell as? InternalTableViewCell else {
             return
         }
         cell.contentItem = self
@@ -48,19 +71,11 @@ extension StaticTableItemCell: TableCellConfigProtocol {
         //        logDebug("\(item)将要显示")
     }
     func didDisappear(in cell: UITableViewCell) {
-        guard let cell = cell as? SNTableViewCell else {
+        guard let cell = cell as? InternalTableViewCell else {
             return
         }
         self.didDisappear()
         cell.contentItem = nil
-    }
-    func createCell(isTemp: Bool) -> TableItemCell {
-        return self
-    }
-    func recycleCell(_ cell: TableItemCell) {
-    }
-    func getCell() -> TableItemCell? {
-        return self
     }
 }
 extension StaticTableItemCell: TableCellHeightProtocol {
@@ -69,5 +84,14 @@ extension StaticTableItemCell: TableCellHeightProtocol {
     }
     public func setNeedResetCellHeight() {
         _setNeedResetCellHeight()
+    }
+
+    public func calculateCellHeight(_ tableView: UITableView, wait: Bool) {
+        let tableViewWidth = tableView.bounds.size.width
+        if tableViewWidth <= 0 { return }
+        /*************** 计算高度 ***************/
+        let itemCellWidth = getItemCellWidth(tableView)
+        let cellHeight = layoutHeight(itemCellWidth)
+        self.changeTempCellHeight(cellHeight + insetVerticalSpace())
     }
 }

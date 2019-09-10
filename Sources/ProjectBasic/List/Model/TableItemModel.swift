@@ -8,6 +8,29 @@
 
 import UIKit
 
+extension AnyTableAdapterItem {
+    public var model: TableItemModel? {
+        return self.value as? TableItemModel
+    }
+    public static func model(_ value: TableItemModel) -> AnyTableAdapterItem {
+        return AnyTableAdapterItem(value)
+    }
+}
+extension TableItemModel: TableAdapterItemDiffable {
+    public func isEqual(to source: AnyTableAdapterItem) -> Bool {
+        guard let source = source.model else {
+            return false
+        }
+        return self == source
+    }
+    public func isContentEqual(to source: AnyTableAdapterItem) -> Bool {
+        guard let source = source.model else {
+            return false
+        }
+        return self.isContentEqual(to: source)
+    }
+}
+
 open class TableItemModel: ListItemModel {
 
     open func getCellClsName() -> String {
@@ -55,7 +78,7 @@ open class TableItemModel: ListItemModel {
         _contentCell?.refreshEnabledState(isEnabled)
     }
 }
-extension TableItemModel: TableCellConfigProtocol {
+extension TableItemModel {
     /// 这方法返回的是contentCell, 实际内容的cell
     func createCell(isTemp: Bool) -> TableItemCell {
         let result: DynamicTableItemCell
@@ -86,7 +109,13 @@ extension TableItemModel: TableCellConfigProtocol {
         let cell = createCell(isTemp: false)
         _contentCell = cell as? DynamicTableItemCell
     }
-
+    func cleanReference() {
+        // ZJaDe: 释放model对_contentCell的持有
+        _contentCell?._model = nil
+        _contentCell = nil
+    }
+}
+extension TableItemModel: TableCellConfigProtocol {
     public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
         let cell = _createCell(in: tableView, for: indexPath)
         //        logDebug("\(item)创建一个cell")
@@ -96,10 +125,10 @@ extension TableItemModel: TableCellConfigProtocol {
         return cell
     }
     func willAppear(in cell: UITableViewCell) {
-        guard let cell = cell as? SNTableViewCell else {
+        guard let cell = cell as? InternalTableViewCell else {
             return
         }
-        // ZJaDe: SNTableViewCell对_contentCell引用
+        // ZJaDe: InternalTableViewCell对_contentCell引用
         cell.contentItem = _contentCell
         _contentCell?.willAppear()
         if _contentCell == nil {
@@ -108,22 +137,20 @@ extension TableItemModel: TableCellConfigProtocol {
         //        logDebug("\(item)将要显示")
     }
     func didDisappear(in cell: UITableViewCell) {
-        guard let cell = cell as? SNTableViewCell else {
+        guard let cell = cell as? InternalTableViewCell else {
             return
         }
         _contentCell?.didDisappear()
-        // ZJaDe: 释放SNTableViewCell对_contentCell的持有
+        // ZJaDe: 释放InternalTableViewCell对_contentCell的持有
         cell.contentItem = nil
-        //讲contentCell加入到缓存池
+        // 将contentCell加入到缓存池
         if let item = _contentCell {
             recycleCell(item)
         }
         cleanReference()
     }
-    func cleanReference() {
-        // ZJaDe: 释放model对_contentCell的持有
-        _contentCell?._model = nil
-        _contentCell = nil
+    func shouldHighlight() -> Bool {
+        return getCell()?.shouldHighlight() ?? true
     }
 }
 extension TableItemModel: TableCellHeightProtocol {
@@ -133,4 +160,19 @@ extension TableItemModel: TableCellHeightProtocol {
     public func setNeedResetCellHeight() {
         _setNeedResetCellHeight()
     }
+
+    /// ZJaDe: 计算高度
+    public func calculateCellHeight(_ tableView: UITableView, wait: Bool) {
+        let tableViewWidth = tableView.bounds.size.width
+        if tableViewWidth <= 0 { return }
+        /*************** 获取tempCell，并赋值 ***************/
+        let item: TableItemCell = self.createCell(isTemp: true)
+        /*************** 计算高度 ***************/
+        let itemCellWidth = item.getItemCellWidth(tableView)
+        let cellHeight = item.layoutHeight(itemCellWidth)
+        self.changeTempCellHeight(cellHeight + item.insetVerticalSpace())
+        /*************** cell回收 ***************/
+        self.recycleCell(item)
+    }
+
 }

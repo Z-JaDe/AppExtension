@@ -203,7 +203,7 @@ extension ItemCell: NeedUpdateProtocol, DataSourceItemType {
 }
 extension ItemCell {
     /// ZJaDe: 检查是否可以高亮 列表代理方法会调用
-    func checkShouldHighlight() -> Bool {
+    func shouldHighlight() -> Bool {
         guard canHighlighted else {
             return false
         }

@@ -10,8 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-open class ListAdapter<DataSource: SectionedDataSourceType>: ListAdapterType,
-    EnabledStateDesignable
+open class ListAdapter<DataSource: SectionedDataSourceType>: ListAdapterType
 where DataSource.S.Item: AdapterItemType, DataSource.S.Section: AdapterSectionType {
     public typealias Section = DataSource.S.Section
     public typealias Item = DataSource.S.Item
@@ -30,9 +29,9 @@ where DataSource.S.Item: AdapterItemType, DataSource.S.Section: AdapterSectionTy
     /// ZJaDe: 是否自动改回未选中，子类实现相关逻辑
     public var autoDeselectRow = true
 
-    // MARK: - ListDataUpdateProtocol
-    let dataInfoSubject: ReplaySubject<ListUpdateInfoType> = ReplaySubject.create(bufferSize: 1)
-    var dataInfo: ListUpdateInfoType = ListUpdateInfo(data: [])
+    // MARK: -
+    let dataInfoSubject: ReplaySubject<ListDataInfoType> = ReplaySubject.create(bufferSize: 1)
+    var dataInfo: ListDataInfoType = ListDataInfo(data: [])
     // MARK: -
     var _rxDataSource: DataSource?
     ///子类重写
@@ -46,12 +45,9 @@ where DataSource.S.Item: AdapterItemType, DataSource.S.Section: AdapterSectionTy
     open var isEnabled: Bool? {
         didSet {
             if let isEnabled = self.isEnabled, isEnabled != oldValue {
-                updateEnabledState(isEnabled)
+                (self as? EnabledStateDesignable)?.updateEnabledState(isEnabled)
             }
         }
-    }
-    open func updateEnabledState(_ isEnabled: Bool) {
-
     }
 }
 extension ListAdapter: DisposeBagProtocol {}
@@ -59,12 +55,12 @@ extension ListAdapter: ListDataUpdateProtocol {
     public var dataArray: ListDataType {
         return self.dataInfo.data
     }
-    public func changeListDataInfo(_ newData: ListUpdateInfoType) {
+    public func changeListDataInfo(_ newData: ListDataInfoType) {
         self.dataInfo = newData
         self.dataInfoSubject.onNext(newData)
     }
     /// 将dataArray转信号
-    func dataArrayObservable() -> Observable<ListUpdateInfoType> {
+    func dataArrayObservable() -> Observable<ListDataInfoType> {
         return self.dataInfoSubject.asObservable()
             .delay(.milliseconds(100), scheduler: MainScheduler.asyncInstance)
             .throttle(.milliseconds(300), scheduler: MainScheduler.instance)

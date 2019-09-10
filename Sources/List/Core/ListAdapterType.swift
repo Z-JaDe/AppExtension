@@ -13,10 +13,10 @@ public protocol CellSelectedStateDesignable {
 }
 
 public protocol DataSourceSectionType: Diffable, InitProtocol {}
-public protocol DataSourceItemType: Diffable, Equatable {}
+public protocol DataSourceItemType: Diffable {}
 
-public protocol AdapterItemType: DataSourceItemType & CellSelectedStateDesignable & SelectedStateDesignable {}
-public protocol AdapterSectionType: DataSourceSectionType & HiddenStateDesignable {}
+public protocol AdapterItemType: DataSourceItemType & SelectedStateDesignable {}
+public protocol AdapterSectionType: DataSourceSectionType {}
 
 public protocol ListAdapterType {
     associatedtype DataSource: SectionedDataSourceType

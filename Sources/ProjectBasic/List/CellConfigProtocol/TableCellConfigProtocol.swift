@@ -13,15 +13,12 @@ import Foundation
 protocol TableCellConfigProtocol: CreateTableCellrotocol {
     func willAppear(in cell: UITableViewCell)
     func didDisappear(in cell: UITableViewCell)
-
-    func createCell(isTemp: Bool) -> TableItemCell
-    func recycleCell(_ cell: TableItemCell)
-    func getCell() -> TableItemCell?
+    func shouldHighlight() -> Bool
 }
 extension CreateTableCellrotocol {
     func _createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
-        let reuseIdentifier: String = SNTableViewCell.reuseIdentifier
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? SNTableViewCell
+        let reuseIdentifier: String = InternalTableViewCell.reuseIdentifier
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? InternalTableViewCell
         return cell!
     }
 }

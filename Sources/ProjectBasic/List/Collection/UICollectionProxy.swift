@@ -8,9 +8,21 @@
 
 import UIKit
 
+extension UICollectionProxy {
+    var delegate: CollectionViewDelegate? {
+        return adapter.delegate
+    }
+    var dataController: UICollectionAdapter.DataSource.DataControllerType {
+        return adapter.rxDataSource.dataController
+    }
+    func collectionCellItem(at indexPath: IndexPath) -> UICollectionAdapter.Item {
+        return dataController[indexPath]
+    }
+}
+
 open class UICollectionProxy: NSObject, UICollectionViewDelegate {
-    public private(set) weak var adapter: CollectionAdapterDelegate!
-    public init(_ adapter: CollectionAdapterDelegate) {
+    public private(set) weak var adapter: UICollectionAdapter!
+    public init(_ adapter: UICollectionAdapter) {
         self.adapter = adapter
     }
     // MARK: - Managing the Selected Cells
@@ -21,14 +33,19 @@ open class UICollectionProxy: NSObject, UICollectionViewDelegate {
         return true
     }
     open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        adapter.didSelectItem(at: indexPath)
+        adapter._didSelectItem(at: indexPath)
+        delegate?.didSelectItem(at: indexPath)
     }
     open func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        adapter.didDeselectItem(at: indexPath)
+        adapter._didDeselectItem(at: indexPath)
+        delegate?.didSelectItem(at: indexPath)
     }
     // MARK: - Managing Cell Highlighting
     open func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return adapter.shouldHighlightItem(at: indexPath)
+        if let result = delegate?.shouldHighlightItem(at: indexPath) {
+            return result
+        }
+        return collectionCellItem(at: indexPath).shouldHighlight()
     }
     open func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
 
@@ -38,10 +55,17 @@ open class UICollectionProxy: NSObject, UICollectionViewDelegate {
     }
     // MARK: - Tracking the Addition and Removal of Views
     open func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        adapter.willDisplay(cell: cell, at: indexPath)
+        let item = collectionCellItem(at: indexPath)
+        item.willAppear(in: cell)
+        delegate?.didDisplay(cell: cell, forItemAt: indexPath)
+        if let isEnabled = self.adapter.isEnabled {
+            item.refreshEnabledState(isEnabled)
+        }
     }
     open func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        adapter.didEndDisplaying(cell: cell, at: indexPath)
+        let item = collectionCellItem(at: indexPath)
+        item.didDisappear(in: cell)
+        delegate?.didEndDisplaying(cell: cell, forItemAt: indexPath)
     }
     open func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
 

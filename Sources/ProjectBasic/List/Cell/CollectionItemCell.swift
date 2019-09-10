@@ -10,11 +10,11 @@ import UIKit
 
 open class CollectionItemCell: ItemCell {
 
-    func getSNCell() -> SNCollectionViewCell? {
-        return self.superView(SNCollectionViewCell.self)
+    func getInternalCell() -> InternalCollectionViewCell? {
+        return self.superView(InternalCollectionViewCell.self)
     }
     /// ZJaDe: insets
     public var insets: UIEdgeInsets = Space.cellInsets {
-        didSet {getSNCell()?.setNeedsUpdateConstraints()}
+        didSet {getInternalCell()?.setNeedsUpdateConstraints()}
     }
 }

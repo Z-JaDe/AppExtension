@@ -15,8 +15,8 @@ extension TableItemCell {
 
 open class TableItemCell: ItemCell, WritableDefaultHeightProtocol {
 
-    func getSNCell() -> SNTableViewCell? {
-        return self.superView(SNTableViewCell.self)
+    func getInternalCell() -> InternalTableViewCell? {
+        return self.superView(InternalTableViewCell.self)
     }
     weak var _tableView: UITableView?
     func getTableView() -> UITableView? {
@@ -32,10 +32,10 @@ open class TableItemCell: ItemCell, WritableDefaultHeightProtocol {
         didSet { updateSelectedBackgroundColor() }
     }
     open var cellBackgroundColor: UIColor = Color.white {
-        didSet {getSNCell()?.backgroundColor = self.cellBackgroundColor}
+        didSet {getInternalCell()?.backgroundColor = self.cellBackgroundColor}
     }
     public var separatorLineHeight: CGFloat = jd.onePx {
-        didSet {getSNCell()?.updateSeparatorLineViewFrame()}
+        didSet {getInternalCell()?.updateSeparatorLineViewFrame()}
     }
     /// ZJaDe: 禁用选中时的高亮动画，以及选中状态
     open override func disableSelectedAnimation() {
@@ -51,11 +51,11 @@ open class TableItemCell: ItemCell, WritableDefaultHeightProtocol {
      目前系统的accessoryType右边的间距 默认为16
      */
     public var separatorLineInsets: (left: CGFloat?, right: CGFloat?) = (nil, nil) {
-        didSet {getSNCell()?.updateSeparatorLineViewFrame()}
+        didSet {getInternalCell()?.updateSeparatorLineViewFrame()}
     }
     /// ZJaDe: 内容insets
     public var insets: UIEdgeInsets = UIEdgeInsets.zero {
-        didSet {getSNCell()?.setNeedsUpdateLayouts()}
+        didSet {getInternalCell()?.setNeedsUpdateLayouts()}
     }
     private func configDefaultInsets() {
         self.insets = TableItemCell.get(type(of: self)) ?? defaultInsets()
@@ -68,15 +68,15 @@ open class TableItemCell: ItemCell, WritableDefaultHeightProtocol {
     }
     /// ZJaDe: 
     public var separatorLineColor: UIColor = Color.separatorLine {
-        didSet {getSNCell()?.separatorLineView.backgroundColor = self.separatorLineColor}
+        didSet {getInternalCell()?.separatorLineView.backgroundColor = self.separatorLineColor}
     }
     public var accessoryType: UITableViewCell.AccessoryType = .none {
-        didSet {getSNCell()?.accessoryType = self.accessoryType}
+        didSet {getInternalCell()?.accessoryType = self.accessoryType}
     }
     public var accessoryView: UIView? {
         didSet {
             oldValue?.removeFromSuperview()
-            getSNCell()?.setNeedsUpdateLayouts()
+            getInternalCell()?.setNeedsUpdateLayouts()
         }
     }
     /// ZJaDe: 这个方法返回itemCell的高度，如果返回0 就采取自动布局的方式计算高度
@@ -131,7 +131,7 @@ extension TableItemCell {
     }
     internal private(set) var selectionStyle: UITableViewCell.SelectionStyle {
         get { return self.cellSelectedBackgroundColor == nil ? .none : .default }
-        set { getSNCell()?.selectionStyle = newValue }
+        set { getInternalCell()?.selectionStyle = newValue }
     }
 }
 extension TableItemCell {

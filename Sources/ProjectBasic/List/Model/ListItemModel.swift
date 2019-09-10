@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class ListItemModel: AdapterItemType & CanSelectedStateDesignable & HiddenStateDesignable & EnabledStateDesignable {
+open class ListItemModel: DataSourceItemType & SelectedStateDesignable & HiddenStateDesignable & EnabledStateDesignable {
     var hasLoad: Bool = false
     public init() {}
     // MARK: - ID

@@ -8,8 +8,8 @@
 
 import UIKit
 
-class SNCollectionReusableView: UICollectionReusableView {
-    static let reuseIdentifier: String = SNCollectionReusableView.classFullName
+class InternalCollectionReusableView: UICollectionReusableView {
+    static let reuseIdentifier: String = InternalCollectionReusableView.classFullName
     var contentItem: CollectionReusableView?
 }
 

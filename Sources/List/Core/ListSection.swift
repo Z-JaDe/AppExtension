@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class ListSection: AdapterSectionType {
+open class ListSection: HiddenStateDesignable {
     public required init() {}
 
     // MARK: - HiddenStateDesignable

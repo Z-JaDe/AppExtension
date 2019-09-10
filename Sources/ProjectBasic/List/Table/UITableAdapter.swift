@@ -10,13 +10,16 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+extension AnyTableAdapterItem: AdapterItemType {}
+extension TableSection: AdapterSectionType {}
+
 public typealias TableSectionModel = SectionModelItem<TableSection, AnyTableAdapterItem>
 
 public typealias TableListData = ListData<TableSection, AnyTableAdapterItem>
-public typealias TableStaticData = ListData<TableSection, StaticTableItemCell>
+//public typealias TableStaticData = ListData<TableSection, StaticTableItemCell>
 
-public typealias TableListUpdateInfo = ListUpdateInfo<TableListData>
-public typealias TableStaticUpdateInfo = ListUpdateInfo<TableStaticData>
+public typealias TableListDataInfo = ListDataInfo<TableListData>
+//public typealias TableStaticListDataInfo = ListDataInfo<TableStaticData>
 
 open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
     private var timer: Timer?
@@ -27,8 +30,8 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
 
     public func tableViewInit(_ tableView: UITableView) {
         self.tableView = tableView
-        // 注册的用的全部都是SNTableViewCell, 真正的cell是SNTableViewCell.contentItem
-        tableView.register(SNTableViewCell.self, forCellReuseIdentifier: SNTableViewCell.reuseIdentifier)
+        // 注册的用的全部都是InternalTableViewCell, 真正的cell是InternalTableViewCell.contentItem
+        tableView.register(InternalTableViewCell.self, forCellReuseIdentifier: InternalTableViewCell.reuseIdentifier)
         //初始化数据源
         bindingDataSource(self.rxDataSource)
         //初始化代理
@@ -36,13 +39,6 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
         allowsSelection(tableView)
     }
 
-    // MARK: - EnabledStateProtocol
-    open override func updateEnabledState(_ isEnabled: Bool) {
-        super.updateEnabledState(isEnabled)
-        dataArray.flatMap({$0.1}).forEach { (item) in
-            (item.value as? EnabledStateDesignable)?.refreshEnabledState(isEnabled)
-        }
-    }
     // MARK: -
     public let insertSecionModels: CallBackerReduce = CallBackerReduce<ListDataType>()
     public override var rxDataSource: DataSource {
@@ -99,6 +95,12 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
         self.tableProxy = tableProxy
         tableView?.rx.setDelegate(self.tableProxy)
             .disposed(by: self.disposeBag)
+    }
+}
+extension AnyTableAdapterItem {
+    fileprivate func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
+        // swiftlint:disable force_cast
+        return (self.value as! CreateTableCellrotocol).createCell(in: tableView, for: indexPath)
     }
 }
 extension UITableAdapter {

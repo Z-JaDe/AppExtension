@@ -40,7 +40,7 @@ open class SectionedDataSource<S: SectionModelType>: NSObject, SectionedDataSour
     /// ZJaDe: 手动 移动编辑后调用该闭包
     public var didMoveItem: ((SectionedDataSource, S.Item, S.Item) -> Void)?
 
-    public typealias Element = ListUpdateInfo<[S]>
+    public typealias Element = ListDataInfo<[S]>
 
     func rxChange(_ newValue: Element, _ updater: Updater) {
         #if DEBUG

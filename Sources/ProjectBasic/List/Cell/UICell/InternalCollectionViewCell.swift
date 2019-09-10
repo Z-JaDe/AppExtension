@@ -1,5 +1,5 @@
 //
-//  SNCollectionViewCell.swift
+//  InternalCollectionViewCell.swift
 //  SNKit_TJS
 //
 //  Created by 郑军铎 on 2018/5/30.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-class SNCollectionViewCell: UICollectionViewCell {
-    static let reuseIdentifier: String = SNCollectionViewCell.classFullName
+class InternalCollectionViewCell: UICollectionViewCell {
+    static let reuseIdentifier: String = InternalCollectionViewCell.classFullName
     override init(frame: CGRect) {
         super.init(frame: frame)
         configInit()
@@ -19,7 +19,7 @@ class SNCollectionViewCell: UICollectionViewCell {
     }
     var contentItem: CollectionItemCell? {
         willSet {
-            newValue?.getSNCell()?.contentItem = nil
+            newValue?.getInternalCell()?.contentItem = nil
         }
         didSet {
             oldValue?.removeFromSuperview()
@@ -36,7 +36,7 @@ class SNCollectionViewCell: UICollectionViewCell {
         updateLayout()
     }
 }
-extension SNCollectionViewCell {
+extension InternalCollectionViewCell {
     private func updateLayout() {
         guard let contentItem = self.contentItem else {
             return

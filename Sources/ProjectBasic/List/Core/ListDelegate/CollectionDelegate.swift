@@ -22,14 +22,14 @@ public protocol CollectionViewDelegate: class {
     func didDeselectItem(at indexPath: IndexPath)
     func shouldHighlightItem(at indexPath: IndexPath) -> Bool
 
-    func didDisplay(item: CollectionItemCell)
-    func didEndDisplaying(item: CollectionItemCell)
+    func didDisplay(cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
+    func didEndDisplaying(cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
 }
 extension CollectionViewDelegate {
     public func didSelectItem(at indexPath: IndexPath) { }
     public func didDeselectItem(at indexPath: IndexPath) { }
     public func shouldHighlightItem(at indexPath: IndexPath) -> Bool { return true }
 
-    public func didDisplay(item: CollectionItemCell) { }
-    public func didEndDisplaying(item: CollectionItemCell) { }
+    public func didDisplay(cell: UICollectionViewCell, forItemAt indexPath: IndexPath) { }
+    public func didEndDisplaying(cell: UICollectionViewCell, forItemAt indexPath: IndexPath) { }
 }

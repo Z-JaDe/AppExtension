@@ -7,7 +7,7 @@
 //
 
 import Foundation
-private var isUpdatingKey: UInt8 = 0
+
 extension TableItemCell {
     func updateHeight<Item: TableCellHeightProtocol>(_ item: Item, _ updates: (() -> Void)?) {
         guard let updater = self.getTableView()?.updater else {
@@ -31,8 +31,13 @@ extension TableItemCell {
     }
 }
 extension TableItemCell {
+    func getItemCellWidth(_ tableView: UITableView) -> CGFloat {
+        return tableView.getItemCellWidth(accessoryView, accessoryType) - self.insets.left - self.insets.right
+    }
+}
+extension TableItemCell {
     /*************** 计算TableViewCell高度 ***************/
-    public func layoutHeight(_ contentWidth: CGFloat) -> CGFloat {
+    func layoutHeight(_ contentWidth: CGFloat) -> CGFloat {
         let result: CGFloat
         if let height = self.frameLayoutHeight(contentWidth) {
             result = height
@@ -42,16 +47,12 @@ extension TableItemCell {
         return result.ceilToNearest(increment: 1)
     }
     /*************** 计算TableViewCell高度 ***************/
-    fileprivate func frameLayoutHeight(_ contentWidth: CGFloat) -> CGFloat? {
+    private func frameLayoutHeight(_ contentWidth: CGFloat) -> CGFloat? {
         let viewWidth = contentWidth - insets.left - insets.right
         let viewHeight = self.calculateFrameHeight(viewWidth)
-        if viewHeight > 0 {
-            return viewHeight
-        } else {
-            return nil
-        }
+        return viewHeight > 0 ? viewHeight : nil
     }
-    fileprivate func autoLayoutHeight(_ contentWidth: CGFloat) -> CGFloat {
+    private func autoLayoutHeight(_ contentWidth: CGFloat) -> CGFloat {
         return self.calculateAutoLayoutHeight(contentWidth)
     }
 }

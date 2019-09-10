@@ -11,34 +11,18 @@ import Foundation
  使用item来存储高度
  如果改成用tableView根据indexPath来存储高度，刷新时需要清空高度缓存，不可取
  */
-protocol TableCellHeightProtocol: TableCellConfigProtocol, AssociatedObjectProtocol {
+protocol TableCellHeightProtocol: AssociatedObjectProtocol {
+    /// ZJaDe: 计算高度
     func calculateCellHeight(_ tableView: UITableView, wait: Bool)
     func updateHeight(_ closure: (() -> Void)?)
 }
-
-extension TableCellHeightProtocol {
-    /// ZJaDe: 计算高度
-    public func calculateCellHeight(_ tableView: UITableView, wait: Bool) {
-        let tableViewWidth = tableView.width
-        if tableViewWidth <= 0 { return }
-        /*************** 获取tempCell，并赋值 ***************/
-        let item: TableItemCell = self.createCell(isTemp: true)
-        /*************** 计算高度 ***************/
-        let itemCellWidth = item.getItemCellWidth(tableView)
-        let cellHeight = item.layoutHeight(itemCellWidth)
-        self.changeTempCellHeight(cellHeight + item.insetVerticalSpace())
-        /*************** cell回收 ***************/
-        self.recycleCell(item)
-    }
-}
-
-extension TableItemCell {
-    fileprivate func getItemCellWidth(_ tableView: UITableView) -> CGFloat {
-        var contentViewWidth = tableView.width
-        if let accessoryView = self.accessoryView {
+extension UITableView {
+    func getItemCellWidth(_ accessoryView: UIView?, _ accessoryType: UITableViewCell.AccessoryType) -> CGFloat {
+        var contentViewWidth = self.bounds.size.width
+        if let accessoryView = accessoryView {
             contentViewWidth -= 16 + accessoryView.width
         } else {
-            switch self.accessoryType {
+            switch accessoryType {
             case .none:
                 contentViewWidth -= 0
             case .disclosureIndicator:
@@ -56,6 +40,6 @@ extension TableItemCell {
         if UIScreen.main.scale >= 3 && UIScreen.main.bounds.size.width >= 414 {
             contentViewWidth -= 4
         }
-        return contentViewWidth - self.insets.left - self.insets.right
+        return contentViewWidth
     }
 }

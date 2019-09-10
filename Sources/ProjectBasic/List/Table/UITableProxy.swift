@@ -8,49 +8,100 @@
 
 import UIKit
 
+extension UITableProxy {
+    var delegate: TableViewDelegate? {
+        return adapter.delegate
+    }
+    var dataController: UITableAdapter.DataSource.DataControllerType {
+        return adapter.rxDataSource.dataController
+    }
+    func tableCellItem(at indexPath: IndexPath) -> TableCellHeightProtocol & TableCellConfigProtocol {
+        // swiftlint:disable force_cast
+        return dataController[indexPath].value as! TableCellHeightProtocol & TableCellConfigProtocol
+    }
+}
+
 open class UITableProxy: NSObject, UITableViewDelegate {
-    public private(set) weak var adapter: TableAdapterDelegate!
-    public init(_ adapter: TableAdapterDelegate) {
+    public private(set) weak var adapter: UITableAdapter!
+    public init(_ adapter: UITableAdapter) {
         self.adapter = adapter
     }
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return adapter.heightForRow(at: indexPath)
+        guard dataController.indexPathCanBound(indexPath) else {
+            return 0.1
+        }
+        let item = tableCellItem(at: indexPath)
+        if item.cellHeightLayoutType == .resetLayout {
+            item.calculateCellHeight(tableView, wait: true)
+        }
+        let height = item.tempCellHeight
+        return height > 0 ? height : Space.cellDefaultHeight
     }
     open func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return adapter.heightForRow(at: indexPath)
+        return self.tableView(tableView, heightForRowAt: indexPath)
     }
     // MARK: -
     open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return adapter.heightForHeader(in: section)
+        guard dataController.sectionIndexCanBound(section) else {
+            return 0.1
+        }
+        let sectionModel = dataController[section].section
+        return sectionModel.headerView.viewHeight(tableView.width)
     }
     open func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return adapter.heightForFooter(in: section)
+        guard dataController.sectionIndexCanBound(section) else {
+            return 0.1
+        }
+        let sectionModel = dataController[section].section
+        return sectionModel.footerView.viewHeight(tableView.width)
     }
     open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return adapter.viewForHeader(in: section)
+        guard dataController.sectionIndexCanBound(section) else {
+            return nil
+        }
+        let sectionModel = dataController[section].section
+        return sectionModel.headerView
     }
     open func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return adapter.viewForFooter(in: section)
+        guard dataController.sectionIndexCanBound(section) else {
+            return nil
+        }
+        let sectionModel = dataController[section].section
+        return sectionModel.footerView
     }
     // MARK: -
     open func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        return adapter.editActionsForRowAt(at: indexPath)
+        if let result = delegate?.editActionsForRowAt(at: indexPath) {
+            return result
+        }
+        return nil
     }
     // MARK: -
     open func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        return adapter.shouldHighlightItem(at: indexPath)
+        if let result = delegate?.shouldHighlightItem(at: indexPath) {
+            return result
+        }
+        return tableCellItem(at: indexPath).shouldHighlight()
     }
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        adapter.didSelectItem(at: indexPath)
+        adapter._didSelectItem(at: indexPath)
+        delegate?.didSelectItem(at: indexPath)
     }
     open func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        adapter.didDeselectItem(at: indexPath)
+        adapter._didDeselectItem(at: indexPath)
+        delegate?.didDeselectItem(at: indexPath)
     }
     open func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        adapter.willDisplay(cell: cell, at: indexPath)
-
+        let item = tableCellItem(at: indexPath)
+        item.willAppear(in: cell)
+        delegate?.didDisplay(cell: cell, at: indexPath)
+        if let isEnabled = self.adapter.isEnabled {
+            (item as? EnabledStateDesignable)?.refreshEnabledState(isEnabled)
+        }
     }
     open func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        adapter.didEndDisplaying(cell: cell, at: indexPath)
+        let item = tableCellItem(at: indexPath)
+        item.didDisappear(in: cell)
+        delegate?.didEndDisplaying(cell: cell, at: indexPath)
     }
 }

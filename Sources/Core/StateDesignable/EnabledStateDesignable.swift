@@ -16,10 +16,6 @@ public protocol EnabledStateDesignable {
 }
 extension EnabledStateDesignable {
     public func refreshEnabledState(_ isEnabled: Bool) {
-        var _isEnabled = isEnabled
-        if let isEnabled = self.isEnabled {
-            _isEnabled = isEnabled
-        }
-        updateEnabledState(_isEnabled)
+        updateEnabledState(self.isEnabled ?? isEnabled)
     }
 }

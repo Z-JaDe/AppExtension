@@ -6,51 +6,36 @@
 //
 
 import Foundation
-extension AnyTableAdapterItem: AdapterItemType {
-    public var cell: StaticTableItemCell? {
-        return self.value as? StaticTableItemCell
-    }
-    public static func cell(_ value: StaticTableItemCell) -> AnyTableAdapterItem {
-        return AnyTableAdapterItem(value)
-    }
-    public var model: TableItemModel? {
-        return self.value as? TableItemModel
-    }
-    public static func model(_ value: TableItemModel) -> AnyTableAdapterItem {
-        return AnyTableAdapterItem(value)
-    }
+
+public protocol TableAdapterItemDiffable {
+    func hash(into hasher: inout Hasher)
+    func isEqual(to source: AnyTableAdapterItem) -> Bool
+    func isContentEqual(to source: AnyTableAdapterItem) -> Bool
 }
+
 // MARK: - Diffable & Hashable
 extension AnyTableAdapterItem: Diffable, Hashable {
     public static func == (lhs: AnyTableAdapterItem, rhs: AnyTableAdapterItem) -> Bool {
-        if let value1 = lhs.cell, let value2 = rhs.cell {
-            return value1 == value2
-        } else if let value1 = lhs.model, let value2 = rhs.model {
-            return value1 == value2
-        } else {
+        guard let lhs = lhs.value as? TableAdapterItemDiffable else {
             assertionFailure("未知类型")
             return false
         }
+        return lhs.isEqual(to: rhs)
     }
     public func hash(into hasher: inout Hasher) {
-        if let value = self.cell {
-            hasher.combine(value)
-        } else if let value = self.model {
-            hasher.combine(value)
-        } else {
+        guard let value = self.value as? TableAdapterItemDiffable else {
             assertionFailure("未知类型")
             hasher.combine(ObjectIdentifier(self.value))
+            return
         }
+        value.hash(into: &hasher)
     }
     public func isContentEqual(to source: AnyTableAdapterItem) -> Bool {
-        if let value1 = self.cell, let value2 = source.cell {
-            return value1.isContentEqual(to: value2)
-        } else if let value1 = self.model, let value2 = source.model {
-            return value1.isContentEqual(to: value2)
-        } else {
+        guard let value = self.value as? TableAdapterItemDiffable else {
             assertionFailure("未知类型")
             return false
         }
+        return value.isContentEqual(to: source)
     }
 }
 // MARK: - CustomStringConvertible

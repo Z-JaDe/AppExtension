@@ -10,6 +10,9 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+extension CollectionItemModel: AdapterItemType {}
+extension CollectSection: AdapterSectionType {}
+
 public typealias CollectionSectionModel = SectionModelItem<CollectSection, CollectionItemModel>
 
 open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionSectionModel>> {
@@ -21,20 +24,12 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionS
 
     public func collectionViewInit(_ collectionView: UICollectionView) {
         self.collectionView = collectionView
-        collectionView.register(SNCollectionViewCell.self, forCellWithReuseIdentifier: SNCollectionViewCell.reuseIdentifier)
-        collectionView.register(SNCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SNCollectionReusableView.reuseIdentifier)
-        collectionView.register(SNCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: SNCollectionReusableView.reuseIdentifier)
+        collectionView.register(InternalCollectionViewCell.self, forCellWithReuseIdentifier: InternalCollectionViewCell.reuseIdentifier)
+        collectionView.register(InternalCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: InternalCollectionReusableView.reuseIdentifier)
+        collectionView.register(InternalCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: InternalCollectionReusableView.reuseIdentifier)
         bindingDataSource(self.rxDataSource)
         bindingDelegate(self.collectProxy)
         allowsSelection(collectionView)
-    }
-
-    // MARK: - EnabledStateProtocol
-    open override func updateEnabledState(_ isEnabled: Bool) {
-        super.updateEnabledState(isEnabled)
-        dataArray.lazy.flatMap({$0.1}).forEach { (item) in
-            item.refreshEnabledState(isEnabled)
-        }
     }
     // MARK: -
     public override var rxDataSource: DataSource {

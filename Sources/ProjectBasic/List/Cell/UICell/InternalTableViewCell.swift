@@ -1,5 +1,5 @@
 //
-//  SNTableViewCell.swift
+//  InternalTableViewCell.swift
 //  SNKit_TJS
 //
 //  Created by 郑军铎 on 2018/5/30.
@@ -8,8 +8,8 @@
 
 import Foundation
 import SnapKit
-class SNTableViewCell: UITableViewCell {
-    static let reuseIdentifier: String = SNTableViewCell.classFullName
+class InternalTableViewCell: UITableViewCell {
+    static let reuseIdentifier: String = InternalTableViewCell.classFullName
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configInit()
@@ -24,7 +24,7 @@ class SNTableViewCell: UITableViewCell {
     typealias ContentItemType = TableItemCell
     var contentItem: ContentItemType? {
         willSet {
-            newValue?.getSNCell()?.contentItem = nil
+            newValue?.getInternalCell()?.contentItem = nil
         }
         didSet {
             oldValue?.removeFromSuperview()
@@ -77,7 +77,7 @@ class SNTableViewCell: UITableViewCell {
         contentItem?.isHighlighted = highlighted
     }
 }
-extension SNTableViewCell {
+extension InternalTableViewCell {
     private func updateLayout() {
         guard let contentItem = self.contentItem else {
             return

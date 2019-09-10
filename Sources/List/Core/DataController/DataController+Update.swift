@@ -15,7 +15,7 @@ public enum ListUpdateMode {
 }
 
 extension DataController {
-    func updateNewData(_ newData: ListUpdateInfo<[S]>, _ updater: Updater) {
+    func updateNewData(_ newData: ListDataInfo<[S]>, _ updater: Updater) {
         updater.becomeUpdating()
         let stagedChangeset = StagedChangeset<[S]>(source: self.sectionModels, target: newData.data)
         updater.updateWithMode(

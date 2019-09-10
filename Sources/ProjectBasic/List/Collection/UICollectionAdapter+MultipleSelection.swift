@@ -28,3 +28,23 @@ extension UICollectionAdapter: MultipleSelectionProtocol {
         collectionView.allowsMultipleSelection = true
     }
 }
+
+extension UICollectionAdapter {
+    func _didSelectItem(at indexPath: IndexPath) {
+        let item = self.dataController[indexPath]
+        self.checkCanSelected(item) {[weak self] (isCanSelected) in
+            guard let self = self else { return }
+            if isCanSelected != false {
+                self.whenItemSelected(&self.dataController[indexPath])
+            } else {
+                if self.autoDeselectRow {
+                    self.collectionView?.deselectItem(at: indexPath, animated: true)
+                }
+            }
+        }
+        item.didSelectItem()
+    }
+    func _didDeselectItem(at indexPath: IndexPath) {
+        whenItemUnSelected(&dataController[indexPath])
+    }
+}

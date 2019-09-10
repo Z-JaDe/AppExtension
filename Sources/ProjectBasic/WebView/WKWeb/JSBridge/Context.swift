@@ -82,7 +82,7 @@ private let internalLibrary = """
 """
 
 @available(iOS 11.0, macOS 10.13, *)
-fileprivate class BridgeSchemeHandler: NSObject, WKURLSchemeHandler {
+private class BridgeSchemeHandler: NSObject, WKURLSchemeHandler {
     func webView(_ webView: WKWebView, start urlSchemeTask: WKURLSchemeTask) {
         let url = urlSchemeTask.request.url!
 

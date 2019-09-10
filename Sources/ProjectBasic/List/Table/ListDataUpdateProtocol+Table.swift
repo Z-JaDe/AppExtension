@@ -19,8 +19,8 @@ extension ListDataUpdateProtocol where Item == AnyTableAdapterItem {
     }
 }
 extension ListDataUpdateProtocol where Section: Equatable & InitProtocol, Item == AnyTableAdapterItem {
-    /// ZJaDe: 重新刷新 返回 ListUpdateInfoType
-    public func reloadData(section: Section? = nil, _ itemArray: [TableItemModel]?, isRefresh: Bool, _ closure: ((ListUpdateInfo<ListDataType>) -> (ListUpdateInfo<ListDataType>))? = nil) {
+    /// ZJaDe: 重新刷新 返回 ListDataInfo
+    public func reloadData(section: Section? = nil, _ itemArray: [TableItemModel]?, isRefresh: Bool, _ closure: ((ListDataInfo<ListDataType>) -> (ListDataInfo<ListDataType>))? = nil) {
         let _itemArray: [AnyTableAdapterItem] = itemArray?.map({.model($0)}) ?? []
         var newData = self.dataArray
         if isRefresh {
@@ -33,15 +33,7 @@ extension ListDataUpdateProtocol where Section: Equatable & InitProtocol, Item =
     }
 }
 extension ListData where Item: StaticTableItemCell, Section == TableSection {
-    public func updateInfo() -> TableListUpdateInfo {
+    public func updateInfo() -> TableListDataInfo {
         return self.map({.cell($0)}).updateInfo()
-    }
-}
-
-// MARK: - Deprecated
-extension ListDataUpdateProtocol where Item == AnyTableAdapterItem {
-    @available(*, deprecated, message: "请使用reloadData(listCellData:ListData)")
-    public func reloadData(_ closure: () -> ListData<Section, StaticTableItemCell>?) {
-        self.reloadData(closure())
     }
 }
