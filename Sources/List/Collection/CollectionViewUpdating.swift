@@ -13,7 +13,7 @@ extension UICollectionView {
         return associatedObject(&updaterKey, createIfNeed: Updater(CollectionViewUpdating(self)))
     }
 }
-private class CollectionViewUpdating: Updating {
+private struct CollectionViewUpdating: Updating {
     private weak var collectionView: UICollectionView?
     fileprivate init(_ target: UICollectionView) {
         self.collectionView = target

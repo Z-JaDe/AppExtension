@@ -30,28 +30,12 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
         // 注册的用的全部都是SNTableViewCell, 真正的cell是SNTableViewCell.contentItem
         tableView.register(SNTableViewCell.self, forCellReuseIdentifier: SNTableViewCell.reuseIdentifier)
         //初始化数据源
-        setDataSource(self.rxDataSource)
+        bindingDataSource(self.rxDataSource)
         //初始化代理
-        setDelegate(self.tableProxy)
+        bindingDelegate(self.tableProxy)
         allowsSelection(tableView)
     }
-    // MARK: - MultipleSelectionProtocol
-    func allowsSelection(_ tableView: UITableView) {
-        tableView.allowsSelection = true
-        tableView.allowsMultipleSelection = true
-    }
-    open override func changeSelectState(_ isSelected: Bool, _ item: AnyTableAdapterItem) {
-        guard let indexPath = self.dataController.indexPath(with: item) else {
-            return
-        }
-        if isSelected {
-            self.tableView?.selectRow(at: indexPath, animated: false, scrollPosition: .none)
-            _didSelectItem(at: indexPath)
-        } else {
-            self.tableView?.deselectRow(at: indexPath, animated: false)
-            _didDeselectItem(at: indexPath)
-        }
-    }
+
     // MARK: - EnabledStateProtocol
     open override func updateEnabledState(_ isEnabled: Bool) {
         super.updateEnabledState(isEnabled)
@@ -59,10 +43,14 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
             (item.value as? EnabledStateDesignable)?.refreshEnabledState(isEnabled)
         }
     }
-    // MARK: - ListDataUpdateProtocol
+    // MARK: -
     public let insertSecionModels: CallBackerReduce = CallBackerReduce<ListDataType>()
-    override func loadRxDataSource() -> DataSource {
-        let dataSource = DataSource(dataController: DataController())
+    public override var rxDataSource: DataSource {
+        if let result = _rxDataSource {
+            return result
+        }
+        let dataSource = DataSource()
+        _rxDataSource = dataSource
         dataSource.configureCell = {[weak self] (_, tableView, indexPath, item) in
             guard let self = self else {
                 return item.createCell(in: tableView, for: indexPath)
@@ -71,7 +59,7 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
         }
         dataSource.didMoveItem = { [weak self] (dataSource, source, destination) in
             guard let self = self else { return }
-            self.lastListDataInfo = self.lastListDataInfo.map({$0.exchange(source, destination)})
+            self.dataInfo = self.dataInfo.map({$0.exchange(source, destination)})
         }
         return dataSource
     }
@@ -88,8 +76,8 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
         cleanReference()
     }
     // MARK: -
-    open override func setDataSource(_ dataSource: DataSource) {
-        super.setDataSource(dataSource)
+    open override func bindingDataSource(_ dataSource: DataSource) {
+        super.bindingDataSource(dataSource)
         guard let tableView = tableView else { return }
         dataArrayObservable()
             .map({$0.map({[weak self] (dataArray) in
@@ -107,7 +95,7 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
     /**
      设置自定义的代理时，需要注意尽量使用UITableProxy或者它的子类，这样会自动实现一些默认配置
      */
-    open func setDelegate(_ tableProxy: UITableViewDelegate) {
+    open func bindingDelegate(_ tableProxy: UITableViewDelegate) {
         self.tableProxy = tableProxy
         tableView?.rx.setDelegate(self.tableProxy)
             .disposed(by: self.disposeBag)

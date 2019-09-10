@@ -8,14 +8,15 @@
 
 import Foundation
 
-public protocol CellSelectedStateDesignable: SelectedStateDesignable {
+public protocol CellSelectedStateDesignable {
     func didSelectItem()
 }
 
-public protocol DataSourceSectiontype: Diffable {}
-public protocol DataSourceItemtype: Diffable, Equatable {}
-public protocol AdapterItemType: DataSourceItemtype & CellSelectedStateDesignable {}
-public protocol AdapterSectionType: DataSourceSectiontype & InitProtocol & HiddenStateDesignable {}
+public protocol DataSourceSectionType: Diffable, InitProtocol {}
+public protocol DataSourceItemType: Diffable, Equatable {}
+
+public protocol AdapterItemType: DataSourceItemType & CellSelectedStateDesignable & SelectedStateDesignable {}
+public protocol AdapterSectionType: DataSourceSectionType & HiddenStateDesignable {}
 
 public protocol ListAdapterType {
     associatedtype DataSource: SectionedDataSourceType
@@ -26,11 +27,5 @@ public protocol ListAdapterType {
 extension ListAdapterType {
     public var dataController: DataSource.DataControllerType {
         return rxDataSource.dataController
-    }
-}
-extension ListAdapterType {
-    public func model(at indexPath: IndexPath) throws -> Item {
-        // swiftlint:disable force_cast
-        return try self.dataController.model(at: indexPath) as! Item
     }
 }

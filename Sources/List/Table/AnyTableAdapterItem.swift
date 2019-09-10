@@ -11,9 +11,11 @@ import Foundation
 public struct AnyTableAdapterItem {
     public typealias ValueType = AnyObject
         & HiddenStateDesignable
+        & SelectedStateDesignable
         & CellSelectedStateDesignable
         & CreateTableCellrotocol
-    public var value: ValueType
+    //理论上 value应该可以写成let 但是编译器有问题
+    public private(set) var value: ValueType
     public init(_ value: ValueType) {
         self.value = value
     }
@@ -26,11 +28,13 @@ extension AnyTableAdapterItem: HiddenStateDesignable {
     }
 }
 // MARK: - SelectedStateDesignable
-extension AnyTableAdapterItem: CellSelectedStateDesignable {
+extension AnyTableAdapterItem: SelectedStateDesignable {
     public var isSelected: Bool {
         get { return value.isSelected }
         set { value.isSelected = newValue }
     }
+}
+extension AnyTableAdapterItem: CellSelectedStateDesignable {
     public func didSelectItem() {
         value.didSelectItem()
     }

@@ -72,5 +72,4 @@ extension UICollectionAdapter {
     internal func _didDeselectItem(at indexPath: IndexPath) {
         whenItemUnSelected(&dataController[indexPath])
     }
-
 }

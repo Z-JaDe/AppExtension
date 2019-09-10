@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        gcdTest()
 //        copyTest()
         Foo().bar()
-        
+        print("AAA".failureDebugColor())
         return true
     }
 
@@ -64,7 +64,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
 }
-
+extension String {
+    public func failureDebugColor() -> String {
+        return Array(self).map({"\($0)\u{0001f3fb}"}).joined()
+    }
+    
+    public func successDebugColor() -> String {
+        return debugColor("\u{0001f3fc}")
+    }
+    
+    public func warningDebugColor() -> String {
+        return debugColor("\u{0001f3fd}")
+    }
+    
+    public func debugColor(_ colorStr: String) -> String {
+        return map({"\($0)\(colorStr)"}).joined()
+    }
+}
 class Foo {
     dynamic func bar() {
         print("--")

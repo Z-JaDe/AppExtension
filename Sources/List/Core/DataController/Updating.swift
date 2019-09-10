@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Updating: class {
+protocol Updating {
     var isInHierarchy: Bool { get }
 
     func performBatch(animated: Bool, updates: (() -> Void)?, completion: @escaping (Bool) -> Void)

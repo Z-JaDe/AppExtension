@@ -24,27 +24,11 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionS
         collectionView.register(SNCollectionViewCell.self, forCellWithReuseIdentifier: SNCollectionViewCell.reuseIdentifier)
         collectionView.register(SNCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SNCollectionReusableView.reuseIdentifier)
         collectionView.register(SNCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: SNCollectionReusableView.reuseIdentifier)
-        setDataSource(self.rxDataSource)
-        setDelegate(self.collectProxy)
+        bindingDataSource(self.rxDataSource)
+        bindingDelegate(self.collectProxy)
         allowsSelection(collectionView)
     }
-    // MARK: - MultipleSelectionProtocol
-    func allowsSelection(_ collectionView: UICollectionView) {
-        collectionView.allowsSelection = true
-        collectionView.allowsMultipleSelection = true
-    }
-    open override func changeSelectState(_ isSelected: Bool, _ item: CollectionItemModel) {
-        guard let indexPath = self.dataController.indexPath(with: item) else {
-            return
-        }
-        if isSelected {
-            self.collectionView?.selectItem(at: indexPath, animated: false, scrollPosition: [])
-            self._didSelectItem(at: indexPath)
-        } else {
-            self.collectionView?.deselectItem(at: indexPath, animated: false)
-            self._didDeselectItem(at: indexPath)
-        }
-    }
+
     // MARK: - EnabledStateProtocol
     open override func updateEnabledState(_ isEnabled: Bool) {
         super.updateEnabledState(isEnabled)
@@ -52,15 +36,19 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionS
             item.refreshEnabledState(isEnabled)
         }
     }
-    // MARK: - ListDataUpdateProtocol
-    override func loadRxDataSource() -> DataSource {
-        let dataSource = DataSource(dataController: DataController())
+    // MARK: -
+    public override var rxDataSource: DataSource {
+        if let result = _rxDataSource {
+            return result
+        }
+        let dataSource = DataSource()
+        _rxDataSource = dataSource
         dataSource.configureCell = {(_, collectionView, indexPath, item) in
             return item.createCell(in: collectionView, at: indexPath)
         }
         dataSource.didMoveItem = { [weak self] (dataSource, source, destination) in
             guard let self = self else { return }
-            self.lastListDataInfo = self.lastListDataInfo.map({$0.exchange(source, destination)})
+            self.dataInfo = self.dataInfo.map({$0.exchange(source, destination)})
         }
         return dataSource
     }
@@ -69,8 +57,8 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionS
         cleanReference()
     }
     // MARK: -
-    open override func setDataSource(_ dataSource: DataSource) {
-        super.setDataSource(dataSource)
+    open override func bindingDataSource(_ dataSource: DataSource) {
+        super.bindingDataSource(dataSource)
         guard let collectionView = collectionView else { return }
         dataArrayObservable()
             .map({$0.map({$0.compactMapToSectionModels()})})
@@ -84,7 +72,7 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionS
     /**
      设置自定义的代理时，需要注意尽量使用UICollectionProxy或者它的子类，这样会自动实现一些默认配置
      */
-    open func setDelegate(_ collectProxy: UICollectionViewDelegate) {
+    open func bindingDelegate(_ collectProxy: UICollectionViewDelegate) {
         self.collectProxy = collectProxy
         collectionView?.rx.setDelegate(self.collectProxy)
             .disposed(by: self.disposeBag)

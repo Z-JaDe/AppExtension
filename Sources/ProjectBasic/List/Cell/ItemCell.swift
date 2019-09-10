@@ -186,7 +186,7 @@ open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable
         self.didLayoutSubviewsClosure?(self)
     }
 }
-extension ItemCell: NeedUpdateProtocol, DataSourceItemtype {
+extension ItemCell: NeedUpdateProtocol, DataSourceItemType {
     public func setNeedUpdate() {
         self.needUpdateSentinel.increase()
     }

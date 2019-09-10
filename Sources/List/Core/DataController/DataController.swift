@@ -17,28 +17,18 @@ struct SectionModelSnapshot<Section, Item: Diffable> {
         self.items = items
     }
 }
+
 public final class DataController<S: SectionModelType> {
     public init() {}
     public typealias I = S.Item
     typealias DataSnapshot = SectionModelSnapshot<S, I>
     internal var _data: [DataSnapshot] = []
 
-    internal var dataSet = false
     public var reloadDataCompletion: CallBackerNoParams = CallBackerNoParams()
 
     func move(_ source: IndexPath, target: IndexPath) {
-        let sourceSection: S = self[source.section]
-        var sourceItems: [I] = sourceSection.items
-
-        let sourceItem: I = sourceItems.remove(at: source.item)
-
-        self._data[source.section] = DataSnapshot(model: sourceSection, items: sourceItems)
-
-        let destinationSection: S = self[target.section]
-        var destinationItems: [I] = destinationSection.items
-        destinationItems.insert(sourceItem, at: target.item)
-
-        self._data[target.section] = DataSnapshot(model: destinationSection, items: destinationItems)
+        let sourceItem: I = self._data[source.section].items.remove(at: source.item)
+        self._data[target.section].items.insert(sourceItem, at: target.item)
     }
 }
 extension DataController {

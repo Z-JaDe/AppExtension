@@ -15,7 +15,7 @@ extension UITableView {
     }
 }
 
-private class TableViewUpdating: Updating {
+private struct TableViewUpdating: Updating {
     private weak var tableView: UITableView?
     fileprivate init(_ target: UITableView) {
         self.tableView = target

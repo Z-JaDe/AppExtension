@@ -15,6 +15,8 @@
 		18C0A383230542CB0042F8AA /* CollectionViewable+CurrentIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0A382230542CA0042F8AA /* CollectionViewable+CurrentIndex.swift */; };
 		18C0A385230543190042F8AA /* TotalCountable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0A384230543190042F8AA /* TotalCountable.swift */; };
 		18C429EF22F80A0400632244 /* NotificationName+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4129A21DF4218004368D4 /* NotificationName+Rx.swift */; };
+		18E1D4642327CE22007B0F3A /* UITableAdapter+MultipleSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1D4622327CE1F007B0F3A /* UITableAdapter+MultipleSelection.swift */; };
+		18E1D4672327CE92007B0F3A /* UICollectionAdapter+MultipleSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1D4652327CE8E007B0F3A /* UICollectionAdapter+MultipleSelection.swift */; };
 		18F81BDF2282B15D00A8A857 /* CreateTableCellrotocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F81BDD2282B15900A8A857 /* CreateTableCellrotocol.swift */; };
 		18F81BE22282B1E200A8A857 /* CreateCollectionCellrotocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F81BE02282B1D900A8A857 /* CreateCollectionCellrotocol.swift */; };
 		18FC8EB0228E5E210013B5B7 /* PresentJumpPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC8EAA228E5E200013B5B7 /* PresentJumpPlugin.swift */; };
@@ -783,6 +785,8 @@
 		18B56D452272CEC000AADA00 /* LockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockTest.swift; sourceTree = "<group>"; };
 		18C0A382230542CA0042F8AA /* CollectionViewable+CurrentIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewable+CurrentIndex.swift"; sourceTree = "<group>"; };
 		18C0A384230543190042F8AA /* TotalCountable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCountable.swift; sourceTree = "<group>"; };
+		18E1D4622327CE1F007B0F3A /* UITableAdapter+MultipleSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableAdapter+MultipleSelection.swift"; sourceTree = "<group>"; };
+		18E1D4652327CE8E007B0F3A /* UICollectionAdapter+MultipleSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionAdapter+MultipleSelection.swift"; sourceTree = "<group>"; };
 		18F81BDD2282B15900A8A857 /* CreateTableCellrotocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTableCellrotocol.swift; sourceTree = "<group>"; };
 		18F81BE02282B1D900A8A857 /* CreateCollectionCellrotocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCollectionCellrotocol.swift; sourceTree = "<group>"; };
 		18FC8EAA228E5E200013B5B7 /* PresentJumpPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentJumpPlugin.swift; sourceTree = "<group>"; };
@@ -3133,6 +3137,7 @@
 			isa = PBXGroup;
 			children = (
 				C932F9FD21006ED100B8DF84 /* UITableAdapter.swift */,
+				18E1D4622327CE1F007B0F3A /* UITableAdapter+MultipleSelection.swift */,
 				C9D4130621DF5F71004368D4 /* UITable+AdapterDelegate.swift */,
 				C932F9FC21006ED100B8DF84 /* UITableProxy.swift */,
 				C932FA0221006ED100B8DF84 /* TableViewHeaderFooterView.swift */,
@@ -3146,6 +3151,7 @@
 			isa = PBXGroup;
 			children = (
 				C932FA2921006ED200B8DF84 /* UICollectionAdapter.swift */,
+				18E1D4652327CE8E007B0F3A /* UICollectionAdapter+MultipleSelection.swift */,
 				C9D4130921DF6033004368D4 /* UICollection+AdapterDelegate.swift */,
 				C932FA2A21006ED200B8DF84 /* UICollectionProxy.swift */,
 			);
@@ -4566,6 +4572,7 @@
 				C9D4129B21DF4218004368D4 /* BaseViewController.swift in Sources */,
 				C932F8F421006DC500B8DF84 /* EntityManager+Operation.swift in Sources */,
 				18FCBE142296C6DB00695868 /* ConstraintMaker+Position.swift in Sources */,
+				18E1D4672327CE92007B0F3A /* UICollectionAdapter+MultipleSelection.swift in Sources */,
 				C9D4130521DF5F15004368D4 /* ListAdapter.swift in Sources */,
 				C9D412E321DF4B52004368D4 /* UITableAdapter.swift in Sources */,
 				C90CC67E21E710C400BEF2DA /* RequestResult.swift in Sources */,
@@ -4675,6 +4682,7 @@
 				C9283C2821BEB91200361B87 /* ImageData.swift in Sources */,
 				C9D4130821DF5F7F004368D4 /* UITable+AdapterDelegate.swift in Sources */,
 				C9D412AC21DF45F4004368D4 /* SNTableViewCell.swift in Sources */,
+				18E1D4642327CE22007B0F3A /* UITableAdapter+MultipleSelection.swift in Sources */,
 				C9D412B721DF4600004368D4 /* TextFieldCell.swift in Sources */,
 				C92B6D52222CD0C9001A1663 /* Context.swift in Sources */,
 			);

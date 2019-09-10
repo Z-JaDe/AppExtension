@@ -109,7 +109,7 @@ open class CollectionViewDataSource<S: SectionModelType>: SectionedDataSource<S>
     }
     #endif
 
-    override open func responds(to aSelector: Selector!) -> Bool {
+    open override func responds(to aSelector: Selector!) -> Bool {
         if aSelector == #selector(UICollectionViewDataSource.collectionView(_:viewForSupplementaryElementOfKind:at:)) {
             return configureSupplementaryView != nil
         } else {

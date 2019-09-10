@@ -9,10 +9,6 @@
 import UIKit
 import DifferenceKit
 
-public enum ListUpdateMode {
-    case everything
-    case partial(animation: UITableView.RowAnimation)
-}
 public final class Updater {
     enum State {
         case idle
@@ -29,42 +25,10 @@ public final class Updater {
         return self.state == .updating
     }
 
-    private let updating: Updating
+    internal var dataSet = false
+    internal let updating: Updating
     init(_ updating: Updating) {
         self.updating = updating
-    }
-    /// ZJaDe: 刷新或者更新列表, 根据updateMode判断
-    func update<C>(
-        using stagedChangeset: StagedChangeset<C>,
-        updateMode: ListUpdateMode,
-        interrupt: ((Changeset<C>) -> Bool)?,
-        setData: @escaping (C) -> Void,
-        completion: @escaping (Bool) -> Void
-        ) {
-        var updateMode = updateMode
-        if updating.isInHierarchy == false {
-            updateMode = .everything
-        }
-        switch updateMode {
-        case .everything:
-            if let data = stagedChangeset.last?.data {
-                reload(
-                    data: data,
-                    setData: setData,
-                    completion: completion
-                )
-            } else {
-                completion(true)
-            }
-        case .partial(animation: let animation):
-            update(
-                using: stagedChangeset,
-                interrupt: interrupt,
-                animation: animation,
-                setData: setData,
-                completion: completion
-            )
-        }
     }
 
     /// ZJaDe: 更新列表
@@ -127,19 +91,19 @@ extension Updater {
             updating.moveSection(source, toSection: target)
         }
         if !changeset.elementDeleted.isEmpty {
-            updating.deleteItems(at: changeset.elementDeleted.map(mapIndexPath), with: animation)
+            updating.deleteItems(at: changeset.elementDeleted.map(map), with: animation)
         }
         if !changeset.elementInserted.isEmpty {
-            updating.insertItems(at: changeset.elementInserted.map(mapIndexPath), with: animation)
+            updating.insertItems(at: changeset.elementInserted.map(map), with: animation)
         }
         if !changeset.elementUpdated.isEmpty {
-            updating.reloadItems(at: changeset.elementUpdated.map(mapIndexPath), with: animation)
+            updating.reloadItems(at: changeset.elementUpdated.map(map), with: animation)
         }
         for (source, target) in changeset.elementMoved {
-            updating.moveItem(at: mapIndexPath(source), to: mapIndexPath(target))
+            updating.moveItem(at: map(indexPath: source), to: map(indexPath: target))
         }
     }
-    private func mapIndexPath(_ indexPath: ElementPath) -> IndexPath {
+    private func map(indexPath: ElementPath) -> IndexPath {
         return IndexPath(row: indexPath.element, section: indexPath.section)
     }
 }

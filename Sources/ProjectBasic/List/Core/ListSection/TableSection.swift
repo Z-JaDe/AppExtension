@@ -17,14 +17,8 @@ extension Color.List {
 }
 open class TableSection: ListSection {
 
-    open lazy var headerView: TableViewHeaderView = {
-        let view = TableViewHeaderView()
-        return view
-    }()
-    open lazy var footerView: TableViewFooterView = {
-        let view = TableViewFooterView()
-        return view
-    }()
+    open lazy var headerView: TableViewHeaderView = TableViewHeaderView()
+    open lazy var footerView: TableViewFooterView = TableViewFooterView()
 
     @discardableResult
     open func changeHeader(height: CGFloat) -> Self {

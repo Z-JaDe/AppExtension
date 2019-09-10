@@ -19,7 +19,10 @@ open class SectionedDataSource<S: SectionModelType>: NSObject, SectionedDataSour
     public init(dataController: DataController<S>) {
         self.dataController = dataController
         super.init()
-        self.configInit()
+        configInit()
+    }
+    public convenience override init() {
+        self.init(dataController: DataController())
     }
     open func configInit() {
 
@@ -43,6 +46,6 @@ open class SectionedDataSource<S: SectionModelType>: NSObject, SectionedDataSour
         #if DEBUG
         self._dataSourceBound = true
         #endif
-        self.dataController.update(newValue, updater)
+        self.dataController.updateNewData(newValue, updater)
     }
 }
