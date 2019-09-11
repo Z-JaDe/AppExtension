@@ -92,6 +92,7 @@ import UIKit
 
     fileprivate func layoutActivePageIndicator(_ progress: CGFloat) {
         // ignore if progress is outside of page indicators' bounds
+        guard pageCount >= 1 else { return }
         guard (0...CGFloat(pageCount - 1)).contains(progress) else { return }
         let denormalizedProgress = progress * (indicatorDiameter + indicatorPadding)
         let distanceFromPage = abs(round(progress) - progress)

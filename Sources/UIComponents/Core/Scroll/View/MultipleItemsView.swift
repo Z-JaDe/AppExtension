@@ -24,8 +24,11 @@ open class MultipleItemsView<CellView, CellData, ScrollView>: CustomControl, Col
     /// ZJaDe: viewUpdater
     public typealias ViewUpdaterFn = (CellView, CellData, Int) -> Void
     /// ZJaDe: 数据绑定
-    open var viewUpdater: ViewUpdaterFn = { _, _, _ in }
+    open var viewUpdater: ViewUpdaterFn
 
+    public convenience init() {
+        self.init(viewUpdater: { _, _, _ in })
+    }
     public init(viewUpdater: @escaping ViewUpdaterFn) {
         self.viewUpdater = viewUpdater
         super.init(frame: .zero)

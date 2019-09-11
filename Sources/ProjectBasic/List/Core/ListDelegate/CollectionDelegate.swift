@@ -8,15 +8,6 @@
 
 import Foundation
 
-public protocol CollectionAdapterDelegate: class {
-    func didSelectItem(at indexPath: IndexPath)
-    func didDeselectItem(at indexPath: IndexPath)
-    func shouldHighlightItem(at indexPath: IndexPath) -> Bool
-
-    func willDisplay(cell: UICollectionViewCell, at indexPath: IndexPath)
-    func didEndDisplaying(cell: UICollectionViewCell, at indexPath: IndexPath)
-}
-
 public protocol CollectionViewDelegate: class {
     func didSelectItem(at indexPath: IndexPath)
     func didDeselectItem(at indexPath: IndexPath)

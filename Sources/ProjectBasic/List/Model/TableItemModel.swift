@@ -20,23 +20,23 @@ open class TableItemModel: ListItemModel {
     weak var _weakContentCell: DynamicTableItemCell?
     var _contentCell: DynamicTableItemCell? {
         didSet {
-            guard let _contentCell = _contentCell else {
+            guard let cell = _contentCell else {
                 return
             }
-            _contentCell.isEnabled = self.isEnabled
-            _contentCell.isSelected = self.isSelected
-            _contentCell.didLayoutSubviewsClosure = {[weak self] (cell) -> Void in
+            cell.isEnabled = self.isEnabled
+            cell.isSelected = self.isSelected
+            cell.didLayoutSubviewsClosure = {[weak self] (cell) -> Void in
                 self?.updateHeight()
             }
         }
     }
     // MARK: SelectedStateDesignable
     public var isSelected: Bool = false {
-        didSet { _contentCell?.isSelected = self.isSelected }
+        didSet { getCell()?.isSelected = self.isSelected }
     }
     public var canSelected: Bool = false
     open func checkCanSelected(_ closure: @escaping (Bool) -> Void) {
-        if let cell = _contentCell {
+        if let cell = getCell() {
             cell.checkCanSelected({ (isCanSelected) in
                 closure(isCanSelected ?? self.canSelected)
             })
@@ -45,14 +45,14 @@ open class TableItemModel: ListItemModel {
         }
     }
     open func didSelectItem() {
-        _contentCell?.didSelectItem()
+        getCell()?.didSelectItem()
     }
     // MARK: EnabledStateDesignable
     public var isEnabled: Bool? {
-        didSet { _contentCell?.isEnabled = self.isEnabled }
+        didSet { getCell()?.isEnabled = self.isEnabled }
     }
     open func updateEnabledState(_ isEnabled: Bool) {
-        _contentCell?.refreshEnabledState(isEnabled)
+        getCell()?.refreshEnabledState(isEnabled)
     }
 }
 extension DynamicTableItemCell: DynamicModelCell {}
@@ -74,7 +74,7 @@ extension TableItemModel: TableCellConfigProtocol {
     public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
         let cell = _createCell(in: tableView, for: indexPath)
         //        logDebug("\(item)创建一个cell")
-        /// ZJaDe: 初始化_contentCell，并且_contentCell持有tableView弱引用
+        /// ZJaDe: 初始化cell，并且cell持有tableView弱引用
         createCellIfNil()
         self.getCell()!._tableView = tableView
         return cell
@@ -83,19 +83,20 @@ extension TableItemModel: TableCellConfigProtocol {
         guard let cell = cell as? InternalTableViewCell else {
             return
         }
-        // ZJaDe: InternalTableViewCell对_contentCell引用
-        cell.contentItem = _contentCell!
+        // ZJaDe: InternalTableViewCell对cell引用
+        let item = _contentCell!
+        cell.contentItem = item
         cellDidInHierarchy()
-        _contentCell?.willAppear()
+        item.willAppear()
         //        logDebug("\(item)将要显示")
     }
     func didDisappear(in cell: UITableViewCell) {
         guard let cell = cell as? InternalTableViewCell else {
             return
         }
-        _contentCell?.didDisappear()
         let item = getCell()
-        // ZJaDe: 释放InternalTableViewCell对_contentCell的持有
+        item?.didDisappear()
+        // ZJaDe: 释放InternalTableViewCell对cell的持有
         cell.contentItem = nil
         // 将contentCell加入到缓存池
         if let item = item {
@@ -108,7 +109,7 @@ extension TableItemModel: TableCellConfigProtocol {
 }
 extension TableItemModel: TableCellHeightProtocol {
     public func updateHeight(_ closure: (() -> Void)? = nil) {
-        self._contentCell?.updateHeight(self, closure)
+        self.getCell()?.updateHeight(self, closure)
     }
     public func setNeedResetCellHeight() {
         _setNeedResetCellHeight()
@@ -120,7 +121,7 @@ extension TableItemModel: TableCellHeightProtocol {
         if tableViewWidth <= 0 { return }
         /*************** 获取tempCell，并赋值 ***************/
         let item = self.createCell(isTemp: true)
-        item._model = self
+        item.setModel(self)
         /*************** 计算高度 ***************/
         let itemCellWidth = item.getItemCellWidth(tableView)
         let cellHeight = item.layoutHeight(itemCellWidth)

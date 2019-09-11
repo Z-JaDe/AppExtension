@@ -154,11 +154,11 @@ open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable
         case .zoom:
             Animater().animations {
                 if isHighlighted {
-                    self.layer.transform = CATransform3DMakeScale(0.95, 0.95, 0.95)
+                    self.layer.transform = CATransform3DMakeScale(0.97, 0.97, 0.97)
                 } else {
                     self.layer.transform = CATransform3DIdentity
                 }
-                }.animate()
+            }.animate()
         case .none: break
         }
     }

@@ -18,10 +18,10 @@ extension TableSection: _AdapterSectionType {}
 public typealias TableSectionModel = SectionModelItem<TableSection, AnyTableAdapterItem>
 
 public typealias TableListData = ListData<TableSection, AnyTableAdapterItem>
-//public typealias TableStaticData = ListData<TableSection, StaticTableItemCell>
+public typealias TableStaticData = ListData<TableSection, StaticTableItemCell>
 
 public typealias TableListDataInfo = ListDataInfo<TableListData>
-//public typealias TableStaticListDataInfo = ListDataInfo<TableStaticData>
+public typealias TableStaticListDataInfo = ListDataInfo<TableStaticData>
 
 open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
     private var timer: Timer?
