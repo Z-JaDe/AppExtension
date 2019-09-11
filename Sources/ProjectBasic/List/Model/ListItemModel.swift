@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class ListItemModel: DataSourceItemType & SelectedStateDesignable & HiddenStateDesignable & EnabledStateDesignable {
+open class ListItemModel: DataSourceItemType {
     var hasLoad: Bool = false
     public init() {}
     // MARK: - ID
@@ -20,32 +20,12 @@ open class ListItemModel: DataSourceItemType & SelectedStateDesignable & HiddenS
         return "Cell"
     }
     // MARK: -
+    private var needUpdateSentinel: Sentinel = Sentinel()
     open func isContentEqual(to source: ListItemModel) -> Bool {
         return self.identity == source.identity
     }
+    // MARK: HiddenStateDesignable
     public var isHidden: Bool = false
-    // MARK: -
-    private var needUpdateSentinel: Sentinel = Sentinel()
-    // MARK: -
-    public var isSelected: Bool = false
-    public var canSelected: Bool = false
-    public func didSelectItem() {
-        jdAbstractMethod()
-    }
-    open func checkCanSelected(_ closure: @escaping (Bool) -> Void) {
-        closure(self.canSelected)
-    }
-    // MARK: -
-    open var isEnabled: Bool? {
-        didSet {
-            if let isEnabled = self.isEnabled, isEnabled != oldValue {
-                updateEnabledState(isEnabled)
-            }
-        }
-    }
-    open func updateEnabledState(_ isEnabled: Bool) {
-
-    }
 }
 extension ListItemModel: NeedUpdateProtocol {
     public func setNeedUpdate() {

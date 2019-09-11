@@ -50,3 +50,27 @@ public class BufferPool {
         return dataArray[key] ?? Set()
     }
 }
+
+extension BufferPool {
+    public func createView<T: UIView & BufferPoolItemProtocol>(_ cellName: String) -> T {
+        if let result: T = self.pop(cellName) {
+            return result
+        } else {
+            return BufferPool.createView(cellName)
+        }
+    }
+    static func createView<T: UIView>(_ cellName: String) -> T {
+        // swiftlint:disable force_cast
+        let cls: T.Type = NSClassFromString(cellName) as! T.Type
+        return cls.init()
+    }
+}
+extension Optional where Wrapped == BufferPool {
+    public func createView<T: UIView & BufferPoolItemProtocol>(_ cellName: String) -> T {
+        if let value = self {
+            return value.createView(cellName)
+        } else {
+            return BufferPool.createView(cellName)
+        }
+    }
+}

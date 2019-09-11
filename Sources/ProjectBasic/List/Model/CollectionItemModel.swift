@@ -16,63 +16,46 @@ open class CollectionItemModel: ListItemModel {
     // MARK: - cell
     public weak var bufferPool: BufferPool?
     /// ZJaDe: 手动释放
-    private var _contentCell: DynamicCollectionItemCell? {
+    weak var _weakContentCell: DynamicCollectionItemCell?
+    var _contentCell: DynamicCollectionItemCell? {
         didSet {
             _contentCell?.isEnabled = self.isEnabled
         }
     }
-    open override var isEnabled: Bool? {
-        didSet {
-            _contentCell?.isEnabled = self.isEnabled
-        }
+    // MARK: SelectedStateDesignable
+    public var isSelected: Bool = false {
+        didSet { _contentCell?.isSelected = self.isSelected }
     }
-    public override var isSelected: Bool {
-        didSet {
-            _contentCell?.isSelected = self.isSelected
-        }
+    public var canSelected: Bool = false
+    open func checkCanSelected(_ closure: @escaping (Bool) -> Void) {
+        closure(self.canSelected)
     }
-    public override func didSelectItem() {
+    open func didSelectItem() {
         _contentCell?.didSelectItem()
     }
-    open override func updateEnabledState(_ isEnabled: Bool) {
+    // MARK: EnabledStateDesignable
+    public var isEnabled: Bool? {
+        didSet { _contentCell?.isEnabled = self.isEnabled }
+    }
+    open func updateEnabledState(_ isEnabled: Bool) {
         _contentCell?.refreshEnabledState(isEnabled)
     }
 }
-extension CollectionItemModel {
-    func createCell() -> CollectionItemCell {
-        let result: DynamicCollectionItemCell
+extension DynamicCollectionItemCell: DynamicModelCell {}
+extension CollectionItemModel: CreateCellUseModel {
+    func createCell(isTemp: Bool) -> DynamicCollectionItemCell {
         let cellName = self.getCellClsName()
-        if let cell: DynamicCollectionItemCell = bufferPool?.pop(cellName) {
-            result = cell
-        } else {
-            // swiftlint:disable force_cast
-            let cls: DynamicCollectionItemCell.Type = NSClassFromString(cellName) as! DynamicCollectionItemCell.Type
-            result = cls.init()
-        }
+        let result: DynamicCollectionItemCell = bufferPool.createView(cellName)
         if let cellSize = self.cellSize {
             result.updateLayouts(result.snp.prepareConstraints({ (maker) in
                 maker.size.equalTo(cellSize)
             }))
         }
-        result._model = self
         return result
     }
-    func recycleCell(_ cell: CollectionItemCell) {
+    func recycleCell(_ cell: DynamicCollectionItemCell) {
         bufferPool?.push(cell)
-    }
-    func getCell() -> CollectionItemCell? {
-        return _contentCell
-    }
-    private func createCellIfNil() {
-        if _contentCell == nil {
-            let cell = createCell()
-            _contentCell = cell as? DynamicCollectionItemCell
-        }
-    }
-    func cleanReference() {
-        // ZJaDe: 释放model对_contentCell的持有
-        _contentCell?._model = nil
-        _contentCell = nil
+        cleanCellReference()
     }
 }
 extension CollectionItemModel: CollectionCellConfigProtocol {
@@ -86,26 +69,23 @@ extension CollectionItemModel: CollectionCellConfigProtocol {
         guard let cell = cell as? InternalCollectionViewCell else {
             return
         }
-        createCellIfNil()
         // ZJaDe: InternalCollectionViewCell对_contentCell引用
-        cell.contentItem = _contentCell
+        cell.contentItem = _contentCell!
+        cellDidInHierarchy()
         _contentCell?.willAppear()
-        if _contentCell == nil {
-            logError("cell为空，需检查错误")
-        }
     }
     public func didDisappear(in cell: UICollectionViewCell) {
         guard let cell = cell as? InternalCollectionViewCell else {
             return
         }
         _contentCell?.didDisappear()
+        let item = getCell()
         // ZJaDe: 释放InternalCollectionViewCell对_contentCell的持有
         cell.contentItem = nil
         //讲contentCell加入到缓存池
-        if let item = _contentCell {
+        if let item = item {
             recycleCell(item)
         }
-        cleanReference()
     }
     func shouldHighlight() -> Bool {
         return getCell()?.shouldHighlight() ?? true

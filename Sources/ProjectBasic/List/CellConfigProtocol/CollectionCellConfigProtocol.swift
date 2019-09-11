@@ -13,8 +13,4 @@ import Foundation
 protocol CollectionCellConfigProtocol: CreateCollectionCellrotocol {
     func willAppear(in cell: UICollectionViewCell)
     func didDisappear(in cell: UICollectionViewCell)
-
-    func createCell() -> CollectionItemCell
-    func recycleCell(_ cell: CollectionItemCell)
-    func getCell() -> CollectionItemCell?
 }

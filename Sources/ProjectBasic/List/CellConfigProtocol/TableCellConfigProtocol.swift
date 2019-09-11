@@ -16,7 +16,7 @@ protocol TableCellConfigProtocol: CreateTableCellrotocol {
     func shouldHighlight() -> Bool
 }
 extension CreateTableCellrotocol {
-    func _createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
+    func _createCell(in tableView: UITableView, for indexPath: IndexPath) -> InternalTableViewCell {
         let reuseIdentifier: String = InternalTableViewCell.reuseIdentifier
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? InternalTableViewCell
         return cell!

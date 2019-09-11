@@ -29,12 +29,22 @@ open class ViewController: UIViewController, ViewControllerProtocol {
         self.isCoderLoad = true
         configInit()
     }
-
+    
     // MARK: - 以下几个方法在不同的时候重写
     open func configInit() {
-
+        
     }
-
+    
+    open override func loadView() {
+        super.loadView()
+        if self.isCoderLoad == false, let view = createRootView(self.view.frame) {
+            self.view = view
+        }
+    }
+    open func createRootView(_ frame: CGRect) -> UIView? {
+        return nil
+    }
+    
     open func setNeedUpdateData() {
         setNeedUpdateData(self.rx.isAppear)
     }
@@ -53,11 +63,11 @@ open class ViewController: UIViewController, ViewControllerProtocol {
     }
     /// ZJaDe: 不要直接调用该方法，重写添加子view
     open func addChildView() {
-
+        
     }
     /// ZJaDe: 不要直接调用该方法，重写设置约束
     open func configLayout() {
-
+        
     }
     // MARK: -
     open override func viewDidLoad() {
@@ -88,11 +98,8 @@ open class ViewController: UIViewController, ViewControllerProtocol {
 
 open class GenericsViewController<ViewType>: ViewController where ViewType: UIView {
     // MARK: - view
-    open override func loadView() {
-        super.loadView()
-        if self.isCoderLoad == false {
-            self.view = createView(self.view.frame)
-        }
+    public final override func createRootView(_ frame: CGRect) -> UIView? {
+        return createView(frame)
     }
     /// ZJaDe: 重写该方法 返回根视图
     open func createView(_ frame: CGRect) -> ViewType {

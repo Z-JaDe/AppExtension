@@ -10,8 +10,8 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-extension CollectionItemModel: AdapterItemType {}
-extension CollectSection: AdapterSectionType {}
+extension CollectionItemModel: _AdapterItemType {}
+extension CollectSection: _AdapterSectionType {}
 
 public typealias CollectionSectionModel = SectionModelItem<CollectSection, CollectionItemModel>
 
@@ -48,10 +48,6 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionS
         return dataSource
     }
     // MARK: -
-    deinit {
-        cleanReference()
-    }
-    // MARK: -
     open override func bindingDataSource(_ dataSource: DataSource) {
         super.bindingDataSource(dataSource)
         guard let collectionView = collectionView else { return }
@@ -74,11 +70,6 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionS
     }
 }
 extension UICollectionAdapter {
-    func cleanReference() {
-        self.dataArray.lazy
-            .flatMap({$0.items})
-            .forEach({$0.cleanReference()})
-    }
     func addBufferPool(at data: [SectionModelItem<Section, Item>]) {
         data.lazy.flatMap({$0.items}).forEach({ (model) in
             model.bufferPool = self.bufferPool

@@ -10,30 +10,18 @@ import UIKit
 import RxSwift
 
 open class TableModelCell<ModelType: TableItemModel>: DynamicTableItemCell, CellModelProtocol {
-    override var _model: TableItemModel? {
-        get {return self.model}
-        set {
-            if let newValue = newValue as? ModelType {
-                self.model = newValue
-            }
-        }
-    }
+
     public var model: ModelType {
-        didSet {
-            setNeedUpdateModel()
-            if isTempCell {
-                updateModelIfNeed()
-            }
-        }
+        // swiftlint:disable force_cast
+        get {return getModel() as! ModelType}
+        set { setModel(newValue) }
     }
 
-    public required init(model: ModelType) {
-        self.model = model
-        super.init(frame: CGRect.zero)
+    override func didChangedModel(_ model: TableItemModel) {
         setNeedUpdateModel()
-    }
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("父类不实现")
+        if isTempCell {
+            updateModelIfNeed()
+        }
     }
 
     open func configData(with model: ModelType) {

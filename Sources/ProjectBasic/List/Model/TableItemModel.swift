@@ -8,29 +8,6 @@
 
 import UIKit
 
-extension AnyTableAdapterItem {
-    public var model: TableItemModel? {
-        return self.value as? TableItemModel
-    }
-    public static func model(_ value: TableItemModel) -> AnyTableAdapterItem {
-        return AnyTableAdapterItem(value)
-    }
-}
-extension TableItemModel: TableAdapterItemDiffable {
-    public func isEqual(to source: AnyTableAdapterItem) -> Bool {
-        guard let source = source.model else {
-            return false
-        }
-        return self == source
-    }
-    public func isContentEqual(to source: AnyTableAdapterItem) -> Bool {
-        guard let source = source.model else {
-            return false
-        }
-        return self.isContentEqual(to: source)
-    }
-}
-
 open class TableItemModel: ListItemModel {
 
     open func getCellClsName() -> String {
@@ -40,7 +17,8 @@ open class TableItemModel: ListItemModel {
     public weak var bufferPool: BufferPool?
 
     /// ZJaDe: 手动释放
-    private var _contentCell: DynamicTableItemCell? {
+    weak var _weakContentCell: DynamicTableItemCell?
+    var _contentCell: DynamicTableItemCell? {
         didSet {
             guard let _contentCell = _contentCell else {
                 return
@@ -52,67 +30,44 @@ open class TableItemModel: ListItemModel {
             }
         }
     }
-    open override var isEnabled: Bool? {
-        didSet { _contentCell?.isEnabled = self.isEnabled }
-    }
-    public override var isSelected: Bool {
+    // MARK: SelectedStateDesignable
+    public var isSelected: Bool = false {
         didSet { _contentCell?.isSelected = self.isSelected }
     }
-    open override func checkCanSelected(_ closure: @escaping (Bool) -> Void) {
+    public var canSelected: Bool = false
+    open func checkCanSelected(_ closure: @escaping (Bool) -> Void) {
         if let cell = _contentCell {
             cell.checkCanSelected({ (isCanSelected) in
-                if let result = isCanSelected {
-                    closure(result)
-                } else {
-                    super.checkCanSelected(closure)
-                }
+                closure(isCanSelected ?? self.canSelected)
             })
         } else {
-            super.checkCanSelected(closure)
+            closure(self.canSelected)
         }
     }
-    public override func didSelectItem() {
+    open func didSelectItem() {
         _contentCell?.didSelectItem()
     }
-    open override func updateEnabledState(_ isEnabled: Bool) {
+    // MARK: EnabledStateDesignable
+    public var isEnabled: Bool? {
+        didSet { _contentCell?.isEnabled = self.isEnabled }
+    }
+    open func updateEnabledState(_ isEnabled: Bool) {
         _contentCell?.refreshEnabledState(isEnabled)
     }
 }
-extension TableItemModel {
+extension DynamicTableItemCell: DynamicModelCell {}
+extension TableItemModel: CreateCellUseModel {
     /// 这方法返回的是contentCell, 实际内容的cell
-    func createCell(isTemp: Bool) -> TableItemCell {
-        let result: DynamicTableItemCell
+    func createCell(isTemp: Bool) -> DynamicTableItemCell {
         let cellName = self.getCellClsName()
         // 如果缓存池有, 就pop出来使用
-        if let cell: DynamicTableItemCell = bufferPool?.pop(cellName) {
-            result = cell
-        } else {
-            // 如果缓存池没有这个类型的cell
-            // swiftlint:disable force_cast
-            let cls: DynamicTableItemCell.Type = NSClassFromString(cellName) as! DynamicTableItemCell.Type
-            result = cls.init()
-        }
+        let result: DynamicTableItemCell = bufferPool.createView(cellName)
         result.isTempCell = isTemp
-        result._model = self
         return result
     }
-    func recycleCell(_ cell: TableItemCell) {
+    func recycleCell(_ cell: DynamicTableItemCell) {
         bufferPool?.push(cell)
-    }
-    func getCell() -> TableItemCell? {
-        return _contentCell
-    }
-    private func createCellIfNil() {
-        guard _contentCell == nil else {
-            return
-        }
-        let cell = createCell(isTemp: false)
-        _contentCell = cell as? DynamicTableItemCell
-    }
-    func cleanReference() {
-        // ZJaDe: 释放model对_contentCell的持有
-        _contentCell?._model = nil
-        _contentCell = nil
+        cleanCellReference()
     }
 }
 extension TableItemModel: TableCellConfigProtocol {
@@ -129,11 +84,9 @@ extension TableItemModel: TableCellConfigProtocol {
             return
         }
         // ZJaDe: InternalTableViewCell对_contentCell引用
-        cell.contentItem = _contentCell
+        cell.contentItem = _contentCell!
+        cellDidInHierarchy()
         _contentCell?.willAppear()
-        if _contentCell == nil {
-            logError("cell为空，需检查错误")
-        }
         //        logDebug("\(item)将要显示")
     }
     func didDisappear(in cell: UITableViewCell) {
@@ -141,13 +94,13 @@ extension TableItemModel: TableCellConfigProtocol {
             return
         }
         _contentCell?.didDisappear()
+        let item = getCell()
         // ZJaDe: 释放InternalTableViewCell对_contentCell的持有
         cell.contentItem = nil
         // 将contentCell加入到缓存池
-        if let item = _contentCell {
+        if let item = item {
             recycleCell(item)
         }
-        cleanReference()
     }
     func shouldHighlight() -> Bool {
         return getCell()?.shouldHighlight() ?? true
@@ -166,7 +119,8 @@ extension TableItemModel: TableCellHeightProtocol {
         let tableViewWidth = tableView.bounds.size.width
         if tableViewWidth <= 0 { return }
         /*************** 获取tempCell，并赋值 ***************/
-        let item: TableItemCell = self.createCell(isTemp: true)
+        let item = self.createCell(isTemp: true)
+        item._model = self
         /*************** 计算高度 ***************/
         let itemCellWidth = item.getItemCellWidth(tableView)
         let cellHeight = item.layoutHeight(itemCellWidth)

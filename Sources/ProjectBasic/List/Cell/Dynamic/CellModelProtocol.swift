@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 public protocol CellModelProtocol: ConfigModelProtocol, UpdateModelProtocol {
-    init(model: ModelType)
+//    init(model: ModelType)
 }
 public extension CellModelProtocol where Self: ItemCell {
     func configDataWithModel() {

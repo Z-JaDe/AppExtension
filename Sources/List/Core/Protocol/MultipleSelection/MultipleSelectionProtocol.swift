@@ -12,13 +12,10 @@ public protocol MultipleSelectionProtocol: AssociatedObjectProtocol {
     associatedtype SelectItemType
     /// ZJaDe: 找到item对应的下标
     func index(_ item: SelectItemType) -> Int?
-    /// ZJaDe: 检查是否可以被选中
-    func checkCanSelected(_ item: SelectItemType, _ closure: @escaping (Bool?) -> Void)
     /// ZJaDe: 更新item选中状态
     func updateSelectState(_ item: inout SelectItemType, _ isSelected: Bool)
-    /// ZJaDe: 主动更改item的选中状态时
+    /// ZJaDe: 主动更改item的选中状态
     func changeSelectState(_ isSelected: Bool, _ item: SelectItemType)
-    func changeSelectState(_ isSelected: Bool, _ items: [SelectItemType])
 }
 private var selectedItemArrayKey: UInt8 = 0
 private var selectedItemArrayChangedKey: UInt8 = 0
@@ -46,13 +43,21 @@ public extension MultipleSelectionProtocol {
         set {setAssociatedObject(&checkCanSelectedClosureKey, newValue)}
     }
 }
+extension MultipleSelectionProtocol where SelectItemType: Equatable {
+    public func index(_ item: SelectItemType) -> Int? {
+        return self.selectedItemArray.firstIndex(of: item)
+    }
+}
+// MARK: - UpdateSelectState
+extension MultipleSelectionProtocol where SelectItemType: SelectedStateDesignable {
+    public func updateSelectState(_ item: inout SelectItemType, _ isSelected: Bool) {
+        item.isSelected = isSelected
+        logDebug("\(self.selectedItemArray)")
+        self.selectedItemArrayChanged.call(self.selectedItemArray)
+    }
+}
 // MARK: -
 extension MultipleSelectionProtocol {
-    public func changeSelectState(_ isSelected: Bool, _ items: [SelectItemType]) {
-        for item in items {
-            self.changeSelectState(isSelected, item)
-        }
-    }
     /// ZJaDe: 当item未选中时做一些处理 默认不能主动调用
     public func whenItemUnSelected(_ item: inout SelectItemType) {
         if let index = self.index(item) {
@@ -74,21 +79,15 @@ extension MultipleSelectionProtocol {
         }
     }
 }
-extension MultipleSelectionProtocol where SelectItemType: Equatable {
-    public func index(_ item: SelectItemType) -> Int? {
-        return self.selectedItemArray.firstIndex(of: item)
-    }
-}
-// MARK: - UpdateSelectState
-extension MultipleSelectionProtocol where SelectItemType: SelectedStateDesignable {
-    public func updateSelectState(_ item: inout SelectItemType, _ isSelected: Bool) {
-        item.isSelected = isSelected
-        logDebug("\(self.selectedItemArray)")
-        self.selectedItemArrayChanged.call(self.selectedItemArray)
-    }
-}
-// MARK: - CanSelected
+// MARK: -
 extension MultipleSelectionProtocol {
+    /// ZJaDe: 主动更改items的选中状态
+    public func changeSelectState(_ isSelected: Bool, _ items: [SelectItemType]) {
+        for item in items {
+            self.changeSelectState(isSelected, item)
+        }
+    }
+    /// ZJaDe: 检查是否可以被选中
     public func checkCanSelected(_ item: SelectItemType, _ closure: @escaping (Bool?) -> Void) {
         guard maxSelectedCount.canSelected else {
             closure(false)
@@ -99,34 +98,5 @@ extension MultipleSelectionProtocol {
             return
         }
         closure(nil)
-    }
-}
-// MARK: - MaxSelectedCount
-public enum MaxSelectedCount {
-    case noLimit
-    case value(UInt)
-}
-extension MaxSelectedCount {
-    var canSelected: Bool {
-        switch self {
-        case .noLimit: return true
-        case .value(let count): return count > 0
-        }
-    }
-    var count: UInt? {
-        switch self {
-        case .noLimit: return nil
-        case .value(let count): return count
-        }
-    }
-}
-extension MaxSelectedCount: ExpressibleByNilLiteral {
-    public init(nilLiteral: ()) {
-        self = .noLimit
-    }
-}
-extension MaxSelectedCount: ExpressibleByIntegerLiteral {
-    public init(integerLiteral value: UInt) {
-        self = .value(value)
     }
 }

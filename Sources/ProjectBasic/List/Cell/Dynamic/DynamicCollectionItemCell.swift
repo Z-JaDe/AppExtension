@@ -10,17 +10,25 @@ import UIKit
 
 open class DynamicCollectionItemCell: CollectionItemCell {
 
-    weak var _model: CollectionItemModel?
+    weak var _weakModel: CollectionItemModel? {
+        didSet {
+            if let model = self._weakModel {
+                didChangedModel(model)
+            }
+        }
+    }
+    var _model: CollectionItemModel?
+    func didChangedModel(_ model: CollectionItemModel) {}
 
     open override func configInit() {
         super.configInit()
-        self.cellState.filter({$0 == .didAppear}).subscribeOnNext {[weak self] (_) in
-            self?._model?.hasLoad = true
-        }.disposed(by: self.disposeBag)
     }
-
+    open override func willAppear() {
+        super.willAppear()
+        self.getModel()?.hasLoad = true
+    }
     open override func configAppearAnimate() {
-        if _model?.hasLoad == true {
+        if getModel()?.hasLoad == true {
             super.configAppearAnimate()
         }
     }

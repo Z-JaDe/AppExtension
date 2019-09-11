@@ -15,6 +15,10 @@
 		18C0A383230542CB0042F8AA /* CollectionViewable+CurrentIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0A382230542CA0042F8AA /* CollectionViewable+CurrentIndex.swift */; };
 		18C0A385230543190042F8AA /* TotalCountable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0A384230543190042F8AA /* TotalCountable.swift */; };
 		18C429EF22F80A0400632244 /* NotificationName+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4129A21DF4218004368D4 /* NotificationName+Rx.swift */; };
+		18CBF3A82328823A00E6DDE2 /* AnyTableAdapterItem+Diffable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBF3A72328823A00E6DDE2 /* AnyTableAdapterItem+Diffable.swift */; };
+		18CBF3AB232883E600E6DDE2 /* TableItemModel+Adapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBF3A9232883DC00E6DDE2 /* TableItemModel+Adapter.swift */; };
+		18CBF3AD232889BA00E6DDE2 /* CreateCellUseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBF3AC232889BA00E6DDE2 /* CreateCellUseModel.swift */; };
+		18CBF3B12328A8C800E6DDE2 /* MaxSelectedCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBF3AF2328A85200E6DDE2 /* MaxSelectedCount.swift */; };
 		18E1D4642327CE22007B0F3A /* UITableAdapter+MultipleSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1D4622327CE1F007B0F3A /* UITableAdapter+MultipleSelection.swift */; };
 		18E1D4672327CE92007B0F3A /* UICollectionAdapter+MultipleSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1D4652327CE8E007B0F3A /* UICollectionAdapter+MultipleSelection.swift */; };
 		18F81BDF2282B15D00A8A857 /* CreateTableCellrotocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F81BDD2282B15900A8A857 /* CreateTableCellrotocol.swift */; };
@@ -90,7 +94,6 @@
 		C90E76FE21C8933200707519 /* UpdateDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932FAA421006EFD00B8DF84 /* UpdateDataProtocol.swift */; };
 		C90E770121C893BE00707519 /* UpdateNavItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90E76FF21C893B900707519 /* UpdateNavItemProtocol.swift */; };
 		C90F046821FAEB5F007F1111 /* AnyTableAdapterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F046721FAEB5F007F1111 /* AnyTableAdapterItem.swift */; };
-		C90F046A21FAEB8A007F1111 /* AnyTableAdapterItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90F046921FAEB8A007F1111 /* AnyTableAdapterItem+Extension.swift */; };
 		C91055B121A8298200F87515 /* UserNotificationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C91055AF21A8298200F87515 /* UserNotificationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C91055B421A8298200F87515 /* UserNotificationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91055AD21A8298200F87515 /* UserNotificationManager.framework */; };
 		C91055B521A8298200F87515 /* UserNotificationManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C91055AD21A8298200F87515 /* UserNotificationManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -784,6 +787,10 @@
 		18B56D452272CEC000AADA00 /* LockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockTest.swift; sourceTree = "<group>"; };
 		18C0A382230542CA0042F8AA /* CollectionViewable+CurrentIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewable+CurrentIndex.swift"; sourceTree = "<group>"; };
 		18C0A384230543190042F8AA /* TotalCountable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCountable.swift; sourceTree = "<group>"; };
+		18CBF3A72328823A00E6DDE2 /* AnyTableAdapterItem+Diffable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyTableAdapterItem+Diffable.swift"; sourceTree = "<group>"; };
+		18CBF3A9232883DC00E6DDE2 /* TableItemModel+Adapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableItemModel+Adapter.swift"; sourceTree = "<group>"; };
+		18CBF3AC232889BA00E6DDE2 /* CreateCellUseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCellUseModel.swift; sourceTree = "<group>"; };
+		18CBF3AF2328A85200E6DDE2 /* MaxSelectedCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxSelectedCount.swift; sourceTree = "<group>"; };
 		18E1D4622327CE1F007B0F3A /* UITableAdapter+MultipleSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableAdapter+MultipleSelection.swift"; sourceTree = "<group>"; };
 		18E1D4652327CE8E007B0F3A /* UICollectionAdapter+MultipleSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionAdapter+MultipleSelection.swift"; sourceTree = "<group>"; };
 		18F81BDD2282B15900A8A857 /* CreateTableCellrotocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTableCellrotocol.swift; sourceTree = "<group>"; };
@@ -949,7 +956,6 @@
 		C90E76FA21C88F1700707519 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
 		C90E76FF21C893B900707519 /* UpdateNavItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNavItemProtocol.swift; sourceTree = "<group>"; };
 		C90F046721FAEB5F007F1111 /* AnyTableAdapterItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyTableAdapterItem.swift; sourceTree = "<group>"; };
-		C90F046921FAEB8A007F1111 /* AnyTableAdapterItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnyTableAdapterItem+Extension.swift"; sourceTree = "<group>"; };
 		C91055AD21A8298200F87515 /* UserNotificationManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserNotificationManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C91055AF21A8298200F87515 /* UserNotificationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserNotificationManager.h; sourceTree = "<group>"; };
 		C91055B021A8298200F87515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1520,6 +1526,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18CBF3AE2328A83B00E6DDE2 /* MultipleSelection */ = {
+			isa = PBXGroup;
+			children = (
+				C932F86D21006DC500B8DF84 /* MultipleSelectionProtocol.swift */,
+				18CBF3AF2328A85200E6DDE2 /* MaxSelectedCount.swift */,
+			);
+			path = MultipleSelection;
+			sourceTree = "<group>";
+		};
 		18FCBE132296C6C400695868 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
@@ -2627,6 +2642,7 @@
 			children = (
 				C932FA1321006ED100B8DF84 /* TableViewDataSource.swift */,
 				C90F046721FAEB5F007F1111 /* AnyTableAdapterItem.swift */,
+				18CBF3A72328823A00E6DDE2 /* AnyTableAdapterItem+Diffable.swift */,
 				C910E63521AE83BA0067B51B /* TableViewUpdating.swift */,
 				18F81BDD2282B15900A8A857 /* CreateTableCellrotocol.swift */,
 			);
@@ -2711,8 +2727,10 @@
 			isa = PBXGroup;
 			children = (
 				C932FA4421006ED200B8DF84 /* TableItemModel.swift */,
+				18CBF3A9232883DC00E6DDE2 /* TableItemModel+Adapter.swift */,
 				C932FA4521006ED200B8DF84 /* ListItemModel.swift */,
 				C932FA4621006ED200B8DF84 /* CollectionItemModel.swift */,
+				18CBF3AC232889BA00E6DDE2 /* CreateCellUseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2720,8 +2738,8 @@
 		C932FA4721006ED200B8DF84 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				18CBF3AE2328A83B00E6DDE2 /* MultipleSelection */,
 				C932FA4F21006ED200B8DF84 /* NeedUpdateProtocol.swift */,
-				C932F86D21006DC500B8DF84 /* MultipleSelectionProtocol.swift */,
 				C932F85721006DC500B8DF84 /* CheckAndCatchParamsProtocol.swift */,
 			);
 			path = Protocol;
@@ -3138,7 +3156,6 @@
 				18E1D4622327CE1F007B0F3A /* UITableAdapter+MultipleSelection.swift */,
 				C932F9FC21006ED100B8DF84 /* UITableProxy.swift */,
 				C932FA0221006ED100B8DF84 /* TableViewHeaderFooterView.swift */,
-				C90F046921FAEB8A007F1111 /* AnyTableAdapterItem+Extension.swift */,
 				C9D412EC21DF4BCB004368D4 /* ListDataUpdateProtocol+Table.swift */,
 			);
 			path = Table;
@@ -4562,6 +4579,7 @@
 				C91A7D0D21D1C52900720E4F /* ScanMaskView.swift in Sources */,
 				C9D412F021DF4C06004368D4 /* ResultParser.swift in Sources */,
 				C9D412CE21DF4A31004368D4 /* TableCellHeight.swift in Sources */,
+				18CBF3AB232883E600E6DDE2 /* TableItemModel+Adapter.swift in Sources */,
 				C91B1E7521E31DB3004FEE44 /* Store+Rx.swift in Sources */,
 				C90BFC2721DE4E5600DF1E54 /* AbstractResultModelType.swift in Sources */,
 				C9D412CC21DF4A31004368D4 /* TableCellHeightProtocol.swift in Sources */,
@@ -4607,6 +4625,7 @@
 				18FCBE1B2296C76C00695868 /* UpdateLayout+SnapKit.swift in Sources */,
 				C9D4131D21DF6B74004368D4 /* WebViewController.swift in Sources */,
 				C90E74D722001608006CE73C /* AssetGridModel.swift in Sources */,
+				18CBF3AD232889BA00E6DDE2 /* CreateCellUseModel.swift in Sources */,
 				C9D412E821DF4B65004368D4 /* UICollectionAdapter.swift in Sources */,
 				C9D412E721DF4B52004368D4 /* UITableProxy.swift in Sources */,
 				C9D4132321DF6B74004368D4 /* LoadWebUrlProtocol.swift in Sources */,
@@ -4671,7 +4690,6 @@
 				C932F7A821005A9F00B8DF84 /* ProjectBasic.swift in Sources */,
 				C9D412E521DF4B52004368D4 /* TableViewHeaderFooterView.swift in Sources */,
 				C932F824210069AD00B8DF84 /* MessageHUDProtocol.swift in Sources */,
-				C90F046A21FAEB8A007F1111 /* AnyTableAdapterItem+Extension.swift in Sources */,
 				C9D412BA21DF4601004368D4 /* CustomTableItemCell.swift in Sources */,
 				C90CC67B21E710C400BEF2DA /* ListResult.swift in Sources */,
 				C90BFC2321DE448D00DF1E54 /* NetworkError.swift in Sources */,
@@ -4724,8 +4742,10 @@
 				C910E64721AEAF940067B51B /* SectionedDataSource.swift in Sources */,
 				C9D412F621DF4DAA004368D4 /* ListSection.swift in Sources */,
 				C918DF0421B52299000F2AAC /* ListData+EditItems.swift in Sources */,
+				18CBF3A82328823A00E6DDE2 /* AnyTableAdapterItem+Diffable.swift in Sources */,
 				C932FA9621006ED200B8DF84 /* NeedUpdateProtocol.swift in Sources */,
 				C910E63B21AE8A950067B51B /* Updating.swift in Sources */,
+				18CBF3B12328A8C800E6DDE2 /* MaxSelectedCount.swift in Sources */,
 				C9D412F521DF4DAA004368D4 /* ListAdapterType.swift in Sources */,
 				18F81BE22282B1E200A8A857 /* CreateCollectionCellrotocol.swift in Sources */,
 				C932FA6621006ED200B8DF84 /* TableViewDataSource.swift in Sources */,

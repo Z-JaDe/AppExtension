@@ -11,7 +11,9 @@ import RxSwift
 import RxCocoa
 
 extension AnyTableAdapterItem: AdapterItemType {}
-extension TableSection: AdapterSectionType {}
+extension TableItemModel: _AdapterItemType {}
+extension StaticTableItemCell: _AdapterItemType {}
+extension TableSection: _AdapterSectionType {}
 
 public typealias TableSectionModel = SectionModelItem<TableSection, AnyTableAdapterItem>
 
@@ -68,10 +70,6 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
         return item.createCell(in: tableView, for: indexPath)
     }
     // MARK: -
-    deinit {
-        cleanReference()
-    }
-    // MARK: -
     open override func bindingDataSource(_ dataSource: DataSource) {
         super.bindingDataSource(dataSource)
         guard let tableView = tableView else { return }
@@ -126,12 +124,6 @@ extension UITableAdapter {
     }
 }
 extension UITableAdapter {
-    func cleanReference() {
-        self.dataArray.lazy
-            .flatMap({$0.items})
-            .compactMap({$0.model})
-            .forEach({$0.cleanReference()})
-    }
     func addBufferPool(at data: [SectionModelItem<Section, Item>]) {
         data.lazy.flatMap({$0.items}).compactMap({$0.model}).forEach({ (model) in
             model.bufferPool = self.bufferPool

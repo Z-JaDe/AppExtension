@@ -9,25 +9,15 @@
 import UIKit
 import RxSwift
 open class CollectionModelCell<ModelType: CollectionItemModel>: DynamicCollectionItemCell, CellModelProtocol {
-    override var _model: CollectionItemModel? {
-        get {return self.model}
-        set {
-            if let newValue = newValue as? ModelType {
-                self.model = newValue
-            }
-        }
-    }
+
     public var model: ModelType {
-        didSet { setNeedUpdateModel() }
+        // swiftlint:disable force_cast
+        get {return getModel() as! ModelType}
+        set { setModel(newValue) }
     }
 
-    public required init(model: ModelType) {
-        self.model = model
-        super.init(frame: CGRect.zero)
+    override func didChangedModel(_ model: CollectionItemModel) {
         setNeedUpdateModel()
-    }
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("父类不实现")
     }
 
     open func configData(with model: ModelType) {
