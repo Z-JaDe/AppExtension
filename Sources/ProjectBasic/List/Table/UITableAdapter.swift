@@ -12,7 +12,9 @@ import RxCocoa
 
 extension AnyTableAdapterItem: AdapterItemType {}
 extension TableItemModel: _AdapterItemType {}
+extension TableCellModel: _AdapterItemType {}
 extension StaticTableItemCell: _AdapterItemType {}
+
 extension TableSection: _AdapterSectionType {}
 
 public typealias TableSectionModel = SectionModelItem<TableSection, AnyTableAdapterItem>

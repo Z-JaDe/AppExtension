@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class ListItemModel: DataSourceItemType {
+open class ListItemModel {
     var hasLoad: Bool = false
     public init() {}
     // MARK: - ID
@@ -19,11 +19,11 @@ open class ListItemModel: DataSourceItemType {
     open var viewNameSuffix: String {
         return "Cell"
     }
-    // MARK: -
-    private var needUpdateSentinel: Sentinel = Sentinel()
-    open func isContentEqual(to source: ListItemModel) -> Bool {
-        return self.identity == source.identity
+    open func getCellClsName() -> String {
+        return self.cellFullName
     }
+    // MARK: NeedUpdateProtocol
+    let needUpdateSentinel: Sentinel = Sentinel()
     // MARK: HiddenStateDesignable
     public var isHidden: Bool = false
 }
@@ -32,20 +32,18 @@ extension ListItemModel: NeedUpdateProtocol {
         self.needUpdateSentinel.increase()
     }
 }
-extension ListItemModel: Hashable {
-    private var identity: String {
-        return "\(self.hashValue)\(self.needUpdateSentinel.value)"
+extension ListItemModel: ClassNameDesignable {
+    public func getCellName(_ modelName: String) -> String {
+        let range = modelName.index(modelName.endIndex, offsetBy: -5) ..<  modelName.endIndex
+        return modelName.replacingCharacters(in: range, with: self.viewNameSuffix)
     }
+}
+
+extension ListItemModel: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(ObjectIdentifier(self))
     }
     public static func == (lhs: ListItemModel, rhs: ListItemModel) -> Bool {
         return lhs.hashValue == rhs.hashValue
-    }
-}
-extension ListItemModel: ClassNameDesignable {
-    public func getCellName(_ modelName: String) -> String {
-        let range = modelName.index(modelName.endIndex, offsetBy: -5) ..<  modelName.endIndex
-        return modelName.replacingCharacters(in: range, with: self.viewNameSuffix)
     }
 }

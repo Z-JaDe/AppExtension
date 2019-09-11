@@ -39,7 +39,7 @@ extension ItemCell {
 }
 open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable & EnabledStateDesignable, HighlightedStateDesignable, BufferPoolItemProtocol {
     // MARK: NeedUpdateProtocol
-    private let needUpdateSentinel: Sentinel = Sentinel()
+    let needUpdateSentinel: Sentinel = Sentinel()
     // MARK: selectedAccessoryType
     public lazy var selectedAccessoryTypeImageView: ImageView = ImageView(image: ItemCell.accessoryTypeSelectedImage)
     public lazy var unselectedAccessoryTypeImageView: ImageView = ImageView(image: ItemCell.accessoryTypeUnSelectedImage)
@@ -186,19 +186,9 @@ open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable
         self.didLayoutSubviewsClosure?(self)
     }
 }
-extension ItemCell: NeedUpdateProtocol, DataSourceItemType {
+extension ItemCell: NeedUpdateProtocol {
     public func setNeedUpdate() {
         self.needUpdateSentinel.increase()
-    }
-    // MARK: Differentiable
-    public func isContentEqual(to source: ItemCell) -> Bool {
-        return self.identity == source.identity
-    }
-    private var identity: String {
-        return "\(self.hashValue)\(self.needUpdateSentinel.value)"
-    }
-    public static func == (lhs: ItemCell, rhs: ItemCell) -> Bool {
-        return lhs.isEqual(rhs)
     }
 }
 extension ItemCell {

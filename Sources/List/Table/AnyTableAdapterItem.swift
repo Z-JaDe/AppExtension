@@ -8,11 +8,6 @@
 
 import Foundation
 
-public protocol TableAdapterItemDiffable {
-    func hash(into hasher: inout Hasher)
-    func isEqual(to source: AnyTableAdapterItem) -> Bool
-    func isContentEqual(to source: AnyTableAdapterItem) -> Bool
-}
 // MARK: -
 public struct AnyTableAdapterItem {
     public typealias ValueType = AnyObject

@@ -1,5 +1,5 @@
 //
-//  TableItemModel+Adapter.swift
+//  TableItemModel+Diffable.swift
 //  List
 //
 //  Created by Apple on 2019/9/11.

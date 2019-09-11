@@ -8,29 +8,6 @@
 
 import UIKit
 
-extension AnyTableAdapterItem {
-    public var cell: StaticTableItemCell? {
-        return self.value as? StaticTableItemCell
-    }
-    public static func cell(_ value: StaticTableItemCell) -> AnyTableAdapterItem {
-        return AnyTableAdapterItem(value)
-    }
-}
-extension StaticTableItemCell: TableAdapterItemDiffable {
-    public func isEqual(to source: AnyTableAdapterItem) -> Bool {
-        guard let source = source.cell else {
-            return false
-        }
-        return self == source
-    }
-    public func isContentEqual(to source: AnyTableAdapterItem) -> Bool {
-        guard let source = source.cell else {
-            return false
-        }
-        return self.isContentEqual(to: source)
-    }
-}
-
 open class StaticTableItemCell: TableItemCell {
 
     open var canSelected: Bool = false
@@ -55,7 +32,8 @@ open class StaticTableItemCell: TableItemCell {
 }
 extension StaticTableItemCell: TableCellConfigProtocol {
     public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
-        let cell = _createCell(in: tableView, for: indexPath)
+        // swiftlint:disable force_cast
+        let cell: InternalTableViewCell = _createCell(in: tableView, for: indexPath, InternalTableViewCell.reuseIdentifier) as! InternalTableViewCell
         //        let item = self.cell()
         //        logDebug("\(item)创建一个cell")
         /// ZJaDe: tableView弱引用

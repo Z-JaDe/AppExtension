@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct ListData<Section: Diffable, Item: Diffable>: CollectionProtocol {
+public struct ListData<Section: Diffable, Item: Diffable & Equatable>: CollectionProtocol {
     public typealias Element = (section: Section, items: [Item])
     public var value: ContiguousArray<Element>
     public init<C: Swift.Collection>(_ elements: C) where C.Element == Element {
@@ -32,10 +32,10 @@ public struct ListData<Section: Diffable, Item: Diffable>: CollectionProtocol {
         var listData = self
         for (offset: sectionIndex, element: (section: _, items: items)) in self.enumerated() {
             for (itemIndex, item) in items.enumerated() {
-                if item.isContentEqual(to: item1) {
+                if item == item1 {
                     listData[sectionIndex].items[itemIndex] = item2
                 }
-                if item.isContentEqual(to: item2) {
+                if item == item2 {
                     listData[sectionIndex].items[itemIndex] = item1
                 }
             }

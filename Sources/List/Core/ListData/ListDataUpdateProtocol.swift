@@ -11,7 +11,7 @@ import Foundation
 /// 更新数据源的协议
 public protocol ListDataUpdateProtocol: class {
     associatedtype Section: Diffable
-    associatedtype Item: Diffable
+    associatedtype Item: Diffable & Equatable
     typealias ListDataType = ListData<Section, Item>
     typealias ListDataInfoType = ListDataInfo<ListDataType>
 

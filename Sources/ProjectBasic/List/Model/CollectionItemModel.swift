@@ -10,9 +10,6 @@ import UIKit
 
 open class CollectionItemModel: ListItemModel {
     public var cellSize: CGSize?
-    open func getCellClsName() -> String {
-        return self.cellFullName
-    }
     // MARK: - cell
     public weak var bufferPool: BufferPool?
     /// ZJaDe: 手动释放

@@ -9,10 +9,6 @@
 import UIKit
 
 open class TableItemModel: ListItemModel {
-
-    open func getCellClsName() -> String {
-        return self.cellFullName
-    }
     // MARK: - cell
     public weak var bufferPool: BufferPool?
 
@@ -72,7 +68,8 @@ extension TableItemModel: CreateCellUseModel {
 }
 extension TableItemModel: TableCellConfigProtocol {
     public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
-        let cell = _createCell(in: tableView, for: indexPath)
+        // swiftlint:disable force_cast
+        let cell: InternalTableViewCell = _createCell(in: tableView, for: indexPath, InternalTableViewCell.reuseIdentifier) as! InternalTableViewCell
         //        logDebug("\(item)创建一个cell")
         /// ZJaDe: 初始化cell，并且cell持有tableView弱引用
         createCellIfNil()
@@ -129,5 +126,4 @@ extension TableItemModel: TableCellHeightProtocol {
         /*************** cell回收 ***************/
         self.recycleCell(item)
     }
-
 }
