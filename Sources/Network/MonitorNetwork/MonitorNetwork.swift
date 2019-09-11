@@ -13,6 +13,7 @@ import RxSwift
 public class MonitorNetwork {
     public static let shared: MonitorNetwork = MonitorNetwork()
     private init() {}
+    let disposeBag: DisposeBag = DisposeBag()
 
     public let networkChanged: ReplaySubject<NetworkReachabilityManager.NetworkReachabilityStatus> = ReplaySubject.create(bufferSize: 1)
     public private(set) var isListening: Bool = false
@@ -53,12 +54,6 @@ public class MonitorNetwork {
     }
     /// ZJaDe: 检查是否有网络 有网络就回调
     public func checkHasNetwork(_ closure: @escaping (Bool) -> Void) {
-        self.hasNetwork().take(1).subscribeOnNext { (hasNetwork) in
-            closure(hasNetwork)
-            if hasNetwork {
-            } else {
-                HUD.showError("无网络")
-            }
-        }.disposed(by: globalDisposeBag)
+        self.hasNetwork().take(1).subscribe(onNext: closure).disposed(by: disposeBag)
     }
 }

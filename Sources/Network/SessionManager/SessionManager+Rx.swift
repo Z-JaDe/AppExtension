@@ -17,10 +17,6 @@ import Alamofire
  在response、progress或者map方法里面可以截取到获取的数据
  */
 // MARK: -
-/// ZJaDe: 类型约束
-public protocol RequestableContext: RequestContextCompatible {}
-extension RequestContext: RequestableContext where Value: RxAlamofireRequest {}
-public typealias RequestContextObservable<R> = Observable<RequestContext<R>>
 
 extension SessionManager: ReactiveCompatible {}
 extension Reactive where Base: SessionManager {
@@ -29,16 +25,16 @@ extension Reactive where Base: SessionManager {
                         _ url: URLConvertible,
                         parameters: Parameters? = nil,
                         encoding: ParameterEncoding = URLEncoding.default,
-                        headers: HTTPHeaders? = nil) -> RequestContextObservable<DataRequest> {
+                        headers: HTTPHeaders? = nil) -> Observable<RequestContext<DataRequest>> {
         return getRequest { $0.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers) }
             .map { RequestContext($0, $0.request) }
     }
-    public func request(_ urlRequest: URLRequestConvertible) -> RequestContextObservable<DataRequest> {
+    public func request(_ urlRequest: URLRequestConvertible) -> Observable<RequestContext<DataRequest>> {
         return getRequest { $0.request(urlRequest) }
             .map { RequestContext($0, urlRequest) }
     }
     // MARK: Upload
-    public func upload(_ formData: [MultipartFormData], usingThreshold encodingMemoryThreshold: UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, _ urlRequest: URLRequestConvertible) -> RequestContextObservable<UploadRequest> {
+    public func upload(_ formData: [MultipartFormData], usingThreshold encodingMemoryThreshold: UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, _ urlRequest: URLRequestConvertible) -> Observable<RequestContext<UploadRequest>> {
         return getRequest({ (manager, observer) -> Disposable in
             var dispose: Disposable?
             let (formData, urlRequest) = manager.uploadParamsUpdate(formData, urlRequest)
@@ -57,12 +53,12 @@ extension Reactive where Base: SessionManager {
     }
     // MARK: Download
     public func download(_ urlRequest: URLRequestConvertible,
-                         to destination: @escaping DownloadRequest.DownloadFileDestination) -> RequestContextObservable<DownloadRequest> {
+                         to destination: @escaping DownloadRequest.DownloadFileDestination) -> Observable<RequestContext<DownloadRequest>> {
         return getRequest { $0.download(urlRequest, to: destination) }
             .map { RequestContext($0, urlRequest) }
     }
     public func download(resumeData: Data,
-                         to destination: @escaping DownloadRequest.DownloadFileDestination) -> RequestContextObservable<DownloadRequest> {
+                         to destination: @escaping DownloadRequest.DownloadFileDestination) -> Observable<RequestContext<DownloadRequest>> {
         return getRequest { $0.download(resumingWith: resumeData, to: destination) }
             .map { RequestContext($0, $0.request) }
     }

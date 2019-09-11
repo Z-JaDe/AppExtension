@@ -10,10 +10,10 @@ import Foundation
 import Alamofire
 import RxSwift
 
-public typealias RequestResult<T> = RequestContext<T> where T: Codable
+public typealias RequestResult<T> = ResultContext<T> where T: Codable
 
 public typealias OriginRequestResult = RequestContext<DataRequest>
-// ZJaDe:
+
 public typealias StringRequestResult = RequestResult<StringResultModel>
 public typealias DictRequestResult = RequestResult<DictResultModel>
 public typealias AnyRequestResult<T> = RequestResult<ResultModel<T>> where T: Codable
@@ -23,8 +23,8 @@ public typealias ArrayRequestResult<T> = RequestResult<ArrayResultModel<T>> wher
 
 public typealias ListRequesxtResult<T> = ObjectRequestResult<ListResultModel<T>> where T: Codable
 // MARK: -
-extension ObservableType where Element: RequestContextCompatible {
-    public typealias BaseResult<T> = RequestContext<T>
+extension ObservableType where Element: ResponseContextCompatible {
+    public typealias BaseResult<T> = ResultContext<T>
     public typealias StringResult = BaseResult<StringResultModel>
     public typealias DictResult = BaseResult<DictResultModel>
     public typealias AnyResult<T> = BaseResult<ResultModel<T>> where T: Codable

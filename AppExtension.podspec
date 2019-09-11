@@ -56,6 +56,13 @@ Pod::Spec.new do |s|
         ss.dependency "AppExtension/Core"
         ss.dependency "DifferenceKit"
     end
+    s.subspec "Network" do |ss|
+        ss.source_files  = "Sources/Network/**/*.{swift}"
+        ss.dependency "AppExtension/Core"
+        ss.dependency "AppExtension/Codable"
+        ss.dependency "RxSwift"
+        ss.dependency "Alamofire"
+    end
     s.subspec "RxExtensions" do |ss|
         ss.source_files  = "Sources/RxExtensions/**/*.{swift}"
         ss.dependency "AppExtension/Core"
@@ -107,11 +114,12 @@ Pod::Spec.new do |s|
         ss.dependency "AppExtension/Codable"
         ss.dependency "AppExtension/UIComponents"
         ss.dependency "AppExtension/RxExtensions"
-        ss.dependency "Alamofire"
-        ss.dependency "SnapKit"
+        ss.dependency "AppExtension/Network"
         #List
         ss.dependency "AppExtension/List"
         ss.dependency "AppExtension/EmptyDataSet"
+
+        ss.dependency "SnapKit"
     end
     #项目集成
     s.subspec "MVCProject" do |ss|

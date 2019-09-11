@@ -60,6 +60,10 @@ target:'List' do
   rxPod
   pod 'DifferenceKit'
 end
+target:'Network' do
+  rxPod
+  pod 'Alamofire'
+end
 target:'UIComponents' do
   baseCorePod
   rxPod

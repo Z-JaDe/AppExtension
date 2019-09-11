@@ -9,7 +9,3 @@
 import Foundation
 
 public protocol AbstractResultModelType {}
-public protocol ResultModelHandleProtocol {
-    associatedtype ResultCodeType: RawRepresentable & Equatable
-    func handle(_ showHUD: ShowNetworkHUD<ResultCodeType>)
-}

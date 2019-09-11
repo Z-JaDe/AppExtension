@@ -23,7 +23,7 @@ extension SessionManager {
         return Observable.create({ (observer) -> Disposable in
             let monitorNetwork = MonitorNetwork.shared
             if monitorNetwork.isListening {
-                let disposable = monitorNetwork.networkChanged.subscribeOnNext({ (status) in
+                let disposable = monitorNetwork.networkChanged.subscribe(onNext: { (status) in
                     switch status {
                     case .notReachable, .unknown:
                         observer.onNext(false)

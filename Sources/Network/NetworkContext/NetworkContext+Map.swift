@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-extension RequestContext where Value == Result<Data> {
+extension DataResponseContext {
     func getData() throws -> Data {
         switch self.value {
         case .success(let value):
@@ -19,33 +19,52 @@ extension RequestContext where Value == Result<Data> {
             throw error._mapError()
         }
     }
-    public func map<T: Decodable>() throws -> T {
+    private func _map<T: Decodable>() throws -> T {
         logDataResultInfo()
         let data = try getData()
-        let result: T
         do {
-            result = try T.deserialize(from: data)
+            return try T.deserialize(from: data)
         } catch let error {
             logError("-: \(self.urlPath) 接口解析失败")
             throw NetworkError.jsonMapping(error)
         }
-        return result
     }
-
-    public func mapCustomType<DataType: Decodable>() throws -> DataType {
+    private func _map<T: Decodable>(atKeyPath keyPath: String) throws -> T {
+        guard let jsonObject = (try JSONSerialization.jsonObject(with: getData(), options: .allowFragments) as? NSDictionary)?.value(forKeyPath: keyPath) else {
+            throw NetworkError.objectMapping("没有\(keyPath)")
+        }
         do {
-            return try map()
+            return try T.deserialize(from: jsonObject)
+        } catch let error {
+            throw NetworkError.jsonMapping(error)
+        }
+    }
+}
+
+extension DataResponseContext {
+    public func map<T: Decodable>(type: T.Type, atKeyPath keyPath: String?) throws -> T {
+        do {
+            if let keyPath = keyPath, keyPath.isEmpty == false {
+                return try _map(atKeyPath: keyPath)
+            } else {
+                return try _map()
+            }
         } catch _ {
             // ZJaDe: 自定义的类型如果失败直接返回response数据
             throw NetworkError.error((try? mapString()) ?? "转换出错")
         }
     }
-
     public func mapString() throws -> String {
         guard let string = String(data: try getData(), encoding: .utf8) else {
             throw NetworkError.objectMapping("转换字符串出错")
         }
         return string
+    }
+    public func mapImage() throws -> UIImage {
+        guard let image = UIImage(data: try getData()) else {
+            throw NetworkError.objectMapping("图片转换失败")
+        }
+        return image
     }
 
     private func logDataResultInfo() {
@@ -61,14 +80,14 @@ extension RequestContext where Value == Result<Data> {
 // MARK: -
 /// ZJaDe: data转换成ResultModel时
 public protocol MapResultProtocol {
-    func mapResult<T: AbstractResultModelType&Decodable>() throws -> T
+    func mapResult<T: AbstractResultModelType & Decodable>() throws -> T
 }
-extension RequestContext where Value == Result<Data> {
-    internal func _mapResult<T: AbstractResultModelType&Decodable>() throws -> T {
+extension DataResponseContext {
+    public func _mapResult<T: AbstractResultModelType & Decodable>() throws -> T {
         if let context = self as? MapResultProtocol {
             return try context.mapResult()
         } else {
-            return try map()
+            return try _map()
         }
     }
 }

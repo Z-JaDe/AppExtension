@@ -8,7 +8,13 @@
 
 import Foundation
 import RxSwift
-extension Observable where Element: RequestContextCompatible {
+
+public protocol ResultModelHandleProtocol {
+    associatedtype ResultCodeType: RawRepresentable & Equatable
+    func handle(_ showHUD: ShowNetworkHUD<ResultCodeType>)
+}
+
+extension Observable where Element: ResultContextCompatible {
     public func callback(_ closure: @escaping (Element.ValueType?) -> Void) -> Disposable {
         return self.logDebug("_请求回调_").subscribe(onNext: { (element) in
             closure(element.value)
@@ -31,7 +37,7 @@ extension Observable where Element: RequestContextCompatible {
     }
 }
 // MARK: - result
-extension Observable where Element: RequestContextCompatible & ResultModelHandleProtocol {
+extension Observable where Element: ResultContextCompatible & ResultModelHandleProtocol {
     public func callback(_ closure: @escaping (Element.ValueType?) -> Void) -> Disposable {
         return self.callback(closure, .default)
     }

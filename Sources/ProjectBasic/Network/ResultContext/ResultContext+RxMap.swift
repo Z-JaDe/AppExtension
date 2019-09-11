@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 import Alamofire
-extension ObservableType where Element == RequestContext<Result<Data>> {
+extension ObservableType where Element == DataResponseContext {
     public func mapDictResult() -> Observable<DictResult> {
         return mapResult(type: [String: String].self)
     }
@@ -29,7 +29,7 @@ extension ObservableType where Element == RequestContext<Result<Data>> {
         return mapResultModel {try $0.mapList(type: type)}
     }
 }
-extension ObservableType where Element: RequestableContext {
+extension ObservableType where Element: RequestContextCompatible {
     public func mapDictResult() -> Observable<DictResult> {
         return response().mapDictResult()
     }
