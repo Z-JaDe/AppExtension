@@ -7,223 +7,94 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F5476500000820 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5476500000810 /* Foundation.framework */; };
-		F5476500000830 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000100 /* GTMBase64.m */; };
-		F5476500000840 /* BBRSACryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = F54765000006D0 /* BBRSACryptor.m */; };
-		F5476500000850 /* FSOpenSSL.m in Sources */ = {isa = PBXBuildFile; fileRef = F54765000006F0 /* FSOpenSSL.m */; };
-		F5476500000860 /* Dictionary+RSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000000C0 /* Dictionary+RSA.swift */; };
-		F5476500000870 /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000670 /* Params.swift */; };
-		F5476500000880 /* String+Encrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000680 /* String+Encrypt.swift */; };
-		F5476500000890 /* String+RSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000690 /* String+RSA.swift */; };
-		F54765000008A0 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000006A0 /* URLRequest.swift */; };
-		F54765000008B0 /* GTMBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000000F0 /* GTMBase64.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F54765000008C0 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000110 /* GTMDefines.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F54765000008D0 /* aes.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000140 /* aes.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F54765000008E0 /* asn1.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000150 /* asn1.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F54765000008F0 /* asn1t.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000160 /* asn1t.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000900 /* asn1_mac.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000170 /* asn1_mac.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000910 /* bio.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000180 /* bio.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000920 /* blowfish.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000190 /* blowfish.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000930 /* bn.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000001A0 /* bn.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000940 /* buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000001B0 /* buffer.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000950 /* camellia.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000001C0 /* camellia.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000960 /* cast.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000001D0 /* cast.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000970 /* cmac.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000001E0 /* cmac.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000980 /* cms.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000001F0 /* cms.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000990 /* comp.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000200 /* comp.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F54765000009A0 /* conf.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000210 /* conf.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F54765000009B0 /* conf_api.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000220 /* conf_api.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F54765000009C0 /* crypto.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000230 /* crypto.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F54765000009D0 /* des.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000240 /* des.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F54765000009E0 /* des_old.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000250 /* des_old.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F54765000009F0 /* dh.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000260 /* dh.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000A00 /* dsa.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000270 /* dsa.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000A10 /* dso.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000280 /* dso.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000A20 /* dtls1.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000290 /* dtls1.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000A30 /* ebcdic.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000002A0 /* ebcdic.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000A40 /* ec.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000002B0 /* ec.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000A50 /* ecdh.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000002C0 /* ecdh.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000A60 /* ecdsa.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000002D0 /* ecdsa.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000A70 /* engine.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000002E0 /* engine.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000A80 /* err.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000002F0 /* err.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000A90 /* evp.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000300 /* evp.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000AA0 /* e_os2.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000310 /* e_os2.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000AB0 /* hmac.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000320 /* hmac.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000AC0 /* idea.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000330 /* idea.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000AD0 /* krb5_asn.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000340 /* krb5_asn.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000AE0 /* kssl.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000350 /* kssl.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000AF0 /* lhash.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000360 /* lhash.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000B00 /* md4.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000370 /* md4.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000B10 /* md5.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000380 /* md5.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000B20 /* mdc2.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000390 /* mdc2.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000B30 /* modes.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000003A0 /* modes.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000B40 /* objects.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000003B0 /* objects.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000B50 /* obj_mac.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000003C0 /* obj_mac.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000B60 /* ocsp.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000003D0 /* ocsp.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000B70 /* opensslconf.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000003E0 /* opensslconf.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000B80 /* opensslconf_ios_arm64.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000003F0 /* opensslconf_ios_arm64.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000B90 /* opensslconf_ios_armv7.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000400 /* opensslconf_ios_armv7.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000BA0 /* opensslconf_ios_armv7s.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000410 /* opensslconf_ios_armv7s.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000BB0 /* opensslconf_ios_i386.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000420 /* opensslconf_ios_i386.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000BC0 /* opensslconf_ios_x86_64.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000430 /* opensslconf_ios_x86_64.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000BD0 /* opensslconf_tvos_arm64.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000440 /* opensslconf_tvos_arm64.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000BE0 /* opensslconf_tvos_x86_64.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000450 /* opensslconf_tvos_x86_64.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000BF0 /* opensslv.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000460 /* opensslv.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000C00 /* ossl_typ.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000470 /* ossl_typ.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000C10 /* pem.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000480 /* pem.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000C20 /* pem2.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000490 /* pem2.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000C30 /* pkcs12.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000004A0 /* pkcs12.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000C40 /* pkcs7.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000004B0 /* pkcs7.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000C50 /* pqueue.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000004C0 /* pqueue.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000C60 /* rand.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000004D0 /* rand.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000C70 /* rc2.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000004E0 /* rc2.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000C80 /* rc4.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000004F0 /* rc4.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000C90 /* ripemd.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000500 /* ripemd.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000CA0 /* rsa.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000510 /* rsa.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000CB0 /* safestack.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000520 /* safestack.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000CC0 /* seed.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000530 /* seed.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000CD0 /* sha.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000540 /* sha.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000CE0 /* srp.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000550 /* srp.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000CF0 /* srtp.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000560 /* srtp.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000D00 /* ssl.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000570 /* ssl.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000D10 /* ssl2.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000580 /* ssl2.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000D20 /* ssl23.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000590 /* ssl23.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000D30 /* ssl3.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000005A0 /* ssl3.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000D40 /* stack.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000005B0 /* stack.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000D50 /* symhacks.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000005C0 /* symhacks.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000D60 /* tls1.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000005D0 /* tls1.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000D70 /* ts.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000005E0 /* ts.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000D80 /* txt_db.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000005F0 /* txt_db.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000D90 /* ui.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000600 /* ui.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000DA0 /* ui_compat.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000610 /* ui_compat.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000DB0 /* whrlpool.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000620 /* whrlpool.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000DC0 /* x509.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000630 /* x509.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000DD0 /* x509v3.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000640 /* x509v3.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000DE0 /* x509_vfy.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000650 /* x509_vfy.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000DF0 /* opensslconf-template.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000660 /* opensslconf-template.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000E00 /* BBRSACryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000006C0 /* BBRSACryptor.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F5476500000E10 /* FSOpenSSL.h in Headers */ = {isa = PBXBuildFile; fileRef = F54765000006E0 /* FSOpenSSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F5476500000E60 /* Encryption-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000E50 /* Encryption-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F5476500000EA0 /* Encryption-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000E90 /* Encryption-dummy.m */; };
+		F5476500000310 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5476500000300 /* Foundation.framework */; };
+		F5476500000320 /* Dictionary+RSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000000C0 /* Dictionary+RSA.swift */; };
+		F5476500000330 /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000000D0 /* Params.swift */; };
+		F5476500000340 /* String+Encrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000000E0 /* String+Encrypt.swift */; };
+		F5476500000350 /* String+RSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000000F0 /* String+RSA.swift */; };
+		F5476500000360 /* Asn1Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000110 /* Asn1Parser.swift */; };
+		F5476500000370 /* Data+SHA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000120 /* Data+SHA.swift */; };
+		F5476500000380 /* DataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000130 /* DataWrapper.swift */; };
+		F5476500000390 /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000140 /* Format.swift */; };
+		F54765000003A0 /* Key+Generate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000160 /* Key+Generate.swift */; };
+		F54765000003B0 /* Key+Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000170 /* Key+Security.swift */; };
+		F54765000003C0 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000180 /* Key.swift */; };
+		F54765000003D0 /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000190 /* PrivateKey.swift */; };
+		F54765000003E0 /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000001A0 /* PublicKey.swift */; };
+		F54765000003F0 /* ClearMessage+Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000001C0 /* ClearMessage+Sign.swift */; };
+		F5476500000400 /* ClearMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000001D0 /* ClearMessage.swift */; };
+		F5476500000410 /* EncryptedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000001E0 /* EncryptedMessage.swift */; };
+		F5476500000420 /* Signature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000001F0 /* Signature.swift */; };
+		F5476500000430 /* SwiftyRSAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000200 /* SwiftyRSAError.swift */; };
+		F5476500000440 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000210 /* URLRequest.swift */; };
+		F5476500000490 /* Encryption-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000480 /* Encryption-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F54765000004D0 /* Encryption-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F54765000004C0 /* Encryption-dummy.m */; };
+		F5476500000520 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5476500000510 /* CryptoSwift.framework */; };
+		F5476500000570 /* FunctionalSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5476500000560 /* FunctionalSwift.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F54765000004F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F54765000004E0 /* CryptoSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
+			remoteInfo = CryptoSwift;
+		};
+		F5476500000540 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5476500000530 /* FunctionalSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
+			remoteInfo = FunctionalSwift;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		CD322E542F822E3F28F0F747477B1FC0 /* Encryption.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Encryption.framework; path = Encryption.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F54765000000C0 /* Dictionary+RSA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Dictionary+RSA.swift"; path = "Sources/Dictionary+RSA.swift"; sourceTree = "<group>"; };
-		F54765000000F0 /* GTMBase64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
-		F5476500000100 /* GTMBase64.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
-		F5476500000110 /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
-		F5476500000140 /* aes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
-		F5476500000150 /* asn1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = asn1.h; sourceTree = "<group>"; };
-		F5476500000160 /* asn1t.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = asn1t.h; sourceTree = "<group>"; };
-		F5476500000170 /* asn1_mac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = asn1_mac.h; sourceTree = "<group>"; };
-		F5476500000180 /* bio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = bio.h; sourceTree = "<group>"; };
-		F5476500000190 /* blowfish.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = blowfish.h; sourceTree = "<group>"; };
-		F54765000001A0 /* bn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = bn.h; sourceTree = "<group>"; };
-		F54765000001B0 /* buffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = buffer.h; sourceTree = "<group>"; };
-		F54765000001C0 /* camellia.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = camellia.h; sourceTree = "<group>"; };
-		F54765000001D0 /* cast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = cast.h; sourceTree = "<group>"; };
-		F54765000001E0 /* cmac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = cmac.h; sourceTree = "<group>"; };
-		F54765000001F0 /* cms.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = cms.h; sourceTree = "<group>"; };
-		F5476500000200 /* comp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = comp.h; sourceTree = "<group>"; };
-		F5476500000210 /* conf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = conf.h; sourceTree = "<group>"; };
-		F5476500000220 /* conf_api.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = conf_api.h; sourceTree = "<group>"; };
-		F5476500000230 /* crypto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = crypto.h; sourceTree = "<group>"; };
-		F5476500000240 /* des.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = des.h; sourceTree = "<group>"; };
-		F5476500000250 /* des_old.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = des_old.h; sourceTree = "<group>"; };
-		F5476500000260 /* dh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = dh.h; sourceTree = "<group>"; };
-		F5476500000270 /* dsa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = dsa.h; sourceTree = "<group>"; };
-		F5476500000280 /* dso.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = dso.h; sourceTree = "<group>"; };
-		F5476500000290 /* dtls1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = dtls1.h; sourceTree = "<group>"; };
-		F54765000002A0 /* ebcdic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ebcdic.h; sourceTree = "<group>"; };
-		F54765000002B0 /* ec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ec.h; sourceTree = "<group>"; };
-		F54765000002C0 /* ecdh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ecdh.h; sourceTree = "<group>"; };
-		F54765000002D0 /* ecdsa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ecdsa.h; sourceTree = "<group>"; };
-		F54765000002E0 /* engine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = engine.h; sourceTree = "<group>"; };
-		F54765000002F0 /* err.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = err.h; sourceTree = "<group>"; };
-		F5476500000300 /* evp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = evp.h; sourceTree = "<group>"; };
-		F5476500000310 /* e_os2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = e_os2.h; sourceTree = "<group>"; };
-		F5476500000320 /* hmac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
-		F5476500000330 /* idea.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = idea.h; sourceTree = "<group>"; };
-		F5476500000340 /* krb5_asn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = krb5_asn.h; sourceTree = "<group>"; };
-		F5476500000350 /* kssl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = kssl.h; sourceTree = "<group>"; };
-		F5476500000360 /* lhash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = lhash.h; sourceTree = "<group>"; };
-		F5476500000370 /* md4.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = md4.h; sourceTree = "<group>"; };
-		F5476500000380 /* md5.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
-		F5476500000390 /* mdc2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = mdc2.h; sourceTree = "<group>"; };
-		F54765000003A0 /* modes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = modes.h; sourceTree = "<group>"; };
-		F54765000003B0 /* objects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = objects.h; sourceTree = "<group>"; };
-		F54765000003C0 /* obj_mac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = obj_mac.h; sourceTree = "<group>"; };
-		F54765000003D0 /* ocsp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ocsp.h; sourceTree = "<group>"; };
-		F54765000003E0 /* opensslconf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = opensslconf.h; sourceTree = "<group>"; };
-		F54765000003F0 /* opensslconf_ios_arm64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = opensslconf_ios_arm64.h; sourceTree = "<group>"; };
-		F5476500000400 /* opensslconf_ios_armv7.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = opensslconf_ios_armv7.h; sourceTree = "<group>"; };
-		F5476500000410 /* opensslconf_ios_armv7s.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = opensslconf_ios_armv7s.h; sourceTree = "<group>"; };
-		F5476500000420 /* opensslconf_ios_i386.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = opensslconf_ios_i386.h; sourceTree = "<group>"; };
-		F5476500000430 /* opensslconf_ios_x86_64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = opensslconf_ios_x86_64.h; sourceTree = "<group>"; };
-		F5476500000440 /* opensslconf_tvos_arm64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = opensslconf_tvos_arm64.h; sourceTree = "<group>"; };
-		F5476500000450 /* opensslconf_tvos_x86_64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = opensslconf_tvos_x86_64.h; sourceTree = "<group>"; };
-		F5476500000460 /* opensslv.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = opensslv.h; sourceTree = "<group>"; };
-		F5476500000470 /* ossl_typ.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ossl_typ.h; sourceTree = "<group>"; };
-		F5476500000480 /* pem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pem.h; sourceTree = "<group>"; };
-		F5476500000490 /* pem2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pem2.h; sourceTree = "<group>"; };
-		F54765000004A0 /* pkcs12.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pkcs12.h; sourceTree = "<group>"; };
-		F54765000004B0 /* pkcs7.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pkcs7.h; sourceTree = "<group>"; };
-		F54765000004C0 /* pqueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pqueue.h; sourceTree = "<group>"; };
-		F54765000004D0 /* rand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = rand.h; sourceTree = "<group>"; };
-		F54765000004E0 /* rc2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = rc2.h; sourceTree = "<group>"; };
-		F54765000004F0 /* rc4.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = rc4.h; sourceTree = "<group>"; };
-		F5476500000500 /* ripemd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ripemd.h; sourceTree = "<group>"; };
-		F5476500000510 /* rsa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = rsa.h; sourceTree = "<group>"; };
-		F5476500000520 /* safestack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = safestack.h; sourceTree = "<group>"; };
-		F5476500000530 /* seed.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = seed.h; sourceTree = "<group>"; };
-		F5476500000540 /* sha.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = sha.h; sourceTree = "<group>"; };
-		F5476500000550 /* srp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = srp.h; sourceTree = "<group>"; };
-		F5476500000560 /* srtp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = srtp.h; sourceTree = "<group>"; };
-		F5476500000570 /* ssl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ssl.h; sourceTree = "<group>"; };
-		F5476500000580 /* ssl2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ssl2.h; sourceTree = "<group>"; };
-		F5476500000590 /* ssl23.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ssl23.h; sourceTree = "<group>"; };
-		F54765000005A0 /* ssl3.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ssl3.h; sourceTree = "<group>"; };
-		F54765000005B0 /* stack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = stack.h; sourceTree = "<group>"; };
-		F54765000005C0 /* symhacks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = symhacks.h; sourceTree = "<group>"; };
-		F54765000005D0 /* tls1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = tls1.h; sourceTree = "<group>"; };
-		F54765000005E0 /* ts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ts.h; sourceTree = "<group>"; };
-		F54765000005F0 /* txt_db.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = txt_db.h; sourceTree = "<group>"; };
-		F5476500000600 /* ui.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ui.h; sourceTree = "<group>"; };
-		F5476500000610 /* ui_compat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ui_compat.h; sourceTree = "<group>"; };
-		F5476500000620 /* whrlpool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = whrlpool.h; sourceTree = "<group>"; };
-		F5476500000630 /* x509.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = x509.h; sourceTree = "<group>"; };
-		F5476500000640 /* x509v3.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = x509v3.h; sourceTree = "<group>"; };
-		F5476500000650 /* x509_vfy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = x509_vfy.h; sourceTree = "<group>"; };
-		F5476500000660 /* opensslconf-template.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "opensslconf-template.h"; sourceTree = "<group>"; };
-		F5476500000670 /* Params.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Params.swift; path = Sources/Params.swift; sourceTree = "<group>"; };
-		F5476500000680 /* String+Encrypt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Encrypt.swift"; path = "Sources/String+Encrypt.swift"; sourceTree = "<group>"; };
-		F5476500000690 /* String+RSA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+RSA.swift"; path = "Sources/String+RSA.swift"; sourceTree = "<group>"; };
-		F54765000006A0 /* URLRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLRequest.swift; path = Sources/URLRequest.swift; sourceTree = "<group>"; };
-		F54765000006C0 /* BBRSACryptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BBRSACryptor.h; sourceTree = "<group>"; };
-		F54765000006D0 /* BBRSACryptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BBRSACryptor.m; sourceTree = "<group>"; };
-		F54765000006E0 /* FSOpenSSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FSOpenSSL.h; sourceTree = "<group>"; };
-		F54765000006F0 /* FSOpenSSL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FSOpenSSL.m; sourceTree = "<group>"; };
-		F5476500000710 /* libcrypto.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libcrypto.a; path = Sources/openssl/lib/libcrypto.a; sourceTree = "<group>"; };
-		F5476500000720 /* libssl.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libssl.a; path = Sources/openssl/lib/libssl.a; sourceTree = "<group>"; };
-		F5476500000740 /* Encryption.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Encryption.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		F5476500000750 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		F5476500000760 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		F5476500000810 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		F5476500000E30 /* Encryption.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Encryption.xcconfig; sourceTree = "<group>"; };
-		F5476500000E40 /* Encryption.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Encryption.modulemap; sourceTree = "<group>"; };
-		F5476500000E50 /* Encryption-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Encryption-umbrella.h"; sourceTree = "<group>"; };
-		F5476500000E70 /* Encryption-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Encryption-Info.plist"; sourceTree = "<group>"; };
-		F5476500000E80 /* Encryption-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Encryption-prefix.pch"; sourceTree = "<group>"; };
-		F5476500000E90 /* Encryption-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Encryption-dummy.m"; sourceTree = "<group>"; };
+		F54765000000D0 /* Params.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Params.swift; path = Sources/Params.swift; sourceTree = "<group>"; };
+		F54765000000E0 /* String+Encrypt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Encrypt.swift"; path = "Sources/String+Encrypt.swift"; sourceTree = "<group>"; };
+		F54765000000F0 /* String+RSA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+RSA.swift"; path = "Sources/String+RSA.swift"; sourceTree = "<group>"; };
+		F5476500000110 /* Asn1Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Asn1Parser.swift; sourceTree = "<group>"; };
+		F5476500000120 /* Data+SHA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Data+SHA.swift"; sourceTree = "<group>"; };
+		F5476500000130 /* DataWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataWrapper.swift; sourceTree = "<group>"; };
+		F5476500000140 /* Format.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
+		F5476500000160 /* Key+Generate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Key+Generate.swift"; sourceTree = "<group>"; };
+		F5476500000170 /* Key+Security.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Key+Security.swift"; sourceTree = "<group>"; };
+		F5476500000180 /* Key.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		F5476500000190 /* PrivateKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PrivateKey.swift; sourceTree = "<group>"; };
+		F54765000001A0 /* PublicKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PublicKey.swift; sourceTree = "<group>"; };
+		F54765000001C0 /* ClearMessage+Sign.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ClearMessage+Sign.swift"; sourceTree = "<group>"; };
+		F54765000001D0 /* ClearMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ClearMessage.swift; sourceTree = "<group>"; };
+		F54765000001E0 /* EncryptedMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EncryptedMessage.swift; sourceTree = "<group>"; };
+		F54765000001F0 /* Signature.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Signature.swift; sourceTree = "<group>"; };
+		F5476500000200 /* SwiftyRSAError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwiftyRSAError.swift; sourceTree = "<group>"; };
+		F5476500000210 /* URLRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLRequest.swift; path = Sources/URLRequest.swift; sourceTree = "<group>"; };
+		F5476500000230 /* Encryption.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Encryption.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F5476500000240 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		F5476500000250 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		F5476500000300 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		F5476500000460 /* Encryption.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Encryption.xcconfig; sourceTree = "<group>"; };
+		F5476500000470 /* Encryption.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Encryption.modulemap; sourceTree = "<group>"; };
+		F5476500000480 /* Encryption-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Encryption-umbrella.h"; sourceTree = "<group>"; };
+		F54765000004A0 /* Encryption-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Encryption-Info.plist"; sourceTree = "<group>"; };
+		F54765000004B0 /* Encryption-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Encryption-prefix.pch"; sourceTree = "<group>"; };
+		F54765000004C0 /* Encryption-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Encryption-dummy.m"; sourceTree = "<group>"; };
+		F54765000004E0 /* CryptoSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift; path = CryptoSwift.xcodeproj; sourceTree = "<group>"; };
+		F5476500000510 /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5476500000530 /* FunctionalSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FunctionalSwift; path = FunctionalSwift.xcodeproj; sourceTree = "<group>"; };
+		F5476500000560 /* FunctionalSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FunctionalSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F54765000007E0 /* Frameworks */ = {
+		F54765000002D0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5476500000820 /* Foundation.framework in Frameworks */,
+				F5476500000520 /* CryptoSwift.framework in Frameworks */,
+				F5476500000310 /* Foundation.framework in Frameworks */,
+				F5476500000570 /* FunctionalSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +104,7 @@
 		F5476500000010 = {
 			isa = PBXGroup;
 			children = (
+				F54765000000A0 /* Dependencies */,
 				F54765000000B0 /* Encryption */,
 				F5476500000060 /* Frameworks */,
 				F5476500000020 /* Products */,
@@ -250,198 +122,105 @@
 		F5476500000060 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F5476500000800 /* iOS */,
+				F5476500000510 /* CryptoSwift.framework */,
+				F5476500000560 /* FunctionalSwift.framework */,
+				F54765000002F0 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F54765000000A0 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				F54765000004E0 /* CryptoSwift */,
+				F5476500000530 /* FunctionalSwift */,
+			);
+			name = Dependencies;
 			sourceTree = "<group>";
 		};
 		F54765000000B0 /* Encryption */ = {
 			isa = PBXGroup;
 			children = (
 				F54765000000C0 /* Dictionary+RSA.swift */,
-				F5476500000670 /* Params.swift */,
-				F5476500000680 /* String+Encrypt.swift */,
-				F5476500000690 /* String+RSA.swift */,
-				F54765000006A0 /* URLRequest.swift */,
-				F5476500000700 /* Frameworks */,
-				F54765000000D0 /* openssl */,
-				F5476500000730 /* Pod */,
-				F5476500000E20 /* Support Files */,
-				F54765000006B0 /* Utilities */,
+				F54765000000D0 /* Params.swift */,
+				F54765000000E0 /* String+Encrypt.swift */,
+				F54765000000F0 /* String+RSA.swift */,
+				F5476500000210 /* URLRequest.swift */,
+				F5476500000220 /* Pod */,
+				F5476500000450 /* Support Files */,
+				F5476500000100 /* SwiftyRSA */,
 			);
 			name = Encryption;
 			path = ../BaseSupport/Encryption;
 			sourceTree = "<group>";
 		};
-		F54765000000D0 /* openssl */ = {
+		F5476500000100 /* SwiftyRSA */ = {
 			isa = PBXGroup;
 			children = (
-				F54765000000E0 /* GTMBase64 */,
-				F5476500000120 /* include */,
+				F5476500000110 /* Asn1Parser.swift */,
+				F5476500000120 /* Data+SHA.swift */,
+				F5476500000130 /* DataWrapper.swift */,
+				F5476500000140 /* Format.swift */,
+				F5476500000200 /* SwiftyRSAError.swift */,
+				F5476500000150 /* Key */,
+				F54765000001B0 /* Message */,
 			);
-			name = openssl;
-			path = Sources/openssl;
+			name = SwiftyRSA;
+			path = Sources/SwiftyRSA;
 			sourceTree = "<group>";
 		};
-		F54765000000E0 /* GTMBase64 */ = {
+		F5476500000150 /* Key */ = {
 			isa = PBXGroup;
 			children = (
-				F54765000000F0 /* GTMBase64.h */,
-				F5476500000100 /* GTMBase64.m */,
-				F5476500000110 /* GTMDefines.h */,
+				F5476500000180 /* Key.swift */,
+				F5476500000160 /* Key+Generate.swift */,
+				F5476500000170 /* Key+Security.swift */,
+				F5476500000190 /* PrivateKey.swift */,
+				F54765000001A0 /* PublicKey.swift */,
 			);
-			name = GTMBase64;
-			path = GTMBase64;
+			name = Key;
+			path = Key;
 			sourceTree = "<group>";
 		};
-		F5476500000120 /* include */ = {
+		F54765000001B0 /* Message */ = {
 			isa = PBXGroup;
 			children = (
-				F5476500000660 /* opensslconf-template.h */,
-				F5476500000130 /* openssl */,
+				F54765000001D0 /* ClearMessage.swift */,
+				F54765000001C0 /* ClearMessage+Sign.swift */,
+				F54765000001E0 /* EncryptedMessage.swift */,
+				F54765000001F0 /* Signature.swift */,
 			);
-			name = include;
-			path = include;
+			name = Message;
+			path = Message;
 			sourceTree = "<group>";
 		};
-		F5476500000130 /* openssl */ = {
+		F5476500000220 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				F5476500000140 /* aes.h */,
-				F5476500000150 /* asn1.h */,
-				F5476500000170 /* asn1_mac.h */,
-				F5476500000160 /* asn1t.h */,
-				F5476500000180 /* bio.h */,
-				F5476500000190 /* blowfish.h */,
-				F54765000001A0 /* bn.h */,
-				F54765000001B0 /* buffer.h */,
-				F54765000001C0 /* camellia.h */,
-				F54765000001D0 /* cast.h */,
-				F54765000001E0 /* cmac.h */,
-				F54765000001F0 /* cms.h */,
-				F5476500000200 /* comp.h */,
-				F5476500000210 /* conf.h */,
-				F5476500000220 /* conf_api.h */,
-				F5476500000230 /* crypto.h */,
-				F5476500000240 /* des.h */,
-				F5476500000250 /* des_old.h */,
-				F5476500000260 /* dh.h */,
-				F5476500000270 /* dsa.h */,
-				F5476500000280 /* dso.h */,
-				F5476500000290 /* dtls1.h */,
-				F5476500000310 /* e_os2.h */,
-				F54765000002A0 /* ebcdic.h */,
-				F54765000002B0 /* ec.h */,
-				F54765000002C0 /* ecdh.h */,
-				F54765000002D0 /* ecdsa.h */,
-				F54765000002E0 /* engine.h */,
-				F54765000002F0 /* err.h */,
-				F5476500000300 /* evp.h */,
-				F5476500000320 /* hmac.h */,
-				F5476500000330 /* idea.h */,
-				F5476500000340 /* krb5_asn.h */,
-				F5476500000350 /* kssl.h */,
-				F5476500000360 /* lhash.h */,
-				F5476500000370 /* md4.h */,
-				F5476500000380 /* md5.h */,
-				F5476500000390 /* mdc2.h */,
-				F54765000003A0 /* modes.h */,
-				F54765000003C0 /* obj_mac.h */,
-				F54765000003B0 /* objects.h */,
-				F54765000003D0 /* ocsp.h */,
-				F54765000003E0 /* opensslconf.h */,
-				F54765000003F0 /* opensslconf_ios_arm64.h */,
-				F5476500000400 /* opensslconf_ios_armv7.h */,
-				F5476500000410 /* opensslconf_ios_armv7s.h */,
-				F5476500000420 /* opensslconf_ios_i386.h */,
-				F5476500000430 /* opensslconf_ios_x86_64.h */,
-				F5476500000440 /* opensslconf_tvos_arm64.h */,
-				F5476500000450 /* opensslconf_tvos_x86_64.h */,
-				F5476500000460 /* opensslv.h */,
-				F5476500000470 /* ossl_typ.h */,
-				F5476500000480 /* pem.h */,
-				F5476500000490 /* pem2.h */,
-				F54765000004A0 /* pkcs12.h */,
-				F54765000004B0 /* pkcs7.h */,
-				F54765000004C0 /* pqueue.h */,
-				F54765000004D0 /* rand.h */,
-				F54765000004E0 /* rc2.h */,
-				F54765000004F0 /* rc4.h */,
-				F5476500000500 /* ripemd.h */,
-				F5476500000510 /* rsa.h */,
-				F5476500000520 /* safestack.h */,
-				F5476500000530 /* seed.h */,
-				F5476500000540 /* sha.h */,
-				F5476500000550 /* srp.h */,
-				F5476500000560 /* srtp.h */,
-				F5476500000570 /* ssl.h */,
-				F5476500000580 /* ssl2.h */,
-				F5476500000590 /* ssl23.h */,
-				F54765000005A0 /* ssl3.h */,
-				F54765000005B0 /* stack.h */,
-				F54765000005C0 /* symhacks.h */,
-				F54765000005D0 /* tls1.h */,
-				F54765000005E0 /* ts.h */,
-				F54765000005F0 /* txt_db.h */,
-				F5476500000600 /* ui.h */,
-				F5476500000610 /* ui_compat.h */,
-				F5476500000620 /* whrlpool.h */,
-				F5476500000630 /* x509.h */,
-				F5476500000650 /* x509_vfy.h */,
-				F5476500000640 /* x509v3.h */,
-			);
-			name = openssl;
-			path = openssl;
-			sourceTree = "<group>";
-		};
-		F54765000006B0 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				F54765000006C0 /* BBRSACryptor.h */,
-				F54765000006D0 /* BBRSACryptor.m */,
-				F54765000006E0 /* FSOpenSSL.h */,
-				F54765000006F0 /* FSOpenSSL.m */,
-			);
-			name = Utilities;
-			path = Sources/Utilities;
-			sourceTree = "<group>";
-		};
-		F5476500000700 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F5476500000710 /* libcrypto.a */,
-				F5476500000720 /* libssl.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F5476500000730 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				F5476500000740 /* Encryption.podspec */,
-				F5476500000750 /* LICENSE */,
-				F5476500000760 /* README.md */,
+				F5476500000230 /* Encryption.podspec */,
+				F5476500000240 /* LICENSE */,
+				F5476500000250 /* README.md */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		F5476500000800 /* iOS */ = {
+		F54765000002F0 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				F5476500000810 /* Foundation.framework */,
+				F5476500000300 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		F5476500000E20 /* Support Files */ = {
+		F5476500000450 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F5476500000E40 /* Encryption.modulemap */,
-				F5476500000E30 /* Encryption.xcconfig */,
-				F5476500000E90 /* Encryption-dummy.m */,
-				F5476500000E70 /* Encryption-Info.plist */,
-				F5476500000E80 /* Encryption-prefix.pch */,
-				F5476500000E50 /* Encryption-umbrella.h */,
+				F5476500000470 /* Encryption.modulemap */,
+				F5476500000460 /* Encryption.xcconfig */,
+				F54765000004C0 /* Encryption-dummy.m */,
+				F54765000004A0 /* Encryption-Info.plist */,
+				F54765000004B0 /* Encryption-prefix.pch */,
+				F5476500000480 /* Encryption-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../../Pods/Target Support Files/Encryption";
@@ -450,98 +229,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		F54765000007C0 /* Headers */ = {
+		F54765000002B0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F54765000008D0 /* aes.h in Headers */,
-				F54765000008E0 /* asn1.h in Headers */,
-				F5476500000900 /* asn1_mac.h in Headers */,
-				F54765000008F0 /* asn1t.h in Headers */,
-				F5476500000E00 /* BBRSACryptor.h in Headers */,
-				F5476500000910 /* bio.h in Headers */,
-				F5476500000920 /* blowfish.h in Headers */,
-				F5476500000930 /* bn.h in Headers */,
-				F5476500000940 /* buffer.h in Headers */,
-				F5476500000950 /* camellia.h in Headers */,
-				F5476500000960 /* cast.h in Headers */,
-				F5476500000970 /* cmac.h in Headers */,
-				F5476500000980 /* cms.h in Headers */,
-				F5476500000990 /* comp.h in Headers */,
-				F54765000009A0 /* conf.h in Headers */,
-				F54765000009B0 /* conf_api.h in Headers */,
-				F54765000009C0 /* crypto.h in Headers */,
-				F54765000009D0 /* des.h in Headers */,
-				F54765000009E0 /* des_old.h in Headers */,
-				F54765000009F0 /* dh.h in Headers */,
-				F5476500000A00 /* dsa.h in Headers */,
-				F5476500000A10 /* dso.h in Headers */,
-				F5476500000A20 /* dtls1.h in Headers */,
-				F5476500000AA0 /* e_os2.h in Headers */,
-				F5476500000A30 /* ebcdic.h in Headers */,
-				F5476500000A40 /* ec.h in Headers */,
-				F5476500000A50 /* ecdh.h in Headers */,
-				F5476500000A60 /* ecdsa.h in Headers */,
-				F5476500000E60 /* Encryption-umbrella.h in Headers */,
-				F5476500000A70 /* engine.h in Headers */,
-				F5476500000A80 /* err.h in Headers */,
-				F5476500000A90 /* evp.h in Headers */,
-				F5476500000E10 /* FSOpenSSL.h in Headers */,
-				F54765000008B0 /* GTMBase64.h in Headers */,
-				F54765000008C0 /* GTMDefines.h in Headers */,
-				F5476500000AB0 /* hmac.h in Headers */,
-				F5476500000AC0 /* idea.h in Headers */,
-				F5476500000AD0 /* krb5_asn.h in Headers */,
-				F5476500000AE0 /* kssl.h in Headers */,
-				F5476500000AF0 /* lhash.h in Headers */,
-				F5476500000B00 /* md4.h in Headers */,
-				F5476500000B10 /* md5.h in Headers */,
-				F5476500000B20 /* mdc2.h in Headers */,
-				F5476500000B30 /* modes.h in Headers */,
-				F5476500000B50 /* obj_mac.h in Headers */,
-				F5476500000B40 /* objects.h in Headers */,
-				F5476500000B60 /* ocsp.h in Headers */,
-				F5476500000DF0 /* opensslconf-template.h in Headers */,
-				F5476500000B70 /* opensslconf.h in Headers */,
-				F5476500000B80 /* opensslconf_ios_arm64.h in Headers */,
-				F5476500000B90 /* opensslconf_ios_armv7.h in Headers */,
-				F5476500000BA0 /* opensslconf_ios_armv7s.h in Headers */,
-				F5476500000BB0 /* opensslconf_ios_i386.h in Headers */,
-				F5476500000BC0 /* opensslconf_ios_x86_64.h in Headers */,
-				F5476500000BD0 /* opensslconf_tvos_arm64.h in Headers */,
-				F5476500000BE0 /* opensslconf_tvos_x86_64.h in Headers */,
-				F5476500000BF0 /* opensslv.h in Headers */,
-				F5476500000C00 /* ossl_typ.h in Headers */,
-				F5476500000C10 /* pem.h in Headers */,
-				F5476500000C20 /* pem2.h in Headers */,
-				F5476500000C30 /* pkcs12.h in Headers */,
-				F5476500000C40 /* pkcs7.h in Headers */,
-				F5476500000C50 /* pqueue.h in Headers */,
-				F5476500000C60 /* rand.h in Headers */,
-				F5476500000C70 /* rc2.h in Headers */,
-				F5476500000C80 /* rc4.h in Headers */,
-				F5476500000C90 /* ripemd.h in Headers */,
-				F5476500000CA0 /* rsa.h in Headers */,
-				F5476500000CB0 /* safestack.h in Headers */,
-				F5476500000CC0 /* seed.h in Headers */,
-				F5476500000CD0 /* sha.h in Headers */,
-				F5476500000CE0 /* srp.h in Headers */,
-				F5476500000CF0 /* srtp.h in Headers */,
-				F5476500000D00 /* ssl.h in Headers */,
-				F5476500000D10 /* ssl2.h in Headers */,
-				F5476500000D20 /* ssl23.h in Headers */,
-				F5476500000D30 /* ssl3.h in Headers */,
-				F5476500000D40 /* stack.h in Headers */,
-				F5476500000D50 /* symhacks.h in Headers */,
-				F5476500000D60 /* tls1.h in Headers */,
-				F5476500000D70 /* ts.h in Headers */,
-				F5476500000D80 /* txt_db.h in Headers */,
-				F5476500000D90 /* ui.h in Headers */,
-				F5476500000DA0 /* ui_compat.h in Headers */,
-				F5476500000DB0 /* whrlpool.h in Headers */,
-				F5476500000DC0 /* x509.h in Headers */,
-				F5476500000DE0 /* x509_vfy.h in Headers */,
-				F5476500000DD0 /* x509v3.h in Headers */,
+				F5476500000490 /* Encryption-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,16 +242,18 @@
 /* Begin PBXNativeTarget section */
 		7E033E130DE06E2CF897CDFD6FA4DC60 /* Encryption */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F5476500000780 /* Build configuration list for PBXNativeTarget "Encryption" */;
+			buildConfigurationList = F5476500000270 /* Build configuration list for PBXNativeTarget "Encryption" */;
 			buildPhases = (
-				F54765000007C0 /* Headers */,
-				F54765000007D0 /* Sources */,
-				F54765000007E0 /* Frameworks */,
-				F54765000007F0 /* Resources */,
+				F54765000002B0 /* Headers */,
+				F54765000002C0 /* Sources */,
+				F54765000002D0 /* Frameworks */,
+				F54765000002E0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F5476500000500 /* PBXTargetDependency */,
+				F5476500000550 /* PBXTargetDependency */,
 			);
 			name = Encryption;
 			productName = Encryption;
@@ -585,6 +279,14 @@
 			mainGroup = F5476500000010;
 			productRefGroup = F5476500000020 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = F54765000004E0 /* CryptoSwift */;
+				},
+				{
+					ProjectRef = F5476500000530 /* FunctionalSwift */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				7E033E130DE06E2CF897CDFD6FA4DC60 /* Encryption */,
@@ -593,7 +295,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F54765000007F0 /* Resources */ = {
+		F54765000002E0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -603,23 +305,47 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F54765000007D0 /* Sources */ = {
+		F54765000002C0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5476500000840 /* BBRSACryptor.m in Sources */,
-				F5476500000860 /* Dictionary+RSA.swift in Sources */,
-				F5476500000EA0 /* Encryption-dummy.m in Sources */,
-				F5476500000850 /* FSOpenSSL.m in Sources */,
-				F5476500000830 /* GTMBase64.m in Sources */,
-				F5476500000870 /* Params.swift in Sources */,
-				F5476500000880 /* String+Encrypt.swift in Sources */,
-				F5476500000890 /* String+RSA.swift in Sources */,
-				F54765000008A0 /* URLRequest.swift in Sources */,
+				F5476500000360 /* Asn1Parser.swift in Sources */,
+				F54765000003F0 /* ClearMessage+Sign.swift in Sources */,
+				F5476500000400 /* ClearMessage.swift in Sources */,
+				F5476500000370 /* Data+SHA.swift in Sources */,
+				F5476500000380 /* DataWrapper.swift in Sources */,
+				F5476500000320 /* Dictionary+RSA.swift in Sources */,
+				F5476500000410 /* EncryptedMessage.swift in Sources */,
+				F54765000004D0 /* Encryption-dummy.m in Sources */,
+				F5476500000390 /* Format.swift in Sources */,
+				F54765000003A0 /* Key+Generate.swift in Sources */,
+				F54765000003B0 /* Key+Security.swift in Sources */,
+				F54765000003C0 /* Key.swift in Sources */,
+				F5476500000330 /* Params.swift in Sources */,
+				F54765000003D0 /* PrivateKey.swift in Sources */,
+				F54765000003E0 /* PublicKey.swift in Sources */,
+				F5476500000420 /* Signature.swift in Sources */,
+				F5476500000340 /* String+Encrypt.swift in Sources */,
+				F5476500000350 /* String+RSA.swift in Sources */,
+				F5476500000430 /* SwiftyRSAError.swift in Sources */,
+				F5476500000440 /* URLRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F5476500000500 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CryptoSwift;
+			targetProxy = F54765000004F0 /* PBXContainerItemProxy */;
+		};
+		F5476500000550 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FunctionalSwift;
+			targetProxy = F5476500000540 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F5476500000040 /* Debug */ = {
@@ -673,7 +399,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -734,7 +460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -746,10 +472,11 @@
 			};
 			name = Release;
 		};
-		F5476500000790 /* Release */ = {
+		F5476500000280 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5476500000E30 /* Encryption.xcconfig */;
+			baseConfigurationReference = F5476500000460 /* Encryption.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -762,7 +489,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Encryption/Encryption-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Encryption/Encryption-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -782,10 +509,11 @@
 			};
 			name = Release;
 		};
-		F54765000007A0 /* Debug */ = {
+		F5476500000290 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5476500000E30 /* Encryption.xcconfig */;
+			baseConfigurationReference = F5476500000460 /* Encryption.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -798,7 +526,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Encryption/Encryption-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Encryption/Encryption-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -829,11 +557,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F5476500000780 /* Build configuration list for PBXNativeTarget "Encryption" */ = {
+		F5476500000270 /* Build configuration list for PBXNativeTarget "Encryption" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F54765000007A0 /* Debug */,
-				F5476500000790 /* Release */,
+				F5476500000290 /* Debug */,
+				F5476500000280 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -9,7 +9,7 @@
 import UIKit
 
 public class AsyncLayer: CALayer {
-    private let sentinel: Sentinel = Sentinel()
+    private var sentinel: Sentinel = Sentinel()
     public var isDisplaysAsynchronously: Bool = true
     public var displayTask: AsyncLayerDisplayTask = AsyncLayerDisplayTask()
 

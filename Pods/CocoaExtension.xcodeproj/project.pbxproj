@@ -127,9 +127,9 @@
 		BF6836000004C0 /* UIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		BF6836000004D0 /* UIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		BF6836000004E0 /* UIWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
-		BF683600000500 /* CocoaExtension.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = CocoaExtension.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BF683600000510 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		BF683600000520 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BF683600000500 /* CocoaExtension.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = CocoaExtension.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BF683600000510 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		BF683600000520 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		BF6836000005D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		BF683600000990 /* CocoaExtension.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaExtension.xcconfig; sourceTree = "<group>"; };
 		BF6836000009A0 /* CocoaExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CocoaExtension.modulemap; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		BF6836000009D0 /* CocoaExtension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CocoaExtension-Info.plist"; sourceTree = "<group>"; };
 		BF6836000009E0 /* CocoaExtension-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaExtension-prefix.pch"; sourceTree = "<group>"; };
 		BF6836000009F0 /* CocoaExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaExtension-dummy.m"; sourceTree = "<group>"; };
-		F59C4CDB9A34F5994BAC151E26AEE714 /* CocoaExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F59C4CDB9A34F5994BAC151E26AEE714 /* CocoaExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaExtension.framework; path = CocoaExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +233,7 @@
 				BF6836000001E0 /* String+Hex.swift */,
 				BF6836000001F0 /* String+Random.swift */,
 			);
+			name = String;
 			path = String;
 			sourceTree = "<group>";
 		};
@@ -253,6 +254,7 @@
 			children = (
 				BF683600000240 /* CIImageFilter.swift */,
 			);
+			name = CIImageFilter;
 			path = CIImageFilter;
 			sourceTree = "<group>";
 		};
@@ -264,6 +266,7 @@
 				BF683600000280 /* UIImage+Blend.swift */,
 				BF683600000290 /* UIImage+GraphicsImageContext.swift */,
 			);
+			name = GraphicsImageContext;
 			path = GraphicsImageContext;
 			sourceTree = "<group>";
 		};
@@ -273,6 +276,7 @@
 				BF6836000002C0 /* ImageDrawer.swift */,
 				BF6836000002B0 /* ImageDrawer+Image.swift */,
 			);
+			name = ImageDrawer;
 			path = ImageDrawer;
 			sourceTree = "<group>";
 		};
@@ -289,6 +293,7 @@
 				BF683600000340 /* UIImage+vImage.m */,
 				BF683600000350 /* UIImage+vImage.swift */,
 			);
+			name = UIImage;
 			path = UIImage;
 			sourceTree = "<group>";
 		};
@@ -650,7 +655,6 @@
 				PRODUCT_NAME = CocoaExtension;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTS_UIKITFORMAC = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -688,7 +692,6 @@
 				PRODUCT_NAME = CocoaExtension;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTS_UIKITFORMAC = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

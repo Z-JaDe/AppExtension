@@ -14,15 +14,21 @@
   },
   "requires_arc": true,
   "platforms": {
-    "ios": "9.0"
+    "ios": "10.0"
   },
   "frameworks": "Foundation",
   "swift_versions": "5.0",
   "xcconfig": {
     "HEADER_SEARCH_PATHS": "$(PODS_TARGET_SRCROOT)/Sources/openssl/include"
   },
-  "public_header_files": "Sources/Utilities/FSOpenSSL.h",
-  "vendored_libraries": "Sources/openssl/lib/*.a",
-  "source_files": "Sources/**/*.{swift,h,m}",
+  "source_files": "Sources/**/*.{swift}",
+  "dependencies": {
+    "CryptoSwift": [
+
+    ],
+    "FunctionalSwift": [
+
+    ]
+  },
   "swift_version": "5.0"
 }

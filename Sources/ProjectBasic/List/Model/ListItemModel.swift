@@ -23,7 +23,7 @@ open class ListItemModel {
         return self.cellFullName
     }
     // MARK: NeedUpdateProtocol
-    let needUpdateSentinel: Sentinel = Sentinel()
+    private(set) var needUpdateSentinel: Sentinel = Sentinel()
     // MARK: HiddenStateDesignable
     public var isHidden: Bool = false
 }

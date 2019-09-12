@@ -162,6 +162,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CocoaExtension/CocoaExtension.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Encryption/Encryption.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FunctionalSwift/FunctionalSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ModalManager/ModalManager.framework"
@@ -185,6 +186,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CocoaExtension/CocoaExtension.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Encryption/Encryption.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FunctionalSwift/FunctionalSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ModalManager/ModalManager.framework"

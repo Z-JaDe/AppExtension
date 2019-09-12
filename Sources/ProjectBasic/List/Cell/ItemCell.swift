@@ -39,7 +39,7 @@ extension ItemCell {
 }
 open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable & EnabledStateDesignable, HighlightedStateDesignable, BufferPoolItemProtocol {
     // MARK: NeedUpdateProtocol
-    let needUpdateSentinel: Sentinel = Sentinel()
+    private(set) var needUpdateSentinel: Sentinel = Sentinel()
     // MARK: selectedAccessoryType
     public lazy var selectedAccessoryTypeImageView: ImageView = ImageView(image: ItemCell.accessoryTypeSelectedImage)
     public lazy var unselectedAccessoryTypeImageView: ImageView = ImageView(image: ItemCell.accessoryTypeUnSelectedImage)

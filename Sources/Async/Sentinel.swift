@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Sentinel {
+public struct Sentinel {
     public init() {}
     private var _value: Int32 = 0
 
@@ -16,7 +16,7 @@ public class Sentinel {
         return _value
     }
     @discardableResult
-    public func increase() -> Int32 {
+    public mutating func increase() -> Int32 {
         return OSAtomicIncrement32(&_value)
     }
 }

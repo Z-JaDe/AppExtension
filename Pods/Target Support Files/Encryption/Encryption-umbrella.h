@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "FSOpenSSL.h"
 
 FOUNDATION_EXPORT double EncryptionVersionNumber;
 FOUNDATION_EXPORT const unsigned char EncryptionVersionString[];
