@@ -35,7 +35,7 @@ where DataSource.S.Item: AdapterItemType, DataSource.S.Section: AdapterSectionTy
 
     // MARK: -
     let dataInfoSubject: ReplaySubject<ListDataInfoType> = ReplaySubject.create(bufferSize: 1)
-    var dataInfo: ListDataInfoType = ListDataInfo(data: [])
+    var dataInfo: ListDataInfoType = ListDataInfo(data: .init())
     // MARK: -
     var _rxDataSource: DataSource?
     ///子类重写

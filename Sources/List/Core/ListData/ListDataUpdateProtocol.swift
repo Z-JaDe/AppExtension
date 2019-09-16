@@ -19,7 +19,6 @@ public protocol ListDataUpdateProtocol: class {
     func changeListDataInfo(_ newData: ListDataInfoType)
 }
 extension ListDataUpdateProtocol {
-    public typealias ListItemBuilder = ListBuilder<ListDataType.Element, ListDataType>
     /// ZJaDe: 更新
     public func updateData() {
         self.reloadData(self.dataArray)
@@ -33,9 +32,6 @@ extension ListDataUpdateProtocol {
         if let listDataInfo = listDataInfo {
             self.changeListDataInfo(listDataInfo)
         }
-    }
-    public func reloadData(@ListItemBuilder content: () -> ListDataType?) {
-        self.reloadData(content())
     }
 }
 extension ListDataUpdateProtocol where Section: Equatable & InitProtocol {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct ListData<Section: Diffable, Item: Diffable & Equatable>: CollectionProtocol, CollectionBuilder {
+public struct ListData<Section: Diffable, Item: Diffable & Equatable>: CollectionProtocol {
     public typealias Element = SectionData<Section, Item>
     public var value: ContiguousArray<Element>
     public init<C: Swift.Collection>(_ elements: C) where C.Element == Element {
@@ -40,6 +40,20 @@ public struct ListData<Section: Diffable, Item: Diffable & Equatable>: Collectio
             }
         }
         return listData
+    }
+}
+extension ListData: ExpressibleByArrayLiteral {
+    public init() {
+        self.init([])
+    }
+    public init(arrayLiteral elements: (Section, [Item])...) {
+        self.init(elements.map(Element.init))
+    }
+    public static func +=(lhs: inout ListData, rhs: (Section, [Item])) {
+        lhs.append(Element(rhs.0, rhs.1))
+    }
+    public static func +=(lhs: inout ListData, rhs: Element) {
+        lhs.append(rhs)
     }
 }
 extension ListData {

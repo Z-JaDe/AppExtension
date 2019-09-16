@@ -19,7 +19,8 @@ extension DataResponseContext {
             throw error._mapError()
         }
     }
-    private func _map<T: Decodable>() throws -> T {
+    ///不能直接使用 封装时可能会用到
+    public func _map<T: Decodable>() throws -> T {
         logDataResultInfo()
         let data = try getData()
         do {
@@ -29,7 +30,8 @@ extension DataResponseContext {
             throw NetworkError.jsonMapping(error)
         }
     }
-    private func _map<T: Decodable>(atKeyPath keyPath: String) throws -> T {
+    ///不能直接使用 封装时可能会用到
+    public func _map<T: Decodable>(atKeyPath keyPath: String) throws -> T {
         guard let jsonObject = (try JSONSerialization.jsonObject(with: getData(), options: .allowFragments) as? NSDictionary)?.value(forKeyPath: keyPath) else {
             throw NetworkError.objectMapping("没有\(keyPath)")
         }
@@ -42,7 +44,7 @@ extension DataResponseContext {
 }
 
 extension DataResponseContext {
-    public func map<T: Decodable>(type: T.Type, atKeyPath keyPath: String?) throws -> T {
+    public func map<T: Decodable>(type: T.Type, atKeyPath keyPath: String? = nil) throws -> T {
         do {
             if let keyPath = keyPath, keyPath.isEmpty == false {
                 return try _map(atKeyPath: keyPath)

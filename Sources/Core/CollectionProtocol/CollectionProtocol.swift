@@ -10,8 +10,7 @@ import Foundation
 
 public protocol CollectionProtocol: RandomAccessCollection,
     RangeReplaceableCollection,
-    MutableCollection,
-    ExpressibleByArrayLiteral {
+    MutableCollection {
     associatedtype Element
     var value: ContiguousArray<Element> {get set}
     init<C: Swift.Collection>(_ changesets: C) where C.Element == Element
@@ -33,13 +32,5 @@ extension CollectionProtocol {
 
     public mutating func replaceSubrange<C: Swift.Collection, R: RangeExpression>(_ subrange: R, with newElements: C) where C.Element == Element, R.Bound == Int {
         value.replaceSubrange(subrange, with: newElements)
-    }
-}
-extension CollectionProtocol {
-    public init() {
-        self.init([])
-    }
-    public init(arrayLiteral elements: Element...) {
-        self.init(elements)
     }
 }
