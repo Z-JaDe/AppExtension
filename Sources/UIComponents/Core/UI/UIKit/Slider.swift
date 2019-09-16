@@ -14,6 +14,6 @@ open class Slider: UISlider {
     public var tractHeight: CGFloat = 2
 
     open override func trackRect(forBounds bounds: CGRect) -> CGRect {
-        return CGRect(x: bounds.origin.x, y: (bounds.size.height-tractHeight)/2, width: bounds.size.width, height: tractHeight)
+        CGRect(x: bounds.origin.x, y: (bounds.size.height-tractHeight)/2, width: bounds.size.width, height: tractHeight)
     }
 }

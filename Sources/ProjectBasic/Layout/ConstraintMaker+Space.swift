@@ -41,28 +41,28 @@ extension UIView {
 extension ConstraintMaker {
     @discardableResult
     public func topSpaceToVC(_ viewController: UIViewController) -> ConstraintMakerEditable {
-        return self.top.equalTo(viewController.topLayoutGuide.snp.bottom)
+        self.top.equalTo(viewController.topLayoutGuide.snp.bottom)
     }
     @discardableResult
     public func bottomSpaceToVC(_ viewController: UIViewController) -> ConstraintMakerEditable {
-        return self.bottom.equalTo(viewController.bottomLayoutGuide.snp.top)
+        self.bottom.equalTo(viewController.bottomLayoutGuide.snp.top)
     }
 }
 extension ConstraintMaker {
     @discardableResult
     public func topSpace(_ view: UIView) -> ConstraintMakerEditable {
-        return self.top.equalTo(view.snp.bottom)
+        self.top.equalTo(view.snp.bottom)
     }
     @discardableResult
     public func bottomSpace(_ view: UIView) -> ConstraintMakerEditable {
-        return self.bottom.equalTo(view.snp.top)
+        self.bottom.equalTo(view.snp.top)
     }
     @discardableResult
     public func leftSpace(_ view: UIView) -> ConstraintMakerEditable {
-        return self.left.equalTo(view.snp.right)
+        self.left.equalTo(view.snp.right)
     }
     @discardableResult
     public func rightSpace(_ view: UIView) -> ConstraintMakerEditable {
-        return self.right.equalTo(view.snp.left)
+        self.right.equalTo(view.snp.left)
     }
 }

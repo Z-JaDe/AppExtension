@@ -26,7 +26,7 @@ private let notFound = "404 Not Found".data(using: .utf8)!
 private let internalLibrary = """
 (function () {
     function serializeError (value) {
-        return (typeof value !== 'object' || value === null) ? {} : {
+        (typeof value !== 'object' || value === null) ? {} : {
             name: String(value.name),
             message: String(value.message),
             stack: String(value.stack),
@@ -64,7 +64,7 @@ private let internalLibrary = """
     }
 
     window.__JSBridge__send__ = function (method, ...args) {
-        return new Promise((resolve, reject) => {
+        new Promise((resolve, reject) => {
             const id = nextId++
             callbacks[id] = { resolve, reject }
             webkit.messageHandlers.scriptHandler.postMessage({ id, method, params: args.map(x => JSON.stringify(x)) })
@@ -242,7 +242,7 @@ internal class Context: NSObject, WKScriptMessageHandler {
     }
 
     internal func rawCall(function: String, args: String) -> Observable<String> {
-        return Observable.create({ [weak self] (observer) -> Disposable in
+        Observable.create({ [weak self] (observer) -> Disposable in
             guard let self = self else { return Disposables.create() }
             let id = self.nextIdentifier
             self.nextIdentifier += 1

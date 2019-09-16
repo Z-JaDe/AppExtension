@@ -26,6 +26,6 @@ public protocol ListAdapterType {
 }
 extension ListAdapterType {
     public var dataController: DataSource.DataControllerType {
-        return rxDataSource.dataController
+        rxDataSource.dataController
     }
 }

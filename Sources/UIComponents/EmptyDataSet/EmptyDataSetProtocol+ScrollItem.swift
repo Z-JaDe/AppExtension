@@ -10,7 +10,7 @@ import UIKit
 
 extension UIScrollView: EmptyDataSetProtocol {
     @objc public var isEmptyData: Bool {
-        return self.subviews.isEmpty
+        self.subviews.isEmpty
     }
 }
 extension UITableView {

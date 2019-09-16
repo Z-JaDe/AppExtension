@@ -159,14 +159,14 @@ extension FlowCoordinator: FlowCoordinatorDelegate {
 
 extension FlowCoordinator {
     public var rx: Reactive<FlowCoordinator> {
-        return Reactive(self)
+        Reactive(self)
     }
 }
 extension Reactive where Base: FlowCoordinator {
     public var willNavigate: Observable<(Flow, Step)> {
-        return self.base.willNavigateSubject.asObservable()
+        self.base.willNavigateSubject.asObservable()
     }
     public var didNavigate: Observable<(Flow, Step)> {
-        return self.base.didNavigateSubject.asObservable()
+        self.base.didNavigateSubject.asObservable()
     }
 }

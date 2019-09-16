@@ -59,7 +59,7 @@ extension BoderView {
 private var boderViewKey: UInt8 = 0
 extension UIView {
     var boderView: BoderView {
-        return associatedObject(&boderViewKey, createIfNeed: BoderView().then({ (boderView) in
+        associatedObject(&boderViewKey, createIfNeed: BoderView().then({ (boderView) in
             self.insertSubview(boderView, at: 0)
             boderView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([

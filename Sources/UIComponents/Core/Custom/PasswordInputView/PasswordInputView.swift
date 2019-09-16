@@ -27,7 +27,7 @@ public class PasswordInputView: CustomView {
         }
     }
     public var passwordStr: String {
-        return self.textField.text ?? ""
+        self.textField.text ?? ""
     }
     public var isSecureTextEntry: Bool = true {
         didSet {updateShowItems()}
@@ -156,10 +156,10 @@ private class PasswordInputItemView: CustomView {
         self.pointView.center = CGPoint(x: self.width / 2, y: self.height / 2)
     }
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 40, height: 40)
+        CGSize(width: 40, height: 40)
     }
     override func sizeThatFits(_ size: CGSize) -> CGSize {
-        return self.intrinsicContentSize
+        self.intrinsicContentSize
     }
     // MARK: -
     func showPoint(_ text: String) {

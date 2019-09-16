@@ -76,7 +76,7 @@ open class TableViewDataSource<S: SectionModelType>: SectionedDataSource<S>, UIT
 
     // UITableViewDataSource
     open func numberOfSections(in tableView: UITableView) -> Int {
-        return dataController._data.count
+        dataController._data.count
     }
 
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,19 +90,19 @@ open class TableViewDataSource<S: SectionModelType>: SectionedDataSource<S>, UIT
     }
 
     open func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return titleForHeaderInSection(self, section)
+        titleForHeaderInSection(self, section)
     }
 
     open func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return titleForFooterInSection(self, section)
+        titleForFooterInSection(self, section)
     }
 
     open func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return canEditRowAtIndexPath(self, indexPath)
+        canEditRowAtIndexPath(self, indexPath)
     }
 
     open func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return canMoveRowAtIndexPath(self, indexPath)
+        canMoveRowAtIndexPath(self, indexPath)
     }
 
     open func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
@@ -114,11 +114,11 @@ open class TableViewDataSource<S: SectionModelType>: SectionedDataSource<S>, UIT
 
     #if os(iOS)
     open func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return sectionIndexTitles(self)
+        sectionIndexTitles(self)
     }
 
     open func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-        return sectionForSectionIndexTitle(self, title, index)
+        sectionForSectionIndexTitle(self, title, index)
     }
     #endif
 }

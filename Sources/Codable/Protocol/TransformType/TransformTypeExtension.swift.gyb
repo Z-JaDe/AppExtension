@@ -19,17 +19,17 @@ transform_to = [
 extension ${type}: TransformTypeProtocol {
     % for to_type in transform_to: 
     % if to_type == type: 
-    public var to${to_type}: ${to_type} { return self }
+    public var to${to_type}: ${to_type} { self }
     % elif type == 'Bool': 
-    public var to${to_type}: ${to_type} { return self ? 1 : 0 }
+    public var to${to_type}: ${to_type} { self ? 1 : 0 }
     % elif type == 'String': 
         % if to_type != 'Bool': 
-    public var to${to_type}: ${to_type} { return to${to_type}IfExist ?? 0 }
+    public var to${to_type}: ${to_type} { to${to_type}IfExist ?? 0 }
         % end
     % elif to_type == 'Bool': 
-    public var to${to_type}: ${to_type} { return self != 0 }
+    public var to${to_type}: ${to_type} { self != 0 }
     % else: 
-    public var to${to_type}: ${to_type} { return ${to_type}(self) }
+    public var to${to_type}: ${to_type} { ${to_type}(self) }
     % end
     % end
 }

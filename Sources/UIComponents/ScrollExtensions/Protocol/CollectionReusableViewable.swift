@@ -21,7 +21,7 @@ public extension CollectionReusableViewable where ScrollViewType == PageScrollVi
         checkWillAppearCells(isNeedUpdate: isNeedUpdate)
     }
     var cacheDisappearCellCount: Int {
-        return 0
+        0
     }
     /// ZJaDe: 检查需要消失的cells
     func checkDidDisAppearCells() {

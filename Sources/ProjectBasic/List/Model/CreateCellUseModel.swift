@@ -19,7 +19,7 @@ extension DynamicModelCell {
         self._weakModel = nil
     }
     func getModel() -> _ModelType? {
-        return _weakModel ?? _model
+        _weakModel ?? _model
     }
     func setModel(_ model: _ModelType) {
         _weakModel = model
@@ -53,7 +53,7 @@ extension CreateCellUseModel {
         cell?._model = self
     }
     func getCell() -> CellType? {
-        return _weakContentCell ?? _contentCell
+        _weakContentCell ?? _contentCell
     }
     func createCellIfNil() {
         guard _contentCell == nil && _weakContentCell == nil else {

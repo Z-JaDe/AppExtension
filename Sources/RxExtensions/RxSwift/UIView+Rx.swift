@@ -12,7 +12,7 @@ import RxGesture
 
 extension Reactive where Base: UIView {
     public func whenTouch(_ closure: ((Base) -> Void)?) -> Disposable {
-        return self.tapGesture().asDriver().skip(1).driveOnNext({ (tap) in
+        self.tapGesture().asDriver().skip(1).driveOnNext({ (tap) in
             // swiftlint:disable force_cast
             closure?(tap.view as! Base)
         })
@@ -28,6 +28,6 @@ extension Reactive where Base: UIView {
 extension Reactive where Base: UIControl {
     @available(*, deprecated, message: "请使用touchUpInside")
     public func whenTouch(_ closure: ((Base) -> Void)?) -> Disposable {
-        return self.touchUpInside(closure)
+        self.touchUpInside(closure)
     }
 }

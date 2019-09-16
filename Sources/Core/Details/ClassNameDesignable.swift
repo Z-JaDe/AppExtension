@@ -17,17 +17,17 @@ public protocol ClassNameDesignable: class {
 }
 extension ClassNameDesignable {
     public var classFullName: String {
-        return type(of: self).classFullName
+        type(of: self).classFullName
     }
     public static var classFullName: String {
-        return NSStringFromClass(self)
+        NSStringFromClass(self)
     }
 
     public var className: String {
-        return type(of: self).className
+        type(of: self).className
     }
     public static var className: String {
-        return String(classFullName.split(separator: ".").last ?? "")
+        String(classFullName.split(separator: ".").last ?? "")
     }
 }
 extension NSObject: ClassNameDesignable {}

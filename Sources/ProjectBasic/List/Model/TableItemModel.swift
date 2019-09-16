@@ -101,7 +101,7 @@ extension TableItemModel: TableCellConfigProtocol {
         }
     }
     func shouldHighlight() -> Bool {
-        return getCell()?.shouldHighlight() ?? true
+        getCell()?.shouldHighlight() ?? true
     }
 }
 extension TableItemModel: TableCellHeightProtocol {

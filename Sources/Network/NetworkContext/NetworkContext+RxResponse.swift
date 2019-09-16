@@ -17,7 +17,7 @@ extension Reactive where Base: NetworkContextCompatible, Base.ValueType: DataReq
         queue: DispatchQueue? = nil,
         responseSerializer: T
         ) -> Observable<ResponseContext<T.SerializedObject>> {
-        return Observable.create { observer in
+        Observable.create { observer in
             let context = self.base
             let dataRequest = context.value.response(queue: queue, responseSerializer: responseSerializer) { (packedResponse) -> Void in
                     observer.onNext(context.map({_ in packedResponse.result}))
@@ -34,7 +34,7 @@ extension Reactive where Base: NetworkContextCompatible, Base.ValueType: Downloa
         queue: DispatchQueue? = nil,
         responseSerializer: T
         ) -> Observable<ResponseContext<T.SerializedObject>> {
-        return Observable.create { observer in
+        Observable.create { observer in
             let context = self.base
             let dataRequest = context.value.response(queue: queue, responseSerializer: responseSerializer) { (packedResponse) -> Void in
                     observer.onNext(context.map({_ in packedResponse.result}))
@@ -49,7 +49,7 @@ extension Reactive where Base: NetworkContextCompatible, Base.ValueType: Downloa
 extension ObservableType where Element: RequestContextCompatible {
     /// ZJaDe: 请求返回Result<Data>结果。冷信号，该方法被订阅时，才会真正添加请求任务
     public func response() -> Observable<DataResponseContext> {
-        return flatMapLatest { (context) -> Observable<DataResponseContext> in
+        flatMapLatest { (context) -> Observable<DataResponseContext> in
             switch context {
             case let context as RequestContext<DataRequest>:
                 return context.rx.response(responseSerializer: DataRequest.dataResponseSerializer())

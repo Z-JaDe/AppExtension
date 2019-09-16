@@ -17,7 +17,7 @@ public protocol EmptyDataSetProtocol: AssociatedObjectProtocol {
 private var emptyDataSetViewKey: UInt8 = 0
 extension EmptyDataSetProtocol {
     public var emptyDataSet: EmptyDataSetView {
-        return associatedObject(&emptyDataSetViewKey, createIfNeed: EmptyDataSetView().then({ (node) in
+        associatedObject(&emptyDataSetViewKey, createIfNeed: EmptyDataSetView().then({ (node) in
             node.container = self
             node.whenEmptyStateChanged {[weak self, weak node] (_) in
                 guard let self = self else { return }

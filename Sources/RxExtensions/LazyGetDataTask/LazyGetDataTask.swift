@@ -73,7 +73,7 @@ public class LazyGetDataTask<Value: Equatable>: DisposeBagProtocol {
     }
 
     public func valueObservable(whenError: ErrorEventHandle = .never) -> Observable<Value> {
-        return self.valueSubject
+        self.valueSubject
             .observeOn(MainScheduler.asyncInstance)
             .flatMapLatest({[weak self] (_) -> Observable<Value> in
                 guard let self = self else {

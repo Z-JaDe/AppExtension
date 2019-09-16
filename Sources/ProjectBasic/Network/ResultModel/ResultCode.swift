@@ -26,6 +26,6 @@ public struct ResultCode: RawRepresentable, Equatable, Codable, CustomStringConv
         }
     }
     public var description: String {
-        return "错误码\(self.rawValue)"
+        "错误码\(self.rawValue)"
     }
 }

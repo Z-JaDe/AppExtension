@@ -23,7 +23,7 @@ extension PHAsset {
         return isHEIF
     }
     private func isHEIFWithUTI(_ UTI: String) -> Bool {
-        return UTI == "public.heif" || UTI == "public.heic"
+        UTI == "public.heif" || UTI == "public.heic"
     }
     // MARK: -
     public func requestImageData(_ callback: @escaping (Data?) -> Void) {

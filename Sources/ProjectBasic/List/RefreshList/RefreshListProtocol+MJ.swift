@@ -65,7 +65,7 @@ private var preloadEnabledKey: UInt8 = 0
 extension RefreshListProtocol {
     /// ZJaDe: 刷新失败时 自动设置成false 默认为true
     var preloadEnabled: Bool {
-        get { return associatedObject(&preloadEnabledKey, createIfNeed: true) }
+        get { associatedObject(&preloadEnabledKey, createIfNeed: true) }
         set { setAssociatedObject(&preloadEnabledKey, newValue)}
     }
     public func configPreload() {

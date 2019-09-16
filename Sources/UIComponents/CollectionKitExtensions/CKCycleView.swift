@@ -11,7 +11,7 @@ import CollectionKit
 open class CKCycleView<View: UIView, Data>: PageItemsView<View, Data, CKCollectionView> {
     /// ZJaDe: 点击item
     public var didSelectItem: ((ProviderType.TapContext) -> Void)? {
-        get { return self.provider.tapHandler }
+        get { self.provider.tapHandler }
         set { self.provider.tapHandler = newValue }
     }
     /// ZJaDe: 数据绑定
@@ -76,7 +76,7 @@ open class CKCycleView<View: UIView, Data>: PageItemsView<View, Data, CKCollecti
 }
 extension CKCycleView {
     private static func createProvider(dataSource: CycleDataSource<Data>, viewUpdater: @escaping ViewUpdaterFn) -> ProviderType {
-        return ProviderType(
+        ProviderType(
             dataSource: dataSource,
             viewSource: ClosureViewSource(viewUpdater: viewUpdater),
             sizeSource: self.createSizeSource(viewUpdater: viewUpdater),
@@ -84,7 +84,7 @@ extension CKCycleView {
         )
     }
     private static func createSizeSource(viewUpdater: @escaping ViewUpdaterFn) -> AutoLayoutSizeSource<Data, View> {
-        return AutoLayoutSizeSource(dummyView: View.self, horizontalFittingPriority: .init(999.1), viewUpdater: viewUpdater)
+        AutoLayoutSizeSource(dummyView: View.self, horizontalFittingPriority: .init(999.1), viewUpdater: viewUpdater)
     }
 }
 extension CKCycleView {
@@ -94,6 +94,6 @@ extension CKCycleView {
 }
 extension CKCollectionView: OneWayScrollable {
     public var scrollDirection: ScrollDirection {
-        return .horizontal
+        .horizontal
     }
 }

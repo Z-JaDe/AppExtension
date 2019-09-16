@@ -33,7 +33,7 @@ public final class DataController<S: SectionModelType> {
 }
 extension DataController {
     public var sectionModels: [S] {
-        return _data.lazy.map { S(original: $0.model, items: $0.items) }
+        _data.lazy.map { S(original: $0.model, items: $0.items) }
     }
     public func setSections(_ sections: [S]) {
         self._data = sections.map { DataSnapshot(model: $0, items: $0.items) }
@@ -45,7 +45,7 @@ extension DataController {
         return S(original: data.model, items: data.items)
     }
     public subscript(indexPath: IndexPath) -> I {
-        get { return self._data[indexPath.section].items[indexPath.item] }
+        get { self._data[indexPath.section].items[indexPath.item] }
         set(item) {
             var section = self._data[indexPath.section]
             section.items[indexPath.item] = item
@@ -55,7 +55,7 @@ extension DataController {
 }
 extension DataController {
     public func sectionIndexCanBound(_ sectionIndex: Int) -> Bool {
-        return _data.indexCanBound(sectionIndex)
+        _data.indexCanBound(sectionIndex)
     }
     public func indexPathCanBound(_ indexpath: IndexPath) -> Bool {
         guard _data.indexCanBound(indexpath.section) else { return false }

@@ -17,7 +17,7 @@ public protocol UpdateNavItemProtocol: class {
 }
 public extension UpdateNavItemProtocol {
     func setNeedUpdateNavItemObserver() -> AnyObserver<Void> {
-        return AnyObserver(eventHandler: { [weak self] (event) in
+        AnyObserver(eventHandler: { [weak self] (event) in
             switch event {
             case .next: self?.setNeedUpdateNavItem()
             case .completed, .error: break

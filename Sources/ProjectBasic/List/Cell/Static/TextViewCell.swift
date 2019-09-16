@@ -21,7 +21,7 @@ open class TextViewCell: TitleCell, CheckAndCatchParamsProtocol {
     // MARK: -
     public lazy var textView: TextView = TextView(color: Color.List.textView, font: Font.List.textView)
     public var textViewText: String {
-        return self.textView.text ?? ""
+        self.textView.text ?? ""
     }
     open override func configInit() {
         super.configInit()
@@ -83,7 +83,7 @@ open class TextViewCell: TitleCell, CheckAndCatchParamsProtocol {
     }
 
     open func catchParams() -> [String: Any] {
-        return [key: self.textView.text ?? ""]
+        [key: self.textView.text ?? ""]
     }
 
 }

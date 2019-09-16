@@ -29,7 +29,7 @@ extension Observable {
         }
     }
     private func setNeedUpdate<P: ObservableType>(_ pauser: P) -> Observable<Element> where P.Element == Bool {
-        return pausableBuffered(pauser, flushOnCompleted: false, flushOnError: false)
+        pausableBuffered(pauser, flushOnCompleted: false, flushOnError: false)
     }
 }
 extension DisposeBagProtocol {

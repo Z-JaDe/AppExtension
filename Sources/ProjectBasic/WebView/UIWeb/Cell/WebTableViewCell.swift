@@ -20,7 +20,7 @@ open class WebTableViewCell: StaticTableItemCell {
         self.webVC.autoUpdateHeightWithContentSize()
     }
     open override func defaultInsets() -> UIEdgeInsets {
-        return UIEdgeInsets.zero
+        UIEdgeInsets.zero
     }
     open override func addChildView() {
         super.addChildView()

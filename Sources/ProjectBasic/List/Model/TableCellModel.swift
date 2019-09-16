@@ -52,7 +52,7 @@ extension TableCellModel: TableCellConfigProtocol {
     func didDisappear(in cell: UITableViewCell) {
     }
     func shouldHighlight() -> Bool {
-        return true
+        true
     }
 }
 extension TableCellModel: TableCellHeightProtocol {
@@ -88,7 +88,7 @@ extension TableCellModel {
 
 extension UITableViewCell {
     func getItemCellWidth(_ tableView: UITableView) -> CGFloat {
-        return tableView.getItemCellWidth(accessoryView, accessoryType)
+        tableView.getItemCellWidth(accessoryView, accessoryType)
     }
     /*************** 计算TableViewCell高度 ***************/
     func layoutHeight(_ contentWidth: CGFloat) -> CGFloat {
@@ -107,9 +107,9 @@ extension UITableViewCell {
         return viewHeight > 0 ? viewHeight : nil
     }
     open dynamic func calculateFrameHeight(_ width: CGFloat) -> CGFloat {
-        return 0
+        0
     }
     private func autoLayoutHeight(_ contentWidth: CGFloat) -> CGFloat {
-        return self.calculateAutoLayoutHeight(contentWidth)
+        self.calculateAutoLayoutHeight(contentWidth)
     }
 }

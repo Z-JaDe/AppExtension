@@ -10,7 +10,7 @@ import UIKit
 private var updaterKey: UInt8 = 0
 extension UICollectionView {
     public var updater: Updater {
-        return associatedObject(&updaterKey, createIfNeed: Updater(CollectionViewUpdating(self)))
+        associatedObject(&updaterKey, createIfNeed: Updater(CollectionViewUpdating(self)))
     }
 }
 private struct CollectionViewUpdating: Updating {
@@ -19,7 +19,7 @@ private struct CollectionViewUpdating: Updating {
         self.collectionView = target
     }
     var isInHierarchy: Bool {
-        return collectionView?.window != nil
+        collectionView?.window != nil
     }
     // MARK: -
     func performBatch(animated: Bool, updates: (() -> Void)?, completion: @escaping (Bool) -> Void) {

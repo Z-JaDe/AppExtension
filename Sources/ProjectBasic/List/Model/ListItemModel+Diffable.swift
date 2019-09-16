@@ -10,9 +10,9 @@ import Foundation
 
 extension ListItemModel: Diffable {
     public func isContentEqual(to source: ListItemModel) -> Bool {
-        return self.identity == source.identity
+        self.identity == source.identity
     }
     private var identity: String {
-        return "\(self.hashValue)\(self.needUpdateSentinel.value)"
+        "\(self.hashValue)\(self.needUpdateSentinel.value)"
     }
 }

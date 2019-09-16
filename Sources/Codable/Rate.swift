@@ -40,12 +40,12 @@ public struct Rate: FloatLiteralTypeValueProtocol,
     public let unit: String = "%"
 
     public var realValue: ValueType {
-        return self.value / 100
+        self.value / 100
     }
     /// 返回rate字符串值
 
     public var description: String {
-        return "\(self.originString)\(unit)"
+        "\(self.originString)\(unit)"
     }
 }
 /** ZJaDe: 
@@ -79,11 +79,11 @@ public struct ThousandRate: FloatLiteralTypeValueProtocol,
     public let unit: String = "‰"
 
     public var realValue: ValueType {
-        return self.value / 1000
+        self.value / 1000
     }
     /// 返回rate字符串值
 
     public var description: String {
-        return "\(self.originString)\(unit)"
+        "\(self.originString)\(unit)"
     }
 }

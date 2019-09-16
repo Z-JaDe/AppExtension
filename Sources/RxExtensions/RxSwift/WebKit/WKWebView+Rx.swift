@@ -12,25 +12,25 @@ import RxCocoa
 import WebKit
 extension Reactive where Base: WKWebView {
     public var delegate: DelegateProxy<WKWebView, WKNavigationDelegate> {
-        return RxWKWebViewDelegateProxy.proxy(for: base)
+        RxWKWebViewDelegateProxy.proxy(for: base)
     }
 
     public var didStartLoad: Observable<Void> {
-        return delegate
+        delegate
             .methodInvoked(#selector(WKNavigationDelegate.webView(_: didStartProvisionalNavigation: )))
             .map {_ in}
     }
 
     /// Reactive wrapper for `delegate` message.
     public var didFinishLoad: Observable<Void> {
-        return delegate
+        delegate
             .methodInvoked(#selector(WKNavigationDelegate.webView(_: didFinish: )))
             .map {_ in}
     }
 
     /// Reactive wrapper for `delegate` message.
     public var didFailLoad: Observable<Error> {
-        return delegate
+        delegate
             .methodInvoked(#selector(WKNavigationDelegate.webView(_: didFail: withError: )))
             .map { a in
                 return try self.castOrThrow(Error.self, a[2])

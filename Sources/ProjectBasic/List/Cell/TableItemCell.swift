@@ -16,11 +16,11 @@ extension TableItemCell {
 open class TableItemCell: ItemCell, WritableDefaultHeightProtocol {
 
     func getInternalCell() -> InternalTableViewCell? {
-        return self.superView(InternalTableViewCell.self)
+        self.superView(InternalTableViewCell.self)
     }
     weak var _tableView: UITableView?
     func getTableView() -> UITableView? {
-        return _tableView
+        _tableView
     }
     open override func configInit() {
         super.configInit()
@@ -61,10 +61,10 @@ open class TableItemCell: ItemCell, WritableDefaultHeightProtocol {
         self.insets = TableItemCell.get(type(of: self)) ?? defaultInsets()
     }
     open func defaultInsets() -> UIEdgeInsets {
-        return UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
+        UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
     }
     public func insetVerticalSpace() -> CGFloat {
-        return insets.top + insets.bottom + separatorLineHeight
+        insets.top + insets.bottom + separatorLineHeight
     }
     /// ZJaDe: 
     public var separatorLineColor: UIColor = Color.separatorLine {
@@ -81,7 +81,7 @@ open class TableItemCell: ItemCell, WritableDefaultHeightProtocol {
     }
     /// ZJaDe: 这个方法返回itemCell的高度，如果返回0 就采取自动布局的方式计算高度
     open func calculateFrameHeight(_ width: CGFloat) -> CGFloat {
-        return 0
+        0
     }
 
     public var defaultHeight: CGFloat = 0 {
@@ -130,7 +130,7 @@ extension TableItemCell {
         }
     }
     internal private(set) var selectionStyle: UITableViewCell.SelectionStyle {
-        get { return self.cellSelectedBackgroundColor == nil ? .none : .default }
+        get { self.cellSelectedBackgroundColor == nil ? .none : .default }
         set { getInternalCell()?.selectionStyle = newValue }
     }
 }

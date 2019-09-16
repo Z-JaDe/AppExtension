@@ -32,7 +32,7 @@ extension TableItemCell {
 }
 extension TableItemCell {
     func getItemCellWidth(_ tableView: UITableView) -> CGFloat {
-        return tableView.getItemCellWidth(accessoryView, accessoryType) - self.insets.left - self.insets.right
+        tableView.getItemCellWidth(accessoryView, accessoryType) - self.insets.left - self.insets.right
     }
     /*************** 计算TableViewCell高度 ***************/
     func layoutHeight(_ contentWidth: CGFloat) -> CGFloat {
@@ -51,6 +51,6 @@ extension TableItemCell {
         return viewHeight > 0 ? viewHeight : nil
     }
     private func autoLayoutHeight(_ contentWidth: CGFloat) -> CGFloat {
-        return self.calculateAutoLayoutHeight(contentWidth)
+        self.calculateAutoLayoutHeight(contentWidth)
     }
 }

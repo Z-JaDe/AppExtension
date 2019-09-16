@@ -66,6 +66,6 @@ public extension DisposeBagProtocol {
 extension NSObject: DisposeBagProtocol {}
 extension Reactive where Base: DisposeBagProtocol {
     public var disposeBag: DisposeBag {
-        return base.disposeBag
+        base.disposeBag
     }
 }

@@ -42,14 +42,14 @@ public extension ItemsOneWayScrollable {
     }
     @discardableResult
     func layoutCellsOrigin(_ cellArr: [LayoutItemType], _ startOrigin: CGFloat) -> CGFloat {
-        return cellArr.reduce(startOrigin) { (offSet, item) -> CGFloat in
+        cellArr.reduce(startOrigin) { (offSet, item) -> CGFloat in
             item.setLeading(offSet)
             return item.trailing
         }
     }
     // MARK: -
     func createLayoutCell(_ cell: CellView) -> LayoutItemType {
-        return LayoutItemType(cell, itemSpace, scrollDirection)
+        LayoutItemType(cell, itemSpace, scrollDirection)
     }
 }
 public extension ItemsOneWayScrollable where Self: UIView {

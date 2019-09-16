@@ -17,15 +17,15 @@ open class AppError: Error {
         self.errorDescription = errorDescription
     }
     var localizedDescription: String {
-        return "zjadeError: \(errorCode), \(errorDescription)"
+        "zjadeError: \(errorCode), \(errorDescription)"
     }
 
     open class var nilError: AppError {
-        return AppError(11, errorDescription: "值为nil")
+        AppError(11, errorDescription: "值为nil")
     }
 
     open class var deallocError: AppError {
-        return AppError(12, errorDescription: "对象已经释放")
+        AppError(12, errorDescription: "对象已经释放")
     }
 
 }

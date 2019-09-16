@@ -11,7 +11,7 @@ import UIKit
 open class WebView: UIWebView, WritableDefaultHeightProtocol {
 
     dynamic open override var isLoading: Bool {
-        return super.isLoading
+        super.isLoading
     }
 
     public var defaultHeight: CGFloat = 100 {

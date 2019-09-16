@@ -21,7 +21,7 @@ public extension ${key}Calculatable where Self: ValueProtocol, Self.ValueType: $
         left = Self(value: left.value ${value} right.value)
     }
     static func ${value} (left: Self, right: Self) -> Self {
-        return Self(value: left.value ${value} right.value)
+        Self(value: left.value ${value} right.value)
     }
 }
 public extension Optional where Wrapped: ${key}Calculatable & ValueProtocol, Wrapped.ValueType: ${key}Calculatable {

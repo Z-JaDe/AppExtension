@@ -28,14 +28,14 @@ public struct TimeStamp: FloatLiteralTypeValueProtocol,
     }
 
     public static func now() -> TimeStamp {
-        return TimeStamp(Date().timeIntervalSince1970)
+        TimeStamp(Date().timeIntervalSince1970)
     }
 
     public func timeIntervalSinceNow() -> ValueType {
-        return self.value - Date().timeIntervalSince1970
+        self.value - Date().timeIntervalSince1970
     }
     public func timeIntervalSince1970() -> ValueType {
-        return self.value
+        self.value
     }
     static let dateFormatObject: DateFormatter = DateFormatter()
     public func dateFormat(_ dateFormat: String = "yyyy-mm-dd") -> String {
@@ -45,6 +45,6 @@ public struct TimeStamp: FloatLiteralTypeValueProtocol,
     // MARK: -
     public var positiveFormat = "#0.#"
     public var description: String {
-        return String(format: "%.0f", self.value)
+        String(format: "%.0f", self.value)
     }
 }

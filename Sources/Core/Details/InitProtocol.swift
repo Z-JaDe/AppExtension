@@ -14,7 +14,7 @@ public protocol InitProtocol {
 }
 extension InitProtocol {
     public static func create() -> Self {
-        return self.init()
+        .init()
     }
 }
 extension String: InitProtocol {}

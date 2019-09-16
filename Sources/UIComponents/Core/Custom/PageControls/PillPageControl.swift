@@ -23,7 +23,7 @@ import UIKit
         }
     }
     open var currentPage: Int {
-        return Int(round(progress))
+        Int(round(progress))
     }
 
     // MARK: - Appearance
@@ -104,11 +104,11 @@ import UIKit
     }
 
     override open var intrinsicContentSize: CGSize {
-        return sizeThatFits(CGSize.zero)
+        sizeThatFits(CGSize.zero)
     }
 
     override open func sizeThatFits(_ size: CGSize) -> CGSize {
-        return CGSize(width: CGFloat(inactiveLayers.count) * pillSize.width + CGFloat(inactiveLayers.count - 1) * indicatorPadding,
+        CGSize(width: CGFloat(inactiveLayers.count) * pillSize.width + CGFloat(inactiveLayers.count - 1) * indicatorPadding,
                       height: pillSize.height)
     }
 }

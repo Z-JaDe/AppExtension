@@ -20,7 +20,7 @@ open class SegmentView<CellView, CellData>: MultipleItemsView<CellView, CellData
     // MARK: - 重写
     /// ZJaDe: item总数量
     open override var totalCount: Int {
-        return self.cellArr.count
+        self.cellArr.count
     }
     /// ZJaDe: 设置数据
     open override func configData(_ dataArray: [CellData]) {

@@ -42,7 +42,7 @@ open class ViewController: UIViewController, ViewControllerProtocol {
         }
     }
     open func createRootView(_ frame: CGRect) -> UIView? {
-        return nil
+        nil
     }
 
     open func setNeedUpdateData() {
@@ -99,11 +99,11 @@ open class ViewController: UIViewController, ViewControllerProtocol {
 open class GenericsViewController<ViewType>: ViewController where ViewType: UIView {
     // MARK: - view
     public final override func createRootView(_ frame: CGRect) -> UIView? {
-        return createView(frame)
+        createView(frame)
     }
     /// ZJaDe: 重写该方法 返回根视图
     open func createView(_ frame: CGRect) -> ViewType {
-        return ViewType(frame: frame)
+        ViewType(frame: frame)
     }
     open var rootView: ViewType {
         // swiftlint:disable force_cast

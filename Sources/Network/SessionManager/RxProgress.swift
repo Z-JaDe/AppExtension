@@ -11,7 +11,7 @@ import Alamofire
 import RxSwift
 extension Reactive where Base: Request {
     public func progress() -> Observable<RxProgress> {
-        return Observable.create { observer in
+        Observable.create { observer in
             let handler: Request.ProgressHandler = { progress in
                 let rxProgress = RxProgress(bytesWritten: progress.completedUnitCount,
                                             totalBytes: progress.totalUnitCount)
@@ -51,7 +51,7 @@ public struct RxProgress {
 
 extension RxProgress {
     public var bytesRemaining: Int64 {
-        return totalBytes - bytesWritten
+        totalBytes - bytesWritten
     }
     public var completed: Float {
         if totalBytes > 0 {

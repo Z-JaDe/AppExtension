@@ -10,10 +10,10 @@ import UIKit
 
 extension UITableProxy {
     var delegate: TableViewDelegate? {
-        return adapter.delegate
+        adapter.delegate
     }
     var dataController: UITableAdapter.DataSource.DataControllerType {
-        return adapter.rxDataSource.dataController
+        adapter.rxDataSource.dataController
     }
     func tableCellItem(at indexPath: IndexPath) -> TableCellHeightProtocol & TableCellConfigProtocol {
         // swiftlint:disable force_cast
@@ -38,7 +38,7 @@ open class UITableProxy: NSObject, UITableViewDelegate {
         return height > 0 ? height : Space.cellDefaultHeight
     }
     open func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.tableView(tableView, heightForRowAt: indexPath)
+        self.tableView(tableView, heightForRowAt: indexPath)
     }
     // MARK: -
     open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

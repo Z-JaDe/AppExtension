@@ -40,7 +40,7 @@ open class ProgressView: CustomView {
         updateProgress()
     }
     open override var intrinsicContentSize: CGSize {
-        return CGSize(width: jd.screenWidth, height: 4)
+        CGSize(width: jd.screenWidth, height: 4)
     }
     // MARK: -
     open override func layoutSubviews() {

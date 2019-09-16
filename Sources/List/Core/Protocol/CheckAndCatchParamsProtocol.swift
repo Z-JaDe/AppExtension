@@ -18,12 +18,8 @@ public protocol CheckParamsProtocol {
     func checkParams() -> Bool
 }
 extension CheckParamsProtocol {
-    public var catchParamsErrorPrompt: String? {
-        return nil
-    }
-    public var checkParamsClosure: CheckParamsClosure? {
-        return nil
-    }
+    public var catchParamsErrorPrompt: String? { nil }
+    public var checkParamsClosure: CheckParamsClosure? { nil }
 }
 // MARK: -
 public typealias CatchParamsClosure = () -> [String: Any]
@@ -33,9 +29,7 @@ public protocol CatchParamsProtocol {
     func catchParams() -> [String: Any]
 }
 extension CatchParamsProtocol {
-    public var catchParamsClosure: CatchParamsClosure? {
-        return nil
-    }
+    public var catchParamsClosure: CatchParamsClosure? { nil }
 }
 // MARK: -
 public protocol DataSourceItemsParamProtocol {

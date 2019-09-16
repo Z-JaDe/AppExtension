@@ -34,9 +34,9 @@ final class NoneStepper: OneStepper {
 private var stepKey: UInt8 = 0
 public extension Stepper {
     var step: BehaviorRelay<Step> {
-        return associatedObject(&stepKey, createIfNeed: BehaviorRelay<Step>(value: NoneStep()))
+        associatedObject(&stepKey, createIfNeed: BehaviorRelay<Step>(value: NoneStep()))
     }
     var steps: Observable<Step> {
-        return self.step.filter { !($0 is NoneStep) }
+        self.step.filter { !($0 is NoneStep) }
     }
 }

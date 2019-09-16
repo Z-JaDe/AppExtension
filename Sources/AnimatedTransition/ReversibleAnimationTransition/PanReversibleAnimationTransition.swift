@@ -97,7 +97,7 @@ extension UIViewControllerContextTransitioning {
 }
 extension UIView {
     func toImage() -> UIImage {
-        return UIGraphicsImageRenderer(bounds: self.bounds).image(actions: { (_) in
+        UIGraphicsImageRenderer(bounds: self.bounds).image(actions: { (_) in
             drawHierarchy(in: self.bounds, afterScreenUpdates: false)
         })
     }

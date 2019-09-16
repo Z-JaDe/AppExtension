@@ -29,10 +29,10 @@ public protocol CollectionViewable: class, TotalCountable {
 
 public extension CollectionViewable {
     func getCurrentProgress() -> CGFloat {
-        return realProgress(offSet: self.scrollView.viewHeadOffset(), length: self.scrollView.length)
+        realProgress(offSet: self.scrollView.viewHeadOffset(), length: self.scrollView.length)
     }
     func getCurrentIndex() -> Int {
-        return getCurrentProgress().toInt
+        getCurrentProgress().toInt
     }
     /// ZJaDe: 重新设置visibleCells在scrollView里的位置
     func resetCellsOrigin(repeatCount: Int) {

@@ -22,13 +22,13 @@ public struct AnyTableAdapterItem {
 }
 extension AnyTableAdapterItem: HiddenStateDesignable {
     public var isHidden: Bool {
-        get { return value.isHidden }
+        get { value.isHidden }
         set { value.isHidden = newValue }
     }
 }
 extension AnyTableAdapterItem: SelectedStateDesignable {
     public var isSelected: Bool {
-        get { return value.isSelected }
+        get { value.isSelected }
         set { value.isSelected = newValue }
     }
 }

@@ -25,7 +25,7 @@ open class ReversibleAnimationTransition: NSObject, UIViewControllerAnimatedTran
     public var animateTransitionClosure: ((UIViewControllerContextTransitioning) -> Void)?
 
     public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return self.duration
+        self.duration
     }
     open func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         self.animateTransitionClosure?(transitionContext)
@@ -35,21 +35,21 @@ open class ReversibleAnimationTransition: NSObject, UIViewControllerAnimatedTran
 }
 extension UIViewControllerContextTransitioning {
     var fromVC: UIViewController {
-        return viewController(forKey: .from)!
+        viewController(forKey: .from)!
     }
     var toVC: UIViewController {
-        return viewController(forKey: .to)!
+        viewController(forKey: .to)!
     }
     var fromView: UIView {
-        return view(forKey: .from)!
+        view(forKey: .from)!
     }
     var toView: UIView {
-        return view(forKey: .to)!
+        view(forKey: .to)!
     }
     var fromWidth: CGFloat {
-        return initialFrame(for: fromVC).size.width
+        initialFrame(for: fromVC).size.width
     }
     var toWidth: CGFloat {
-        return finalFrame(for: toVC).size.width
+        finalFrame(for: toVC).size.width
     }
 }

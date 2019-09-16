@@ -10,10 +10,10 @@ import Foundation
 
 extension AnyTableAdapterItem {
     public var cellModel: TableItemModel? {
-        return self.value as? TableItemModel
+        self.value as? TableItemModel
     }
     public static func cellModel(_ value: TableItemModel) -> AnyTableAdapterItem {
-        return AnyTableAdapterItem(value)
+        AnyTableAdapterItem(value)
     }
 }
 extension TableCellModel: TableAdapterItemDiffable {

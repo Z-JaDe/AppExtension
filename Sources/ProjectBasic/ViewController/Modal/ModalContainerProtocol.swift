@@ -17,7 +17,7 @@ extension ModalContainerProtocol where Self: UIViewController & TaskQueueProtoco
         set {setAssociatedObject(&modalIdDictKey, newValue)}
     }
     public func contains(_ viewCon: ModalViewController) -> Bool {
-        return self.modalTaskDict[viewCon.hashValue] != nil
+        self.modalTaskDict[viewCon.hashValue] != nil
     }
     public func show(_ viewCon: ModalViewController, animated: Bool = true) {
         guard self.contains(viewCon) == false else {

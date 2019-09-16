@@ -41,13 +41,13 @@ public class ResultModel<DataType: Codable>: Codable, ResultModelType {
         }
     }
     open var resultCodeKey: CodingKeys {
-        return CodingKeys(stringValue: "e")!
+        CodingKeys(stringValue: "e")!
     }
     open var messageKey: CodingKeys {
-        return CodingKeys(stringValue: "msg")!
+        CodingKeys(stringValue: "msg")!
     }
     open var dataKey: CodingKeys {
-        return CodingKeys(stringValue: "data")!
+        CodingKeys(stringValue: "data")!
     }
 
     public required init(from decoder: Decoder) throws {

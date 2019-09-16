@@ -129,7 +129,7 @@ extension EntityManager {
     }
     /// ZJaDe: 查找相关model中的第一个，根据keyValues查找
     public func searchFirst<T>(keyValues: [(String, Any)]) -> T? where T: NSManagedObject {
-        return search(keyValues: keyValues).first
+        search(keyValues: keyValues).first
     }
 
 }

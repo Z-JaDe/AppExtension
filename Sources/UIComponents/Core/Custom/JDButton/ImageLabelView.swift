@@ -126,7 +126,7 @@ open class ImageLabelView: CustomControl {
         return result
     }
     open override func sizeThatFits(_ size: CGSize) -> CGSize {
-        return self.intrinsicContentSize
+        self.intrinsicContentSize
     }
     // MARK: -
     public var image: UIImage? {
@@ -190,9 +190,9 @@ open class ImageLabelView: CustomControl {
         invalidateIntrinsicContentSize()
     }
     var hasTitle: Bool {
-        return title != nil
+        title != nil
     }
     var hasImage: Bool {
-        return image != nil
+        image != nil
     }
 }

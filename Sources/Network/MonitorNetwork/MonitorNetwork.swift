@@ -43,7 +43,7 @@ public class MonitorNetwork {
     }
     /// ZJaDe: 监听这个信号 true时有网络 false没有网络
     public func hasNetwork() -> Observable<Bool> {
-        return self.networkChanged.map { (status) -> Bool in
+        self.networkChanged.map { (status) -> Bool in
             switch status {
             case .notReachable, .unknown:
                 return false

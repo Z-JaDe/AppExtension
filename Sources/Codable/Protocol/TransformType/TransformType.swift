@@ -30,7 +30,7 @@ extension String {
     public var toDoubleIfExist: Double? {return Double(self)}
     public var toFloatIfExist: Float? {return Float(self)}
     public var toNSString: NSString {
-        return self as NSString
+        self as NSString
     }
 
     public var toBool: Bool? {
@@ -47,11 +47,11 @@ extension String {
 }
 extension CustomStringConvertible {
     public var toString: String {
-        return "\(self)"
+        "\(self)"
     }
 }
 extension CustomDebugStringConvertible where Self: CustomStringConvertible {
     public var debugDescription: String {
-        return self.description
+        self.description
     }
 }

@@ -10,10 +10,10 @@ import Foundation
 
 extension AnyTableAdapterItem {
     public var cell: StaticTableItemCell? {
-        return self.value as? StaticTableItemCell
+        self.value as? StaticTableItemCell
     }
     public static func cell(_ value: StaticTableItemCell) -> AnyTableAdapterItem {
-        return AnyTableAdapterItem(value)
+        AnyTableAdapterItem(value)
     }
 }
 extension StaticTableItemCell: TableAdapterItemDiffable {
@@ -32,9 +32,9 @@ extension StaticTableItemCell: TableAdapterItemDiffable {
 }
 extension StaticTableItemCell: Diffable {
     public func isContentEqual(to source: StaticTableItemCell) -> Bool {
-        return self.identity == source.identity
+        self.identity == source.identity
     }
     private var identity: String {
-        return "\(self.hashValue)\(self.needUpdateSentinel.value)"
+        "\(self.hashValue)\(self.needUpdateSentinel.value)"
     }
 }

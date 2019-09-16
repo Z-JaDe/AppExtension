@@ -30,7 +30,7 @@ public protocol UpdateModelProtocol: class {
 }
 public extension UpdateModelProtocol {
     func setNeedUpdateModelObserver() -> AnyObserver<Void> {
-        return AnyObserver(eventHandler: { (event) in
+        AnyObserver(eventHandler: { (event) in
             switch event {
             case .next: self.setNeedUpdateModel()
             case .completed, .error: break

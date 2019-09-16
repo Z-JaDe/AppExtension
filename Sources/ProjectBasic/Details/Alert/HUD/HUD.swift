@@ -21,11 +21,11 @@ public class HUD {
         return _hud
     }()
     public var text: String {
-        get { return _hud.label.text ?? "" }
+        get { _hud.label.text ?? "" }
         set { _hud.label.text = newValue }
     }
     public var canInteractive: Bool {
-        get { return _hud.canInteractive }
+        get { _hud.canInteractive }
         set { _hud.canInteractive = newValue }
     }
 
@@ -84,12 +84,12 @@ extension HUD {
         }
     }
     private static func image(_ name: String) -> UIImage? {
-        return UIImage(named: "ic_hud_\(name)")
+        UIImage(named: "ic_hud_\(name)")
     }
 }
 extension HUD: Equatable {
     public static func == (lhs: HUD, rhs: HUD) -> Bool {
-        return lhs._hud == rhs._hud
+        lhs._hud == rhs._hud
     }
 }
 extension HUD {

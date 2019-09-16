@@ -16,7 +16,7 @@ public class GradientView: CustomView {
         return self.layer as! CAGradientLayer
     }
     open override class var layerClass: AnyClass {
-        return CAGradientLayer.self
+        CAGradientLayer.self
     }
 
     public enum Direction {
@@ -27,7 +27,7 @@ public class GradientView: CustomView {
     }
     @discardableResult
     public func config(_ direction: Direction, _ colors: UIColor...) -> Self {
-        return config(direction, colors)
+        config(direction, colors)
     }
     @discardableResult
     public func config(_ direction: Direction, _ colors: [UIColor]) -> Self {
@@ -51,6 +51,6 @@ public class GradientView: CustomView {
     }
 
     public func finalizeImage() -> UIImage {
-        return self.layer.toImage()
+        self.layer.toImage()
     }
 }

@@ -12,7 +12,7 @@ open class SearchView: CustomView {
     public let textField: TextField = TextField()
     public let cancelButton: Button = Button(text: "取消", color: Color.white, font: Font.h3)
     public var text: String {
-        return self.textField.text ?? ""
+        self.textField.text ?? ""
     }
     open override func configInit() {
         super.configInit()
@@ -79,6 +79,6 @@ open class SearchView: CustomView {
         configCancelButton(isShow: false, animated: false)
     }
     open override var intrinsicContentSize: CGSize {
-        return CGSize(width: jd.screenWidth, height: 30)
+        CGSize(width: jd.screenWidth, height: 30)
     }
 }

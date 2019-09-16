@@ -24,7 +24,7 @@ public class CustomTableItemCell<ViewType: UIView>: StaticTableItemCell {
         self.separatorLineInsets = (0, 0)
     }
     public override func defaultInsets() -> UIEdgeInsets {
-        return UIEdgeInsets.zero
+        UIEdgeInsets.zero
     }
     public var customView: ViewType? {
         didSet {

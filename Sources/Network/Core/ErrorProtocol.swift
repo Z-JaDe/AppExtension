@@ -14,7 +14,7 @@ public protocol RetryRequestProtocol {
 }
 extension ObservableType where Element == Error {
     internal func _retryError() -> Observable<()> {
-        return flatMapLatest({ (error) -> Observable<()> in
+        flatMapLatest({ (error) -> Observable<()> in
             if let error = error as? RetryRequestProtocol {
                 return error.retryError()
             } else {
@@ -30,6 +30,6 @@ public protocol MapErrorProtocol {
 }
 extension Error {
     internal func _mapError() -> Error {
-        return (self as? MapErrorProtocol)?.mapError() ?? self
+        (self as? MapErrorProtocol)?.mapError() ?? self
     }
 }

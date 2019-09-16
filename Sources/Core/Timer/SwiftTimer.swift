@@ -38,7 +38,7 @@ public class SwiftTimer {
     }
 
     public static func repeaticTimer(interval: DispatchTimeInterval, queue: DispatchQueue = .main, handler: @escaping SwiftTimerHandler) -> SwiftTimer {
-        return SwiftTimer(interval: interval, repeats: true, queue: queue, handler: handler)
+        SwiftTimer(interval: interval, repeats: true, queue: queue, handler: handler)
     }
 
     deinit {
@@ -136,8 +136,7 @@ public class SwiftCountDownTimer {
 }
 
 public extension DispatchTimeInterval {
-
     static func fromSeconds(_ seconds: Double) -> DispatchTimeInterval {
-        return .nanoseconds(Int(seconds * Double(NSEC_PER_SEC)))
+        .nanoseconds(Int(seconds * Double(NSEC_PER_SEC)))
     }
 }

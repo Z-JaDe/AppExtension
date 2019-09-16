@@ -17,18 +17,18 @@ public protocol TableAdapterItemDiffable {
 // MARK: - Diffable & Hashable
 extension AnyTableAdapterItem: Diffable, Hashable {
     public static func == (lhs: AnyTableAdapterItem, rhs: AnyTableAdapterItem) -> Bool {
-        return lhs.value.isEqual(to: rhs)
+        lhs.value.isEqual(to: rhs)
     }
     public func hash(into hasher: inout Hasher) {
         value.hash(into: &hasher)
     }
     public func isContentEqual(to source: AnyTableAdapterItem) -> Bool {
-        return value.isContentEqual(to: source)
+        value.isContentEqual(to: source)
     }
 }
 // MARK: - CustomStringConvertible
 extension AnyTableAdapterItem: CustomStringConvertible {
     public var description: String {
-        return "\(type(of: self.value)):\(self.value)"
+        "\(type(of: self.value)):\(self.value)"
     }
 }

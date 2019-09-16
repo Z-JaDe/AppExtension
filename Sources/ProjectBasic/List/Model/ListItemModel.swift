@@ -17,10 +17,10 @@ open class ListItemModel {
         return name
     }()
     open var viewNameSuffix: String {
-        return "Cell"
+        "Cell"
     }
     open func getCellClsName() -> String {
-        return self.cellFullName
+        self.cellFullName
     }
     // MARK: NeedUpdateProtocol
     private(set) var needUpdateSentinel: Sentinel = Sentinel()
@@ -44,6 +44,6 @@ extension ListItemModel: Hashable {
         hasher.combine(ObjectIdentifier(self))
     }
     public static func == (lhs: ListItemModel, rhs: ListItemModel) -> Bool {
-        return lhs.hashValue == rhs.hashValue
+        lhs.hashValue == rhs.hashValue
     }
 }

@@ -18,16 +18,16 @@ public protocol CollectionProtocol: RandomAccessCollection,
 }
 extension CollectionProtocol {
     public var startIndex: Int {
-        return value.startIndex
+        value.startIndex
     }
     public var endIndex: Int {
-        return value.endIndex
+        value.endIndex
     }
     public func index(after i: Int) -> Int {
-        return value.index(after: i)
+        value.index(after: i)
     }
     public subscript(position: Int) -> Element {
-        get { return value[position] }
+        get { value[position] }
         set { value[position] = newValue }
     }
 

@@ -24,7 +24,7 @@ public class ListDataInfo<DataType> {
     }
 
     public func map<U>(_ transform: (DataType) throws -> U) rethrows -> ListDataInfo<U> {
-        return ListDataInfo<U>(original: self, data: try transform(data))
+        ListDataInfo<U>(original: self, data: try transform(data))
     }
     /// ZJaDe: 局部(无)动画刷新 or 全局刷新
     public func configUpdateMode(_ updateMode: ListUpdateMode) -> Self {
@@ -49,6 +49,6 @@ public class ListDataInfo<DataType> {
 }
 extension ListData {
     public func updateInfo() -> ListDataInfo<ListData> {
-        return ListDataInfo(data: self)
+        ListDataInfo(data: self)
     }
 }

@@ -40,7 +40,7 @@ extension Store {
     //        })
     //    }
     open func observe<SelectedState: Equatable>(_ selector: @escaping (State) -> SelectedState) -> Observable<SelectedState> {
-        return Observable.create({ (observer) -> Disposable in
+        Observable.create({ (observer) -> Disposable in
             let subscriber = AnonymousStoreSubscriber<SelectedState>({ (state) in
                 observer.onNext(state)
             })

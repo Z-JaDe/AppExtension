@@ -18,20 +18,20 @@ public enum ErrorEventHandle {
 
 extension ObservableType {
     public func mapToVoid() -> Observable<()> {
-        return map {_ in ()}
+        map {_ in ()}
     }
     func mapToOptional() -> Observable<Element?> {
-        return map { Optional($0) }
+        map { Optional($0) }
     }
 }
 extension ObservableType where Element == Bool {
     func filterTrue() -> Observable<Void> {
-        return filter({$0}).mapToVoid()
+        filter({$0}).mapToVoid()
     }
 }
 extension ObservableType where Element: Equatable {
     func ignore(value: Element) -> Observable<Element> {
-        return filter { (e) -> Bool in
+        filter { (e) -> Bool in
             return value != e
         }
     }
@@ -39,13 +39,13 @@ extension ObservableType where Element: Equatable {
 // MARK: - subscribe
 extension ObservableType {
     public func subscribeOnNext(_ onNext: @escaping (Element) -> Void) -> Disposable {
-        return subscribe(onNext: onNext, onError: { error in
+        subscribe(onNext: onNext, onError: { error in
             logError("订阅失败 error: \(error)")
         })
     }
 }
 extension SharedSequenceConvertibleType where SharingStrategy == DriverSharingStrategy {
     public func driveOnNext(_ onNext: @escaping (Element) -> Void) -> Disposable {
-        return drive(onNext: onNext)
+        drive(onNext: onNext)
     }
 }

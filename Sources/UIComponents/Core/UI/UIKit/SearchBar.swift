@@ -44,6 +44,6 @@ open class SearchBar: UISearchBar, WritableDefaultHeightProtocol {
 open class SearchController: UISearchController {
     lazy var _searchBar: SearchBar = SearchBar()
     open override var searchBar: UISearchBar {
-        return _searchBar
+        _searchBar
     }
 }

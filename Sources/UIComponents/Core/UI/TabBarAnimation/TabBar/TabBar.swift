@@ -108,9 +108,9 @@ extension TabBar {
 }
 extension TabBar {
     func barButtonIndex(tag: Int) -> Int {
-        return tag - 20
+        tag - 20
     }
     func barButtonTag(index: Int) -> Int {
-        return index + 20
+        index + 20
     }
 }

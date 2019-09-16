@@ -13,7 +13,7 @@ public protocol PushJumpPlugin {
 }
 extension UIViewController: PushJumpPlugin {
     public var navCon: UINavigationController? {
-        return self.navigationController
+        self.navigationController
     }
 }
 public extension PushJumpPlugin {
@@ -42,6 +42,6 @@ public extension PushJumpPlugin {
         return false
     }
     func popTo<T: AssociatedViewControllerConvertible>(_ type: T.Type, animated: Bool = true) -> Bool {
-        return navCon?.popTo(T.ViewControllerType.self, animated: animated) ?? false
+        navCon?.popTo(T.ViewControllerType.self, animated: animated) ?? false
     }
 }

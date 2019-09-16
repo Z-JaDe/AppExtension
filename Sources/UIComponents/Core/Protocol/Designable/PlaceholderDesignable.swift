@@ -16,6 +16,6 @@ public protocol PlaceholderDesignable: TextDesignable {
 }
 extension PlaceholderDesignable {
     public func getPlaceholderTextColor() -> UIColor {
-        return self.placeholderTextColor ?? Color.placeholder
+        self.placeholderTextColor ?? Color.placeholder
     }
 }

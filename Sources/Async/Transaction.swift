@@ -26,7 +26,7 @@ extension Transaction: Hashable {
         hasher.combine(selector)
     }
     public static func == (lhs: Transaction, rhs: Transaction) -> Bool {
-        return lhs.hashValue == rhs.hashValue
+        lhs.hashValue == rhs.hashValue
     }
 }
 private var transactionSet = Set<Transaction>()

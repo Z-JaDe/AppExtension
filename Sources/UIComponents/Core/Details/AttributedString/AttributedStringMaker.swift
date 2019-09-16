@@ -31,10 +31,10 @@ public struct AttributedStringMaker {
     }
 
     private var defaultRange: NSRange {
-        return NSRange(location: 0, length: self.attrStr.length)
+        NSRange(location: 0, length: self.attrStr.length)
     }
     public func attr() -> NSAttributedString {
-        return self.attrStr.copy() as! NSAttributedString
+        self.attrStr.copy() as! NSAttributedString
     }
     // MARK: -
     public func color(_ color: UIColor?, range: NSRange? = nil) -> AttributedStringMaker {
@@ -146,7 +146,7 @@ public protocol AttributedStringMakerProtocol: class {
 }
 extension AttributedStringMakerProtocol {
     public var attributedTextMaker: AttributedStringMaker? {
-        get { return AttributedStringMaker(self.attributedText) }
+        get { AttributedStringMaker(self.attributedText) }
         set { self.attributedText = newValue?.attr() }
     }
 }
@@ -155,7 +155,7 @@ extension UITextField: AttributedStringMakerProtocol {}
 
 extension UITextView {
     public var attributedTextMaker: AttributedStringMaker? {
-        get { return AttributedStringMaker(self.attributedText) }
+        get { AttributedStringMaker(self.attributedText) }
         set { self.attributedText = newValue?.attr() }
     }
 }

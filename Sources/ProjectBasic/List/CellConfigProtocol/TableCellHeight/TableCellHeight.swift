@@ -13,13 +13,13 @@ public enum CellHeightLayoutType {
     case resetLayout
 
     var isNeedLayout: Bool {
-        return self != .hasLayout
+        self != .hasLayout
     }
 }
 private var cellHeightKey: UInt8 = 0
 extension TableCellHeightProtocol {
     var tempCellHeight: CGFloat {
-        return associatedObject(&cellHeightKey, createIfNeed: 0)
+        associatedObject(&cellHeightKey, createIfNeed: 0)
     }
     func changeTempCellHeight(_ newValue: CGFloat) {
         setAssociatedObject(&cellHeightKey, newValue)

@@ -49,7 +49,7 @@ extension UIWebView: WebViewProtocol {
         }
     }
     public var rxDidFinishLoad: Observable<Void> {
-        return self.rx.didFinishLoad
+        self.rx.didFinishLoad
     }
 
     public func reloadWeb() {
@@ -73,7 +73,7 @@ extension WKWebView: WebViewProtocol {
         }
     }
     public var rxDidFinishLoad: Observable<Void> {
-        return self.rx.didFinishLoad
+        self.rx.didFinishLoad
     }
 
     public func reloadWeb() {

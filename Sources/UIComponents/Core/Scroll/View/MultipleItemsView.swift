@@ -42,7 +42,7 @@ open class MultipleItemsView<CellView, CellData, ScrollView>: CustomControl, Col
     // MARK: - PageViewable
     public private(set) lazy var scrollView: ScrollView = createScrollView()
     open func createScrollView() -> ScrollView {
-        return ScrollView()
+        ScrollView()
     }
     public var currentIndex: Int = 0 {
         didSet {
@@ -51,7 +51,7 @@ open class MultipleItemsView<CellView, CellData, ScrollView>: CustomControl, Col
         }
     }
     open var totalCount: Int {
-        return self.dataArray.count
+        self.dataArray.count
     }
     // MARK: - 初始化
     open override func configInit() {

@@ -15,9 +15,9 @@ public protocol Flow: Presentable {
 private var flowReadyKey: UInt8 = 0
 extension Flow {
     internal var flowReadySubject: PublishSubject<Bool> {
-        return associatedObject(&flowReadyKey, createIfNeed: PublishSubject<Bool>())
+        associatedObject(&flowReadyKey, createIfNeed: PublishSubject<Bool>())
     }
     public var rxFlowReady: Single<Bool> {
-        return self.flowReadySubject.take(1).asSingle()
+        self.flowReadySubject.take(1).asSingle()
     }
 }

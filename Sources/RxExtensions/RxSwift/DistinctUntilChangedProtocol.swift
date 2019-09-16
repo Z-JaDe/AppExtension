@@ -15,14 +15,14 @@ public protocol DistinctUntilChangedProtocol {
 }
 extension DistinctUntilChangedProtocol {
     public func distinctUntilChanged(_ comparer: @escaping (E, E) -> Bool) -> Self {
-        return self.distinctUntilChanged({$0}, comparer: comparer)
+        self.distinctUntilChanged({$0}, comparer: comparer)
     }
     public func distinctUntilChanged<K: Equatable>(_ keySelector: @escaping (E) -> K) -> Self {
-        return self.distinctUntilChanged(keySelector, comparer: {$0 == $1})
+        self.distinctUntilChanged(keySelector, comparer: {$0 == $1})
     }
 }
 extension DistinctUntilChangedProtocol where E: Equatable {
     public func distinctUntilChanged() -> Self {
-        return self.distinctUntilChanged({$0}, comparer: {$0 == $1})
+        self.distinctUntilChanged({$0}, comparer: {$0 == $1})
     }
 }

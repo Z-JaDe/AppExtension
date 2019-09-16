@@ -12,11 +12,9 @@ public struct Sentinel {
     public init() {}
     private var _value: Int32 = 0
 
-    public var value: Int32 {
-        return _value
-    }
+    public var value: Int32 { _value }
     @discardableResult
     public mutating func increase() -> Int32 {
-        return OSAtomicIncrement32(&_value)
+        OSAtomicIncrement32(&_value)
     }
 }

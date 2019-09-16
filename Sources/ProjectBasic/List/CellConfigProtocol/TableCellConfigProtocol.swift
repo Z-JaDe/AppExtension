@@ -17,6 +17,6 @@ protocol TableCellConfigProtocol: CreateTableCellrotocol {
 }
 extension CreateTableCellrotocol {
     func _createCell(in tableView: UITableView, for indexPath: IndexPath, _ reuseIdentifier: String) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
     }
 }

@@ -14,7 +14,7 @@ public extension AddCalculatable where Self: ValueProtocol, Self.ValueType: AddC
         left = Self(value: left.value + right.value)
     }
     static func + (left: Self, right: Self) -> Self {
-        return Self(value: left.value + right.value)
+        Self(value: left.value + right.value)
     }
 }
 public extension Optional where Wrapped: AddCalculatable & ValueProtocol, Wrapped.ValueType: AddCalculatable {
@@ -39,7 +39,7 @@ public extension MinusCalculatable where Self: ValueProtocol, Self.ValueType: Mi
         left = Self(value: left.value - right.value)
     }
     static func - (left: Self, right: Self) -> Self {
-        return Self(value: left.value - right.value)
+        Self(value: left.value - right.value)
     }
 }
 public extension Optional where Wrapped: MinusCalculatable & ValueProtocol, Wrapped.ValueType: MinusCalculatable {

@@ -10,9 +10,9 @@ import Foundation
 
 public func performInMainAsync(_ action: @escaping () -> Void) {
     if Thread.isMainThread {
-        return action()
+        action()
     } else {
-        return DispatchQueue.main.async(execute: action)
+        DispatchQueue.main.async(execute: action)
     }
 }
 private let labelSpec = DispatchSpecificKey<Int>()

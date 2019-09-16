@@ -22,23 +22,23 @@ private func decode<T: Decodable>(_ jsonString: String) throws -> T {
 }
 extension JSBridge {
     internal func call(function: String, withStringifiedArgs args: String) -> Observable<Void> {
-        return context.rawCall(function: function, args: args).mapToVoid()
+        context.rawCall(function: function, args: args).mapToVoid()
     }
 
     internal func call<Result: Decodable>(function: String, withStringifiedArgs args: String) -> Observable<Result> {
-        return context.rawCall(function: function, args: args).map(decode)
+        context.rawCall(function: function, args: args).map(decode)
     }
 
     public func call(function: String) -> Observable<Void> {
-        return call(function: function, withStringifiedArgs: "")
+        call(function: function, withStringifiedArgs: "")
     }
 
     public func call<A: Encodable>(function: String, withArg arg: A) -> Observable<Void> {
-        return call(function: function, withStringifiedArgs: "\(encode(arg))")
+        call(function: function, withStringifiedArgs: "\(encode(arg))")
     }
 
     public func call<A: Encodable, B: Encodable>(function: String, withArgs args: (A, B)) -> Observable<Void> {
-        return call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1))")
+        call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1))")
     }
     // swiftlint:disable large_tuple
     public func call<A: Encodable, B: Encodable, C: Encodable>(function: String, withArgs args: (A, B, C)) -> Observable<Void> {
@@ -47,59 +47,59 @@ extension JSBridge {
     }
 
     public func call<A: Encodable, B: Encodable, C: Encodable, D: Encodable>(function: String, withArgs args: (A, B, C, D)) -> Observable<Void> {
-        return call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2)),\(encode(args.3))")
+        call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2)),\(encode(args.3))")
     }
 
     public func call<A: Encodable, B: Encodable, C: Encodable, D: Encodable, E: Encodable>(function: String, withArgs args: (A, B, C, D, E)) -> Observable<Void> {
-        return call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2)),\(encode(args.3)),\(encode(args.4))")
+        call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2)),\(encode(args.3)),\(encode(args.4))")
     }
 
     public func call<A: Encodable, B: Encodable, C: Encodable, D: Encodable, E: Encodable, F: Encodable>(function: String, withArgs args: (A, B, C, D, E, F)) -> Observable<Void> {
-        return call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2)),\(encode(args.3)),\(encode(args.4)),\(encode(args.5))")
+        call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2)),\(encode(args.3)),\(encode(args.4)),\(encode(args.5))")
     }
 
     public func call<A: Encodable, B: Encodable, C: Encodable, D: Encodable, E: Encodable, F: Encodable, G: Encodable>(function: String, withArgs args: (A, B, C, D, E, F, G)) -> Observable<Void> {
-        return call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2)),\(encode(args.3)),\(encode(args.4)),\(encode(args.5)),\(encode(args.6))")
+        call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2)),\(encode(args.3)),\(encode(args.4)),\(encode(args.5)),\(encode(args.6))")
     }
 
     public func call<A: Encodable, B: Encodable, C: Encodable, D: Encodable, E: Encodable, F: Encodable, G: Encodable, H: Encodable>(function: String, withArgs args: (A, B, C, D, E, F, G, H)) -> Observable<Void> {
-        return call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2)),\(encode(args.3)),\(encode(args.4)),\(encode(args.5)),\(encode(args.6)),\(encode(args.7))")
+        call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2)),\(encode(args.3)),\(encode(args.4)),\(encode(args.5)),\(encode(args.6)),\(encode(args.7))")
     }
 
     public func call<Result: Decodable>(function: String) -> Observable<Result> {
-        return call(function: function, withStringifiedArgs: "")
+        call(function: function, withStringifiedArgs: "")
     }
 
     public func call<Result: Decodable, A: Encodable>(function: String, withArg arg: A) -> Observable<Result> {
-        return call(function: function, withStringifiedArgs: "\(encode(arg))")
+        call(function: function, withStringifiedArgs: "\(encode(arg))")
     }
 
     public func call<Result: Decodable, A: Encodable, B: Encodable>(function: String, withArgs args: (A, B)) -> Observable<Result> {
-        return call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1))")
+        call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1))")
     }
 
     public func call<Result: Decodable, A: Encodable, B: Encodable, C: Encodable>(function: String, withArgs args: (A, B, C)) -> Observable<Result> {
-        return call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2))")
+        call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2))")
     }
 
     public func call<Result: Decodable, A: Encodable, B: Encodable, C: Encodable, D: Encodable>(function: String, withArgs args: (A, B, C, D)) -> Observable<Result> {
-        return call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2)),\(encode(args.3))")
+        call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2)),\(encode(args.3))")
     }
 
     public func call<Result: Decodable, A: Encodable, B: Encodable, C: Encodable, D: Encodable, E: Encodable>(function: String, withArgs args: (A, B, C, D, E)) -> Observable<Result> {
-        return call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2)),\(encode(args.3)),\(encode(args.4))")
+        call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2)),\(encode(args.3)),\(encode(args.4))")
     }
 
     public func call<Result: Decodable, A: Encodable, B: Encodable, C: Encodable, D: Encodable, E: Encodable, F: Encodable>(function: String, withArgs args: (A, B, C, D, E, F)) -> Observable<Result> {
-        return call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2)),\(encode(args.3)),\(encode(args.4)),\(encode(args.5))")
+        call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2)),\(encode(args.3)),\(encode(args.4)),\(encode(args.5))")
     }
 
     public func call<Result: Decodable, A: Encodable, B: Encodable, C: Encodable, D: Encodable, E: Encodable, F: Encodable, G: Encodable>(function: String, withArgs args: (A, B, C, D, E, F, G)) -> Observable<Result> {
-        return call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2)),\(encode(args.3)),\(encode(args.4)),\(encode(args.5)),\(encode(args.6))")
+        call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2)),\(encode(args.3)),\(encode(args.4)),\(encode(args.5)),\(encode(args.6))")
     }
 
     public func call<Result: Decodable, A: Encodable, B: Encodable, C: Encodable, D: Encodable, E: Encodable, F: Encodable, G: Encodable, H: Encodable>(function: String, withArgs args: (A, B, C, D, E, F, G, H)) -> Observable<Result> {
-        return call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2)),\(encode(args.3)),\(encode(args.4)),\(encode(args.5)),\(encode(args.6)),\(encode(args.7))")
+        call(function: function, withStringifiedArgs: "\(encode(args.0)),\(encode(args.1)),\(encode(args.2)),\(encode(args.3)),\(encode(args.4)),\(encode(args.5)),\(encode(args.6)),\(encode(args.7))")
     }
 }
 extension JSBridge {

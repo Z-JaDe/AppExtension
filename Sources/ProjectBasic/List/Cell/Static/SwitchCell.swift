@@ -42,10 +42,10 @@ open class SwitchCell: TitleCell {
     }
     // MARK: - CheckAndCatchParamsProtocol
     open func checkParams() -> Bool {
-        return true
+        true
     }
 
     open func catchParams() -> [String: Any] {
-        return [key: self.switchView.isOn]
+        [key: self.switchView.isOn]
     }
 }

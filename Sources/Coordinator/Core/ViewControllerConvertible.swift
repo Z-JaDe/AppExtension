@@ -18,7 +18,7 @@ public protocol AssociatedViewControllerConvertible: ViewControllerConvertible {
 }
 extension AssociatedViewControllerConvertible {
     public var rootViewController: UIViewController? {
-        return self.viewCon
+        self.viewCon
     }
 }
 public extension ViewControllerConvertible {
@@ -29,6 +29,6 @@ public extension ViewControllerConvertible {
 
 extension UIViewController: ViewControllerConvertible {
     public var rootViewController: UIViewController? {
-        return self
+        self
     }
 }

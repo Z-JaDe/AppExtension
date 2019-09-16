@@ -15,14 +15,14 @@ public protocol ImageURLProtocol {
 
 extension String: ImageURLProtocol {
     public var url: URL? {
-        return URL(string: "\(self)")
+        URL(string: "\(self)")
     }
 }
 extension URL: ImageURLProtocol {
     public var url: URL? {
-        return self
+        self
     }
     public var isEmpty: Bool {
-        return self.absoluteString.isEmpty
+        self.absoluteString.isEmpty
     }
 }

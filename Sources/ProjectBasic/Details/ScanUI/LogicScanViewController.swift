@@ -19,10 +19,10 @@ open class LogicScanViewController: UIViewController {
     private var _isReading: Bool = true
     // MARK: -
     var deviceAvailable: Bool {
-        return self.device != nil
+        self.device != nil
     }
     lazy var device: AVCaptureDevice? = {
-        return AVCaptureDevice.default(for: AVMediaType.video)
+        AVCaptureDevice.default(for: AVMediaType.video)
     }()
     lazy var session: AVCaptureSession = {
         let session = AVCaptureSession()
@@ -100,7 +100,7 @@ open class LogicScanViewController: UIViewController {
     }
     /// ZJaDe: 扫描范围
     open func scanViewRect() -> CGRect {
-        return jd.screenBounds
+        jd.screenBounds
     }
     /// ZJaDe: 扫描结果处理
     open func parseScanResult(metadataObject: AVMetadataMachineReadableCodeObject, stringValue: String) {

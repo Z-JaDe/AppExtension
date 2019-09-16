@@ -32,7 +32,7 @@ public protocol AssociatedObjectProtocol: class, Synchronizable {
 public extension AssociatedObjectProtocol {
     // MARK: - get
     func associatedObject<V>(_ key: UnsafeRawPointer) -> V? {
-        return _associatedObject(key)
+        _associatedObject(key)
     }
     func associatedObject<V>(_ key: UnsafeRawPointer, createIfNeed closure: @autoclosure () -> V) -> V {
         if let value: V = associatedObject(key) {

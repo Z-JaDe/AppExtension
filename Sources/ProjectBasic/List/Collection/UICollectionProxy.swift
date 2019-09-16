@@ -10,13 +10,13 @@ import UIKit
 
 extension UICollectionProxy {
     var delegate: CollectionViewDelegate? {
-        return adapter.delegate
+        adapter.delegate
     }
     var dataController: UICollectionAdapter.DataSource.DataControllerType {
-        return adapter.rxDataSource.dataController
+        adapter.rxDataSource.dataController
     }
     func collectionCellItem(at indexPath: IndexPath) -> UICollectionAdapter.Item {
-        return dataController[indexPath]
+        dataController[indexPath]
     }
 }
 
@@ -27,10 +27,10 @@ open class UICollectionProxy: NSObject, UICollectionViewDelegate {
     }
     // MARK: - Managing the Selected Cells
     open func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
+        true
     }
     open func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
-        return true
+        true
     }
     open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         adapter._didSelectItem(at: indexPath)
@@ -75,20 +75,20 @@ open class UICollectionProxy: NSObject, UICollectionViewDelegate {
     }
     // MARK: - Handling Layout Changes
     open func collectionView(_ collectionView: UICollectionView, transitionLayoutForOldLayout fromLayout: UICollectionViewLayout, newLayout toLayout: UICollectionViewLayout) -> UICollectionViewTransitionLayout {
-        return UICollectionViewTransitionLayout(currentLayout: fromLayout, nextLayout: toLayout)
+        UICollectionViewTransitionLayout(currentLayout: fromLayout, nextLayout: toLayout)
     }
     open func collectionView(_ collectionView: UICollectionView, targetContentOffsetForProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
-        return proposedContentOffset
+        proposedContentOffset
     }
     open func collectionView(_ collectionView: UICollectionView, targetIndexPathForMoveFromItemAt originalIndexPath: IndexPath, toProposedIndexPath proposedIndexPath: IndexPath) -> IndexPath {
-        return proposedIndexPath
+        proposedIndexPath
     }
     // MARK: - Managing Actions for Cells
     open func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
+        false
     }
     open func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
+        false
     }
     open func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
 
@@ -109,6 +109,6 @@ open class UICollectionProxy: NSObject, UICollectionViewDelegate {
     // MARK: - Controlling the Spring-Loading Behavior
     @available(iOS 11.0, *)
     open func collectionView(_ collectionView: UICollectionView, shouldSpringLoadItemAt indexPath: IndexPath, with context: UISpringLoadedInteractionContext) -> Bool {
-        return true
+        true
     }
 }

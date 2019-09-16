@@ -34,7 +34,7 @@ public class EntityManager {
     }()
     // MARK: - Core Data Saving support
     var managedContext: NSManagedObjectContext {
-        return persistentContainer.viewContext
+        persistentContainer.viewContext
     }
     public func saveContext() {
         let context = self.managedContext

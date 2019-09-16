@@ -28,6 +28,6 @@ public struct Score: FloatLiteralTypeValueProtocol,
     // MARK: -
     public var positiveFormat = "#0.#"
     public var description: String {
-        return String(format: "%.1f分", self.value)
+        String(format: "%.1f分", self.value)
     }
 }

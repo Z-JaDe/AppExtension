@@ -41,7 +41,7 @@ public struct NetworkContext<Value>: NetworkContextCompatible {
         self.target = target
     }
     public func map<T>(_ transform: (Value) throws -> T) rethrows -> NetworkContext<T> {
-        return NetworkContext<T>(try transform(value), self.target)
+        NetworkContext<T>(try transform(value), self.target)
     }
 }
 

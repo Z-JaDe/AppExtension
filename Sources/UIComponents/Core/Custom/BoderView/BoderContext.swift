@@ -36,7 +36,7 @@ public extension BoderContext {
         self.view!.boderView.update(with: self)
     }
     internal func cleanViewReference() -> BoderContext {
-        return self.then({$0.view = nil})
+        self.then({$0.view = nil})
     }
     func lineAxis(_ direction: Direction) -> LineAxis {
         switch direction {
@@ -54,46 +54,46 @@ public extension BoderContext {
 }
 public extension BoderContext {
     func width(_ width: CGFloat) -> BoderContext {
-        return self.then({$0.boderWidth = width.toPositiveNumber})
+        self.then({$0.boderWidth = width.toPositiveNumber})
     }
     func color(_ color: UIColor) -> BoderContext {
-        return self.then({$0.boderColor = color})
+        self.then({$0.boderColor = color})
     }
     func lineType(_ lineType: LineType) -> BoderContext {
-        return self.then({$0.lineType = lineType})
+        self.then({$0.lineType = lineType})
     }
     func edgeType(_ type: BoderExcludePoint) -> BoderContext {
-        return self.then({$0.edgeType = type})
+        self.then({$0.edgeType = type})
     }
     func fixedLength(_ value: CGFloat?) -> BoderContext {
-        return self.then({$0.fixedLength = value?.toPositiveNumber})
+        self.then({$0.fixedLength = value?.toPositiveNumber})
     }
 }
 public extension BoderContext {
     func addTop() {
-        return self.add(.top)
+        self.add(.top)
     }
     func addLeft() {
-        return self.add(.left)
+        self.add(.left)
     }
     func addBottom() {
-        return self.add(.bottom)
+        self.add(.bottom)
     }
     func addRight() {
-        return self.add(.right)
+        self.add(.right)
     }
     func add() {
-        return self.add(Direction.allCases)
+        self.add(Direction.allCases)
     }
     func add(_ directions: Direction...) {
-        return self.add(directions)
+        self.add(directions)
     }
     func add(_ directions: [Direction]) {
-        return self.then({$0.directions = directions}).finalize()
+        self.then({$0.directions = directions}).finalize()
     }
 }
 extension UIView {
     public var boder: BoderContext {
-        return BoderContext(in: self)
+        BoderContext(in: self)
     }
 }

@@ -17,7 +17,7 @@ public protocol RootViewStateProtocol: class {
 private var viewStateKey: UInt8 = 0
 public extension RootViewStateProtocol where Self: UIViewController {
     var viewState: BehaviorSubject<RootViewState> {
-        return associatedObject(&viewStateKey, createIfNeed: BehaviorSubject(value: .viewNoLoad))
+        associatedObject(&viewStateKey, createIfNeed: BehaviorSubject(value: .viewNoLoad))
     }
 }
 
@@ -25,45 +25,45 @@ public extension Reactive where Base: UIViewController & RootViewStateProtocol {
     // MARK: - 下面几个关于viewState的信号 默认会调用distinctUntilChanged 每次发送的信号都和上次的不同
     /// ZJaDe: 每次界面将要出现会发送一次信号
     func whenAppear() -> Observable<()> {
-        return self.isAppear.filter({$0}).mapToVoid()
+        self.isAppear.filter({$0}).mapToVoid()
     }
     /// ZJaDe: 每次界面已经出现会发送一次信号
     func whenDidAppear() -> Observable<()> {
-        return self.isDidAppear.filter({$0}).mapToVoid()
+        self.isDidAppear.filter({$0}).mapToVoid()
     }
     /// ZJaDe: 每次界面将要出现会发送一次信号
     func whenDisAppear() -> Observable<()> {
-        return self.isDidAppear.filter({$0}).mapToVoid()
+        self.isDidAppear.filter({$0}).mapToVoid()
     }
     /// ZJaDe: 每次界面已经出现会发送一次信号
     func whenDidDisAppear() -> Observable<()> {
-        return self.isDidDisAppear.filter({$0}).mapToVoid()
+        self.isDidDisAppear.filter({$0}).mapToVoid()
     }
 
     /// ZJaDe: 每次界面将要出现和将要消失的时候会发送一次信号
     var isAppear: Observable<Bool> {
-        return self.checkViewState {$0.isAppear}
+        self.checkViewState {$0.isAppear}
     }
     /// ZJaDe: 每次界面已经出现和将要消失的时候会发送一次信号
     var isDidAppear: Observable<Bool> {
-        return self.checkViewState {$0.isDidAppear}
+        self.checkViewState {$0.isDidAppear}
     }
     /// ZJaDe: 每次界面将要出现和将要消失的时候会发送一次信号
     var isDisAppear: Observable<Bool> {
-        return self.checkViewState {$0.isDisappear}
+        self.checkViewState {$0.isDisappear}
     }
     /// ZJaDe: 每次界面已经出现和将要消失的时候会发送一次信号
     var isDidDisAppear: Observable<Bool> {
-        return self.checkViewState {$0.isDidDisappear}
+        self.checkViewState {$0.isDidDisappear}
     }
 
     /// ZJaDe: viewState符合时会发送一次信号
     func whenViewState(_ viewState: RootViewState) -> Observable<()> {
-        return self.checkViewState({$0 == viewState}).filter({$0}).mapToVoid()
+        self.checkViewState({$0 == viewState}).filter({$0}).mapToVoid()
     }
     /// ZJaDe: viewState符合和不符合时分别会发送一次信号
     internal func checkViewState(_ transform: @escaping (RootViewState) -> Bool) -> Observable<Bool> {
-        return self.base.viewState.map(transform)
+        self.base.viewState.map(transform)
             .distinctUntilChanged()
     }
 
@@ -79,7 +79,7 @@ public extension Reactive where Base: UIViewController & RootViewStateProtocol {
         return ControlEvent(events: Observable.merge(dismissedSource, movedToParentSource))
     }
     var firstTimeViewDidAppear: Single<Void> {
-        return self.isDidAppear
+        self.isDidAppear
             .filterTrue()
             .take(1).asSingle()
     }

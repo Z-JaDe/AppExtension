@@ -27,12 +27,12 @@ open class CycleDataSource<Data>: DataSource<Data> {
     }
 
     open override var numberOfItems: Int {
-        return data.count * repeatCount
+        data.count * repeatCount
     }
     open override func identifier(at: Int) -> String {
-        return identifierMapper(at, data(at: at))
+        identifierMapper(at, data(at: at))
     }
     open override func data(at: Int) -> Data {
-        return data[at % data.count]
+        data[at % data.count]
     }
 }

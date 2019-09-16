@@ -24,10 +24,10 @@ public protocol SectionModelType: DiffableSection {
 extension SectionModelItem: SectionModelType {
     public typealias Section = Model
     public var section: Section {
-        return self.model
+        self.model
     }
     public var items: [Item] {
-        return self.elements
+        self.elements
     }
     init(_ section: Model, _ items: [Element]) {
         self.init(model: section, elements: items)

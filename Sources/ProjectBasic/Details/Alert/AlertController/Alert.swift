@@ -20,10 +20,10 @@ public class Alert {
         alertController = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
     }
     public static func alert(title: String? = alertTitle, message: String?) -> Alert {
-        return Alert(title: title, message: message, preferredStyle: .alert)
+        Alert(title: title, message: message, preferredStyle: .alert)
     }
     public static func actionSheet(title: String? = alertTitle, message: String?) -> Alert {
-        return Alert(title: title, message: message, preferredStyle: .actionSheet)
+        Alert(title: title, message: message, preferredStyle: .actionSheet)
     }
 }
 extension Alert {

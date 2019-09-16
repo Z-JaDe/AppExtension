@@ -40,7 +40,7 @@ where DataSource.S.Item: AdapterItemType, DataSource.S.Section: AdapterSectionTy
     var _rxDataSource: DataSource?
     ///子类重写
     public var rxDataSource: DataSource {
-        return _rxDataSource!
+        _rxDataSource!
     }
     open func bindingDataSource(_ dataSource: DataSource) {
         self._rxDataSource = dataSource
@@ -57,7 +57,7 @@ where DataSource.S.Item: AdapterItemType, DataSource.S.Section: AdapterSectionTy
 extension ListAdapter: DisposeBagProtocol {}
 extension ListAdapter: ListDataUpdateProtocol {
     public var dataArray: ListDataType {
-        return self.dataInfo.data
+        self.dataInfo.data
     }
     public func changeListDataInfo(_ newData: ListDataInfoType) {
         self.dataInfo = newData
@@ -65,7 +65,7 @@ extension ListAdapter: ListDataUpdateProtocol {
     }
     /// 将dataArray转信号
     func dataArrayObservable() -> Observable<ListDataInfoType> {
-        return self.dataInfoSubject.asObservable()
+        self.dataInfoSubject.asObservable()
             .delay(.milliseconds(100), scheduler: MainScheduler.asyncInstance)
             .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
     }

@@ -18,34 +18,34 @@ extension UIWindow: Presentable {}
 // MARK: -
 extension Presentable where Self: UIViewController & RootViewStateProtocol {
     public var rxVisible: Observable<Bool> {
-        return self.rx.isDidAppear
+        self.rx.isDidAppear
     }
     public var rxFirstTimeVisible: Single<Void> {
-        return self.rx.firstTimeViewDidAppear
+        self.rx.firstTimeViewDidAppear
     }
     public var rxDismissed: Single<Void> {
-        return self.rx.dismissed.take(1).asSingle()
+        self.rx.dismissed.take(1).asSingle()
     }
 }
 extension Presentable where Self: Flow {
     public var rxVisible: Observable<Bool> {
-        return self.root.rxVisible
+        self.root.rxVisible
     }
     public var rxFirstTimeVisible: Single<Void> {
-        return self.root.rxFirstTimeVisible
+        self.root.rxFirstTimeVisible
     }
     public var rxDismissed: Single<Void> {
-        return self.root.rxDismissed
+        self.root.rxDismissed
     }
 }
 extension Presentable where Self: UIWindow {
     public var rxFirstTimeVisible: Single<Void> {
-        return self.rx.windowDidAppear.take(1).asSingle()
+        self.rx.windowDidAppear.take(1).asSingle()
     }
     public var rxVisible: Observable<Bool> {
-        return self.rx.windowDidAppear.asObservable().map { true }
+        self.rx.windowDidAppear.asObservable().map { true }
     }
     public var rxDismissed: Single<Void> {
-        return Single.never()
+        Single.never()
     }
 }

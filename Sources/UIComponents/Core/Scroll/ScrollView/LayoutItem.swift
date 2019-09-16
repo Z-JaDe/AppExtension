@@ -28,7 +28,7 @@ public struct LayoutItem<View: UIView>: Equatable {
         self.scrollDirection = scrollDirection
     }
     func map(_ itemSpace: ItemSpace, _ scrollDirection: ScrollDirection) -> LayoutItem {
-        return LayoutItem(view, itemSpace, scrollDirection)
+        LayoutItem(view, itemSpace, scrollDirection)
     }
     public func sizeThatFits() -> CGSize {
         var resultSize = self.view.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
@@ -42,7 +42,7 @@ public struct LayoutItem<View: UIView>: Equatable {
     }
     /// ZJaDe: 
     public static func == (lhs: LayoutItem, rhs: LayoutItem) -> Bool {
-        return lhs.view == rhs.view
+        lhs.view == rhs.view
     }
     /// ZJaDe: 
     public var leading: CGFloat {

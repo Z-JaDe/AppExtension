@@ -22,7 +22,7 @@ open class WKWebViewController: BaseWebViewController<JDWKWebView>, WKNavigation
         self.rootView.navigationDelegate = self
     }
     open override func createView(_ frame: CGRect) -> JDWKWebView {
-        return self.jsBridge.webView
+        self.jsBridge.webView
     }
 
     // MARK: - WKNavigationDelegate

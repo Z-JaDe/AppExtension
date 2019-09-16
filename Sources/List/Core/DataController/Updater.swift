@@ -22,7 +22,7 @@ public final class Updater {
         self.state = .updating
     }
     public var isUpdating: Bool {
-        return self.state == .updating
+        self.state == .updating
     }
 
     internal var dataSet = false
@@ -104,13 +104,13 @@ extension Updater {
         }
     }
     private func map(indexPath: ElementPath) -> IndexPath {
-        return IndexPath(row: indexPath.element, section: indexPath.section)
+        IndexPath(row: indexPath.element, section: indexPath.section)
     }
 }
 
 extension Updater {
     var isInHierarchy: Bool {
-        return updating.isInHierarchy
+        updating.isInHierarchy
     }
     public func performBatch(animated: Bool, updates: (() -> Void)?, completion: @escaping (Bool) -> Void) {
         DispatchQueue.main.async {

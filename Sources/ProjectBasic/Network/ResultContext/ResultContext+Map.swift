@@ -11,18 +11,18 @@ import Alamofire
 
 extension DataResponseContext {
     public func mapResult<DataType: Decodable>() throws -> ResultModel<DataType> {
-        return try _mapResult()
+        try _mapResult()
     }
     public func mapStringResult() throws -> StringResultModel {
-        return try _mapResult()
+        try _mapResult()
     }
     public func mapObject<T: Decodable>(type: T.Type) throws -> ObjectResultModel<T> {
-        return try _mapResult()
+        try _mapResult()
     }
     public func mapArray<T: Decodable>(type: T.Type) throws -> ArrayResultModel<T> {
-        return try _mapResult()
+        try _mapResult()
     }
     public func mapList<T: Decodable>(type: T.Type) throws -> ObjectResultModel<ListResultModel<T>> {
-        return try _mapResult()
+        try _mapResult()
     }
 }

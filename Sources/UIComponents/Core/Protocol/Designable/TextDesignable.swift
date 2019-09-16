@@ -20,9 +20,9 @@ public protocol TextDesignable {
 }
 extension TextDesignable {
     public func getTextColor() -> UIColor {
-        return self.textColor ?? Color.black
+        self.textColor ?? Color.black
     }
     public func getFont() -> UIFont {
-        return self.font ?? Font.h3
+        self.font ?? Font.h3
     }
 }

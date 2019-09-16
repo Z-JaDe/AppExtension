@@ -26,7 +26,7 @@ public struct ListData<Section: Diffable, Item: Diffable & Equatable>: Collectio
     }
 
     public var itemCount: Int {
-        return self.value.flatMap({$0.items}).count
+        self.value.flatMap({$0.items}).count
     }
     public func exchange(_ item1: Item, _ item2: Item) -> ListData {
         var listData = self
@@ -45,7 +45,7 @@ public struct ListData<Section: Diffable, Item: Diffable & Equatable>: Collectio
 }
 extension ListData {
     public func compactMapToSectionModels() -> [SectionModelItem<Section, Item>] {
-        return compactMap(ListData.mapToSectionModel)
+        compactMap(ListData.mapToSectionModel)
     }
     /// 转成(组, model)类型信号
     /// 将ListDataType转换为SectionModelType

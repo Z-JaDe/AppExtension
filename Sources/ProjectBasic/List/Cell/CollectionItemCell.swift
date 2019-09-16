@@ -11,7 +11,7 @@ import UIKit
 open class CollectionItemCell: ItemCell {
 
     func getInternalCell() -> InternalCollectionViewCell? {
-        return self.superView(InternalCollectionViewCell.self)
+        self.superView(InternalCollectionViewCell.self)
     }
     /// ZJaDe: insets
     public var insets: UIEdgeInsets = Space.cellInsets {

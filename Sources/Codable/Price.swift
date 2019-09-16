@@ -57,6 +57,6 @@ public struct Price: FloatLiteralTypeValueProtocol,
         }
     }
     public var description: String {
-        return self.originString
+        self.originString
     }
 }

@@ -23,7 +23,7 @@ private var hudKey: UInt8 = 0
 private var messageArrKey: UInt8 = 0
 extension MessageHUDProtocol {
     private var hud: HUD {
-        return associatedObject(&hudKey, createIfNeed: HUD())
+        associatedObject(&hudKey, createIfNeed: HUD())
     }
     private var messageArr: [String] {
         get {return associatedObject(&messageArrKey, createIfNeed: [])}

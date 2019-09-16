@@ -26,16 +26,16 @@ extension Reactive where Base: SessionManager {
                         parameters: Parameters? = nil,
                         encoding: ParameterEncoding = URLEncoding.default,
                         headers: HTTPHeaders? = nil) -> Observable<RequestContext<DataRequest>> {
-        return getRequest { $0.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers) }
+        getRequest { $0.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers) }
             .map { RequestContext($0, $0.request) }
     }
     public func request(_ urlRequest: URLRequestConvertible) -> Observable<RequestContext<DataRequest>> {
-        return getRequest { $0.request(urlRequest) }
+        getRequest { $0.request(urlRequest) }
             .map { RequestContext($0, urlRequest) }
     }
     // MARK: Upload
     public func upload(_ formData: [MultipartFormData], usingThreshold encodingMemoryThreshold: UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, _ urlRequest: URLRequestConvertible) -> Observable<RequestContext<UploadRequest>> {
-        return getRequest({ (manager, observer) -> Disposable in
+        getRequest({ (manager, observer) -> Disposable in
             var dispose: Disposable?
             let (formData, urlRequest) = manager.uploadParamsUpdate(formData, urlRequest)
             manager.upload(multipartFormData: {$0.applyMultipartFormData(formData)}, usingThreshold: encodingMemoryThreshold, with: urlRequest, encodingCompletion: { (result) in
@@ -54,12 +54,12 @@ extension Reactive where Base: SessionManager {
     // MARK: Download
     public func download(_ urlRequest: URLRequestConvertible,
                          to destination: @escaping DownloadRequest.DownloadFileDestination) -> Observable<RequestContext<DownloadRequest>> {
-        return getRequest { $0.download(urlRequest, to: destination) }
+        getRequest { $0.download(urlRequest, to: destination) }
             .map { RequestContext($0, urlRequest) }
     }
     public func download(resumeData: Data,
                          to destination: @escaping DownloadRequest.DownloadFileDestination) -> Observable<RequestContext<DownloadRequest>> {
-        return getRequest { $0.download(resumingWith: resumeData, to: destination) }
+        getRequest { $0.download(resumingWith: resumeData, to: destination) }
             .map { RequestContext($0, $0.request) }
     }
 }
@@ -83,13 +83,13 @@ extension SessionManager {
 }
 extension Reactive where Base: SessionManager {
     private func getRequest<R: RxAlamofireRequest>(_ createRequest: @escaping (SessionManager) throws -> R) -> Observable<R> {
-        return getRequest { (manager, observer) in
+        getRequest { (manager, observer) in
             let request = try createRequest(manager)
             return request.onNext(observer, manager)
         }
     }
     private func getRequest<R: RxAlamofireRequest>(_ closure: @escaping (SessionManager, AnyObserver<R>) throws -> Disposable) -> Observable<R> {
-        return Observable.create { observer -> Disposable in
+        Observable.create { observer -> Disposable in
             do {
                 return try closure(self.base, observer)
             } catch let error {

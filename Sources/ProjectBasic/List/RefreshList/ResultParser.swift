@@ -30,7 +30,7 @@ extension ResultParser where RefreshList: RefreshListProtocol {
         return self
     }
     private var scrollItem: RefreshList.ScrollViewType {
-        return self.list.scrollItem
+        self.list.scrollItem
     }
     open func endRefreshing(count: Int?) {
         guard updateScrollState else {
@@ -74,7 +74,7 @@ extension ResultParser where AdapterType.Section: Equatable&InitProtocol, Refres
 extension ResultParser where AdapterType.Section: Equatable&InitProtocol, AdapterType.Item == CollectionItemModel, RefreshList: RefreshListProtocol {
     @discardableResult
     public func modelArray(_ modelArray: [CollectionItemModel]?, _ refresh: Bool) -> ResultParser {
-        return self.itemArray(modelArray, refresh)
+        self.itemArray(modelArray, refresh)
     }
 }
 extension ResultParser where AdapterType.Section: Equatable&InitProtocol, AdapterType.Item == AnyTableAdapterItem, RefreshList: RefreshListProtocol {

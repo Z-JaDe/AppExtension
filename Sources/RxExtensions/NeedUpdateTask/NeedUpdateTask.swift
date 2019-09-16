@@ -25,7 +25,7 @@ public class NeedUpdateTask {
         }
     }
     public func setNeedUpdateObserver() -> AnyObserver<Void> {
-        return AnyObserver(eventHandler: { (event) in
+        AnyObserver(eventHandler: { (event) in
             switch event {
             case .next: self.setNeedUpdate()
             case .completed, .error: break

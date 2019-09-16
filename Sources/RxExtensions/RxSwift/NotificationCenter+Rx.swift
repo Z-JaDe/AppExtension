@@ -11,7 +11,7 @@ import RxSwift
 extension Reactive where Base: NotificationCenter {
     // swiftlint:disable large_tuple
     public func notificationKeyboardWillChangeFrame() -> Observable<(CGRect, CGRect, TimeInterval)> {
-        return notification(UIResponder.keyboardWillChangeFrameNotification).map({ (notification) -> (CGRect, CGRect, TimeInterval)? in
+        notification(UIResponder.keyboardWillChangeFrameNotification).map({ (notification) -> (CGRect, CGRect, TimeInterval)? in
             guard let userInfo = notification.userInfo else {
                 return nil
             }

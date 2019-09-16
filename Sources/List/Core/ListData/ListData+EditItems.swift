@@ -25,13 +25,13 @@ extension ListData where Section: Equatable & InitProtocol {
     }
     // MARK: -
     public func reseting(section: Section? = nil, items: [Item]) -> ListData {
-        return edit(.reset, section, items)
+        edit(.reset, section, items)
     }
     public func appending(section: Section? = nil, items: [Item]) -> ListData {
-        return edit(.append, section, items)
+        edit(.append, section, items)
     }
     public func inserting(section: Section? = nil, items: [Item], at index: Int) -> ListData {
-        return edit(.insert(index), section, items)
+        edit(.insert(index), section, items)
     }
     // MARK: -
     private func edit(_ editType: ListDataUpdateEditType, _ section: Section?, _ items: [Item]) -> ListData {
@@ -67,6 +67,6 @@ extension ListData where Item: Equatable {
         self = deleteing(items: items)
     }
     public func deleteing(items: [Item]) -> ListData {
-        return self.filter({!items.contains($0)})
+        self.filter({!items.contains($0)})
     }
 }

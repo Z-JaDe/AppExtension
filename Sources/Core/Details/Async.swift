@@ -131,9 +131,7 @@ public struct AsyncBlock<In, Out> {
 
     private let input: Reference<In>?
     private let output_: Reference<Out>
-    public var output: Out? {
-        return output_.value
-    }
+    public var output: Out? { output_.value }
 
     /**
      Private init that takes a `@convention(block) () -> Swift.Void`
@@ -159,7 +157,7 @@ public struct AsyncBlock<In, Out> {
     */
     @discardableResult
     public static func main<O>(after seconds: Double? = nil, _ block: @escaping () -> O) -> AsyncBlock<Void, O> {
-        return AsyncBlock.async(after: seconds, block: block, queue: .main)
+        AsyncBlock.async(after: seconds, block: block, queue: .main)
     }
 
     /**
@@ -175,7 +173,7 @@ public struct AsyncBlock<In, Out> {
      */
     @discardableResult
     public static func userInteractive<O>(after seconds: Double? = nil, _ block: @escaping () -> O) -> AsyncBlock<Void, O> {
-        return AsyncBlock.async(after: seconds, block: block, queue: .userInteractive)
+        AsyncBlock.async(after: seconds, block: block, queue: .userInteractive)
     }
 
     /**
@@ -191,7 +189,7 @@ public struct AsyncBlock<In, Out> {
      */
     @discardableResult
     public static func userInitiated<O>(after seconds: Double? = nil, _ block: @escaping () -> O) -> AsyncBlock<Void, O> {
-        return Async.async(after: seconds, block: block, queue: .userInitiated)
+        Async.async(after: seconds, block: block, queue: .userInitiated)
     }
 
     /**
@@ -207,7 +205,7 @@ public struct AsyncBlock<In, Out> {
      */
     @discardableResult
     public static func utility<O>(after seconds: Double? = nil, _ block: @escaping () -> O) -> AsyncBlock<Void, O> {
-        return Async.async(after: seconds, block: block, queue: .utility)
+        Async.async(after: seconds, block: block, queue: .utility)
     }
 
     /**
@@ -223,7 +221,7 @@ public struct AsyncBlock<In, Out> {
      */
     @discardableResult
     public static func background<O>(after seconds: Double? = nil, _ block: @escaping () -> O) -> AsyncBlock<Void, O> {
-        return Async.async(after: seconds, block: block, queue: .background)
+        Async.async(after: seconds, block: block, queue: .background)
     }
 
     /**
@@ -239,7 +237,7 @@ public struct AsyncBlock<In, Out> {
      */
     @discardableResult
     public static func custom<O>(queue: DispatchQueue, after seconds: Double? = nil, _ block: @escaping () -> O) -> AsyncBlock<Void, O> {
-        return Async.async(after: seconds, block: block, queue: .custom(queue: queue))
+        Async.async(after: seconds, block: block, queue: .custom(queue: queue))
     }
 
     // MARK: - Private static methods
@@ -286,7 +284,7 @@ public struct AsyncBlock<In, Out> {
     */
     @discardableResult
     public func main<O>(after seconds: Double? = nil, _ chainingBlock: @escaping (Out) -> O) -> AsyncBlock<Out, O> {
-        return chain(after: seconds, block: chainingBlock, queue: .main)
+        chain(after: seconds, block: chainingBlock, queue: .main)
     }
 
     /**
@@ -302,7 +300,7 @@ public struct AsyncBlock<In, Out> {
      */
     @discardableResult
     public func userInteractive<O>(after seconds: Double? = nil, _ chainingBlock: @escaping (Out) -> O) -> AsyncBlock<Out, O> {
-        return chain(after: seconds, block: chainingBlock, queue: .userInteractive)
+        chain(after: seconds, block: chainingBlock, queue: .userInteractive)
     }
 
     /**
@@ -318,7 +316,7 @@ public struct AsyncBlock<In, Out> {
      */
     @discardableResult
     public func userInitiated<O>(after seconds: Double? = nil, _ chainingBlock: @escaping (Out) -> O) -> AsyncBlock<Out, O> {
-        return chain(after: seconds, block: chainingBlock, queue: .userInitiated)
+        chain(after: seconds, block: chainingBlock, queue: .userInitiated)
     }
 
     /**
@@ -334,7 +332,7 @@ public struct AsyncBlock<In, Out> {
      */
     @discardableResult
     public func utility<O>(after seconds: Double? = nil, _ chainingBlock: @escaping (Out) -> O) -> AsyncBlock<Out, O> {
-        return chain(after: seconds, block: chainingBlock, queue: .utility)
+        chain(after: seconds, block: chainingBlock, queue: .utility)
     }
 
     /**
@@ -350,7 +348,7 @@ public struct AsyncBlock<In, Out> {
      */
     @discardableResult
     public func background<O>(after seconds: Double? = nil, _ chainingBlock: @escaping (Out) -> O) -> AsyncBlock<Out, O> {
-        return chain(after: seconds, block: chainingBlock, queue: .background)
+        chain(after: seconds, block: chainingBlock, queue: .background)
     }
 
     /**
@@ -366,7 +364,7 @@ public struct AsyncBlock<In, Out> {
      */
     @discardableResult
     public func custom<O>(queue: DispatchQueue, after seconds: Double? = nil, _ chainingBlock: @escaping (Out) -> O) -> AsyncBlock<Out, O> {
-        return chain(after: seconds, block: chainingBlock, queue: .custom(queue: queue))
+        chain(after: seconds, block: chainingBlock, queue: .custom(queue: queue))
     }
 
     // MARK: - Instance methods

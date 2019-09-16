@@ -67,7 +67,7 @@ open class CollectionViewDataSource<S: SectionModelType>: SectionedDataSource<S>
 
     // UICollectionViewDataSource
     open func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return dataController._data.count
+        dataController._data.count
     }
 
     open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -81,7 +81,7 @@ open class CollectionViewDataSource<S: SectionModelType>: SectionedDataSource<S>
     }
 
     open func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        return configureSupplementaryView!(self, collectionView, kind, indexPath)
+        configureSupplementaryView!(self, collectionView, kind, indexPath)
     }
 
     open func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
@@ -101,11 +101,11 @@ open class CollectionViewDataSource<S: SectionModelType>: SectionedDataSource<S>
 
     #if os(iOS)
     open func indexTitles(for collectionView: UICollectionView) -> [String]? {
-        return indexTitles(self)
+        indexTitles(self)
     }
 
     open func collectionView(_ collectionView: UICollectionView, indexPathForIndexTitle title: String, at index: Int) -> IndexPath {
-        return indexPathForIndexTitle(self, title, index)
+        indexPathForIndexTitle(self, title, index)
     }
     #endif
 

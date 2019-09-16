@@ -29,7 +29,7 @@ public extension MultipleSelectionProtocol {
     }
     /// ZJaDe: 选中的cell改变时
     var selectedItemArrayChanged: CallBackerVoid<[SelectItemType]> {
-        return associatedObject(&selectedItemArrayChangedKey, createIfNeed: CallBackerVoid<[SelectItemType]>())
+        associatedObject(&selectedItemArrayChangedKey, createIfNeed: CallBackerVoid<[SelectItemType]>())
     }
     /// ZJaDe: 最大选中的item数量
     var maxSelectedCount: MaxSelectedCount {
@@ -45,7 +45,7 @@ public extension MultipleSelectionProtocol {
 }
 extension MultipleSelectionProtocol where SelectItemType: Equatable {
     public func index(_ item: SelectItemType) -> Int? {
-        return self.selectedItemArray.firstIndex(of: item)
+        self.selectedItemArray.firstIndex(of: item)
     }
 }
 // MARK: - UpdateSelectState

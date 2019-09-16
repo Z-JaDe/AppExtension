@@ -66,7 +66,7 @@ open class CustomControl: UIControl {
     }
     /// ZJaDe: 子类重写该方法返回自定制的contentItem
     public func getContentItem() -> UIView? {
-        return self.contentItem
+        self.contentItem
     }
 }
 extension CustomControl {

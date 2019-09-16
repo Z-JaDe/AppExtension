@@ -21,10 +21,10 @@ public struct LayoutEdgeOptions: OptionSet {
     public static let centerY: LayoutEdgeOptions = LayoutEdgeOptions(rawValue: 1 << 5)
 
     public static var center: LayoutEdgeOptions {
-        return [.centerX, .centerY]
+        [.centerX, .centerY]
     }
     public static var edges: LayoutEdgeOptions {
-        return [.left, .right, .top, .bottom]
+        [.left, .right, .top, .bottom]
     }
 }
 

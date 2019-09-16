@@ -12,7 +12,7 @@ import RxSwift
 
 open class BlurModalViewController: ModalViewController {
     open override var presentationControllerClass: PresentationController.Type {
-        return BlurPresentationController.self
+        BlurPresentationController.self
     }
 
     open override func viewDidLoad() {
@@ -45,11 +45,11 @@ open class BlurModalViewController: ModalViewController {
     // MARK: -
     /// ZJaDe: 返回是否需要监听键盘弹出
     open var needObserverKeyboard: Bool {
-        return false
+        false
     }
     /// ZJaDe: 返回键盘弹出时偏移量
     open var offSetWhenKeyboard: CGFloat {
-        return self.keyboardValues.offset
+        self.keyboardValues.offset
     }
 }
 extension BlurModalViewController {

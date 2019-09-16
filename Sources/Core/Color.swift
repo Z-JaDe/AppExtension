@@ -15,19 +15,19 @@ public class ColorConfiger {
     fileprivate static let shared: ColorConfiger = ColorConfiger()
     private init() {}
     public final func colorFromRGB(_ hexInt: Int) -> UIColor {
-        return UIColor(hexInt: hexInt)
+        UIColor(hexInt: hexInt)
     }
     public final func colorFromRGB(_ hexString: String) -> UIColor? {
-        return UIColor(hexString: hexString)
+        UIColor(hexString: hexString)
     }
 }
 // MARK: -
 extension Color {
     public static func colorFromRGB(_ hexInt: Int) -> UIColor {
-        return ColorConfiger.shared.colorFromRGB(hexInt)
+        ColorConfiger.shared.colorFromRGB(hexInt)
     }
     public static func colorFromRGB(_ hexString: String) -> UIColor? {
-        return ColorConfiger.shared.colorFromRGB(hexString)
+        ColorConfiger.shared.colorFromRGB(hexString)
     }
     public static func reset(_ configer: ColorConfigerProtocol? = nil) {
         if let configer = configer ?? (ColorConfiger.shared as? ColorConfigerProtocol) {

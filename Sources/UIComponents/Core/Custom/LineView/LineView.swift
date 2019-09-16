@@ -13,17 +13,17 @@ open class LineView: CustomView {
     }
     public let lineLayer: LineLayer = LineLayer()
     open var lineAxis: LineAxis {
-        get { return self.lineLayer.lineAxis }
+        get { self.lineLayer.lineAxis }
         set { self.lineLayer.lineAxis = newValue
             invalidateIntrinsicContentSize()
         }
     }
     open var lineType: LineType {
-        get { return self.lineLayer.lineType }
+        get { self.lineLayer.lineType }
         set { self.lineLayer.lineType = newValue }
     }
     open var lineColor: UIColor? {
-        get { return self.lineLayer.lineColor }
+        get { self.lineLayer.lineColor }
         set { self.lineLayer.lineColor = newValue }
     }
 
@@ -33,10 +33,10 @@ open class LineView: CustomView {
         set {self.lineColor = newValue}
     }
     open class func dotted(lineAxis: LineAxis) -> Self {
-        return self.init(lineType: .dotted(width: 10, space: 3), lineAxis: lineAxis)
+        self.init(lineType: .dotted(width: 10, space: 3), lineAxis: lineAxis)
     }
     open class func solid(lineAxis: LineAxis) -> Self {
-        return self.init(lineType: .solid, lineAxis: lineAxis)
+        self.init(lineType: .solid, lineAxis: lineAxis)
     }
     public convenience required init(lineType: LineType, lineAxis: LineAxis = .horizontal) {
         self.init(frame: CGRect())

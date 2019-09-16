@@ -27,7 +27,7 @@ open class RootCoordinator: Coordinator, Flow,
 
     public var coordinators: [Coordinator] = []
     public var rootViewController: UIViewController? {
-        return self.navCon
+        self.navCon
     }
     /// ZJaDe: PushJumpPlugin
     public lazy var navCon: UINavigationController? = {

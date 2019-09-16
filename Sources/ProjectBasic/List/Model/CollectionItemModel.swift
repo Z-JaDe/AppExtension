@@ -86,6 +86,6 @@ extension CollectionItemModel: CollectionCellConfigProtocol {
         }
     }
     func shouldHighlight() -> Bool {
-        return getCell()?.shouldHighlight() ?? true
+        getCell()?.shouldHighlight() ?? true
     }
 }

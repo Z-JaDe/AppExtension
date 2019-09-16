@@ -42,11 +42,11 @@ open class TextField: UITextField {
     open var textInset: UIEdgeInsets = .zero
 
     open override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return super.editingRect(forBounds: bounds) - textInset
+        super.editingRect(forBounds: bounds) - textInset
     }
 
     open override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return super.textRect(forBounds: bounds) - textInset
+        super.textRect(forBounds: bounds) - textInset
     }
 
 }

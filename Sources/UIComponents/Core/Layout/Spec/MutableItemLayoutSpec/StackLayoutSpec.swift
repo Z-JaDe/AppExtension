@@ -66,7 +66,7 @@ public class StackLayoutSpec: MutableItemLayoutSpec {
         }
     }
     public override func layoutArr() -> [NSLayoutConstraint] {
-        return super.layoutArr() + layoutJustifyContent()
+        super.layoutArr() + layoutJustifyContent()
     }
     func layoutJustifyContent() -> [NSLayoutConstraint] {
         func layout(_ makerOptions: LayoutOptions) -> [NSLayoutConstraint] {

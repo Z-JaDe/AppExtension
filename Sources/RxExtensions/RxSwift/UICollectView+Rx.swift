@@ -27,7 +27,7 @@ extension Reactive where Base: UICollectionView {
 // MARK: - AutoDeselect
 extension Reactive where Base: UICollectionView {
     public func enableAutoDeselect() -> Disposable {
-        return itemSelected
+        itemSelected
             .map { (at: $0, animated: true) }
             .subscribeOnNext( base.deselectItem)
     }

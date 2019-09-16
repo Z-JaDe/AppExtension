@@ -22,7 +22,7 @@ open class TextFieldCell: TitleCell, CheckAndCatchParamsProtocol {
     // MARK: -
     public lazy var textField: TextField = TextField(color: Color.List.textField, font: Font.List.textField)
     public var textFieldText: String {
-        return self.textField.text ?? ""
+        self.textField.text ?? ""
     }
     open override func configInit() {
         super.configInit()
@@ -63,7 +63,7 @@ open class TextFieldCell: TitleCell, CheckAndCatchParamsProtocol {
     }
 
     open func catchParams() -> [String: Any] {
-        return [key: self.textFieldText]
+        [key: self.textFieldText]
     }
 }
 extension TextField {

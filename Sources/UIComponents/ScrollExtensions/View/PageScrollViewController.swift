@@ -42,7 +42,7 @@ open class PageScrollViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     public var totalCount: Int {
-        return self.viewConArr.count
+        self.viewConArr.count
     }
 
     var observer: NSKeyValueObservation?

@@ -11,7 +11,7 @@ import UIKit
 private var updaterKey: UInt8 = 0
 extension UITableView {
     public var updater: Updater {
-        return associatedObject(&updaterKey, createIfNeed: Updater(TableViewUpdating(self)))
+        associatedObject(&updaterKey, createIfNeed: Updater(TableViewUpdating(self)))
     }
 }
 
@@ -21,7 +21,7 @@ private struct TableViewUpdating: Updating {
         self.tableView = target
     }
     var isInHierarchy: Bool {
-        return tableView?.window != nil
+        tableView?.window != nil
     }
     // MARK: - 
     func performBatch(animated: Bool, updates: (() -> Void)?, completion: @escaping (Bool) -> Void) {

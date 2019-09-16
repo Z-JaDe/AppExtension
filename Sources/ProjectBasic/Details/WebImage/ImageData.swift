@@ -32,7 +32,7 @@ public enum ImageData: Codable {
         }
     }
     public var isEmpty: Bool {
-        return self.image == nil && self.urlData == nil
+        self.image == nil && self.urlData == nil
     }
     // MARK: - Codable
     public func encode(to encoder: Encoder) throws {
@@ -62,15 +62,15 @@ extension ImageData: ExpressibleByStringLiteral {
 }
 extension ImageData {
     public static var userDefault: UIImage = {
-        return UIImage(named: "ic_default_userImg") ?? ImageData.default
+        UIImage(named: "ic_default_userImg") ?? ImageData.default
     }()
     public static var userFailure: UIImage = {
-        return UIImage(named: "ic_default_userImg") ?? ImageData.failure
+        UIImage(named: "ic_default_userImg") ?? ImageData.failure
     }()
     public static var failure: UIImage = {
-        return UIImage(named: "ic_default_image_failure") ?? ImageData.default
+        UIImage(named: "ic_default_image_failure") ?? ImageData.default
     }()
     public static var `default`: UIImage = {
-        return UIImage(named: "ic_default_image")!
+        UIImage(named: "ic_default_image")!
     }()
 }

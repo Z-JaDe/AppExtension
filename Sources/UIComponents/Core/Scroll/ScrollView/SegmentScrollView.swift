@@ -38,7 +38,7 @@ public class SegmentScrollView<CellView>: MultipleItemScrollView<CellView>, Tota
     public var autoScrollItem: AutoScrollItemType = .edge
     /// ZJaDe: TotalCountProtocol
     open var totalCount: Int {
-        return self.layoutCells.count
+        self.layoutCells.count
     }
 
     /// ZJaDe: 布局

@@ -15,22 +15,22 @@ public class FontConfiger {
     public static let shared: FontConfiger = FontConfiger()
     private init() {}
     public func systemFontOfSize(_ fontSize: CGFloat) -> UIFont {
-        return UIFont.systemFont(ofSize: fontSize)
+        UIFont.systemFont(ofSize: fontSize)
     }
     public func boldSystemFontOfSize(_ fontSize: CGFloat) -> UIFont {
-        return UIFont.boldSystemFont(ofSize: fontSize)
+        UIFont.boldSystemFont(ofSize: fontSize)
     }
     public func fontOfSize(name: String, size: CGFloat) -> UIFont? {
-        return UIFont(name: name, size: size)
+        UIFont(name: name, size: size)
     }
 }
 // MARK: -
 extension Font {
     public static func systemFontOfSize(_ fontSize: CGFloat) -> UIFont {
-        return FontConfiger.shared.systemFontOfSize(fontSize)
+        FontConfiger.shared.systemFontOfSize(fontSize)
     }
     public static func boldSystemFontOfSize(_ fontSize: CGFloat) -> UIFont {
-        return FontConfiger.shared.boldSystemFontOfSize(fontSize)
+        FontConfiger.shared.boldSystemFontOfSize(fontSize)
     }
     public static func reset(_ configer: FontConfigerProtocol? = nil) {
         if let configer = configer ?? (FontConfiger.shared as? FontConfigerProtocol) {

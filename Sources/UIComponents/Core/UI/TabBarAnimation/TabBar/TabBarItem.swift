@@ -12,13 +12,13 @@ open class TabBarItem: UITabBarItem {
     @available(*, unavailable, message: "废弃")
     // swiftlint:disable unused_setter_value
     open override var title: String? {
-        get { return nil }
+        get { nil }
         set { super.title = nil }
     }
     @available(*, unavailable, message: "废弃")
     // swiftlint:disable unused_setter_value
     open override var image: UIImage? {
-        get { return nil }
+        get { nil }
         set { super.image = nil }
     }
 

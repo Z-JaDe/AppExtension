@@ -26,7 +26,7 @@ public class CountdownButton: Button {
     public var totalSeconds: Int = 60
     /// ZJaDe: 有时候会根据实际情况得出实际的总倒计时时间，设置为nil则用默认的totalSeconds
     public var realTempTotalSeconds: Int? {
-        get { return self.timer.originalTimes }
+        get { self.timer.originalTimes }
         set { self.timer.originalTimes = newValue ?? self.totalSeconds }
     }
     lazy private(set) var timer: SwiftCountDownTimer = SwiftCountDownTimer(interval: .seconds(1), times: self.totalSeconds) {[weak self] (_, leftTimes) in

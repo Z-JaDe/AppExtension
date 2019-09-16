@@ -34,6 +34,6 @@ extension ListDataUpdateProtocol where Section: Equatable & InitProtocol, Item =
 }
 extension ListData where Item: StaticTableItemCell, Section == TableSection {
     public func updateInfo() -> TableListDataInfo {
-        return self.map({.cell($0)}).updateInfo()
+        self.map({.cell($0)}).updateInfo()
     }
 }

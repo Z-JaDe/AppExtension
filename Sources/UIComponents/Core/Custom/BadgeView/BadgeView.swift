@@ -14,7 +14,7 @@ public class BadgeView: UILabel {
     internal var centerXConstraint: NSLayoutConstraint?
 
     open class func badge() -> BadgeView {
-        return BadgeView(frame: CGRect(x: 0, y: 0, width: 18, height: 18))
+        BadgeView(frame: CGRect(x: 0, y: 0, width: 18, height: 18))
     }
 
     override public init(frame: CGRect) {

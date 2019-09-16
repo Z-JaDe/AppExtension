@@ -16,7 +16,7 @@ public protocol LazyCollectionViewable: CollectionViewable {
 
 public extension CollectionReusableViewable {
     var cacheAppearCellCount: Int {
-        return 0
+        0
     }
     /// ZJaDe: 检查快出现的cells
     func checkWillAppearCells(isNeedUpdate: Bool) {

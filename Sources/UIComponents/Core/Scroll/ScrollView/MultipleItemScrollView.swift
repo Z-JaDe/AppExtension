@@ -75,13 +75,13 @@ open class MultipleItemScrollView<CellView>: ScrollView, ItemsOneWayScrollable w
     }
     /// ZJaDe: 根据offSet查找cell
     open func getCell(_ offSet: CGFloat) -> CellView? {
-        return nil
+        nil
     }
 }
 extension MultipleItemScrollView {
     /// ZJaDe: layoutCells相关，子类重写会用到
     public var layoutCells: [LayoutItemType] {
-        return _layoutCells
+        _layoutCells
     }
     /// ZJaDe: layoutCells相关，子类重写会用到
     public func cleanCells() {

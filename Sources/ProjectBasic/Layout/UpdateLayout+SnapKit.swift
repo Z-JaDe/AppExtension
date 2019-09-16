@@ -12,7 +12,7 @@ import SnapKit
 extension Constraint: ConstraintProtocol {}
 extension UIView {
     public var snLayout: UpdateLayout<Constraint> {
-        return UpdateLayout(view: self)
+        UpdateLayout(view: self)
     }
     public func updateLayouts(tag: String? = nil, _ closure: @autoclosure () -> ([Constraint])) {
         snLayout.updateLayouts(tag: tag, closure())

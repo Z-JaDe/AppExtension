@@ -11,41 +11,41 @@ import RxSwift
 import Alamofire
 extension ObservableType where Element == DataResponseContext {
     public func mapDictResult() -> Observable<DictResult> {
-        return mapResult(type: [String: String].self)
+        mapResult(type: [String: String].self)
     }
     public func mapResult<DataType: Decodable>(type: DataType.Type) -> Observable<AnyResult<DataType>> {
-        return mapResultModel {try $0.mapResult()}
+        mapResultModel {try $0.mapResult()}
     }
     public func mapStringResult() -> Observable<StringResult> {
-        return mapResultModel {try $0.mapStringResult()}
+        mapResultModel {try $0.mapStringResult()}
     }
     public func mapObject<T: Decodable>(type: T.Type) -> Observable<ObjectResult<T>> {
-        return mapResultModel {try $0.mapObject(type: type)}
+        mapResultModel {try $0.mapObject(type: type)}
     }
     public func mapArray<T: Decodable>(type: T.Type) -> Observable<ArrayResult<T>> {
-        return mapResultModel {try $0.mapArray(type: type)}
+        mapResultModel {try $0.mapArray(type: type)}
     }
     public func mapList<T: Decodable>(type: T.Type) -> Observable<ListResult<T>> {
-        return mapResultModel {try $0.mapList(type: type)}
+        mapResultModel {try $0.mapList(type: type)}
     }
 }
 extension ObservableType where Element: RequestContextCompatible {
     public func mapDictResult() -> Observable<DictResult> {
-        return response().mapDictResult()
+        response().mapDictResult()
     }
     public func mapResult<DataType: Decodable>(type: DataType.Type) -> Observable<AnyResult<DataType>> {
-        return response().mapResult(type: type)
+        response().mapResult(type: type)
     }
     public func mapStringResult() -> Observable<StringResult> {
-        return response().mapStringResult()
+        response().mapStringResult()
     }
     public func mapObject<T: Decodable>(type: T.Type) -> Observable<ObjectResult<T>> {
-        return response().mapObject(type: type)
+        response().mapObject(type: type)
     }
     public func mapArray<T: Decodable>(type: T.Type) -> Observable<ArrayResult<T>> {
-        return response().mapArray(type: type)
+        response().mapArray(type: type)
     }
     public func mapList<T: Decodable>(type: T.Type) -> Observable<ListResult<T>> {
-        return response().mapList(type: type)
+        response().mapList(type: type)
     }
 }

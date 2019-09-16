@@ -60,6 +60,6 @@ open class DetailTitleCell: TitleCell, CheckAndCatchParamsProtocol {
     }
 
     open func catchParams() -> [String: Any] {
-        return [key: self.detailTitleLabel.text ?? ""]
+        [key: self.detailTitleLabel.text ?? ""]
     }
 }

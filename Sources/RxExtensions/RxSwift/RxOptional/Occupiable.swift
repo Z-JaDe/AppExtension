@@ -8,7 +8,7 @@
 import RxOptional
 public extension Occupiable {
     var nilIfEmpty: Self? {
-        return self.isEmpty
+        self.isEmpty
             ? .none
             : .some(self)
     }
@@ -24,6 +24,6 @@ extension Optional where Wrapped: Occupiable {
         }
     }
     public var isNotNilNotEmpty: Bool {
-        return !isNilOrEmpty
+        !isNilOrEmpty
     }
 }

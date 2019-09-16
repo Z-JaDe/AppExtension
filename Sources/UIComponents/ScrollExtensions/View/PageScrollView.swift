@@ -40,7 +40,7 @@ public class PageScrollView<CellView>: MultipleItemScrollView<CellView> where Ce
     // MARK: -
     /// ZJaDe: 根据offSet查找cell
     open override func getCell(_ offSet: CGFloat) -> CellView? {
-        return self.visibleCells.first { (cell) -> Bool in
+        self.visibleCells.first { (cell) -> Bool in
             let segmentLayoutCell = self.createLayoutCell(cell)
             return segmentLayoutCell.leading <= offSet && segmentLayoutCell.trailing > offSet
         }

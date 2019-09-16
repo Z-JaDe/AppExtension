@@ -26,14 +26,14 @@ public struct JDBool: BooleanLiteralTypeValueProtocol,
     }
 
     public var isTrue: Bool {
-        return self.value == true
+        self.value == true
     }
     public var isFalse: Bool {
-        return self.value == false
+        self.value == false
     }
 
     public static func == (lhs: JDBool, rhs: Bool) -> Bool {
-        return lhs.isTrue == rhs
+        lhs.isTrue == rhs
     }
 
     /// ZJaDe: Bool取反

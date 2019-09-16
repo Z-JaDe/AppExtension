@@ -18,7 +18,7 @@ class CoreTests: XCTestCase {
         print(a.first {Int($0)! > 7}!)
     }
     func aaa(_ array: [Int]) -> LazyFilterCollection<[Int]> {
-        return array.lazy.filter({ (value) -> Bool in
+        array.lazy.filter({ (value) -> Bool in
             print("filter\(value)")
             return value > 4
         })

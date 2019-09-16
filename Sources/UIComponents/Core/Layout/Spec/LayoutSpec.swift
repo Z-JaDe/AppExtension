@@ -38,6 +38,6 @@ open class LayoutSpec: UIView {
         self.updateLayouts(tag: "layoutArr", constraintArr)
     }
     open func layoutArr() -> [NSLayoutConstraint] {
-        return []
+        []
     }
 }

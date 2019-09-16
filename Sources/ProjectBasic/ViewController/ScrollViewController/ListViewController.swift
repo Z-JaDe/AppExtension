@@ -12,7 +12,7 @@ open class ListViewController<ScrollViewType>: ScrollViewController<ScrollViewTy
     where ScrollViewType: UIScrollView {
 
     open var scrollItem: ScrollViewType {
-        return self.rootView
+        self.rootView
     }
     // MARK: -
     open override func request() {
@@ -66,7 +66,7 @@ open class AdapterListViewController<ScrollViewType, AdapterType>: ListViewContr
 // MARK: - RefreshListProtocol
 extension AdapterListViewController: RefreshListProtocol {
     public var parser: ResultParser<AdapterListViewController, AdapterType> {
-        return ResultParser(self, self.adapter)
+        ResultParser(self, self.adapter)
     }
 }
 extension AdapterTableViewController {

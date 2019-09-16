@@ -23,7 +23,7 @@ import UIKit
         }
     }
     open var currentPage: Int {
-        return Int(round(progress))
+        Int(round(progress))
     }
 
     // MARK: - Appearance
@@ -50,7 +50,7 @@ import UIKit
     }
 
     fileprivate var indicatorDiameter: CGFloat {
-        return indicatorRadius * 2
+        indicatorRadius * 2
     }
     fileprivate var inactiveLayers = [CALayer]()
     fileprivate lazy var activeLayer: CALayer = {
@@ -114,11 +114,11 @@ import UIKit
     }
 
     override open var intrinsicContentSize: CGSize {
-        return sizeThatFits(CGSize.zero)
+        sizeThatFits(CGSize.zero)
     }
 
     override open func sizeThatFits(_ size: CGSize) -> CGSize {
-        return CGSize(width: CGFloat(inactiveLayers.count) * indicatorDiameter + CGFloat(inactiveLayers.count - 1) * indicatorPadding,
+        CGSize(width: CGFloat(inactiveLayers.count) * indicatorDiameter + CGFloat(inactiveLayers.count - 1) * indicatorPadding,
                       height: indicatorDiameter)
     }
 }

@@ -15,7 +15,7 @@ public protocol ConstraintProtocol: class {
 extension NSLayoutConstraint: ConstraintProtocol {}
 extension UIView {
     public var autoLayout: UpdateLayout<NSLayoutConstraint> {
-        return UpdateLayout(view: self)
+        UpdateLayout(view: self)
     }
     public func updateLayouts(tag: String? = nil, _ closure: @autoclosure () -> ([NSLayoutConstraint])) {
         autoLayout.updateLayouts(tag: tag, closure())
@@ -27,7 +27,7 @@ private let defaultLayoutTag: String = "_default"
 public class UpdateLayout<Constraint: ConstraintProtocol>: CustomDebugStringConvertible {
     public let view: UIView
     public var constraintDict: [String: [Constraint]] {
-        get { return self.view.associatedObject(&updateLayoutArrKey, createIfNeed: [: ]) }
+        get { self.view.associatedObject(&updateLayoutArrKey, createIfNeed: [: ]) }
         set { self.view.setAssociatedObject(&updateLayoutArrKey, newValue) }
     }
     public init(view: UIView) {
@@ -52,6 +52,6 @@ public class UpdateLayout<Constraint: ConstraintProtocol>: CustomDebugStringConv
     }
     // MARK: - 
     public var debugDescription: String {
-        return "UpdateLayout: \(self.constraintDict)"
+        "UpdateLayout: \(self.constraintDict)"
     }
 }

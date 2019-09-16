@@ -11,7 +11,7 @@ import Alamofire
 import RxSwift
 extension SessionManager {
     public func checkNetwork<T>(_ value: T) -> Observable<T> {
-        return self.monitorNetwork().map({ (hasNetwork) -> T in
+        self.monitorNetwork().map({ (hasNetwork) -> T in
             if hasNetwork {
                 return value
             } else {
@@ -20,7 +20,7 @@ extension SessionManager {
         })
     }
     private func monitorNetwork() -> Observable<Bool> {
-        return Observable.create({ (observer) -> Disposable in
+        Observable.create({ (observer) -> Disposable in
             let monitorNetwork = MonitorNetwork.shared
             if monitorNetwork.isListening {
                 let disposable = monitorNetwork.networkChanged.subscribe(onNext: { (status) in

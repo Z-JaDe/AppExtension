@@ -57,7 +57,7 @@ open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable
     private let isSelectedSubject: ReplaySubject<Bool> = ReplaySubject.create(bufferSize: 1)
     /// ZJaDe: 选中状态更改时发送信号
     open func observerSelectedStateChanged(_ isSelected: Observable<Bool>) -> Observable<Bool> {
-        return isSelected
+        isSelected
             .throttle(.milliseconds(100), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
     }
@@ -76,7 +76,7 @@ open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable
     private let isHighlightedSubject: ReplaySubject<Bool> = ReplaySubject.create(bufferSize: 1)
     /// ZJaDe: 高亮状态更改时发送信号
     open func observerHighlightedStateChanged(_ isHighlighted: Observable<Bool>) -> Observable<Bool> {
-        return isHighlighted
+        isHighlighted
             .throttle(.milliseconds(100), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
     }
@@ -173,7 +173,7 @@ open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable
     private let didSelectItemPubject: PublishSubject<Void> = PublishSubject<Void>()
     /// ZJaDe: 点击cell信号监听，throttle
     public func throttleDidSelectItem(_ timeInterval: RxTimeInterval = .seconds(1)) -> Observable<Void> {
-        return self.didSelectItemPubject.throttle(timeInterval, scheduler: MainScheduler.asyncInstance)
+        self.didSelectItemPubject.throttle(timeInterval, scheduler: MainScheduler.asyncInstance)
     }
     open func didSelectItem() {
         self.sendDidSelectItemEvent()
@@ -203,7 +203,7 @@ extension ItemCell {
         return isEnabled ?? true
     }
     public var appearDisposeBag: DisposeBag {
-        return self.disposeBagWithTag("_appear")
+        self.disposeBagWithTag("_appear")
     }
     func resetAppearDisposeBag() {
         self.resetDisposeBagWithTag("_appear")

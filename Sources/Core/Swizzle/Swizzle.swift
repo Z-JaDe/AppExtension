@@ -13,12 +13,12 @@ public protocol SelectorProtocol {
 
 extension Selector: SelectorProtocol {
     public var selectorValue: Selector {
-        return self
+        self
     }
 }
 extension String: SelectorProtocol {
     public var selectorValue: Selector {
-        return NSSelectorFromString(self)
+        NSSelectorFromString(self)
     }
 }
 extension NSObject {

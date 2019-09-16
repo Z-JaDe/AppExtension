@@ -17,7 +17,7 @@ public protocol NetworkProtocol: class {
 }
 public extension NetworkProtocol {
     func setNeedRequestObserver() -> AnyObserver<Void> {
-        return AnyObserver(eventHandler: { [weak self] (event) in
+        AnyObserver(eventHandler: { [weak self] (event) in
             switch event {
             case .next: self?.setNeedRequest()
             case .completed, .error: break
@@ -37,7 +37,7 @@ public extension NetworkProtocol where Self: UIViewController {
 extension UIViewController {
     /// ZJaDe: resetNetworkDisposeBag和networkDisposeBag结合可以实现多次刷新时只取最后一次的值
     public var networkDisposeBag: DisposeBag {
-        return self.disposeBagWithTag("_viewControllerNetwork")
+        self.disposeBagWithTag("_viewControllerNetwork")
     }
     /// ZJaDe: resetNetworkDisposeBag和networkDisposeBag结合可以实现多次刷新时只取最后一次的值
     public func resetNetworkDisposeBag() {

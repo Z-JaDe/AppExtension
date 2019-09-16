@@ -16,7 +16,7 @@ public protocol ResultModelHandleProtocol {
 
 extension Observable where Element: ResultContextCompatible {
     public func callback(_ closure: @escaping (Element.ValueType?) -> Void) -> Disposable {
-        return self.logDebug("_请求回调_").subscribe(onNext: { (element) in
+        self.logDebug("_请求回调_").subscribe(onNext: { (element) in
             closure(element.value)
         }, onError: { (error) in
             #if DEBUG
@@ -39,10 +39,10 @@ extension Observable where Element: ResultContextCompatible {
 // MARK: - result
 extension Observable where Element: ResultContextCompatible & ResultModelHandleProtocol {
     public func callback(_ closure: @escaping (Element.ValueType?) -> Void) -> Disposable {
-        return self.callback(closure, .default)
+        self.callback(closure, .default)
     }
     public func callback(_ closure: @escaping (Element.ValueType?) -> Void, _ showHUD: ShowNetworkHUD<Element.ResultCodeType>) -> Disposable {
-        return self.logDebug("请求回调").subscribe(onNext: { (result) in
+        self.logDebug("请求回调").subscribe(onNext: { (result) in
             closure(result.value)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 result.handle(showHUD)

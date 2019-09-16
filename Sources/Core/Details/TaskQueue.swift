@@ -100,12 +100,12 @@ public extension TaskQueue {
 // MARK: 是否包含任务
 public extension TaskQueue {
     func contains<T: TaskItem>(_ taskType: T.Type) -> Bool {
-        return queue.syncIfNeed {
+        queue.syncIfNeed {
             return self.taskArr.contains(where: {$0 is T})
         }
     }
     func contains(_ task: TaskItem) -> Bool {
-        return queue.syncIfNeed {
+        queue.syncIfNeed {
             return self.taskArr.contains(where: task.isEqual)
         }
     }
@@ -119,7 +119,7 @@ public extension TaskQueue {
         }
     }
     func cancelTask(_ task: TaskItem) -> Bool {
-        return queue.syncIfNeed {
+        queue.syncIfNeed {
             if let index = self.taskArr.firstIndex(where: task.isEqual) {
                 if index == 0 && self.taskState == .working {
                     return false

@@ -115,13 +115,13 @@ open class JDButton: ImageLabelView {
         }
     }
     override var hasTitle: Bool {
-        return self.attributedTitleInfo[self.state] != nil || self.attributedTitleInfo[.normal] != nil
+        self.attributedTitleInfo[self.state] != nil || self.attributedTitleInfo[.normal] != nil
     }
     override var hasImage: Bool {
-        return self.imageInfo[self.state] != nil || self.imageInfo[.normal] != nil
+        self.imageInfo[self.state] != nil || self.imageInfo[.normal] != nil
     }
     var hasBackgroundImage: Bool {
-        return self.backgroundImageInfo[self.state] != nil || self.backgroundImageInfo[.normal] != nil
+        self.backgroundImageInfo[self.state] != nil || self.backgroundImageInfo[.normal] != nil
     }
 }
 extension JDButton {

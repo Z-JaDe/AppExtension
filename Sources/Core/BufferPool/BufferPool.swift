@@ -43,11 +43,11 @@ public class BufferPool {
         push(obj, key: obj.classFullName)
     }
     public func pop<T: NSObject&BufferPoolItemProtocol>(_ type: T) -> T? {
-        return pop(T.classFullName)
+        pop(T.classFullName)
     }
 
     private func getSet(_ key: String) -> Set<NSObject> {
-        return dataArray[key] ?? Set()
+        dataArray[key] ?? Set()
     }
 }
 

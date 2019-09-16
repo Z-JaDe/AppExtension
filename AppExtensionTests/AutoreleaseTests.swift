@@ -41,6 +41,6 @@ private struct Person: CustomStringConvertible {
     let name: Int = 0
 
     var description: String {
-        return "\(self.name)"
+        "\(self.name)"
     }
 }

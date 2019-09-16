@@ -38,10 +38,10 @@ public struct Percent: FloatLiteralTypeValueProtocol,
     public let unit: String = "%"
 
     public var realValue: ValueType {
-        return self.value / 100
+        self.value / 100
     }
 
     public var description: String {
-        return "\(self.originString)\(unit)"
+        "\(self.originString)\(unit)"
     }
 }

@@ -32,7 +32,7 @@ open class RelativeLayoutSpec: SizeLayoutSpec {
     }
 
     open override func layoutArr() -> [NSLayoutConstraint] {
-        return super.layoutArr()
+        super.layoutArr()
             + layoutHorizontal()
             + layoutVertical()
     }

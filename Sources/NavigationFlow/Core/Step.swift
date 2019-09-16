@@ -17,7 +17,7 @@ final class StepContext {
         self.step = step
     }
     static var none: StepContext {
-        return StepContext(with: NoneStep())
+        StepContext(with: NoneStep())
     }
 }
 

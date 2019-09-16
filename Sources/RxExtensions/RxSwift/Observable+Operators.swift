@@ -11,7 +11,7 @@ import RxSwift
 
 extension ObservableType {
     func then(closure: @escaping () -> Observable<Element>?) -> Observable<Element> {
-        return then(closure: closure() ?? .empty())
+        then(closure: closure() ?? .empty())
     }
     func then(closure: @autoclosure @escaping () -> Observable<Element>) -> Observable<Element> {
         let next = Observable.deferred {
