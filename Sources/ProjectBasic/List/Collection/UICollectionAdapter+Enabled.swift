@@ -10,7 +10,7 @@ import Foundation
 
 extension UICollectionAdapter {
     public func updateEnabledState(_ isEnabled: Bool) {
-        dataArray.lazy.flatMap({$0.1}).forEach { (item) in
+        dataArray.lazy.flatMap({$0.items}).forEach { (item) in
             item.refreshEnabledState(isEnabled)
         }
     }

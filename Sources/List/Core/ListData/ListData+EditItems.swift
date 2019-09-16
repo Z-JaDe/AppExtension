@@ -55,9 +55,9 @@ extension ListData where Section: Equatable & InitProtocol {
             newItems.insert(contentsOf: items, at: index)
         }
         if let sectionIndex = sectionIndex {
-            newData[sectionIndex] = (section, newItems)
+            newData[sectionIndex] = SectionData(section, newItems)
         } else {
-            newData.append((section, newItems))
+            newData.append(SectionData(section, newItems))
         }
         return newData
     }

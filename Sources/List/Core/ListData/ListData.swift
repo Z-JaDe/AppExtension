@@ -8,30 +8,29 @@
 
 import Foundation
 
-public struct ListData<Section: Diffable, Item: Diffable & Equatable>: CollectionProtocol {
-    public typealias Element = (section: Section, items: [Item])
+public struct ListData<Section: Diffable, Item: Diffable & Equatable>: CollectionProtocol, CollectionBuilder {
+    public typealias Element = SectionData<Section, Item>
     public var value: ContiguousArray<Element>
     public init<C: Swift.Collection>(_ elements: C) where C.Element == Element {
         self.value = ContiguousArray(elements)
     }
     public func map<U: Diffable>(_ transform: (Item) throws -> U) rethrows -> ListData<Section, U> {
-        let value = try self.value.lazy.map({($0.section, try $0.items.map(transform))})
+        let value = try self.value.lazy.map({try $0.map(transform)})
         return ListData<Section, U>(value)
     }
     public func filter(_ transform: (Item) throws -> Bool) rethrows -> ListData {
-        let value = try self.value.lazy.map({
-            ($0.section, try $0.items.filter(transform))
-        }).filter({$0.1.isEmpty == false})
+        let value = try self.value.lazy.map({try $0.filter(transform)})
+            .filter({$0.items.isEmpty == false})
         return ListData(value)
     }
 
     public var itemCount: Int {
-        self.value.flatMap({$0.items}).count
+        self.value.map({$0.items.count}).reduce(0, +)
     }
     public func exchange(_ item1: Item, _ item2: Item) -> ListData {
         var listData = self
-        for (offset: sectionIndex, element: (section: _, items: items)) in self.enumerated() {
-            for (itemIndex, item) in items.enumerated() {
+        for (offset: sectionIndex, element: section) in self.enumerated() {
+            for (itemIndex, item) in section.items.enumerated() {
                 if item == item1 {
                     listData[sectionIndex].items[itemIndex] = item2
                 }
@@ -63,6 +62,6 @@ extension ListData {
         if items.isEmpty {
             return nil
         }
-        return SectionModelItem(element.0, items)
+        return SectionModelItem(element.section, items)
     }
 }

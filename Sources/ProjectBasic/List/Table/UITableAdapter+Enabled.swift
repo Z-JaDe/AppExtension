@@ -10,7 +10,7 @@ import Foundation
 
 extension UITableAdapter: EnabledStateDesignable {
     public func updateEnabledState(_ isEnabled: Bool) {
-        dataArray.flatMap({$0.1}).forEach { (item) in
+        dataArray.flatMap({$0.items}).forEach { (item) in
             (item.value as? EnabledStateDesignable)?.refreshEnabledState(isEnabled)
         }
     }

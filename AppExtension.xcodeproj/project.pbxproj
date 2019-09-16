@@ -11,6 +11,8 @@
 		1805B3CE2276A82900F0574D /* GCDTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805B3CD2276A82900F0574D /* GCDTest.swift */; };
 		1805B3D422772EF100F0574D /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805B3D222772E9C00F0574D /* DispatchQueue.swift */; };
 		180B46B722812B31001AE9B1 /* NeedUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B46B522812B2A001AE9B1 /* NeedUpdate.swift */; };
+		1846D987232F3F0700C61A0B /* ListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846D985232F3F0400C61A0B /* ListBuilder.swift */; };
+		1846D98A232F589D00C61A0B /* SectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846D988232F589900C61A0B /* SectionData.swift */; };
 		18B56D462272CEC000AADA00 /* LockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B56D452272CEC000AADA00 /* LockTest.swift */; };
 		18C0A383230542CB0042F8AA /* CollectionViewable+CurrentIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0A382230542CA0042F8AA /* CollectionViewable+CurrentIndex.swift */; };
 		18C0A385230543190042F8AA /* TotalCountable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0A384230543190042F8AA /* TotalCountable.swift */; };
@@ -820,6 +822,8 @@
 		1805B3CD2276A82900F0574D /* GCDTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDTest.swift; sourceTree = "<group>"; };
 		1805B3D222772E9C00F0574D /* DispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueue.swift; sourceTree = "<group>"; };
 		180B46B522812B2A001AE9B1 /* NeedUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedUpdate.swift; sourceTree = "<group>"; };
+		1846D985232F3F0400C61A0B /* ListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBuilder.swift; sourceTree = "<group>"; };
+		1846D988232F589900C61A0B /* SectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionData.swift; sourceTree = "<group>"; };
 		1892196023016F4B008A6BC3 /* Playground_Blank.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground_Blank.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1892196123016F4B008A6BC3 /* Playground_View.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground_View.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1892196323016FD4008A6BC3 /* Playground_Game.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground_Game.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -2147,10 +2151,12 @@
 			isa = PBXGroup;
 			children = (
 				C918DF0221B52299000F2AAC /* ListData.swift */,
+				1846D988232F589900C61A0B /* SectionData.swift */,
 				C918DEFD21B52299000F2AAC /* ListData+EditItems.swift */,
 				C918DEFF21B52299000F2AAC /* ListDataUpdateProtocol.swift */,
 				C918DF0121B52299000F2AAC /* ListDataInfo.swift */,
 				C918DF0321B52299000F2AAC /* DifferenceKitCompatible.swift */,
+				1846D985232F3F0400C61A0B /* ListBuilder.swift */,
 			);
 			path = ListData;
 			sourceTree = "<group>";
@@ -4888,6 +4894,7 @@
 				C9D412FD21DF514F004368D4 /* RxDataSourceType.swift in Sources */,
 				C90A1C2D21B01EBC007D573C /* DataController+Update.swift in Sources */,
 				C9D4130421DF5E8A004368D4 /* CheckAndCatchParamsProtocol.swift in Sources */,
+				1846D98A232F589D00C61A0B /* SectionData.swift in Sources */,
 				C910E64721AEAF940067B51B /* SectionedDataSource.swift in Sources */,
 				C9D412F621DF4DAA004368D4 /* ListSection.swift in Sources */,
 				C918DF0421B52299000F2AAC /* ListData+EditItems.swift in Sources */,
@@ -4908,6 +4915,7 @@
 				C918DF0921B52299000F2AAC /* DifferenceKitCompatible.swift in Sources */,
 				C918DF0721B52299000F2AAC /* ListDataInfo.swift in Sources */,
 				C910E63D21AE8A950067B51B /* CollectionViewUpdating.swift in Sources */,
+				1846D987232F3F0700C61A0B /* ListBuilder.swift in Sources */,
 				C918DF0821B52299000F2AAC /* ListData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -69,10 +69,10 @@ open class AdapterTableViewController: AdapterListViewController<TableView, UITa
         adapter.insertSecionModels.register(on: self, key: "defaultHeaderAndFooter") { (self, dataArray) in
             var dataArray = dataArray
             if self.tableHeaderView != nil {
-                dataArray.insert((self.tableHeaderSection, [.cell(self.tableHeaderCell)]), at: 0)
+                dataArray.insert(SectionData(self.tableHeaderSection, [.cell(self.tableHeaderCell)]), at: 0)
             }
             if self.tableFooterView != nil {
-                dataArray.append((self.tableFooterSection, [.cell(self.tableFooterCell)]))
+                dataArray.append(SectionData(self.tableFooterSection, [.cell(self.tableFooterCell)]))
             }
             return dataArray
         }
