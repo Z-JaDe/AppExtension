@@ -46,6 +46,9 @@ extension ListData: ExpressibleByArrayLiteral {
     public init() {
         self.init([])
     }
+    public init(_ element: (Section, [Item])) {
+        self.init(CollectionOfOne(element).map(Element.init))
+    }
     public init(arrayLiteral elements: (Section, [Item])...) {
         self.init(elements.map(Element.init))
     }
