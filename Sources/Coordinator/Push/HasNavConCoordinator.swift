@@ -33,8 +33,17 @@ public extension ViewControllerConvertible where Self: PushJumpPlugin {
         }
     }
     func popToCurrentViewController() {
-        if let viewCon = self.rootViewController {
+        if let viewCon = getViewCon(self.rootViewController) {
             self.navCon?.popToViewController(viewCon, animated: true)
         }
+    }
+    private func getViewCon(_ viewCon: UIViewController?) -> UIViewController? {
+        guard let parentVC = viewCon?.parent else {
+            return nil
+        }
+        if parentVC == viewCon?.navigationController {
+            return viewCon
+        }
+        return getViewCon(parentVC)
     }
 }
