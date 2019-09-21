@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Network
 // MARK: -
 extension Array where Element: UIImage {
     public func mapToFormData(name: String) -> [MultipartFormData] {

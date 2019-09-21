@@ -35,14 +35,14 @@
 		46EB2E00000DE0 /* Pods-NavigationFlow-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46EB2E00000DD0 /* Pods-NavigationFlow-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		46EB2E00000E20 /* Pods-NavigationFlow-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000E10 /* Pods-NavigationFlow-dummy.m */; };
 		46EB2E00000EC0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E000002D0 /* Foundation.framework */; };
-		46EB2E00000F30 /* Pods-Network-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46EB2E00000F20 /* Pods-Network-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		46EB2E00000F70 /* Pods-Network-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000F60 /* Pods-Network-dummy.m */; };
+		46EB2E00000F30 /* Pods-ProjectBasic-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46EB2E00000F20 /* Pods-ProjectBasic-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB2E00000F70 /* Pods-ProjectBasic-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000F60 /* Pods-ProjectBasic-dummy.m */; };
 		46EB2E00001010 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E000002D0 /* Foundation.framework */; };
-		46EB2E00001080 /* Pods-ProjectBasic-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46EB2E00001070 /* Pods-ProjectBasic-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		46EB2E000010C0 /* Pods-ProjectBasic-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E000010B0 /* Pods-ProjectBasic-dummy.m */; };
+		46EB2E00001080 /* Pods-RxExtensions-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46EB2E00001070 /* Pods-RxExtensions-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB2E000010C0 /* Pods-RxExtensions-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E000010B0 /* Pods-RxExtensions-dummy.m */; };
 		46EB2E00001160 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E000002D0 /* Foundation.framework */; };
-		46EB2E000011D0 /* Pods-RxExtensions-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46EB2E000011C0 /* Pods-RxExtensions-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		46EB2E00001210 /* Pods-RxExtensions-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00001200 /* Pods-RxExtensions-dummy.m */; };
+		46EB2E000011D0 /* Pods-RxNetwork-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46EB2E000011C0 /* Pods-RxNetwork-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB2E00001210 /* Pods-RxNetwork-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00001200 /* Pods-RxNetwork-dummy.m */; };
 		46EB2E000012B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E000002D0 /* Foundation.framework */; };
 		46EB2E00001320 /* Pods-UIComponents-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46EB2E00001310 /* Pods-UIComponents-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		46EB2E00001360 /* Pods-UIComponents-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00001350 /* Pods-UIComponents-dummy.m */; };
@@ -585,276 +585,276 @@
 		};
 		46EB2E000020C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000120 /* RxSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
-			remoteInfo = RxSwift;
-		};
-		46EB2E000020E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000140 /* RxCocoa.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
-			remoteInfo = RxCocoa;
-		};
-		46EB2E00002100 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000150 /* RxRelay.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
-			remoteInfo = RxRelay;
-		};
-		46EB2E00002120 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000160 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
-			remoteInfo = Alamofire;
-		};
-		46EB2E00002140 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E000000C0 /* CocoaExtension.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
 			remoteInfo = CocoaExtension;
 		};
-		46EB2E00002160 /* PBXContainerItemProxy */ = {
+		46EB2E000020E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E000000D0 /* CryptoSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
 			remoteInfo = CryptoSwift;
 		};
-		46EB2E00002180 /* PBXContainerItemProxy */ = {
+		46EB2E00002100 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E000000E0 /* Encryption.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 7E033E130DE06E2CF897CDFD6FA4DC60;
 			remoteInfo = Encryption;
 		};
-		46EB2E000021A0 /* PBXContainerItemProxy */ = {
+		46EB2E00002120 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E000000F0 /* FunctionalSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
 			remoteInfo = FunctionalSwift;
 		};
-		46EB2E000021C0 /* PBXContainerItemProxy */ = {
+		46EB2E00002140 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000100 /* ModalManager.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = BCC6CF70FA683E5DE72FECE8BC51E31F;
 			remoteInfo = ModalManager;
 		};
-		46EB2E000021E0 /* PBXContainerItemProxy */ = {
+		46EB2E00002160 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000110 /* Validation.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 42D344306BFC89976EC9FF0E0A9E0F4D;
 			remoteInfo = Validation;
 		};
-		46EB2E00002200 /* PBXContainerItemProxy */ = {
+		46EB2E00002180 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000120 /* RxSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
 			remoteInfo = RxSwift;
 		};
-		46EB2E00002220 /* PBXContainerItemProxy */ = {
+		46EB2E000021A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000130 /* DifferenceKit.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 9A546BD24EDC370DF7999D9406601F34;
 			remoteInfo = DifferenceKit;
 		};
-		46EB2E00002240 /* PBXContainerItemProxy */ = {
+		46EB2E000021C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000140 /* RxCocoa.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
 			remoteInfo = RxCocoa;
 		};
-		46EB2E00002260 /* PBXContainerItemProxy */ = {
+		46EB2E000021E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000150 /* RxRelay.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
 			remoteInfo = RxRelay;
 		};
-		46EB2E00002280 /* PBXContainerItemProxy */ = {
+		46EB2E00002200 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000160 /* Alamofire.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
 			remoteInfo = Alamofire;
 		};
-		46EB2E000022A0 /* PBXContainerItemProxy */ = {
+		46EB2E00002220 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000170 /* SnapKit.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 6913FCF4B90C224E55FE5C821AFB90D2;
 			remoteInfo = SnapKit;
 		};
-		46EB2E000022C0 /* PBXContainerItemProxy */ = {
+		46EB2E00002240 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000180 /* RxGesture.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 761EDC2D01B03DA09BA153A91621384F;
 			remoteInfo = RxGesture;
 		};
-		46EB2E000022E0 /* PBXContainerItemProxy */ = {
+		46EB2E00002260 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000190 /* RxOptional.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 320A66A0FD10A6799EDACAF311BC28F4;
 			remoteInfo = RxOptional;
 		};
-		46EB2E00002300 /* PBXContainerItemProxy */ = {
+		46EB2E00002280 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E000001A0 /* RxSwiftExt.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 27EB8A78CD48CBA869F1CD0C2E3E61B8;
 			remoteInfo = RxSwiftExt;
 		};
-		46EB2E00002320 /* PBXContainerItemProxy */ = {
+		46EB2E000022A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E000001B0 /* CollectionKit.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = C914F41EF29629279F1362AED9CBF87B;
 			remoteInfo = CollectionKit;
 		};
-		46EB2E00002340 /* PBXContainerItemProxy */ = {
+		46EB2E000022C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E000001C0 /* Kingfisher.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 05BB3BFEAA03766641420DCD88978468;
 			remoteInfo = Kingfisher;
 		};
-		46EB2E00002360 /* PBXContainerItemProxy */ = {
+		46EB2E000022E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E000001D0 /* MBProgressHUD.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 0F48A71D28991325602E8C8A19DF1F64;
 			remoteInfo = MBProgressHUD;
 		};
-		46EB2E00002380 /* PBXContainerItemProxy */ = {
+		46EB2E00002300 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E000001E0 /* MJRefresh.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = E94AEF767442EDAAAAB2129CDFA2C2ED;
 			remoteInfo = MJRefresh;
 		};
-		46EB2E000023A0 /* PBXContainerItemProxy */ = {
+		46EB2E00002320 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E000001F0 /* Motion.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 86B4EC2291DDB6B1C43A9FB029DB6C66;
 			remoteInfo = Motion;
 		};
-		46EB2E000023C0 /* PBXContainerItemProxy */ = {
+		46EB2E00002340 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000200 /* ReSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 32081789D91AD7C7D087ABCBF0DAB8EB;
 			remoteInfo = ReSwift;
 		};
-		46EB2E000023E0 /* PBXContainerItemProxy */ = {
+		46EB2E00002360 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000210 /* SwiftLint.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = DF739ADE66FA54F9BBFF97A8CB609E34;
 			remoteInfo = SwiftLint;
 		};
-		46EB2E00002400 /* PBXContainerItemProxy */ = {
+		46EB2E00002380 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000220 /* SwiftyUserDefaults.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 39DEFC5DCB08596C1137C1183EBF13FF;
 			remoteInfo = SwiftyUserDefaults;
 		};
-		46EB2E00002420 /* PBXContainerItemProxy */ = {
+		46EB2E000023A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E000000C0 /* CocoaExtension.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
 			remoteInfo = CocoaExtension;
 		};
-		46EB2E00002440 /* PBXContainerItemProxy */ = {
+		46EB2E000023C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E000000D0 /* CryptoSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
 			remoteInfo = CryptoSwift;
 		};
-		46EB2E00002460 /* PBXContainerItemProxy */ = {
+		46EB2E000023E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E000000E0 /* Encryption.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 7E033E130DE06E2CF897CDFD6FA4DC60;
 			remoteInfo = Encryption;
 		};
-		46EB2E00002480 /* PBXContainerItemProxy */ = {
+		46EB2E00002400 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E000000F0 /* FunctionalSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
 			remoteInfo = FunctionalSwift;
 		};
-		46EB2E000024A0 /* PBXContainerItemProxy */ = {
+		46EB2E00002420 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000100 /* ModalManager.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = BCC6CF70FA683E5DE72FECE8BC51E31F;
 			remoteInfo = ModalManager;
 		};
-		46EB2E000024C0 /* PBXContainerItemProxy */ = {
+		46EB2E00002440 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000110 /* Validation.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 42D344306BFC89976EC9FF0E0A9E0F4D;
 			remoteInfo = Validation;
 		};
-		46EB2E000024E0 /* PBXContainerItemProxy */ = {
+		46EB2E00002460 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000120 /* RxSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
 			remoteInfo = RxSwift;
 		};
-		46EB2E00002500 /* PBXContainerItemProxy */ = {
+		46EB2E00002480 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000140 /* RxCocoa.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
 			remoteInfo = RxCocoa;
 		};
-		46EB2E00002520 /* PBXContainerItemProxy */ = {
+		46EB2E000024A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000150 /* RxRelay.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
 			remoteInfo = RxRelay;
 		};
-		46EB2E00002540 /* PBXContainerItemProxy */ = {
+		46EB2E000024C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000180 /* RxGesture.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 761EDC2D01B03DA09BA153A91621384F;
 			remoteInfo = RxGesture;
 		};
-		46EB2E00002560 /* PBXContainerItemProxy */ = {
+		46EB2E000024E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E00000190 /* RxOptional.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 320A66A0FD10A6799EDACAF311BC28F4;
 			remoteInfo = RxOptional;
 		};
-		46EB2E00002580 /* PBXContainerItemProxy */ = {
+		46EB2E00002500 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46EB2E000001A0 /* RxSwiftExt.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 27EB8A78CD48CBA869F1CD0C2E3E61B8;
 			remoteInfo = RxSwiftExt;
+		};
+		46EB2E00002520 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000120 /* RxSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
+			remoteInfo = RxSwift;
+		};
+		46EB2E00002540 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000140 /* RxCocoa.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
+			remoteInfo = RxCocoa;
+		};
+		46EB2E00002560 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000150 /* RxRelay.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
+			remoteInfo = RxRelay;
+		};
+		46EB2E00002580 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000160 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
+			remoteInfo = Alamofire;
 		};
 		46EB2E000025A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1227,30 +1227,30 @@
 		46EB2E00000DF0 /* Pods-NavigationFlow-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NavigationFlow-acknowledgements.plist"; sourceTree = "<group>"; };
 		46EB2E00000E00 /* Pods-NavigationFlow-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NavigationFlow-acknowledgements.markdown"; sourceTree = "<group>"; };
 		46EB2E00000E10 /* Pods-NavigationFlow-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NavigationFlow-dummy.m"; sourceTree = "<group>"; };
-		46EB2E00000EE0 /* Pods-Network.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Network.release.xcconfig"; sourceTree = "<group>"; };
-		46EB2E00000EF0 /* Pods-Network.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Network.debug.xcconfig"; sourceTree = "<group>"; };
-		46EB2E00000F00 /* Pods-Network-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Network-Info.plist"; sourceTree = "<group>"; };
-		46EB2E00000F10 /* Pods-Network.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Network.modulemap"; sourceTree = "<group>"; };
-		46EB2E00000F20 /* Pods-Network-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Network-umbrella.h"; sourceTree = "<group>"; };
-		46EB2E00000F40 /* Pods-Network-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Network-acknowledgements.plist"; sourceTree = "<group>"; };
-		46EB2E00000F50 /* Pods-Network-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Network-acknowledgements.markdown"; sourceTree = "<group>"; };
-		46EB2E00000F60 /* Pods-Network-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Network-dummy.m"; sourceTree = "<group>"; };
-		46EB2E00001030 /* Pods-ProjectBasic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ProjectBasic.release.xcconfig"; sourceTree = "<group>"; };
-		46EB2E00001040 /* Pods-ProjectBasic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ProjectBasic.debug.xcconfig"; sourceTree = "<group>"; };
-		46EB2E00001050 /* Pods-ProjectBasic-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ProjectBasic-Info.plist"; sourceTree = "<group>"; };
-		46EB2E00001060 /* Pods-ProjectBasic.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ProjectBasic.modulemap"; sourceTree = "<group>"; };
-		46EB2E00001070 /* Pods-ProjectBasic-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ProjectBasic-umbrella.h"; sourceTree = "<group>"; };
-		46EB2E00001090 /* Pods-ProjectBasic-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ProjectBasic-acknowledgements.plist"; sourceTree = "<group>"; };
-		46EB2E000010A0 /* Pods-ProjectBasic-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ProjectBasic-acknowledgements.markdown"; sourceTree = "<group>"; };
-		46EB2E000010B0 /* Pods-ProjectBasic-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ProjectBasic-dummy.m"; sourceTree = "<group>"; };
-		46EB2E00001180 /* Pods-RxExtensions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RxExtensions.release.xcconfig"; sourceTree = "<group>"; };
-		46EB2E00001190 /* Pods-RxExtensions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RxExtensions.debug.xcconfig"; sourceTree = "<group>"; };
-		46EB2E000011A0 /* Pods-RxExtensions-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RxExtensions-Info.plist"; sourceTree = "<group>"; };
-		46EB2E000011B0 /* Pods-RxExtensions.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RxExtensions.modulemap"; sourceTree = "<group>"; };
-		46EB2E000011C0 /* Pods-RxExtensions-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RxExtensions-umbrella.h"; sourceTree = "<group>"; };
-		46EB2E000011E0 /* Pods-RxExtensions-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RxExtensions-acknowledgements.plist"; sourceTree = "<group>"; };
-		46EB2E000011F0 /* Pods-RxExtensions-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RxExtensions-acknowledgements.markdown"; sourceTree = "<group>"; };
-		46EB2E00001200 /* Pods-RxExtensions-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RxExtensions-dummy.m"; sourceTree = "<group>"; };
+		46EB2E00000EE0 /* Pods-ProjectBasic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ProjectBasic.release.xcconfig"; sourceTree = "<group>"; };
+		46EB2E00000EF0 /* Pods-ProjectBasic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ProjectBasic.debug.xcconfig"; sourceTree = "<group>"; };
+		46EB2E00000F00 /* Pods-ProjectBasic-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ProjectBasic-Info.plist"; sourceTree = "<group>"; };
+		46EB2E00000F10 /* Pods-ProjectBasic.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ProjectBasic.modulemap"; sourceTree = "<group>"; };
+		46EB2E00000F20 /* Pods-ProjectBasic-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ProjectBasic-umbrella.h"; sourceTree = "<group>"; };
+		46EB2E00000F40 /* Pods-ProjectBasic-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ProjectBasic-acknowledgements.plist"; sourceTree = "<group>"; };
+		46EB2E00000F50 /* Pods-ProjectBasic-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ProjectBasic-acknowledgements.markdown"; sourceTree = "<group>"; };
+		46EB2E00000F60 /* Pods-ProjectBasic-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ProjectBasic-dummy.m"; sourceTree = "<group>"; };
+		46EB2E00001030 /* Pods-RxExtensions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RxExtensions.release.xcconfig"; sourceTree = "<group>"; };
+		46EB2E00001040 /* Pods-RxExtensions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RxExtensions.debug.xcconfig"; sourceTree = "<group>"; };
+		46EB2E00001050 /* Pods-RxExtensions-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RxExtensions-Info.plist"; sourceTree = "<group>"; };
+		46EB2E00001060 /* Pods-RxExtensions.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RxExtensions.modulemap"; sourceTree = "<group>"; };
+		46EB2E00001070 /* Pods-RxExtensions-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RxExtensions-umbrella.h"; sourceTree = "<group>"; };
+		46EB2E00001090 /* Pods-RxExtensions-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RxExtensions-acknowledgements.plist"; sourceTree = "<group>"; };
+		46EB2E000010A0 /* Pods-RxExtensions-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RxExtensions-acknowledgements.markdown"; sourceTree = "<group>"; };
+		46EB2E000010B0 /* Pods-RxExtensions-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RxExtensions-dummy.m"; sourceTree = "<group>"; };
+		46EB2E00001180 /* Pods-RxNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RxNetwork.release.xcconfig"; sourceTree = "<group>"; };
+		46EB2E00001190 /* Pods-RxNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RxNetwork.debug.xcconfig"; sourceTree = "<group>"; };
+		46EB2E000011A0 /* Pods-RxNetwork-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RxNetwork-Info.plist"; sourceTree = "<group>"; };
+		46EB2E000011B0 /* Pods-RxNetwork.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RxNetwork.modulemap"; sourceTree = "<group>"; };
+		46EB2E000011C0 /* Pods-RxNetwork-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RxNetwork-umbrella.h"; sourceTree = "<group>"; };
+		46EB2E000011E0 /* Pods-RxNetwork-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RxNetwork-acknowledgements.plist"; sourceTree = "<group>"; };
+		46EB2E000011F0 /* Pods-RxNetwork-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RxNetwork-acknowledgements.markdown"; sourceTree = "<group>"; };
+		46EB2E00001200 /* Pods-RxNetwork-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RxNetwork-dummy.m"; sourceTree = "<group>"; };
 		46EB2E000012D0 /* Pods-UIComponents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIComponents.release.xcconfig"; sourceTree = "<group>"; };
 		46EB2E000012E0 /* Pods-UIComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIComponents.debug.xcconfig"; sourceTree = "<group>"; };
 		46EB2E000012F0 /* Pods-UIComponents-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UIComponents-Info.plist"; sourceTree = "<group>"; };
@@ -1288,10 +1288,10 @@
 		60DD294BBF7DE2EFA3DED2F4742BD9B8 /* Pods_ProjectBasic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ProjectBasic.framework; path = "Pods-ProjectBasic.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B9FD2B4C21E51BF16E44B7D5ED9B1FD /* Pods_NavigationFlow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NavigationFlow.framework; path = "Pods-NavigationFlow.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D2BF53EF45B88351F48B0C4896E5A26 /* Pods_UIComponents_ScrollExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_UIComponents_ScrollExtensions.framework; path = "Pods-UIComponents-ScrollExtensions.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7201EB755A31B202C21C651E86557374 /* Pods_Network.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Network.framework; path = "Pods-Network.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75458C7D0BD2FA4A834D4B95DBF3B17A /* Pods_AppExtensionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AppExtensionUITests.framework; path = "Pods-AppExtensionUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		791B005383CC9B301A48771709476F93 /* Pods_List.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_List.framework; path = "Pods-List.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		827AE7A18DFC31C034C26F26BF37BB20 /* Pods_Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Coordinator.framework; path = "Pods-Coordinator.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		971E834F7B6166FAE5E1851C593ACBD5 /* Pods_RxNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RxNetwork.framework; path = "Pods-RxNetwork.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CC7ED1BDE8E336381F7A5BDF960E1E2 /* Pods_UserNotificationManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_UserNotificationManager.framework; path = "Pods-UserNotificationManager.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED2E02F3FCAD023A93FB2BBBDDAA233 /* Pods_EmptyDataSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EmptyDataSet.framework; path = "Pods-EmptyDataSet.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6FBDCB4B618C9E52F28163698742FB2 /* Pods_AnimatedTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AnimatedTransition.framework; path = "Pods-AnimatedTransition.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1453,9 +1453,9 @@
 				AED2E02F3FCAD023A93FB2BBBDDAA233 /* Pods_EmptyDataSet.framework */,
 				791B005383CC9B301A48771709476F93 /* Pods_List.framework */,
 				6B9FD2B4C21E51BF16E44B7D5ED9B1FD /* Pods_NavigationFlow.framework */,
-				7201EB755A31B202C21C651E86557374 /* Pods_Network.framework */,
 				60DD294BBF7DE2EFA3DED2F4742BD9B8 /* Pods_ProjectBasic.framework */,
 				367DAEA25A5B480EE41B6D60C64D51AD /* Pods_RxExtensions.framework */,
+				971E834F7B6166FAE5E1851C593ACBD5 /* Pods_RxNetwork.framework */,
 				34BBC3D2C57FE2FDB60A761925690711 /* Pods_UIComponents.framework */,
 				41183CD396BC2D5AE8019578CA781945 /* Pods_UIComponents_CollectionKitExtensions.framework */,
 				6D2BF53EF45B88351F48B0C4896E5A26 /* Pods_UIComponents_ScrollExtensions.framework */,
@@ -1484,9 +1484,9 @@
 				46EB2E00000AE0 /* Pods-EmptyDataSet */,
 				46EB2E00000C30 /* Pods-List */,
 				46EB2E00000D80 /* Pods-NavigationFlow */,
-				46EB2E00000ED0 /* Pods-Network */,
-				46EB2E00001020 /* Pods-ProjectBasic */,
-				46EB2E00001170 /* Pods-RxExtensions */,
+				46EB2E00000ED0 /* Pods-ProjectBasic */,
+				46EB2E00001020 /* Pods-RxExtensions */,
+				46EB2E00001170 /* Pods-RxNetwork */,
 				46EB2E000012C0 /* Pods-UIComponents */,
 				46EB2E00001410 /* Pods-UIComponents-CollectionKitExtensions */,
 				46EB2E00001560 /* Pods-UIComponents-ScrollExtensions */,
@@ -1685,52 +1685,52 @@
 			path = "Target Support Files/Pods-NavigationFlow";
 			sourceTree = "<group>";
 		};
-		46EB2E00000ED0 /* Pods-Network */ = {
+		46EB2E00000ED0 /* Pods-ProjectBasic */ = {
 			isa = PBXGroup;
 			children = (
-				46EB2E00000F10 /* Pods-Network.modulemap */,
-				46EB2E00000F50 /* Pods-Network-acknowledgements.markdown */,
-				46EB2E00000F40 /* Pods-Network-acknowledgements.plist */,
-				46EB2E00000F60 /* Pods-Network-dummy.m */,
-				46EB2E00000F00 /* Pods-Network-Info.plist */,
-				46EB2E00000F20 /* Pods-Network-umbrella.h */,
-				46EB2E00000EF0 /* Pods-Network.debug.xcconfig */,
-				46EB2E00000EE0 /* Pods-Network.release.xcconfig */,
-			);
-			name = "Pods-Network";
-			path = "Target Support Files/Pods-Network";
-			sourceTree = "<group>";
-		};
-		46EB2E00001020 /* Pods-ProjectBasic */ = {
-			isa = PBXGroup;
-			children = (
-				46EB2E00001060 /* Pods-ProjectBasic.modulemap */,
-				46EB2E000010A0 /* Pods-ProjectBasic-acknowledgements.markdown */,
-				46EB2E00001090 /* Pods-ProjectBasic-acknowledgements.plist */,
-				46EB2E000010B0 /* Pods-ProjectBasic-dummy.m */,
-				46EB2E00001050 /* Pods-ProjectBasic-Info.plist */,
-				46EB2E00001070 /* Pods-ProjectBasic-umbrella.h */,
-				46EB2E00001040 /* Pods-ProjectBasic.debug.xcconfig */,
-				46EB2E00001030 /* Pods-ProjectBasic.release.xcconfig */,
+				46EB2E00000F10 /* Pods-ProjectBasic.modulemap */,
+				46EB2E00000F50 /* Pods-ProjectBasic-acknowledgements.markdown */,
+				46EB2E00000F40 /* Pods-ProjectBasic-acknowledgements.plist */,
+				46EB2E00000F60 /* Pods-ProjectBasic-dummy.m */,
+				46EB2E00000F00 /* Pods-ProjectBasic-Info.plist */,
+				46EB2E00000F20 /* Pods-ProjectBasic-umbrella.h */,
+				46EB2E00000EF0 /* Pods-ProjectBasic.debug.xcconfig */,
+				46EB2E00000EE0 /* Pods-ProjectBasic.release.xcconfig */,
 			);
 			name = "Pods-ProjectBasic";
 			path = "Target Support Files/Pods-ProjectBasic";
 			sourceTree = "<group>";
 		};
-		46EB2E00001170 /* Pods-RxExtensions */ = {
+		46EB2E00001020 /* Pods-RxExtensions */ = {
 			isa = PBXGroup;
 			children = (
-				46EB2E000011B0 /* Pods-RxExtensions.modulemap */,
-				46EB2E000011F0 /* Pods-RxExtensions-acknowledgements.markdown */,
-				46EB2E000011E0 /* Pods-RxExtensions-acknowledgements.plist */,
-				46EB2E00001200 /* Pods-RxExtensions-dummy.m */,
-				46EB2E000011A0 /* Pods-RxExtensions-Info.plist */,
-				46EB2E000011C0 /* Pods-RxExtensions-umbrella.h */,
-				46EB2E00001190 /* Pods-RxExtensions.debug.xcconfig */,
-				46EB2E00001180 /* Pods-RxExtensions.release.xcconfig */,
+				46EB2E00001060 /* Pods-RxExtensions.modulemap */,
+				46EB2E000010A0 /* Pods-RxExtensions-acknowledgements.markdown */,
+				46EB2E00001090 /* Pods-RxExtensions-acknowledgements.plist */,
+				46EB2E000010B0 /* Pods-RxExtensions-dummy.m */,
+				46EB2E00001050 /* Pods-RxExtensions-Info.plist */,
+				46EB2E00001070 /* Pods-RxExtensions-umbrella.h */,
+				46EB2E00001040 /* Pods-RxExtensions.debug.xcconfig */,
+				46EB2E00001030 /* Pods-RxExtensions.release.xcconfig */,
 			);
 			name = "Pods-RxExtensions";
 			path = "Target Support Files/Pods-RxExtensions";
+			sourceTree = "<group>";
+		};
+		46EB2E00001170 /* Pods-RxNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				46EB2E000011B0 /* Pods-RxNetwork.modulemap */,
+				46EB2E000011F0 /* Pods-RxNetwork-acknowledgements.markdown */,
+				46EB2E000011E0 /* Pods-RxNetwork-acknowledgements.plist */,
+				46EB2E00001200 /* Pods-RxNetwork-dummy.m */,
+				46EB2E000011A0 /* Pods-RxNetwork-Info.plist */,
+				46EB2E000011C0 /* Pods-RxNetwork-umbrella.h */,
+				46EB2E00001190 /* Pods-RxNetwork.debug.xcconfig */,
+				46EB2E00001180 /* Pods-RxNetwork.release.xcconfig */,
+			);
+			name = "Pods-RxNetwork";
+			path = "Target Support Files/Pods-RxNetwork";
 			sourceTree = "<group>";
 		};
 		46EB2E000012C0 /* Pods-UIComponents */ = {
@@ -1876,7 +1876,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46EB2E00000F30 /* Pods-Network-umbrella.h in Headers */,
+				46EB2E00000F30 /* Pods-ProjectBasic-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1884,7 +1884,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46EB2E00001080 /* Pods-ProjectBasic-umbrella.h in Headers */,
+				46EB2E00001080 /* Pods-RxExtensions-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1892,7 +1892,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46EB2E000011D0 /* Pods-RxExtensions-umbrella.h in Headers */,
+				46EB2E000011D0 /* Pods-RxNetwork-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2042,28 +2042,28 @@
 		};
 		54BD9BEE6770AEC8EFD5AEA34E791922 /* Pods-RxExtensions */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 46EB2E000010E0 /* Build configuration list for PBXNativeTarget "Pods-RxExtensions" */;
+			buildConfigurationList = 46EB2E00000F90 /* Build configuration list for PBXNativeTarget "Pods-RxExtensions" */;
 			buildPhases = (
-				46EB2E00001120 /* Headers */,
-				46EB2E00001130 /* Sources */,
-				46EB2E00001140 /* Frameworks */,
-				46EB2E00001150 /* Resources */,
+				46EB2E00000FD0 /* Headers */,
+				46EB2E00000FE0 /* Sources */,
+				46EB2E00000FF0 /* Frameworks */,
+				46EB2E00001000 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				46EB2E000023B0 /* PBXTargetDependency */,
+				46EB2E000023D0 /* PBXTargetDependency */,
+				46EB2E000023F0 /* PBXTargetDependency */,
+				46EB2E00002410 /* PBXTargetDependency */,
 				46EB2E00002430 /* PBXTargetDependency */,
-				46EB2E00002450 /* PBXTargetDependency */,
-				46EB2E00002470 /* PBXTargetDependency */,
 				46EB2E00002490 /* PBXTargetDependency */,
-				46EB2E000024B0 /* PBXTargetDependency */,
-				46EB2E00002510 /* PBXTargetDependency */,
-				46EB2E00002550 /* PBXTargetDependency */,
-				46EB2E00002570 /* PBXTargetDependency */,
-				46EB2E00002530 /* PBXTargetDependency */,
-				46EB2E000024F0 /* PBXTargetDependency */,
-				46EB2E00002590 /* PBXTargetDependency */,
 				46EB2E000024D0 /* PBXTargetDependency */,
+				46EB2E000024F0 /* PBXTargetDependency */,
+				46EB2E000024B0 /* PBXTargetDependency */,
+				46EB2E00002470 /* PBXTargetDependency */,
+				46EB2E00002510 /* PBXTargetDependency */,
+				46EB2E00002450 /* PBXTargetDependency */,
 			);
 			name = "Pods-RxExtensions";
 			productName = "Pods-RxExtensions";
@@ -2192,39 +2192,39 @@
 		};
 		B30AD0C5259772CB8B167C766A91BE1D /* Pods-ProjectBasic */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 46EB2E00000F90 /* Build configuration list for PBXNativeTarget "Pods-ProjectBasic" */;
+			buildConfigurationList = 46EB2E00000E40 /* Build configuration list for PBXNativeTarget "Pods-ProjectBasic" */;
 			buildPhases = (
-				46EB2E00000FD0 /* Headers */,
-				46EB2E00000FE0 /* Sources */,
-				46EB2E00000FF0 /* Frameworks */,
-				46EB2E00001000 /* Resources */,
+				46EB2E00000E80 /* Headers */,
+				46EB2E00000E90 /* Sources */,
+				46EB2E00000EA0 /* Frameworks */,
+				46EB2E00000EB0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				46EB2E00002290 /* PBXTargetDependency */,
-				46EB2E00002150 /* PBXTargetDependency */,
-				46EB2E00002330 /* PBXTargetDependency */,
-				46EB2E00002170 /* PBXTargetDependency */,
-				46EB2E00002230 /* PBXTargetDependency */,
-				46EB2E00002190 /* PBXTargetDependency */,
+				46EB2E00002210 /* PBXTargetDependency */,
+				46EB2E000020D0 /* PBXTargetDependency */,
+				46EB2E000022B0 /* PBXTargetDependency */,
+				46EB2E000020F0 /* PBXTargetDependency */,
 				46EB2E000021B0 /* PBXTargetDependency */,
-				46EB2E00002350 /* PBXTargetDependency */,
-				46EB2E00002370 /* PBXTargetDependency */,
-				46EB2E00002390 /* PBXTargetDependency */,
-				46EB2E000021D0 /* PBXTargetDependency */,
-				46EB2E000023B0 /* PBXTargetDependency */,
-				46EB2E000023D0 /* PBXTargetDependency */,
-				46EB2E00002250 /* PBXTargetDependency */,
+				46EB2E00002110 /* PBXTargetDependency */,
+				46EB2E00002130 /* PBXTargetDependency */,
 				46EB2E000022D0 /* PBXTargetDependency */,
 				46EB2E000022F0 /* PBXTargetDependency */,
-				46EB2E00002270 /* PBXTargetDependency */,
-				46EB2E00002210 /* PBXTargetDependency */,
 				46EB2E00002310 /* PBXTargetDependency */,
-				46EB2E000022B0 /* PBXTargetDependency */,
-				46EB2E000023F0 /* PBXTargetDependency */,
-				46EB2E00002410 /* PBXTargetDependency */,
+				46EB2E00002150 /* PBXTargetDependency */,
+				46EB2E00002330 /* PBXTargetDependency */,
+				46EB2E00002350 /* PBXTargetDependency */,
+				46EB2E000021D0 /* PBXTargetDependency */,
+				46EB2E00002250 /* PBXTargetDependency */,
+				46EB2E00002270 /* PBXTargetDependency */,
 				46EB2E000021F0 /* PBXTargetDependency */,
+				46EB2E00002190 /* PBXTargetDependency */,
+				46EB2E00002290 /* PBXTargetDependency */,
+				46EB2E00002230 /* PBXTargetDependency */,
+				46EB2E00002370 /* PBXTargetDependency */,
+				46EB2E00002390 /* PBXTargetDependency */,
+				46EB2E00002170 /* PBXTargetDependency */,
 			);
 			name = "Pods-ProjectBasic";
 			productName = "Pods-ProjectBasic";
@@ -2281,6 +2281,28 @@
 			name = "Pods-UIComponents";
 			productName = "Pods-UIComponents";
 			productReference = 34BBC3D2C57FE2FDB60A761925690711 /* Pods_UIComponents.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E19DF5D110F4181F5042039D3FE27DDC /* Pods-RxNetwork */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46EB2E000010E0 /* Build configuration list for PBXNativeTarget "Pods-RxNetwork" */;
+			buildPhases = (
+				46EB2E00001120 /* Headers */,
+				46EB2E00001130 /* Sources */,
+				46EB2E00001140 /* Frameworks */,
+				46EB2E00001150 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46EB2E00002590 /* PBXTargetDependency */,
+				46EB2E00002550 /* PBXTargetDependency */,
+				46EB2E00002570 /* PBXTargetDependency */,
+				46EB2E00002530 /* PBXTargetDependency */,
+			);
+			name = "Pods-RxNetwork";
+			productName = "Pods-RxNetwork";
+			productReference = 971E834F7B6166FAE5E1851C593ACBD5 /* Pods_RxNetwork.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EEAC4B7C52A6FAB5938AD34D83564ABE /* Pods-AppExtension */ = {
@@ -2347,28 +2369,6 @@
 			name = "Pods-UserNotificationManager";
 			productName = "Pods-UserNotificationManager";
 			productReference = 9CC7ED1BDE8E336381F7A5BDF960E1E2 /* Pods_UserNotificationManager.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		FD643340135A130F30A0956F9D12C96E /* Pods-Network */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 46EB2E00000E40 /* Build configuration list for PBXNativeTarget "Pods-Network" */;
-			buildPhases = (
-				46EB2E00000E80 /* Headers */,
-				46EB2E00000E90 /* Sources */,
-				46EB2E00000EA0 /* Frameworks */,
-				46EB2E00000EB0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				46EB2E00002130 /* PBXTargetDependency */,
-				46EB2E000020F0 /* PBXTargetDependency */,
-				46EB2E00002110 /* PBXTargetDependency */,
-				46EB2E000020D0 /* PBXTargetDependency */,
-			);
-			name = "Pods-Network";
-			productName = "Pods-Network";
-			productReference = 7201EB755A31B202C21C651E86557374 /* Pods_Network.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -2472,9 +2472,9 @@
 				6B93C698BAA4A0901F8AAF752C8EDC0D /* Pods-EmptyDataSet */,
 				3A7563F6D885FDC875EC91CCD3F8C330 /* Pods-List */,
 				7BF224ACF9DAA7CB475D4CF1A72BECC2 /* Pods-NavigationFlow */,
-				FD643340135A130F30A0956F9D12C96E /* Pods-Network */,
 				B30AD0C5259772CB8B167C766A91BE1D /* Pods-ProjectBasic */,
 				54BD9BEE6770AEC8EFD5AEA34E791922 /* Pods-RxExtensions */,
+				E19DF5D110F4181F5042039D3FE27DDC /* Pods-RxNetwork */,
 				DAB6882A1DEAF54A333268A8D9D07DD3 /* Pods-UIComponents */,
 				063F328E9B5A272A89001DBCD3278434 /* Pods-UIComponents-CollectionKitExtensions */,
 				1D7A97234EE396749B772D2D29188E9E /* Pods-UIComponents-ScrollExtensions */,
@@ -2675,7 +2675,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46EB2E00000F70 /* Pods-Network-dummy.m in Sources */,
+				46EB2E00000F70 /* Pods-ProjectBasic-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2683,7 +2683,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46EB2E000010C0 /* Pods-ProjectBasic-dummy.m in Sources */,
+				46EB2E000010C0 /* Pods-RxExtensions-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2691,7 +2691,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46EB2E00001210 /* Pods-RxExtensions-dummy.m in Sources */,
+				46EB2E00001210 /* Pods-RxNetwork-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3109,197 +3109,197 @@
 		};
 		46EB2E000020D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwift;
+			name = CocoaExtension;
 			targetProxy = 46EB2E000020C0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000020F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxCocoa;
+			name = CryptoSwift;
 			targetProxy = 46EB2E000020E0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002110 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxRelay;
+			name = Encryption;
 			targetProxy = 46EB2E00002100 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002130 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Alamofire;
+			name = FunctionalSwift;
 			targetProxy = 46EB2E00002120 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002150 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CocoaExtension;
+			name = ModalManager;
 			targetProxy = 46EB2E00002140 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002170 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CryptoSwift;
+			name = Validation;
 			targetProxy = 46EB2E00002160 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002190 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Encryption;
+			name = RxSwift;
 			targetProxy = 46EB2E00002180 /* PBXContainerItemProxy */;
 		};
 		46EB2E000021B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = FunctionalSwift;
+			name = DifferenceKit;
 			targetProxy = 46EB2E000021A0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000021D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ModalManager;
+			name = RxCocoa;
 			targetProxy = 46EB2E000021C0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000021F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Validation;
+			name = RxRelay;
 			targetProxy = 46EB2E000021E0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002210 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwift;
+			name = Alamofire;
 			targetProxy = 46EB2E00002200 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002230 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = DifferenceKit;
+			name = SnapKit;
 			targetProxy = 46EB2E00002220 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002250 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxCocoa;
+			name = RxGesture;
 			targetProxy = 46EB2E00002240 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002270 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxRelay;
+			name = RxOptional;
 			targetProxy = 46EB2E00002260 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002290 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Alamofire;
+			name = RxSwiftExt;
 			targetProxy = 46EB2E00002280 /* PBXContainerItemProxy */;
 		};
 		46EB2E000022B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SnapKit;
+			name = CollectionKit;
 			targetProxy = 46EB2E000022A0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000022D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxGesture;
+			name = Kingfisher;
 			targetProxy = 46EB2E000022C0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000022F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxOptional;
+			name = MBProgressHUD;
 			targetProxy = 46EB2E000022E0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002310 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwiftExt;
+			name = MJRefresh;
 			targetProxy = 46EB2E00002300 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002330 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CollectionKit;
+			name = Motion;
 			targetProxy = 46EB2E00002320 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002350 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Kingfisher;
+			name = ReSwift;
 			targetProxy = 46EB2E00002340 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002370 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = MBProgressHUD;
+			name = SwiftLint;
 			targetProxy = 46EB2E00002360 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002390 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = MJRefresh;
+			name = SwiftyUserDefaults;
 			targetProxy = 46EB2E00002380 /* PBXContainerItemProxy */;
 		};
 		46EB2E000023B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Motion;
+			name = CocoaExtension;
 			targetProxy = 46EB2E000023A0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000023D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ReSwift;
+			name = CryptoSwift;
 			targetProxy = 46EB2E000023C0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000023F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SwiftLint;
+			name = Encryption;
 			targetProxy = 46EB2E000023E0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002410 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SwiftyUserDefaults;
+			name = FunctionalSwift;
 			targetProxy = 46EB2E00002400 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002430 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CocoaExtension;
+			name = ModalManager;
 			targetProxy = 46EB2E00002420 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002450 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CryptoSwift;
+			name = Validation;
 			targetProxy = 46EB2E00002440 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002470 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Encryption;
+			name = RxSwift;
 			targetProxy = 46EB2E00002460 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002490 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = FunctionalSwift;
+			name = RxCocoa;
 			targetProxy = 46EB2E00002480 /* PBXContainerItemProxy */;
 		};
 		46EB2E000024B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ModalManager;
+			name = RxRelay;
 			targetProxy = 46EB2E000024A0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000024D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Validation;
+			name = RxGesture;
 			targetProxy = 46EB2E000024C0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000024F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwift;
+			name = RxOptional;
 			targetProxy = 46EB2E000024E0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002510 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxCocoa;
+			name = RxSwiftExt;
 			targetProxy = 46EB2E00002500 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002530 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxRelay;
+			name = RxSwift;
 			targetProxy = 46EB2E00002520 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002550 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxGesture;
+			name = RxCocoa;
 			targetProxy = 46EB2E00002540 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002570 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxOptional;
+			name = RxRelay;
 			targetProxy = 46EB2E00002560 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002590 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwiftExt;
+			name = Alamofire;
 			targetProxy = 46EB2E00002580 /* PBXContainerItemProxy */;
 		};
 		46EB2E000025B0 /* PBXTargetDependency */ = {
@@ -4314,7 +4314,7 @@
 		};
 		46EB2E00000E50 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46EB2E00000EE0 /* Pods-Network.release.xcconfig */;
+			baseConfigurationReference = 46EB2E00000EE0 /* Pods-ProjectBasic.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -4327,7 +4327,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Network/Pods-Network-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-ProjectBasic/Pods-ProjectBasic-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4336,7 +4336,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Network/Pods-Network.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-ProjectBasic/Pods-ProjectBasic.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -4353,45 +4353,7 @@
 		};
 		46EB2E00000E60 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46EB2E00000EF0 /* Pods-Network.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Network/Pods-Network-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Network/Pods-Network.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		46EB2E00000FA0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46EB2E00001030 /* Pods-ProjectBasic.release.xcconfig */;
+			baseConfigurationReference = 46EB2E00000EF0 /* Pods-ProjectBasic.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -4414,6 +4376,44 @@
 				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-ProjectBasic/Pods-ProjectBasic.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		46EB2E00000FA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46EB2E00001030 /* Pods-RxExtensions.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RxExtensions/Pods-RxExtensions-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RxExtensions/Pods-RxExtensions.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -4430,45 +4430,7 @@
 		};
 		46EB2E00000FB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46EB2E00001040 /* Pods-ProjectBasic.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ProjectBasic/Pods-ProjectBasic-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ProjectBasic/Pods-ProjectBasic.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		46EB2E000010F0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46EB2E00001180 /* Pods-RxExtensions.release.xcconfig */;
+			baseConfigurationReference = 46EB2E00001040 /* Pods-RxExtensions.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -4491,6 +4453,44 @@
 				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-RxExtensions/Pods-RxExtensions.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		46EB2E000010F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46EB2E00001180 /* Pods-RxNetwork.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RxNetwork/Pods-RxNetwork-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RxNetwork/Pods-RxNetwork.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -4507,7 +4507,7 @@
 		};
 		46EB2E00001100 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46EB2E00001190 /* Pods-RxExtensions.debug.xcconfig */;
+			baseConfigurationReference = 46EB2E00001190 /* Pods-RxNetwork.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -4520,7 +4520,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-RxExtensions/Pods-RxExtensions-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-RxNetwork/Pods-RxNetwork-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4529,7 +4529,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-RxExtensions/Pods-RxExtensions.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-RxNetwork/Pods-RxNetwork.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -4944,7 +4944,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		46EB2E00000E40 /* Build configuration list for PBXNativeTarget "Pods-Network" */ = {
+		46EB2E00000E40 /* Build configuration list for PBXNativeTarget "Pods-ProjectBasic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46EB2E00000E60 /* Debug */,
@@ -4953,7 +4953,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		46EB2E00000F90 /* Build configuration list for PBXNativeTarget "Pods-ProjectBasic" */ = {
+		46EB2E00000F90 /* Build configuration list for PBXNativeTarget "Pods-RxExtensions" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46EB2E00000FB0 /* Debug */,
@@ -4962,7 +4962,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		46EB2E000010E0 /* Build configuration list for PBXNativeTarget "Pods-RxExtensions" */ = {
+		46EB2E000010E0 /* Build configuration list for PBXNativeTarget "Pods-RxNetwork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46EB2E00001100 /* Debug */,

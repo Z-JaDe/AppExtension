@@ -60,7 +60,7 @@ target:'List' do
   rxPod
   pod 'DifferenceKit'
 end
-target:'Network' do
+target:'RxNetwork' do
   rxPod
   pod 'Alamofire'
 end

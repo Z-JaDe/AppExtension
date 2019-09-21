@@ -37,4 +37,3 @@ extension ListData where Item: StaticTableItemCell, Section == TableSection {
         self.map({.cell($0)}).updateInfo()
     }
 }
-

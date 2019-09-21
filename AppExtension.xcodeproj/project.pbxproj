@@ -22,8 +22,8 @@
 		18CBF3AD232889BA00E6DDE2 /* CreateCellUseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBF3AC232889BA00E6DDE2 /* CreateCellUseModel.swift */; };
 		18CBF3B12328A8C800E6DDE2 /* MaxSelectedCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBF3AF2328A85200E6DDE2 /* MaxSelectedCount.swift */; };
 		18CBF4BD2328F29E00E6DDE2 /* Network.h in Headers */ = {isa = PBXBuildFile; fileRef = 18CBF4AD2328F29E00E6DDE2 /* Network.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		18CBF4C02328F29E00E6DDE2 /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CBF4AB2328F29D00E6DDE2 /* Network.framework */; };
-		18CBF4C12328F29E00E6DDE2 /* Network.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18CBF4AB2328F29D00E6DDE2 /* Network.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		18CBF4C02328F29E00E6DDE2 /* RxNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CBF4AB2328F29D00E6DDE2 /* RxNetwork.framework */; };
+		18CBF4C12328F29E00E6DDE2 /* RxNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18CBF4AB2328F29D00E6DDE2 /* RxNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18CBF5062328F3E200E6DDE2 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AFE5421E612A4009C27F7 /* MultipartFormData.swift */; };
 		18CBF5072328F3E200E6DDE2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFC1321DE23B000DF1E54 /* Validation.swift */; };
 		18CBF5082328F3E200E6DDE2 /* RxProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFC1921DE275B00DF1E54 /* RxProgress.swift */; };
@@ -69,13 +69,13 @@
 		21FBC951A37DD62FCD3E2319 /* Pods_AppExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB786A69356822AA07D7A025 /* Pods_AppExtension.framework */; };
 		22960DB79B988D9A1057B971 /* Pods_Coordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B72F21D5CE3831F5C341674 /* Pods_Coordinator.framework */; };
 		418CC4F46E20AC65F30097E6 /* Pods_ProjectBasic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F85409F82C7CDCEC2EEF210 /* Pods_ProjectBasic.framework */; };
-		4A9E504894FDE457F022CBBE /* Pods_Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F8648110BEB1BEF58DFD54 /* Pods_Network.framework */; };
 		6635E196096786813C13D970 /* Pods_List.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2963FC89A1582F7E165C5B8C /* Pods_List.framework */; };
 		6D4D68AA379D110C1DF77DC0 /* Pods_UIComponents_CollectionKitExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4096C1194E0D29EB86C5869C /* Pods_UIComponents_CollectionKitExtensions.framework */; };
 		6F823F449210181283FF3975 /* Pods_UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E57D3300B9F747CFFC950A /* Pods_UIComponents.framework */; };
 		8C28337CCC9F8BBA0F7B5C83 /* Pods_AppExtensionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97014258276800C23FF1E924 /* Pods_AppExtensionUITests.framework */; };
 		8CB736A9B6870A49E7B959B2 /* Pods_EmptyDataSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FD775FFF39F7F6EC2C1CEF /* Pods_EmptyDataSet.framework */; };
 		A569D1AF9F4457C280797773 /* Pods_UIComponents_ScrollExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B9762CA783CA107689C52E /* Pods_UIComponents_ScrollExtensions.framework */; };
+		ACE5CAD92A213762357926B3 /* Pods_RxNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A70CEA922597F509F3B402F /* Pods_RxNetwork.framework */; };
 		AE604ABEE0B1B640EA6EC583 /* Pods_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E89B24972EB94CFB4DA561BB /* Pods_Core.framework */; };
 		C0C78ECBE763A92F2750A721 /* Pods_RxExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825944635D24DCDD853701B8 /* Pods_RxExtensions.framework */; };
 		C90A1C2121AFE7B3007D573C /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910E63921AE86420067B51B /* Updater.swift */; };
@@ -786,7 +786,7 @@
 				C91240C721C1205D00F13151 /* ScrollExtensions.framework in Embed Frameworks */,
 				C91BB58421CA1495001D7789 /* Coordinator.framework in Embed Frameworks */,
 				C910569D21A847BB00F87515 /* AnimatedTransition.framework in Embed Frameworks */,
-				18CBF4C12328F29E00E6DDE2 /* Network.framework in Embed Frameworks */,
+				18CBF4C12328F29E00E6DDE2 /* RxNetwork.framework in Embed Frameworks */,
 				C91055B521A8298200F87515 /* UserNotificationManager.framework in Embed Frameworks */,
 				C962C51E20CE19EF0061FC20 /* List.framework in Embed Frameworks */,
 				C962C8AB20CE28BC0061FC20 /* Core.framework in Embed Frameworks */,
@@ -806,7 +806,6 @@
 		020B8BD56F7C797382ED53CB /* Pods-BaseCore-UIComponents-CollectionKitExtensions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-UIComponents-CollectionKitExtensions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-UIComponents-CollectionKitExtensions/Pods-BaseCore-UIComponents-CollectionKitExtensions.debug.xcconfig"; sourceTree = "<group>"; };
 		024B32C26B50279CB9B13D3F /* Pods-Core.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core.release.xcconfig"; path = "Pods/Target Support Files/Pods-Core/Pods-Core.release.xcconfig"; sourceTree = "<group>"; };
 		032B8AAE3418B8312CE16B91 /* Pods-UserNotificationManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserNotificationManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UserNotificationManager/Pods-UserNotificationManager.debug.xcconfig"; sourceTree = "<group>"; };
-		05F8648110BEB1BEF58DFD54 /* Pods_Network.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Network.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07668877E3E61B766F2DB745 /* Pods-RxExtensions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxExtensions.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxExtensions/Pods-RxExtensions.release.xcconfig"; sourceTree = "<group>"; };
 		08B2FC60CCF5CFC1232811C3 /* Pods-BaseCore-CommonPods-ProjectBasic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-CommonPods-ProjectBasic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-CommonPods-ProjectBasic/Pods-BaseCore-CommonPods-ProjectBasic.debug.xcconfig"; sourceTree = "<group>"; };
 		0A8D0708651443C60CC1A051 /* Pods_AnimatedTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimatedTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -835,7 +834,7 @@
 		18CBF3A9232883DC00E6DDE2 /* TableItemModel+Diffable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableItemModel+Diffable.swift"; sourceTree = "<group>"; };
 		18CBF3AC232889BA00E6DDE2 /* CreateCellUseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCellUseModel.swift; sourceTree = "<group>"; };
 		18CBF3AF2328A85200E6DDE2 /* MaxSelectedCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxSelectedCount.swift; sourceTree = "<group>"; };
-		18CBF4AB2328F29D00E6DDE2 /* Network.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Network.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18CBF4AB2328F29D00E6DDE2 /* RxNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CBF4AD2328F29E00E6DDE2 /* Network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
 		18CBF4AE2328F29E00E6DDE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18CBF51A2328F62100E6DDE2 /* MultipartFormData+Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MultipartFormData+Images.swift"; sourceTree = "<group>"; };
@@ -878,6 +877,7 @@
 		47CE7D3F7AF90AF0E94A7FA0 /* Pods-BaseCore-CommonPods-RxExtensions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-CommonPods-RxExtensions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-CommonPods-RxExtensions/Pods-BaseCore-CommonPods-RxExtensions.debug.xcconfig"; sourceTree = "<group>"; };
 		49FD775FFF39F7F6EC2C1CEF /* Pods_EmptyDataSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmptyDataSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5FE18503D3ECE846DECC30 /* Pods-BaseCore-List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-List/Pods-BaseCore-List.debug.xcconfig"; sourceTree = "<group>"; };
+		4A70CEA922597F509F3B402F /* Pods_RxNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF22C8986A475CD4334CF46 /* Pods-Coordinator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coordinator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Coordinator/Pods-Coordinator.debug.xcconfig"; sourceTree = "<group>"; };
 		4F209C6A796003D5734163C3 /* Pods-UIComponents-ScrollExtensions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents-ScrollExtensions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UIComponents-ScrollExtensions/Pods-UIComponents-ScrollExtensions.debug.xcconfig"; sourceTree = "<group>"; };
 		5045266F165C938367DB33B6 /* Pods_BaseCore_CommonPods_EmptyDataSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseCore_CommonPods_EmptyDataSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -922,6 +922,7 @@
 		8AB47590B2D4BCA3FBDCDFDC /* Pods-BaseCore-CommonPods-List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-CommonPods-List.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-CommonPods-List/Pods-BaseCore-CommonPods-List.release.xcconfig"; sourceTree = "<group>"; };
 		8B43EBABD462777ACEB91E2F /* Pods_Base.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Base.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CAF8AF88F79CEC9F915ABAA /* Pods_BaseCore_UserNotificationManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseCore_UserNotificationManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0AD29F1515DF3469E701DF /* Pods-RxNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxNetwork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxNetwork/Pods-RxNetwork.debug.xcconfig"; sourceTree = "<group>"; };
 		9076359BC9E13B7E5B7A6859 /* Pods-BaseCore-UIComponents-ScrollExtensions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-UIComponents-ScrollExtensions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-UIComponents-ScrollExtensions/Pods-BaseCore-UIComponents-ScrollExtensions.debug.xcconfig"; sourceTree = "<group>"; };
 		91AD9091DB58885A30AEC00B /* Pods_BaseCore_RxAlamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseCore_RxAlamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9218FB77C9C82A9B27414AAA /* Pods_Custom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Custom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1387,6 +1388,7 @@
 		D2E8A3AF1B1C0993CE5BCFB7 /* Pods_BaseCore_CommonPods_UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseCore_CommonPods_UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D495EE34FE153AA6D31AC03C /* Pods-List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-List/Pods-List.debug.xcconfig"; sourceTree = "<group>"; };
 		D545670A091819CD23E74677 /* Pods-UIComponents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.release.xcconfig"; path = "Pods/Target Support Files/Pods-UIComponents/Pods-UIComponents.release.xcconfig"; sourceTree = "<group>"; };
+		D6449300D7EAA662BAAC2F37 /* Pods-RxNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxNetwork.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxNetwork/Pods-RxNetwork.release.xcconfig"; sourceTree = "<group>"; };
 		D7A39F47EA4516713ADF9EBD /* Pods-BaseCore-CommonPods-RxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-CommonPods-RxSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-CommonPods-RxSwift/Pods-BaseCore-CommonPods-RxSwift.release.xcconfig"; sourceTree = "<group>"; };
 		D83B93568F37DE0AA9B27F53 /* Pods_BaseCore_CommonPods_Third.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseCore_CommonPods_Third.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DABB5B419041688D65775EDC /* Pods-Network.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.release.xcconfig"; path = "Pods/Target Support Files/Pods-Network/Pods-Network.release.xcconfig"; sourceTree = "<group>"; };
@@ -1426,7 +1428,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A9E504894FDE457F022CBBE /* Pods_Network.framework in Frameworks */,
+				ACE5CAD92A213762357926B3 /* Pods_RxNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1535,7 +1537,7 @@
 				C9669D9921C766F6007B6668 /* NavigationFlow.framework in Frameworks */,
 				C962C4F920CE19C60061FC20 /* Animater.framework in Frameworks */,
 				C9283B3D21BE86BF00361B87 /* UIComponents.framework in Frameworks */,
-				18CBF4C02328F29E00E6DDE2 /* Network.framework in Frameworks */,
+				18CBF4C02328F29E00E6DDE2 /* RxNetwork.framework in Frameworks */,
 				C91BB58321CA1495001D7789 /* Coordinator.framework in Frameworks */,
 				21FBC951A37DD62FCD3E2319 /* Pods_AppExtension.framework in Frameworks */,
 			);
@@ -1599,7 +1601,7 @@
 			path = MultipleSelection;
 			sourceTree = "<group>";
 		};
-		18CBF4AC2328F29E00E6DDE2 /* Network */ = {
+		18CBF4AC2328F29E00E6DDE2 /* RxNetwork */ = {
 			isa = PBXGroup;
 			children = (
 				C90BFC0B21DE077800DF1E54 /* Core */,
@@ -1610,7 +1612,7 @@
 				18CBF5222328F6B000E6DDE2 /* Network.swift */,
 				18CBF4AE2328F29E00E6DDE2 /* Info.plist */,
 			);
-			path = Network;
+			path = RxNetwork;
 			sourceTree = "<group>";
 		};
 		18FCBE132296C6C400695868 /* Layout */ = {
@@ -1735,6 +1737,8 @@
 				758B6AD72B2D9ECDDBC8973D /* Pods-UserNotificationManager.release.xcconfig */,
 				FDA2271079A490F40867A5BD /* Pods-Network.debug.xcconfig */,
 				DABB5B419041688D65775EDC /* Pods-Network.release.xcconfig */,
+				8D0AD29F1515DF3469E701DF /* Pods-RxNetwork.debug.xcconfig */,
+				D6449300D7EAA662BAAC2F37 /* Pods-RxNetwork.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1797,7 +1801,7 @@
 				4096C1194E0D29EB86C5869C /* Pods_UIComponents_CollectionKitExtensions.framework */,
 				66B9762CA783CA107689C52E /* Pods_UIComponents_ScrollExtensions.framework */,
 				8259DE5E679FB6045C03FD7F /* Pods_UserNotificationManager.framework */,
-				05F8648110BEB1BEF58DFD54 /* Pods_Network.framework */,
+				4A70CEA922597F509F3B402F /* Pods_RxNetwork.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2961,7 +2965,7 @@
 				C91240E421C124BD00F13151 /* CollectionKitExtensions.framework */,
 				C9669D9221C766F6007B6668 /* NavigationFlow.framework */,
 				C91BB57C21CA1494001D7789 /* Coordinator.framework */,
-				18CBF4AB2328F29D00E6DDE2 /* Network.framework */,
+				18CBF4AB2328F29D00E6DDE2 /* RxNetwork.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -3065,7 +3069,7 @@
 				C9669D9321C766F6007B6668 /* NavigationFlow */,
 				C91BB57D21CA1495001D7789 /* Coordinator */,
 				C962C51720CE19EF0061FC20 /* List */,
-				18CBF4AC2328F29E00E6DDE2 /* Network */,
+				18CBF4AC2328F29E00E6DDE2 /* RxNetwork */,
 				C932F7582100593E00B8DF84 /* ProjectBasic */,
 				C962C5D720CE1A230061FC20 /* RxExtensions */,
 				C9283B3721BE86BF00361B87 /* UIComponents */,
@@ -3443,9 +3447,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		18CBF4AA2328F29D00E6DDE2 /* Network */ = {
+		18CBF4AA2328F29D00E6DDE2 /* RxNetwork */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 18CBF4C22328F29E00E6DDE2 /* Build configuration list for PBXNativeTarget "Network" */;
+			buildConfigurationList = 18CBF4C22328F29E00E6DDE2 /* Build configuration list for PBXNativeTarget "RxNetwork" */;
 			buildPhases = (
 				D9424D523FE970C46254F9A1 /* [CP] Check Pods Manifest.lock */,
 				18CBF4A62328F29D00E6DDE2 /* Headers */,
@@ -3459,9 +3463,9 @@
 				18CBF5262328F9A800E6DDE2 /* PBXTargetDependency */,
 				18CBF5192328F57600E6DDE2 /* PBXTargetDependency */,
 			);
-			name = Network;
+			name = RxNetwork;
 			productName = Network;
-			productReference = 18CBF4AB2328F29D00E6DDE2 /* Network.framework */;
+			productReference = 18CBF4AB2328F29D00E6DDE2 /* RxNetwork.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C91055AC21A8298200F87515 /* UserNotificationManager */ = {
@@ -3957,7 +3961,7 @@
 				C91240E321C124BD00F13151 /* CollectionKitExtensions */,
 				C9669D9121C766F6007B6668 /* NavigationFlow */,
 				C91BB57B21CA1494001D7789 /* Coordinator */,
-				18CBF4AA2328F29D00E6DDE2 /* Network */,
+				18CBF4AA2328F29D00E6DDE2 /* RxNetwork */,
 			);
 		};
 /* End PBXProject section */
@@ -4448,7 +4452,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Network-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RxNetwork-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -5031,7 +5035,7 @@
 		};
 		18CBF4BF2328F29E00E6DDE2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 18CBF4AA2328F29D00E6DDE2 /* Network */;
+			target = 18CBF4AA2328F29D00E6DDE2 /* RxNetwork */;
 			targetProxy = 18CBF4BE2328F29E00E6DDE2 /* PBXContainerItemProxy */;
 		};
 		18CBF5192328F57600E6DDE2 /* PBXTargetDependency */ = {
@@ -5046,7 +5050,7 @@
 		};
 		18CBF5282328FB3000E6DDE2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 18CBF4AA2328F29D00E6DDE2 /* Network */;
+			target = 18CBF4AA2328F29D00E6DDE2 /* RxNetwork */;
 			targetProxy = 18CBF5272328FB3000E6DDE2 /* PBXContainerItemProxy */;
 		};
 		C90AFE5B21E613E8009C27F7 /* PBXTargetDependency */ = {
@@ -5244,7 +5248,7 @@
 /* Begin XCBuildConfiguration section */
 		18CBF4C32328F29E00E6DDE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDA2271079A490F40867A5BD /* Pods-Network.debug.xcconfig */;
+			baseConfigurationReference = 8D0AD29F1515DF3469E701DF /* Pods-RxNetwork.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -5254,7 +5258,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Network/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/RxNetwork/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -5264,7 +5268,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zjade.Network;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zjade.RxNetwork;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_UIKITFORMAC = YES;
@@ -5277,7 +5281,7 @@
 		};
 		18CBF4C42328F29E00E6DDE2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DABB5B419041688D65775EDC /* Pods-Network.release.xcconfig */;
+			baseConfigurationReference = D6449300D7EAA662BAAC2F37 /* Pods-RxNetwork.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -5287,7 +5291,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Network/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/RxNetwork/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -5296,7 +5300,7 @@
 					"@loader_path/Frameworks",
 				);
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zjade.Network;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zjade.RxNetwork;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_UIKITFORMAC = YES;
@@ -6515,7 +6519,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		18CBF4C22328F29E00E6DDE2 /* Build configuration list for PBXNativeTarget "Network" */ = {
+		18CBF4C22328F29E00E6DDE2 /* Build configuration list for PBXNativeTarget "RxNetwork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18CBF4C32328F29E00E6DDE2 /* Debug */,

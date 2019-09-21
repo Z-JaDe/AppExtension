@@ -7,43 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F5476500000310 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5476500000300 /* Foundation.framework */; };
-		F5476500000320 /* Dictionary+RSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000000C0 /* Dictionary+RSA.swift */; };
-		F5476500000330 /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000000D0 /* Params.swift */; };
-		F5476500000340 /* String+Encrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000000E0 /* String+Encrypt.swift */; };
-		F5476500000350 /* String+RSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000000F0 /* String+RSA.swift */; };
-		F5476500000360 /* Asn1Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000110 /* Asn1Parser.swift */; };
-		F5476500000370 /* Data+SHA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000120 /* Data+SHA.swift */; };
-		F5476500000380 /* DataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000130 /* DataWrapper.swift */; };
-		F5476500000390 /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000140 /* Format.swift */; };
-		F54765000003A0 /* Key+Generate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000160 /* Key+Generate.swift */; };
-		F54765000003B0 /* Key+Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000170 /* Key+Security.swift */; };
-		F54765000003C0 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000180 /* Key.swift */; };
-		F54765000003D0 /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000190 /* PrivateKey.swift */; };
-		F54765000003E0 /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000001A0 /* PublicKey.swift */; };
-		F54765000003F0 /* ClearMessage+Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000001C0 /* ClearMessage+Sign.swift */; };
-		F5476500000400 /* ClearMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000001D0 /* ClearMessage.swift */; };
-		F5476500000410 /* EncryptedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000001E0 /* EncryptedMessage.swift */; };
-		F5476500000420 /* Signature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000001F0 /* Signature.swift */; };
-		F5476500000430 /* SwiftyRSAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000200 /* SwiftyRSAError.swift */; };
-		F5476500000440 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000210 /* URLRequest.swift */; };
-		F5476500000490 /* Encryption-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000480 /* Encryption-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F54765000004D0 /* Encryption-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F54765000004C0 /* Encryption-dummy.m */; };
-		F5476500000520 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5476500000510 /* CryptoSwift.framework */; };
-		F5476500000570 /* FunctionalSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5476500000560 /* FunctionalSwift.framework */; };
+		F5476500000360 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5476500000350 /* Foundation.framework */; };
+		F5476500000370 /* Dictionary+RSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000000C0 /* Dictionary+RSA.swift */; };
+		F5476500000380 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000000E0 /* Keychain.swift */; };
+		F5476500000390 /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000000F0 /* KeychainError.swift */; };
+		F54765000003A0 /* KeychainQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000100 /* KeychainQuery.swift */; };
+		F54765000003B0 /* KeychainQueryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000110 /* KeychainQueryInfo.swift */; };
+		F54765000003C0 /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000120 /* Params.swift */; };
+		F54765000003D0 /* String+Encrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000130 /* String+Encrypt.swift */; };
+		F54765000003E0 /* String+RSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000140 /* String+RSA.swift */; };
+		F54765000003F0 /* Asn1Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000160 /* Asn1Parser.swift */; };
+		F5476500000400 /* Data+SHA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000170 /* Data+SHA.swift */; };
+		F5476500000410 /* DataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000180 /* DataWrapper.swift */; };
+		F5476500000420 /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000190 /* Format.swift */; };
+		F5476500000430 /* Key+Generate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000001B0 /* Key+Generate.swift */; };
+		F5476500000440 /* Key+Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000001C0 /* Key+Security.swift */; };
+		F5476500000450 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000001D0 /* Key.swift */; };
+		F5476500000460 /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000001E0 /* PrivateKey.swift */; };
+		F5476500000470 /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54765000001F0 /* PublicKey.swift */; };
+		F5476500000480 /* ClearMessage+Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000210 /* ClearMessage+Sign.swift */; };
+		F5476500000490 /* ClearMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000220 /* ClearMessage.swift */; };
+		F54765000004A0 /* EncryptedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000230 /* EncryptedMessage.swift */; };
+		F54765000004B0 /* Signature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000240 /* Signature.swift */; };
+		F54765000004C0 /* SwiftyRSAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000250 /* SwiftyRSAError.swift */; };
+		F54765000004D0 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000260 /* URLRequest.swift */; };
+		F5476500000520 /* Encryption-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F5476500000510 /* Encryption-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F5476500000560 /* Encryption-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F5476500000550 /* Encryption-dummy.m */; };
+		F54765000005B0 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54765000005A0 /* CryptoSwift.framework */; };
+		F5476500000600 /* FunctionalSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54765000005F0 /* FunctionalSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F54765000004F0 /* PBXContainerItemProxy */ = {
+		F5476500000580 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F54765000004E0 /* CryptoSwift.xcodeproj */;
+			containerPortal = F5476500000570 /* CryptoSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
 			remoteInfo = CryptoSwift;
 		};
-		F5476500000540 /* PBXContainerItemProxy */ = {
+		F54765000005D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F5476500000530 /* FunctionalSwift.xcodeproj */;
+			containerPortal = F54765000005C0 /* FunctionalSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
 			remoteInfo = FunctionalSwift;
@@ -53,48 +57,52 @@
 /* Begin PBXFileReference section */
 		CD322E542F822E3F28F0F747477B1FC0 /* Encryption.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Encryption.framework; path = Encryption.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F54765000000C0 /* Dictionary+RSA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Dictionary+RSA.swift"; path = "Sources/Dictionary+RSA.swift"; sourceTree = "<group>"; };
-		F54765000000D0 /* Params.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Params.swift; path = Sources/Params.swift; sourceTree = "<group>"; };
-		F54765000000E0 /* String+Encrypt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Encrypt.swift"; path = "Sources/String+Encrypt.swift"; sourceTree = "<group>"; };
-		F54765000000F0 /* String+RSA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+RSA.swift"; path = "Sources/String+RSA.swift"; sourceTree = "<group>"; };
-		F5476500000110 /* Asn1Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Asn1Parser.swift; sourceTree = "<group>"; };
-		F5476500000120 /* Data+SHA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Data+SHA.swift"; sourceTree = "<group>"; };
-		F5476500000130 /* DataWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataWrapper.swift; sourceTree = "<group>"; };
-		F5476500000140 /* Format.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
-		F5476500000160 /* Key+Generate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Key+Generate.swift"; sourceTree = "<group>"; };
-		F5476500000170 /* Key+Security.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Key+Security.swift"; sourceTree = "<group>"; };
-		F5476500000180 /* Key.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
-		F5476500000190 /* PrivateKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PrivateKey.swift; sourceTree = "<group>"; };
-		F54765000001A0 /* PublicKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PublicKey.swift; sourceTree = "<group>"; };
-		F54765000001C0 /* ClearMessage+Sign.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ClearMessage+Sign.swift"; sourceTree = "<group>"; };
-		F54765000001D0 /* ClearMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ClearMessage.swift; sourceTree = "<group>"; };
-		F54765000001E0 /* EncryptedMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EncryptedMessage.swift; sourceTree = "<group>"; };
-		F54765000001F0 /* Signature.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Signature.swift; sourceTree = "<group>"; };
-		F5476500000200 /* SwiftyRSAError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwiftyRSAError.swift; sourceTree = "<group>"; };
-		F5476500000210 /* URLRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLRequest.swift; path = Sources/URLRequest.swift; sourceTree = "<group>"; };
-		F5476500000230 /* Encryption.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Encryption.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		F5476500000240 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		F5476500000250 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		F5476500000300 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		F5476500000460 /* Encryption.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Encryption.xcconfig; sourceTree = "<group>"; };
-		F5476500000470 /* Encryption.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Encryption.modulemap; sourceTree = "<group>"; };
-		F5476500000480 /* Encryption-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Encryption-umbrella.h"; sourceTree = "<group>"; };
-		F54765000004A0 /* Encryption-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Encryption-Info.plist"; sourceTree = "<group>"; };
-		F54765000004B0 /* Encryption-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Encryption-prefix.pch"; sourceTree = "<group>"; };
-		F54765000004C0 /* Encryption-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Encryption-dummy.m"; sourceTree = "<group>"; };
-		F54765000004E0 /* CryptoSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift; path = CryptoSwift.xcodeproj; sourceTree = "<group>"; };
-		F5476500000510 /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F5476500000530 /* FunctionalSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FunctionalSwift; path = FunctionalSwift.xcodeproj; sourceTree = "<group>"; };
-		F5476500000560 /* FunctionalSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FunctionalSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F54765000000E0 /* Keychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		F54765000000F0 /* KeychainError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
+		F5476500000100 /* KeychainQuery.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeychainQuery.swift; sourceTree = "<group>"; };
+		F5476500000110 /* KeychainQueryInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeychainQueryInfo.swift; sourceTree = "<group>"; };
+		F5476500000120 /* Params.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Params.swift; path = Sources/Params.swift; sourceTree = "<group>"; };
+		F5476500000130 /* String+Encrypt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Encrypt.swift"; path = "Sources/String+Encrypt.swift"; sourceTree = "<group>"; };
+		F5476500000140 /* String+RSA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+RSA.swift"; path = "Sources/String+RSA.swift"; sourceTree = "<group>"; };
+		F5476500000160 /* Asn1Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Asn1Parser.swift; sourceTree = "<group>"; };
+		F5476500000170 /* Data+SHA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Data+SHA.swift"; sourceTree = "<group>"; };
+		F5476500000180 /* DataWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataWrapper.swift; sourceTree = "<group>"; };
+		F5476500000190 /* Format.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
+		F54765000001B0 /* Key+Generate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Key+Generate.swift"; sourceTree = "<group>"; };
+		F54765000001C0 /* Key+Security.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Key+Security.swift"; sourceTree = "<group>"; };
+		F54765000001D0 /* Key.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		F54765000001E0 /* PrivateKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PrivateKey.swift; sourceTree = "<group>"; };
+		F54765000001F0 /* PublicKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PublicKey.swift; sourceTree = "<group>"; };
+		F5476500000210 /* ClearMessage+Sign.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ClearMessage+Sign.swift"; sourceTree = "<group>"; };
+		F5476500000220 /* ClearMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ClearMessage.swift; sourceTree = "<group>"; };
+		F5476500000230 /* EncryptedMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EncryptedMessage.swift; sourceTree = "<group>"; };
+		F5476500000240 /* Signature.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Signature.swift; sourceTree = "<group>"; };
+		F5476500000250 /* SwiftyRSAError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwiftyRSAError.swift; sourceTree = "<group>"; };
+		F5476500000260 /* URLRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLRequest.swift; path = Sources/URLRequest.swift; sourceTree = "<group>"; };
+		F5476500000280 /* Encryption.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Encryption.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F5476500000290 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		F54765000002A0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		F5476500000350 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		F54765000004F0 /* Encryption.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Encryption.xcconfig; sourceTree = "<group>"; };
+		F5476500000500 /* Encryption.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Encryption.modulemap; sourceTree = "<group>"; };
+		F5476500000510 /* Encryption-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Encryption-umbrella.h"; sourceTree = "<group>"; };
+		F5476500000530 /* Encryption-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Encryption-Info.plist"; sourceTree = "<group>"; };
+		F5476500000540 /* Encryption-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Encryption-prefix.pch"; sourceTree = "<group>"; };
+		F5476500000550 /* Encryption-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Encryption-dummy.m"; sourceTree = "<group>"; };
+		F5476500000570 /* CryptoSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift; path = CryptoSwift.xcodeproj; sourceTree = "<group>"; };
+		F54765000005A0 /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F54765000005C0 /* FunctionalSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FunctionalSwift; path = FunctionalSwift.xcodeproj; sourceTree = "<group>"; };
+		F54765000005F0 /* FunctionalSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FunctionalSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F54765000002D0 /* Frameworks */ = {
+		F5476500000320 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5476500000520 /* CryptoSwift.framework in Frameworks */,
-				F5476500000310 /* Foundation.framework in Frameworks */,
-				F5476500000570 /* FunctionalSwift.framework in Frameworks */,
+				F54765000005B0 /* CryptoSwift.framework in Frameworks */,
+				F5476500000360 /* Foundation.framework in Frameworks */,
+				F5476500000600 /* FunctionalSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,9 +130,9 @@
 		F5476500000060 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F5476500000510 /* CryptoSwift.framework */,
-				F5476500000560 /* FunctionalSwift.framework */,
-				F54765000002F0 /* iOS */,
+				F54765000005A0 /* CryptoSwift.framework */,
+				F54765000005F0 /* FunctionalSwift.framework */,
+				F5476500000340 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -132,8 +140,8 @@
 		F54765000000A0 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				F54765000004E0 /* CryptoSwift */,
-				F5476500000530 /* FunctionalSwift */,
+				F5476500000570 /* CryptoSwift */,
+				F54765000005C0 /* FunctionalSwift */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
@@ -142,85 +150,98 @@
 			isa = PBXGroup;
 			children = (
 				F54765000000C0 /* Dictionary+RSA.swift */,
-				F54765000000D0 /* Params.swift */,
-				F54765000000E0 /* String+Encrypt.swift */,
-				F54765000000F0 /* String+RSA.swift */,
-				F5476500000210 /* URLRequest.swift */,
-				F5476500000220 /* Pod */,
-				F5476500000450 /* Support Files */,
-				F5476500000100 /* SwiftyRSA */,
+				F5476500000120 /* Params.swift */,
+				F5476500000130 /* String+Encrypt.swift */,
+				F5476500000140 /* String+RSA.swift */,
+				F5476500000260 /* URLRequest.swift */,
+				F54765000000D0 /* Keychain */,
+				F5476500000270 /* Pod */,
+				F54765000004E0 /* Support Files */,
+				F5476500000150 /* SwiftyRSA */,
 			);
 			name = Encryption;
 			path = ../BaseSupport/Encryption;
 			sourceTree = "<group>";
 		};
-		F5476500000100 /* SwiftyRSA */ = {
+		F54765000000D0 /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
-				F5476500000110 /* Asn1Parser.swift */,
-				F5476500000120 /* Data+SHA.swift */,
-				F5476500000130 /* DataWrapper.swift */,
-				F5476500000140 /* Format.swift */,
-				F5476500000200 /* SwiftyRSAError.swift */,
-				F5476500000150 /* Key */,
-				F54765000001B0 /* Message */,
+				F54765000000E0 /* Keychain.swift */,
+				F54765000000F0 /* KeychainError.swift */,
+				F5476500000100 /* KeychainQuery.swift */,
+				F5476500000110 /* KeychainQueryInfo.swift */,
+			);
+			name = Keychain;
+			path = Sources/Keychain;
+			sourceTree = "<group>";
+		};
+		F5476500000150 /* SwiftyRSA */ = {
+			isa = PBXGroup;
+			children = (
+				F5476500000160 /* Asn1Parser.swift */,
+				F5476500000170 /* Data+SHA.swift */,
+				F5476500000180 /* DataWrapper.swift */,
+				F5476500000190 /* Format.swift */,
+				F5476500000250 /* SwiftyRSAError.swift */,
+				F54765000001A0 /* Key */,
+				F5476500000200 /* Message */,
 			);
 			name = SwiftyRSA;
 			path = Sources/SwiftyRSA;
 			sourceTree = "<group>";
 		};
-		F5476500000150 /* Key */ = {
+		F54765000001A0 /* Key */ = {
 			isa = PBXGroup;
 			children = (
-				F5476500000180 /* Key.swift */,
-				F5476500000160 /* Key+Generate.swift */,
-				F5476500000170 /* Key+Security.swift */,
-				F5476500000190 /* PrivateKey.swift */,
-				F54765000001A0 /* PublicKey.swift */,
+				F54765000001D0 /* Key.swift */,
+				F54765000001B0 /* Key+Generate.swift */,
+				F54765000001C0 /* Key+Security.swift */,
+				F54765000001E0 /* PrivateKey.swift */,
+				F54765000001F0 /* PublicKey.swift */,
 			);
 			name = Key;
 			path = Key;
 			sourceTree = "<group>";
 		};
-		F54765000001B0 /* Message */ = {
+		F5476500000200 /* Message */ = {
 			isa = PBXGroup;
 			children = (
-				F54765000001D0 /* ClearMessage.swift */,
-				F54765000001C0 /* ClearMessage+Sign.swift */,
-				F54765000001E0 /* EncryptedMessage.swift */,
-				F54765000001F0 /* Signature.swift */,
+				F5476500000220 /* ClearMessage.swift */,
+				F5476500000210 /* ClearMessage+Sign.swift */,
+				F5476500000230 /* EncryptedMessage.swift */,
+				F5476500000240 /* Signature.swift */,
 			);
 			name = Message;
 			path = Message;
 			sourceTree = "<group>";
 		};
-		F5476500000220 /* Pod */ = {
+		F5476500000270 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				F5476500000230 /* Encryption.podspec */,
-				F5476500000240 /* LICENSE */,
-				F5476500000250 /* README.md */,
+				F5476500000280 /* Encryption.podspec */,
+				F5476500000290 /* LICENSE */,
+				F54765000002A0 /* README.md */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		F54765000002F0 /* iOS */ = {
+		F5476500000340 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				F5476500000300 /* Foundation.framework */,
+				F5476500000350 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		F5476500000450 /* Support Files */ = {
+		F54765000004E0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F5476500000470 /* Encryption.modulemap */,
-				F5476500000460 /* Encryption.xcconfig */,
-				F54765000004C0 /* Encryption-dummy.m */,
-				F54765000004A0 /* Encryption-Info.plist */,
-				F54765000004B0 /* Encryption-prefix.pch */,
-				F5476500000480 /* Encryption-umbrella.h */,
+				F5476500000500 /* Encryption.modulemap */,
+				F54765000004F0 /* Encryption.xcconfig */,
+				F5476500000550 /* Encryption-dummy.m */,
+				F5476500000530 /* Encryption-Info.plist */,
+				F5476500000540 /* Encryption-prefix.pch */,
+				F5476500000510 /* Encryption-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../../Pods/Target Support Files/Encryption";
@@ -229,11 +250,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		F54765000002B0 /* Headers */ = {
+		F5476500000300 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5476500000490 /* Encryption-umbrella.h in Headers */,
+				F5476500000520 /* Encryption-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,18 +263,18 @@
 /* Begin PBXNativeTarget section */
 		7E033E130DE06E2CF897CDFD6FA4DC60 /* Encryption */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F5476500000270 /* Build configuration list for PBXNativeTarget "Encryption" */;
+			buildConfigurationList = F54765000002C0 /* Build configuration list for PBXNativeTarget "Encryption" */;
 			buildPhases = (
-				F54765000002B0 /* Headers */,
-				F54765000002C0 /* Sources */,
-				F54765000002D0 /* Frameworks */,
-				F54765000002E0 /* Resources */,
+				F5476500000300 /* Headers */,
+				F5476500000310 /* Sources */,
+				F5476500000320 /* Frameworks */,
+				F5476500000330 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F5476500000500 /* PBXTargetDependency */,
-				F5476500000550 /* PBXTargetDependency */,
+				F5476500000590 /* PBXTargetDependency */,
+				F54765000005E0 /* PBXTargetDependency */,
 			);
 			name = Encryption;
 			productName = Encryption;
@@ -281,10 +302,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProjectRef = F54765000004E0 /* CryptoSwift */;
+					ProjectRef = F5476500000570 /* CryptoSwift */;
 				},
 				{
-					ProjectRef = F5476500000530 /* FunctionalSwift */;
+					ProjectRef = F54765000005C0 /* FunctionalSwift */;
 				},
 			);
 			projectRoot = "";
@@ -295,7 +316,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F54765000002E0 /* Resources */ = {
+		F5476500000330 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -305,45 +326,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F54765000002C0 /* Sources */ = {
+		F5476500000310 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5476500000360 /* Asn1Parser.swift in Sources */,
-				F54765000003F0 /* ClearMessage+Sign.swift in Sources */,
-				F5476500000400 /* ClearMessage.swift in Sources */,
-				F5476500000370 /* Data+SHA.swift in Sources */,
-				F5476500000380 /* DataWrapper.swift in Sources */,
-				F5476500000320 /* Dictionary+RSA.swift in Sources */,
-				F5476500000410 /* EncryptedMessage.swift in Sources */,
-				F54765000004D0 /* Encryption-dummy.m in Sources */,
-				F5476500000390 /* Format.swift in Sources */,
-				F54765000003A0 /* Key+Generate.swift in Sources */,
-				F54765000003B0 /* Key+Security.swift in Sources */,
-				F54765000003C0 /* Key.swift in Sources */,
-				F5476500000330 /* Params.swift in Sources */,
-				F54765000003D0 /* PrivateKey.swift in Sources */,
-				F54765000003E0 /* PublicKey.swift in Sources */,
-				F5476500000420 /* Signature.swift in Sources */,
-				F5476500000340 /* String+Encrypt.swift in Sources */,
-				F5476500000350 /* String+RSA.swift in Sources */,
-				F5476500000430 /* SwiftyRSAError.swift in Sources */,
-				F5476500000440 /* URLRequest.swift in Sources */,
+				F54765000003F0 /* Asn1Parser.swift in Sources */,
+				F5476500000480 /* ClearMessage+Sign.swift in Sources */,
+				F5476500000490 /* ClearMessage.swift in Sources */,
+				F5476500000400 /* Data+SHA.swift in Sources */,
+				F5476500000410 /* DataWrapper.swift in Sources */,
+				F5476500000370 /* Dictionary+RSA.swift in Sources */,
+				F54765000004A0 /* EncryptedMessage.swift in Sources */,
+				F5476500000560 /* Encryption-dummy.m in Sources */,
+				F5476500000420 /* Format.swift in Sources */,
+				F5476500000430 /* Key+Generate.swift in Sources */,
+				F5476500000440 /* Key+Security.swift in Sources */,
+				F5476500000450 /* Key.swift in Sources */,
+				F5476500000380 /* Keychain.swift in Sources */,
+				F5476500000390 /* KeychainError.swift in Sources */,
+				F54765000003A0 /* KeychainQuery.swift in Sources */,
+				F54765000003B0 /* KeychainQueryInfo.swift in Sources */,
+				F54765000003C0 /* Params.swift in Sources */,
+				F5476500000460 /* PrivateKey.swift in Sources */,
+				F5476500000470 /* PublicKey.swift in Sources */,
+				F54765000004B0 /* Signature.swift in Sources */,
+				F54765000003D0 /* String+Encrypt.swift in Sources */,
+				F54765000003E0 /* String+RSA.swift in Sources */,
+				F54765000004C0 /* SwiftyRSAError.swift in Sources */,
+				F54765000004D0 /* URLRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F5476500000500 /* PBXTargetDependency */ = {
+		F5476500000590 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CryptoSwift;
-			targetProxy = F54765000004F0 /* PBXContainerItemProxy */;
+			targetProxy = F5476500000580 /* PBXContainerItemProxy */;
 		};
-		F5476500000550 /* PBXTargetDependency */ = {
+		F54765000005E0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FunctionalSwift;
-			targetProxy = F5476500000540 /* PBXContainerItemProxy */;
+			targetProxy = F54765000005D0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -472,9 +497,9 @@
 			};
 			name = Release;
 		};
-		F5476500000280 /* Release */ = {
+		F54765000002D0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5476500000460 /* Encryption.xcconfig */;
+			baseConfigurationReference = F54765000004F0 /* Encryption.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -509,9 +534,9 @@
 			};
 			name = Release;
 		};
-		F5476500000290 /* Debug */ = {
+		F54765000002E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5476500000460 /* Encryption.xcconfig */;
+			baseConfigurationReference = F54765000004F0 /* Encryption.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -557,11 +582,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F5476500000270 /* Build configuration list for PBXNativeTarget "Encryption" */ = {
+		F54765000002C0 /* Build configuration list for PBXNativeTarget "Encryption" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F5476500000290 /* Debug */,
-				F5476500000280 /* Release */,
+				F54765000002E0 /* Debug */,
+				F54765000002D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

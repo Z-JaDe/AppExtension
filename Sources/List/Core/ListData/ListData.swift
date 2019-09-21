@@ -49,10 +49,10 @@ extension ListData: ExpressibleByArrayLiteral {
     public init(arrayLiteral elements: (Section, [Item])...) {
         self.init(elements.map(Element.init))
     }
-    public static func +=(lhs: inout ListData, rhs: (Section, [Item])) {
+    public static func += (lhs: inout ListData, rhs: (Section, [Item])) {
         lhs.append(Element(rhs.0, rhs.1))
     }
-    public static func +=(lhs: inout ListData, rhs: Element) {
+    public static func += (lhs: inout ListData, rhs: Element) {
         lhs.append(rhs)
     }
 }
