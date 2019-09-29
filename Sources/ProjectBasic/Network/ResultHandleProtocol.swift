@@ -14,7 +14,7 @@ public protocol ResultHandleProtocol {
     func handleResult(_ showHUD: ShowNetworkHUD<ResultCodeType>)
 }
 extension Observable where Element: ResponseContextCompatible & ResultHandleProtocol {
-    func showHUDWhenComplete(_ showHUD: ShowNetworkHUD<Element.ResultCodeType>) -> Observable<Element> {
+    public func showHUDWhenComplete(_ showHUD: ShowNetworkHUD<Element.ResultCodeType>) -> Observable<Element> {
         `do`(afterNext: { (element) in
             element.handleResult(showHUD)
         }, afterError: { (error) in
@@ -23,13 +23,13 @@ extension Observable where Element: ResponseContextCompatible & ResultHandleProt
     }
 }
 extension Observable where Element: ResponseContextCompatible & ResultHandleProtocol {
-    public func hudCallback(_ closure: @escaping (Element.ResultValue?) -> Void) -> Disposable {
-        self.showHUDWhenComplete(.default).callback(closure)
+    public func callback(_ closure: @escaping (Element.ResultValue?) -> Void) -> Disposable {
+        self.showHUDWhenComplete(.default).valueCallback(closure)
     }
 }
 
 extension Observable where Element: RequestContextCompatible {
-    func showProgressHUD(_ text: String, in view: UIView? = nil) -> Observable<Element> {
+    public func showProgressHUD(_ text: String, in view: UIView? = nil) -> Observable<Element> {
         var hud: HUD?
         return `do`(afterCompleted: {
             hud?.hide()
@@ -37,7 +37,7 @@ extension Observable where Element: RequestContextCompatible {
             hud = HUD.showMessage(text, to: view)
         })
     }
-    func showProgressHUD(_ text: String, in hudManager: MessageHUDProtocol) -> Observable<Element> {
+    public func showProgressHUD(_ text: String, in hudManager: MessageHUDProtocol) -> Observable<Element> {
         return `do`(afterCompleted: {
             hudManager.hideMessage(text)
         }, onSubscribed: {

@@ -20,7 +20,7 @@ extension Observable where Element: ResponseContextCompatible {
 }
 // MARK: -
 extension Observable where Element: ResponseContextCompatible {
-    public func callback(_ closure: @escaping (Element.ResultValue?) -> Void) -> Disposable {
+    public func valueCallback(_ closure: @escaping (Element.ResultValue?) -> Void) -> Disposable {
         self.resultCallback { (result) in
             closure(result.value.value)
         }
