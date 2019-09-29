@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 import Alamofire
-extension ObservableType where Element == DataResponseContext {
+extension ObservableType where Element == DataResultContext {
     public func mapDictResult() -> Observable<DictResult> {
         mapResult(type: [String: String].self)
     }

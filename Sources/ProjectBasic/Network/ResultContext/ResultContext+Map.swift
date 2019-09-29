@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-extension DataResponseContext {
+extension DataResultContext {
     public func mapResult<DataType: Decodable>() throws -> ResultModel<DataType> {
         try _mapResult()
     }

@@ -40,7 +40,7 @@ extension MessageHUDProtocol where Self: UIViewController {
     }
     fileprivate func hide() {
         DispatchQueue.main.async {
-            self.hud.hide(hideType: .fade)
+            self.hud.hide()
         }
     }
     fileprivate func update() {

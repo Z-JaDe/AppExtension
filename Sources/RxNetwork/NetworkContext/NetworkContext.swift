@@ -1,5 +1,5 @@
 //
-//  RequestContext.swift
+//  NetworkContext.swift
 //  AppExtension
 //
 //  Created by 郑军铎 on 2019/1/3.
@@ -10,41 +10,54 @@ import Foundation
 import Alamofire
 
 public protocol NetworkContextCompatible {
-    associatedtype ValueType
-    var value: ValueType { get }
-    func map<T>(_ transform: (ValueType) throws -> T) rethrows -> NetworkContext<T>
+    associatedtype Value
+    var value: Value { get }
 }
 
-public typealias RequestContext<V> = NetworkContext<V> where V: RxAlamofireRequest
-public typealias ResponseContext<V> = NetworkContext<Result<V>>
-public typealias DataResponseContext = ResponseContext<Data>
-public typealias ResultContext<M> = NetworkContext<M>
+public typealias DataResultContext = ResponseContext<Data>
+// MARK: - 协议
+public protocol RequestContextCompatible: NetworkContextCompatible where Value: RxAlamofireRequest {
+    func map<T>(_ transform: (Value) throws -> Result<T>) rethrows -> ResponseContext<T>
+}
+extension RequestContext: RequestContextCompatible {
+    public func map<T>(_ transform: (Value) throws -> Result<T>) rethrows -> ResponseContext<T> {
+        ResponseContext<T>(try transform(value), self.target)
+    }
+}
 
-public protocol RequestContextCompatible: NetworkContextCompatible {}
-extension RequestContext: RequestContextCompatible {}
-
-public protocol ResponseContextCompatible: NetworkContextCompatible {}
+public protocol ResponseContextCompatible: NetworkContextCompatible where Value == Result<ResultValue> {
+    associatedtype ResultValue
+    func map<T>(_ transform: (ResultValue) throws -> T) rethrows -> ResponseContext<T>
+}
 extension ResponseContext: ResponseContextCompatible {}
 
-public protocol ResultContextCompatible: NetworkContextCompatible {}
-extension ResultContext: ResultContextCompatible {}
-// MARK: -
+// MARK: - 具体实现
 /// 第一步是request、upload、download方法。返回RequestContext，Value是一个请求管理器
 /// 第二步是response方法。返回ResponseContext，Value目前都是Result<Data>。可以省略
-/// 第三部是各种map方法。返回ResultContext，Value是格式化好的Model
-public struct NetworkContext<Value>: NetworkContextCompatible {
-    public typealias ValueType = Value
+/// 第三部是各种map方法。返回ResponseContext，Value是格式化好的Model
+public struct ResponseContext<ResultValue> {
+    public let target: URLRequestConvertible?
+    public let value: Result<ResultValue>
+    public init(_ value: Result<ResultValue>, _ target: URLRequestConvertible?) {
+        self.value = value
+        self.target = target
+    }
+    public func map<T>(_ transform: (ResultValue) throws -> T) -> ResponseContext<T> {
+        ResponseContext<T>(value.flatMap({try transform($0)}), self.target)
+    }
+}
+public struct RequestContext<Value: RxAlamofireRequest> {
     public let target: URLRequestConvertible?
     public let value: Value
     public init(_ value: Value, _ target: URLRequestConvertible?) {
         self.value = value
         self.target = target
     }
-    public func map<T>(_ transform: (Value) throws -> T) rethrows -> NetworkContext<T> {
-        NetworkContext<T>(try transform(value), self.target)
+    func map(_ transform: (Value) throws -> Value) rethrows -> Self {
+        return .init(try transform(value), target)
     }
 }
-
+// MARK: - 扩展
 extension ResponseContext {
     /// ZJaDe: 接口path
     public var urlPath: String {

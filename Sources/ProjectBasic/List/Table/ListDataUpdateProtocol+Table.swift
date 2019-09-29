@@ -41,10 +41,10 @@ extension ListDataUpdateProtocol where Item == AnyTableAdapterItem {
 }
 public extension ListBuilder where T == (TableSection, [AnyTableAdapterItem]) {
     static func buildBlock(_ content: (TableSection, [StaticTableItemCell])...) -> [T] {
-        return content.map {($0.0,$0.1.map({.cell($0)}))}
+        return content.map {($0.0, $0.1.map({.cell($0)}))}
     }
     static func buildBlock(_ content: (TableSection, [TableItemModel])...) -> [T] {
-        return content.map {($0.0,$0.1.map({.model($0)}))}
+        return content.map {($0.0, $0.1.map({.model($0)}))}
     }
 }
 

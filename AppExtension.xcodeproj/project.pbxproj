@@ -466,6 +466,7 @@
 		F90ADF7A232805C8008A8593 /* UITableAdapter+Enabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90ADF78232805C0008A8593 /* UITableAdapter+Enabled.swift */; };
 		F90ADF7C232806D2008A8593 /* UICollectionAdapter+Enabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90ADF7B232806D2008A8593 /* UICollectionAdapter+Enabled.swift */; };
 		F99B24A522B61F600059B440 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F99B24A422B61F600059B440 /* LaunchScreen.storyboard */; };
+		F9A88591234101AB00AE6F3F /* ResultHandleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8858F234101A400AE6F3F /* ResultHandleProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1415,6 +1416,7 @@
 		F90ADF78232805C0008A8593 /* UITableAdapter+Enabled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableAdapter+Enabled.swift"; sourceTree = "<group>"; };
 		F90ADF7B232806D2008A8593 /* UICollectionAdapter+Enabled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionAdapter+Enabled.swift"; sourceTree = "<group>"; };
 		F99B24A422B61F600059B440 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F9A8858F234101A400AE6F3F /* ResultHandleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultHandleProtocol.swift; sourceTree = "<group>"; };
 		FBB540AD4ED8A9E82B48CF5B /* Pods-CommonPods-AppExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommonPods-AppExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommonPods-AppExtension/Pods-CommonPods-AppExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		FBCBCB1712395EBA19B5669C /* Pods-BaseCore-CommonPods-AppExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-CommonPods-AppExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-CommonPods-AppExtension/Pods-BaseCore-CommonPods-AppExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		FDA2271079A490F40867A5BD /* Pods-Network.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Network/Pods-Network.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1841,6 +1843,7 @@
 				18CBF51A2328F62100E6DDE2 /* MultipartFormData+Images.swift */,
 				C90BFBF121DE001700DF1E54 /* ShowNetworkHUD.swift */,
 				C90BFC2421DE4DC200DF1E54 /* ResultContext+CallBack.swift */,
+				F9A8858F234101A400AE6F3F /* ResultHandleProtocol.swift */,
 				C90CC67321E710C300BEF2DA /* ResultModel */,
 				C90CC67721E710C300BEF2DA /* ResultContext */,
 			);
@@ -4797,6 +4800,7 @@
 				C90E74DD220025FB006CE73C /* OpenPhotoConfiger.swift in Sources */,
 				C9D412B021DF45FA004368D4 /* TableModelCell.swift in Sources */,
 				C9D412A521DF4326004368D4 /* ScrollViewController.swift in Sources */,
+				F9A88591234101AB00AE6F3F /* ResultHandleProtocol.swift in Sources */,
 				C9D4132F21DF8DB6004368D4 /* BlurModalViewController.swift in Sources */,
 				C90CC67C21E710C400BEF2DA /* ResultModel.swift in Sources */,
 				C932F83D210069AD00B8DF84 /* PermissionScope+Photos.swift in Sources */,

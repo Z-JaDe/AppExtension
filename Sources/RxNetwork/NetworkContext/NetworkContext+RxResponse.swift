@@ -10,9 +10,9 @@ import Foundation
 import Alamofire
 import RxSwift
 
-extension NetworkContext: ReactiveCompatible {}
+extension RequestContext: ReactiveCompatible {}
 // MARK: -
-extension Reactive where Base: NetworkContextCompatible, Base.ValueType: DataRequest {
+extension Reactive where Base: RequestContextCompatible, Base.Value: DataRequest {
     public func response<T: DataResponseSerializerProtocol>(
         queue: DispatchQueue? = nil,
         responseSerializer: T
@@ -20,7 +20,7 @@ extension Reactive where Base: NetworkContextCompatible, Base.ValueType: DataReq
         Observable.create { observer in
             let context = self.base
             let dataRequest = context.value.response(queue: queue, responseSerializer: responseSerializer) { (packedResponse) -> Void in
-                    observer.onNext(context.map({_ in packedResponse.result}))
+                observer.onNext(context.map({_ in packedResponse.result}))
                     observer.onCompleted()
             }
             return Disposables.create {
@@ -29,7 +29,7 @@ extension Reactive where Base: NetworkContextCompatible, Base.ValueType: DataReq
         }
     }
 }
-extension Reactive where Base: NetworkContextCompatible, Base.ValueType: DownloadRequest {
+extension Reactive where Base: RequestContextCompatible, Base.Value: DownloadRequest {
     public func response<T: DownloadResponseSerializerProtocol>(
         queue: DispatchQueue? = nil,
         responseSerializer: T
@@ -48,8 +48,8 @@ extension Reactive where Base: NetworkContextCompatible, Base.ValueType: Downloa
 }
 extension ObservableType where Element: RequestContextCompatible {
     /// ZJaDe: 请求返回Result<Data>结果。冷信号，该方法被订阅时，才会真正添加请求任务
-    public func response() -> Observable<DataResponseContext> {
-        flatMapLatest { (context) -> Observable<DataResponseContext> in
+    public func response() -> Observable<DataResultContext> {
+        flatMapLatest { (context) -> Observable<DataResultContext> in
             switch context {
             case let context as RequestContext<DataRequest>:
                 return context.rx.response(responseSerializer: DataRequest.dataResponseSerializer())

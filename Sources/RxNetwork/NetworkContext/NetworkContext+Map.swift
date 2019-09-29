@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-extension DataResponseContext {
+extension DataResultContext {
     func getData() throws -> Data {
         switch self.value {
         case .success(let value):
@@ -43,7 +43,7 @@ extension DataResponseContext {
     }
 }
 
-extension DataResponseContext {
+extension DataResultContext {
     public func map<T: Decodable>(type: T.Type, atKeyPath keyPath: String? = nil) throws -> T {
         do {
             if let keyPath = keyPath, keyPath.isEmpty == false {
@@ -84,7 +84,7 @@ extension DataResponseContext {
 public protocol MapResultProtocol {
     func mapResult<T: AbstractResultModelType & Decodable>() throws -> T
 }
-extension DataResponseContext {
+extension DataResultContext {
     public func _mapResult<T: AbstractResultModelType & Decodable>() throws -> T {
         if let context = self as? MapResultProtocol {
             return try context.mapResult()

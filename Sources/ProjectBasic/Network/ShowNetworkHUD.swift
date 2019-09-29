@@ -35,6 +35,24 @@ public extension ShowNetworkHUD {
             })
         }
     }
+    func showResultError(_ error: Error) {
+        #if DEBUG
+        let text: String
+        if let error = error as? NetworkError {
+            text = error.localizedDescription
+        } else {
+            assertionFailure("这里不应该走到，因为前面已经处理过")
+            text = "请求错误: \(error)\n\(error.localizedDescription)"
+            logError(text)
+        }
+        showResultError(text)
+        #else
+        /// ZJaDe: 如果返回的error字符串为空则不处理
+        let errorStr = error.localizedDescription
+        showResultError(errorStr)
+        #endif
+
+    }
     func showResultError(_ text: String, resultCode: ResultCodeType? = nil) {
         guard text.isNotEmpty else {
             return

@@ -20,7 +20,7 @@ public protocol TargetType: URLRequestConvertible {
     var adapter: RequestAdapter? { get }
 }
 extension TargetType {
-    func asURL() -> URL {
+    func _asURL() -> URL {
         let url: URL
         if let target = self as? URLConvertible, let _url = try? target.asURL() {
             url = _url
@@ -31,7 +31,7 @@ extension TargetType {
         return url
     }
     public func asURLRequest() throws -> URLRequest {
-        let url = self.asURL()
+        let url = self._asURL()
         var urlRequest: URLRequest
         urlRequest = try URLRequest(url: url, method: self.method, headers: self.headers)
         urlRequest = try self.encoding.encode(urlRequest, with: self.parameters)
