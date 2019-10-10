@@ -1,5 +1,5 @@
 //
-//  SessionManager.swift
+//  Session.swift
 //  AppExtension
 //
 //  Created by 郑军铎 on 2019/1/9.
@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 import RxSwift
-extension SessionManager {
+extension Session {
     public func checkNetwork<T>(_ value: T) -> Observable<T> {
         self.monitorNetwork().map({ (hasNetwork) -> T in
             if hasNetwork {

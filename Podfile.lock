@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.9.0)
+  - Alamofire (5.0.0-rc.2)
   - CocoaExtension (1.0.0)
   - CollectionKit (2.4.0):
     - CollectionKit/Core (= 2.4.0)
@@ -51,7 +51,7 @@ PODS:
   - Validation (1.0.0)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (from `https://github.com/Alamofire/Alamofire`)
   - CocoaExtension (from `BaseSupport/CocoaExtension`)
   - CollectionKit (from `BaseSupport/CollectionKit`)
   - DifferenceKit
@@ -75,7 +75,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Alamofire
     - CryptoSwift
     - DifferenceKit
     - Kingfisher
@@ -86,6 +85,8 @@ SPEC REPOS:
     - SwiftLint
 
 EXTERNAL SOURCES:
+  Alamofire:
+    :git: https://github.com/Alamofire/Alamofire
   CocoaExtension:
     :path: BaseSupport/CocoaExtension
   CollectionKit:
@@ -116,6 +117,9 @@ EXTERNAL SOURCES:
     :path: BaseSupport/Validation
 
 CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: 6afd00ef8bf800edd14cc141e0677045b5d02a67
+    :git: https://github.com/Alamofire/Alamofire
   ReSwift:
     :commit: 5b9ebd49b166205a89d17a466f03897559379665
     :git: https://github.com/ReSwift/ReSwift.git
@@ -130,7 +134,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/SnapKit/SnapKit
 
 SPEC CHECKSUMS:
-  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  Alamofire: 616173279c55fca0c71278ec5f42fa61ee7fa806
   CocoaExtension: d5b997c4ac17c378ae2d9415bcdeeecf9e05842f
   CollectionKit: 8f01e7629185bb81072c4aa734d105df5c2d1c8b
   CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
@@ -154,6 +158,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 3663be32eefd9163545211d08f4ca9eae1f94d3a
   Validation: 707530eb0fb44304faab08447d2d647c6c4ab0f7
 
-PODFILE CHECKSUM: fd5658a59fec7c4e4bfb3547056d0c0ddbd62888
+PODFILE CHECKSUM: 0251339fac9b7ac0f49159fd0eb1945181d1f066
 
 COCOAPODS: 1.7.5

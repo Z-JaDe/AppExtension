@@ -11,17 +11,14 @@ import Alamofire
 import RxSwift
 
 extension RequestContext: ReactiveCompatible {}
-// MARK: -
-extension Reactive where Base: RequestContextCompatible, Base.Value: DataRequest {
-    public func response<T: DataResponseSerializerProtocol>(
-        queue: DispatchQueue? = nil,
-        responseSerializer: T
-        ) -> Observable<ResponseContext<T.SerializedObject>> {
+extension Reactive where Base: RequestContextCompatible, Base.Value: Request {
+    typealias ResponseFunc<Response> = (Base, @escaping (Response) -> Void) -> Base.Value
+    func _response<V, Response: AbstractRxAlamofireResponse>(_ responseFunc: ResponseFunc<Response>) -> Observable<ResponseContext<V>> where Response.Success == V {
         Observable.create { observer in
             let context = self.base
-            let dataRequest = context.value.response(queue: queue, responseSerializer: responseSerializer) { (packedResponse) -> Void in
-                observer.onNext(context.map({_ in packedResponse.result}))
-                    observer.onCompleted()
+            let dataRequest = responseFunc(context) { (response) -> Void in
+                observer.onNext(context.mapResponse({_ in response}))
+                observer.onCompleted()
             }
             return Disposables.create {
                 dataRequest.cancel()
@@ -29,21 +26,18 @@ extension Reactive where Base: RequestContextCompatible, Base.Value: DataRequest
         }
     }
 }
+extension Reactive where Base: RequestContextCompatible, Base.Value: DataRequest {
+    public func response<T: DataResponseSerializerProtocol>(queue: DispatchQueue = .main, responseSerializer: T) -> Observable<ResponseContext<T.SerializedObject>> {
+        _response({ (context, completionHandler) -> Base.Value in
+            context.value.response(queue: queue, responseSerializer: responseSerializer, completionHandler: completionHandler)
+        })
+    }
+}
 extension Reactive where Base: RequestContextCompatible, Base.Value: DownloadRequest {
-    public func response<T: DownloadResponseSerializerProtocol>(
-        queue: DispatchQueue? = nil,
-        responseSerializer: T
-        ) -> Observable<ResponseContext<T.SerializedObject>> {
-        Observable.create { observer in
-            let context = self.base
-            let dataRequest = context.value.response(queue: queue, responseSerializer: responseSerializer) { (packedResponse) -> Void in
-                    observer.onNext(context.map({_ in packedResponse.result}))
-                    observer.onCompleted()
-            }
-            return Disposables.create {
-                dataRequest.cancel()
-            }
-        }
+    public func response<T: DownloadResponseSerializerProtocol>(queue: DispatchQueue = .main, responseSerializer: T) -> Observable<ResponseContext<T.SerializedObject>> {
+        _response({ (context, completionHandler) -> Base.Value in
+            context.value.response(queue: queue, responseSerializer: responseSerializer, completionHandler: completionHandler)
+        })
     }
 }
 extension ObservableType where Element: RequestContextCompatible {

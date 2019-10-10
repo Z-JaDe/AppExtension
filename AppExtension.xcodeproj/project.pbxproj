@@ -24,12 +24,11 @@
 		18CBF4BD2328F29E00E6DDE2 /* Network.h in Headers */ = {isa = PBXBuildFile; fileRef = 18CBF4AD2328F29E00E6DDE2 /* Network.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		18CBF4C02328F29E00E6DDE2 /* RxNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CBF4AB2328F29D00E6DDE2 /* RxNetwork.framework */; };
 		18CBF4C12328F29E00E6DDE2 /* RxNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18CBF4AB2328F29D00E6DDE2 /* RxNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		18CBF5062328F3E200E6DDE2 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AFE5421E612A4009C27F7 /* MultipartFormData.swift */; };
 		18CBF5072328F3E200E6DDE2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFC1321DE23B000DF1E54 /* Validation.swift */; };
 		18CBF5082328F3E200E6DDE2 /* RxProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFC1921DE275B00DF1E54 /* RxProgress.swift */; };
 		18CBF5092328F3E200E6DDE2 /* RxAlamofireRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFC0D21DE07AF00DF1E54 /* RxAlamofireRequest.swift */; };
-		18CBF50A2328F3E200E6DDE2 /* SessionManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFC1021DE082200DF1E54 /* SessionManager+Rx.swift */; };
-		18CBF50B2328F3E200E6DDE2 /* SessionManager+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AFE5C21E62C56009C27F7 /* SessionManager+Network.swift */; };
+		18CBF50A2328F3E200E6DDE2 /* Session+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFC1021DE082200DF1E54 /* Session+Rx.swift */; };
+		18CBF50B2328F3E200E6DDE2 /* Session+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AFE5C21E62C56009C27F7 /* Session+Network.swift */; };
 		18CBF50C2328F3E800E6DDE2 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFBE021DDEBDC00DF1E54 /* TargetType.swift */; };
 		18CBF50D2328F3E800E6DDE2 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFC2221DE448D00DF1E54 /* NetworkError.swift */; };
 		18CBF50F2328F3E800E6DDE2 /* ErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFBF321DE001700DF1E54 /* ErrorProtocol.swift */; };
@@ -964,8 +963,7 @@
 		C90A1C1B21AFDAC7007D573C /* ListAdapterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAdapterType.swift; sourceTree = "<group>"; };
 		C90A1C2321AFF01C007D573C /* CollectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionProtocol.swift; sourceTree = "<group>"; };
 		C90A1C2A21B01EB6007D573C /* DataController+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController+Update.swift"; sourceTree = "<group>"; };
-		C90AFE5421E612A4009C27F7 /* MultipartFormData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
-		C90AFE5C21E62C56009C27F7 /* SessionManager+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionManager+Network.swift"; sourceTree = "<group>"; };
+		C90AFE5C21E62C56009C27F7 /* Session+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+Network.swift"; sourceTree = "<group>"; };
 		C90BCB3121D33F55006FC76D /* BoderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoderView.swift; sourceTree = "<group>"; };
 		C90BCB3321D3412B006FC76D /* BoderContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoderContext.swift; sourceTree = "<group>"; };
 		C90BCB3521D34D18006FC76D /* BoderView+Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BoderView+Context.swift"; sourceTree = "<group>"; };
@@ -975,7 +973,7 @@
 		C90BFBF321DE001700DF1E54 /* ErrorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorProtocol.swift; sourceTree = "<group>"; };
 		C90BFBF521DE001800DF1E54 /* MonitorNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitorNetwork.swift; sourceTree = "<group>"; };
 		C90BFC0D21DE07AF00DF1E54 /* RxAlamofireRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAlamofireRequest.swift; sourceTree = "<group>"; };
-		C90BFC1021DE082200DF1E54 /* SessionManager+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionManager+Rx.swift"; sourceTree = "<group>"; };
+		C90BFC1021DE082200DF1E54 /* Session+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+Rx.swift"; sourceTree = "<group>"; };
 		C90BFC1321DE23B000DF1E54 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		C90BFC1621DE242000DF1E54 /* NetworkContext+RxResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkContext+RxResponse.swift"; sourceTree = "<group>"; };
 		C90BFC1921DE275B00DF1E54 /* RxProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxProgress.swift; sourceTree = "<group>"; };
@@ -1601,7 +1599,7 @@
 			isa = PBXGroup;
 			children = (
 				C90BFC0B21DE077800DF1E54 /* Core */,
-				C90CC65521E6F74800BEF2DA /* SessionManager */,
+				C90CC65521E6F74800BEF2DA /* Session */,
 				C90BFC1F21DE42F100DF1E54 /* NetworkContext */,
 				C90BFBF421DE001800DF1E54 /* MonitorNetwork */,
 				18CBF4AD2328F29E00E6DDE2 /* Network.h */,
@@ -1874,17 +1872,16 @@
 			path = NetworkContext;
 			sourceTree = "<group>";
 		};
-		C90CC65521E6F74800BEF2DA /* SessionManager */ = {
+		C90CC65521E6F74800BEF2DA /* Session */ = {
 			isa = PBXGroup;
 			children = (
-				C90AFE5421E612A4009C27F7 /* MultipartFormData.swift */,
 				C90BFC1321DE23B000DF1E54 /* Validation.swift */,
 				C90BFC1921DE275B00DF1E54 /* RxProgress.swift */,
 				C90BFC0D21DE07AF00DF1E54 /* RxAlamofireRequest.swift */,
-				C90BFC1021DE082200DF1E54 /* SessionManager+Rx.swift */,
-				C90AFE5C21E62C56009C27F7 /* SessionManager+Network.swift */,
+				C90BFC1021DE082200DF1E54 /* Session+Rx.swift */,
+				C90AFE5C21E62C56009C27F7 /* Session+Network.swift */,
 			);
-			path = SessionManager;
+			path = Session;
 			sourceTree = "<group>";
 		};
 		C90CC67321E710C300BEF2DA /* ResultModel */ = {
@@ -4502,12 +4499,11 @@
 				18CBF5112328F44500E6DDE2 /* NetworkContext.swift in Sources */,
 				18CBF5072328F3E200E6DDE2 /* Validation.swift in Sources */,
 				18CBF50D2328F3E800E6DDE2 /* NetworkError.swift in Sources */,
-				18CBF50B2328F3E200E6DDE2 /* SessionManager+Network.swift in Sources */,
+				18CBF50B2328F3E200E6DDE2 /* Session+Network.swift in Sources */,
 				18CBF5142328F44500E6DDE2 /* NetworkContext+RxMap.swift in Sources */,
 				18CBF50F2328F3E800E6DDE2 /* ErrorProtocol.swift in Sources */,
-				18CBF5062328F3E200E6DDE2 /* MultipartFormData.swift in Sources */,
 				18CBF5092328F3E200E6DDE2 /* RxAlamofireRequest.swift in Sources */,
-				18CBF50A2328F3E200E6DDE2 /* SessionManager+Rx.swift in Sources */,
+				18CBF50A2328F3E200E6DDE2 /* Session+Rx.swift in Sources */,
 				18CBF5082328F3E200E6DDE2 /* RxProgress.swift in Sources */,
 				18CBF50C2328F3E800E6DDE2 /* TargetType.swift in Sources */,
 				18CBF5132328F44500E6DDE2 /* NetworkContext+Map.swift in Sources */,

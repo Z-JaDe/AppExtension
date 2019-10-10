@@ -1,5 +1,5 @@
 //
-//  SessionManager.swift
+//  Session.swift
 //  AppExtension
 //
 //  Created by 郑军铎 on 2019/1/3.
@@ -18,52 +18,48 @@ import Alamofire
  */
 // MARK: -
 
-extension SessionManager: ReactiveCompatible {}
-extension Reactive where Base: SessionManager {
+extension Session: ReactiveCompatible {}
+extension Reactive where Base: Session {
     // MARK: Request
     public func request(_ method: HTTPMethod,
                         _ url: URLConvertible,
                         parameters: Parameters? = nil,
                         encoding: ParameterEncoding = URLEncoding.default,
-                        headers: HTTPHeaders? = nil) -> Observable<RequestContext<DataRequest>> {
-        getRequest { $0.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers) }
+                        headers: HTTPHeaders? = nil,
+                        interceptor: RequestInterceptor? = nil) -> Observable<RequestContext<DataRequest>> {
+        getRequest { $0.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers, interceptor: interceptor) }
             .map { RequestContext($0, $0.request) }
     }
-    public func request(_ urlRequest: URLRequestConvertible) -> Observable<RequestContext<DataRequest>> {
-        getRequest { $0.request(urlRequest) }
+    public func request(_ urlRequest: URLRequestConvertible, interceptor: RequestInterceptor? = nil) -> Observable<RequestContext<DataRequest>> {
+        getRequest { $0.request(urlRequest, interceptor: interceptor) }
             .map { RequestContext($0, urlRequest) }
     }
     // MARK: Upload
-    public func upload(_ formData: [MultipartFormData], usingThreshold encodingMemoryThreshold: UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold, _ urlRequest: URLRequestConvertible) -> Observable<RequestContext<UploadRequest>> {
-        getRequest({ (manager, observer) -> Disposable in
-            var dispose: Disposable?
-            let (formData, urlRequest) = manager.uploadParamsUpdate(formData, urlRequest)
-            manager.upload(multipartFormData: {$0.applyMultipartFormData(formData)}, usingThreshold: encodingMemoryThreshold, with: urlRequest, encodingCompletion: { (result) in
-                switch result {
-                case .failure(let error):
-                    observer.onError(error)
-                case .success(request: let request, streamingFromDisk: _, streamFileURL: _):
-                    dispose = request.onNext(observer, manager)
-                }
-            })
-            return Disposables.create {
-                dispose?.dispose()
-            }
-        }).map { RequestContext($0, urlRequest) }
+    public func upload(
+        multipartFormData: @escaping (MultipartFormData) -> Void,
+        with request: URLRequestConvertible,
+        usingThreshold encodingMemoryThreshold: UInt64 = MultipartFormData.encodingMemoryThreshold,
+        interceptor: RequestInterceptor? = nil,
+        fileManager: FileManager = .default
+    ) -> Observable<RequestContext<UploadRequest>> {
+        getRequest { $0.upload(multipartFormData: multipartFormData, with: request, usingThreshold: encodingMemoryThreshold, interceptor: interceptor, fileManager: fileManager) }
+        .map { RequestContext($0, $0.request) }
     }
     // MARK: Download
     public func download(_ urlRequest: URLRequestConvertible,
-                         to destination: @escaping DownloadRequest.DownloadFileDestination) -> Observable<RequestContext<DownloadRequest>> {
-        getRequest { $0.download(urlRequest, to: destination) }
+                         interceptor: RequestInterceptor? = nil,
+                         to destination: DownloadRequest.Destination? = nil) -> Observable<RequestContext<DownloadRequest>> {
+        getRequest { $0.download(urlRequest, interceptor: interceptor, to: destination) }
             .map { RequestContext($0, urlRequest) }
     }
     public func download(resumeData: Data,
-                         to destination: @escaping DownloadRequest.DownloadFileDestination) -> Observable<RequestContext<DownloadRequest>> {
-        getRequest { $0.download(resumingWith: resumeData, to: destination) }
+                         interceptor: RequestInterceptor? = nil,
+                         to destination: DownloadRequest.Destination? = nil) -> Observable<RequestContext<DownloadRequest>> {
+        getRequest { $0.download(resumingWith: resumeData, interceptor: interceptor, to: destination) }
             .map { RequestContext($0, $0.request) }
     }
 }
-extension SessionManager {
+extension Session {
     func uploadParamsUpdate(_ formData: [MultipartFormData], _ urlRequest: URLRequestConvertible) -> ([MultipartFormData], URLRequestConvertible) {
         var formData = formData
         var urlRequest = urlRequest
@@ -81,14 +77,14 @@ extension SessionManager {
         return (formData, urlRequest)
     }
 }
-extension Reactive where Base: SessionManager {
-    private func getRequest<R: RxAlamofireRequest>(_ createRequest: @escaping (SessionManager) throws -> R) -> Observable<R> {
+extension Reactive where Base: Session {
+    private func getRequest<R: RxAlamofireRequest>(_ createRequest: @escaping (Session) throws -> R) -> Observable<R> {
         getRequest { (manager, observer) in
             let request = try createRequest(manager)
             return request.onNext(observer, manager)
         }
     }
-    private func getRequest<R: RxAlamofireRequest>(_ closure: @escaping (SessionManager, AnyObserver<R>) throws -> Disposable) -> Observable<R> {
+    private func getRequest<R: RxAlamofireRequest>(_ closure: @escaping (Session, AnyObserver<R>) throws -> Disposable) -> Observable<R> {
         Observable.create { observer -> Disposable in
             do {
                 return try closure(self.base, observer)
@@ -100,7 +96,7 @@ extension Reactive where Base: SessionManager {
     }
 }
 extension RxAlamofireRequest {
-    fileprivate func onNext(_ observer: AnyObserver<Self>, _ manager: SessionManager) -> Disposable {
+    fileprivate func onNext(_ observer: AnyObserver<Self>, _ session: Session) -> Disposable {
         observer.onNext(self)
         responseWith(completionHandler: { (_) in
 //            if let error = response.error {
@@ -112,7 +108,7 @@ extension RxAlamofireRequest {
             observer.onCompleted()
         })
 
-        if !manager.startRequestsImmediately {
+        if !session.startRequestsImmediately {
             self.resume()
         }
 

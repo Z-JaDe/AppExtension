@@ -11,15 +11,18 @@ import Alamofire
 
 public protocol RxAlamofireRequest {
     func responseWith(completionHandler: @escaping (RxAlamofireResponse) -> Void)
-    func resume()
-    func cancel()
+    @discardableResult
+    func resume() -> Self
+    @discardableResult
+    func cancel() -> Self
 }
 
-public protocol RxAlamofireResponse {
-    var error: Error? {get}
+public protocol RxAlamofireResponse {}
+public protocol AbstractRxAlamofireResponse: RxAlamofireResponse {
+    associatedtype Success
 }
-extension DefaultDataResponse: RxAlamofireResponse {}
-extension DefaultDownloadResponse: RxAlamofireResponse {}
+extension AFDataResponse: AbstractRxAlamofireResponse {}
+extension AFDownloadResponse: AbstractRxAlamofireResponse {}
 
 extension DataRequest: RxAlamofireRequest {
     public func responseWith(completionHandler: @escaping (RxAlamofireResponse) -> Void) {

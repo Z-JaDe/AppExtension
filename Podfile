@@ -22,6 +22,10 @@ def collectionKitPod
   userPod 'CollectionKit'
 end
 
+def alamofirePod
+  pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire'
+end
+
 def rxPod (hasCocoa = true)
   pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
   if hasCocoa
@@ -62,7 +66,7 @@ target:'List' do
 end
 target:'RxNetwork' do
   rxPod
-  pod 'Alamofire'
+  alamofirePod
 end
 target:'UIComponents' do
   baseCorePod
@@ -95,7 +99,7 @@ def commonPods
   
   pod 'SwiftLint'
   
-  pod 'Alamofire'
+  alamofirePod
   
   pod 'Kingfisher'
   pod 'MBProgressHUD'
@@ -110,7 +114,7 @@ end
 
 def projectBasicPod
   commonPods
-  pod 'Alamofire'
+  alamofirePod
   
   pod 'Kingfisher'
   pod 'MBProgressHUD'

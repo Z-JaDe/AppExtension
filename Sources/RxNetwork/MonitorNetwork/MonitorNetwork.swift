@@ -24,7 +24,7 @@ public class MonitorNetwork {
         }
         self.manager = manager
         isListening = true
-        manager.listener = {[weak self] (status) in
+        manager.startListening {[weak self] (status) in
             self?.networkChanged.onNext(status)
             switch status {
             case .notReachable, .unknown:
@@ -33,13 +33,11 @@ public class MonitorNetwork {
                 switch connectionType {
                 case .ethernetOrWiFi:
                     logWarn("网络状态: ethernetOrWiFi")
-                case .wwan:
-                    logWarn("网络状态: wwan")
+                case .cellular:
+                    logWarn("网络状态: cellular")
                 }
-            }
+            }            
         }
-        manager.listener?(manager.networkReachabilityStatus)
-        manager.startListening()
     }
     /// ZJaDe: 监听这个信号 true时有网络 false没有网络
     public func hasNetwork() -> Observable<Bool> {
