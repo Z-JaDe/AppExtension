@@ -8,20 +8,17 @@
 
 import UIKit
 import RxSwift
+import WebKit
 
-open class BaseWebViewController<ViewType>: GenericsViewController<ViewType> where ViewType: UIView & WebViewProtocol & WritableDefaultHeightProtocol {
+open class BaseWebViewController<ViewType>: GenericsViewController<ViewType> where ViewType: WKWebView & WritableDefaultHeightProtocol {
     // MARK: -
     /// ZJaDe: 需要手动实现，内部无实现
     public var needURLParam: Bool = true {
-        didSet {
-            self.setNeedRequest()
-        }
+        didSet { setNeedRequest() }
     }
     /// ZJaDe: 需要手动实现，内部无实现
     public var params: [String: String] = [: ] {
-        didSet {
-            self.setNeedRequest()
-        }
+        didSet { setNeedRequest() }
     }
     // MARK: -
     open override func viewDidLoad() {
@@ -44,14 +41,14 @@ open class BaseWebViewController<ViewType>: GenericsViewController<ViewType> whe
         }
     }
     open override func updateData() {
-        self.rootView.reloadWeb()
+        self.rootView.reload()
     }
     // MARK: -
     /// ZJaDe: autoUpdateHeightWithContentSize
     open func autoUpdateHeightWithContentSize() {
         DispatchQueue.main.async {
             self.rootView.scrollView.isScrollEnabled = false
-            self.rootView.rxDidFinishLoad.subscribeOnNext {[weak self] () in
+            self.rootView.rx.didFinishLoad.subscribeOnNext {[weak self] () in
                 self?.calculateUpdateWebViewHeight()
                 }.disposed(by: self.disposeBag)
         }
@@ -69,4 +66,16 @@ open class BaseWebViewController<ViewType>: GenericsViewController<ViewType> whe
             self.rootView.defaultHeight = height
         }
     }
+}
+extension WKWebView {
+    public func load(urlStr: String) {
+        if urlStr.hasPrefix("http") {
+            if let url = URL(string: urlStr) {
+                load(URLRequest(url: url))
+            }
+        } else {
+            loadHTMLString(urlStr, baseURL: nil)
+        }
+    }
+
 }

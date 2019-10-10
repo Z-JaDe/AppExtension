@@ -449,11 +449,8 @@
 		C9D4130521DF5F15004368D4 /* ListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962C52320CE1A050061FC20 /* ListAdapter.swift */; };
 		C9D4131A21DF6B74004368D4 /* BaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4130D21DF6B74004368D4 /* BaseWebViewController.swift */; };
 		C9D4131B21DF6B74004368D4 /* WebTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131021DF6B74004368D4 /* WebTableViewCell.swift */; };
-		C9D4131C21DF6B74004368D4 /* JSMutuallyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131121DF6B74004368D4 /* JSMutuallyClass.swift */; };
-		C9D4131D21DF6B74004368D4 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131221DF6B74004368D4 /* WebViewController.swift */; };
-		C9D4131E21DF6B74004368D4 /* WebViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131321DF6B74004368D4 /* WebViewProtocol.swift */; };
 		C9D4131F21DF6B74004368D4 /* WKUIProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131521DF6B74004368D4 /* WKUIProxy.swift */; };
-		C9D4132021DF6B74004368D4 /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131621DF6B74004368D4 /* WKWebViewController.swift */; };
+		C9D4132021DF6B74004368D4 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131621DF6B74004368D4 /* WebViewController.swift */; };
 		C9D4132321DF6B74004368D4 /* LoadWebUrlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131921DF6B74004368D4 /* LoadWebUrlProtocol.swift */; };
 		C9D4132421DF6D7B004368D4 /* SectionedDataSource+ParamProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932FA2321006ED100B8DF84 /* SectionedDataSource+ParamProtocol.swift */; };
 		C9D4132921DF807C004368D4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4132821DF807C004368D4 /* RootViewController.swift */; };
@@ -1365,11 +1362,8 @@
 		C9D412FB21DF514B004368D4 /* RxDataSourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxDataSourceType.swift; sourceTree = "<group>"; };
 		C9D4130D21DF6B74004368D4 /* BaseWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebViewController.swift; sourceTree = "<group>"; };
 		C9D4131021DF6B74004368D4 /* WebTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebTableViewCell.swift; sourceTree = "<group>"; };
-		C9D4131121DF6B74004368D4 /* JSMutuallyClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSMutuallyClass.swift; sourceTree = "<group>"; };
-		C9D4131221DF6B74004368D4 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		C9D4131321DF6B74004368D4 /* WebViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewProtocol.swift; sourceTree = "<group>"; };
 		C9D4131521DF6B74004368D4 /* WKUIProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKUIProxy.swift; sourceTree = "<group>"; };
-		C9D4131621DF6B74004368D4 /* WKWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
+		C9D4131621DF6B74004368D4 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		C9D4131921DF6B74004368D4 /* LoadWebUrlProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadWebUrlProtocol.swift; sourceTree = "<group>"; };
 		C9D4132821DF807C004368D4 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		C9D4132A21DF808B004368D4 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
@@ -3270,23 +3264,12 @@
 		C9D4130C21DF6B43004368D4 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
-				C9D4130E21DF6B74004368D4 /* UIWeb */,
+				C9D4130F21DF6B74004368D4 /* Cell */,
 				C9D4131421DF6B74004368D4 /* WKWeb */,
 				C9D4131921DF6B74004368D4 /* LoadWebUrlProtocol.swift */,
 				C9D4130D21DF6B74004368D4 /* BaseWebViewController.swift */,
-				C9D4131321DF6B74004368D4 /* WebViewProtocol.swift */,
 			);
 			path = WebView;
-			sourceTree = "<group>";
-		};
-		C9D4130E21DF6B74004368D4 /* UIWeb */ = {
-			isa = PBXGroup;
-			children = (
-				C9D4130F21DF6B74004368D4 /* Cell */,
-				C9D4131121DF6B74004368D4 /* JSMutuallyClass.swift */,
-				C9D4131221DF6B74004368D4 /* WebViewController.swift */,
-			);
-			path = UIWeb;
 			sourceTree = "<group>";
 		};
 		C9D4130F21DF6B74004368D4 /* Cell */ = {
@@ -3302,7 +3285,7 @@
 			children = (
 				C92B6D4A222CD02E001A1663 /* JSBridge */,
 				C9D4131521DF6B74004368D4 /* WKUIProxy.swift */,
-				C9D4131621DF6B74004368D4 /* WKWebViewController.swift */,
+				C9D4131621DF6B74004368D4 /* WebViewController.swift */,
 			);
 			path = WKWeb;
 			sourceTree = "<group>";
@@ -4763,9 +4746,8 @@
 				C90CC67E21E710C400BEF2DA /* ResultContext.swift in Sources */,
 				18FCBE152296C6DB00695868 /* ConstraintMaker+Space.swift in Sources */,
 				F90ADF7A232805C8008A8593 /* UITableAdapter+Enabled.swift in Sources */,
-				C9D4132021DF6B74004368D4 /* WKWebViewController.swift in Sources */,
+				C9D4132021DF6B74004368D4 /* WebViewController.swift in Sources */,
 				C9D412B621DF4600004368D4 /* TitleCell.swift in Sources */,
-				C9D4131E21DF6B74004368D4 /* WebViewProtocol.swift in Sources */,
 				C932F822210069AD00B8DF84 /* Alert.swift in Sources */,
 				C9D412CD21DF4A31004368D4 /* TableItemCell+Height.swift in Sources */,
 				C9D4131F21DF6B74004368D4 /* WKUIProxy.swift in Sources */,
@@ -4783,7 +4765,6 @@
 				18CBF52B232903D300E6DDE2 /* TableCellModel.swift in Sources */,
 				C9D412BB21DF4601004368D4 /* StaticTableItemCell.swift in Sources */,
 				C9D412C021DF468B004368D4 /* CollectionReusableView.swift in Sources */,
-				C9D4131C21DF6B74004368D4 /* JSMutuallyClass.swift in Sources */,
 				C9D412D221DF4A88004368D4 /* TableSection.swift in Sources */,
 				C9D4132B21DF808B004368D4 /* ItemViewController.swift in Sources */,
 				C9D412B521DF4600004368D4 /* SwitchCell.swift in Sources */,
@@ -4791,7 +4772,6 @@
 				C9D412B921DF4601004368D4 /* DetailTitleCell.swift in Sources */,
 				C9D4131A21DF6B74004368D4 /* BaseWebViewController.swift in Sources */,
 				18FCBE1B2296C76C00695868 /* UpdateLayout+SnapKit.swift in Sources */,
-				C9D4131D21DF6B74004368D4 /* WebViewController.swift in Sources */,
 				C90E74D722001608006CE73C /* AssetGridModel.swift in Sources */,
 				18CBF3AD232889BA00E6DDE2 /* CreateCellUseModel.swift in Sources */,
 				C9D412E821DF4B65004368D4 /* UICollectionAdapter.swift in Sources */,

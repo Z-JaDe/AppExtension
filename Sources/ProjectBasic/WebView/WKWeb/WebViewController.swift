@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import WebKit
 
-open class WKWebViewController: BaseWebViewController<JDWKWebView>, WKNavigationDelegate {
+open class WebViewController: BaseWebViewController<JDWKWebView>, WKNavigationDelegate {
     /// ZJaDe: 
     public private(set) lazy var jsBridge: JSBridge = JSBridge(libraryCode: "", functionNamespace: "appNative")
     /// ZJaDe: 
