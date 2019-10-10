@@ -58,46 +58,25 @@ extension Reactive where Base: Session {
     }
 }
 extension Reactive where Base: Session {
-    private func getRequest<R: Request>(_ createRequest: @escaping (Session) throws -> R) -> Observable<RequestContext<R>> {
+    private func getRequest<R: Request>(_ createRequest: @escaping (Session) -> R) -> Observable<RequestContext<R>> {
         getRequest(createRequest).map { RequestContext($0, $0.request) }
     }
-    private func getRequest<R: Request>(_ createRequest: @escaping (Session) throws -> R) -> Observable<R> {
+    /**
+     订阅时发送一个信号 启动数据流
+     后面接收到数据后自己根据情况控制信号结束
+     不在这里控制信号的结束是因为有些接口可能会重新请求，重新请求使用的是Alamofire的逻辑
+     */
+    private func getRequest<R: Request>(_ createRequest: @escaping (Session) -> R) -> Observable<R> {
         Observable<R>.create { observer -> Disposable in
-            do {
-                let session = self.base
-                return observer.onNext(try createRequest(session), session)
-            } catch let error {
-                observer.onError(error)
-                return Disposables.create()
+            let session = self.base
+            let request = createRequest(session)
+            observer.onNext(request)
+            if !session.startRequestsImmediately {
+                request.resume()
             }
-        }
-    }
-}
-extension AnyObserver where Element: Request {
-    /// 订阅后 发送一个信号 启动信号流。当接收到数据后 结束信号。
-    fileprivate func onNext(_ request: Element, _ session: Session) -> Disposable {
-        onNext(request)
-        let completionHandler = {
-            self.onCompleted()
-        }
-        switch request {
-        case let request as DataRequest:
-            request.response { (_) in
-                completionHandler()
+            return Disposables.create {
+                request.cancel()
             }
-        case let request as DownloadRequest:
-            request.response { (_) in
-                completionHandler()
-            }
-        default: break
-        }
-
-        if !session.startRequestsImmediately {
-            request.resume()
-        }
-
-        return Disposables.create {
-            request.cancel()
         }
     }
 }
