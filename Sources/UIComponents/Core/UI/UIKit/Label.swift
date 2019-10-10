@@ -39,10 +39,13 @@ open class Label: UILabel {
         self.addSubview(self.firstBaselineView)
     }
     // ZJaDe: 
-    open var textInset: UIEdgeInsets = .zero
+    open var textInsets: UIEdgeInsets = .zero
     open override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
-        let rect = super.textRect(forBounds: bounds, limitedToNumberOfLines: numberOfLines)
-        return rect + self.textInset
+        let textRect = super.textRect(forBounds: bounds - textInsets, limitedToNumberOfLines: numberOfLines)
+        return textRect + textInsets
+    }
+    open override func drawText(in rect: CGRect) {
+        super.drawText(in: rect.inset(by: textInsets))
     }
 
     // MARK: -
