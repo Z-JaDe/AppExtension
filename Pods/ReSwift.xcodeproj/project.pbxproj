@@ -7,21 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D408A00000230 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D408A00000220 /* Foundation.framework */; };
-		0D408A00000240 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A000000C0 /* Action.swift */; };
-		0D408A00000250 /* DispatchingStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A000000D0 /* DispatchingStoreType.swift */; };
-		0D408A00000260 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A000000E0 /* Middleware.swift */; };
-		0D408A00000270 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A000000F0 /* Reducer.swift */; };
-		0D408A00000280 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000100 /* State.swift */; };
-		0D408A00000290 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000110 /* Store.swift */; };
-		0D408A000002A0 /* StoreSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000120 /* StoreSubscriber.swift */; };
-		0D408A000002B0 /* StoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000130 /* StoreType.swift */; };
-		0D408A000002C0 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000140 /* Subscription.swift */; };
-		0D408A000002D0 /* Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000150 /* Assertions.swift */; };
-		0D408A000002E0 /* Coding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000160 /* Coding.swift */; };
-		0D408A000002F0 /* TypeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000170 /* TypeHelper.swift */; };
-		0D408A00000340 /* ReSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D408A00000330 /* ReSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0D408A00000380 /* ReSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000370 /* ReSwift-dummy.m */; };
+		0D408A00000240 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D408A00000230 /* Foundation.framework */; };
+		0D408A00000250 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A000000C0 /* Action.swift */; };
+		0D408A00000260 /* DispatchingStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A000000D0 /* DispatchingStoreType.swift */; };
+		0D408A00000270 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A000000E0 /* Middleware.swift */; };
+		0D408A00000280 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A000000F0 /* Reducer.swift */; };
+		0D408A00000290 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000100 /* State.swift */; };
+		0D408A000002A0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000110 /* Store.swift */; };
+		0D408A000002B0 /* StoreSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000120 /* StoreSubscriber.swift */; };
+		0D408A000002C0 /* StoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000130 /* StoreType.swift */; };
+		0D408A000002D0 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000140 /* Subscription.swift */; };
+		0D408A000002E0 /* Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000150 /* Assertions.swift */; };
+		0D408A000002F0 /* AtomicBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000160 /* AtomicBool.swift */; };
+		0D408A00000300 /* Coding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000170 /* Coding.swift */; };
+		0D408A00000310 /* TypeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000180 /* TypeHelper.swift */; };
+		0D408A00000360 /* ReSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D408A00000350 /* ReSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D408A000003A0 /* ReSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000390 /* ReSwift-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,24 +36,25 @@
 		0D408A00000130 /* StoreType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoreType.swift; path = ReSwift/CoreTypes/StoreType.swift; sourceTree = "<group>"; };
 		0D408A00000140 /* Subscription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Subscription.swift; path = ReSwift/CoreTypes/Subscription.swift; sourceTree = "<group>"; };
 		0D408A00000150 /* Assertions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Assertions.swift; path = ReSwift/Utils/Assertions.swift; sourceTree = "<group>"; };
-		0D408A00000160 /* Coding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Coding.swift; path = ReSwift/Utils/Coding.swift; sourceTree = "<group>"; };
-		0D408A00000170 /* TypeHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TypeHelper.swift; path = ReSwift/Utils/TypeHelper.swift; sourceTree = "<group>"; };
-		0D408A00000220 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		0D408A00000310 /* ReSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReSwift.xcconfig; sourceTree = "<group>"; };
-		0D408A00000320 /* ReSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ReSwift.modulemap; sourceTree = "<group>"; };
-		0D408A00000330 /* ReSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReSwift-umbrella.h"; sourceTree = "<group>"; };
-		0D408A00000350 /* ReSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ReSwift-Info.plist"; sourceTree = "<group>"; };
-		0D408A00000360 /* ReSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReSwift-prefix.pch"; sourceTree = "<group>"; };
-		0D408A00000370 /* ReSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReSwift-dummy.m"; sourceTree = "<group>"; };
+		0D408A00000160 /* AtomicBool.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AtomicBool.swift; path = ReSwift/Utils/AtomicBool.swift; sourceTree = "<group>"; };
+		0D408A00000170 /* Coding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Coding.swift; path = ReSwift/Utils/Coding.swift; sourceTree = "<group>"; };
+		0D408A00000180 /* TypeHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TypeHelper.swift; path = ReSwift/Utils/TypeHelper.swift; sourceTree = "<group>"; };
+		0D408A00000230 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		0D408A00000330 /* ReSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReSwift.xcconfig; sourceTree = "<group>"; };
+		0D408A00000340 /* ReSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ReSwift.modulemap; sourceTree = "<group>"; };
+		0D408A00000350 /* ReSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReSwift-umbrella.h"; sourceTree = "<group>"; };
+		0D408A00000370 /* ReSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ReSwift-Info.plist"; sourceTree = "<group>"; };
+		0D408A00000380 /* ReSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReSwift-prefix.pch"; sourceTree = "<group>"; };
+		0D408A00000390 /* ReSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReSwift-dummy.m"; sourceTree = "<group>"; };
 		D2C38D98D363688C737160E89571875A /* ReSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ReSwift.framework; path = ReSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0D408A000001F0 /* Frameworks */ = {
+		0D408A00000200 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D408A00000230 /* Foundation.framework in Frameworks */,
+				0D408A00000240 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +81,7 @@
 		0D408A00000060 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0D408A00000210 /* iOS */,
+				0D408A00000220 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -89,7 +91,8 @@
 			children = (
 				0D408A000000C0 /* Action.swift */,
 				0D408A00000150 /* Assertions.swift */,
-				0D408A00000160 /* Coding.swift */,
+				0D408A00000160 /* AtomicBool.swift */,
+				0D408A00000170 /* Coding.swift */,
 				0D408A000000D0 /* DispatchingStoreType.swift */,
 				0D408A000000E0 /* Middleware.swift */,
 				0D408A000000F0 /* Reducer.swift */,
@@ -98,30 +101,30 @@
 				0D408A00000120 /* StoreSubscriber.swift */,
 				0D408A00000130 /* StoreType.swift */,
 				0D408A00000140 /* Subscription.swift */,
-				0D408A00000170 /* TypeHelper.swift */,
-				0D408A00000300 /* Support Files */,
+				0D408A00000180 /* TypeHelper.swift */,
+				0D408A00000320 /* Support Files */,
 			);
 			name = ReSwift;
 			path = ReSwift;
 			sourceTree = "<group>";
 		};
-		0D408A00000210 /* iOS */ = {
+		0D408A00000220 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				0D408A00000220 /* Foundation.framework */,
+				0D408A00000230 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		0D408A00000300 /* Support Files */ = {
+		0D408A00000320 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0D408A00000320 /* ReSwift.modulemap */,
-				0D408A00000310 /* ReSwift.xcconfig */,
-				0D408A00000370 /* ReSwift-dummy.m */,
-				0D408A00000350 /* ReSwift-Info.plist */,
-				0D408A00000360 /* ReSwift-prefix.pch */,
-				0D408A00000330 /* ReSwift-umbrella.h */,
+				0D408A00000340 /* ReSwift.modulemap */,
+				0D408A00000330 /* ReSwift.xcconfig */,
+				0D408A00000390 /* ReSwift-dummy.m */,
+				0D408A00000370 /* ReSwift-Info.plist */,
+				0D408A00000380 /* ReSwift-prefix.pch */,
+				0D408A00000350 /* ReSwift-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/ReSwift";
@@ -130,11 +133,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0D408A000001D0 /* Headers */ = {
+		0D408A000001E0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D408A00000340 /* ReSwift-umbrella.h in Headers */,
+				0D408A00000360 /* ReSwift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,12 +146,12 @@
 /* Begin PBXNativeTarget section */
 		32081789D91AD7C7D087ABCBF0DAB8EB /* ReSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0D408A00000190 /* Build configuration list for PBXNativeTarget "ReSwift" */;
+			buildConfigurationList = 0D408A000001A0 /* Build configuration list for PBXNativeTarget "ReSwift" */;
 			buildPhases = (
-				0D408A000001D0 /* Headers */,
-				0D408A000001E0 /* Sources */,
-				0D408A000001F0 /* Frameworks */,
-				0D408A00000200 /* Resources */,
+				0D408A000001E0 /* Headers */,
+				0D408A000001F0 /* Sources */,
+				0D408A00000200 /* Frameworks */,
+				0D408A00000210 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -186,7 +189,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0D408A00000200 /* Resources */ = {
+		0D408A00000210 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -196,23 +199,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0D408A000001E0 /* Sources */ = {
+		0D408A000001F0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D408A00000240 /* Action.swift in Sources */,
-				0D408A000002D0 /* Assertions.swift in Sources */,
-				0D408A000002E0 /* Coding.swift in Sources */,
-				0D408A00000250 /* DispatchingStoreType.swift in Sources */,
-				0D408A00000260 /* Middleware.swift in Sources */,
-				0D408A00000270 /* Reducer.swift in Sources */,
-				0D408A00000380 /* ReSwift-dummy.m in Sources */,
-				0D408A00000280 /* State.swift in Sources */,
-				0D408A00000290 /* Store.swift in Sources */,
-				0D408A000002A0 /* StoreSubscriber.swift in Sources */,
-				0D408A000002B0 /* StoreType.swift in Sources */,
-				0D408A000002C0 /* Subscription.swift in Sources */,
-				0D408A000002F0 /* TypeHelper.swift in Sources */,
+				0D408A00000250 /* Action.swift in Sources */,
+				0D408A000002E0 /* Assertions.swift in Sources */,
+				0D408A000002F0 /* AtomicBool.swift in Sources */,
+				0D408A00000300 /* Coding.swift in Sources */,
+				0D408A00000260 /* DispatchingStoreType.swift in Sources */,
+				0D408A00000270 /* Middleware.swift in Sources */,
+				0D408A00000280 /* Reducer.swift in Sources */,
+				0D408A000003A0 /* ReSwift-dummy.m in Sources */,
+				0D408A00000290 /* State.swift in Sources */,
+				0D408A000002A0 /* Store.swift in Sources */,
+				0D408A000002B0 /* StoreSubscriber.swift in Sources */,
+				0D408A000002C0 /* StoreType.swift in Sources */,
+				0D408A000002D0 /* Subscription.swift in Sources */,
+				0D408A00000310 /* TypeHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,9 +347,9 @@
 			};
 			name = Release;
 		};
-		0D408A000001A0 /* Release */ = {
+		0D408A000001B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D408A00000310 /* ReSwift.xcconfig */;
+			baseConfigurationReference = 0D408A00000330 /* ReSwift.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -379,9 +383,9 @@
 			};
 			name = Release;
 		};
-		0D408A000001B0 /* Debug */ = {
+		0D408A000001C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D408A00000310 /* ReSwift.xcconfig */;
+			baseConfigurationReference = 0D408A00000330 /* ReSwift.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -426,11 +430,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0D408A00000190 /* Build configuration list for PBXNativeTarget "ReSwift" */ = {
+		0D408A000001A0 /* Build configuration list for PBXNativeTarget "ReSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0D408A000001B0 /* Debug */,
-				0D408A000001A0 /* Release */,
+				0D408A000001C0 /* Debug */,
+				0D408A000001B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
