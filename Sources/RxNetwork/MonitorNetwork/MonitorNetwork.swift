@@ -36,7 +36,7 @@ public class MonitorNetwork {
                 case .cellular:
                     logWarn("网络状态: cellular")
                 }
-            }            
+            }
         }
     }
     /// ZJaDe: 监听这个信号 true时有网络 false没有网络

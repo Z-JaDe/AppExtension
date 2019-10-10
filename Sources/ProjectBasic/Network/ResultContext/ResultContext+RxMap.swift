@@ -31,21 +31,21 @@ extension ObservableType where Element == DataResultContext {
 }
 extension ObservableType where Element: RequestContextCompatible {
     public func mapDictResult() -> Observable<DictResult> {
-        response().mapDictResult()
+        responseData().mapDictResult()
     }
     public func mapResult<DataType: Decodable>(type: DataType.Type) -> Observable<AnyResult<DataType>> {
-        response().mapResult(type: type)
+        responseData().mapResult(type: type)
     }
     public func mapStringResult() -> Observable<StringResult> {
-        response().mapStringResult()
+        responseData().mapStringResult()
     }
     public func mapObject<T: Decodable>(type: T.Type) -> Observable<ObjectResult<T>> {
-        response().mapObject(type: type)
+        responseData().mapObject(type: type)
     }
     public func mapArray<T: Decodable>(type: T.Type) -> Observable<ArrayResult<T>> {
-        response().mapArray(type: type)
+        responseData().mapArray(type: type)
     }
     public func mapList<T: Decodable>(type: T.Type) -> Observable<ListResult<T>> {
-        response().mapList(type: type)
+        responseData().mapList(type: type)
     }
 }

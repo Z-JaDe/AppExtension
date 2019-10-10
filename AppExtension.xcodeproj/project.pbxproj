@@ -26,7 +26,6 @@
 		18CBF4C12328F29E00E6DDE2 /* RxNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18CBF4AB2328F29D00E6DDE2 /* RxNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18CBF5072328F3E200E6DDE2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFC1321DE23B000DF1E54 /* Validation.swift */; };
 		18CBF5082328F3E200E6DDE2 /* RxProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFC1921DE275B00DF1E54 /* RxProgress.swift */; };
-		18CBF5092328F3E200E6DDE2 /* RxAlamofireRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFC0D21DE07AF00DF1E54 /* RxAlamofireRequest.swift */; };
 		18CBF50A2328F3E200E6DDE2 /* Session+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFC1021DE082200DF1E54 /* Session+Rx.swift */; };
 		18CBF50B2328F3E200E6DDE2 /* Session+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AFE5C21E62C56009C27F7 /* Session+Network.swift */; };
 		18CBF50C2328F3E800E6DDE2 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BFBE021DDEBDC00DF1E54 /* TargetType.swift */; };
@@ -972,7 +971,6 @@
 		C90BFBF121DE001700DF1E54 /* ShowNetworkHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowNetworkHUD.swift; sourceTree = "<group>"; };
 		C90BFBF321DE001700DF1E54 /* ErrorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorProtocol.swift; sourceTree = "<group>"; };
 		C90BFBF521DE001800DF1E54 /* MonitorNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitorNetwork.swift; sourceTree = "<group>"; };
-		C90BFC0D21DE07AF00DF1E54 /* RxAlamofireRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAlamofireRequest.swift; sourceTree = "<group>"; };
 		C90BFC1021DE082200DF1E54 /* Session+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+Rx.swift"; sourceTree = "<group>"; };
 		C90BFC1321DE23B000DF1E54 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		C90BFC1621DE242000DF1E54 /* NetworkContext+RxResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkContext+RxResponse.swift"; sourceTree = "<group>"; };
@@ -1877,7 +1875,6 @@
 			children = (
 				C90BFC1321DE23B000DF1E54 /* Validation.swift */,
 				C90BFC1921DE275B00DF1E54 /* RxProgress.swift */,
-				C90BFC0D21DE07AF00DF1E54 /* RxAlamofireRequest.swift */,
 				C90BFC1021DE082200DF1E54 /* Session+Rx.swift */,
 				C90AFE5C21E62C56009C27F7 /* Session+Network.swift */,
 			);
@@ -4502,7 +4499,6 @@
 				18CBF50B2328F3E200E6DDE2 /* Session+Network.swift in Sources */,
 				18CBF5142328F44500E6DDE2 /* NetworkContext+RxMap.swift in Sources */,
 				18CBF50F2328F3E800E6DDE2 /* ErrorProtocol.swift in Sources */,
-				18CBF5092328F3E200E6DDE2 /* RxAlamofireRequest.swift in Sources */,
 				18CBF50A2328F3E200E6DDE2 /* Session+Rx.swift in Sources */,
 				18CBF5082328F3E200E6DDE2 /* RxProgress.swift in Sources */,
 				18CBF50C2328F3E800E6DDE2 /* TargetType.swift in Sources */,

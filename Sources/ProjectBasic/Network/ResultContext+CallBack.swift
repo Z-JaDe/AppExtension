@@ -10,19 +10,19 @@ import Foundation
 import RxSwift
 
 extension Observable where Element: ResponseContextCompatible {
-    public func resultCallback(_ closure: @escaping (Element.Value) -> Void) -> Disposable {
+    public func resultCallback(_ closure: @escaping (Element.Result) -> Void) -> Disposable {
         self.logDebug("_请求回调_").subscribe(onNext: { (element) in
-            closure(element.value)
+            closure(element.result)
         }, onError: { (error) in
-            closure(.failure(error))
+            closure(Element.Result.failure(.unknown(error)))
         })
     }
 }
 // MARK: -
 extension Observable where Element: ResponseContextCompatible {
-    public func valueCallback(_ closure: @escaping (Element.ResultValue?) -> Void) -> Disposable {
+    public func valueCallback(_ closure: @escaping (Element.Value?) -> Void) -> Disposable {
         self.resultCallback { (result) in
-            closure(result.value.value)
+            closure(try? result.get())
         }
     }
 }

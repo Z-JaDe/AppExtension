@@ -17,7 +17,6 @@ public protocol TargetType: URLRequestConvertible {
     var parameters: Parameters? { get set }
 
     var encoding: ParameterEncoding { get }
-    var adapter: RequestAdapter? { get }
 }
 extension TargetType {
     func _asURL() -> URL {
@@ -35,9 +34,6 @@ extension TargetType {
         var urlRequest: URLRequest
         urlRequest = try URLRequest(url: url, method: self.method, headers: self.headers)
         urlRequest = try self.encoding.encode(urlRequest, with: self.parameters)
-        if let adapter = adapter {
-            urlRequest = try adapter.adapt(urlRequest)
-        }
         return urlRequest
     }
 }

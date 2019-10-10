@@ -28,7 +28,6 @@ extension Reactive where Base: Session {
                         headers: HTTPHeaders? = nil,
                         interceptor: RequestInterceptor? = nil) -> Observable<RequestContext<DataRequest>> {
         getRequest { $0.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers, interceptor: interceptor) }
-            .map { RequestContext($0, $0.request) }
     }
     public func request(_ urlRequest: URLRequestConvertible, interceptor: RequestInterceptor? = nil) -> Observable<RequestContext<DataRequest>> {
         getRequest { $0.request(urlRequest, interceptor: interceptor) }
@@ -43,7 +42,7 @@ extension Reactive where Base: Session {
         fileManager: FileManager = .default
     ) -> Observable<RequestContext<UploadRequest>> {
         getRequest { $0.upload(multipartFormData: multipartFormData, with: request, usingThreshold: encodingMemoryThreshold, interceptor: interceptor, fileManager: fileManager) }
-        .map { RequestContext($0, $0.request) }
+        .map { RequestContext($0, request) }
     }
     // MARK: Download
     public func download(_ urlRequest: URLRequestConvertible,
@@ -56,38 +55,17 @@ extension Reactive where Base: Session {
                          interceptor: RequestInterceptor? = nil,
                          to destination: DownloadRequest.Destination? = nil) -> Observable<RequestContext<DownloadRequest>> {
         getRequest { $0.download(resumingWith: resumeData, interceptor: interceptor, to: destination) }
-            .map { RequestContext($0, $0.request) }
-    }
-}
-extension Session {
-    func uploadParamsUpdate(_ formData: [MultipartFormData], _ urlRequest: URLRequestConvertible) -> ([MultipartFormData], URLRequestConvertible) {
-        var formData = formData
-        var urlRequest = urlRequest
-        // ZJaDe: 如果参数里包含了MultipartFormData，需要添加
-        if var target = urlRequest as? TargetType, var params = target.parameters {
-            for (key, value) in params {
-                if let value = value as? MultipartFormData {
-                    params[key] = nil
-                    formData.append(value)
-                }
-            }
-            target.parameters = params
-            urlRequest = target
-        }
-        return (formData, urlRequest)
     }
 }
 extension Reactive where Base: Session {
-    private func getRequest<R: RxAlamofireRequest>(_ createRequest: @escaping (Session) throws -> R) -> Observable<R> {
-        getRequest { (manager, observer) in
-            let request = try createRequest(manager)
-            return request.onNext(observer, manager)
-        }
+    private func getRequest<R: Request>(_ createRequest: @escaping (Session) throws -> R) -> Observable<RequestContext<R>> {
+        getRequest(createRequest).map { RequestContext($0, $0.request) }
     }
-    private func getRequest<R: RxAlamofireRequest>(_ closure: @escaping (Session, AnyObserver<R>) throws -> Disposable) -> Observable<R> {
-        Observable.create { observer -> Disposable in
+    private func getRequest<R: Request>(_ createRequest: @escaping (Session) throws -> R) -> Observable<R> {
+        Observable<R>.create { observer -> Disposable in
             do {
-                return try closure(self.base, observer)
+                let session = self.base
+                return observer.onNext(try createRequest(session), session)
             } catch let error {
                 observer.onError(error)
                 return Disposables.create()
@@ -95,25 +73,31 @@ extension Reactive where Base: Session {
         }
     }
 }
-extension RxAlamofireRequest {
-    fileprivate func onNext(_ observer: AnyObserver<Self>, _ session: Session) -> Disposable {
-        observer.onNext(self)
-        responseWith(completionHandler: { (_) in
-//            if let error = response.error {
-//                observer.onError(error)
-//            } else {
-//                observer.onCompleted()
-//            }
-            /// ZJaDe: 请求完成后发送完成时间，保证序列释放，不能发送error事件，response()方法里面会处理
-            observer.onCompleted()
-        })
+extension AnyObserver where Element: Request {
+    /// 订阅后 发送一个信号 启动信号流。当接收到数据后 结束信号。
+    fileprivate func onNext(_ request: Element, _ session: Session) -> Disposable {
+        onNext(request)
+        let completionHandler = {
+            self.onCompleted()
+        }
+        switch request {
+        case let request as DataRequest:
+            request.response { (_) in
+                completionHandler()
+            }
+        case let request as DownloadRequest:
+            request.response { (_) in
+                completionHandler()
+            }
+        default: break
+        }
 
         if !session.startRequestsImmediately {
-            self.resume()
+            request.resume()
         }
 
         return Disposables.create {
-            self.cancel()
+            request.cancel()
         }
     }
 }

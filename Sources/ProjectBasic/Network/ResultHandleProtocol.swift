@@ -23,7 +23,7 @@ extension Observable where Element: ResponseContextCompatible & ResultHandleProt
     }
 }
 extension Observable where Element: ResponseContextCompatible & ResultHandleProtocol {
-    public func callback(_ closure: @escaping (Element.ResultValue?) -> Void) -> Disposable {
+    public func callback(_ closure: @escaping (Element.Value?) -> Void) -> Disposable {
         self.showHUDWhenComplete(.default).valueCallback(closure)
     }
 }

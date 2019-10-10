@@ -11,10 +11,9 @@ import Alamofire
 
 extension DataResultContext {
     func getData() throws -> Data {
-        switch self.value {
-        case .success(let value):
-            return value
-        case .failure(let error):
+        do {
+            return try result.get()
+        } catch let error {
             /// ZJaDe: Alamofire内部抛出的Error处理
             throw error._mapError()
         }
@@ -56,21 +55,15 @@ extension DataResultContext {
             throw NetworkError.error((try? mapString()) ?? "转换出错")
         }
     }
-    public func mapString() throws -> String {
+
+    private func mapString() throws -> String {
         guard let string = String(data: try getData(), encoding: .utf8) else {
             throw NetworkError.objectMapping("转换字符串出错")
         }
         return string
     }
-    public func mapImage() throws -> UIImage {
-        guard let image = UIImage(data: try getData()) else {
-            throw NetworkError.objectMapping("图片转换失败")
-        }
-        return image
-    }
-
     private func logDataResultInfo() {
-        switch self.value {
+        switch self.result {
         case .failure(let error):
             logError("-|\(self.urlPath) 接口报错->\(error.localizedDescription)")
         case .success:
