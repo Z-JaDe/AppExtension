@@ -18,4 +18,3 @@ public typealias ObjectDataResponseResult<T> = DataResponseContext<ObjectResultM
 public typealias ArrayDataResponseResult<T> = DataResponseContext<ArrayResultModel<T>> where T: Codable
 
 public typealias ListDataResponseResult<T> = ObjectDataResponseResult<ListResultModel<T>> where T: Codable
-

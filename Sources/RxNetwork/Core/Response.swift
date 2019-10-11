@@ -18,11 +18,6 @@ public protocol Response {
 extension AFDataResponse: Response {}
 extension AFDownloadResponse: Response {}
 
-extension Result where Failure == AFError {
-    func map() -> Result<Success, NetworkError> {
-        mapError({NetworkError.unknown($0)})
-    }
-}
 extension Result where Failure == NetworkError {
     func tryMap<NewSuccess>(_ transform: (Success) throws -> NewSuccess) -> Result<NewSuccess, Failure> {
         switch self {

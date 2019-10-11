@@ -55,4 +55,3 @@ extension ResponseContext {
         return url.path
     }
 }
-

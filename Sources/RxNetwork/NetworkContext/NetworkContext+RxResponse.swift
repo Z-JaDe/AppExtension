@@ -26,7 +26,19 @@ extension ObservableType where Element: RequestContextCompatible, Element.R: Dat
         }
     }
 }
+//func cancel(byProducingResumeData completionHandler: @escaping (_ data: Data?) -> Void) -> Self
 extension ObservableType where Element: RequestContextCompatible, Element.R: DownloadRequest {
+    public func cancel() -> Observable<Data?> {
+        flatMapNetwork { (context) -> Observable<Data?> in
+            Observable.create { observer in
+                context.request.cancel { (resumeData) in
+                    observer.onNext(resumeData)
+                    observer.onError(NetworkStateError.end)
+                }
+                return Disposables.create()
+            }
+        }
+    }
     public func response(queue: DispatchQueue = .main) -> Observable<DownloadResponseContext<URL?>> {
         flatMapNetwork {
             $0.asObservable { (context, completionHandler) in
@@ -48,7 +60,7 @@ private enum NetworkStateError: Swift.Error {
     case end
 }
 extension ObservableType where Element: RequestContextCompatible {
-    func flatMapNetwork<Source: ObservableConvertibleType>(_ selector: @escaping (Element) throws -> Source)
+    private func flatMapNetwork<Source: ObservableConvertibleType>(_ selector: @escaping (Element) throws -> Source)
         -> Observable<Source.Element> {
             flatMapLatest(selector).catchError { (error) -> Observable<Source.Element> in
                 if case .end = error as? NetworkStateError {

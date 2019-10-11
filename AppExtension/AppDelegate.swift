@@ -52,9 +52,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }.debug("内")
         }.catchErrorJustComplete()
         .debug("结束")
-        .subscribeOnNext { (_) in
-            
-            }.disposed(by: self.disposeBag)
+            .map {_ in throw NetworkError.ignore}
+            .debug("结束2")
+        .subscribe().dispose()
         return true
     }
 

@@ -27,7 +27,7 @@ struct KeyPathDecodableResponseSerializer<T: Decodable>: ResponseSerializer {
         self.jsonSerializer = JSONResponseSerializer(dataPreprocessor: dataPreprocessor, emptyResponseCodes: emptyResponseCodes, emptyRequestMethods: emptyRequestMethods)
         self.decodeSerializer = DecodableResponseSerializer<T>(dataPreprocessor: dataPreprocessor, emptyResponseCodes: emptyResponseCodes, emptyRequestMethods: emptyRequestMethods)
     }
-    
+
     public func serialize(request: URLRequest?, response: HTTPURLResponse?, data: Data?, error: Error?) throws -> T {
         var data = data
         if let keyPath = keyPath {
