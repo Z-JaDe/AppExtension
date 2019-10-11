@@ -7,7 +7,7 @@
 //
 
 import Foundation
-public protocol ResultModelType: AbstractResultModelType, InitProtocol {
+public protocol ResultModelType: InitProtocol {
     var resultCode: ResultCode? {get set}
     var message: String? {get set}
 }
@@ -21,7 +21,7 @@ extension ResultModelType {
         }
     }
 }
-public class ResultModel<DataType: Codable>: Codable, ResultModelType {
+open class ResultModel<DataType: Codable>: Codable, ResultModelType {
     public var resultCode: ResultCode?
     public var message: String?
     public var data: DataType?

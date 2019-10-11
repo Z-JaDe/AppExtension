@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 import Alamofire
-extension ObservableType where Element == RequestContext<DataRequest> {
+extension ObservableType where Element: RequestContextCompatible, Element.R == DataRequest {
     public func validate<S: Sequence>(statusCode: S) -> Observable<Element> where S.Element == Int {
         map { $0.map {$0.validate(statusCode: statusCode)} }
     }
@@ -26,8 +26,7 @@ extension ObservableType where Element == RequestContext<DataRequest> {
         map { $0.map {$0.validate(validation)} }
     }
 }
-
-extension ObservableType where Element == RequestContext<DownloadRequest> {
+extension ObservableType where Element: RequestContextCompatible, Element.R == DownloadRequest {
     public func validate<S: Sequence>(statusCode: S) -> Observable<Element> where S.Element == Int {
         map { $0.map {$0.validate(statusCode: statusCode)} }
     }
