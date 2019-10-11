@@ -17,9 +17,34 @@ public typealias DownloadResponseContext<V> = ResponseContext<AFDownloadResponse
 public protocol RequestContextCompatible: NetworkContextCompatible {
     associatedtype R: Request
     var request: R { get }
-    func map(_ transform: (R) throws -> R) rethrows -> Self
-    func mapResponse<T>(_ transform: (R) -> AFDownloadResponse<T>) -> DownloadResponseContext<T>
-    func mapResponse<T>(_ transform: (R) -> AFDataResponse<T>) -> DataResponseContext<T>
+    func map(_ transform: (R) -> R) -> Self
+}
+extension RequestContextCompatible {
+    public var target: URLRequestConvertible? {
+        switch request {
+        case let request as UploadRequest:
+            return request.convertible
+        case let request as DataRequest:
+            return request.convertible
+        case let request as DownloadRequest:
+            if case .request(let target) = request.downloadable {
+                return target
+            }
+            return nil
+        default:
+            return nil
+        }
+    }
+}
+extension RequestContextCompatible where R: DataRequest {
+    public func mapResponse<T>(_ transform: (R) -> AFDataResponse<T>) -> DataResponseContext<T> {
+        ResponseContext(transform(request), self.target)
+    }
+}
+extension RequestContextCompatible where R: DownloadRequest {
+    public func mapResponse<T>(_ transform: (R) -> AFDownloadResponse<T>) -> DownloadResponseContext<T> {
+        ResponseContext(transform(request), self.target)
+    }
 }
 
 public protocol ResponseContextCompatible: NetworkContextCompatible {

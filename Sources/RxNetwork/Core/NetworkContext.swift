@@ -13,22 +13,12 @@ import Alamofire
 /// 第二步是response或者map方法。返回ResponseContext，R是Response。
 
 public struct RequestContext<R: Request>: RequestContextCompatible {
-    public let target: URLRequestConvertible?
     public let request: R
-    public init(_ value: R, _ target: URLRequestConvertible?) {
+    public init(_ value: R) {
         self.request = value
-        self.target = target
     }
-    public func map(_ transform: (R) throws -> R) rethrows -> Self {
-        return .init(try transform(request), target)
-    }
-}
-extension RequestContext {
-    public func mapResponse<T>(_ transform: (R) -> AFDataResponse<T>) -> DataResponseContext<T> {
-        ResponseContext(transform(request), self.target)
-    }
-    public func mapResponse<T>(_ transform: (R) -> AFDownloadResponse<T>) -> DownloadResponseContext<T> {
-        ResponseContext(transform(request), self.target)
+    public func map(_ transform: (R) -> R) -> Self {
+        return .init(transform(request))
     }
 }
 public struct ResponseContext<R: Response>: ResponseContextCompatible {

@@ -36,14 +36,16 @@ public extension ShowNetworkHUD {
         }
     }
     func showResultError(_ error: Error) {
+        let error = error._mapError()
         #if DEBUG
         let text: String
-        if let error = error as? NetworkError {
+        switch error {
+        case let error as NetworkError:
             text = error.localizedDescription
-        } else {
-            assertionFailure("这里不应该走到，因为前面已经处理过")
+        default:
             text = "请求错误: \(error)\n\(error.localizedDescription)"
             logError(text)
+            assertionFailure("这里不应该走到，因为前面已经处理过")
         }
         showResultError(text)
         #else

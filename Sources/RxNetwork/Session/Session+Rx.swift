@@ -31,7 +31,6 @@ extension Reactive where Base: Session {
     }
     public func request(_ urlRequest: URLRequestConvertible, interceptor: RequestInterceptor? = nil) -> Observable<RequestContext<DataRequest>> {
         getRequest { $0.request(urlRequest, interceptor: interceptor) }
-            .map { RequestContext($0, urlRequest) }
     }
     // MARK: Upload
     public func upload(
@@ -42,14 +41,12 @@ extension Reactive where Base: Session {
         fileManager: FileManager = .default
     ) -> Observable<RequestContext<UploadRequest>> {
         getRequest { $0.upload(multipartFormData: multipartFormData, with: request, usingThreshold: encodingMemoryThreshold, interceptor: interceptor, fileManager: fileManager) }
-        .map { RequestContext($0, request) }
     }
     // MARK: Download
     public func download(_ urlRequest: URLRequestConvertible,
                          interceptor: RequestInterceptor? = nil,
                          to destination: DownloadRequest.Destination? = nil) -> Observable<RequestContext<DownloadRequest>> {
         getRequest { $0.download(urlRequest, interceptor: interceptor, to: destination) }
-            .map { RequestContext($0, urlRequest) }
     }
     public func download(resumeData: Data,
                          interceptor: RequestInterceptor? = nil,
@@ -59,7 +56,7 @@ extension Reactive where Base: Session {
 }
 extension Reactive where Base: Session {
     private func getRequest<R: Request>(_ createRequest: @escaping (Session) -> R) -> Observable<RequestContext<R>> {
-        getRequest(createRequest).map { RequestContext($0, $0.request) }
+        getRequest(createRequest).map { RequestContext($0) }
     }
     /**
      订阅时发送一个信号 启动数据流

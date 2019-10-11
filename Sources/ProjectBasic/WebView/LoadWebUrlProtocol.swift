@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import WebKit
 public protocol LoadWebUrlProtocol {
     var urlStr: String? {get set}
     func load(_ urlStr: String)
@@ -19,6 +19,16 @@ public extension LoadWebUrlProtocol {
             loadHTTPUrl(urlStr)
         } else {
             loadHTMLString(urlStr)
+        }
+    }
+}
+extension WKWebView {
+    public func checkAndGoBack() -> Bool {
+        if self.canGoBack {
+            self.goBack()
+            return true
+        } else {
+            return false
         }
     }
 }

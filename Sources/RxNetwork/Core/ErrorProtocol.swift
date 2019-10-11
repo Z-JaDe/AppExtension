@@ -12,10 +12,10 @@ import RxSwift
 // MARK: -
 /// ZJaDe: 实现该协议，把错误转换成NetworkError
 public protocol MapErrorProtocol {
-    func mapError() -> NetworkError
+    func mapError() -> Error
 }
 extension Error {
-    internal func _mapError() -> Error {
-        (self as? MapErrorProtocol)?.mapError() ?? self
+    public func _mapError() -> Error {
+        return (self as? MapErrorProtocol)?.mapError() ?? self
     }
 }

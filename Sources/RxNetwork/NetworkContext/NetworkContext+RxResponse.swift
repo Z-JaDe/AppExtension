@@ -60,13 +60,14 @@ private enum NetworkStateError: Swift.Error {
     case end
 }
 extension ObservableType where Element: RequestContextCompatible {
-    private func flatMapNetwork<Source: ObservableConvertibleType>(_ selector: @escaping (Element) throws -> Source)
+    private func flatMapNetwork<Source: ObservableConvertibleType>(_ selector: @escaping (Element) -> Source)
         -> Observable<Source.Element> {
             flatMapLatest(selector).catchError { (error) -> Observable<Source.Element> in
                 if case .end = error as? NetworkStateError {
                     return Observable.empty()
                 }
-                throw error
+                /// 一般不会走这里 有些信号是外部接进来的，还是有可能会出现的
+                throw error._mapError()
             }
     }
 }

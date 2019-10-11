@@ -9,14 +9,14 @@
 import Foundation
 import Alamofire
 
-struct KeyPathDecodableResponseSerializer<T: Decodable>: ResponseSerializer {
+public struct KeyPathDecodableResponseSerializer<T: Decodable>: ResponseSerializer {
     public let dataPreprocessor: DataPreprocessor
     public let emptyResponseCodes: Set<Int>
     public let emptyRequestMethods: Set<HTTPMethod>
     public let keyPath: String?
     let jsonSerializer: JSONResponseSerializer
     let decodeSerializer: DecodableResponseSerializer<T>
-    init(dataPreprocessor: DataPreprocessor = JSONResponseSerializer.defaultDataPreprocessor,
+    public init(dataPreprocessor: DataPreprocessor = JSONResponseSerializer.defaultDataPreprocessor,
          emptyResponseCodes: Set<Int> = JSONResponseSerializer.defaultEmptyResponseCodes,
          emptyRequestMethods: Set<HTTPMethod> = JSONResponseSerializer.defaultEmptyRequestMethods,
          atKeyPath keyPath: String?) {
@@ -33,7 +33,7 @@ struct KeyPathDecodableResponseSerializer<T: Decodable>: ResponseSerializer {
         if let keyPath = keyPath {
             let jsonData = try jsonSerializer.serialize(request: request, response: response, data: data, error: error)
             guard let jsonObject = (jsonData as? NSDictionary)?.value(forKeyPath: keyPath) else {
-                throw NetworkError.objectMapping("没有\(keyPath)")
+                throw NetworkError.objectMapping("没有keyPath: \(keyPath)")
             }
             data = try JSONSerialization.data(withJSONObject: jsonObject, options: [])
         }
