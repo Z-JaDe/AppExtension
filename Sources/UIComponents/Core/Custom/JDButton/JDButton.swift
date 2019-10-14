@@ -160,7 +160,7 @@ extension JDButton {
             let titleColor = getTitleColor(state: state)
             let attrStr: NSAttributedString? = {
                 if let title = title {
-                    return AttributedStringMaker(title).font(titleFont).color(titleColor).attr()
+                    return title.font(titleFont).color(titleColor).finalize()
                 } else {
                     return nil
                 }
@@ -177,7 +177,7 @@ extension JDButton {
     public func setTitleColor(_ color: UIColor?, for state: UIControl.State) {
         self.titleColorInfo[state] = color
         if let attr = self.attributedTitleInfo[state], let color = color {
-            self.setAttributedTitle(AttributedStringMaker(attr).color(color).attr(), for: state)
+            self.setAttributedTitle(attr.color(color).finalize(), for: state)
         }
         if self.state == state {
             updateData()
@@ -187,7 +187,7 @@ extension JDButton {
     public func setTitleFont(_ font: UIFont?, for state: UIControl.State) {
         self.titleFontInfo[state] = font
         if let attr = self.attributedTitleInfo[state], let font = font {
-            self.setAttributedTitle(AttributedStringMaker(attr).font(font).attr(), for: state)
+            self.setAttributedTitle(attr.font(font).finalize(), for: state)
         }
         if self.state == state {
             updateData()
@@ -200,10 +200,10 @@ extension JDButton {
         if let attr = self.attributedTitleInfo[self.state] {
             return attr
         } else if let title = self.title {
-            return AttributedStringMaker(title)
+            return title
                 .color(self.getTitleColor(state: self.state))
                 .font(self.getTitleFont(state: self.state))
-                .attr()
+                .finalize()
         }
         return nil
     }

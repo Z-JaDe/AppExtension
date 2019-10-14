@@ -32,10 +32,10 @@ open class TextField: UITextField {
         }
     }
     public var placeholderFont: UIFont? {
-        didSet { self.attributedPlaceholder = self.attributedPlaceholder.flatMap({$0.font(placeholderFont)}) }
+        didSet { self.attributedPlaceholder = self.attributedPlaceholder.flatMap({$0.font(placeholderFont).finalize()}) }
     }
     public var placeholderColor: UIColor? {
-        didSet { self.attributedPlaceholder = self.attributedPlaceholder.flatMap({$0.color(placeholderColor)}) }
+        didSet { self.attributedPlaceholder = self.attributedPlaceholder.flatMap({$0.color(placeholderColor).finalize()}) }
     }
     // MARK: -
     /// 输入框text位置

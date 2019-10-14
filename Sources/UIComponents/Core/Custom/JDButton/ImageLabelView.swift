@@ -148,7 +148,7 @@ open class ImageLabelView: CustomControl {
         set {
             self.attributedTitle = {
                 if let title = newValue {
-                    return AttributedStringMaker(title).font(titleFont).color(titleColor).attr()
+                    return title.font(titleFont).color(titleColor).finalize()
                 } else {
                     return nil
                 }
@@ -159,7 +159,7 @@ open class ImageLabelView: CustomControl {
         didSet {
             let titleFont = self.titleFont ?? Font.h3
             if let attr = self.attributedTitle {
-                self.attributedTitle = AttributedStringMaker(attr).font(titleFont).attr()
+                self.attributedTitle = attr.font(titleFont).finalize()
             }
         }
     }
@@ -167,7 +167,7 @@ open class ImageLabelView: CustomControl {
         didSet {
             let textColor = self.titleColor ?? Color.black
             if let attr = self.attributedTitle {
-                self.attributedTitle = AttributedStringMaker(attr).color(textColor).attr()
+                self.attributedTitle = attr.color(textColor).finalize()
             }
         }
     }

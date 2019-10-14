@@ -38,16 +38,30 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		18B208D4235468CA009A4972 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5476500000570 /* CryptoSwift */;
+			proxyType = 2;
+			remoteGlobalIDString = 3C42CE3E02964E3A10CCE1D540F6E900;
+			remoteInfo = CryptoSwift;
+		};
+		18B208D6235468CA009A4972 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F54765000005C0 /* FunctionalSwift */;
+			proxyType = 2;
+			remoteGlobalIDString = FC5ED4FD2379E74EC3C2DFE0D3CE53F1;
+			remoteInfo = FunctionalSwift;
+		};
 		F5476500000580 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F5476500000570 /* CryptoSwift.xcodeproj */;
+			containerPortal = F5476500000570 /* CryptoSwift */;
 			proxyType = 1;
 			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
 			remoteInfo = CryptoSwift;
 		};
 		F54765000005D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F54765000005C0 /* FunctionalSwift.xcodeproj */;
+			containerPortal = F54765000005C0 /* FunctionalSwift */;
 			proxyType = 1;
 			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
 			remoteInfo = FunctionalSwift;
@@ -55,7 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CD322E542F822E3F28F0F747477B1FC0 /* Encryption.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Encryption.framework; path = Encryption.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD322E542F822E3F28F0F747477B1FC0 /* Encryption.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Encryption.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F54765000000C0 /* Dictionary+RSA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Dictionary+RSA.swift"; path = "Sources/Dictionary+RSA.swift"; sourceTree = "<group>"; };
 		F54765000000E0 /* Keychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		F54765000000F0 /* KeychainError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
@@ -79,9 +93,9 @@
 		F5476500000240 /* Signature.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Signature.swift; sourceTree = "<group>"; };
 		F5476500000250 /* SwiftyRSAError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwiftyRSAError.swift; sourceTree = "<group>"; };
 		F5476500000260 /* URLRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLRequest.swift; path = Sources/URLRequest.swift; sourceTree = "<group>"; };
-		F5476500000280 /* Encryption.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Encryption.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		F5476500000290 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		F54765000002A0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		F5476500000280 /* Encryption.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Encryption.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F5476500000290 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F54765000002A0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F5476500000350 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		F54765000004F0 /* Encryption.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Encryption.xcconfig; sourceTree = "<group>"; };
 		F5476500000500 /* Encryption.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Encryption.modulemap; sourceTree = "<group>"; };
@@ -109,6 +123,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18B208BE235461DE009A4972 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18B208D5235468CA009A4972 /* CryptoSwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18B208C0235461DE009A4972 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18B208D7235468CA009A4972 /* FunctionalSwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		F5476500000010 = {
 			isa = PBXGroup;
 			children = (
@@ -199,7 +229,6 @@
 				F54765000001E0 /* PrivateKey.swift */,
 				F54765000001F0 /* PublicKey.swift */,
 			);
-			name = Key;
 			path = Key;
 			sourceTree = "<group>";
 		};
@@ -211,7 +240,6 @@
 				F5476500000230 /* EncryptedMessage.swift */,
 				F5476500000240 /* Signature.swift */,
 			);
-			name = Message;
 			path = Message;
 			sourceTree = "<group>";
 		};
@@ -296,15 +324,18 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = F5476500000010;
 			productRefGroup = F5476500000020 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 18B208BE235461DE009A4972 /* Products */;
 					ProjectRef = F5476500000570 /* CryptoSwift */;
 				},
 				{
+					ProductGroup = 18B208C0235461DE009A4972 /* Products */;
 					ProjectRef = F54765000005C0 /* FunctionalSwift */;
 				},
 			);
@@ -314,6 +345,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		18B208D5235468CA009A4972 /* CryptoSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CryptoSwift.framework;
+			remoteRef = 18B208D4235468CA009A4972 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		18B208D7235468CA009A4972 /* FunctionalSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FunctionalSwift.framework;
+			remoteRef = 18B208D6235468CA009A4972 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F5476500000330 /* Resources */ = {

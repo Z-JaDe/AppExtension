@@ -65,7 +65,7 @@ open class AdapterTableViewController: AdapterListViewController<TableView, UITa
     open override func didMove(toParent parent: UIViewController?) {
         super.didMove(toParent: parent)
         if self.adapter.tableView == nil {
-            adapter.tableViewInit(self.rootView)            
+            adapter.tableViewInit(self.rootView)
         }
     }
 

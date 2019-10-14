@@ -17,9 +17,9 @@ public struct KeyPathDecodableResponseSerializer<T: Decodable>: ResponseSerializ
     let jsonSerializer: JSONResponseSerializer
     let decodeSerializer: DecodableResponseSerializer<T>
     public init(dataPreprocessor: DataPreprocessor = JSONResponseSerializer.defaultDataPreprocessor,
-         emptyResponseCodes: Set<Int> = JSONResponseSerializer.defaultEmptyResponseCodes,
-         emptyRequestMethods: Set<HTTPMethod> = JSONResponseSerializer.defaultEmptyRequestMethods,
-         atKeyPath keyPath: String?) {
+                emptyResponseCodes: Set<Int> = JSONResponseSerializer.defaultEmptyResponseCodes,
+                emptyRequestMethods: Set<HTTPMethod> = JSONResponseSerializer.defaultEmptyRequestMethods,
+                atKeyPath keyPath: String?) {
         self.dataPreprocessor = dataPreprocessor
         self.emptyResponseCodes = emptyResponseCodes
         self.emptyRequestMethods = emptyRequestMethods
