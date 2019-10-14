@@ -7,8 +7,8 @@
 //
 
 import Foundation
-
-public struct AttributedStringMaker {
+//为了保证链式写法不会导致不断写时拷贝，使用class
+public class AttributedStringMaker {
     var attrStr: AttributedString
     init(_ value: AttributedString) {
         self.attrStr = value
@@ -30,21 +30,26 @@ extension AttributedStringMaker {
     public var string: String {
         return self.attrStr.string
     }
-    public func then(_ closure: (inout Self) -> Void) -> Self {
-        var copy = self
-        closure(&copy)
-        return copy
-    }
 }
 extension AttributedStringMaker {
-    mutating func _setAttribute(_ key: NSAttributedString.Key, value: Any?, range: NSRange?) {
+    public func then(_ closure: (AttributedStringMaker) -> Void) -> Self {
+        closure(self)
+        return self
+    }
+    @discardableResult
+    func _setAttribute(_ key: NSAttributedString.Key, value: Any?, range: NSRange?) -> Self {
         self.attrStr.setAttribute(key, value: value, range: range)
+        return self
     }
-    mutating func _paragraphStyle(_ style: NSParagraphStyle?, range: NSRange? = nil) {
+    @discardableResult
+    func _paragraphStyle(_ style: NSParagraphStyle?, range: NSRange? = nil) -> Self {
         self.attrStr.setAttribute(.paragraphStyle, value: style, range: range)
+        return self
     }
-    mutating func _setParagraphStyleAttr<T: Equatable>(_ keyPath: ReferenceWritableKeyPath<NSMutableParagraphStyle, T>, _ value: T, _ range: NSRange?) {
+    @discardableResult
+    func _setParagraphStyleAttr<T: Equatable>(_ keyPath: ReferenceWritableKeyPath<NSMutableParagraphStyle, T>, _ value: T, _ range: NSRange?) -> Self {
         self.attrStr.setParagraphStyleAttr(keyPath, value, range)
+        return self
     }
 }
 

@@ -40,21 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        gcdTest()
 //        copyTest()
         Foo().bar()
-        Observable<Int>.create { (observer) -> Disposable in
-            observer.onNext(1)
-//            observer.onNext(2)
-            return Disposables.create()
-        }.debug("外").flatMapLatest { (_) -> Observable<Int> in
-            Observable.create { (observer) -> Disposable in
-                observer.onNext(11)
-                observer.onError(NetworkError.ignore)
-                return Disposables.create()
-                }.debug("内")
-        }.catchErrorJustComplete()
-        .debug("结束")
-            .map {_ in throw NetworkError.ignore}
-            .debug("结束2")
-        .subscribe().dispose()
+        let attr = "".font(nil).color(nil)
+        let attr1 = attr.color(nil)
+        print(attr)
+        print(attr1)
         return true
     }
 

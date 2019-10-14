@@ -10,30 +10,38 @@ import Foundation
 
 public struct AttributedString {
     typealias T = NSMutableAttributedString
-    private var _value: T
+    final class Box {
+        let unbox: T
+        init(_ unbox: T) {
+            self.unbox = unbox
+        }
+    }
+    private var _box: Box
+    private var _value: T {
+        _box.unbox
+    }
     private var _valueForWriting: T {
         mutating get {
-            if !isKnownUniquelyReferenced(&_value) {
+            if !isKnownUniquelyReferenced(&_box) {
                 // swiftlint:disable force_cast
-                _value = _value.mutableCopy() as! T
+                _box = Box(_value.mutableCopy() as! T)
             }
             return _value
         }
     }
-
     public init(_ value: String = "") {
-        self._value = NSMutableAttributedString(string: value)
+        self._box = Box(NSMutableAttributedString(string: value))
     }
     public init(_ value: NSAttributedString?) {
         guard let value = value else {
-            self._value = T()
+            self._box = Box(T())
             return
         }
         if let value = value as? T {
-            self._value = value
+            self._box = Box(value)
         } else {
             // swiftlint:disable force_cast
-            self._value = value.mutableCopy() as! T
+            self._box = Box(value.mutableCopy() as! T)
         }
     }
     public var string: String {

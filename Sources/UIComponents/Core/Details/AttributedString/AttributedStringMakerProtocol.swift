@@ -11,28 +11,36 @@ import Foundation
 public protocol AttributedStringMakerProtocol {
     func createMaker() -> AttributedStringMaker
 }
+extension AttributedStringMaker: AttributedStringMakerProtocol {
+    public func createMaker() -> AttributedStringMaker {
+        return self
+    }
+}
+extension String: AttributedStringMakerProtocol {
+    public func createMaker() -> AttributedStringMaker {
+        AttributedStringMaker(self)
+    }
+}
+extension NSAttributedString: AttributedStringMakerProtocol {
+    public func createMaker() -> AttributedStringMaker {
+        AttributedStringMaker(self)
+    }
+}
+// MARK: -
 public extension AttributedStringMakerProtocol {
     func setAttribute(_ key: NSAttributedString.Key, value: Any?, range: NSRange?) -> AttributedStringMaker {
-        createMaker().then { (maker) in
-            maker._setAttribute(key, value: value, range: range)
-        }
+        createMaker()._setAttribute(key, value: value, range: range)
     }
     func paragraphStyle(_ style: NSParagraphStyle?, range: NSRange? = nil) -> AttributedStringMaker {
-        createMaker().then { (maker) in
-            maker._paragraphStyle(style, range: range)
-        }
+        createMaker()._paragraphStyle(style, range: range)
     }
 }
 public extension AttributedStringMakerProtocol {
     func color(_ color: UIColor?, range: NSRange? = nil) -> AttributedStringMaker {
-        createMaker().then { (maker) in
-            maker._setAttribute(.foregroundColor, value: color, range: range)
-        }
+        createMaker()._setAttribute(.foregroundColor, value: color, range: range)
     }
     func font(_ font: UIFont?, range: NSRange? = nil) -> AttributedStringMaker {
-        createMaker().then { (maker) in
-            maker._setAttribute(.font, value: font, range: range)
-        }
+        createMaker()._setAttribute(.font, value: font, range: range)
     }
     func underLine(_ color: UIColor? = Color.gray, range: NSRange? = nil) -> AttributedStringMaker {
         return createMaker().then { (maker) in
@@ -63,34 +71,13 @@ public extension AttributedStringMakerProtocol {
             if let kern = kern {return NSNumber(value: kern)}
             return nil
         }()
-        return createMaker().then { (maker) in
-            maker._setAttribute(.kern, value: value, range: range)
-        }
+        return createMaker()._setAttribute(.kern, value: value, range: range)
     }
     // MARK: paragraphStyle
     func alignment(_ alignment: NSTextAlignment, range: NSRange? = nil) -> AttributedStringMaker {
-        createMaker().then { (maker) in
-            maker._setParagraphStyleAttr(\.alignment, alignment, range)
-        }
+        createMaker()._setParagraphStyleAttr(\.alignment, alignment, range)
     }
     func lineSpacing(_ spacing: CGFloat, range: NSRange? = nil) -> AttributedStringMaker {
-        createMaker().then { (maker) in
-            maker._setParagraphStyleAttr(\.lineSpacing, spacing, range)
-        }
-    }
-}
-extension AttributedStringMaker: AttributedStringMakerProtocol {
-    public func createMaker() -> AttributedStringMaker {
-        return self
-    }
-}
-extension String: AttributedStringMakerProtocol {
-    public func createMaker() -> AttributedStringMaker {
-        AttributedStringMaker(self)
-    }
-}
-extension NSAttributedString: AttributedStringMakerProtocol {
-    public func createMaker() -> AttributedStringMaker {
-        AttributedStringMaker(self)
+        createMaker()._setParagraphStyleAttr(\.lineSpacing, spacing, range)
     }
 }
