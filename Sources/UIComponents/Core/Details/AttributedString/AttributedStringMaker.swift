@@ -7,7 +7,7 @@
 //
 
 import Foundation
-//为了保证链式写法不会导致不断写时拷贝，使用class
+//为了防止链式写法不断写时拷贝，使用class
 public class AttributedStringMaker {
     var attrStr: AttributedString
     init(_ value: AttributedString) {
@@ -28,7 +28,7 @@ public class AttributedStringMaker {
 }
 extension AttributedStringMaker {
     public var string: String {
-        return self.attrStr.string
+        self.attrStr.string
     }
 }
 extension AttributedStringMaker {

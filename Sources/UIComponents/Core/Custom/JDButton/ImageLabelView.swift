@@ -146,29 +146,19 @@ open class ImageLabelView: CustomControl {
     public var title: String? {
         get {return self.attributedTitle?.string}
         set {
-            self.attributedTitle = {
-                if let title = newValue {
-                    return title.font(titleFont).color(titleColor).finalize()
-                } else {
-                    return nil
-                }
-            }()
+            self.attributedTitle = newValue?.font(titleFont).color(titleColor).finalize()
         }
     }
     public var titleFont: UIFont? {
         didSet {
             let titleFont = self.titleFont ?? Font.h3
-            if let attr = self.attributedTitle {
-                self.attributedTitle = attr.font(titleFont).finalize()
-            }
+            self.attributedTitle = self.attributedTitle?.font(titleFont).finalize()
         }
     }
     public var titleColor: UIColor? {
         didSet {
             let textColor = self.titleColor ?? Color.black
-            if let attr = self.attributedTitle {
-                self.attributedTitle = attr.color(textColor).finalize()
-            }
+            self.attributedTitle = self.attributedTitle?.color(textColor).finalize()
         }
     }
     func updateTitleLabelData() {

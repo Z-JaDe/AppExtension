@@ -158,13 +158,7 @@ extension JDButton {
         if title != self.attributedTitleInfo[state]?.string {
             let titleFont = getTitleFont(state: state)
             let titleColor = getTitleColor(state: state)
-            let attrStr: NSAttributedString? = {
-                if let title = title {
-                    return title.font(titleFont).color(titleColor).finalize()
-                } else {
-                    return nil
-                }
-            }()
+            let attrStr = title?.font(titleFont).color(titleColor).finalize()
             self.setAttributedTitle(attrStr, for: state)
         }
     }
