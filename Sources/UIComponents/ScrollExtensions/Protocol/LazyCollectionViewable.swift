@@ -2,7 +2,7 @@
 //  LazyCollectionViewable.swift
 //  Alamofire
 //
-//  Created by 郑军铎 on 2018/6/27.
+//  Created by ZJaDe on 2018/6/27.
 //
 
 import Foundation

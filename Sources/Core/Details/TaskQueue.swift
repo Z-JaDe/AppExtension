@@ -2,7 +2,7 @@
 //  TaskProtocol.swift
 //  PaiBaoTang
 //
-//  Created by 茶古电子商务 on 2017/7/6.
+//  Created by ZJaDe on 2017/7/6.
 //  Copyright © 2017年 Z_JaDe. All rights reserved.
 //
 
@@ -83,14 +83,14 @@ public class TaskQueue {
 // MARK: 任务暂停、恢复
 public extension TaskQueue {
     func taskSuspend() {
-        performInMainAsync {
+        performInMain {
             guard self.taskIsSuspend == false else { return }
             self.taskIsSuspend = true
             self.queue.suspend()
         }
     }
     func taskResume() {
-        performInMainAsync {
+        performInMain {
             guard self.taskIsSuspend else { return }
             self.taskIsSuspend = false
             self.queue.resume()

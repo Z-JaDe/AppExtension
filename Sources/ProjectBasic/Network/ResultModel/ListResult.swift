@@ -2,7 +2,7 @@
 //  ListResult.swift
 //  ProjectBasic
 //
-//  Created by 郑军铎 on 2019/1/10.
+//  Created by ZJaDe on 2019/1/10.
 //  Copyright © 2019 ZJaDe. All rights reserved.
 //
 

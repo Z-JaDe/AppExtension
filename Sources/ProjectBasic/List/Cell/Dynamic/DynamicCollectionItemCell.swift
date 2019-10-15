@@ -2,7 +2,7 @@
 //  DynamicCollectionItemCell.swift
 //  SNKit_TJS
 //
-//  Created by 郑军铎 on 2018/5/24.
+//  Created by ZJaDe on 2018/5/24.
 //  Copyright © 2018年 syk. All rights reserved.
 //
 

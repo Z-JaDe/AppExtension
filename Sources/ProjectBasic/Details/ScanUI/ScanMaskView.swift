@@ -1,8 +1,8 @@
 //
 //  ScanMaskView.swift
-//  Wallet
+//  ZJaDe
 //
-//  Created by 郑军铎 on 2018/8/27.
+//  Created by ZJaDe on 2018/8/27.
 //  Copyright © 2018年 ZJaDe. All rights reserved.
 //
 

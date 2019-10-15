@@ -2,7 +2,7 @@
 //  TabBar.swift
 //  ZiWoYou
 //
-//  Created by 茶古电子商务 on 16/9/21.
+//  Created by ZJaDe on 16/9/21.
 //  Copyright © 2016年 Z_JaDe. All rights reserved.
 //
 

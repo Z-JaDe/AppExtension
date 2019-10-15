@@ -2,7 +2,7 @@
 //  ResultCode.swift
 //  SNKitCore
 //
-//  Created by 郑军铎 on 2018/11/23.
+//  Created by ZJaDe on 2018/11/23.
 //  Copyright © 2018 数牛. All rights reserved.
 //
 

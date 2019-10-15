@@ -2,7 +2,7 @@
 //  UICollectView+Rx.swift
 //  ZiWoYou
 //
-//  Created by 茶古电子商务 on 17/3/23.
+//  Created by ZJaDe on 17/3/23.
 //  Copyright © 2017年 Z_JaDe. All rights reserved.
 //
 

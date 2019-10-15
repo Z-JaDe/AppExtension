@@ -2,7 +2,7 @@
 //  Percent.swift
 //  SNKit
 //
-//  Created by 郑军铎 on 2018/5/29.
+//  Created by ZJaDe on 2018/5/29.
 //  Copyright © 2018年 syk. All rights reserved.
 //
 

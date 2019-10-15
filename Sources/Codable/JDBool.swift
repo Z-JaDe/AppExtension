@@ -2,7 +2,7 @@
 //  JDBool.swift
 //  Extension
 //
-//  Created by 茶古电子商务 on 2017/12/20.
+//  Created by ZJaDe on 2017/12/20.
 //  Copyright © 2017年 Z_JaDe. All rights reserved.
 //
 // bool int float string

@@ -2,7 +2,7 @@
 //  EntityManager+Operation.swift
 //  JDKit
 //
-//  Created by 茶古电子商务 on 2017/12/1.
+//  Created by ZJaDe on 2017/12/1.
 //  Copyright © 2017年 Z_JaDe. All rights reserved.
 //
 

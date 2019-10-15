@@ -2,7 +2,7 @@
 //  Occupiable.swift
 //  JDKit
 //
-//  Created by 茶古电子商务 on 2017/11/23.
+//  Created by ZJaDe on 2017/11/23.
 //  Copyright © 2017年 Z_JaDe. All rights reserved.
 //
 import RxOptional

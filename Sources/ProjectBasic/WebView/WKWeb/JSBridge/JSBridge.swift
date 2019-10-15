@@ -2,7 +2,7 @@
 //  JSBridge.swift
 //  AppExtension
 //
-//  Created by 郑军铎 on 2019/3/4.
+//  Created by ZJaDe on 2019/3/4.
 //  Copyright © 2019 ZJaDe. All rights reserved.
 //
 

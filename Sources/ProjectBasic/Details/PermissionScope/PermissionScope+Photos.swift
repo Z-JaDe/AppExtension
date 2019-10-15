@@ -2,7 +2,7 @@
 //  PermissionScope+Photos.swift
 //  Base
 //
-//  Created by 郑军铎 on 2018/7/9.
+//  Created by ZJaDe on 2018/7/9.
 //  Copyright © 2018年 ZJaDe. All rights reserved.
 //
 

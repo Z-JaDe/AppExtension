@@ -8,7 +8,7 @@
 
 import Foundation
 
-public func performInMainAsync(_ action: @escaping () -> Void) {
+public func performInMain(_ action: @escaping () -> Void) {
     if Thread.isMainThread {
         action()
     } else {

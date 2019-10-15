@@ -2,7 +2,7 @@
 //  OneWayScrollable.swift
 //  AppExtension
 //
-//  Created by 郑军铎 on 2018/6/26.
+//  Created by ZJaDe on 2018/6/26.
 //  Copyright © 2018年 ZJaDe. All rights reserved.
 //
 

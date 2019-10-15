@@ -2,7 +2,7 @@
 //  LocationDegrees.swift
 //  Codable
 //
-//  Created by 茶古电子商务 on 2018/1/17.
+//  Created by ZJaDe on 2018/1/17.
 //  Copyright © 2018年 Z_JaDe. All rights reserved.
 //
 

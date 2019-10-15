@@ -2,7 +2,7 @@
 //  MessageHUDProtocol.swift
 //  PaiBaoTang
 //
-//  Created by 茶古电子商务 on 2017/7/6.
+//  Created by ZJaDe on 2017/7/6.
 //  Copyright © 2017年 Z_JaDe. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  LazyGetDataTask.swift
 //  SNKit_TJS
 //
-//  Created by 郑军铎 on 2018/5/15.
+//  Created by ZJaDe on 2018/5/15.
 //  Copyright © 2018年 syk. All rights reserved.
 //
 

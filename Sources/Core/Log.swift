@@ -2,7 +2,7 @@
 //  Log.swift
 //  PaiBaoTang
 //
-//  Created by 茶古电子商务 on 16/9/23.
+//  Created by ZJaDe on 16/9/23.
 //  Copyright © 2016 Z_JaDe. All rights reserved.
 //
 
@@ -37,7 +37,7 @@ public struct Logger {
         return result
     }()
     fileprivate func log(_ level: LogLevel, _ message: String) {
-        performInMainAsync {
+        performInMain {
             self.privateLog(level, message)
         }
     }

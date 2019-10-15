@@ -2,7 +2,7 @@
 //  PageScrollView.swift
 //  AppExtension
 //
-//  Created by 郑军铎 on 2018/6/22.
+//  Created by ZJaDe on 2018/6/22.
 //  Copyright © 2018年 ZJaDe. All rights reserved.
 //
 
