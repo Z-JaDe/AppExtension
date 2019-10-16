@@ -26,7 +26,6 @@ extension ObservableType where Element: RequestContextCompatible, Element.R: Dat
         }
     }
 }
-//func cancel(byProducingResumeData completionHandler: @escaping (_ data: Data?) -> Void) -> Self
 extension ObservableType where Element: RequestContextCompatible, Element.R: DownloadRequest {
     public func cancel() -> Observable<Data?> {
         flatMapNetwork { (context) -> Observable<Data?> in

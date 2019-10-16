@@ -10,12 +10,12 @@ import Foundation
 import RxSwift
 
 extension Notification.Name {
-    public func notification() -> Observable<Notification> {
+    public func rx() -> Observable<Notification> {
         NotificationCenter.default.rx.notification(self)
     }
 }
 extension Collection where Element == Notification.Name {
-    public func notifications() -> [Observable<Notification>] {
-        self.map {$0.notification()}
+    public func rxArr() -> [Observable<Notification>] {
+        self.map {$0.rx()}
     }
 }

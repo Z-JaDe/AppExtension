@@ -14,7 +14,12 @@ extension Decodable {
         return try decoder.decode(Self.self, from: data)
     }
     public static func deserialize(from params: Any) throws -> Self {
-        let data = try JSONSerialization.data(withJSONObject: params, options: [])
+        let data: Data
+        if let string = params as? String {
+            data = string.data(using: .utf8) ?? Data()
+        } else {
+            data = try JSONSerialization.data(withJSONObject: params, options: [])
+        }
         return try deserialize(from: data)
     }
 }

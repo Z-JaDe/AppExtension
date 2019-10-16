@@ -9,9 +9,12 @@
 import Foundation
 
 public struct ResultCode: RawRepresentable, Equatable, Codable, CustomStringConvertible {
-    public let rawValue: Int
-    public init(rawValue: Int) {
+    public let rawValue: String
+    public init(rawValue: String) {
         self.rawValue = rawValue
+    }
+    public init(rawValue: Int) {
+        self.rawValue = "\(rawValue)"
     }
 
     public static let error: ResultCode = ResultCode(rawValue: -1001)

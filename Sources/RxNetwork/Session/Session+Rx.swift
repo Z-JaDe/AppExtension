@@ -42,6 +42,15 @@ extension Reactive where Base: Session {
     ) -> Observable<RequestContext<UploadRequest>> {
         getRequest { $0.upload(multipartFormData: multipartFormData, with: request, usingThreshold: encodingMemoryThreshold, interceptor: interceptor, fileManager: fileManager) }
     }
+    public func upload(
+        multipartFormData: MultipartFormData,
+        with request: URLRequestConvertible,
+        usingThreshold encodingMemoryThreshold: UInt64 = MultipartFormData.encodingMemoryThreshold,
+        interceptor: RequestInterceptor? = nil,
+        fileManager: FileManager = .default
+    ) -> Observable<RequestContext<UploadRequest>> {
+        getRequest { $0.upload(multipartFormData: multipartFormData, with: request, usingThreshold: encodingMemoryThreshold, interceptor: interceptor, fileManager: fileManager) }
+    }
     // MARK: Download
     public func download(_ urlRequest: URLRequestConvertible,
                          interceptor: RequestInterceptor? = nil,

@@ -40,10 +40,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        gcdTest()
 //        copyTest()
         Foo().bar()
-        let attr = "".font(nil).color(nil)
-        let attr1 = attr.color(nil)
-        print(attr)
-        print(attr1)
+        let a = "1"
+        let b = a as? Int
+        print(b)
+        let dict = NSMutableDictionary()
+        dict["msgType"] = "2"
+        dict["jumpUrl"] = "{\"proId\":1,\"orderId\":2}"
+        struct Model: Codable {
+            let msgType: Number
+            let jumpUrl: String
+            
+            struct JumpModel: Codable {
+                let proId: String
+                let orderId: String
+            }
+        }
+        do {
+            let model = try Model.deserialize(from: dict)
+            let jumpModel = try Model.JumpModel.deserialize(from: model.jumpUrl)
+            print(jumpModel)
+        } catch let error {
+            print(error)
+        }
+        
         return true
     }
 

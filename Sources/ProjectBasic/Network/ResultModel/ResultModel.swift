@@ -21,7 +21,7 @@ extension ResultModelType {
         }
     }
 }
-open class ResultModel<DataType: Codable>: Codable, ResultModelType {
+open class ResultModel<DataType: Decodable>: Decodable, ResultModelType {
     public var resultCode: ResultCode?
     public var message: String?
     public var data: DataType?
@@ -72,6 +72,8 @@ open class ResultModel<DataType: Codable>: Codable, ResultModelType {
             }
         }
     }
+}
+extension ResultModel: Encodable where DataType: Encodable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(resultCode, forKey: self.resultCodeKey)

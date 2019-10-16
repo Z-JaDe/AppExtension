@@ -11,8 +11,15 @@ import RxCocoa
 import FunctionalSwift
 
 typealias ViewControllerProtocol = RootViewStateProtocol & NetworkProtocol & UpdateDataProtocol
-
 open class ViewController: UIViewController, ViewControllerProtocol {
+    public var statusBarStyle: UIStatusBarStyle = .default {
+        didSet {
+            setNeedsStatusBarAppearanceUpdate()
+        }
+    }
+    open override var preferredStatusBarStyle: UIStatusBarStyle {
+        statusBarStyle
+    }
     // MARK: - init
     public init() {
         super.init(nibName: nil, bundle: nil)
