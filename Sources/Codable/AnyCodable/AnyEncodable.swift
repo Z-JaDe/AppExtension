@@ -44,6 +44,7 @@ extension AnyEncodable: _AnyEncodable {}
 // MARK: - Encodable
 
 extension _AnyEncodable {
+    // swiftlint:disable cyclomatic_complexity function_body_length
     public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
 
@@ -97,6 +98,7 @@ extension _AnyEncodable {
     }
 
     #if os(macOS) || os(iOS) || os(watchOS) || os(tvOS)
+    // swiftlint:disable cyclomatic_complexity
     private func encode(nsnumber: NSNumber, into container: inout SingleValueEncodingContainer) throws {
         switch CFNumberGetType(nsnumber) {
         case .charType:
@@ -122,8 +124,8 @@ extension _AnyEncodable {
         case .doubleType, .float64Type, .cgFloatType:
             try container.encode(nsnumber.doubleValue)
         #if swift(>=5.0)
-            @unknown default:
-                fatalError()
+        @unknown default:
+            fatalError()
         #endif
         }
     }
