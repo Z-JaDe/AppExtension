@@ -37,3 +37,6 @@
 [submodule "BaseSupport/CollectionKit"]
 	path = BaseSupport/CollectionKit
 	url = git@github.com:Z-JaDe/CollectionKit.git
+[submodule "BaseSupport/RxNetwork"]
+	path = BaseSupport/RxNetwork
+	url = git@github.com:Z-JaDe/RxNetwork.git
