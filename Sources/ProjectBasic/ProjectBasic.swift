@@ -15,7 +15,6 @@ import Foundation
 #if !AppExtensionPods
 @_exported import Core
 @_exported import Codable
-@_exported import RxNetwork
 @_exported import UIComponents
 @_exported import List
 @_exported import RxExtensions

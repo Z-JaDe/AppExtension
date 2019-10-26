@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RxNetwork
 public typealias TaskVC = MessageHUDProtocol & TaskQueueProtocol
 
 public enum ShowNetworkHUD<ResultCodeType> where ResultCodeType: RawRepresentable & Equatable {
