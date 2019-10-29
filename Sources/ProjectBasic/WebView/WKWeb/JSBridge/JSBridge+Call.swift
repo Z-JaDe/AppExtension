@@ -17,15 +17,20 @@ extension JSBridge {
     public func call(function: String, withArgs args: [String]) -> Observable<Void> {
         context.rawCall(function: function, args: args.joined(separator: ",")).mapToVoid()
     }
+
     public func call<Result: Decodable>(function: String, withArgs args: [String]) -> Observable<Result> {
         context.rawCall(function: function, args: args.joined(separator: ",")).map(JSBridgeArgs.decode)
     }
-}
-extension JSBridge {
+
     public func call(function: String) -> Observable<Void> {
-        call(function: function, withArgs: [])
+        context.rawCall(function: function, args: "").mapToVoid()
     }
 
+    public func call<Result: Decodable>(function: String) -> Observable<Result> {
+        context.rawCall(function: function, args: "").map(JSBridgeArgs.decode)
+    }
+}
+extension JSBridge {
     public func call<A: Encodable>(function: String, withArg arg: A) -> Observable<Void> {
         call(function: function, withArgs: JSBridgeArgs.map(arg))
     }
@@ -58,10 +63,6 @@ extension JSBridge {
     }
 }
 extension JSBridge {
-    public func call<Result: Decodable>(function: String) -> Observable<Result> {
-        call(function: function, withArgs: [])
-    }
-
     public func call<Result: Decodable, A: Encodable>(function: String, withArg arg: A) -> Observable<Result> {
         call(function: function, withArgs: JSBridgeArgs.map(arg))
     }
@@ -94,4 +95,3 @@ extension JSBridge {
         call(function: function, withArgs: JSBridgeArgs.map(args))
     }
 }
-

@@ -21,7 +21,11 @@ extension JSBridge: DisposeBagProtocol {
     public func register(namespace: String) {
         rawRegister(namespace: namespace)
     }
+
+    public typealias Decodable = JSBridgeArgs.Decodable
+    public typealias Encodable = JSBridgeArgs.Encodable
 }
+// swiftlint:disable large_tuple
 extension JSBridge {
     public func registerArgs(functionNamed name: String, _ fn: @escaping (JSBridgeArgs) throws -> Void) {
         rawRegister(functionNamed: name) { (args) in

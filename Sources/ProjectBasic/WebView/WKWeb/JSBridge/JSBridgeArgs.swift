@@ -8,27 +8,42 @@
 
 import Foundation
 import RxSwift
-
-public struct JSBridgeArgs {
-    let args: [String]
-    public func decode<T: Decodable>(_ index: Int) throws -> T {
-        if args.indexCanBound(index) {
-            return try JSBridgeArgs.decode(args[index])
-        } else {
-            throw NSError(domain: "com.zjade.jsBridge.decode", code: -1, userInfo: nil)
-        }
+public protocol JSBridgeEmptyArg {
+    init()
+}
+extension Int: JSBridgeEmptyArg {}
+extension UInt: JSBridgeEmptyArg {}
+extension Double: JSBridgeEmptyArg {}
+extension Float: JSBridgeEmptyArg {}
+extension String: JSBridgeEmptyArg {}
+extension Optional: JSBridgeEmptyArg {
+    public init() {
+        self = .none
     }
 }
-extension JSBridgeArgs {
-    public static func encode<T: Encodable>(_ value: T) -> String {
+public struct JSBridgeArgs {
+    let args: [String]
+    public typealias Decodable = Swift.Decodable & JSBridgeEmptyArg
+    public typealias Encodable = Swift.Encodable & JSBridgeEmptyArg
+}
+public extension JSBridgeArgs {
+    static func encode<T: Encodable>(_ value: T) -> String {
         // swiftlint:disable force_try
         return String(data: try! JSBridge.encoder.encode([value]).dropFirst().dropLast(), encoding: .utf8)!
     }
-    public static func decode<T: Decodable>(_ jsonString: String) throws -> T {
+    static func decode<T: Decodable>(_ jsonString: String) throws -> T {
         let data = ("[" + jsonString + "]").data(using: .utf8)!
         return (try JSBridge.decoder.decode([T].self, from: data))[0]
     }
+    func decode<T: Decodable>(_ index: Int) throws -> T {
+        if args.indexCanBound(index) {
+            return try JSBridgeArgs.decode(args[index])
+        } else {
+            return T()
+        }
+    }
 }
+// swiftlint:disable large_tuple
 public extension JSBridgeArgs {
     func map<A: Decodable>() throws -> A {
         return try decode(0)
