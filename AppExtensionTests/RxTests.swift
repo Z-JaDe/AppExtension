@@ -60,7 +60,7 @@ class RxTests: XCTestCase {
         }//.share()
         subscribe(publishFlat, observer: publish)
     }
-    func subscribe<T, O: ObserverType>(_ observable: Observable<T>, observer: O) where O.E == Int {
+    func subscribe<T, O: ObserverType>(_ observable: Observable<T>, observer: O) where O.Element == Int {
         observable.logDebug("a").subscribeOnNext { (value) in
             logDebug(value)
             }.disposed(by: disposeBag)

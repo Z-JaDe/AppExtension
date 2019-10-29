@@ -123,12 +123,8 @@ end
 
 target:'AppExtension' do
   projectBasicPod
-  target 'AppExtensionUITests' do
-    inherit! :search_paths
-  end
-  target 'AppExtensionTests' do
-    inherit! :search_paths
-  end
+  target 'AppExtensionUITests'
+  target 'AppExtensionTests'
 end
 
 
