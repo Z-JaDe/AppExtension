@@ -62,7 +62,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch let error {
             print(error)
         }
-        
         return true
     }
 
