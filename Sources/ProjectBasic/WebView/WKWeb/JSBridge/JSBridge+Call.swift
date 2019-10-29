@@ -8,10 +8,7 @@
 
 import Foundation
 import RxSwift
-extension JSBridge {
-    public static let encoder = JSONEncoder()
-    public static let decoder = JSONDecoder()
-}
+
 // swiftlint:disable large_tuple
 extension JSBridge {
     public func call(function: String, withArgs args: [String]) -> Observable<Void> {
