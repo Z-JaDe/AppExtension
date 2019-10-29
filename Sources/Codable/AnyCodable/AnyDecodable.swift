@@ -71,6 +71,7 @@ extension _AnyDecodable {
 }
 
 extension AnyDecodable: Equatable {
+    // swiftlint:disable cyclomatic_complexity
     public static func == (lhs: AnyDecodable, rhs: AnyDecodable) -> Bool {
         switch (lhs.value, rhs.value) {
         case is (NSNull, NSNull), is (Void, Void):

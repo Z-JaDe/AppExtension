@@ -16,6 +16,7 @@ def baseCorePod
   userPod 'FunctionalSwift'
   userPod 'CocoaExtension'
   userPod 'ModalManager'
+  userPod 'RxNetwork'
 end
 
 def collectionKitPod
@@ -63,10 +64,6 @@ target:'List' do
   baseCorePod
   rxPod
   pod 'DifferenceKit'
-end
-target:'RxNetwork' do
-  rxPod
-  alamofirePod
 end
 target:'UIComponents' do
   baseCorePod

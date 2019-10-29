@@ -31,6 +31,9 @@ PODS:
   - RxGesture (2.2.0):
     - RxCocoa
     - RxSwift
+  - RxNetwork (1.0.0):
+    - Alamofire
+    - RxSwift
   - RxOptional (4.0.0):
     - RxCocoa
     - RxSwift
@@ -65,6 +68,7 @@ DEPENDENCIES:
   - ReSwift (from `https://github.com/ReSwift/ReSwift.git`)
   - RxCocoa (from `https://github.com/ReactiveX/RxSwift`)
   - RxGesture (from `BaseSupport/RxGesture`)
+  - RxNetwork (from `BaseSupport/RxNetwork`)
   - RxOptional (from `BaseSupport/RxOptional`)
   - RxSwift (from `https://github.com/ReactiveX/RxSwift`)
   - RxSwiftExt (from `BaseSupport/RxSwiftExt`)
@@ -103,6 +107,8 @@ EXTERNAL SOURCES:
     :git: https://github.com/ReactiveX/RxSwift
   RxGesture:
     :path: BaseSupport/RxGesture
+  RxNetwork:
+    :path: BaseSupport/RxNetwork
   RxOptional:
     :path: BaseSupport/RxOptional
   RxSwift:
@@ -149,6 +155,7 @@ SPEC CHECKSUMS:
   ReSwift: 820555642f938e2e6c79f3ff75d70a2f45d4ef80
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxGesture: b37434fb6d171882ef112d22ba171e03cb441548
+  RxNetwork: 43d49928a82e748abdfe31ee318ceff15a27fe06
   RxOptional: 97997cced25e116c1d85d7199abf5a22bb9a7699
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
@@ -158,6 +165,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 3663be32eefd9163545211d08f4ca9eae1f94d3a
   Validation: 707530eb0fb44304faab08447d2d647c6c4ab0f7
 
-PODFILE CHECKSUM: 0251339fac9b7ac0f49159fd0eb1945181d1f066
+PODFILE CHECKSUM: ccfbd734ed29ff7cb9e68123cee92a70694576ce
 
 COCOAPODS: 1.7.5

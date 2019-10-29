@@ -8,7 +8,7 @@
 
 import Foundation
 import RxSwift
-
+import RxNetwork
 extension Observable where Element: ResponseContextCompatible {
     public func resultCallback(_ closure: @escaping (Result<Element.Value, Error>) -> Void) -> Disposable {
         self.logDebug("_请求回调_").subscribe(onNext: { (element) in
