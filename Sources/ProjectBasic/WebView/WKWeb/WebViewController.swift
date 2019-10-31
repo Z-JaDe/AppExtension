@@ -12,7 +12,7 @@ import WebKit
 
 open class WebViewController: BaseWebViewController<JDWKWebView>, WKNavigationDelegate {
     /// ZJaDe: 
-    public private(set) lazy var jsBridge: JSBridge = JSBridge(libraryCode: "", functionNamespace: "appNative")
+    public private(set) lazy var jsBridge: JSBridge = JSBridge(libraryCode: "")
     /// ZJaDe: 
     let uiProxy: WKUIProxy = WKUIProxy()
     open override func viewDidLoad() {

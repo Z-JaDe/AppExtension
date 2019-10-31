@@ -23,6 +23,15 @@ private let defaultOrigin = URL(string: "bridge://localhost/")!
 private let html = "<!DOCTYPE html>\n<html>\n<head></head>\n<body></body>\n</html>".data(using: .utf8)!
 private let notFound = "404 Not Found".data(using: .utf8)!
 
+/**
+ 原生代码里面的nextIdentifier用来区分多个call任务
+ JS代码里面的nextId用来临时存储 JS执行原生方法对应的Promise，原生方法执行完后 对应的Promise释放
+ 原生调用JS
+ JS通过 __JSBridge__receive__ 执行指定方法，执行完成后把结果通过id交给原生handler信号
+ JS调用原生
+ JS执行某个交互方法时 会调用__JSBridge__send__， __JSBridge__send__ 通过method 找到对应的原生function执行
+ 执行完成后会根据结果 执行JS代码__JSBridge__resolve__ __JSBridge__reject__，JS通过监听Promise获取到执行结果
+ */
 private let internalLibrary = """
 (function () {
     function serializeError (value) {
@@ -105,7 +114,7 @@ private class BridgeSchemeHandler: NSObject, WKURLSchemeHandler {
 
     func webView(_ webView: WKWebView, stop urlSchemeTask: WKURLSchemeTask) {}
 }
-
+///WebView创建时注入监听__JSBridge__ready__的js代码
 internal func buildWebViewConfig(libraryCode: String, incognito: Bool) -> WKWebViewConfiguration {
     let source = "\(internalLibrary);try{(function () {\(libraryCode)}());__JSBridge__ready__(true)} catch (err) {__JSBridge__ready__(false, err)}"
     let script = WKUserScript(source: source, injectionTime: .atDocumentStart, forMainFrameOnly: true)
@@ -138,20 +147,20 @@ internal class Context: NSObject, WKScriptMessageHandler {
             }
         }
     }
+    ///存储当前WebView加载状态
     private let readySubject: ReplaySubject<State> = ReplaySubject.create(bufferSize: 1)
-    let functionNamespace: String
-
+    ///调用call一次就增加一次
     private var nextIdentifier = 1
+    /// 原生调用JS会用到; 根据Id存储 js任务执行后的结果监听处理
     private var handlers = [Int: AnyObserver<String>]()
-
+    /// JS调用原生会用到; 根据方法名存储 方法名对应的原生代码
     private var functions = [String: ([String]) throws -> Observable<String>]()
 
     private static var errorEncoder = JSONEncoder()
 
     private weak var webView: JDWKWebView?
 
-    init(functionNamespace: String) {
-        self.functionNamespace = functionNamespace
+    override init() {
         super.init()
     }
     func createWebView(libraryCode: String, customOrigin: URL?, incognito: Bool) -> JDWKWebView {
@@ -164,7 +173,7 @@ internal class Context: NSObject, WKScriptMessageHandler {
     // swiftlint:disable cyclomatic_complexity
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         guard let dict = message.body as? [String: AnyObject] else { return }
-
+        /// webView didLoad时register重启
         if let didLoad = dict["didLoad"] as? Bool, didLoad {
             if let error = dict["error"] as? [String: AnyObject] {
                 readySubject.onNext(.didLoadWithError(JSError(fromDictionary: error)))
@@ -172,7 +181,7 @@ internal class Context: NSObject, WKScriptMessageHandler {
                 readySubject.onNext(.didLoad)
             }
         }
-
+        /// webView didUnload时释放所有call任务，register也暂停
         if let didUnload = dict["didUnload"] as? Bool, didUnload {
             handlers.forEach { $1.onError(AbortedError()) }
             handlers.removeAll()
@@ -180,7 +189,7 @@ internal class Context: NSObject, WKScriptMessageHandler {
         }
 
         guard let id = dict["id"] as? Int else { return }
-
+        ///call
         if let result = dict["result"] as? String {
             guard let handler = handlers.removeValue(forKey: id) else { return }
 
@@ -192,7 +201,7 @@ internal class Context: NSObject, WKScriptMessageHandler {
 
             return handler.onError(JSError(fromDictionary: error))
         }
-
+        ///register
         guard let method = dict["method"] as? String else { return }
         guard let fn = functions[method] else { return }
         let params = dict["params"] as? [String] ?? []
