@@ -1,12 +1,19 @@
-[submodule "BaseSupport/RxOptional"]
-	path = BaseSupport/RxOptional
+[submodule "BaseSupport/Fork/RxOptional"]
+	path = BaseSupport/Fork/RxOptional
 	url = git@github.com:Z-JaDe/RxOptional.git
-[submodule "BaseSupport/RxSwiftExt"]
-	path = BaseSupport/RxSwiftExt
+[submodule "BaseSupport/Fork/RxSwiftExt"]
+	path = BaseSupport/Fork/RxSwiftExt
 	url = git@github.com:Z-JaDe/RxSwiftExt.git
-[submodule "BaseSupport/RxGesture"]
-	path = BaseSupport/RxGesture
+[submodule "BaseSupport/Fork/RxGesture"]
+	path = BaseSupport/Fork/RxGesture
 	url = git@github.com:Z-JaDe/RxGesture.git
+[submodule "BaseSupport/Fork/SwiftyUserDefaults"]
+	path = BaseSupport/Fork/SwiftyUserDefaults
+	url = git@github.com:Z-JaDe/SwiftyUserDefaults.git
+[submodule "BaseSupport/Fork/CollectionKit"]
+	path = BaseSupport/Fork/CollectionKit
+	url = git@github.com:Z-JaDe/CollectionKit.git
+
 [submodule "BaseSupport/CocoaExtension"]
 	path = BaseSupport/CocoaExtension
 	url = git@github.com:Z-JaDe/CocoaExtension.git
@@ -31,12 +38,6 @@
 [submodule "BaseSupport/YogaFlexBoxKit"]
 	path = BaseSupport/YogaFlexBoxKit
 	url = git@github.com:Z-JaDe/YogaFlexBoxKit.git
-[submodule "BaseSupport/SwiftyUserDefaults"]
-	path = BaseSupport/SwiftyUserDefaults
-	url = git@github.com:Z-JaDe/SwiftyUserDefaults.git
-[submodule "BaseSupport/CollectionKit"]
-	path = BaseSupport/CollectionKit
-	url = git@github.com:Z-JaDe/CollectionKit.git
 [submodule "BaseSupport/RxNetwork"]
 	path = BaseSupport/RxNetwork
 	url = git@github.com:Z-JaDe/RxNetwork.git
