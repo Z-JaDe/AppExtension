@@ -9,6 +9,9 @@ install! 'cocoapods', deterministic_uuids: false, generate_multiple_pod_projects
 def userPod (name)
   pod name, :path => "BaseSupport/#{name}"
 end
+def userForkPod (name)
+  pod name, :path => "BaseSupport/Fork/#{name}"
+end
 
 def baseCorePod
   userPod 'Validation'
@@ -20,7 +23,7 @@ def baseCorePod
 end
 
 def collectionKitPod
-  userPod 'CollectionKit'
+  userForkPod 'CollectionKit'
 end
 
 def alamofirePod
@@ -36,9 +39,9 @@ end
 
 def rxExtensionPod
   rxPod
-  userPod 'RxGesture'
-  userPod 'RxSwiftExt'
-  userPod 'RxOptional'
+  userForkPod 'RxGesture'
+  userForkPod 'RxSwiftExt'
+  userForkPod 'RxOptional'
   #    pod 'RxAnimated'
   #    pod 'RxKeyboard'
 end
@@ -100,7 +103,7 @@ def commonPods
   
   pod 'Kingfisher'
   pod 'MBProgressHUD'
-  userPod 'SwiftyUserDefaults'
+  userForkPod 'SwiftyUserDefaults'
   
   pod 'Motion'
   collectionKitPod #仅测试

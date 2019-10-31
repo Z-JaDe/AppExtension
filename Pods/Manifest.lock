@@ -1,10 +1,10 @@
 PODS:
-  - Alamofire (5.0.0-rc.2)
+  - Alamofire (5.0.0-rc.3)
   - CocoaExtension (1.0.0)
   - CollectionKit (2.4.0):
     - CollectionKit/Core (= 2.4.0)
   - CollectionKit/Core (2.4.0)
-  - CryptoSwift (1.0.0)
+  - CryptoSwift (1.1.3)
   - DifferenceKit (1.1.3):
     - DifferenceKit/Core (= 1.1.3)
     - DifferenceKit/UIKitExtension (= 1.1.3)
@@ -15,9 +15,9 @@ PODS:
     - CryptoSwift
     - FunctionalSwift
   - FunctionalSwift (1.0.0)
-  - Kingfisher (5.8.3):
-    - Kingfisher/Core (= 5.8.3)
-  - Kingfisher/Core (5.8.3)
+  - Kingfisher (5.9.0):
+    - Kingfisher/Core (= 5.9.0)
+  - Kingfisher/Core (5.9.0)
   - MBProgressHUD (1.1.0)
   - MJRefresh (3.2.0)
   - ModalManager (1.0.0)
@@ -37,7 +37,7 @@ PODS:
   - RxOptional (4.0.0):
     - RxCocoa
     - RxSwift
-  - RxRelay (5.0.0):
+  - RxRelay (5.0.1):
     - RxSwift (~> 5)
   - RxSwift (5.0.1)
   - RxSwiftExt (5.0.0):
@@ -49,14 +49,14 @@ PODS:
     - RxCocoa
     - RxSwiftExt/Core
   - SnapKit (5.0.1)
-  - SwiftLint (0.35.0)
+  - SwiftLint (0.36.0)
   - SwiftyUserDefaults (5.0.0-beta.1)
   - Validation (1.0.0)
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire`)
   - CocoaExtension (from `BaseSupport/CocoaExtension`)
-  - CollectionKit (from `BaseSupport/CollectionKit`)
+  - CollectionKit (from `BaseSupport/Fork/CollectionKit`)
   - DifferenceKit
   - Encryption (from `BaseSupport/Encryption`)
   - FunctionalSwift (from `BaseSupport/FunctionalSwift`)
@@ -67,14 +67,14 @@ DEPENDENCIES:
   - Motion
   - ReSwift (from `https://github.com/ReSwift/ReSwift.git`)
   - RxCocoa (from `https://github.com/ReactiveX/RxSwift`)
-  - RxGesture (from `BaseSupport/RxGesture`)
+  - RxGesture (from `BaseSupport/Fork/RxGesture`)
   - RxNetwork (from `BaseSupport/RxNetwork`)
-  - RxOptional (from `BaseSupport/RxOptional`)
+  - RxOptional (from `BaseSupport/Fork/RxOptional`)
   - RxSwift (from `https://github.com/ReactiveX/RxSwift`)
-  - RxSwiftExt (from `BaseSupport/RxSwiftExt`)
+  - RxSwiftExt (from `BaseSupport/Fork/RxSwiftExt`)
   - SnapKit (from `https://github.com/SnapKit/SnapKit`)
   - SwiftLint
-  - SwiftyUserDefaults (from `BaseSupport/SwiftyUserDefaults`)
+  - SwiftyUserDefaults (from `BaseSupport/Fork/SwiftyUserDefaults`)
   - Validation (from `BaseSupport/Validation`)
 
 SPEC REPOS:
@@ -94,7 +94,7 @@ EXTERNAL SOURCES:
   CocoaExtension:
     :path: BaseSupport/CocoaExtension
   CollectionKit:
-    :path: BaseSupport/CollectionKit
+    :path: BaseSupport/Fork/CollectionKit
   Encryption:
     :path: BaseSupport/Encryption
   FunctionalSwift:
@@ -106,25 +106,25 @@ EXTERNAL SOURCES:
   RxCocoa:
     :git: https://github.com/ReactiveX/RxSwift
   RxGesture:
-    :path: BaseSupport/RxGesture
+    :path: BaseSupport/Fork/RxGesture
   RxNetwork:
     :path: BaseSupport/RxNetwork
   RxOptional:
-    :path: BaseSupport/RxOptional
+    :path: BaseSupport/Fork/RxOptional
   RxSwift:
     :git: https://github.com/ReactiveX/RxSwift
   RxSwiftExt:
-    :path: BaseSupport/RxSwiftExt
+    :path: BaseSupport/Fork/RxSwiftExt
   SnapKit:
     :git: https://github.com/SnapKit/SnapKit
   SwiftyUserDefaults:
-    :path: BaseSupport/SwiftyUserDefaults
+    :path: BaseSupport/Fork/SwiftyUserDefaults
   Validation:
     :path: BaseSupport/Validation
 
 CHECKOUT OPTIONS:
   Alamofire:
-    :commit: 6afd00ef8bf800edd14cc141e0677045b5d02a67
+    :commit: 2cbf59935fbb1f26e352ce4db53f1cf9408d5313
     :git: https://github.com/Alamofire/Alamofire
   ReSwift:
     :commit: 5b9ebd49b166205a89d17a466f03897559379665
@@ -140,14 +140,14 @@ CHECKOUT OPTIONS:
     :git: https://github.com/SnapKit/SnapKit
 
 SPEC CHECKSUMS:
-  Alamofire: 616173279c55fca0c71278ec5f42fa61ee7fa806
+  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
   CocoaExtension: d5b997c4ac17c378ae2d9415bcdeeecf9e05842f
   CollectionKit: 8f01e7629185bb81072c4aa734d105df5c2d1c8b
-  CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
+  CryptoSwift: 6b6e488df0598b3e9fa49254ed1a65e8c1b1e10b
   DifferenceKit: 5018791b6c1fc839921a3c171a0a539ace6ea60c
   Encryption: d59b0359431ca79a9eb05886ce8cdf8d41ca6a64
   FunctionalSwift: f74b7191c3dc62e6540983ce80c935194503172b
-  Kingfisher: b7e4cb65ff24c264bd2a1284b75b974d907afd94
+  Kingfisher: ff98240aebb7302bdc4f1ecd701761030ce18b16
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   ModalManager: 99623f5326a2a53064fa5576792174dd61cf8f5a
@@ -157,14 +157,14 @@ SPEC CHECKSUMS:
   RxGesture: b37434fb6d171882ef112d22ba171e03cb441548
   RxNetwork: 0c5bdab623ee3423c31ab27099059c67f81e7437
   RxOptional: 97997cced25e116c1d85d7199abf5a22bb9a7699
-  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   RxSwiftExt: c5fe5bd8577efc9bb5562a3437b561f35b52f439
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  SwiftLint: 5553187048b900c91aa03552807681bb6b027846
+  SwiftLint: fc9859e4e1752340664851f667bb1898b9c90114
   SwiftyUserDefaults: 3663be32eefd9163545211d08f4ca9eae1f94d3a
   Validation: 707530eb0fb44304faab08447d2d647c6c4ab0f7
 
-PODFILE CHECKSUM: 1cd66d2b2ecdc368d466d18195939a2f64c84684
+PODFILE CHECKSUM: 0c2f4d84e21997d2b73a555fbf4e34119fd90169
 
 COCOAPODS: 1.7.5

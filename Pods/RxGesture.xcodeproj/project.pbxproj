@@ -143,7 +143,7 @@
 				2469CE000003B0 /* Support Files */,
 			);
 			name = RxGesture;
-			path = ../BaseSupport/RxGesture;
+			path = ../BaseSupport/Fork/RxGesture;
 			sourceTree = "<group>";
 		};
 		2469CE00000110 /* iOS */ = {
@@ -193,7 +193,7 @@
 				2469CE000003E0 /* RxGesture-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../../Pods/Target Support Files/RxGesture";
+			path = "../../../Pods/Target Support Files/RxGesture";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

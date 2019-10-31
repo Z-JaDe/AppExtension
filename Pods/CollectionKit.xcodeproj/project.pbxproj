@@ -176,7 +176,7 @@
 				3B3FBA000008D0 /* Support Files */,
 			);
 			name = CollectionKit;
-			path = ../BaseSupport/CollectionKit;
+			path = ../BaseSupport/Fork/CollectionKit;
 			sourceTree = "<group>";
 		};
 		3B3FBA000000C0 /* Core */ = {
@@ -357,7 +357,7 @@
 				3B3FBA00000900 /* CollectionKit-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../../Pods/Target Support Files/CollectionKit";
+			path = "../../../Pods/Target Support Files/CollectionKit";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

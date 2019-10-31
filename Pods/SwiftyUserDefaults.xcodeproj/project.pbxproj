@@ -112,7 +112,7 @@
 				C0231A00000380 /* Support Files */,
 			);
 			name = SwiftyUserDefaults;
-			path = ../BaseSupport/SwiftyUserDefaults;
+			path = ../BaseSupport/Fork/SwiftyUserDefaults;
 			sourceTree = "<group>";
 		};
 		C0231A000001A0 /* Pod */ = {
@@ -144,7 +144,7 @@
 				C0231A000003B0 /* SwiftyUserDefaults-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../../Pods/Target Support Files/SwiftyUserDefaults";
+			path = "../../../Pods/Target Support Files/SwiftyUserDefaults";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

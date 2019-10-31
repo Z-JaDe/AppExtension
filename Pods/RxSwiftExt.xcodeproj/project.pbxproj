@@ -187,7 +187,7 @@
 				A3D671000006E0 /* Support Files */,
 			);
 			name = RxSwiftExt;
-			path = ../BaseSupport/RxSwiftExt;
+			path = ../BaseSupport/Fork/RxSwiftExt;
 			sourceTree = "<group>";
 		};
 		A3D671000000C0 /* Core */ = {
@@ -290,7 +290,7 @@
 				A3D67100000710 /* RxSwiftExt-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../../Pods/Target Support Files/RxSwiftExt";
+			path = "../../../Pods/Target Support Files/RxSwiftExt";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

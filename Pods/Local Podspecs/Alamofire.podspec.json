@@ -1,6 +1,6 @@
 {
   "name": "Alamofire",
-  "version": "5.0.0-rc.2",
+  "version": "5.0.0-rc.3",
   "license": "MIT",
   "summary": "Elegant HTTP Networking in Swift",
   "homepage": "https://github.com/Alamofire/Alamofire",
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "https://github.com/Alamofire/Alamofire.git",
-    "tag": "5.0.0-rc.2"
+    "tag": "5.0.0-rc.3"
   },
   "documentation_url": "https://alamofire.github.io/Alamofire/",
   "platforms": {

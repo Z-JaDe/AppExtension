@@ -128,7 +128,7 @@
 				8AA2AC000002A0 /* Support Files */,
 			);
 			name = RxOptional;
-			path = ../BaseSupport/RxOptional;
+			path = ../BaseSupport/Fork/RxOptional;
 			sourceTree = "<group>";
 		};
 		8AA2AC00000130 /* Pod */ = {
@@ -160,7 +160,7 @@
 				8AA2AC000002D0 /* RxOptional-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../../Pods/Target Support Files/RxOptional";
+			path = "../../../Pods/Target Support Files/RxOptional";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
