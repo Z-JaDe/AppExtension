@@ -52,15 +52,13 @@ open class TabBar: UITabBar {
         return layer
     }()
 
-    override open func setItems(_ items: [UITabBarItem]?, animated: Bool) {
+    open override func setItems(_ items: [UITabBarItem]?, animated: Bool) {
         super.setItems(items, animated: animated)
-        guard let items = items as? [TabBarItem] else {
-            return
-        }
+        guard let items = items as? [TabBarItem] else { return }
         self.currentItem = (self.selectedItem as? TabBarItem) ?? items.first
         self.setNeedsLayout()
     }
-    override open func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         /// ZJaDe: 把可选的items 转化成 [TabBarItem]
         let items = self.items as? [TabBarItem]

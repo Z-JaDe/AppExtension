@@ -19,7 +19,7 @@ open class AssetGridViewController: AdapterCollectionViewController, PHPhotoLibr
     var fetchResult: PHFetchResult<PHAsset>!
     let imageManager = PHImageManager()
 
-    override open func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         self.adapter.autoDeselectRow = false
         self.configCollectionViewLayout()

@@ -8,7 +8,7 @@ open class TransitionItemAnimations: ItemAnimation {
         super.init()
     }
 
-    override open func playAnimation(_ icon: UIImageView, textLabel: UILabel) {
+    open override func playAnimation(_ icon: UIImageView, textLabel: UILabel) {
 
         playAlphaAnimation(textLabel)
 
@@ -17,7 +17,7 @@ open class TransitionItemAnimations: ItemAnimation {
         })
     }
 
-    override open func deselectAnimation(_ icon: UIImageView, textLabel: UILabel) {
+    open override func deselectAnimation(_ icon: UIImageView, textLabel: UILabel) {
     }
 }
 

@@ -1,12 +1,12 @@
 import UIKit
 open class FumeAnimation: ItemAnimation {
 
-    override open func playAnimation(_ icon: UIImageView, textLabel: UILabel) {
+    open override func playAnimation(_ icon: UIImageView, textLabel: UILabel) {
         playMoveIconAnimation(icon, values: [icon.center.y, icon.center.y + 4.0])
         playLabelAnimation(textLabel)
     }
 
-    override open func deselectAnimation(_ icon: UIImageView, textLabel: UILabel) {
+    open override func deselectAnimation(_ icon: UIImageView, textLabel: UILabel) {
         playMoveIconAnimation(icon, values: [icon.center.y + 4.0, icon.center.y])
         playDeselectLabelAnimation(textLabel)
     }

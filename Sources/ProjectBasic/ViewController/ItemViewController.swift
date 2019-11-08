@@ -18,7 +18,7 @@ open class ItemViewController: ViewController, TaskQueueProtocol {
         }
     }
 
-    override open func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = Color.viewBackground
     }

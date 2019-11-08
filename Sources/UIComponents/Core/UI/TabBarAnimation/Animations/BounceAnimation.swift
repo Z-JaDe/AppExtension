@@ -1,11 +1,11 @@
 import UIKit
 
 open class BounceAnimation: ItemAnimation {
-    override open func playAnimation(_ icon: UIImageView, textLabel: UILabel) {
+    open override func playAnimation(_ icon: UIImageView, textLabel: UILabel) {
         playBounceAnimation(icon)
         playAlphaAnimation(textLabel)
     }
-    override open func deselectAnimation(_ icon: UIImageView, textLabel: UILabel) {
+    open override func deselectAnimation(_ icon: UIImageView, textLabel: UILabel) {
     }
 
     func playBounceAnimation(_ icon: UIImageView) {

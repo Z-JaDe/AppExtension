@@ -46,7 +46,7 @@
 //            }
 //            }.disposed(by: disposeBag)
 //    }
-//    override open func contentLayoutSpec(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
+//    open override func contentLayoutSpec(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
 //        return self.collectionNode.wrapperSpec()
 //    }
 //

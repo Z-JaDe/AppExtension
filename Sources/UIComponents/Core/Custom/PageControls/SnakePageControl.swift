@@ -113,11 +113,11 @@ import UIKit
         }
     }
 
-    override open var intrinsicContentSize: CGSize {
+    open override var intrinsicContentSize: CGSize {
         sizeThatFits(CGSize.zero)
     }
 
-    override open func sizeThatFits(_ size: CGSize) -> CGSize {
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
         CGSize(width: CGFloat(inactiveLayers.count) * indicatorDiameter + CGFloat(inactiveLayers.count - 1) * indicatorPadding,
                       height: indicatorDiameter)
     }

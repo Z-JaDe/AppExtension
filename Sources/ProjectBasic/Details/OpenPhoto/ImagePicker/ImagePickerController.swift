@@ -13,7 +13,7 @@ open class ImagePickerController: UIImagePickerController {
     open var callBack: (UIImage) -> Void = { (image) in
         logDebug("回调没有写")
     }
-    override open func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
         self.allowsEditing = true

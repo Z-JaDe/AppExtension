@@ -28,7 +28,7 @@ import UIKit
 
     // MARK: - Appearance
 
-    override open var tintColor: UIColor! {
+    open override var tintColor: UIColor! {
         didSet {
             inactiveLayers.forEach { $0.backgroundColor = tintColor.cgColor }
         }
@@ -125,11 +125,11 @@ import UIKit
         }
     }
 
-    override open var intrinsicContentSize: CGSize {
+    open override var intrinsicContentSize: CGSize {
         sizeThatFits(CGSize.zero)
     }
 
-    override open func sizeThatFits(_ size: CGSize) -> CGSize {
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
         let layerDiameter = indicatorRadius * 2
         return CGSize(width: CGFloat(inactiveLayers.count) * layerDiameter + CGFloat(inactiveLayers.count - 1) * indicatorPadding,
                       height: layerDiameter)

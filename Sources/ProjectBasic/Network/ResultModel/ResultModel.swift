@@ -7,13 +7,14 @@
 //
 
 import Foundation
-public protocol ResultModelType: InitProtocol {
-    var resultCode: ResultCode? {get set}
-    var message: String? {get set}
+public protocol ResultModelType {
+    var resultCode: ResultCode {get}
+    var message: String {get}
+    init(_ resultCode: ResultCode, _ message: String)
 }
 extension ResultModelType {
     public var isSuccessful: Bool {
-        switch resultCode ?? .error {
+        switch resultCode {
         case .successful:
             return true
         default:
@@ -21,48 +22,49 @@ extension ResultModelType {
         }
     }
 }
-open class ResultModel<DataType: Decodable>: Decodable, ResultModelType {
-    public var resultCode: ResultCode?
-    public var message: String?
-    public var data: DataType?
-    public required init() {
-
+public struct ResultModelCodingKeys: CodingKey {
+    public let stringValue: String
+    public let intValue: Int?
+    public init?(stringValue: String) {
+        self.stringValue = stringValue
+        self.intValue = Int(stringValue)
     }
-    public struct CodingKeys: CodingKey {
-        public let stringValue: String
-        public let intValue: Int?
-        public init?(stringValue: String) {
-            self.stringValue = stringValue
-            self.intValue = Int(stringValue)
-        }
-        public init?(intValue: Int) {
-            self.stringValue = "\(intValue)"
-            self.intValue = intValue
-        }
+    public init?(intValue: Int) {
+        self.stringValue = "\(intValue)"
+        self.intValue = intValue
     }
-    open var resultCodeKey: CodingKeys {
-        CodingKeys(stringValue: "e")!
+    public static var resultCodeKey: ResultModelCodingKeys = ResultModelCodingKeys(stringValue: "e")!
+    public static var messageKey: ResultModelCodingKeys = ResultModelCodingKeys(stringValue: "msg")!
+    public static var dataKey: ResultModelCodingKeys = ResultModelCodingKeys(stringValue: "data")!
+}
+public struct ResultModel<DataType: Decodable>: Decodable, ResultModelType {
+    public let resultCode: ResultCode
+    public let message: String
+    public let data: DataType?
+    public init(_ resultCode: ResultCode, _ message: String) {
+        self.init(resultCode, message, nil)
     }
-    open var messageKey: CodingKeys {
-        CodingKeys(stringValue: "msg")!
+    public init(_ resultCode: ResultCode, _ message: String, _ data: DataType?) {
+        self.resultCode = resultCode
+        self.message = message
+        self.data = data
     }
-    open var dataKey: CodingKeys {
-        CodingKeys(stringValue: "data")!
-    }
-
-    public required init(from decoder: Decoder) throws {
+    typealias CodingKeys = ResultModelCodingKeys
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        if (try? container.decodeNil(forKey: self.resultCodeKey)) == false {
-            resultCode = try container.decode(ResultCode.self, forKey: self.resultCodeKey)
+        if (try? container.decodeNil(forKey: CodingKeys.resultCodeKey)) == false {
+            resultCode = try container.decode(ResultCode.self, forKey: CodingKeys.resultCodeKey)
         } else {
             resultCode = .error
         }
-        if (try? container.decodeNil(forKey: self.messageKey)) == false {
-            message = try container.decode(String.self, forKey: self.messageKey)
+        if (try? container.decodeNil(forKey: CodingKeys.messageKey)) == false {
+            message = try container.decode(String.self, forKey: CodingKeys.messageKey)
+        } else {
+            message = ""
         }
-        if (try? container.decodeNil(forKey: self.dataKey)) == false {
+        if (try? container.decodeNil(forKey: CodingKeys.dataKey)) == false {
             do {
-                data = try container.decode(DataType.self, forKey: self.dataKey)
+                data = try container.decode(DataType.self, forKey: CodingKeys.dataKey)
             } catch let error {
                 #if DEBUG
                 throw error
@@ -70,15 +72,17 @@ open class ResultModel<DataType: Decodable>: Decodable, ResultModelType {
                 data = nil
                 #endif
             }
+        } else {
+            data = nil
         }
     }
 }
 extension ResultModel: Encodable where DataType: Encodable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(resultCode, forKey: self.resultCodeKey)
-        try container.encode(message, forKey: self.messageKey)
-        try container.encode(data, forKey: self.dataKey)
+        try container.encode(resultCode, forKey: CodingKeys.resultCodeKey)
+        try container.encode(message, forKey: CodingKeys.messageKey)
+        try container.encode(data, forKey: CodingKeys.dataKey)
     }
 }
 

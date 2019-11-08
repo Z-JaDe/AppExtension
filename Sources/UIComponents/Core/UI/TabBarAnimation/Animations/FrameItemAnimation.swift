@@ -10,7 +10,7 @@ public class FrameItemAnimation: ItemAnimation {
 
     @IBInspectable open var imagesPath: String!
 
-    override open func awakeFromNib() {
+    open override func awakeFromNib() {
         guard let path = Bundle.main.path(forResource: imagesPath, ofType: "plist") else {
             fatalError("don't found plist")
         }
@@ -40,12 +40,12 @@ public class FrameItemAnimation: ItemAnimation {
         self.animationImages = animationImages
     }
     // MARK: -
-    override open func playAnimation(_ icon: UIImageView, textLabel: UILabel) {
+    open override func playAnimation(_ icon: UIImageView, textLabel: UILabel) {
         playFrameAnimation(icon, images: animationImages)
         playAlphaAnimation(textLabel)
     }
 
-    override open func deselectAnimation(_ icon: UIImageView, textLabel: UILabel) {
+    open override func deselectAnimation(_ icon: UIImageView, textLabel: UILabel) {
         if isDeselectAnimation {
             playFrameAnimation(icon, images: animationImages.reversed())
         }

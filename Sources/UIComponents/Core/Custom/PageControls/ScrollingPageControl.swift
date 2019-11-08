@@ -240,17 +240,17 @@ import UIKit
         container.frame = CGRect(x: 0, y: 0, width: layerFrame.origin.x, height: ringLayer.bounds.size.height)
     }
 
-    override open var intrinsicContentSize: CGSize {
+    open override var intrinsicContentSize: CGSize {
         sizeThatFits(CGSize.zero)
     }
 
-    override open func sizeThatFits(_ size: CGSize) -> CGSize {
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
         let pageCountWidth = pageCount + (pageCount - 1)
         return CGSize(width: CGFloat(pageCountWidth) * indicatorDiameter + CGFloat(pageCountWidth - 1) * indicatorPadding,
                       height: ringDiameter)
     }
 
-    override open func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         // layout containers
         inactiveLayersContainer.frame = self.bounds

@@ -39,7 +39,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        lockTest()
 //        gcdTest()
 //        copyTest()
-        Foo().bar()
+//        Foo().bar()
+        let a = ASDD()
+        a.queue.async {
+            print(1)
+            print(a)
+            print(2)
+            print(a.queue.isInCurrentQueue)
+            print(DispatchQueue.main.isInCurrentQueue)
+            a.queue.async {
+                print(3)
+                print(a)
+                print(4)
+                let value = a.queue.syncIfNeed {
+                    return 5
+                }
+                print(value)
+            }
+        }
         return true
     }
 
@@ -61,6 +78,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         
+    }
+}
+
+class ASDD {
+    let queue = DispatchQueue(label: "com.zjade.task")
+    deinit {
+        print("as")
     }
 }
 
