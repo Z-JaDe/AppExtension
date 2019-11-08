@@ -66,6 +66,7 @@ public protocol TaskQueueProtocol {
 /// 可以用在控制流程，UI执行顺序等异步任务
 public class TaskQueue {
     public typealias TaskItem = ProcessTask
+    ///串行队列，只维护类内部taskArr、taskState的数据安全，队列不执行Task任务
     let queue = DispatchQueue(label: "com.zjade.task")
     private var taskIsSuspend: Bool
     private var taskState: TaskState = .free
@@ -144,6 +145,7 @@ public extension TaskQueue {
 }
 // MARK: 执行任务
 private extension TaskQueue {
+    ///由于queue是串行队列，同一时刻只会执行一次executeIfNeed
     func executeIfNeed() {
         guard self.taskIsSuspend == false else { return }
         guard self.taskState == .free else { return }
