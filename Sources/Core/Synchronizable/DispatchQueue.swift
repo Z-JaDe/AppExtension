@@ -15,12 +15,17 @@ public func performInMain(_ action: @escaping () -> Void) {
         DispatchQueue.main.async(execute: action)
     }
 }
-private let labelSpec = DispatchSpecificKey<Int>()
+private struct SpecificKey {
+    let value: Int
+}
+private let labelSpec = DispatchSpecificKey<SpecificKey>()
 extension DispatchQueue {
     public var isInCurrentQueue: Bool {
         let value = Int.random(in: Int.min..<Int.max)
-        setSpecific(key: labelSpec, value: value)
-        if DispatchQueue.getSpecific(key: labelSpec) == value {
+        setSpecific(key: labelSpec, value: SpecificKey(value: value))
+        ///当前执行上下文中的value
+        let currentContextValue = DispatchQueue.getSpecific(key: labelSpec)
+        if currentContextValue?.value == value {
             setSpecific(key: labelSpec, value: nil)
             return true
         } else {
