@@ -8,7 +8,7 @@
 
 import Foundation
 public protocol ProcessTask {
-    func start(_ taskComplete: @escaping () -> Void)
+    func start(taskComplete: @escaping () -> Void)
     func isEqual(other: ProcessTask) -> Bool
 }
 public struct AsyncTask: ProcessTask {
@@ -21,7 +21,7 @@ public struct AsyncTask: ProcessTask {
     init(closure: @escaping (@escaping () -> Void) -> Void) {
         self.task = closure
     }
-    public func start(_ taskComplete: @escaping () -> Void) {
+    public func start(taskComplete: @escaping () -> Void) {
         self.task(taskComplete)
     }
 
@@ -42,7 +42,7 @@ public struct SyncTask: ProcessTask {
     init(closure: @escaping () -> Void) {
         self.task = closure
     }
-    public func start(_ taskComplete: @escaping () -> Void) {
+    public func start(taskComplete: @escaping () -> Void) {
         self.task()
         taskComplete()
     }
@@ -72,28 +72,18 @@ public class TaskQueue {
     private var taskArr: [TaskItem] = []
     public init() {
         self.taskIsSuspend = true
-        self.queue.suspend()
-    }
-    deinit {
-        if self.taskIsSuspend {
-            self.queue.resume()
-        }
     }
 }
 // MARK: 任务暂停、恢复
 public extension TaskQueue {
     func taskSuspend() {
         performInMain {
-            guard self.taskIsSuspend == false else { return }
             self.taskIsSuspend = true
-            self.queue.suspend()
         }
     }
     func taskResume() {
         performInMain {
-            guard self.taskIsSuspend else { return }
             self.taskIsSuspend = false
-            self.queue.resume()
         }
     }
 }
@@ -131,14 +121,6 @@ public extension TaskQueue {
             }
         }
     }
-    private func removeTask(_ task: TaskItem) -> Bool {
-        if let index = self.taskArr.firstIndex(where: task.isEqual) {
-            self.taskArr.remove(at: index)
-            return true
-        } else {
-            return false
-        }
-    }
 }
 public extension TaskQueue {
     func addTaskItem(_ taskItem: TaskItem) {
@@ -167,18 +149,23 @@ private extension TaskQueue {
         guard self.taskState == .free else { return }
         guard let task = self.taskArr.first else { return }
         self.taskState = .working
-        self.execute(task: task) {[weak self] in
-            guard let self = self else { return }
-            self.queue.async {
-                _ = self.removeTask(task)
-                self.taskState = .free
-                self.executeIfNeed()
-            }
+        DispatchQueue.main.async {
+            task.start(taskComplete: {[weak self] in
+                guard let self = self else { return }
+                self.queue.async {
+                    _ = self.removeTask(task)
+                    self.taskState = .free
+                    self.executeIfNeed()
+                }
+            })
         }
     }
-    func execute(task: TaskItem, taskComplete: @escaping () -> Void) {
-        DispatchQueue.main.async {
-            task.start(taskComplete)
+    func removeTask(_ task: TaskItem) -> Bool {
+        if let index = self.taskArr.firstIndex(where: task.isEqual) {
+            self.taskArr.remove(at: index)
+            return true
+        } else {
+            return false
         }
     }
 }
