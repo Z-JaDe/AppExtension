@@ -18,10 +18,11 @@ public func performInMain(_ action: @escaping () -> Void) {
 private struct SpecificKey {
     let value: Int
 }
-private let labelSpec = DispatchSpecificKey<SpecificKey>()
 extension DispatchQueue {
     public var isInCurrentQueue: Bool {
         let value = Int.random(in: Int.min..<Int.max)
+        ///考虑到多线程同时获取该属性的问题 特征值key 应该放到函数内部
+        let labelSpec = DispatchSpecificKey<SpecificKey>()
         setSpecific(key: labelSpec, value: SpecificKey(value: value))
         ///当前执行上下文中的value
         let currentContextValue = DispatchQueue.getSpecific(key: labelSpec)
@@ -34,7 +35,7 @@ extension DispatchQueue {
     }
     /**
         若当前在队列执行的任务代码中，会直接执行，否则会添加sync任务
-        须注意若队列的targetQueue为main队列，且当前是主线程时，这里还是会崩溃
+        须注意若队列的targetQueue为main队列，且当前是主线程时，这里还是会崩溃 ()
         是因为api没有提供查询当前队列的targetQueue是什么队列
      */
     public func syncIfNeed<T>(_ action: () throws -> T) rethrows -> T {
