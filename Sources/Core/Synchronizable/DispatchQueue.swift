@@ -18,9 +18,9 @@ public func performInMain(_ action: @escaping () -> Void) {
 private let labelSpec = DispatchSpecificKey<Int>()
 extension DispatchQueue {
     public var isInCurrentQueue: Bool {
-        let value = Int.random(in: 1..<1000)
+        let value = Int.random(in: Int.min..<Int.max)
         setSpecific(key: labelSpec, value: value)
-        if DispatchQueue.getSpecific(key: labelSpec) != value {
+        if DispatchQueue.getSpecific(key: labelSpec) == value {
             setSpecific(key: labelSpec, value: nil)
             return true
         } else {
