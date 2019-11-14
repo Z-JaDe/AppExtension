@@ -8,7 +8,7 @@
 
 import Foundation
 
-public let decimalNumberFormat: NumberFormatter = {
+let decimalNumberFormat: NumberFormatter = {
     let format = NumberFormatter()
     format.numberStyle = .decimal
     format.positiveFormat = "#0.00#"
