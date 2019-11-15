@@ -11,7 +11,7 @@ import UIKit
 public class QRCode {
     /// ZJaDe: 生成高清二维码图片
     public static func image(qrString: String, imageSize: CGFloat, fillColor: UIColor = Color.darkBlack, backColor: UIColor = Color.white) -> UIImage? {
-        guard qrString.isNotEmpty && imageSize > 10 else {
+        guard !qrString.isEmpty && imageSize > 10 else {
             return nil
         }
         let stringData = qrString.data(using: .utf8)

@@ -21,14 +21,8 @@ public class ScanMaskView: CustomView {
         configObservable()
     }
     func configObservable() {
-        NotificationCenter.default.rx.notification(UIApplication.didBecomeActiveNotification)
-            .subscribeOnNext { [weak self] (_) in
-                self?.resumeAnimation()
-            }.disposed(by: self.disposeBag)
-        NotificationCenter.default.rx.notification(UIApplication.didEnterBackgroundNotification)
-            .subscribeOnNext { [weak self] (_) in
-                self?.stopAnimation()
-            }.disposed(by: self.disposeBag)
+        NotificationCenter.default.addObserver(self, selector: #selector(resumeAnimation), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(stopAnimation), name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
     public override func addChildView() {
         super.addChildView()
@@ -36,26 +30,23 @@ public class ScanMaskView: CustomView {
     }
     let imageLength: CGFloat = jd.screenWidth / 2 + 30
     let lineInset: CGFloat = 5
-    public override func configLayout() {
-        super.configLayout()
-        self.scanBoderView.snp.makeConstraints { (maker) in
-            maker.center.equalToSuperview()
-            maker.width.height.equalTo(imageLength)
-        }
-    }
     public override func layoutSubviews() {
         super.layoutSubviews()
         self.lineLayer.width = imageLength - lineInset * 2
         self.lineLayer.height = 2
         self.lineLayer.left = self.scanBoderView.left + lineInset
         self.lineLayer.top = self.scanBoderView.top + lineInset
+
+        self.scanBoderView.width = imageLength
+        self.scanBoderView.height = imageLength
+        self.scanBoderView.center = self.innerCenter
     }
 
     // MARK: -
-    public func stopAnimation() {
+    @objc public func stopAnimation() {
         self.lineLayer.removeAnimation(forKey: "translationY")
     }
-    public func resumeAnimation() {
+    @objc public func resumeAnimation() {
         let basic = CABasicAnimation(keyPath: "transform.translation.y")
         basic.fromValue = 0
         basic.toValue = imageLength - lineInset * 2

@@ -8,11 +8,10 @@
 import UIKit
 
 public class EmptyDataSetContentView: CustomView {
-    public private(set) lazy var button: JDButton = {
-        let button = JDButton()
-        button.imageAlignment = .begin
-        button.contentStackView.axis = .vertical
-        button.contentStackView.spacing = 10
+    public private(set) lazy var button: Button = {
+        let button = Button()
+        button.imagePosition = .top
+        button.spacingBetweenImageAndTitle = 10
         return button
     }()
     public func addButtonIfNeed(_ layoutClosure: () -> Void) {
@@ -68,7 +67,7 @@ extension EmptyDataSetContentView {
         self.button.setImage(image, for: .normal)
     }
     /// ZJaDe: 设置成一个图片+文本
-    public func config(_ closure: (JDButton) -> Void) {
+    public func config(_ closure: (Button) -> Void) {
         closure(self.button)
     }
 }

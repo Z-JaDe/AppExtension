@@ -145,7 +145,7 @@ extension LogicScanViewController {
             session.addOutput(output)
         }
         /// ZJaDe: availableMetadataObjectTypes依赖于input，所以要先把input output添加到session中再做判断
-        if output.availableMetadataObjectTypes.isNotEmpty {
+        if !output.availableMetadataObjectTypes.isEmpty {
             output.metadataObjectTypes = output.availableMetadataObjectTypes//[.qr, .ean13, .ean8, .code128]
         }
     }

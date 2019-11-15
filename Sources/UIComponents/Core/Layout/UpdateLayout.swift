@@ -24,11 +24,11 @@ extension UIView {
 // MARK: -
 private var updateLayoutArrKey: UInt8 = 0
 private let defaultLayoutTag: String = "_default"
-public class UpdateLayout<Constraint: ConstraintProtocol>: CustomDebugStringConvertible {
-    public let view: UIView
+public struct UpdateLayout<Constraint: ConstraintProtocol>: CustomDebugStringConvertible {
+    let view: UIView
     public var constraintDict: [String: [Constraint]] {
         get { self.view.associatedObject(&updateLayoutArrKey, createIfNeed: [: ]) }
-        set { self.view.setAssociatedObject(&updateLayoutArrKey, newValue) }
+        nonmutating set { self.view.setAssociatedObject(&updateLayoutArrKey, newValue) }
     }
     public init(view: UIView) {
         self.view = view

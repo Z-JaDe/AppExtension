@@ -40,15 +40,15 @@ open class CustomView: UIView {
         self.didMoveToSuperviewClosure?()
     }
     // MARK: - 便利方法
-    public func config(frame: CGRect) -> Self {
+    public func change(frame: CGRect) -> Self {
         self.frame = frame
         return self
     }
-    public func config(size: CGSize) -> Self {
+    public func change(size: CGSize) -> Self {
         self.size = size
         return self
     }
-    public func config(alpha: CGFloat) -> Self {
+    public func change(alpha: CGFloat) -> Self {
         self.alpha = alpha
         return self
     }

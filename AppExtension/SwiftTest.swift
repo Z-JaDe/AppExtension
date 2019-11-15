@@ -79,14 +79,6 @@ extension C: AAAA, BBBB {
 
 
 // MARK: -
-func hasher() {
-    var hasher = Hasher()
-    hasher.combine(UIControl.State.highlighted)
-    print(hasher.finalize())
-    print(UIControl.State.highlighted.rawValue.hashValue)
-    print("1".hashValue)
-}
-
 func mainColor() {
     DispatchQueue.main.async {
         let image:UIImage? = nil
