@@ -360,6 +360,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CECF1E00000010;
 			productRefGroup = CECF1E00000020 /* Products */;

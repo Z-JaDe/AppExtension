@@ -64,11 +64,22 @@ open class AdapterTableViewController: AdapterListViewController<TableView, UITa
     }
     open override func didMove(toParent parent: UIViewController?) {
         super.didMove(toParent: parent)
-        if self.adapter.tableView == nil {
+        adapterTableInit()
+    }
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        adapterTableInit()
+    }
+    open override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        adapterTableInit()
+    }
+
+    func adapterTableInit() {
+        if self.rootView.updater.isInHierarchy && self.adapter.tableView == nil {
             adapter.tableViewInit(self.rootView)
         }
     }
-
     override func loadAdapter() -> UITableAdapter {
         let adapter = UITableAdapter()
         adapter.insertSecionModels.register(on: self, key: "defaultHeaderAndFooter") { (self, dataArray) in

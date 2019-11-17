@@ -180,6 +180,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = ADEEA800000010;
 			productRefGroup = ADEEA800000020 /* Products */;

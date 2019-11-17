@@ -10,8 +10,8 @@ import Foundation
 #if canImport(MJRefresh)
 import MJRefresh
 public protocol MJScrollable: Scrollable {
-    var mj_header: MJRefreshHeader! {get set}
-    var mj_footer: MJRefreshFooter! {get set}
+    var mj_header: MJRefreshHeader? {get set}
+    var mj_footer: MJRefreshFooter? {get set}
 }
 extension UIScrollView: MJScrollable {}
 extension RefreshListProtocol {
@@ -25,13 +25,12 @@ extension RefreshListProtocol {
             self.scrollItem.mj_header = nil
         }
         if refreshFooter {
-            if let footer = MJRefreshBackNormalFooter(refreshingBlock: { [weak self] in
+            let footer = MJRefreshBackNormalFooter(refreshingBlock: { [weak self] in
                 self?.refreshFooter(false)
-            }) {
-                self.scrollItem.mj_footer = footer
-                if preload {
-                    configPreload()
-                }
+            })
+            self.scrollItem.mj_footer = footer
+            if preload {
+                configPreload()
             }
         } else {
             self.scrollItem.mj_footer = nil

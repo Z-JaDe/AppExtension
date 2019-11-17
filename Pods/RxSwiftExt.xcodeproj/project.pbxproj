@@ -342,6 +342,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = A3D67100000010;
 			productRefGroup = A3D67100000020 /* Products */;

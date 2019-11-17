@@ -67,7 +67,7 @@ extension EmptyDataSetContentView {
         self.button.setImage(image, for: .normal)
     }
     /// ZJaDe: 设置成一个图片+文本
-    public func config(_ closure: (Button) -> Void) {
+    public func config(_ closure: (UIButton) -> Void) {
         closure(self.button)
     }
 }

@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import Alamofire
+import RxNetwork
 extension ObservableType where Element: RequestContextCompatible, Element.R: DataRequest {
     public func mapDictResult() -> Observable<DataResponseContext<DictResultModel>> {
         responseMap(type: DictResultModel.self)
