@@ -36,8 +36,6 @@ extension StaticTableItemCell: TableCellConfigProtocol {
         let cell: InternalTableViewCell = _createCell(in: tableView, for: indexPath, InternalTableViewCell.reuseIdentifier) as! InternalTableViewCell
         //        let item = self.cell()
         //        logDebug("\(item)创建一个cell")
-        /// ZJaDe: tableView弱引用
-        self._tableView = tableView
         return cell
     }
     func willAppear(in cell: UITableViewCell) {

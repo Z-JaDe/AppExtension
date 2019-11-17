@@ -10,7 +10,7 @@ import Foundation
 
 extension TableItemCell {
     func updateHeight<Item: TableCellHeightProtocol>(_ item: Item, _ updates: (() -> Void)?) {
-        guard let updater = self.getTableView()?.updater else {
+        guard let updater = self.tableView?.updater else {
             logError("\(self)->tableView找不到")
             return
         }

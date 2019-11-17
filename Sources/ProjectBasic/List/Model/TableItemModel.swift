@@ -73,7 +73,6 @@ extension TableItemModel: TableCellConfigProtocol {
         //        logDebug("\(item)创建一个cell")
         /// ZJaDe: 初始化cell，并且cell持有tableView弱引用
         createCellIfNil()
-        self.getCell()!._tableView = tableView
         return cell
     }
     func willAppear(in cell: UITableViewCell) {

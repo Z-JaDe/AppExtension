@@ -18,9 +18,8 @@ open class TableItemCell: ItemCell, WritableDefaultHeightProtocol {
     func getInternalCell() -> InternalTableViewCell? {
         self.superView(InternalTableViewCell.self)
     }
-    weak var _tableView: UITableView?
-    func getTableView() -> UITableView? {
-        _tableView
+    var tableView: UITableView? {
+        self.getInternalCell()?.jd_tableView
     }
     open override func configInit() {
         super.configInit()

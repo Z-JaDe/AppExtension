@@ -8,6 +8,11 @@
 
 import Foundation
 import SnapKit
+extension UITableViewCell {
+    public var jd_tableView: UITableView? {
+        self.value(forKey: "tableView") as? UITableView
+    }
+}
 class InternalTableViewCell: UITableViewCell {
     static let reuseIdentifier: String = InternalTableViewCell.classFullName
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
