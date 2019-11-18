@@ -17,7 +17,8 @@ public extension CellModelProtocol where Self: ItemCell {
         self.setNeedsLayout()
     }
     func setNeedUpdateModel() {
-        setNeedUpdateModel(self.cellState.ignore(.prepare).asObservable().map {$0.isAppear}.distinctUntilChanged())
+        print(try! self.cellState.value())
+        setNeedUpdateModel(self.cellState.asObservable().map {$0.isAppear}.distinctUntilChanged())
     }
 }
 // MARK: -
