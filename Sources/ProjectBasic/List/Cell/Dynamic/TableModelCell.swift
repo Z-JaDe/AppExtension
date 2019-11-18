@@ -18,9 +18,10 @@ open class TableModelCell<ModelType: TableItemModel>: DynamicTableItemCell, Cell
     }
 
     override func didChangedModel(_ model: TableItemModel) {
-        setNeedUpdateModel()
         if isTempCell {
-            updateModelIfNeed()
+            configDataWithModel()
+        } else {
+            setNeedUpdateModel()
         }
     }
 

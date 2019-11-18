@@ -43,7 +43,7 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionS
         }
         dataSource.didMoveItem = { [weak self] (dataSource, source, destination) in
             guard let self = self else { return }
-            self.dataInfo = self.dataInfo.map({$0.exchange(source, destination)})
+            self.dataInfo = self.dataInfo?.map({$0.exchange(source, destination)})
         }
         return dataSource
     }

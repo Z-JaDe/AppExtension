@@ -17,7 +17,7 @@ public extension CellModelProtocol where Self: ItemCell {
         self.setNeedsLayout()
     }
     func setNeedUpdateModel() {
-        setNeedUpdateModel(self.cellState.asObservable().map {$0.isAppear}.distinctUntilChanged())
+        setNeedUpdateModel(self.cellState.ignore(.prepare).asObservable().map {$0.isAppear}.distinctUntilChanged())
     }
 }
 // MARK: -
@@ -25,7 +25,6 @@ public protocol UpdateModelProtocol: class {
     func configDataWithModel()
 
     func setNeedUpdateModel()
-    func updateModelIfNeed()
     func setNeedUpdateModelObserver() -> AnyObserver<Void>
 }
 public extension UpdateModelProtocol {
@@ -37,15 +36,13 @@ public extension UpdateModelProtocol {
             }
         })
     }
-    func updateModelIfNeed() {
-        configDataWithModel()
-    }
 }
 public extension UpdateModelProtocol where Self: NSObject {
     func setNeedUpdateModel<P: ObservableType>(_ pauser: P) where P.Element == Bool {
         let tag = "isNeedUpdateModel"
         self.resetDisposeBagWithTag(tag)
         Observable<Void>.setNeedUpdate(pauser, .milliseconds(10))
+            .takeUntil(pauser.ignore(true))
             .subscribeOnNext { [weak self] in
                 guard let self = self else { return }
                 self.configDataWithModel()

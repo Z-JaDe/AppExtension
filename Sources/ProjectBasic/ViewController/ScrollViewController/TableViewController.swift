@@ -64,18 +64,18 @@ open class AdapterTableViewController: AdapterListViewController<TableView, UITa
     }
     open override func didMove(toParent parent: UIViewController?) {
         super.didMove(toParent: parent)
-        adapterTableInit()
+        adapterViewInit()
     }
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        adapterTableInit()
+        adapterViewInit()
     }
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        adapterTableInit()
+        adapterViewInit()
     }
 
-    func adapterTableInit() {
+    func adapterViewInit() {
         if self.rootView.updater.isInHierarchy && self.adapter.tableView == nil {
             adapter.tableViewInit(self.rootView)
         }

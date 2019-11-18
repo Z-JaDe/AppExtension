@@ -35,7 +35,7 @@ where DataSource.S.Item: AdapterItemType, DataSource.S.Section: AdapterSectionTy
 
     // MARK: -
     let dataInfoSubject: ReplaySubject<ListDataInfoType> = ReplaySubject.create(bufferSize: 1)
-    var dataInfo: ListDataInfoType = ListDataInfo(data: .init())
+    var dataInfo: ListDataInfoType?
     // MARK: -
     var _rxDataSource: DataSource?
     ///子类重写
@@ -57,7 +57,7 @@ where DataSource.S.Item: AdapterItemType, DataSource.S.Section: AdapterSectionTy
 extension ListAdapter: DisposeBagProtocol {}
 extension ListAdapter: ListDataUpdateProtocol {
     public var dataArray: ListDataType {
-        self.dataInfo.data
+        self.dataInfo?.data ?? .init()
     }
     public func changeListDataInfo(_ newData: ListDataInfoType) {
         self.dataInfo = newData
