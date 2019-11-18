@@ -21,7 +21,7 @@ extension DynamicModelCell {
     func getModel() -> _ModelType? {
         _weakModel ?? _model
     }
-    func setModel(_ model: _ModelType) {
+    func setModel(_ model: _ModelType?) {
         _weakModel = model
         if _model != nil {
             _model = model

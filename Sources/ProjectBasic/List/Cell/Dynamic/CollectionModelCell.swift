@@ -10,9 +10,8 @@ import UIKit
 import RxSwift
 open class CollectionModelCell<ModelType: CollectionItemModel>: DynamicCollectionItemCell, CellModelProtocol {
 
-    public var model: ModelType {
-        // swiftlint:disable force_cast
-        get {return getModel() as! ModelType}
+    public var model: ModelType? {
+        get {return getModel() as? ModelType}
         set { setModel(newValue) }
     }
 

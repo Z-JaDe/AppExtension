@@ -17,6 +17,14 @@ protocol TableCellConfigProtocol: CreateTableCellrotocol {
 }
 extension CreateTableCellrotocol {
     func _createCell(in tableView: UITableView, for indexPath: IndexPath, _ reuseIdentifier: String) -> UITableViewCell {
-        tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        return cell
     }
 }
+//private var _internelModelKey: UInt8 = 0
+//extension UITableViewCell {
+//    var internelModel: Any {
+//        get {objc_getAssociatedObject(self, &_internelModelKey)}
+//        set {objc_setAssociatedObject(self, &_internelModelKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)}
+//    }
+//}

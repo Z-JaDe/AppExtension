@@ -21,7 +21,6 @@ extension Reactive where Base: UIControl {
                 closure?(base)
             }
     }
-    // ZJaDe: 
 
     @discardableResult
     public func valueChanged(_ closure: ((Base) -> Void)?) -> Disposable {

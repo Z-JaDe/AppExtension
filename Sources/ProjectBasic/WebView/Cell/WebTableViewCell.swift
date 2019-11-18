@@ -35,7 +35,7 @@ open class WebTableViewCell: StaticTableItemCell {
         viewCon.addChild(self.webVC)
     }
     open override func didDisappear() {
-        super.willAppear()
+        super.didDisappear()
         self.webVC.removeFromParent()
     }
 

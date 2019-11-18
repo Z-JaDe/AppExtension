@@ -8,16 +8,31 @@
 
 import Foundation
 import RxSwift
-public protocol CellModelProtocol: ConfigModelProtocol, UpdateModelProtocol {
-//    init(model: ModelType)
+public protocol CellModelProtocol: UpdateModelProtocol {
+    associatedtype ModelType
+    var model: ModelType? {get set}
+    /// 不能通过直接调用的方式，应该使用设置model的方式
+    func configData(with model: ModelType)
+    
+    func updateWithModel()
+    func update(with model: ModelType)
+}
+public extension CellModelProtocol {
+    func updateWithModel() {
+        if let model = self.model {
+            self.update(with: model)
+        }
+    }
+    func update(with model: ModelType) {
+        self.model = model
+    }
 }
 public extension CellModelProtocol where Self: ItemCell {
     func configDataWithModel() {
-        self.configData(with: self.model)
-        self.setNeedsLayout()
-    }
-    func setNeedUpdateModel() {
-        setNeedUpdateModel(self.cellState.asObservable().map {$0.isAppear}.distinctUntilChanged())
+        if let model = self.model {
+            self.configData(with: model)
+            self.setNeedsLayout()
+        }
     }
 }
 // MARK: -
@@ -35,6 +50,11 @@ public extension UpdateModelProtocol {
             case .completed, .error: break
             }
         })
+    }
+}
+public extension UpdateModelProtocol where Self: ItemCell {
+    func setNeedUpdateModel() {
+        setNeedUpdateModel(self.cellState.asObservable().map {$0.isAppear}.distinctUntilChanged())
     }
 }
 public extension UpdateModelProtocol where Self: NSObject {
