@@ -37,7 +37,7 @@ open class ButtonCell: StaticTableItemCell {
     open override func configInit() {
         super.configInit()
         self.cellBackgroundColor = Color.clear
-        disableSelectedAnimation()
+        self.cellSelectedBackgroundColor = nil
         self.insets.left = 30
         self.insets.right = 30
         self.separatorLineHeight = 0

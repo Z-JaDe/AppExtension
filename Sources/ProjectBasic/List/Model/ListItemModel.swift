@@ -9,7 +9,6 @@
 import UIKit
 
 open class ListItemModel {
-    var hasLoad: Bool = false
     public init() {}
     // MARK: - ID
     open lazy var cellFullName: String = {

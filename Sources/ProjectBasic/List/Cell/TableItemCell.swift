@@ -36,11 +36,6 @@ open class TableItemCell: ItemCell, WritableDefaultHeightProtocol {
     public var separatorLineHeight: CGFloat = jd.onePx {
         didSet {getInternalCell()?.updateSeparatorLineViewFrame()}
     }
-    /// ZJaDe: 禁用选中时的高亮动画，以及选中状态
-    open override func disableSelectedAnimation() {
-        super.disableSelectedAnimation()
-        self.cellSelectedBackgroundColor = nil
-    }
     /** ZJaDe: 
      默认与UITableViewCell对齐 而不是和contentView对齐
      如果不为nil时，使用设置的值对齐

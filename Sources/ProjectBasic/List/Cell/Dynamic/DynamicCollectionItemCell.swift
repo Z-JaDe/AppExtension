@@ -20,17 +20,4 @@ open class DynamicCollectionItemCell: CollectionItemCell {
     var _model: CollectionItemModel?
     func didChangedModel(_ model: CollectionItemModel) {}
 
-    open override func configInit() {
-        super.configInit()
-    }
-    open override func willAppear() {
-        super.willAppear()
-        self.getModel()?.hasLoad = true
-    }
-    open override func configAppearAnimate() {
-        if getModel()?.hasLoad == true {
-            super.configAppearAnimate()
-        }
-    }
-
 }

@@ -17,7 +17,6 @@ open class StaticTableItemCell: TableItemCell {
     // MARK: -
     open override func configInit() {
         super.configInit()
-        self.highlightedAnimation = .zoom
 
         self.didLayoutSubviewsClosure = { [weak self] (cell) -> Void in
             self?.updateHeight()

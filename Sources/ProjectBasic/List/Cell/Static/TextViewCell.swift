@@ -29,7 +29,6 @@ open class TextViewCell: TitleCell, CheckAndCatchParamsProtocol {
         self.textView.contentInset = .zero
         self.textView.textContainer.lineFragmentPadding = 0
         self.separatorLineHeight = 1
-        self.highlightedAnimation = .none
     }
     /// ZJaDe: autoUpdateHeightWithContentSize
     open func autoUpdateHeightWithContentSize() {

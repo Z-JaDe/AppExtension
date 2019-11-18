@@ -50,6 +50,8 @@ class InternalTableViewCell: UITableViewCell {
         self.selectedBackgroundView = contentItem.selectedBackgroundView
         self.selectionStyle = contentItem.selectionStyle
         self.backgroundColor = contentItem.cellBackgroundColor
+
+        contentItem.isHighlighted = self.isHighlighted
     }
 
     /// ZJaDe: separator

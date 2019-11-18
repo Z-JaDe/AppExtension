@@ -14,7 +14,6 @@ open class SwitchCell: TitleCell {
 
     open override func configInit() {
         super.configInit()
-        self.highlightedAnimation = .none
     }
 
     open override func viewDidLoad() {

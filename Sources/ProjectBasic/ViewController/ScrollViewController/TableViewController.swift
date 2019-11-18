@@ -76,7 +76,7 @@ open class AdapterTableViewController: AdapterListViewController<TableView, UITa
     }
 
     func adapterViewInit() {
-        if self.rootView.updater.isInHierarchy && self.adapter.tableView == nil {
+        if self.rootView.window != nil && self.adapter.tableView == nil {
             adapter.tableViewInit(self.rootView)
         }
     }

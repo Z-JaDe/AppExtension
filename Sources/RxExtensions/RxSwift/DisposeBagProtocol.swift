@@ -45,7 +45,7 @@ public extension DisposeBagProtocol {
             return result
         }
     }
-    func disposeBagWithTag(_ tag: String) -> DisposeBag? {
+    func optionalDisposeBagWithTag(_ tag: String) -> DisposeBag? {
         let dict: [String: DisposeBag] = associatedObject(&jdDisposeBagDictKey, createIfNeed: [: ])
         if let result = dict[tag] {
             return result

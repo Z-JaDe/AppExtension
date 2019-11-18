@@ -27,7 +27,6 @@ open class TextFieldCell: TitleCell, CheckAndCatchParamsProtocol {
     open override func configInit() {
         super.configInit()
         self.separatorLineHeight = 1
-        self.highlightedAnimation = .none
     }
 
     open override func viewDidLoad() {

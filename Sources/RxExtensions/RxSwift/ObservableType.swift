@@ -30,10 +30,8 @@ extension ObservableType where Element == Bool {
     }
 }
 extension ObservableType where Element: Equatable {
-    func ignore(value: Element) -> Observable<Element> {
-        filter { (e) -> Bool in
-            return value != e
-        }
+    public func ignore(values valuesToIgnore: Element...) -> Observable<Element> {
+        return self.asObservable().filter { !valuesToIgnore.contains($0) }
     }
 }
 // MARK: - subscribe

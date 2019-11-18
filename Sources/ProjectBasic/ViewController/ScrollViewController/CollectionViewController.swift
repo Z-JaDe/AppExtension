@@ -34,7 +34,7 @@ open class AdapterCollectionViewController: AdapterListViewController<Collection
     }
 
     func adapterViewInit() {
-        if self.rootView.updater.isInHierarchy && self.adapter.collectionView == nil {
+        if self.rootView.window != nil && self.adapter.collectionView == nil {
             adapter.collectionViewInit(self.rootView)
         }
     }

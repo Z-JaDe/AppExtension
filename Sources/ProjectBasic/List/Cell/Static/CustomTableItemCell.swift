@@ -14,8 +14,6 @@ public class CustomTableItemCell<ViewType: UIView>: StaticTableItemCell {
         super.configInit()
         self.canHighlighted = false
         self.cellBackgroundColor = Color.clear
-        self.highlightedAnimation = .none
-        self.appearAnimation = .none
     }
 
     public override func viewDidLoad() {

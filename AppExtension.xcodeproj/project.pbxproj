@@ -11,6 +11,7 @@
 		1805B3CE2276A82900F0574D /* GCDTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805B3CD2276A82900F0574D /* GCDTest.swift */; };
 		1805B3D422772EF100F0574D /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805B3D222772E9C00F0574D /* DispatchQueue.swift */; };
 		180B46B722812B31001AE9B1 /* NeedUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B46B522812B2A001AE9B1 /* NeedUpdate.swift */; };
+		180F265F238279A400CB6F7A /* ItemCell+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180F265E238279A300CB6F7A /* ItemCell+Animation.swift */; };
 		1846D987232F3F0700C61A0B /* ListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846D985232F3F0400C61A0B /* ListBuilder.swift */; };
 		1846D98A232F589D00C61A0B /* SectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846D988232F589900C61A0B /* SectionData.swift */; };
 		185143E62368439F00CD1974 /* JSBridgeArgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185143E52368439F00CD1974 /* JSBridgeArgs.swift */; };
@@ -778,6 +779,7 @@
 		1805B3CD2276A82900F0574D /* GCDTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDTest.swift; sourceTree = "<group>"; };
 		1805B3D222772E9C00F0574D /* DispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueue.swift; sourceTree = "<group>"; };
 		180B46B522812B2A001AE9B1 /* NeedUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedUpdate.swift; sourceTree = "<group>"; };
+		180F265E238279A300CB6F7A /* ItemCell+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ItemCell+Animation.swift"; sourceTree = "<group>"; };
 		1846D985232F3F0400C61A0B /* ListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBuilder.swift; sourceTree = "<group>"; };
 		1846D988232F589900C61A0B /* SectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionData.swift; sourceTree = "<group>"; };
 		185143E52368439F00CD1974 /* JSBridgeArgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSBridgeArgs.swift; sourceTree = "<group>"; };
@@ -2656,6 +2658,7 @@
 				C932FA3921006ED200B8DF84 /* Static */,
 				C932FA3521006ED200B8DF84 /* ItemCellBackgroundView.swift */,
 				C932FA3621006ED200B8DF84 /* ItemCell.swift */,
+				180F265E238279A300CB6F7A /* ItemCell+Animation.swift */,
 				C932FA3721006ED200B8DF84 /* TableItemCell.swift */,
 				C932FA3821006ED200B8DF84 /* CollectionItemCell.swift */,
 				C932FA4221006ED200B8DF84 /* CollectionReusableView.swift */,
@@ -4734,6 +4737,7 @@
 				C9D412E421DF4B52004368D4 /* TableCellConfigProtocol.swift in Sources */,
 				C9283C2821BEB91200361B87 /* ImageData.swift in Sources */,
 				C9D412AC21DF45F4004368D4 /* InternalTableViewCell.swift in Sources */,
+				180F265F238279A400CB6F7A /* ItemCell+Animation.swift in Sources */,
 				18E1D4642327CE22007B0F3A /* UITableAdapter+MultipleSelection.swift in Sources */,
 				C9D412B721DF4600004368D4 /* TextFieldCell.swift in Sources */,
 				C92B6D52222CD0C9001A1663 /* Context.swift in Sources */,
