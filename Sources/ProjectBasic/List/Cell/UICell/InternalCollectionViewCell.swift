@@ -7,7 +7,16 @@
 //
 
 import Foundation
+public protocol CollectionCellContentItem: UIView {
+    var insets: UIEdgeInsets { get }
 
+    func didDisappear()
+}
+extension CollectionCellContentItem {
+    func getInternalCell() -> InternalCollectionViewCell? {
+        self.superView(InternalCollectionViewCell.self)
+    }
+}
 class InternalCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier: String = InternalCollectionViewCell.classFullName
     override init(frame: CGRect) {
@@ -17,22 +26,23 @@ class InternalCollectionViewCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder: ) has not been implemented")
     }
-    var contentItem: CollectionItemCell? {
+    var tempContentItem: CollectionCellContentItem?
+    var contentItem: CollectionCellContentItem? {
         willSet {
             newValue?.getInternalCell()?.contentItem = nil
         }
         didSet {
+            self.tempContentItem = nil
             oldValue?.removeFromSuperview()
             if let contentItem = self.contentItem {
                 self.contentView.addSubview(contentItem)
-                self.setNeedsUpdateLaytouts()
             }
         }
     }
     func configInit() {
 
     }
-    func setNeedsUpdateLaytouts() {
+    func setNeedsUpdateLayouts() {
         updateLayout()
     }
 }

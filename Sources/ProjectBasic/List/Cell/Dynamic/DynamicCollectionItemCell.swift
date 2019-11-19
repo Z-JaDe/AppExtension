@@ -10,14 +10,17 @@ import UIKit
 
 open class DynamicCollectionItemCell: CollectionItemCell {
 
-    weak var _weakModel: CollectionItemModel? {
+    var _model: CollectionItemModel? {
         didSet {
-            if let model = self._weakModel {
+            if let model = self._model {
                 didChangedModel(model)
             }
         }
     }
-    var _model: CollectionItemModel?
     func didChangedModel(_ model: CollectionItemModel) {}
 
+    open override func didDisappear() {
+        super.didDisappear()
+        _model?.recycleCell(self)
+    }
 }

@@ -15,9 +15,9 @@ extension UITableProxy {
     var dataController: UITableAdapter.DataSource.DataControllerType {
         adapter.rxDataSource.dataController
     }
-    func tableCellItem(at indexPath: IndexPath) -> TableCellHeightProtocol & TableCellConfigProtocol {
+    func tableCellItem(at indexPath: IndexPath) -> AnyTableAdapterItem.ValueType {
         // swiftlint:disable force_cast
-        return dataController[indexPath].value as! TableCellHeightProtocol & TableCellConfigProtocol
+        return dataController[indexPath].value
     }
 }
 
@@ -30,7 +30,9 @@ open class UITableProxy: NSObject, UITableViewDelegate {
         guard dataController.indexPathCanBound(indexPath) else {
             return 0.1
         }
-        let item = tableCellItem(at: indexPath)
+        guard let item = tableCellItem(at: indexPath) as? TableCellHeightProtocol else {
+            return UITableView.automaticDimension
+        }
         if item.cellHeightLayoutType == .resetLayout {
             item.calculateCellHeight(tableView, wait: true)
         }
@@ -81,7 +83,10 @@ open class UITableProxy: NSObject, UITableViewDelegate {
         if let result = delegate?.shouldHighlightItem(at: indexPath) {
             return result
         }
-        return tableCellItem(at: indexPath).shouldHighlight()
+        guard let item = tableCellItem(at: indexPath) as? TableCellConfigProtocol else {
+            return true
+        }
+        return item.shouldHighlight()
     }
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         adapter._didSelectItem(at: indexPath)
@@ -93,15 +98,18 @@ open class UITableProxy: NSObject, UITableViewDelegate {
     }
     open func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let item = tableCellItem(at: indexPath)
-        item.willAppear(in: cell)
+        if let item = item as? TableCellConfigProtocol {
+            item.willAppear(in: cell)
+        }
         delegate?.didDisplay(cell: cell, at: indexPath)
         if let isEnabled = self.adapter.isEnabled {
             (item as? EnabledStateDesignable)?.refreshEnabledState(isEnabled)
         }
     }
     open func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let item = tableCellItem(at: indexPath)
-        item.didDisappear(in: cell)
+        if let cell = cell as? InternalTableViewCell {
+            cell.contentItem?.didDisappear()
+        }
         delegate?.didEndDisplaying(cell: cell, at: indexPath)
     }
 }

@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 //下面两个协议，是为了内部 检测 是否实现了对应的协议。AdapterItemType后面都是可选协议，实现了就能用，不实现也不报错
-public protocol _AdapterItemType: AdapterItemType & CanSelectedStateDesignable & HiddenStateDesignable & EnabledStateDesignable {}
+public protocol _AdapterItemType: AdapterItemType & HiddenStateDesignable & EnabledStateDesignable {} //CanSelectedStateDesignable
 public protocol _AdapterSectionType: AdapterSectionType {}
 
 open class ListAdapter<DataSource: SectionedDataSourceType>: ListAdapterType

@@ -13,19 +13,41 @@ extension TableItemCell {
     public static var selectedBackgroundDefaultColor: UIColor = Color.colorFromRGB("#fffdef")!
 }
 
-open class TableItemCell: ItemCell, WritableDefaultHeightProtocol {
-
-    func getInternalCell() -> InternalTableViewCell? {
-        self.superView(InternalTableViewCell.self)
-    }
-    var tableView: UITableView? {
-        self.getInternalCell()?.jd_tableView
-    }
+open class TableItemCell: ItemCell, TableCellContentItem, WritableDefaultHeightProtocol {
     open override func configInit() {
         super.configInit()
         self.updateSelectedBackgroundColor()
         configDefaultInsets()
     }
+    // MARK: -
+    open override func removeFromSuperview() {
+        super.removeFromSuperview()
+        accessoryView?.removeFromSuperview()
+    }
+    open override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        guard let cell = getInternalCell() else {
+            return
+        }
+        prepareForReuse()
+        self.updateUI(cell)
+        cell.setNeedsUpdateLayouts()
+    }
+    /// 设置contentItem属性后刷新这里触发SNTableCell
+    func updateUI(_ cell: InternalTableViewCell) {
+        cell.separatorLineView.backgroundColor = self.separatorLineColor
+        cell.accessoryType = self.accessoryType
+        cell.selectedBackgroundView = self.selectedBackgroundView
+        cell.selectionStyle = self.selectionStyle
+        cell.backgroundColor = self.cellBackgroundColor
+        
+        self.isHighlighted = cell.isHighlighted
+    }
+    open override func didDisappear() {
+        super.didDisappear()
+        self.getInternalCell()?.contentItem = nil
+    }
+    // MARK: -
     /// ZJaDe: 
     open var cellSelectedBackgroundColor: UIColor? = TableItemCell.selectedBackgroundDefaultColor {
         didSet { updateSelectedBackgroundColor() }
@@ -56,9 +78,6 @@ open class TableItemCell: ItemCell, WritableDefaultHeightProtocol {
     }
     open func defaultInsets() -> UIEdgeInsets {
         UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
-    }
-    public func insetVerticalSpace() -> CGFloat {
-        insets.top + insets.bottom + separatorLineHeight
     }
     /// ZJaDe: 
     public var separatorLineColor: UIColor = Color.separatorLine {

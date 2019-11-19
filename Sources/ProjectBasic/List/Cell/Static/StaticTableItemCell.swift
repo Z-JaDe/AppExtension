@@ -9,11 +9,6 @@
 import UIKit
 
 open class StaticTableItemCell: TableItemCell {
-
-    open var canSelected: Bool = false
-    public func checkCanSelected(_ closure: @escaping (Bool) -> Void) {
-        closure(self.canSelected)
-    }
     // MARK: -
     open override func configInit() {
         super.configInit()
@@ -44,13 +39,6 @@ extension StaticTableItemCell: TableCellConfigProtocol {
         cell.contentItem = self
         self.willAppear()
         //        logDebug("\(item)将要显示")
-    }
-    func didDisappear(in cell: UITableViewCell) {
-        guard let cell = cell as? InternalTableViewCell else {
-            return
-        }
-        self.didDisappear()
-        cell.contentItem = nil
     }
 }
 extension StaticTableItemCell: TableCellHeightProtocol {

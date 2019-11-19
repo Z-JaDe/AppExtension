@@ -12,17 +12,17 @@ open class DynamicTableItemCell: TableItemCell {
 
     var isTempCell: Bool = false
 
-    weak var _weakModel: TableItemModel? {
+    var _model: TableItemModel? {
         didSet {
-            if let model = self._weakModel {
+            if let model = self._model {
                 didChangedModel(model)
             }
         }
     }
-    var _model: TableItemModel?
     func didChangedModel(_ model: TableItemModel) {}
-
-    open func checkCanSelected(_ closure: @escaping (Bool?) -> Void) {
-        closure(nil)
+    
+    open override func didDisappear() {
+        super.didDisappear()
+        _model?.recycleCell(self)
     }
 }

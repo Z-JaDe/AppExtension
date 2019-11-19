@@ -12,5 +12,4 @@ import Foundation
  */
 protocol CollectionCellConfigProtocol: CreateCollectionCellrotocol {
     func willAppear(in cell: UICollectionViewCell)
-    func didDisappear(in cell: UICollectionViewCell)
 }

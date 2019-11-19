@@ -10,8 +10,10 @@ import Foundation
 import Photos
 import RxSwift
 
-class AssetGridModel: CollectionItemModel {
+class AssetGridModel: CollectionItemModel, CanSelectedStateDesignable {
     var image: BehaviorSubject<UIImage?> = BehaviorSubject(value: nil)
     var asset: PHAsset!
+    
+    var canSelected: Bool = false
 
 }

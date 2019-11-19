@@ -12,7 +12,6 @@ import Foundation
  */
 protocol TableCellConfigProtocol: CreateTableCellrotocol {
     func willAppear(in cell: UITableViewCell)
-    func didDisappear(in cell: UITableViewCell)
     func shouldHighlight() -> Bool
 }
 extension CreateTableCellrotocol {

@@ -63,8 +63,9 @@ open class UICollectionProxy: NSObject, UICollectionViewDelegate {
         }
     }
     open func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let item = collectionCellItem(at: indexPath)
-        item.didDisappear(in: cell)
+        if let cell = cell as? InternalCollectionViewCell {
+            cell.contentItem?.didDisappear()
+        }
         delegate?.didEndDisplaying(cell: cell, forItemAt: indexPath)
     }
     open func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {

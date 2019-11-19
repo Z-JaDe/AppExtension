@@ -13,10 +13,9 @@ open class TableItemModel: ListItemModel {
     public weak var bufferPool: BufferPool?
 
     /// ZJaDe: 手动释放
-    weak var _weakContentCell: DynamicTableItemCell?
-    var _contentCell: DynamicTableItemCell? {
+    weak var _weakContentCell: DynamicTableItemCell? {
         didSet {
-            guard let cell = _contentCell else {
+            guard let cell = _weakContentCell else {
                 return
             }
             cell.isEnabled = self.isEnabled
@@ -29,16 +28,6 @@ open class TableItemModel: ListItemModel {
     // MARK: SelectedStateDesignable
     public var isSelected: Bool = false {
         didSet { getCell()?.isSelected = self.isSelected }
-    }
-    public var canSelected: Bool = false
-    open func checkCanSelected(_ closure: @escaping (Bool) -> Void) {
-        if let cell = getCell() {
-            cell.checkCanSelected({ (isCanSelected) in
-                closure(isCanSelected ?? self.canSelected)
-            })
-        } else {
-            closure(self.canSelected)
-        }
     }
     open func didSelectItem() {
         getCell()?.didSelectItem()
@@ -72,32 +61,15 @@ extension TableItemModel: TableCellConfigProtocol {
         let cell: InternalTableViewCell = _createCell(in: tableView, for: indexPath, InternalTableViewCell.reuseIdentifier) as! InternalTableViewCell
         //        logDebug("\(item)创建一个cell")
         /// ZJaDe: 初始化cell，并且cell持有tableView弱引用
-        createCellIfNil()
+        cell.tempContentItem = createCellIfNil()
         return cell
     }
     func willAppear(in cell: UITableViewCell) {
         guard let cell = cell as? InternalTableViewCell else {
             return
         }
-        // ZJaDe: InternalTableViewCell对cell引用
-        let item = _contentCell!
-        cell.contentItem = item
-        cellDidInHierarchy()
-        item.willAppear()
-        //        logDebug("\(item)将要显示")
-    }
-    func didDisappear(in cell: UITableViewCell) {
-        guard let cell = cell as? InternalTableViewCell else {
-            return
-        }
-        let item = getCell()
-        item?.didDisappear()
-        // ZJaDe: 释放InternalTableViewCell对cell的持有
-        cell.contentItem = nil
-        // 将contentCell加入到缓存池
-        if let item = item {
-            recycleCell(item)
-        }
+        cell.contentItem = cell.tempContentItem
+        _weakContentCell?.willAppear()
     }
     func shouldHighlight() -> Bool {
         getCell()?.shouldHighlight() ?? true

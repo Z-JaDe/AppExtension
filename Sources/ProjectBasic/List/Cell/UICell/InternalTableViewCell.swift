@@ -13,6 +13,26 @@ extension UITableViewCell {
         self.value(forKey: "tableView") as? UITableView
     }
 }
+public protocol TableCellContentItem: UIView {
+    var isHighlighted: Bool { get set }
+    var separatorLineHeight: CGFloat { get }
+    var accessoryView: UIView? { get }
+    var insets: UIEdgeInsets { get }
+    var separatorLineInsets: (left: CGFloat?, right: CGFloat?) { get }
+
+    func didDisappear()
+}
+public extension TableCellContentItem {
+    internal func getInternalCell() -> InternalTableViewCell? {
+        self.superView(InternalTableViewCell.self)
+    }
+    public var tableView: UITableView? {
+        self.getInternalCell()?.jd_tableView
+    }
+    func insetVerticalSpace() -> CGFloat {
+        insets.top + insets.bottom + separatorLineHeight
+    }
+}
 class InternalTableViewCell: UITableViewCell {
     static let reuseIdentifier: String = InternalTableViewCell.classFullName
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -26,32 +46,18 @@ class InternalTableViewCell: UITableViewCell {
         super.prepareForReuse()
         self.accessoryView = nil
     }
-    typealias ContentItemType = TableItemCell
-    var contentItem: ContentItemType? {
+    var tempContentItem: TableCellContentItem?
+    var contentItem: TableCellContentItem? {
         willSet {
             newValue?.getInternalCell()?.contentItem = nil
         }
         didSet {
+            self.tempContentItem = nil
             oldValue?.removeFromSuperview()
-            oldValue?.accessoryView?.removeFromSuperview()
             if let contentItem = self.contentItem {
-                contentItem.prepareForReuse()
                 self.contentView.addSubview(contentItem)
-                self.updateUI(contentItem)
-                self.setNeedsUpdateLayouts()
             }
         }
-    }
-
-    /// 设置contentItem属性后刷新这里触发SNTableCell
-    func updateUI(_ contentItem: ContentItemType) {
-        self.separatorLineView.backgroundColor = contentItem.separatorLineColor
-        self.accessoryType = contentItem.accessoryType
-        self.selectedBackgroundView = contentItem.selectedBackgroundView
-        self.selectionStyle = contentItem.selectionStyle
-        self.backgroundColor = contentItem.cellBackgroundColor
-
-        contentItem.isHighlighted = self.isHighlighted
     }
 
     /// ZJaDe: separator
@@ -138,7 +144,7 @@ extension InternalTableViewCell {
         self.separatorLineView.left = separatorLineInsets.left
     }
 
-    private func getSeparatorLineInsets(_ contentItem: ContentItemType) -> (left: CGFloat, right: CGFloat) {
+    private func getSeparatorLineInsets(_ contentItem: TableCellContentItem) -> (left: CGFloat, right: CGFloat) {
         let left: CGFloat = contentItem.separatorLineInsets.left ??
             (contentItem.separatorLineHeight > 1 ? 0 : contentItem.insets.left)
         let right: CGFloat = contentItem.separatorLineInsets.right ?? 0

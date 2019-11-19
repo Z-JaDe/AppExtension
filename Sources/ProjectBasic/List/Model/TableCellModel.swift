@@ -16,10 +16,6 @@ open class TableCellModel: ListItemModel {
     public var isSelected: Bool = false {
         didSet { _cell?.isSelected = self.isSelected }
     }
-    public var canSelected: Bool = false
-    open func checkCanSelected(_ closure: @escaping (Bool) -> Void) {
-        closure(self.canSelected)
-    }
     open func didSelectItem() {
         (_cell as? CellSelectedStateDesignable)?.didSelectItem()
     }
@@ -48,8 +44,6 @@ extension TableCellModel: TableCellConfigProtocol {
     }
     func willAppear(in cell: UITableViewCell) {
         bindingCellData(cell)
-    }
-    func didDisappear(in cell: UITableViewCell) {
     }
     func shouldHighlight() -> Bool {
         true
