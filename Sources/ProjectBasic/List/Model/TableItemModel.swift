@@ -20,24 +20,34 @@ open class TableItemModel: ListItemModel {
             }
             cell.isEnabled = self.isEnabled
             cell.isSelected = self.isSelected
-            cell.didLayoutSubviewsClosure = {[weak self] (cell) -> Void in
+            cell.didLayoutSubviewsClosure = {[weak self] _ in
                 self?.updateHeight()
             }
         }
     }
     // MARK: SelectedStateDesignable
     public var isSelected: Bool = false {
-        didSet { getCell()?.isSelected = self.isSelected }
-    }
-    open func didSelectItem() {
-        getCell()?.didSelectItem()
+        didSet {
+            if getCell()?.isSelected != isSelected {
+                getCell()?.isSelected = self.isSelected
+            }
+        }
     }
     // MARK: EnabledStateDesignable
     public var isEnabled: Bool? {
-        didSet { getCell()?.isEnabled = self.isEnabled }
+        didSet {
+            if getCell()?.isEnabled != isEnabled {
+                getCell()?.isEnabled = self.isEnabled
+            }
+        }
     }
     open func updateEnabledState(_ isEnabled: Bool) {
         getCell()?.refreshEnabledState(isEnabled)
+    }
+}
+extension TableItemModel: CellSelectedStateDesignable {
+    public func didSelectItem() {
+        getCell()?.didSelectItem()
     }
 }
 extension DynamicTableItemCell: DynamicModelCell {}
@@ -52,7 +62,9 @@ extension TableItemModel: CreateCellUseModel {
     }
     func recycleCell(_ cell: DynamicTableItemCell) {
         bufferPool?.push(cell)
-        cleanCellReference()
+        if cell.isTempCell == false {
+            cleanCellReference()
+        }
     }
 }
 extension TableItemModel: TableCellConfigProtocol {
@@ -77,7 +89,7 @@ extension TableItemModel: TableCellConfigProtocol {
 }
 extension TableItemModel: TableCellHeightProtocol {
     public func updateHeight(_ closure: (() -> Void)? = nil) {
-        self.getCell()?.updateHeight(self, closure)
+        getCell()?.updateHeight(self, closure)
     }
     public func setNeedResetCellHeight() {
         _setNeedResetCellHeight()

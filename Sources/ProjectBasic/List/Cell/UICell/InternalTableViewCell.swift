@@ -15,6 +15,7 @@ extension UITableViewCell {
 }
 public protocol TableCellContentItem: UIView {
     var isHighlighted: Bool { get set }
+    var isSelected: Bool { get set }
     var separatorLineHeight: CGFloat { get }
     var accessoryView: UIView? { get }
     var insets: UIEdgeInsets { get }
@@ -26,7 +27,7 @@ public extension TableCellContentItem {
     internal func getInternalCell() -> InternalTableViewCell? {
         self.superView(InternalTableViewCell.self)
     }
-    public var tableView: UITableView? {
+    var tableView: UITableView? {
         self.getInternalCell()?.jd_tableView
     }
     func insetVerticalSpace() -> CGFloat {
@@ -84,10 +85,15 @@ class InternalTableViewCell: UITableViewCell {
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        if selected != contentItem?.isSelected {
+            contentItem?.isSelected = selected
+        }
     }
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
-        contentItem?.isHighlighted = highlighted
+        if highlighted != contentItem?.isHighlighted {
+            contentItem?.isHighlighted = highlighted
+        }
     }
 }
 extension InternalTableViewCell {

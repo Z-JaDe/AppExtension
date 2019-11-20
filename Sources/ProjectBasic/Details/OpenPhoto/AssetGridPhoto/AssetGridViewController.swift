@@ -66,7 +66,6 @@ open class AssetGridViewController: AdapterCollectionViewController, PHPhotoLibr
             }
             let model = AssetGridModel()
             model.cellSize = targetSize
-            model.canSelected = true
             model.asset = asset
             model.asset.requestImage(targetSize) { (image) in
                 model.image.onNext(image)

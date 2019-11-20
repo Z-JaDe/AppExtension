@@ -26,9 +26,7 @@ open class TableItemCell: ItemCell, TableCellContentItem, WritableDefaultHeightP
     }
     open override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        guard let cell = getInternalCell() else {
-            return
-        }
+        guard let cell = getInternalCell() else { return }
         prepareForReuse()
         self.updateUI(cell)
         cell.setNeedsUpdateLayouts()
@@ -40,12 +38,21 @@ open class TableItemCell: ItemCell, TableCellContentItem, WritableDefaultHeightP
         cell.selectedBackgroundView = self.selectedBackgroundView
         cell.selectionStyle = self.selectionStyle
         cell.backgroundColor = self.cellBackgroundColor
-        
+
+        ///isSelected由cell和model共同控制
+//        cell.isSelected = self.isSelected
+        ///isHighlighted由cell控制
         self.isHighlighted = cell.isHighlighted
     }
     open override func didDisappear() {
         super.didDisappear()
         self.getInternalCell()?.contentItem = nil
+    }
+    override func internalUpdateSelectedState(_ isSelected: Bool) {
+        super.internalUpdateSelectedState(isSelected)
+//        if getInternalCell()?.isSelected != isSelected {
+//            getInternalCell()?.isSelected = isSelected
+//        }
     }
     // MARK: -
     /// ZJaDe: 

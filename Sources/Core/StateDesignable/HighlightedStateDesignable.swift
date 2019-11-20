@@ -10,5 +10,5 @@ import Foundation
 
 public protocol HighlightedStateDesignable {
     var canHighlighted: Bool {get set}
-    var isHighlighted: Bool {get set}
+    var isHighlighted: Bool {get}
 }

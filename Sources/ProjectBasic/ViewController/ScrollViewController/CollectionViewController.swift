@@ -20,24 +20,17 @@ open class AdapterCollectionViewController: AdapterListViewController<Collection
         return CollectionView(frame: frame, collectionViewLayout: layout)
     }
 
-    open override func didMove(toParent parent: UIViewController?) {
-        super.didMove(toParent: parent)
-        adapterViewInit()
-    }
-    open override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        adapterViewInit()
-    }
-    open override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    open override func viewDidLoad() {
+        super.viewDidLoad()
         adapterViewInit()
     }
 
     func adapterViewInit() {
-        if self.rootView.window != nil && self.adapter.collectionView == nil {
+        if self.adapter.collectionView == nil {
             adapter.collectionViewInit(self.rootView)
         }
     }
+
     override func loadAdapter() -> UICollectionAdapter {
         let adapter = UICollectionAdapter()
         return adapter

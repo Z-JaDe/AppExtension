@@ -12,6 +12,7 @@ public class CustomTableItemCell<ViewType: UIView>: StaticTableItemCell {
 
     public override func configInit() {
         super.configInit()
+        self.appearAnimation = .none
         self.canHighlighted = false
         self.cellBackgroundColor = Color.clear
     }

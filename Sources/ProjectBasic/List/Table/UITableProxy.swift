@@ -16,7 +16,6 @@ extension UITableProxy {
         adapter.rxDataSource.dataController
     }
     func tableCellItem(at indexPath: IndexPath) -> AnyTableAdapterItem.ValueType {
-        // swiftlint:disable force_cast
         return dataController[indexPath].value
     }
 }
@@ -37,7 +36,7 @@ open class UITableProxy: NSObject, UITableViewDelegate {
             item.calculateCellHeight(tableView, wait: true)
         }
         let height = item.tempCellHeight
-        return height > 0 ? height : Space.cellDefaultHeight
+        return height > 0 ? height : 0.1
     }
     open func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         self.tableView(tableView, heightForRowAt: indexPath)

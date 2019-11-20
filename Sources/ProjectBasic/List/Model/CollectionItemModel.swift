@@ -53,6 +53,7 @@ extension CollectionItemModel: CreateCellUseModel {
 extension CollectionItemModel: CollectionCellConfigProtocol {
     public func createCell(in collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell {
         let reuseIdentifier: String = InternalCollectionViewCell.reuseIdentifier
+        // swiftlint:disable force_cast
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! InternalCollectionViewCell
         cell.tempContentItem = createCellIfNil()
         return cell

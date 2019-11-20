@@ -13,7 +13,7 @@ public protocol CellModelProtocol: UpdateModelProtocol {
     var model: ModelType? {get set}
     /// 不能通过直接调用的方式，应该使用设置model的方式
     func configData(with model: ModelType)
-    
+
     func updateWithModel()
     func update(with model: ModelType)
 }

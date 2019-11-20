@@ -9,13 +9,19 @@
 import UIKit
 
 open class StaticTableItemCell: TableItemCell {
+    open var appearAnimation: CellAppearAnimationType = .zoomZ
     // MARK: -
     open override func configInit() {
         super.configInit()
 
-        self.didLayoutSubviewsClosure = { [weak self] (cell) -> Void in
-            self?.updateHeight()
-        }
+        self.didLayoutSubviewsClosure = { ($0 as? Self)?.updateHeight() }
+    }
+    open override func willAppear() {
+        super.willAppear()
+        configAppearAnimate()
+    }
+    open func configAppearAnimate() {
+        configAppearAnimate(appearAnimation)
     }
 
     // MARK: - CheckAndCatchParamsProtocol
@@ -24,6 +30,7 @@ open class StaticTableItemCell: TableItemCell {
     public var catchParamsClosure: CatchParamsClosure?
     public var checkParamsClosure: CheckParamsClosure?
 }
+extension StaticTableItemCell: CellSelectedStateDesignable {}
 extension StaticTableItemCell: TableCellConfigProtocol {
     public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
         // swiftlint:disable force_cast

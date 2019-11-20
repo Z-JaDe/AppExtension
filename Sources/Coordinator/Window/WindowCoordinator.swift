@@ -20,8 +20,10 @@ public protocol AbstractWindowCoordinator: Coordinator, Flow,
 }
 public extension AbstractWindowCoordinator {
     func load(rootViewCon: UIViewController) {
-        UIView.transition(with: window, duration: 0.25, options: [.transitionCrossDissolve], animations: {
+        rootViewCon.view.layer.transform = CATransform3DMakeScale(0.9, 0.9, 0.9)
+        UIView.transition(with: window, duration: 0.25, options: [.showHideTransitionViews,.transitionCrossDissolve], animations: {
             self.window.rootViewController = rootViewCon
+            rootViewCon.view.layer.transform = CATransform3DIdentity
             if rootViewCon.presentedViewController != nil {
                 /// ZJaDe: 有presentedViewController控制器时，苹果默认不会加载rootViewController.view，但是有时候presentedViewController只是半屏显示，rootViewController.view还是要加载的
                 self.window.insertSubview(rootViewCon.view, at: 0)

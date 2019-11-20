@@ -23,11 +23,20 @@ open class CollectionItemCell: ItemCell, CollectionCellContentItem {
     }
     /// 设置contentItem属性后刷新这里触发SNTableCell
     func updateUI(_ cell: InternalCollectionViewCell) {
+        ///isSelected由cell和model共同控制
+//        cell.isSelected = self.isSelected
+        ///isHighlighted由cell控制
         self.isHighlighted = cell.isHighlighted
     }
     open override func didDisappear() {
         super.didDisappear()
         self.getInternalCell()?.contentItem = nil
+    }
+    override func internalUpdateSelectedState(_ isSelected: Bool) {
+        super.internalUpdateSelectedState(isSelected)
+//        if getInternalCell()?.isSelected != isSelected {
+//            getInternalCell()?.isSelected = isSelected
+//        }
     }
     /// ZJaDe: insets
     public var insets: UIEdgeInsets = Space.cellInsets {

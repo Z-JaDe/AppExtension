@@ -44,7 +44,6 @@ class AssetGridCell: CollectionModelCell<AssetGridModel> {
     }
 
     override func updateSelectedState(_ isSelected: Bool) {
-        super.updateSelectedState(isSelected)
         if isSelected {
             self.selectedImgView = self.selectedAccessoryTypeImageView
         } else {

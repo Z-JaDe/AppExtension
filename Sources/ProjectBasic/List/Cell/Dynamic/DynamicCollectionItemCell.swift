@@ -10,6 +10,8 @@ import UIKit
 
 open class DynamicCollectionItemCell: CollectionItemCell {
 
+    var isTempCell: Bool = false
+
     var _model: CollectionItemModel? {
         didSet {
             if let model = self._model {
@@ -22,5 +24,11 @@ open class DynamicCollectionItemCell: CollectionItemCell {
     open override func didDisappear() {
         super.didDisappear()
         _model?.recycleCell(self)
+    }
+    override func internalUpdateSelectedState(_ isSelected: Bool) {
+        super.internalUpdateSelectedState(isSelected)
+        if _model?.isSelected != isSelected {
+            _model?.isSelected = isSelected
+        }
     }
 }

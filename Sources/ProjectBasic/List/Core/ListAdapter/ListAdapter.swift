@@ -67,6 +67,6 @@ extension ListAdapter: ListDataUpdateProtocol {
     func dataArrayObservable() -> Observable<ListDataInfoType> {
         self.dataInfoSubject.asObservable()
             .delay(.milliseconds(100), scheduler: MainScheduler.asyncInstance)
-            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .throttle(.milliseconds(100), scheduler: MainScheduler.instance)
     }
 }

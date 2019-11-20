@@ -16,21 +16,21 @@ public enum ErrorEventHandle {
     case never
 }
 
-extension ObservableType {
-    public func mapToVoid() -> Observable<()> {
+public extension ObservableType {
+    func mapToVoid() -> Observable<()> {
         map {_ in ()}
     }
     func mapToOptional() -> Observable<Element?> {
         map { Optional($0) }
     }
 }
-extension ObservableType where Element == Bool {
+public extension ObservableType where Element == Bool {
     func filterTrue() -> Observable<Void> {
         filter({$0}).mapToVoid()
     }
 }
-extension ObservableType where Element: Equatable {
-    public func ignore(values valuesToIgnore: Element...) -> Observable<Element> {
+public extension ObservableType where Element: Equatable {
+    func ignore(values valuesToIgnore: Element...) -> Observable<Element> {
         return self.asObservable().filter { !valuesToIgnore.contains($0) }
     }
 }

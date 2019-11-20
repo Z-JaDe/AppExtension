@@ -37,17 +37,25 @@ open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable
     // MARK: selectedBackgroundView
     let selectedBackgroundView: ItemCellSelectedBackgroundView = ItemCellSelectedBackgroundView()
     // MARK: - StateProtocol
-    /// ZJaDe: isSelected 这个属性由model层的isSelected控制, model层的isSelected可由adapter代理方法控制
+    /// ZJaDe: isSelected由model和cell共同控制
     open var isSelected: Bool = false {
-        didSet { updateSelectedState(isSelected) }
+        didSet {
+            if isSelected != oldValue {
+                internalUpdateSelectedState(isSelected)
+            }
+            updateSelectedState(isSelected)
+        }
     }
-    /// ZJaDe: 当isSelected状态更改时会适时调用该方法，在此作出处理, 子类需要调用super
+    /// ZJaDe: 当isSelected状态更改时会适时调用该方法，在此作出处理
     open func updateSelectedState(_ isSelected: Bool) {
+
+    }
+    internal func internalUpdateSelectedState(_ isSelected: Bool) {
 
     }
     /// ZJaDe: 如果canHighlighted值为false将不会出发点击cell的事件 如果仅仅是不想高亮 改变cell的selectionStyle属性
     open var canHighlighted: Bool = true
-    /// ZJaDe: isHighlighted 用户手动点击可触发高亮状态 cell层有这个属性
+    /// ZJaDe: isHighlighted由cell控制
     open var isHighlighted: Bool = false {
         didSet { updateHighlightedState(isHighlighted) }
     }

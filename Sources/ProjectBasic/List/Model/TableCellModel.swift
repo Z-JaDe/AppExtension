@@ -10,14 +10,20 @@ import Foundation
 
 open class TableCellModel: ListItemModel {
 
-    weak var _cell: UITableViewCell?
+    weak var _cell: UITableViewCell? {
+        didSet {
+            guard let cell = _cell else {
+                return
+            }
+            var __cell = _cell as? EnabledStateDesignable
+            __cell?.isEnabled = self.isEnabled
+            cell.isSelected = self.isSelected
+        }
+    }
 
     // MARK: SelectedStateDesignable
     public var isSelected: Bool = false {
         didSet { _cell?.isSelected = self.isSelected }
-    }
-    open func didSelectItem() {
-        (_cell as? CellSelectedStateDesignable)?.didSelectItem()
     }
     // MARK: EnabledStateDesignable
     public var isEnabled: Bool? {
@@ -34,6 +40,11 @@ open class TableCellModel: ListItemModel {
     }
     // MARK: -
     open func updateHeight(_ closure: (() -> Void)? = nil) {
+    }
+}
+extension TableCellModel: CellSelectedStateDesignable {
+    public func didSelectItem() {
+        (_cell as? CellSelectedStateDesignable)?.didSelectItem()
     }
 }
 extension TableCellModel: TableCellConfigProtocol {
@@ -77,33 +88,5 @@ extension TableCellModel {
             let cell = tableView.dequeueReusableCell(withIdentifier: cellName)
             return cell!
         }
-    }
-}
-
-extension UITableViewCell {
-    func getItemCellWidth(_ tableView: UITableView) -> CGFloat {
-        tableView.getItemCellWidth(accessoryView, accessoryType)
-    }
-    /*************** 计算TableViewCell高度 ***************/
-    func layoutHeight(_ contentWidth: CGFloat) -> CGFloat {
-        let result: CGFloat
-        if let height = self.frameLayoutHeight(contentWidth) {
-            result = height
-        } else {
-            result = self.autoLayoutHeight(contentWidth)
-        }
-        return result.ceilToNearest(increment: 1)
-    }
-    /*************** 计算TableViewCell高度 ***************/
-    private func frameLayoutHeight(_ contentWidth: CGFloat) -> CGFloat? {
-        let viewWidth = contentWidth
-        let viewHeight = self.calculateFrameHeight(viewWidth)
-        return viewHeight > 0 ? viewHeight : nil
-    }
-    open dynamic func calculateFrameHeight(_ width: CGFloat) -> CGFloat {
-        0
-    }
-    private func autoLayoutHeight(_ contentWidth: CGFloat) -> CGFloat {
-        self.calculateAutoLayoutHeight(contentWidth)
     }
 }
