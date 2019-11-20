@@ -21,7 +21,7 @@ public protocol AbstractWindowCoordinator: Coordinator, Flow,
 public extension AbstractWindowCoordinator {
     func load(rootViewCon: UIViewController) {
         rootViewCon.view.layer.transform = CATransform3DMakeScale(0.9, 0.9, 0.9)
-        UIView.transition(with: window, duration: 0.25, options: [.showHideTransitionViews,.transitionCrossDissolve], animations: {
+        UIView.transition(with: window, duration: 0.25, options: [.transitionCrossDissolve, .curveEaseInOut], animations: {
             self.window.rootViewController = rootViewCon
             rootViewCon.view.layer.transform = CATransform3DIdentity
             if rootViewCon.presentedViewController != nil {
