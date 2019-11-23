@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 
 extension AnyTableAdapterItem: AdapterItemType {}
 extension TableItemModel: _AdapterItemType {}
@@ -28,77 +26,66 @@ public typealias TableStaticListDataInfo = ListDataInfo<TableStaticData>
 open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
     private var timer: Timer?
     public weak private(set) var tableView: UITableView?
-    lazy private(set) var tableProxy: UITableViewDelegate = UITableProxy(self)
-    /// ZJaDe: 代理
-    open weak var delegate: TableViewDelegate?
-
     public func tableViewInit(_ tableView: UITableView) {
         self.tableView = tableView
         // 注册的用的全部都是InternalTableViewCell, 真正的cell是InternalTableViewCell.contentItem
         tableView.register(InternalTableViewCell.self, forCellReuseIdentifier: InternalTableViewCell.reuseIdentifier)
-        //初始化数据源
-        bindingDataSource(self.rxDataSource)
-        //初始化代理
-        bindingDelegate(self.tableProxy)
         allowsSelection(tableView)
-    }
 
-    // MARK: -
-    public let insertSecionModels: CallBackerReduce = CallBackerReduce<ListDataType>()
-    public override var rxDataSource: DataSource {
-        if let result = _rxDataSource {
-            return result
-        }
-        let dataSource = DataSource()
-        _rxDataSource = dataSource
-        dataSource.configureCell = {[weak self] (_, tableView, indexPath, item) in
-            guard let self = self else {
-                return item.createCell(in: tableView, for: indexPath)
-            }
-            return self.createCell(in: tableView, for: indexPath, item: item)
-        }
-        dataSource.didMoveItem = { [weak self] (dataSource, source, destination) in
-            guard let self = self else { return }
-            self.dataInfo = self.dataInfo?.map({$0.exchange(source, destination)})
-        }
-        return dataSource
+        dataSourceDefaultInit(dataSource)
+        tableView.dataSource = self.dataSource
+        tableView.delegate = self.tableProxy
+        dataChanged()
     }
-    private func createCell(in tableView: UITableView, for indexPath: IndexPath, item: AnyTableAdapterItem) -> UITableViewCell {
-        if let _item = item.value as? TableCellHeightProtocol {
+    // MARK: -
+    /// ZJaDe: 代理
+    open weak var delegate: TableViewDelegate?
+    /// ZJaDe: 设置自定义的代理时，需要注意尽量使用UITableProxy或者它的子类，这样会自动实现一些默认配置
+    public lazy var tableProxy: UITableProxy = UITableProxy(self)
+    public var dataSource: DataSource = DataSource() {
+        didSet { dataSourceDefaultInit(dataSource) }
+    }
+    open func dataSourceDefaultInit(_ dataSource: DataSource) {
+        dataSource.configureCell = { (_, tableView, indexPath, item) in
+            return item.createCell(in: tableView, for: indexPath)
+        }
+        dataSource.didMoveItem = {[weak self] (dataSource, source, destination) in
+            guard let self = self else { return }
+            self.dataInfo = self.dataInfo?.map({$0.move(source, destination)})
+        }
+    }
+    public lazy var updating: Updating = tableView!.createUpdating(.fade)
+    var dataInfo: ListDataInfoType?
+    public let insertSecionModels: CallBackerReduce = CallBackerReduce<ListDataType>()
+}
+extension UITableAdapter: ListAdapterType {
+    public var dataArray: ListDataType {
+        self.dataInfo?.data ?? .init()
+    }
+    public func changeListDataInfo(_ newData: ListDataInfoType) {
+        self.dataInfo = newData
+        dataChanged()
+    }
+    func dataChanged() {
+        guard let tableView = tableView else { return }
+        guard let dataInfo = dataInfo else { return }
+        let mapDataInfo = dataInfo.map({ (dataArray) -> [SectionModelItem<Section, Item>] in
+            let dataArray = self.insertSecionModels.callReduce(dataArray)
+            return dataArray.compactMapToSectionModels()
+        })
+        self.updateItemsIfNeed()
+        self.addBufferPool(at: mapDataInfo.data)
+        dataSource.dataChange(mapDataInfo, tableView.updater)
+    }
+}
+extension UITableAdapter: ListDataUpdateProtocol {}
+extension AnyTableAdapterItem {
+    fileprivate func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
+        if let _item = self.value as? TableCellHeightProtocol {
             if _item.cellHeightLayoutType.isNeedLayout {
                 _item.calculateCellHeight(tableView, wait: true)
             }
         }
-        return item.createCell(in: tableView, for: indexPath)
-    }
-    // MARK: -
-    open override func bindingDataSource(_ dataSource: DataSource) {
-        super.bindingDataSource(dataSource)
-        guard let tableView = tableView else { return }
-        dataArrayObservable()
-            .map({$0.map({[weak self] (dataArray) in
-                let dataArray = self?.insertSecionModels.callReduce(dataArray) ?? dataArray
-                return dataArray.compactMapToSectionModels()
-            })})
-            .do(onNext: { [weak self] (element) -> Void in
-                guard let self = self else {return}
-                self.updateItemsIfNeed()
-                self.addBufferPool(at: element.data)
-            })
-            .bind(to: tableView.rx.items(dataSource: self.rxDataSource))
-            .disposed(by: disposeBag)
-    }
-    /**
-     设置自定义的代理时，需要注意尽量使用UITableProxy或者它的子类，这样会自动实现一些默认配置
-     */
-    open func bindingDelegate(_ tableProxy: UITableViewDelegate) {
-        self.tableProxy = tableProxy
-        tableView?.rx.setDelegate(self.tableProxy)
-            .disposed(by: self.disposeBag)
-    }
-}
-extension AnyTableAdapterItem {
-    fileprivate func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
         // swiftlint:disable force_cast
         return (self.value as! CreateTableCellrotocol).createCell(in: tableView, for: indexPath)
     }

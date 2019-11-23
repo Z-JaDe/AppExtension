@@ -10,15 +10,17 @@ import Foundation
 
 public class ListDataInfo<DataType> {
     public let data: DataType
-    public var updateMode: ListUpdateMode
-    public init(data: DataType) {
+    public var updating: Updating
+    /// ZJaDe: 私有化，ListDataInfo传递时，只能有一个ListDataInfo持有completion
+    private var completionHandle: () -> Void
+    public init(data: DataType, updating: Updating) {
         self.data = data
-        self.updateMode = .partial(animation: .automatic)
+        self.updating = updating
         self.completionHandle = {}
     }
     private init<T>(original: ListDataInfo<T>, data: DataType) {
         self.data = data
-        self.updateMode = original.updateMode
+        self.updating = original.updating
         self.completionHandle = original.completionHandle
         original.completionHandle = {}
     }
@@ -26,14 +28,12 @@ public class ListDataInfo<DataType> {
     public func map<U>(_ transform: (DataType) throws -> U) rethrows -> ListDataInfo<U> {
         ListDataInfo<U>(original: self, data: try transform(data))
     }
-    /// ZJaDe: 局部(无)动画刷新 or 全局刷新
-    public func configUpdateMode(_ updateMode: ListUpdateMode) -> Self {
-        self.updateMode = updateMode
+    /// ZJaDe: 动画更新器 局部(无)动画刷新 or 全局刷新
+    public func setUpdateMode(_ mode: UpdateMode) -> Self {
+        self.updating.updateMode = mode
         return self
     }
     // MARK: -
-    /// ZJaDe: 私有化，ListDataInfo传递时，只能有一个ListDataInfo持有completion
-    private var completionHandle: () -> Void
     /// ZJaDe: 刷新完成后 会自动释放闭包
     public func completion(_ closure: @escaping () -> Void) -> Self {
         self.completionHandle = closure
@@ -48,7 +48,7 @@ public class ListDataInfo<DataType> {
     }
 }
 extension ListData {
-    public func updateInfo() -> ListDataInfo<ListData> {
-        ListDataInfo(data: self)
+    public func createListInfo(_ updating: Updating) -> ListDataInfo<ListData> {
+        ListDataInfo(data: self, updating: updating)
     }
 }

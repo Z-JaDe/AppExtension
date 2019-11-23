@@ -74,6 +74,9 @@ public class TaskQueue {
     public init() {
         self.taskIsSuspend = true
     }
+    public var isWorking: Bool {
+        taskState == .working
+    }
 }
 // MARK: 任务暂停、恢复
 public extension TaskQueue {
@@ -103,10 +106,24 @@ public extension TaskQueue {
 }
 // MARK: 添加、移除任务
 public extension TaskQueue {
+    /// 包括正在执行中的任务
     func cleanAllTasks() {
         queue.async {
             self.taskState = .free
             self.taskArr.removeAll()
+        }
+    }
+    /// 不包括正在执行中的任务
+    func cleanAllFreeTasks() {
+        queue.async {
+            switch self.taskState {
+            case .free:
+                self.taskArr.removeAll()
+            case .working:
+                if let first = self.taskArr.first {
+                    self.taskArr = [first]
+                }
+            }
         }
     }
     func cancelTask(_ task: TaskItem) -> Bool {
@@ -155,9 +172,13 @@ private extension TaskQueue {
             task.start(taskComplete: {[weak self] in
                 guard let self = self else { return }
                 self.queue.async {
-                    _ = self.removeTask(task)
-                    self.taskState = .free
-                    self.executeIfNeed()
+                    if self.taskArr.isEmpty {
+                        self.taskState = .free
+                        assertionFailure("逻辑上来讲 永远不会走到这里, 需要检查代码问题")
+                    } else if self.removeTask(task) { //删除成功 说明该任务没有被强制关闭，继续执行下一个任务
+                        self.taskState = .free
+                        self.executeIfNeed()
+                    }
                 }
             })
         }

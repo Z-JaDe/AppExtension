@@ -18,13 +18,13 @@ extension ListDataUpdateProtocol where Section: Equatable & InitProtocol, Item =
         } else if _itemArray.isNotEmpty {
             newData.append(section: section, items: _itemArray)
         }
-        let result = newData.updateInfo()
+        let result = newData.createListInfo(updating)
         self.reloadData(closure?(result) ?? result)
     }
 }
 extension ListData where Item: StaticTableItemCell, Section == TableSection {
-    public func updateInfo() -> TableListDataInfo {
-        self.map({.cell($0)}).updateInfo()
+    public func createListInfo(_ updating: Updating) -> TableListDataInfo {
+        self.map({.cell($0)}).createListInfo(updating)
     }
 }
 

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import DifferenceKit
 
 public protocol SectionedDataSourceType {
     associatedtype S: SectionModelType
@@ -42,10 +43,22 @@ open class SectionedDataSource<S: SectionModelType>: NSObject, SectionedDataSour
 
     public typealias Element = ListDataInfo<[S]>
 
-    func rxChange(_ newValue: Element, _ updater: Updater) {
+    public func dataChange(_ newValue: Element, _ updater: Updater) {
         #if DEBUG
         self._dataSourceBound = true
         #endif
         self.dataController.updateNewData(newValue, updater)
+    }
+}
+extension DataController {
+    func updateNewData(_ newData: ListDataInfo<[S]>, _ updater: Updater) {
+        updater.update(
+            using: StagedChangeset<[S]>(source: self.sectionModels, target: newData.data),
+            dataSetter: Updater.DataSetter(updating: newData.updating, interrupt: {$0.data.count > 100}, setData: setSections, completion: { (_) in
+                newData.performCompletion()
+                newData.infoRelease()
+                self.reloadDataCompletion.call()
+            })
+        )
     }
 }

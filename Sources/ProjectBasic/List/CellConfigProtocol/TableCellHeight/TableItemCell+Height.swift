@@ -10,11 +10,11 @@ import Foundation
 
 extension TableItemCell {
     func updateHeight<Item: TableCellHeightProtocol>(_ item: Item, _ updates: (() -> Void)?) {
-        guard let updater = self.tableView?.updater else {
+        guard let tableView = self.tableView else {
             logError("\(self)->tableView找不到")
             return
         }
-        guard updater.isUpdating == false else { return }
+        guard tableView.updater.isUpdating == false else { return }
         guard CATransform3DIsIdentity(self.layer.transform) else { return }
         guard (try? self.cellState.value()) == .didAppear else { return }
         if item.cellHeightLayoutType == .hasLayout {
@@ -27,7 +27,7 @@ extension TableItemCell {
         }
         guard item.cellHeightLayoutType == .resetLayout else { return }
         self.setNeedUpdate()
-        updater.performBatch(animated: true, updates: updates, completion: { _ in })
+        tableView.updater.performBatch(updating: tableView.createUpdating(.automatic), updates: updates, completion: { _ in })
     }
 }
 extension TableItemCell {

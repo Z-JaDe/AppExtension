@@ -16,7 +16,13 @@ public protocol ListDataUpdateProtocol: class {
     typealias ListDataInfoType = ListDataInfo<ListDataType>
 
     var dataArray: ListDataType {get}
+    var updating: Updating {get}
     func changeListDataInfo(_ newData: ListDataInfoType)
+}
+extension ListDataUpdateProtocol {
+    public func createListInfo(_ newData: ListDataType) -> ListDataInfoType {
+        return ListDataInfoType(data: newData, updating: updating)
+    }
 }
 extension ListDataUpdateProtocol {
     /// ZJaDe: 更新
@@ -25,13 +31,16 @@ extension ListDataUpdateProtocol {
     }
     /// ZJaDe: 重新刷新 传入 listData
     public func reloadData(_ listData: ListDataType?) {
-        self.reloadData(listData?.updateInfo())
+        self.reloadData(listData?.createListInfo(updating))
     }
     /// ZJaDe: 重新刷新 传入 listDataInfo
     public func reloadData(_ listDataInfo: ListDataInfoType?) {
         if let listDataInfo = listDataInfo {
             self.changeListDataInfo(listDataInfo)
         }
+    }
+    public func reloadData(_ closure: (ListDataInfoType) -> ListDataInfoType) {
+        self.reloadData(closure(createListInfo(dataArray)))
     }
 }
 extension ListDataUpdateProtocol where Section: Equatable & InitProtocol {
@@ -45,7 +54,7 @@ extension ListDataUpdateProtocol where Section: Equatable & InitProtocol {
         } else if _itemArray.isEmpty == false {
             newData.append(section: section, items: _itemArray)
         }
-        let result = newData.updateInfo()
+        let result = newData.createListInfo(updating)
         self.reloadData(closure?(result) ?? result)
     }
 }

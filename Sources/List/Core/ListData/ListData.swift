@@ -27,15 +27,15 @@ public struct ListData<Section: Diffable, Item: Diffable & Equatable>: Collectio
     public var itemCount: Int {
         self.value.map({$0.items.count}).reduce(0, +)
     }
-    public func exchange(_ item1: Item, _ item2: Item) -> ListData {
+    public func move(_ item1: Item, _ item2: Item) -> ListData {
         var listData = self
         for (offset: sectionIndex, element: section) in self.enumerated() {
             for (itemIndex, item) in section.items.enumerated() {
                 if item == item1 {
-                    listData[sectionIndex].items[itemIndex] = item2
+                    listData[sectionIndex].items.remove(at: itemIndex)
                 }
                 if item == item2 {
-                    listData[sectionIndex].items[itemIndex] = item1
+                    listData[sectionIndex].items.insert(item1, at: itemIndex)
                 }
             }
         }

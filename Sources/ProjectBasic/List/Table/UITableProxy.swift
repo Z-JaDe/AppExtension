@@ -13,7 +13,7 @@ extension UITableProxy {
         adapter.delegate
     }
     var dataController: UITableAdapter.DataSource.DataControllerType {
-        adapter.rxDataSource.dataController
+        adapter.dataSource.dataController
     }
     func tableCellItem(at indexPath: IndexPath) -> AnyTableAdapterItem.ValueType {
         return dataController[indexPath].value

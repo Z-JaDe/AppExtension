@@ -8,11 +8,11 @@
 import Foundation
 extension UITableViewCell {
     func updateHeight<Item: TableCellHeightProtocol>(_ item: Item, _ updates: (() -> Void)?) {
-        guard let updater = self.jd_tableView?.updater else {
+        guard let tableView = self.jd_tableView else {
             logError("\(self)->tableView找不到")
             return
         }
-        guard updater.isUpdating == false else { return }
+        guard tableView.updater.isUpdating == false else { return }
         guard CATransform3DIsIdentity(self.layer.transform) else { return }
         if item.cellHeightLayoutType == .hasLayout {
             let oldHeight = item.tempCellHeight
@@ -24,7 +24,7 @@ extension UITableViewCell {
         }
         guard item.cellHeightLayoutType == .resetLayout else { return }
         (self as? NeedUpdateProtocol)?.setNeedUpdate()
-        updater.performBatch(animated: true, updates: updates, completion: { _ in })
+        tableView.updater.performBatch(updating: tableView.createUpdating(.automatic), updates: updates, completion: { _ in })
     }
 }
 extension UITableViewCell {

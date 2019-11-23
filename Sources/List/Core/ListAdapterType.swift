@@ -22,10 +22,10 @@ public protocol ListAdapterType {
     associatedtype DataSource: SectionedDataSourceType
     typealias Section = DataSource.S.Section
     typealias Item = DataSource.S.Item
-    var rxDataSource: DataSource { get }
+    var dataSource: DataSource { get }
 }
 extension ListAdapterType {
     public var dataController: DataSource.DataControllerType {
-        rxDataSource.dataController
+        dataSource.dataController
     }
 }

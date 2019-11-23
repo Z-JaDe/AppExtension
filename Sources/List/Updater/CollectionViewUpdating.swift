@@ -7,22 +7,27 @@
 //
 
 import UIKit
-private var updaterKey: UInt8 = 0
-extension UICollectionView {
-    public var updater: Updater {
-        associatedObject(&updaterKey, createIfNeed: Updater(CollectionViewUpdating(self)))
+
+public extension UICollectionView {
+    func createUpdating(updateMode: UpdateMode) -> CollectionViewUpdating {
+        return CollectionViewUpdating(self, updateMode: updateMode)
     }
 }
-private struct CollectionViewUpdating: Updating {
+
+public struct CollectionViewUpdating {
     private weak var collectionView: UICollectionView?
-    fileprivate init(_ target: UICollectionView) {
+    public var updateMode: UpdateMode
+    public init(_ target: UICollectionView, updateMode: UpdateMode) {
         self.collectionView = target
+        self.updateMode = updateMode
     }
-    var isInHierarchy: Bool {
+}
+extension CollectionViewUpdating: Updating {
+    public var isInHierarchy: Bool {
         collectionView?.window != nil
     }
     // MARK: -
-    func performBatch(animated: Bool, updates: (() -> Void)?, completion: @escaping (Bool) -> Void) {
+    public func performBatch(updates: (() -> Void)?, completion: @escaping (Bool) -> Void) {
         guard let collectionView = collectionView else { return }
         if animated {
             collectionView.performBatchUpdates(updates, completion: completion)
@@ -38,34 +43,34 @@ private struct CollectionViewUpdating: Updating {
         }
     }
     // MARK: -
-    func insertItems(at indexPaths: [IndexPath], with animation: UITableView.RowAnimation) {
+    public func insertItems(at indexPaths: [IndexPath]) {
         collectionView?.insertItems(at: indexPaths)
     }
-    func deleteItems(at indexPaths: [IndexPath], with animation: UITableView.RowAnimation) {
+    public func deleteItems(at indexPaths: [IndexPath]) {
         collectionView?.deleteItems(at: indexPaths)
     }
-    func reloadItems(at indexPaths: [IndexPath], with animation: UITableView.RowAnimation) {
+    public func reloadItems(at indexPaths: [IndexPath]) {
         collectionView?.reloadItems(at: indexPaths)
     }
-    func moveItem(at indexPath: IndexPath, to newIndexPath: IndexPath) {
+    public func moveItem(at indexPath: IndexPath, to newIndexPath: IndexPath) {
         collectionView?.moveItem(at: indexPath, to: newIndexPath)
     }
     // MARK: -
     // MARK: -
-    func insertSections(_ sections: IndexSet, with animation: UITableView.RowAnimation) {
+    public func insertSections(_ sections: IndexSet) {
         collectionView?.insertSections(sections)
     }
-    func deleteSections(_ sections: IndexSet, with animation: UITableView.RowAnimation) {
+    public func deleteSections(_ sections: IndexSet) {
         collectionView?.deleteSections(sections)
     }
-    func reloadSections(_ sections: IndexSet, with animation: UITableView.RowAnimation) {
+    public func reloadSections(_ sections: IndexSet) {
         collectionView?.reloadSections(sections)
     }
-    func moveSection(_ section: Int, toSection newSection: Int) {
+    public func moveSection(_ section: Int, toSection newSection: Int) {
         collectionView?.moveSection(section, toSection: newSection)
     }
     // MARK: -
-    func reload(completion: @escaping () -> Void) {
+    public func reload(completion: @escaping () -> Void) {
         collectionView?.reloadData()
         collectionView?.collectionViewLayout.invalidateLayout()
         completion()

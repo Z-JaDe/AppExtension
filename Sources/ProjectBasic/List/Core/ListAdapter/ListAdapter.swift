@@ -14,11 +14,11 @@ import RxCocoa
 public protocol _AdapterItemType: AdapterItemType & HiddenStateDesignable & EnabledStateDesignable {} //CanSelectedStateDesignable
 public protocol _AdapterSectionType: AdapterSectionType {}
 
-open class ListAdapter<DataSource: SectionedDataSourceType>: ListAdapterType
+open class ListAdapter<DataSource: SectionedDataSourceType>
 where DataSource.S.Item: AdapterItemType, DataSource.S.Section: AdapterSectionType {
+    public typealias DataSource = DataSource
     public typealias Section = DataSource.S.Section
     public typealias Item = DataSource.S.Item
-
     public init() {
         self.configInit()
     }
@@ -28,23 +28,11 @@ where DataSource.S.Item: AdapterItemType, DataSource.S.Section: AdapterSectionTy
     deinit {
         logDebug("\(type(of: self))->\(self)注销")
     }
-    /// ZJaDe: 缓存池
-    let bufferPool: BufferPool = BufferPool()
     /// ZJaDe: 是否自动改回未选中，子类实现相关逻辑
     public var autoDeselectRow = true
+    /// ZJaDe: 缓存池
+    let bufferPool: BufferPool = BufferPool()
 
-    // MARK: -
-    let dataInfoSubject: ReplaySubject<ListDataInfoType> = ReplaySubject.create(bufferSize: 1)
-    var dataInfo: ListDataInfoType?
-    // MARK: -
-    var _rxDataSource: DataSource?
-    ///子类重写
-    public var rxDataSource: DataSource {
-        _rxDataSource!
-    }
-    open func bindingDataSource(_ dataSource: DataSource) {
-        self._rxDataSource = dataSource
-    }
     // MARK: -
     open var isEnabled: Bool? {
         didSet {
@@ -55,18 +43,3 @@ where DataSource.S.Item: AdapterItemType, DataSource.S.Section: AdapterSectionTy
     }
 }
 extension ListAdapter: DisposeBagProtocol {}
-extension ListAdapter: ListDataUpdateProtocol {
-    public var dataArray: ListDataType {
-        self.dataInfo?.data ?? .init()
-    }
-    public func changeListDataInfo(_ newData: ListDataInfoType) {
-        self.dataInfo = newData
-        self.dataInfoSubject.onNext(newData)
-    }
-    /// 将dataArray转信号
-    func dataArrayObservable() -> Observable<ListDataInfoType> {
-        self.dataInfoSubject.asObservable()
-            .delay(.milliseconds(100), scheduler: MainScheduler.asyncInstance)
-            .throttle(.milliseconds(100), scheduler: MainScheduler.instance)
-    }
-}

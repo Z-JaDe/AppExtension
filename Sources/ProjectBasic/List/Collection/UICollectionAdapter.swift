@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 
 extension CollectionItemModel: _AdapterItemType {}
 extension CollectSection: _AdapterSectionType {}
@@ -18,57 +16,58 @@ public typealias CollectionSectionModel = SectionModelItem<CollectSection, Colle
 open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionSectionModel>> {
 
     public weak private(set) var collectionView: UICollectionView?
-    lazy private(set) var collectProxy: UICollectionViewDelegate = UICollectionProxy(self)
-    /// ZJaDe: 代理
-    open weak var delegate: CollectionViewDelegate?
 
     public func collectionViewInit(_ collectionView: UICollectionView) {
         self.collectionView = collectionView
         collectionView.register(InternalCollectionViewCell.self, forCellWithReuseIdentifier: InternalCollectionViewCell.reuseIdentifier)
         collectionView.register(InternalCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: InternalCollectionReusableView.reuseIdentifier)
         collectionView.register(InternalCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: InternalCollectionReusableView.reuseIdentifier)
-        bindingDataSource(self.rxDataSource)
-        bindingDelegate(self.collectProxy)
         allowsSelection(collectionView)
+
+        dataSourceDefaultInit(dataSource)
+        collectionView.dataSource = dataSource
+        collectionView.delegate = collectProxy
+        dataChanged()
     }
     // MARK: -
-    public override var rxDataSource: DataSource {
-        if let result = _rxDataSource {
-            return result
-        }
-        let dataSource = DataSource()
-        _rxDataSource = dataSource
+    /// ZJaDe: 代理
+    open weak var delegate: CollectionViewDelegate?
+    /// ZJaDe: 设置自定义的代理时，需要注意尽量使用UICollectionProxy或者它的子类，这样会自动实现一些默认配置
+    public lazy var collectProxy: UICollectionProxy = UICollectionProxy(self)
+    public var dataSource: DataSource = DataSource() {
+        didSet { dataSourceDefaultInit(dataSource) }
+    }
+    open func dataSourceDefaultInit(_ dataSource: DataSource) {
         dataSource.configureCell = {(_, collectionView, indexPath, item) in
             return item.createCell(in: collectionView, at: indexPath)
         }
         dataSource.didMoveItem = { [weak self] (dataSource, source, destination) in
             guard let self = self else { return }
-            self.dataInfo = self.dataInfo?.map({$0.exchange(source, destination)})
+            self.dataInfo = self.dataInfo?.map({$0.move(source, destination)})
         }
-        return dataSource
     }
-    // MARK: -
-    open override func bindingDataSource(_ dataSource: DataSource) {
-        super.bindingDataSource(dataSource)
+    public lazy var updating: Updating = collectionView!.createUpdating(updateMode: .partial)
+    var dataInfo: ListDataInfoType?
+}
+extension UICollectionAdapter: ListAdapterType {
+    public var dataArray: ListDataType {
+        self.dataInfo?.data ?? .init()
+    }
+    public func changeListDataInfo(_ newData: ListDataInfoType) {
+        self.dataInfo = newData
+        dataChanged()
+    }
+    func dataChanged() {
         guard let collectionView = collectionView else { return }
-        dataArrayObservable()
-            .map({$0.map({$0.compactMapToSectionModels()})})
-            .do(onNext: {[weak self] (element) -> Void in
-                guard let self = self else {return}
-                self.addBufferPool(at: element.data)
-            })
-            .bind(to: collectionView.rx.items(dataSource: self.rxDataSource))
-            .disposed(by: disposeBag)
-    }
-    /**
-     设置自定义的代理时，需要注意尽量使用UICollectionProxy或者它的子类，这样会自动实现一些默认配置
-     */
-    open func bindingDelegate(_ collectProxy: UICollectionViewDelegate) {
-        self.collectProxy = collectProxy
-        collectionView?.rx.setDelegate(self.collectProxy)
-            .disposed(by: self.disposeBag)
+        guard let dataInfo = dataInfo else { return }
+        let mapDataInfo = dataInfo.map({ (dataArray) -> [SectionModelItem<Section, Item>] in
+            return dataArray.compactMapToSectionModels()
+        })
+        self.addBufferPool(at: mapDataInfo.data)
+        dataSource.dataChange(mapDataInfo, collectionView.updater)
     }
 }
+extension UICollectionAdapter: ListDataUpdateProtocol {}
 extension UICollectionAdapter {
     func addBufferPool(at data: [SectionModelItem<Section, Item>]) {
         data.lazy.flatMap({$0.items}).forEach({ (model) in

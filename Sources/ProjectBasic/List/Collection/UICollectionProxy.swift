@@ -13,7 +13,7 @@ extension UICollectionProxy {
         adapter.delegate
     }
     var dataController: UICollectionAdapter.DataSource.DataControllerType {
-        adapter.rxDataSource.dataController
+        adapter.dataSource.dataController
     }
     func collectionCellItem(at indexPath: IndexPath) -> UICollectionAdapter.Item {
         dataController[indexPath]

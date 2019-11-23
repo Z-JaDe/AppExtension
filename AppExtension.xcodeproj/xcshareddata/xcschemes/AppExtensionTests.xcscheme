@@ -47,6 +47,16 @@
                ReferencedContainer = "container:AppExtension.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F965C6AA2388FC1500AA148E"
+               BuildableName = "ListAdapterTests.xctest"
+               BlueprintName = "ListAdapterTests"
+               ReferencedContainer = "container:AppExtension.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -76,15 +86,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C962C18F20CE17990061FC20"
-            BuildableName = "AppExtension.app"
-            BlueprintName = "AppExtension"
-            ReferencedContainer = "container:AppExtension.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -7,7 +7,7 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
-            buildForTesting = "NO"
+            buildForTesting = "YES"
             buildForRunning = "YES"
             buildForProfiling = "NO"
             buildForArchiving = "YES"
@@ -35,6 +35,16 @@
                BlueprintIdentifier = "C918DEE321B5205F000F2AAC"
                BuildableName = "AppExtensionUITests.xctest"
                BlueprintName = "AppExtensionUITests"
+               ReferencedContainer = "container:AppExtension.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F965C6AA2388FC1500AA148E"
+               BuildableName = "ListAdapterTests.xctest"
+               BlueprintName = "ListAdapterTests"
                ReferencedContainer = "container:AppExtension.xcodeproj">
             </BuildableReference>
          </TestableReference>
