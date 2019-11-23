@@ -41,6 +41,3 @@
 [submodule "BaseSupport/Fork/CollectionKit"]
 	path = BaseSupport/Fork/CollectionKit
 	url = git@github.com:Z-JaDe/CollectionKit.git
-[submodule "BaseSupport/ListAdapter"]
-	path = BaseSupport/ListAdapter
-	url = git@github.com:Z-JaDe/ListAdapter.git
