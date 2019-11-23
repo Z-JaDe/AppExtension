@@ -53,7 +53,7 @@ extension CallBacker {
         self._register(on: target, key: key, closure: closure)
     }
     public func callAll(_ input: Input) -> [Output] {
-        queue.syncInMain {
+        queue.syncIfNeed {
             var result: [Output] = []
             for key in self.keys {
                 if let output = self.closures[key]?(input) {
@@ -64,7 +64,7 @@ extension CallBacker {
         }
     }
     public func callOne(_ input: Input) -> Output? {
-        queue.syncInMain {
+        queue.syncIfNeed {
             if let closure = self.closures[self.defaultKey] {
                 return closure(input)
             } else {
@@ -76,7 +76,7 @@ extension CallBacker {
 // MARK: -
 extension CallBacker where Input == Output {
     public func callReduce(_ input: Input) -> Output {
-        queue.syncInMain {
+        queue.syncIfNeed {
             var result: Output = input
             for key in self.keys {
                 if let output = self.closures[key]?(result) {

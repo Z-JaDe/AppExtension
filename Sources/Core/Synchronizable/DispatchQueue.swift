@@ -56,10 +56,10 @@ extension DispatchQueue {
     /**
         同步执行任务，任务会在主线程同步执行返回，需注意sync在串行队列中可能存在的崩溃问题
      */
-    public func syncInMain<T>(_ action: () throws -> T) rethrows -> T {
-        //这里不直接判断是否在主线程，是因为在这里sync语义,除了阻塞当前线程 在串行队列中还有等待其他任务完成的意思。若是直接判断是否在主线程，就失去了等待队列按顺序调度任务的意思
-        return try sync {
-            return try DispatchQueue.main.syncIfNeed(action)
-        }
-    }
+//    public func syncInMain<T>(_ action: () throws -> T) rethrows -> T {
+//        //这里不直接判断是否在主线程，是因为在这里sync语义,除了阻塞当前线程 在串行队列中还有等待其他任务完成的意思。若是直接判断是否在主线程，就失去了等待队列按顺序调度任务的意思
+//        try syncIfNeed {
+//            try DispatchQueue.main.syncIfNeed(action)
+//        }
+//    }
 }
