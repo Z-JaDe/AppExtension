@@ -454,6 +454,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		18665B53238D208600A14716 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C962C18820CE17990061FC20 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9283BEA21BE9C1D00361B87;
+			remoteInfo = EmptyDataSet;
+		};
 		189A1F0A2254A5C9002AA973 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C962C18820CE17990061FC20 /* Project object */;
@@ -3562,6 +3569,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				18665B54238D208600A14716 /* PBXTargetDependency */,
 				C9D412FA21DF4E16004368D4 /* PBXTargetDependency */,
 				C91240B921C0E8EF00F13151 /* PBXTargetDependency */,
 				C932F7AC21005B3D00B8DF84 /* PBXTargetDependency */,
@@ -4907,6 +4915,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		18665B54238D208600A14716 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9283BEA21BE9C1D00361B87 /* EmptyDataSet */;
+			targetProxy = 18665B53238D208600A14716 /* PBXContainerItemProxy */;
+		};
 		189A1F0B2254A5C9002AA973 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C962C5D520CE1A230061FC20 /* RxExtensions */;
