@@ -21,20 +21,25 @@ open class ViewController: UIViewController, ViewControllerProtocol {
         statusBarStyle
     }
     // MARK: - init
+    ///是否已经初始化完毕，当调用loadView的时候可以作判断
+    private var isDidInited: Bool = false
     public init() {
         super.init(nibName: nil, bundle: nil)
         configInit()
+        self.isDidInited = true
     }
     /// ZJaDe: 重写这个方法是为了还可以使用xib
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nil, bundle: nil)
         configInit()
+        self.isDidInited = true
     }
     fileprivate var isCoderLoad: Bool = false
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.isCoderLoad = true
         configInit()
+        self.isDidInited = true
     }
 
     // MARK: - 以下几个方法在不同的时候重写
@@ -43,8 +48,11 @@ open class ViewController: UIViewController, ViewControllerProtocol {
     }
 
     open override func loadView() {
+        if self.isDidInited == false {
+            assertionFailure("初始化完成之前不建议调用self.view, view相关操作可以放到viewDidLoad里面")
+        }
         super.loadView()
-        if self.isCoderLoad == false, let view = createRootView(self.view.frame) {
+        if isCoderLoad == false, let view = createRootView(self.view.frame) {
             self.view = view
         }
     }
@@ -94,15 +102,15 @@ open class ViewController: UIViewController, ViewControllerProtocol {
     }
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.view.endEditing(true)
         viewState.onNext(.viewWillDisappear)
+        self.view.endEditing(true)
     }
     open override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         viewState.onNext(.viewDidDisappear)
     }
 }
-
+///不支持xib storyboard
 open class GenericsViewController<ViewType>: ViewController where ViewType: UIView {
     // MARK: - view
     public final override func createRootView(_ frame: CGRect) -> UIView? {
