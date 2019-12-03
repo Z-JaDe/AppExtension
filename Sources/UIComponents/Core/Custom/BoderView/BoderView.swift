@@ -61,7 +61,6 @@ extension UIView {
     var boderView: BoderView {
         associatedObject(&boderViewKey, createIfNeed: BoderView().then({ (boderView) in
             self.insertSubview(boderView, at: 0)
-            boderView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 boderView.centerXOffset(self),
                 boderView.centerYOffset(self),

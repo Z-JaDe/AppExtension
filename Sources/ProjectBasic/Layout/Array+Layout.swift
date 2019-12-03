@@ -12,42 +12,31 @@ import SnapKit
 extension Array where Element: UIView {
     @discardableResult
     public func prepareConstraints(_ closure: (_ item: Element, _ make: ConstraintMaker) -> Void) -> [Constraint] {
-        var array: [Constraint] = []
-        self.forEach { (item) in
-            array += item.snp.prepareConstraints({ (maker) in
-                closure(item, maker)
-            })
+        return reduce(into: [Constraint]()) { (result, item) in
+            result += item.snp.prepareConstraints({ closure(item, $0) })
         }
-        return array
     }
 
     public func makeConstraints(_ closure: (_ item: Element, _ make: ConstraintMaker) -> Void) {
-        self.forEach { (item) in
-            item.snp.makeConstraints({ (maker) in
-                closure(item, maker)
-            })
+        forEach { (item) in
+            item.snp.makeConstraints({ closure(item, $0) })
         }
     }
 
     public func remakeConstraints(_ closure: (_ item: Element, _ make: ConstraintMaker) -> Void) {
-        self.forEach { (item) in
-            item.snp.remakeConstraints({ (maker) in
-                closure(item, maker)
-            })
+        forEach { (item) in
+            item.snp.remakeConstraints({ closure(item, $0) })
         }
+
     }
 
     public func updateConstraints(_ closure: (_ item: Element, _ make: ConstraintMaker) -> Void) {
-        self.forEach { (item) in
-            item.snp.updateConstraints({ (maker) in
-                closure(item, maker)
-            })
+        forEach { (item) in
+            item.snp.updateConstraints({ closure(item, $0) })
         }
     }
 
     public func removeConstraints() {
-        self.forEach { (item) in
-            item.snp.removeConstraints()
-        }
+        forEach { $0.snp.removeConstraints() }
     }
 }

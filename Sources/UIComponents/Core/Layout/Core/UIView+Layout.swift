@@ -33,7 +33,6 @@ extension UIView {
             ])
     }
     public func edgesToSuper() {
-        self.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(self.equalToSuperview(.edges))
     }
 }

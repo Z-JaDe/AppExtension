@@ -18,6 +18,6 @@ extension UIView {
         snLayout.updateLayouts(tag: tag, closure())
     }
     public func updateLayoutsMaker(tag: String? = nil, _ closure: (ConstraintMaker) -> Void) {
-        self.updateLayouts(tag: tag, self.snp.prepareConstraints(closure))
+        updateLayouts(tag: tag, snp.prepareConstraints(closure))
     }
 }
