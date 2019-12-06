@@ -27,7 +27,7 @@ public class QRCode {
         let imgSize = CGSize(width: imageSize, height: imageSize)
         guard let cgImage = CIContext().createCGImage(qrImage, from: qrImage.extent) else { return nil }
         UIGraphicsBeginImageContext(imgSize)
-        let context = UIGraphicsGetCurrentContext()!
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
         context.interpolationQuality = .none
         context.scaleBy(x: 1.0, y: -1.0)
         context.draw(cgImage, in: context.boundingBoxOfClipPath)
@@ -38,12 +38,8 @@ public class QRCode {
     }
     /// ZJaDe: 从图片中读取二维码
     public static func scan(qrImage: UIImage) -> String? {
-        let context = CIContext()
-        let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: context, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])
-        let image = CIImage.init(cgImage: qrImage.cgImage!)
-        let features = detector?.features(in: image)
-        let feature = features?.first as? CIQRCodeFeature
-        let result = feature?.messageString
-        return result
+        guard let ciImage = qrImage.ciImage else { return nil }
+        let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: CIContext(), options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])
+        return ((detector?.features(in: ciImage))?.first as? CIQRCodeFeature)?.messageString
     }
 }
