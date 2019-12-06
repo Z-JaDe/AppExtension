@@ -11,23 +11,21 @@ import UIKit
 public class QRCode {
     /// ZJaDe: 生成高清二维码图片
     public static func image(qrString: String, imageSize: CGFloat, fillColor: UIColor = Color.darkBlack, backColor: UIColor = Color.white) -> UIImage? {
-        guard !qrString.isEmpty && imageSize > 10 else {
-            return nil
-        }
+        guard !qrString.isEmpty && imageSize > 10 else { return nil }
         let stringData = qrString.data(using: .utf8)
         /// ZJaDe: 生成
-        let qrFilter = CIFilter(name: "CIQRCodeGenerator")!
+        guard let qrFilter = CIFilter(name: "CIQRCodeGenerator") else { return nil }
         qrFilter.setValue(stringData, forKey: "inputMessage")
         qrFilter.setValue("M", forKey: "inputCorrectionLevel")
-
+        guard let outputImage = qrFilter.outputImage else { return nil }
         /// ZJaDe: 上色
-        let colorFilter = CIFilter(name: "CIFalseColor", parameters: ["inputImage": qrFilter.outputImage!, "inputColor0": CIColor(cgColor: fillColor.cgColor), "inputColor1": CIColor(cgColor: backColor.cgColor)])!
+        guard let colorFilter = CIFilter(name: "CIFalseColor", parameters: ["inputImage": outputImage, "inputColor0": fillColor.ciColor, "inputColor1": backColor.ciColor]) else { return nil }
 
-        let qrImage = colorFilter.outputImage!
+        guard let qrImage = colorFilter.outputImage else { return nil }
 
         /// ZJaDe: 绘制
         let imgSize = CGSize(width: imageSize, height: imageSize)
-        let cgImage = CIContext().createCGImage(qrImage, from: qrImage.extent)!
+        guard let cgImage = CIContext().createCGImage(qrImage, from: qrImage.extent) else { return nil }
         UIGraphicsBeginImageContext(imgSize)
         let context = UIGraphicsGetCurrentContext()!
         context.interpolationQuality = .none
