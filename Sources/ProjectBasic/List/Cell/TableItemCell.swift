@@ -44,15 +44,23 @@ open class TableItemCell: ItemCell, TableCellContentItem, WritableDefaultHeightP
         ///isHighlighted由cell控制
         self.isHighlighted = cell.isHighlighted
     }
+    open override func willAppear() {
+        super.willAppear()
+        if getInternalCell()?.isSelected != isSelected {
+            getInternalCell()?.setSelected(isSelected, animated: false)
+        }
+    }
     open override func didDisappear() {
         super.didDisappear()
         self.getInternalCell()?.contentItem = nil
     }
     override func internalUpdateSelectedState(_ isSelected: Bool) {
         super.internalUpdateSelectedState(isSelected)
-//        if getInternalCell()?.isSelected != isSelected {
-//            getInternalCell()?.isSelected = isSelected
-//        }
+        if (try? self.cellState.value())?.isAppear == true {
+            if getInternalCell()?.isSelected != isSelected {
+                getInternalCell()?.setSelected(isSelected, animated: true)
+            }
+        }
     }
     // MARK: -
     /// ZJaDe: 

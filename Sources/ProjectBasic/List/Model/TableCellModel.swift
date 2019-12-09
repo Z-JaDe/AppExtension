@@ -23,7 +23,7 @@ open class TableCellModel: ListItemModel {
 
     // MARK: SelectedStateDesignable
     public var isSelected: Bool = false {
-        didSet { _cell?.isSelected = self.isSelected }
+        didSet { _cell?.setSelected(self.isSelected, animated: false) }
     }
     // MARK: EnabledStateDesignable
     public var isEnabled: Bool? {
@@ -49,11 +49,10 @@ extension TableCellModel: CellSelectedStateDesignable {
 }
 extension TableCellModel: TableCellConfigProtocol {
     public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = _createCell(in: tableView, for: indexPath, getCellClsName())
-        self._cell = cell
-        return cell
+        _createCell(in: tableView, for: indexPath, getCellClsName())
     }
     func willAppear(in cell: UITableViewCell) {
+        self._cell = cell
         bindingCellData(cell)
     }
     func shouldHighlight() -> Bool {
