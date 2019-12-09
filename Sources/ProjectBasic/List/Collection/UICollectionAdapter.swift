@@ -22,18 +22,31 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionS
         collectionView.register(InternalCollectionViewCell.self, forCellWithReuseIdentifier: InternalCollectionViewCell.reuseIdentifier)
         collectionView.register(InternalCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: InternalCollectionReusableView.reuseIdentifier)
         collectionView.register(InternalCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: InternalCollectionReusableView.reuseIdentifier)
-        allowsSelection(collectionView)
 
         dataSourceDefaultInit(dataSource)
-        collectionView.dataSource = dataSource
-        collectionView.delegate = collectProxy
+        setDelegateHooker(delegateHooker?.target)
+        setDataSourceHooker(dataSourceHooker?.target)
         dataChanged()
     }
     // MARK: -
-    /// ZJaDe: 代理
-    open weak var delegate: CollectionViewDelegate?
+    private var delegateHooker: DelegateHooker<UICollectionViewDelegate>?
+    public func setDelegateHooker(_ target: AnyObject?) {
+        if let collectionView = collectionView {
+            setListHooker(target, &delegateHooker, &collectionView.delegate, collectionProxy)
+        } else {
+            setHooker(target, &delegateHooker, collectionProxy)
+        }
+    }
+    private var dataSourceHooker: DelegateHooker<UICollectionViewDataSource>?
+    public func setDataSourceHooker(_ target: AnyObject?) {
+        if let collectionView = collectionView {
+            setListHooker(target, &dataSourceHooker, &collectionView.dataSource, dataSource)
+        } else {
+            setHooker(target, &dataSourceHooker, dataSource)
+        }
+    }
     /// ZJaDe: 设置自定义的代理时，需要注意尽量使用UICollectionProxy或者它的子类，这样会自动实现一些默认配置
-    public lazy var collectProxy: UICollectionProxy = UICollectionProxy(self)
+    public lazy var collectionProxy: UICollectionProxy = UICollectionProxy(self)
     public var dataSource: DataSource = DataSource() {
         didSet { dataSourceDefaultInit(dataSource) }
     }

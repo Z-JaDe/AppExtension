@@ -30,16 +30,30 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
         self.tableView = tableView
         // 注册的用的全部都是InternalTableViewCell, 真正的cell是InternalTableViewCell.contentItem
         tableView.register(InternalTableViewCell.self, forCellReuseIdentifier: InternalTableViewCell.reuseIdentifier)
-        allowsSelection(tableView)
 
         dataSourceDefaultInit(dataSource)
-        tableView.dataSource = self.dataSource
-        tableView.delegate = self.tableProxy
+        setDelegateHooker(delegateHooker?.target)
+        setDataSourceHooker(dataSourceHooker?.target)
         dataChanged()
     }
     // MARK: -
     /// ZJaDe: 代理
-    open weak var delegate: TableViewDelegate?
+    private var delegateHooker: DelegateHooker<UITableViewDelegate>?
+    public func setDelegateHooker(_ target: AnyObject?) {
+        if let tableView = tableView {
+            setListHooker(target, &delegateHooker, &tableView.delegate, tableProxy)
+        } else {
+            setHooker(target, &delegateHooker, tableProxy)
+        }
+    }
+    private var dataSourceHooker: DelegateHooker<UITableViewDataSource>?
+    public func setDataSourceHooker(_ target: AnyObject?) {
+        if let tableView = tableView {
+            setListHooker(target, &dataSourceHooker, &tableView.dataSource, dataSource)
+        } else {
+            setHooker(target, &dataSourceHooker, dataSource)
+        }
+    }
     /// ZJaDe: 设置自定义的代理时，需要注意尽量使用UITableProxy或者它的子类，这样会自动实现一些默认配置
     public lazy var tableProxy: UITableProxy = UITableProxy(self)
     public var dataSource: DataSource = DataSource() {

@@ -8,20 +8,16 @@
 
 import UIKit
 import Photos
-
 open class AssetGridViewController: AdapterCollectionViewController, PHPhotoLibraryChangeObserver {
-    open var maxImageCount: MaxSelectedCount = 1 {
-        didSet {
-            self.adapter.maxSelectedCount = maxImageCount
-        }
-    }
-
     var fetchResult: PHFetchResult<PHAsset>!
     let imageManager = PHImageManager()
 
     open override func viewDidLoad() {
         super.viewDidLoad()
         self.adapter.autoDeselectRow = false
+        self.rootView.allowsMultipleSelection = true
+        self.rootView.allowsSelection = true
+        self.adapter.setDelegateHooker(self)
         self.configCollectionViewLayout()
 
         PHPhotoLibrary.shared().register(self)
@@ -75,7 +71,7 @@ open class AssetGridViewController: AdapterCollectionViewController, PHPhotoLibr
         self.adapter.reloadData(array, isRefresh: true)
     }
     open func requestSelectedImages(_ closure: @escaping ([UIImage]) -> Void) {
-        let assets: [PHAsset] = self.adapter.selectedItemArray.compactMap({($0 as? AssetGridModel)?.asset})
+        let assets: [PHAsset] = self.selectedItemArray.compactMap({($0 as? AssetGridModel)?.asset})
         guard assets.isNotEmpty else {
             closure([])
             return
@@ -95,6 +91,20 @@ open class AssetGridViewController: AdapterCollectionViewController, PHPhotoLibr
         let columnCount = 4
         let width = (jd.screenWidth - (columnCount - 1).toCGFloat * itemSpace - edge * 2) / columnCount.toCGFloat - 1
         return CGSize(width: width, height: width)
+    }
+}
+extension AssetGridViewController: UICollectionViewDelegate, MultipleSelectionProtocol {
+    public typealias SelectItemType = UICollectionAdapter.Item
+    public func changeSelectState(_ isSelected: Bool, _ item: SelectItemType) {
+        adapter.changeSelectState(isSelected, item)
+    }
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        adapter.collectionProxy.collectionView(collectionView, didSelectItemAt: indexPath)
+        whenItemSelected(&adapter.dataController[indexPath])
+    }
+    public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        adapter.collectionProxy.collectionView(collectionView, didDeselectItemAt: indexPath)
+        whenItemUnSelected(&adapter.dataController[indexPath])
     }
 }
 extension AssetGridViewController {

@@ -20,7 +20,6 @@ public protocol MultipleSelectionProtocol: AssociatedObjectProtocol {
 private var selectedItemArrayKey: UInt8 = 0
 private var selectedItemArrayChangedKey: UInt8 = 0
 private var maxSelectedCountKey: UInt8 = 0
-private var checkCanSelectedClosureKey: UInt8 = 0
 public extension MultipleSelectionProtocol {
     /// ZJaDe: 存储选中的cell
     private(set) var selectedItemArray: [SelectItemType] {
@@ -36,11 +35,6 @@ public extension MultipleSelectionProtocol {
         // ZJaDe: 使用MaxSelectedCount不使用UInt?的原因是 associated没法区分nil和0，用-1区分又不太优雅
         get {return associatedObject(&maxSelectedCountKey) ?? 0}
         set {setAssociatedObject(&maxSelectedCountKey, newValue)}
-    }
-    /// ZJaDe: 检查是否可以被选中 返回一个闭包
-    var checkCanSelectedClosure: ((SelectItemType, @escaping (Bool) -> Void) -> Void)? {
-        get {return associatedObject(&checkCanSelectedClosureKey)}
-        set {setAssociatedObject(&checkCanSelectedClosureKey, newValue)}
     }
 }
 extension MultipleSelectionProtocol where SelectItemType: Equatable {
@@ -72,8 +66,7 @@ extension MultipleSelectionProtocol {
         }
         updateSelectState(&item, true)
         if let count = maxSelectedCount.count {
-            while self.selectedItemArray.count > count {
-                let first = self.selectedItemArray.first!
+            while self.selectedItemArray.count > count, let first = self.selectedItemArray.first {
                 changeSelectState(false, first)
             }
         }
@@ -86,17 +79,5 @@ extension MultipleSelectionProtocol {
         for item in items {
             self.changeSelectState(isSelected, item)
         }
-    }
-    /// ZJaDe: 检查是否可以被选中
-    public func checkCanSelected(_ item: SelectItemType, _ closure: @escaping (Bool?) -> Void) {
-        guard maxSelectedCount.canSelected else {
-            closure(false)
-            return
-        }
-        if let checkCanSelectedClosure = self.checkCanSelectedClosure {
-            checkCanSelectedClosure(item, closure)
-            return
-        }
-        closure(nil)
     }
 }

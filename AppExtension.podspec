@@ -35,7 +35,8 @@ Pod::Spec.new do |s|
         ss.dependency "AppExtension/Animater"
     end
     s.subspec "Core" do |ss|
-        ss.source_files  = "Sources/Core/**/*.{swift}"
+        ss.public_header_files = "Sources/Core/**/*.h"
+        ss.source_files  = "Sources/Core/**/*.{swift,h,m}"
 
         ss.dependency "AppExtension/Async"
         ss.dependency "CocoaExtension"

@@ -9,9 +9,6 @@
 import UIKit
 
 extension UITableProxy {
-    var delegate: TableViewDelegate? {
-        adapter.delegate
-    }
     var dataController: UITableAdapter.DataSource.DataControllerType {
         adapter.dataSource.dataController
     }
@@ -72,16 +69,10 @@ open class UITableProxy: NSObject, UITableViewDelegate {
     }
     // MARK: -
     open func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        if let result = delegate?.editActionsForRowAt(at: indexPath) {
-            return result
-        }
         return nil
     }
     // MARK: -
     open func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        if let result = delegate?.shouldHighlightItem(at: indexPath) {
-            return result
-        }
         guard let item = tableCellItem(at: indexPath) as? TableCellConfigProtocol else {
             return true
         }
@@ -89,18 +80,15 @@ open class UITableProxy: NSObject, UITableViewDelegate {
     }
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         adapter._didSelectItem(at: indexPath)
-        delegate?.didSelectItem(at: indexPath)
     }
     open func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         adapter._didDeselectItem(at: indexPath)
-        delegate?.didDeselectItem(at: indexPath)
     }
     open func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let item = tableCellItem(at: indexPath)
         if let item = item as? TableCellConfigProtocol {
             item.willAppear(in: cell)
         }
-        delegate?.didDisplay(cell: cell, at: indexPath)
         if let isEnabled = self.adapter.isEnabled {
             (item as? EnabledStateDesignable)?.refreshEnabledState(isEnabled)
         }
@@ -109,6 +97,5 @@ open class UITableProxy: NSObject, UITableViewDelegate {
         if let cell = cell as? InternalTableViewCell {
             cell.contentItem?.didDisappear()
         }
-        delegate?.didEndDisplaying(cell: cell, at: indexPath)
     }
 }

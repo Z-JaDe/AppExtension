@@ -9,9 +9,6 @@
 import UIKit
 
 extension UICollectionProxy {
-    var delegate: CollectionViewDelegate? {
-        adapter.delegate
-    }
     var dataController: UICollectionAdapter.DataSource.DataControllerType {
         adapter.dataSource.dataController
     }
@@ -34,17 +31,12 @@ open class UICollectionProxy: NSObject, UICollectionViewDelegate {
     }
     open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         adapter._didSelectItem(at: indexPath)
-        delegate?.didSelectItem(at: indexPath)
     }
     open func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         adapter._didDeselectItem(at: indexPath)
-        delegate?.didSelectItem(at: indexPath)
     }
     // MARK: - Managing Cell Highlighting
     open func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        if let result = delegate?.shouldHighlightItem(at: indexPath) {
-            return result
-        }
         return collectionCellItem(at: indexPath).shouldHighlight()
     }
     open func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
@@ -57,7 +49,6 @@ open class UICollectionProxy: NSObject, UICollectionViewDelegate {
     open func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let item = collectionCellItem(at: indexPath)
         item.willAppear(in: cell)
-        delegate?.didDisplay(cell: cell, forItemAt: indexPath)
         if let isEnabled = self.adapter.isEnabled {
             item.refreshEnabledState(isEnabled)
         }
@@ -66,13 +57,10 @@ open class UICollectionProxy: NSObject, UICollectionViewDelegate {
         if let cell = cell as? InternalCollectionViewCell {
             cell.contentItem?.didDisappear()
         }
-        delegate?.didEndDisplaying(cell: cell, forItemAt: indexPath)
     }
     open func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
-
     }
     open func collectionView(_ collectionView: UICollectionView, didEndDisplayingSupplementaryView view: UICollectionReusableView, forElementOfKind elementKind: String, at indexPath: IndexPath) {
-
     }
     // MARK: - Handling Layout Changes
     open func collectionView(_ collectionView: UICollectionView, transitionLayoutForOldLayout fromLayout: UICollectionViewLayout, newLayout toLayout: UICollectionViewLayout) -> UICollectionViewTransitionLayout {

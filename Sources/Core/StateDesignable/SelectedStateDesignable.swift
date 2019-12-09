@@ -12,14 +12,5 @@ public protocol SelectedStateDesignable {
     var isSelected: Bool {get set}
 }
 public protocol CanSelectedStateDesignable: SelectedStateDesignable {
-
     var canSelected: Bool {get}
-
-    func checkCanSelected(_ closure: @escaping (Bool) -> Void)
-
-}
-extension CanSelectedStateDesignable {
-    public func checkCanSelected(_ closure: @escaping (Bool) -> Void) {
-        closure(self.canSelected)
-    }
 }
