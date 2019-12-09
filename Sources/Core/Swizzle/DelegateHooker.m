@@ -35,9 +35,9 @@
 
 -(void)forwardInvocation:(NSInvocation *)invocation {
     if ([self.target respondsToSelector:invocation.selector]) {
-        [self.target forwardInvocation:invocation];
+        [invocation invokeWithTarget:self.target];
     } else {
-        [self.defaultTarget forwardInvocation:invocation];
+        [invocation invokeWithTarget:self.defaultTarget];
     }
 }
 

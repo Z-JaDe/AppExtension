@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DelegateHooker<__covariant T> : NSProxy
 
-@property(nonatomic, strong) T defaultTarget;
+@property(nonatomic, weak) T defaultTarget;
 - (instancetype)initWithDefaultTarget:(T)defaultTarget;
 + (instancetype)hookerWithDefaultTarget:(T)defaultTarget;
 
