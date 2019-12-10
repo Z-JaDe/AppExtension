@@ -6,7 +6,10 @@ xcode_scheme: AppExtensionTests
 xcode_destination: platform=iOS Simulator,OS=13.0,name=iPhone 11
 
 git:
-    submodules: false
+  submodules: false
+
+notifications:
+  webhooks: https://oapi.dingtalk.com/robot/send?access_token=06e5f978845fc4914efede57781f49ec5eaafbb7702280ac36dcfd94352cf2d0
 
 before_install:
  # Use sed to replace the SSH URL with the public URL, then initialize submodules
