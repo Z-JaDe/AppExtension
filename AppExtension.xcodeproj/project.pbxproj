@@ -230,7 +230,6 @@
 		C9283B9E21BE893400361B87 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F88A21006DC500B8DF84 /* ScrollView.swift */; };
 		C9283B9F21BE893400361B87 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F88B21006DC500B8DF84 /* TableView.swift */; };
 		C9283BA021BE893400361B87 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F88C21006DC500B8DF84 /* TextField.swift */; };
-		C9283BA121BE893400361B87 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F88D21006DC500B8DF84 /* WebView.swift */; };
 		C9283BA221BE893400361B87 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F88E21006DC500B8DF84 /* TextView.swift */; };
 		C9283BA321BE893400361B87 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F88F21006DC500B8DF84 /* Slider.swift */; };
 		C9283BA421BE893400361B87 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F89021006DC500B8DF84 /* ImageView.swift */; };
@@ -1158,7 +1157,6 @@
 		C932F88A21006DC500B8DF84 /* ScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		C932F88B21006DC500B8DF84 /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		C932F88C21006DC500B8DF84 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
-		C932F88D21006DC500B8DF84 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		C932F88E21006DC500B8DF84 /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		C932F88F21006DC500B8DF84 /* Slider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 		C932F89021006DC500B8DF84 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
@@ -2330,7 +2328,6 @@
 				C932F88A21006DC500B8DF84 /* ScrollView.swift */,
 				C932F88B21006DC500B8DF84 /* TableView.swift */,
 				C932F88C21006DC500B8DF84 /* TextField.swift */,
-				C932F88D21006DC500B8DF84 /* WebView.swift */,
 				C932F88E21006DC500B8DF84 /* TextView.swift */,
 				C932F88F21006DC500B8DF84 /* Slider.swift */,
 				C932F89021006DC500B8DF84 /* ImageView.swift */,
@@ -4616,7 +4613,6 @@
 				C9283BA021BE893400361B87 /* TextField.swift in Sources */,
 				F93F85A5237C75E40068CC59 /* PermissionScope.swift in Sources */,
 				C9283B9421BE892400361B87 /* BounceAnimation.swift in Sources */,
-				C9283BA121BE893400361B87 /* WebView.swift in Sources */,
 				C9283B8E21BE891A00361B87 /* TabBarItemModel.swift in Sources */,
 				C9283B7D21BE884300361B87 /* ProgressView.swift in Sources */,
 				C9283B7A21BE884300361B87 /* PlaceholderView.swift in Sources */,
