@@ -12,7 +12,6 @@
 
 #import "UIImage+GIF.h"
 #import "UIImage+ImageEffects.h"
-#import "UIImage+vImage.h"
 
 FOUNDATION_EXPORT double CocoaExtensionVersionNumber;
 FOUNDATION_EXPORT const unsigned char CocoaExtensionVersionString[];
