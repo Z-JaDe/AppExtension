@@ -68,10 +68,6 @@ open class UITableProxy: NSObject, UITableViewDelegate {
         return sectionModel.footerView
     }
     // MARK: -
-    open func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        return nil
-    }
-    // MARK: -
     open func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         guard let item = tableCellItem(at: indexPath) as? TableCellConfigProtocol else {
             return true
