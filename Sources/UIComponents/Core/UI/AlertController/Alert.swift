@@ -105,11 +105,18 @@ extension Alert {
 
 import AudioToolbox
 extension UIAlertController {
+    var keyWindow: UIWindow? {
+        if #available(iOS 13.0, macCatalyst 13.0, *) {
+            return UIApplication.shared.windows.first(where: { $0.isKeyWindow && $0.windowScene?.activationState == .foregroundActive})
+        } else {
+            return UIApplication.shared.keyWindow
+        }
+    }
     convenience init(style: UIAlertController.Style, source: UIView? = nil, title: String? = nil, message: String? = nil, tintColor: UIColor? = nil) {
         self.init(title: title, message: message, preferredStyle: style)
 
         let isPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
-        let root = UIApplication.shared.windows.first?.rootViewController?.view
+        let root = keyWindow?.rootViewController?.view
 
         //self.responds(to: #selector(getter: popoverPresentationController))
         if let source = source {
@@ -133,7 +140,7 @@ extension UIAlertController {
             }
         }
         DispatchQueue.main.async {
-            UIApplication.shared.windows.first?.rootViewController?.present(self, animated: animated, completion: completion)
+            self.keyWindow?.rootViewController?.present(self, animated: animated, completion: completion)
             if vibrate {
                 AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
             }
