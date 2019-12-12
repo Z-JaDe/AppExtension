@@ -31,20 +31,26 @@ extension PHAsset {
         options.resizeMode = .fast
         options.isNetworkAccessAllowed = true
         options.deliveryMode = .highQualityFormat
-        PHImageManager.default().requestImageData(for: self, options: options, resultHandler: { (data, _, _, _) in
+        func resultHandler(_ data: Data?) {
             Async.background { () -> Data? in
                 var data: Data? = data
                 if let tempData = data, self.isHEIF {
-                    if #available(iOS 10, *) {
-                        if let ciImage = CIImage(data: tempData) {
-                            let context = CIContext()
-                            data = context.jpegRepresentation(of: ciImage, colorSpace: ciImage.colorSpace!, options: [: ])
-                        }
+                    if let ciImage = CIImage(data: tempData) {
+                        data = CIContext().jpegRepresentation(of: ciImage, colorSpace: ciImage.colorSpace!, options: [: ])
                     }
                 }
                 return data
             }.main(callback)
-        })
+        }
+        if #available(iOS 13.0, macCatalyst 13.0, *) {
+            PHImageManager.default().requestImageDataAndOrientation(for: self, options: options, resultHandler: { (data, _, _, _) in
+                resultHandler(data)
+            })
+        } else {
+            PHImageManager.default().requestImageData(for: self, options: options, resultHandler: { (data, _, _, _) in
+                resultHandler(data)
+            })
+        }
     }
     // MARK: -
     public func requestImage(_ targetSize: CGSize? = nil, _ callback: @escaping (UIImage?) -> Void) {

@@ -60,6 +60,10 @@ extension EmptyDataSetContentView: EmptyDataSetContentProtocol {
         containerView.contentItem.configLabel("数据加载失败...")
     }
     public func configEmptyDataSetLoading(_ containerView: ContainerView) {
-        containerView.contentItem.configActivityIndicator(.gray)
+        if #available(iOS 13.0, macCatalyst 13.0, *) {
+            containerView.contentItem.configActivityIndicator(.medium)
+        } else {
+            containerView.contentItem.configActivityIndicator(.gray)
+        }
     }
 }

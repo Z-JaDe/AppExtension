@@ -109,7 +109,7 @@ extension UIAlertController {
         self.init(title: title, message: message, preferredStyle: style)
 
         let isPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
-        let root = UIApplication.shared.keyWindow?.rootViewController?.view
+        let root = UIApplication.shared.windows.first?.rootViewController?.view
 
         //self.responds(to: #selector(getter: popoverPresentationController))
         if let source = source {
@@ -133,7 +133,7 @@ extension UIAlertController {
             }
         }
         DispatchQueue.main.async {
-            UIApplication.shared.keyWindow?.rootViewController?.present(self, animated: animated, completion: completion)
+            UIApplication.shared.windows.first?.rootViewController?.present(self, animated: animated, completion: completion)
             if vibrate {
                 AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
             }

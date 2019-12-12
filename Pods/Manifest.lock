@@ -50,7 +50,7 @@ PODS:
     - RxSwiftExt/Core
   - SnapKit (5.0.1)
   - SwiftLint (0.37.0)
-  - SwiftyUserDefaults (5.0.0-beta.1)
+  - SwiftyUserDefaults (5.0.0-beta.5)
   - Validation (1.0.0)
 
 DEPENDENCIES:
@@ -162,7 +162,7 @@ SPEC CHECKSUMS:
   RxSwiftExt: c5fe5bd8577efc9bb5562a3437b561f35b52f439
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftLint: c078a14d7d7ade75e5507795d185e3da41d844d2
-  SwiftyUserDefaults: 3663be32eefd9163545211d08f4ca9eae1f94d3a
+  SwiftyUserDefaults: 8880483e55be344dce2e5e2f18c70b0564ff7676
   Validation: 707530eb0fb44304faab08447d2d647c6c4ab0f7
 
 PODFILE CHECKSUM: 0c2f4d84e21997d2b73a555fbf4e34119fd90169

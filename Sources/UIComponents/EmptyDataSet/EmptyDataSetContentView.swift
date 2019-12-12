@@ -28,7 +28,13 @@ public class EmptyDataSetContentView: CustomView {
         self.activityIndicator.style = activityIndicatorStyle
         self.activityIndicator.startAnimating()
     }
-    lazy var activityIndicator = UIActivityIndicatorView(style: .gray)
+    lazy var activityIndicator: UIActivityIndicatorView = {
+        if #available(iOS 13.0, macCatalyst 13.0, *) {
+            return UIActivityIndicatorView(style: .medium)
+        } else {
+            return UIActivityIndicatorView(style: .gray)
+        }
+    }()
     func addActivityIndicatorIfNeed() {
         if self.activityIndicator.superview == nil {
             self.addSubview(self.activityIndicator)

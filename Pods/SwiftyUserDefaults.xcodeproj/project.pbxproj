@@ -7,23 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C0231A00000290 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0231A00000280 /* Foundation.framework */; };
-		C0231A000002A0 /* BuiltIns.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A000000C0 /* BuiltIns.swift */; };
-		C0231A000002B0 /* Defaults+Observing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A000000D0 /* Defaults+Observing.swift */; };
-		C0231A000002C0 /* Defaults+StringToBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A000000E0 /* Defaults+StringToBool.swift */; };
-		C0231A000002D0 /* Defaults+Subscripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A000000F0 /* Defaults+Subscripts.swift */; };
-		C0231A000002E0 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000100 /* Defaults.swift */; };
-		C0231A000002F0 /* DefaultsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000110 /* DefaultsAdapter.swift */; };
-		C0231A00000300 /* DefaultsBridges.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000120 /* DefaultsBridges.swift */; };
-		C0231A00000310 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000130 /* DefaultsKeys.swift */; };
-		C0231A00000320 /* DefaultsKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000140 /* DefaultsKeyStore.swift */; };
-		C0231A00000330 /* DefaultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000150 /* DefaultsObserver.swift */; };
-		C0231A00000340 /* DefaultsSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000160 /* DefaultsSerializable.swift */; };
-		C0231A00000350 /* DefaultsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000170 /* DefaultsType.swift */; };
-		C0231A00000360 /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000180 /* OptionalType.swift */; };
-		C0231A00000370 /* PropertyWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000190 /* PropertyWrappers.swift */; };
-		C0231A000003C0 /* SwiftyUserDefaults-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C0231A000003B0 /* SwiftyUserDefaults-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C0231A00000400 /* SwiftyUserDefaults-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C0231A000003F0 /* SwiftyUserDefaults-dummy.m */; };
+		C0231A00000280 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0231A00000270 /* Foundation.framework */; };
+		C0231A00000290 /* BuiltIns.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A000000C0 /* BuiltIns.swift */; };
+		C0231A000002A0 /* Defaults+Observing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A000000D0 /* Defaults+Observing.swift */; };
+		C0231A000002B0 /* Defaults+StringToBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A000000E0 /* Defaults+StringToBool.swift */; };
+		C0231A000002C0 /* Defaults+Subscripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A000000F0 /* Defaults+Subscripts.swift */; };
+		C0231A000002D0 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000100 /* Defaults.swift */; };
+		C0231A000002E0 /* DefaultsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000110 /* DefaultsAdapter.swift */; };
+		C0231A000002F0 /* DefaultsBridges.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000120 /* DefaultsBridges.swift */; };
+		C0231A00000300 /* DefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000130 /* DefaultsKey.swift */; };
+		C0231A00000310 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000140 /* DefaultsKeys.swift */; };
+		C0231A00000320 /* DefaultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000150 /* DefaultsObserver.swift */; };
+		C0231A00000330 /* DefaultsSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000160 /* DefaultsSerializable.swift */; };
+		C0231A00000340 /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000170 /* OptionalType.swift */; };
+		C0231A00000350 /* PropertyWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000180 /* PropertyWrappers.swift */; };
+		C0231A000003A0 /* SwiftyUserDefaults-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C0231A00000390 /* SwiftyUserDefaults-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C0231A000003E0 /* SwiftyUserDefaults-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C0231A000003D0 /* SwiftyUserDefaults-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,31 +34,30 @@
 		C0231A00000100 /* Defaults.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Defaults.swift; path = Sources/Defaults.swift; sourceTree = "<group>"; };
 		C0231A00000110 /* DefaultsAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultsAdapter.swift; path = Sources/DefaultsAdapter.swift; sourceTree = "<group>"; };
 		C0231A00000120 /* DefaultsBridges.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultsBridges.swift; path = Sources/DefaultsBridges.swift; sourceTree = "<group>"; };
-		C0231A00000130 /* DefaultsKeys.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultsKeys.swift; path = Sources/DefaultsKeys.swift; sourceTree = "<group>"; };
-		C0231A00000140 /* DefaultsKeyStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultsKeyStore.swift; path = Sources/DefaultsKeyStore.swift; sourceTree = "<group>"; };
+		C0231A00000130 /* DefaultsKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultsKey.swift; path = Sources/DefaultsKey.swift; sourceTree = "<group>"; };
+		C0231A00000140 /* DefaultsKeys.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultsKeys.swift; path = Sources/DefaultsKeys.swift; sourceTree = "<group>"; };
 		C0231A00000150 /* DefaultsObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultsObserver.swift; path = Sources/DefaultsObserver.swift; sourceTree = "<group>"; };
 		C0231A00000160 /* DefaultsSerializable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultsSerializable.swift; path = Sources/DefaultsSerializable.swift; sourceTree = "<group>"; };
-		C0231A00000170 /* DefaultsType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultsType.swift; path = Sources/DefaultsType.swift; sourceTree = "<group>"; };
-		C0231A00000180 /* OptionalType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OptionalType.swift; path = Sources/OptionalType.swift; sourceTree = "<group>"; };
-		C0231A00000190 /* PropertyWrappers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PropertyWrappers.swift; path = Sources/PropertyWrappers.swift; sourceTree = "<group>"; };
-		C0231A000001B0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		C0231A000001C0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		C0231A000001D0 /* SwiftyUserDefaults.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SwiftyUserDefaults.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C0231A00000280 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		C0231A00000390 /* SwiftyUserDefaults.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyUserDefaults.xcconfig; sourceTree = "<group>"; };
-		C0231A000003A0 /* SwiftyUserDefaults.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyUserDefaults.modulemap; sourceTree = "<group>"; };
-		C0231A000003B0 /* SwiftyUserDefaults-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyUserDefaults-umbrella.h"; sourceTree = "<group>"; };
-		C0231A000003D0 /* SwiftyUserDefaults-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyUserDefaults-Info.plist"; sourceTree = "<group>"; };
-		C0231A000003E0 /* SwiftyUserDefaults-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyUserDefaults-prefix.pch"; sourceTree = "<group>"; };
-		C0231A000003F0 /* SwiftyUserDefaults-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyUserDefaults-dummy.m"; sourceTree = "<group>"; };
+		C0231A00000170 /* OptionalType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OptionalType.swift; path = Sources/OptionalType.swift; sourceTree = "<group>"; };
+		C0231A00000180 /* PropertyWrappers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PropertyWrappers.swift; path = Sources/PropertyWrappers.swift; sourceTree = "<group>"; };
+		C0231A000001A0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		C0231A000001B0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		C0231A000001C0 /* SwiftyUserDefaults.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SwiftyUserDefaults.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C0231A00000270 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		C0231A00000370 /* SwiftyUserDefaults.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyUserDefaults.xcconfig; sourceTree = "<group>"; };
+		C0231A00000380 /* SwiftyUserDefaults.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyUserDefaults.modulemap; sourceTree = "<group>"; };
+		C0231A00000390 /* SwiftyUserDefaults-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyUserDefaults-umbrella.h"; sourceTree = "<group>"; };
+		C0231A000003B0 /* SwiftyUserDefaults-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyUserDefaults-Info.plist"; sourceTree = "<group>"; };
+		C0231A000003C0 /* SwiftyUserDefaults-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyUserDefaults-prefix.pch"; sourceTree = "<group>"; };
+		C0231A000003D0 /* SwiftyUserDefaults-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyUserDefaults-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C0231A00000250 /* Frameworks */ = {
+		C0231A00000240 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0231A00000290 /* Foundation.framework in Frameworks */,
+				C0231A00000280 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +84,7 @@
 		C0231A00000060 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C0231A00000270 /* iOS */,
+				C0231A00000260 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -101,47 +99,46 @@
 				C0231A000000F0 /* Defaults+Subscripts.swift */,
 				C0231A00000110 /* DefaultsAdapter.swift */,
 				C0231A00000120 /* DefaultsBridges.swift */,
-				C0231A00000130 /* DefaultsKeys.swift */,
-				C0231A00000140 /* DefaultsKeyStore.swift */,
+				C0231A00000130 /* DefaultsKey.swift */,
+				C0231A00000140 /* DefaultsKeys.swift */,
 				C0231A00000150 /* DefaultsObserver.swift */,
 				C0231A00000160 /* DefaultsSerializable.swift */,
-				C0231A00000170 /* DefaultsType.swift */,
-				C0231A00000180 /* OptionalType.swift */,
-				C0231A00000190 /* PropertyWrappers.swift */,
-				C0231A000001A0 /* Pod */,
-				C0231A00000380 /* Support Files */,
+				C0231A00000170 /* OptionalType.swift */,
+				C0231A00000180 /* PropertyWrappers.swift */,
+				C0231A00000190 /* Pod */,
+				C0231A00000360 /* Support Files */,
 			);
 			name = SwiftyUserDefaults;
 			path = ../BaseSupport/Fork/SwiftyUserDefaults;
 			sourceTree = "<group>";
 		};
-		C0231A000001A0 /* Pod */ = {
+		C0231A00000190 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				C0231A000001B0 /* LICENSE */,
-				C0231A000001C0 /* README.md */,
-				C0231A000001D0 /* SwiftyUserDefaults.podspec */,
+				C0231A000001A0 /* LICENSE */,
+				C0231A000001B0 /* README.md */,
+				C0231A000001C0 /* SwiftyUserDefaults.podspec */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		C0231A00000270 /* iOS */ = {
+		C0231A00000260 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				C0231A00000280 /* Foundation.framework */,
+				C0231A00000270 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		C0231A00000380 /* Support Files */ = {
+		C0231A00000360 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C0231A000003A0 /* SwiftyUserDefaults.modulemap */,
-				C0231A00000390 /* SwiftyUserDefaults.xcconfig */,
-				C0231A000003F0 /* SwiftyUserDefaults-dummy.m */,
-				C0231A000003D0 /* SwiftyUserDefaults-Info.plist */,
-				C0231A000003E0 /* SwiftyUserDefaults-prefix.pch */,
-				C0231A000003B0 /* SwiftyUserDefaults-umbrella.h */,
+				C0231A00000380 /* SwiftyUserDefaults.modulemap */,
+				C0231A00000370 /* SwiftyUserDefaults.xcconfig */,
+				C0231A000003D0 /* SwiftyUserDefaults-dummy.m */,
+				C0231A000003B0 /* SwiftyUserDefaults-Info.plist */,
+				C0231A000003C0 /* SwiftyUserDefaults-prefix.pch */,
+				C0231A00000390 /* SwiftyUserDefaults-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../../../Pods/Target Support Files/SwiftyUserDefaults";
@@ -150,11 +147,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		C0231A00000230 /* Headers */ = {
+		C0231A00000220 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0231A000003C0 /* SwiftyUserDefaults-umbrella.h in Headers */,
+				C0231A000003A0 /* SwiftyUserDefaults-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,12 +160,12 @@
 /* Begin PBXNativeTarget section */
 		39DEFC5DCB08596C1137C1183EBF13FF /* SwiftyUserDefaults */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C0231A000001F0 /* Build configuration list for PBXNativeTarget "SwiftyUserDefaults" */;
+			buildConfigurationList = C0231A000001E0 /* Build configuration list for PBXNativeTarget "SwiftyUserDefaults" */;
 			buildPhases = (
-				C0231A00000230 /* Headers */,
-				C0231A00000240 /* Sources */,
-				C0231A00000250 /* Frameworks */,
-				C0231A00000260 /* Resources */,
+				C0231A00000220 /* Headers */,
+				C0231A00000230 /* Sources */,
+				C0231A00000240 /* Frameworks */,
+				C0231A00000250 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -207,7 +204,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C0231A00000260 /* Resources */ = {
+		C0231A00000250 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -217,25 +214,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C0231A00000240 /* Sources */ = {
+		C0231A00000230 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0231A000002A0 /* BuiltIns.swift in Sources */,
-				C0231A000002B0 /* Defaults+Observing.swift in Sources */,
-				C0231A000002C0 /* Defaults+StringToBool.swift in Sources */,
-				C0231A000002D0 /* Defaults+Subscripts.swift in Sources */,
-				C0231A000002E0 /* Defaults.swift in Sources */,
-				C0231A000002F0 /* DefaultsAdapter.swift in Sources */,
-				C0231A00000300 /* DefaultsBridges.swift in Sources */,
+				C0231A00000290 /* BuiltIns.swift in Sources */,
+				C0231A000002A0 /* Defaults+Observing.swift in Sources */,
+				C0231A000002B0 /* Defaults+StringToBool.swift in Sources */,
+				C0231A000002C0 /* Defaults+Subscripts.swift in Sources */,
+				C0231A000002D0 /* Defaults.swift in Sources */,
+				C0231A000002E0 /* DefaultsAdapter.swift in Sources */,
+				C0231A000002F0 /* DefaultsBridges.swift in Sources */,
+				C0231A00000300 /* DefaultsKey.swift in Sources */,
 				C0231A00000310 /* DefaultsKeys.swift in Sources */,
-				C0231A00000320 /* DefaultsKeyStore.swift in Sources */,
-				C0231A00000330 /* DefaultsObserver.swift in Sources */,
-				C0231A00000340 /* DefaultsSerializable.swift in Sources */,
-				C0231A00000350 /* DefaultsType.swift in Sources */,
-				C0231A00000360 /* OptionalType.swift in Sources */,
-				C0231A00000370 /* PropertyWrappers.swift in Sources */,
-				C0231A00000400 /* SwiftyUserDefaults-dummy.m in Sources */,
+				C0231A00000320 /* DefaultsObserver.swift in Sources */,
+				C0231A00000330 /* DefaultsSerializable.swift in Sources */,
+				C0231A00000340 /* OptionalType.swift in Sources */,
+				C0231A00000350 /* PropertyWrappers.swift in Sources */,
+				C0231A000003E0 /* SwiftyUserDefaults-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,9 +362,9 @@
 			};
 			name = Release;
 		};
-		C0231A00000200 /* Release */ = {
+		C0231A000001F0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C0231A00000390 /* SwiftyUserDefaults.xcconfig */;
+			baseConfigurationReference = C0231A00000370 /* SwiftyUserDefaults.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -402,9 +398,9 @@
 			};
 			name = Release;
 		};
-		C0231A00000210 /* Debug */ = {
+		C0231A00000200 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C0231A00000390 /* SwiftyUserDefaults.xcconfig */;
+			baseConfigurationReference = C0231A00000370 /* SwiftyUserDefaults.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -449,11 +445,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C0231A000001F0 /* Build configuration list for PBXNativeTarget "SwiftyUserDefaults" */ = {
+		C0231A000001E0 /* Build configuration list for PBXNativeTarget "SwiftyUserDefaults" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C0231A00000210 /* Debug */,
-				C0231A00000200 /* Release */,
+				C0231A00000200 /* Debug */,
+				C0231A000001F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
