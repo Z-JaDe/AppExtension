@@ -5426,7 +5426,7 @@
 			baseConfigurationReference = A71FF5D4E3BD4911661558FE /* Pods-AppExtension-AppExtensionUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MG2ZSL4NR6;
+				DEVELOPMENT_TEAM = 553C2VE52E;
 				INFOPLIST_FILE = AppExtensionUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -5449,7 +5449,7 @@
 			baseConfigurationReference = B68D95562A93E3EF60020FCC /* Pods-AppExtension-AppExtensionUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MG2ZSL4NR6;
+				DEVELOPMENT_TEAM = 553C2VE52E;
 				INFOPLIST_FILE = AppExtensionUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -5472,7 +5472,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MG2ZSL4NR6;
+				DEVELOPMENT_TEAM = 553C2VE52E;
 				INFOPLIST_FILE = AppExtensionTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -5496,7 +5496,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MG2ZSL4NR6;
+				DEVELOPMENT_TEAM = 553C2VE52E;
 				INFOPLIST_FILE = AppExtensionTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
