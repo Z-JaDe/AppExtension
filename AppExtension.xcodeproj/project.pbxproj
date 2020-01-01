@@ -453,6 +453,7 @@
 		F965C71723896BD800AA148E /* CollectionViewUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910E63721AE84B50067B51B /* CollectionViewUpdating.swift */; };
 		F99B24A522B61F600059B440 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F99B24A422B61F600059B440 /* LaunchScreen.storyboard */; };
 		F9A88591234101AB00AE6F3F /* ResultHandleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8858F234101A400AE6F3F /* ResultHandleProtocol.swift */; };
+		F9C7ABFC23B6E3EF00D26487 /* TableMultipleSelectionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7ABFA23B6E3E900D26487 /* TableMultipleSelectionAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1368,6 +1369,7 @@
 		F965C70B2388FE7900AA148E /* Updating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updating.swift; sourceTree = "<group>"; };
 		F99B24A422B61F600059B440 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9A8858F234101A400AE6F3F /* ResultHandleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultHandleProtocol.swift; sourceTree = "<group>"; };
+		F9C7ABFA23B6E3E900D26487 /* TableMultipleSelectionAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableMultipleSelectionAdapter.swift; sourceTree = "<group>"; };
 		FBB540AD4ED8A9E82B48CF5B /* Pods-CommonPods-AppExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommonPods-AppExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommonPods-AppExtension/Pods-CommonPods-AppExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		FBCBCB1712395EBA19B5669C /* Pods-BaseCore-CommonPods-AppExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-CommonPods-AppExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-CommonPods-AppExtension/Pods-BaseCore-CommonPods-AppExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		FDA2271079A490F40867A5BD /* Pods-Network.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Network/Pods-Network.debug.xcconfig"; sourceTree = "<group>"; };
@@ -3145,6 +3147,7 @@
 				C932F9FC21006ED100B8DF84 /* UITableProxy.swift */,
 				C932FA0221006ED100B8DF84 /* TableViewHeaderFooterView.swift */,
 				C9D412EC21DF4BCB004368D4 /* ListDataUpdateProtocol+Table.swift */,
+				F9C7ABFA23B6E3E900D26487 /* TableMultipleSelectionAdapter.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -4690,6 +4693,7 @@
 				18CBF3AD232889BA00E6DDE2 /* CreateCellUseModel.swift in Sources */,
 				C9D412E821DF4B65004368D4 /* UICollectionAdapter.swift in Sources */,
 				C9D412E721DF4B52004368D4 /* UITableProxy.swift in Sources */,
+				F9C7ABFC23B6E3EF00D26487 /* TableMultipleSelectionAdapter.swift in Sources */,
 				C9D4132321DF6B74004368D4 /* LoadWebUrlProtocol.swift in Sources */,
 				185143E62368439F00CD1974 /* JSBridgeArgs.swift in Sources */,
 				C90E74DD220025FB006CE73C /* OpenPhotoConfiger.swift in Sources */,

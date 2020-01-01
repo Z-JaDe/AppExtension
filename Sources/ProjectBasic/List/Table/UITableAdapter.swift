@@ -32,15 +32,16 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
         tableView.register(InternalTableViewCell.self, forCellReuseIdentifier: InternalTableViewCell.reuseIdentifier)
 
         dataSourceDefaultInit(dataSource)
-        setDelegateHooker(delegateHooker?.target)
+        setDelegateHooker(delegateHooker.target)
         setDataSourceHooker(dataSourceHooker?.target)
         dataChanged()
     }
     // MARK: -
     /// ZJaDe: 代理
-    private var delegateHooker: DelegateHooker<UITableViewDelegate>?
+    private lazy var delegateHooker: DelegateHooker<UITableViewDelegate> = DelegateHooker(defaultTarget: tableProxy)
     public func setDelegateHooker(_ target: AnyObject?) {
         if let tableView = tableView {
+            tableView.delegate = delegateHooker
             setListHooker(target, &delegateHooker, &tableView.delegate, tableProxy)
         } else {
             setHooker(target, &delegateHooker, tableProxy)
@@ -69,14 +70,14 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
         }
     }
     public lazy var updating: Updating = tableView!.createUpdating(.fade)
-    var dataInfo: ListDataInfoType?
-    public let insertSecionModels: CallBackerReduce = CallBackerReduce<ListDataType>()
+    var dataInfo: _ListDataInfo?
+    public let insertSecionModels: CallBackerReduce = CallBackerReduce<_ListData>()
 }
 extension UITableAdapter: ListAdapterType {
-    public var dataArray: ListDataType {
+    public var dataArray: _ListData {
         self.dataInfo?.data ?? .init()
     }
-    public func changeListDataInfo(_ newData: ListDataInfoType) {
+    public func changeListDataInfo(_ newData: _ListDataInfo) {
         self.dataInfo = newData
         dataChanged()
     }

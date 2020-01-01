@@ -12,16 +12,16 @@ import Foundation
 public protocol ListDataUpdateProtocol: class {
     associatedtype Section: Diffable
     associatedtype Item: Diffable & Equatable
-    typealias ListDataType = ListData<Section, Item>
-    typealias ListDataInfoType = ListDataInfo<ListDataType>
+    typealias _ListData = ListData<Section, Item>
+    typealias _ListDataInfo = ListDataInfo<_ListData>
 
-    var dataArray: ListDataType {get}
+    var dataArray: _ListData {get}
     var updating: Updating {get}
-    func changeListDataInfo(_ newData: ListDataInfoType)
+    func changeListDataInfo(_ newData: _ListDataInfo)
 }
 extension ListDataUpdateProtocol {
-    public func createListInfo(_ newData: ListDataType) -> ListDataInfoType {
-        return ListDataInfoType(data: newData, updating: updating)
+    public func createListInfo(_ newData: _ListData) -> _ListDataInfo {
+        _ListDataInfo(data: newData, updating: updating)
     }
 }
 extension ListDataUpdateProtocol {
@@ -30,23 +30,23 @@ extension ListDataUpdateProtocol {
         self.reloadData(self.dataArray)
     }
     /// ZJaDe: 重新刷新 传入 listData
-    public func reloadData(_ listData: ListDataType?) {
+    public func reloadData(_ listData: _ListData?) {
         self.reloadData(listData?.createListInfo(updating))
     }
     /// ZJaDe: 重新刷新 传入 listDataInfo
-    public func reloadData(_ listDataInfo: ListDataInfoType?) {
+    public func reloadData(_ listDataInfo: _ListDataInfo?) {
         if let listDataInfo = listDataInfo {
             self.changeListDataInfo(listDataInfo)
         }
     }
-    public func reloadData(_ closure: (ListDataInfoType) -> ListDataInfoType) {
+    public func reloadData(_ closure: (_ListDataInfo) -> _ListDataInfo) {
         self.reloadData(closure(createListInfo(dataArray)))
     }
 }
 extension ListDataUpdateProtocol where Section: Equatable & InitProtocol {
     // TODO: Async/Await 出来后需优化
-    /// ZJaDe: 重新刷新 返回 ListDataInfoType
-    public func reloadData(section: Section? = nil, _ itemArray: [Item]?, isRefresh: Bool, _ closure: ((ListDataInfo<ListDataType>) -> (ListDataInfo<ListDataType>))? = nil) {
+    /// ZJaDe: 重新刷新 返回 ListDataInfo
+    public func reloadData(section: Section? = nil, _ itemArray: [Item]?, isRefresh: Bool, _ closure: ((_ListDataInfo) -> (_ListDataInfo))? = nil) {
         let _itemArray = itemArray ?? []
         var newData = self.dataArray
         if isRefresh {

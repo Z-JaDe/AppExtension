@@ -39,6 +39,11 @@
     } else {
         [invocation invokeWithTarget:self.defaultTarget];
     }
+    [self.otherHooker enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj respondsToSelector:invocation.selector]) {
+            [invocation invokeWithTarget:obj];
+        }
+    }];
 }
 
 -(BOOL)respondsToSelector:(SEL)aSelector {

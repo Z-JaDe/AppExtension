@@ -10,7 +10,7 @@ import Foundation
 
 extension ListDataUpdateProtocol where Section: Equatable & InitProtocol, Item == AnyTableAdapterItem {
     /// ZJaDe: 重新刷新 返回 ListDataInfo
-    public func reloadData(section: Section? = nil, _ itemArray: [TableItemModel]?, isRefresh: Bool, _ closure: ((ListDataInfo<ListDataType>) -> (ListDataInfo<ListDataType>))? = nil) {
+    public func reloadData(section: Section? = nil, _ itemArray: [TableItemModel]?, isRefresh: Bool, _ closure: ((_ListDataInfo) -> (_ListDataInfo))? = nil) {
         let _itemArray: [AnyTableAdapterItem] = itemArray?.map({.model($0)}) ?? []
         var newData = self.dataArray
         if isRefresh {

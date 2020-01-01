@@ -11,25 +11,25 @@ import Foundation
 extension ListDataUpdateProtocol {
     typealias ListItemBuilder = ListBuilder<(Section, [Item])>
     public func reloadData(@ListItemBuilder content: () -> [(Section, [Item])]) {
-        self.reloadData(ListDataType(content().map(SectionData.init)))
+        self.reloadData(_ListData(content().map(SectionData.init)))
     }
 }
 
 @_functionBuilder
 public struct ListBuilder<T> {
+    public static func buildExpression(_ expression: T) -> [T] {
+        return [expression]
+    }
+    public static func buildBlock(_ children: [T]...) -> [T] {
+        return children.flatMap { $0 }
+    }
     public static func buildBlock(_ children: T...) -> [T] {
         return children
     }
-//    public static func buildExpression(_ expression: T) -> [T] {
-//        return [expression]
-//    }
-//    public static func buildBlock(_ children: T) -> [T] {
-//        return [children]
-//    }
-//    public static func buildBlock(_ children: [T]...) -> [T] {
-//        return children.flatMap { $0 }
-//    }
-//    public static func buildBlock(_ component: T) -> T {
-//        return component
-//    }
+    public static func buildBlock(_ component: [T]) -> [T] {
+        return component
+    }
+    public static func buildOptional(_ children: [T]?) -> [T] {
+      return children ?? []
+    }
 }

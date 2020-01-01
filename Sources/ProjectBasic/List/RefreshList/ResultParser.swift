@@ -10,7 +10,7 @@ import Foundation
 public class ResultParser<RefreshList, AdapterType: ListDataUpdateProtocol> {
     public let list: RefreshList
     public let adapter: AdapterType
-    public typealias ListDataType = AdapterType.ListDataType
+    public typealias _ListData = AdapterType._ListData
     public init(_ list: RefreshList, _ adapter: AdapterType) {
         self.list = list
         self.adapter = adapter

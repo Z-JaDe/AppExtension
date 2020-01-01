@@ -60,6 +60,7 @@ extension AttributedStringMaker {
         return AttributedStringMaker(attrStr)
     }
     public static func += (left: inout AttributedStringMaker, right: AttributedStringMakerProtocol) {
-        left.attrStr.append(right.createMaker().attrStr)
+        // swiftlint:disable shorthand_operator
+        left = left + right
     }
 }

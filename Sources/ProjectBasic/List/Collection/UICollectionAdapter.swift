@@ -60,13 +60,13 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionS
         }
     }
     public lazy var updating: Updating = collectionView!.createUpdating(updateMode: .partial)
-    var dataInfo: ListDataInfoType?
+    var dataInfo: _ListDataInfo?
 }
 extension UICollectionAdapter: ListAdapterType {
-    public var dataArray: ListDataType {
+    public var dataArray: _ListData {
         self.dataInfo?.data ?? .init()
     }
-    public func changeListDataInfo(_ newData: ListDataInfoType) {
+    public func changeListDataInfo(_ newData: _ListDataInfo) {
         self.dataInfo = newData
         dataChanged()
     }
