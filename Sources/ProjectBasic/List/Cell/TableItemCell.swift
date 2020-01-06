@@ -46,9 +46,9 @@ open class TableItemCell: ItemCell, TableCellContentItem, WritableDefaultHeightP
     }
     open override func willAppear() {
         super.willAppear()
-        if getInternalCell()?.isSelected != isSelected {
-            getInternalCell()?.setSelected(isSelected, animated: false)
-        }
+//        if getInternalCell()?.isSelected != isSelected {
+//            getInternalCell()?.setSelected(isSelected, animated: false)
+//        }
     }
     open override func didDisappear() {
         super.didDisappear()
@@ -56,11 +56,11 @@ open class TableItemCell: ItemCell, TableCellContentItem, WritableDefaultHeightP
     }
     override func internalUpdateSelectedState(_ isSelected: Bool) {
         super.internalUpdateSelectedState(isSelected)
-        if (try? self.cellState.value())?.isAppear == true {
-            if getInternalCell()?.isSelected != isSelected {
-                getInternalCell()?.setSelected(isSelected, animated: true)
-            }
-        }
+//        if (try? self.cellState.value())?.isAppear == true {
+//            if getInternalCell()?.isSelected != isSelected {
+//                getInternalCell()?.setSelected(isSelected, animated: true)
+//            }
+//        }
     }
     // MARK: -
     /// ZJaDe: 

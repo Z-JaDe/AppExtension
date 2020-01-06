@@ -50,6 +50,12 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
             return hooker
         }
     }
+    public func transformDelegate(_ target: UITableViewDelegate?) {
+        delegateHooker.transform(to: target)
+    }
+    public func setAddDelegate(_ target: UITableViewDelegate?) {
+        delegateHooker.addTarget = target
+    }
     public var delegatePlugins: [UITableViewDelegate] {
         get { delegateHooker.otherHooker }
         set { delegateHooker.otherHooker = newValue }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class HasNavConCoordinator: Coordinator, Flow,
+open class HasNavConCoordinator: NSObject, Coordinator, Flow,
     PushJumpPlugin,
     CoordinatorContainer {
 

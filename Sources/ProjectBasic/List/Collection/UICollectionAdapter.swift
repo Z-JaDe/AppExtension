@@ -41,6 +41,12 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionS
             return hooker
         }
     }
+    public func transformDelegate(_ target: UICollectionViewDelegate?) {
+        delegateHooker.transform(to: target)
+    }
+    public func setAddDelegate(_ target: UITableViewDelegate?) {
+        delegateHooker.addTarget = target
+    }
     public var delegatePlugins: [UICollectionViewDelegate] {
         get { delegateHooker.otherHooker }
         set { delegateHooker.otherHooker = newValue }

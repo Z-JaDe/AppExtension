@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, weak, readonly) id target;
 -(void)transformToObject:(id __nullable)target;
 
+@property(nonatomic, weak) id addTarget;
+
 @end
 
 NS_ASSUME_NONNULL_END

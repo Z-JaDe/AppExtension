@@ -12,11 +12,11 @@ open class AssetGridViewController: AdapterCollectionViewController, PHPhotoLibr
     var fetchResult: PHFetchResult<PHAsset>!
     let imageManager = PHImageManager()
 
-    lazy var multipleSelectionPlugin: CollectionMultipleSelectionPlugin = CollectionMultipleSelectionPlugin(adapter)
+    public private(set) lazy var multipleSelectionPlugin: CollectionMultipleSelectionPlugin = CollectionMultipleSelectionPlugin(adapter)
     public var selectedItemArray: [CollectionMultipleSelectionPlugin.SelectItemType] {
         multipleSelectionPlugin.selectedItemArray
     }
-    public var maxSelectedCount: MaxSelectedCount {
+    public var maxImageCount: MaxSelectedCount {
         get { multipleSelectionPlugin.maxSelectedCount }
         set { multipleSelectionPlugin.maxSelectedCount = newValue }
     }

@@ -34,16 +34,34 @@
 }
 
 -(void)forwardInvocation:(NSInvocation *)invocation {
+    NSUInteger length = [[invocation methodSignature] methodReturnLength];
+    void* buffer = nil;
+    if (length > 0) {
+        buffer = (void *)malloc(length);
+    }
     if ([self.target respondsToSelector:invocation.selector]) {
         [invocation invokeWithTarget:self.target];
+        if (length > 0) {
+            [invocation getReturnValue:buffer];
+        }
     } else {
         [invocation invokeWithTarget:self.defaultTarget];
+        if (length > 0) {
+            [invocation getReturnValue:buffer];
+        }
+    }
+    if (self.addTarget && [self.addTarget respondsToSelector:invocation.selector]) {
+        [invocation invokeWithTarget:self.addTarget];
     }
     [self.otherHooker enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj respondsToSelector:invocation.selector]) {
             [invocation invokeWithTarget:obj];
         }
     }];
+    if (length > 0) {
+        [invocation setReturnValue:buffer];
+        free(buffer);
+    }
 }
 
 -(BOOL)respondsToSelector:(SEL)aSelector {

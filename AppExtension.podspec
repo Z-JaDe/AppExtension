@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
     s.default_subspec = "Default"
 
     s.xcconfig = { 'OTHER_SWIFT_FLAGS' => '"-D" "AppExtensionPods"' }
-
+    
     #基础模块
     s.subspec "Async" do |ss|
         ss.source_files  = "Sources/Async/**/*.{swift}"
@@ -35,8 +35,8 @@ Pod::Spec.new do |s|
         ss.dependency "AppExtension/Animater"
     end
     s.subspec "Core" do |ss|
-        ss.public_header_files = "Sources/Core/**/*.h"
-        ss.source_files  = "Sources/Core/**/*.{swift,h,m}"
+        ss.public_header_files = "Sources/Core/**/*.h", "Sources/*.h"
+        ss.source_files  = "Sources/Core/**/*.{swift,h,m}", "Sources/*.h"
 
         ss.dependency "AppExtension/Async"
         ss.dependency "CocoaExtension"

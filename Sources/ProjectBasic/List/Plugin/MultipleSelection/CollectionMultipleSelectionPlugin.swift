@@ -14,11 +14,12 @@ public class CollectionMultipleSelectionPlugin: NSObject, UICollectionViewDelega
     weak var adapter: UICollectionAdapter?
     public init(_ adapter: UICollectionAdapter) {
         self.adapter = adapter
-        adapter.autoDeselectRow = false
         adapter.collectionView?.allowsMultipleSelection = true
         adapter.collectionView?.allowsSelection = true
         super.init()
-        adapter.delegatePlugins.append(self)
+        if adapter.delegatePlugins.contains(where: {$0 === self}) == false {
+            adapter.delegatePlugins.append(self)
+        }
     }
     // MARK: MultipleSelectionProtocol
     public func changeSelectState(_ isSelected: Bool, _ item: SelectItemType) {
@@ -46,5 +47,6 @@ extension UICollectionAdapter {
             self.collectionView?.deselectItem(at: indexPath, animated: true)
             self._didDeselectItem(at: indexPath)
         }
+        item.isSelected = isSelected
     }
 }

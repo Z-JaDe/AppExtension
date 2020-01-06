@@ -14,11 +14,12 @@ public class TableMultipleSelectionPlugin: NSObject, UITableViewDelegate, Multip
     weak var adapter: UITableAdapter?
     public init(_ adapter: UITableAdapter) {
         self.adapter = adapter
-        adapter.autoDeselectRow = false
         adapter.tableView?.allowsMultipleSelection = true
         adapter.tableView?.allowsSelection = true
         super.init()
-        adapter.delegatePlugins.append(self)
+        if adapter.delegatePlugins.contains(where: {$0 === self}) == false {
+            adapter.delegatePlugins.append(self)            
+        }
     }
     // MARK: MultipleSelectionProtocol
     public func changeSelectState(_ isSelected: Bool, _ item: SelectItemType) {

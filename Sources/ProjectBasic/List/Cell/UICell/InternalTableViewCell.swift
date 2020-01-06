@@ -85,9 +85,9 @@ class InternalTableViewCell: UITableViewCell {
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        if selected != contentItem?.isSelected {
-            contentItem?.isSelected = selected
-        }
+//        if selected != contentItem?.isSelected {
+//            contentItem?.isSelected = selected
+//        }
     }
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
