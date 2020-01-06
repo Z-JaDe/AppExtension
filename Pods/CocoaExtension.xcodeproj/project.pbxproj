@@ -34,8 +34,8 @@
 		BF683600000750 /* GraphicsImageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000270 /* GraphicsImageContext.swift */; };
 		BF683600000760 /* UIImage+Blend.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000280 /* UIImage+Blend.swift */; };
 		BF683600000770 /* UIImage+GraphicsImageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000290 /* UIImage+GraphicsImageContext.swift */; };
-		BF683600000780 /* ImageDrawer+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000002B0 /* ImageDrawer+Image.swift */; };
-		BF683600000790 /* ImageDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000002C0 /* ImageDrawer.swift */; };
+		BF683600000780 /* ImageDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000002B0 /* ImageDrawer.swift */; };
+		BF683600000790 /* UIImage+ImageDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000002C0 /* UIImage+ImageDrawer.swift */; };
 		BF6836000007A0 /* UIImage+ImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000320 /* UIImage+ImageEffects.swift */; };
 		BF6836000007B0 /* UIImage+vImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000330 /* UIImage+vImage.swift */; };
 		BF6836000007C0 /* UIImage+vImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000340 /* UIImage+vImages.swift */; };
@@ -93,8 +93,8 @@
 		BF683600000270 /* GraphicsImageContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GraphicsImageContext.swift; sourceTree = "<group>"; };
 		BF683600000280 /* UIImage+Blend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Blend.swift"; sourceTree = "<group>"; };
 		BF683600000290 /* UIImage+GraphicsImageContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+GraphicsImageContext.swift"; sourceTree = "<group>"; };
-		BF6836000002B0 /* ImageDrawer+Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ImageDrawer+Image.swift"; sourceTree = "<group>"; };
-		BF6836000002C0 /* ImageDrawer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageDrawer.swift; sourceTree = "<group>"; };
+		BF6836000002B0 /* ImageDrawer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageDrawer.swift; sourceTree = "<group>"; };
+		BF6836000002C0 /* UIImage+ImageDrawer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageDrawer.swift"; sourceTree = "<group>"; };
 		BF6836000002E0 /* UIImage+GIF.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
 		BF6836000002F0 /* UIImage+GIF.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
 		BF683600000300 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
@@ -271,8 +271,8 @@
 		BF6836000002A0 /* ImageDrawer */ = {
 			isa = PBXGroup;
 			children = (
-				BF6836000002C0 /* ImageDrawer.swift */,
-				BF6836000002B0 /* ImageDrawer+Image.swift */,
+				BF6836000002B0 /* ImageDrawer.swift */,
+				BF6836000002C0 /* UIImage+ImageDrawer.swift */,
 			);
 			name = ImageDrawer;
 			path = ImageDrawer;
@@ -457,8 +457,7 @@
 				BF6836000007F0 /* Frameable.swift in Sources */,
 				BF683600000740 /* GraphicsImageContext+UIKit.swift in Sources */,
 				BF683600000750 /* GraphicsImageContext.swift in Sources */,
-				BF683600000780 /* ImageDrawer+Image.swift in Sources */,
-				BF683600000790 /* ImageDrawer.swift in Sources */,
+				BF683600000780 /* ImageDrawer.swift in Sources */,
 				BF6836000006D0 /* Int.swift in Sources */,
 				BF6836000007E0 /* JDSwiftFunctions.swift in Sources */,
 				BF6836000006E0 /* String+Encrypt.swift in Sources */,
@@ -472,6 +471,7 @@
 				BF683600000760 /* UIImage+Blend.swift in Sources */,
 				BF6836000005E0 /* UIImage+GIF.m in Sources */,
 				BF683600000770 /* UIImage+GraphicsImageContext.swift in Sources */,
+				BF683600000790 /* UIImage+ImageDrawer.swift in Sources */,
 				BF6836000005F0 /* UIImage+ImageEffects.m in Sources */,
 				BF6836000007A0 /* UIImage+ImageEffects.swift in Sources */,
 				BF6836000007B0 /* UIImage+vImage.swift in Sources */,
