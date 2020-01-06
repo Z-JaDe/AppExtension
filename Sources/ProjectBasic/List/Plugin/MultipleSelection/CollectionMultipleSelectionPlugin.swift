@@ -14,6 +14,7 @@ public class CollectionMultipleSelectionPlugin: NSObject, UICollectionViewDelega
     weak var adapter: UICollectionAdapter?
     public init(_ adapter: UICollectionAdapter) {
         self.adapter = adapter
+        adapter.autoDeselectRow = false
         adapter.collectionView?.allowsMultipleSelection = true
         adapter.collectionView?.allowsSelection = true
         super.init()

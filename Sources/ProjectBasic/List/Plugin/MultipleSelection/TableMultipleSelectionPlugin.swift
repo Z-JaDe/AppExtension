@@ -14,6 +14,7 @@ public class TableMultipleSelectionPlugin: NSObject, UITableViewDelegate, Multip
     weak var adapter: UITableAdapter?
     public init(_ adapter: UITableAdapter) {
         self.adapter = adapter
+        adapter.autoDeselectRow = false
         adapter.tableView?.allowsMultipleSelection = true
         adapter.tableView?.allowsSelection = true
         super.init()

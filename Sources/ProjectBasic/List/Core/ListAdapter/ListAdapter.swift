@@ -29,7 +29,7 @@ where DataSource.S.Item: AdapterItemType, DataSource.S.Section: AdapterSectionTy
         logDebug("\(type(of: self))->\(self)注销")
     }
     /// ZJaDe: 是否自动改回未选中，子类实现相关逻辑
-//    public var autoDeselectRow = true
+    public var autoDeselectRow = true
     /// ZJaDe: 缓存池
     let bufferPool: BufferPool = BufferPool()
 
