@@ -101,3 +101,17 @@ open class UICollectionProxy: NSObject, UICollectionViewDelegate {
         true
     }
 }
+
+extension UICollectionAdapter {
+    func _didSelectItem(at indexPath: IndexPath) {
+        if self.autoDeselectRow {
+            self.collectionView?.deselectItem(at: indexPath, animated: true)
+        } else {
+            dataController[indexPath].isSelected = true
+        }
+        dataController[indexPath].didSelectItem()
+    }
+    func _didDeselectItem(at indexPath: IndexPath) {
+        dataController[indexPath].isSelected = false
+    }
+}

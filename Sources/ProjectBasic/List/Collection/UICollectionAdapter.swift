@@ -13,6 +13,7 @@ extension CollectSection: _AdapterSectionType {}
 
 public typealias CollectionSectionModel = SectionModelItem<CollectSection, CollectionItemModel>
 
+extension DelegateHooker: UICollectionViewDelegate {}
 open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionSectionModel>> {
 
     public weak private(set) var collectionView: UICollectionView?
@@ -24,26 +25,25 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionS
         collectionView.register(InternalCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: InternalCollectionReusableView.reuseIdentifier)
 
         dataSourceDefaultInit(dataSource)
-        setDelegateHooker(delegateHooker?.target)
-        setDataSourceHooker(dataSourceHooker?.target)
+        collectionView.delegate = _delegateHooker ?? collectionProxy
+        collectionView.dataSource = dataSource
         dataChanged()
     }
-    // MARK: -
-    private var delegateHooker: DelegateHooker<UICollectionViewDelegate>?
-    public func setDelegateHooker(_ target: AnyObject?) {
-        if let collectionView = collectionView {
-            setListHooker(target, &delegateHooker, &collectionView.delegate, collectionProxy)
+    // MARK: Hooker
+    private var _delegateHooker: DelegateHooker<UICollectionViewDelegate>?
+    private var delegateHooker: DelegateHooker<UICollectionViewDelegate> {
+        if let hooker = _delegateHooker {
+            return hooker
         } else {
-            setHooker(target, &delegateHooker, collectionProxy)
+            let hooker = DelegateHooker<UICollectionViewDelegate>(defaultTarget: collectionProxy)
+            self.collectionView?.delegate = hooker
+            _delegateHooker = hooker
+            return hooker
         }
     }
-    private var dataSourceHooker: DelegateHooker<UICollectionViewDataSource>?
-    public func setDataSourceHooker(_ target: AnyObject?) {
-        if let collectionView = collectionView {
-            setListHooker(target, &dataSourceHooker, &collectionView.dataSource, dataSource)
-        } else {
-            setHooker(target, &dataSourceHooker, dataSource)
-        }
+    public var delegatePlugins: [UICollectionViewDelegate] {
+        get { delegateHooker.otherHooker }
+        set { delegateHooker.otherHooker = newValue }
     }
     /// ZJaDe: 设置自定义的代理时，需要注意尽量使用UICollectionProxy或者它的子类，这样会自动实现一些默认配置
     public lazy var collectionProxy: UICollectionProxy = UICollectionProxy(self)
@@ -86,5 +86,12 @@ extension UICollectionAdapter {
         data.lazy.flatMap({$0.items}).forEach({ (model) in
             model.bufferPool = self.bufferPool
         })
+    }
+}
+extension UICollectionAdapter {
+    public func updateEnabledState(_ isEnabled: Bool) {
+        dataArray.lazy.flatMap({$0.items}).forEach { (item) in
+            item.refreshEnabledState(isEnabled)
+        }
     }
 }

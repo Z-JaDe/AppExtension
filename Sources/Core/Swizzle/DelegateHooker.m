@@ -54,4 +54,11 @@
     }
 }
 
+-(NSArray *)otherHooker {
+    if (!_otherHooker) {
+        _otherHooker = [NSArray array];
+    }
+    return _otherHooker;
+}
+
 @end

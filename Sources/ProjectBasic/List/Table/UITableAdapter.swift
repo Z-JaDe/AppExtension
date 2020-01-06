@@ -23,6 +23,7 @@ public typealias TableStaticData = ListData<TableSection, StaticTableItemCell>
 public typealias TableListDataInfo = ListDataInfo<TableListData>
 public typealias TableStaticListDataInfo = ListDataInfo<TableStaticData>
 
+extension DelegateHooker: UITableViewDelegate {}
 open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
     private var timer: Timer?
     public weak private(set) var tableView: UITableView?
@@ -32,28 +33,26 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
         tableView.register(InternalTableViewCell.self, forCellReuseIdentifier: InternalTableViewCell.reuseIdentifier)
 
         dataSourceDefaultInit(dataSource)
-        setDelegateHooker(delegateHooker.target)
-        setDataSourceHooker(dataSourceHooker?.target)
+
+        tableView.delegate = _delegateHooker ?? tableProxy
+        tableView.dataSource = dataSource
         dataChanged()
     }
-    // MARK: -
-    /// ZJaDe: 代理
-    private lazy var delegateHooker: DelegateHooker<UITableViewDelegate> = DelegateHooker(defaultTarget: tableProxy)
-    public func setDelegateHooker(_ target: AnyObject?) {
-        if let tableView = tableView {
-            tableView.delegate = delegateHooker
-            setListHooker(target, &delegateHooker, &tableView.delegate, tableProxy)
+    // MARK: Hooker
+    private var _delegateHooker: DelegateHooker<UITableViewDelegate>?
+    private var delegateHooker: DelegateHooker<UITableViewDelegate> {
+        if let hooker = _delegateHooker {
+            return hooker
         } else {
-            setHooker(target, &delegateHooker, tableProxy)
+            let hooker = DelegateHooker<UITableViewDelegate>(defaultTarget: tableProxy)
+            self.tableView?.delegate = hooker
+            _delegateHooker = hooker
+            return hooker
         }
     }
-    private var dataSourceHooker: DelegateHooker<UITableViewDataSource>?
-    public func setDataSourceHooker(_ target: AnyObject?) {
-        if let tableView = tableView {
-            setListHooker(target, &dataSourceHooker, &tableView.dataSource, dataSource)
-        } else {
-            setHooker(target, &dataSourceHooker, dataSource)
-        }
+    public var delegatePlugins: [UITableViewDelegate] {
+        get { delegateHooker.otherHooker }
+        set { delegateHooker.otherHooker = newValue }
     }
     /// ZJaDe: 设置自定义的代理时，需要注意尽量使用UITableProxy或者它的子类，这样会自动实现一些默认配置
     public lazy var tableProxy: UITableProxy = UITableProxy(self)
@@ -132,5 +131,12 @@ extension UITableAdapter {
         data.lazy.flatMap({$0.items}).compactMap({$0.model}).forEach({ (model) in
             model.bufferPool = self.bufferPool
         })
+    }
+}
+extension UITableAdapter: EnabledStateDesignable {
+    public func updateEnabledState(_ isEnabled: Bool) {
+        dataArray.flatMap({$0.items}).forEach { (item) in
+            (item.value as? EnabledStateDesignable)?.refreshEnabledState(isEnabled)
+        }
     }
 }

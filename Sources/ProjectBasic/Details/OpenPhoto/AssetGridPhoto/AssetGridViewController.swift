@@ -12,16 +12,19 @@ open class AssetGridViewController: AdapterCollectionViewController, PHPhotoLibr
     var fetchResult: PHFetchResult<PHAsset>!
     let imageManager = PHImageManager()
 
+    lazy var multipleSelectionPlugin: CollectionMultipleSelectionPlugin = CollectionMultipleSelectionPlugin(adapter)
+    public var selectedItemArray: [CollectionMultipleSelectionPlugin.SelectItemType] {
+        multipleSelectionPlugin.selectedItemArray
+    }
+    public var maxSelectedCount: MaxSelectedCount {
+        get { multipleSelectionPlugin.maxSelectedCount }
+        set { multipleSelectionPlugin.maxSelectedCount = newValue }
+    }
     open override func viewDidLoad() {
         super.viewDidLoad()
-        self.adapter.autoDeselectRow = false
-        self.rootView.allowsMultipleSelection = true
-        self.rootView.allowsSelection = true
-        self.adapter.setDelegateHooker(self)
         self.configCollectionViewLayout()
 
         PHPhotoLibrary.shared().register(self)
-
         setNeedRequest()
     }
     open func configCollectionViewLayout() {
@@ -93,20 +96,7 @@ open class AssetGridViewController: AdapterCollectionViewController, PHPhotoLibr
         return CGSize(width: width, height: width)
     }
 }
-extension AssetGridViewController: UICollectionViewDelegate, MultipleSelectionProtocol {
-    public typealias SelectItemType = UICollectionAdapter.Item
-    public func changeSelectState(_ isSelected: Bool, _ item: SelectItemType) {
-        adapter.changeSelectState(isSelected, item)
-    }
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        adapter.collectionProxy.collectionView(collectionView, didSelectItemAt: indexPath)
-        whenItemSelected(&adapter.dataController[indexPath])
-    }
-    public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        adapter.collectionProxy.collectionView(collectionView, didDeselectItemAt: indexPath)
-        whenItemUnSelected(&adapter.dataController[indexPath])
-    }
-}
+
 extension AssetGridViewController {
     func loadPhotos() {
         if fetchResult == nil {
