@@ -10,6 +10,7 @@ import Foundation
 
 public protocol MultipleSelectionProtocol: AssociatedObjectProtocol {
     associatedtype SelectItemType
+    var maxSelectedCount: MaxSelectedCount {get set}
     /// ZJaDe: 找到item对应的下标
     func index(_ item: SelectItemType) -> Int?
     /// ZJaDe: 更新item选中状态
@@ -23,8 +24,8 @@ private var maxSelectedCountKey: UInt8 = 0
 public extension MultipleSelectionProtocol {
     /// ZJaDe: 存储选中的cell
     private(set) var selectedItemArray: [SelectItemType] {
-        get {return associatedObject(&selectedItemArrayKey, createIfNeed: [])}
-        set {setAssociatedObject(&selectedItemArrayKey, newValue)}
+        get { associatedObject(&selectedItemArrayKey, createIfNeed: []) }
+        set { setAssociatedObject(&selectedItemArrayKey, newValue) }
     }
     /// ZJaDe: 选中的cell改变时
     var selectedItemArrayChanged: CallBackerVoid<[SelectItemType]> {
@@ -33,8 +34,8 @@ public extension MultipleSelectionProtocol {
     /// ZJaDe: 最大选中的item数量
     var maxSelectedCount: MaxSelectedCount {
         // ZJaDe: 使用MaxSelectedCount不使用UInt?的原因是 associated没法区分nil和0，用-1区分又不太优雅
-        get {return associatedObject(&maxSelectedCountKey) ?? 0}
-        set {setAssociatedObject(&maxSelectedCountKey, newValue)}
+        get { associatedObject(&maxSelectedCountKey) ?? 0 }
+        set { setAssociatedObject(&maxSelectedCountKey, newValue) }
     }
 }
 extension MultipleSelectionProtocol where SelectItemType: Equatable {

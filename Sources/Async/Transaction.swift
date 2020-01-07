@@ -26,7 +26,17 @@ extension Transaction: Hashable {
         hasher.combine(selector)
     }
     public static func == (lhs: Transaction, rhs: Transaction) -> Bool {
-        lhs.hashValue == rhs.hashValue
+        if lhs.hashValue == rhs.hashValue {
+            return true
+        } else {
+            if lhs.target !== rhs.target {
+                return false
+            } else if lhs.selector != rhs.selector {
+                return false
+            } else {
+                return true
+            }
+        }
     }
 }
 private var transactionSet = Set<Transaction>()
@@ -36,10 +46,10 @@ extension Transaction {
         transactionSet.insert(self)
     }
     private func transactionSetup() {
-        _ = observer
+        _ = transactionRunLoopObserver
     }
 }
-let observer: CFRunLoopObserver! = {
+let transactionRunLoopObserver: CFRunLoopObserver! = {
     let activity: CFRunLoopActivity = [.beforeWaiting, .exit]
     let observer = CFRunLoopObserverCreate(
         // swiftlint:disable force_cast

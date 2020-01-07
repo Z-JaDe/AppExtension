@@ -48,8 +48,8 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionS
         delegateHooker.addTarget = target
     }
     public var delegatePlugins: [UICollectionViewDelegate] {
-        get { delegateHooker.otherHooker }
-        set { delegateHooker.otherHooker = newValue }
+        get { delegateHooker.plugins }
+        set { delegateHooker.plugins = newValue }
     }
     /// ZJaDe: 设置自定义的代理时，需要注意尽量使用UICollectionProxy或者它的子类，这样会自动实现一些默认配置
     public lazy var collectionProxy: UICollectionProxy = UICollectionProxy(self)

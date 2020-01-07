@@ -25,8 +25,8 @@ open class DynamicTableItemCell: TableItemCell {
         super.didDisappear()
         _model?.recycleCell(self)
     }
-    override func internalUpdateSelectedState(_ isSelected: Bool) {
-        super.internalUpdateSelectedState(isSelected)
+    override func _updateSelectedState(_ isSelected: Bool) {
+        super._updateSelectedState(isSelected)
         if _model?.isSelected != isSelected {
             _model?.isSelected = isSelected
         }

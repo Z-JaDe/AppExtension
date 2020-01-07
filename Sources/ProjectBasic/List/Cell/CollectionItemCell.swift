@@ -32,12 +32,6 @@ open class CollectionItemCell: ItemCell, CollectionCellContentItem {
         super.didDisappear()
         self.getInternalCell()?.contentItem = nil
     }
-    override func internalUpdateSelectedState(_ isSelected: Bool) {
-        super.internalUpdateSelectedState(isSelected)
-//        if getInternalCell()?.isSelected != isSelected {
-//            getInternalCell()?.isSelected = isSelected
-//        }
-    }
     /// ZJaDe: insets
     public var insets: UIEdgeInsets = Space.cellInsets {
         didSet {getInternalCell()?.setNeedsUpdateConstraints()}

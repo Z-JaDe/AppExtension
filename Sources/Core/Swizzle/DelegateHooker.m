@@ -26,11 +26,15 @@
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)sel {
-    if ([self.target respondsToSelector:sel]) {
-        return [self.target methodSignatureForSelector:sel];
+    id target;
+    if ([self.addTarget respondsToSelector:sel]) {
+        target = self.addTarget;
+    } else if ([self.target respondsToSelector:sel]) {
+        target = self.target;
     } else {
-        return [self.defaultTarget methodSignatureForSelector:sel];
+        target = self.defaultTarget;
     }
+    return [target methodSignatureForSelector:sel];
 }
 
 -(void)forwardInvocation:(NSInvocation *)invocation {
@@ -39,26 +43,31 @@
     if (length > 0) {
         buffer = (void *)malloc(length);
     }
-    if ([self.target respondsToSelector:invocation.selector]) {
-        [invocation invokeWithTarget:self.target];
-        if (length > 0) {
-            [invocation getReturnValue:buffer];
+    BOOL isRespondsSelector = false;
+    {
+        id target;
+        if ([self.target respondsToSelector:invocation.selector]) {
+            target = self.target;
+        } else if ([self.defaultTarget respondsToSelector:invocation.selector]) {
+            target = self.defaultTarget;
         }
-    } else {
-        [invocation invokeWithTarget:self.defaultTarget];
-        if (length > 0) {
-            [invocation getReturnValue:buffer];
+        if (target) {
+            [invocation invokeWithTarget:target];
+            isRespondsSelector = true;
+            if (length > 0) { [invocation getReturnValue:buffer]; }
         }
     }
     if (self.addTarget && [self.addTarget respondsToSelector:invocation.selector]) {
         [invocation invokeWithTarget:self.addTarget];
+        isRespondsSelector = true;
+        if (length > 0) { [invocation getReturnValue:buffer]; }
     }
-    [self.otherHooker enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self.plugins enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj respondsToSelector:invocation.selector]) {
             [invocation invokeWithTarget:obj];
         }
     }];
-    if (length > 0) {
+    if (length > 0 && isRespondsSelector) {
         [invocation setReturnValue:buffer];
         free(buffer);
     }
@@ -72,11 +81,11 @@
     }
 }
 
--(NSArray *)otherHooker {
-    if (!_otherHooker) {
-        _otherHooker = [NSArray array];
+-(NSArray *)plugins {
+    if (!_plugins) {
+        _plugins = [NSArray array];
     }
-    return _otherHooker;
+    return _plugins;
 }
 
 @end

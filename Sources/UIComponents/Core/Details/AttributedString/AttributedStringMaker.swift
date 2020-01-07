@@ -54,11 +54,13 @@ extension AttributedStringMaker {
 }
 
 extension AttributedStringMaker {
+    /// 属性字符串拼接还是需要重新生成一个AttributedStringMaker
     public static func + (left: AttributedStringMaker, right: AttributedStringMakerProtocol) -> AttributedStringMaker {
         var attrStr = left.attrStr
         attrStr.append(right.createMaker().attrStr)
         return AttributedStringMaker(attrStr)
     }
+    /// 属性字符串拼接还是需要重新生成一个AttributedStringMaker
     public static func += (left: inout AttributedStringMaker, right: AttributedStringMakerProtocol) {
         // swiftlint:disable shorthand_operator
         left = left + right

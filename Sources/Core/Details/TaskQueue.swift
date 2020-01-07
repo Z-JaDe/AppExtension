@@ -7,16 +7,14 @@
 //
 
 import Foundation
+
+private var taskSentinel = Sentinel()
 public protocol ProcessTask {
     func start(taskComplete: @escaping () -> Void)
     func isEqual(other: ProcessTask) -> Bool
 }
 public struct AsyncTask: ProcessTask {
-    var hashValue: Int = {
-        var hasher = Hasher()
-        hasher.combine(UUID().uuidString)
-        return hasher.finalize()
-    }()
+    let hashValue: Int32 = taskSentinel.increase()
     let task: (@escaping () -> Void) -> Void
     init(closure: @escaping (@escaping () -> Void) -> Void) {
         self.task = closure
@@ -33,11 +31,7 @@ public struct AsyncTask: ProcessTask {
     }
 }
 public struct SyncTask: ProcessTask {
-    var hashValue: Int = {
-        var hasher = Hasher()
-        hasher.combine(UUID().uuidString)
-        return hasher.finalize()
-    }()
+    let hashValue: Int32 = taskSentinel.increase()
     let task: () -> Void
     init(closure: @escaping () -> Void) {
         self.task = closure

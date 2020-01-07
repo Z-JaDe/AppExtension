@@ -19,6 +19,6 @@ extension ListSection: Hashable {
         hasher.combine(ObjectIdentifier(self))
     }
     public static func == (lhs: ListSection, rhs: ListSection) -> Bool {
-        lhs.hashValue == rhs.hashValue
+        lhs === rhs
     }
 }

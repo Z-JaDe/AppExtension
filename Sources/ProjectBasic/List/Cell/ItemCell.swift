@@ -41,7 +41,7 @@ open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable
     open var isSelected: Bool = false {
         didSet {
             if isSelected != oldValue {
-                internalUpdateSelectedState(isSelected)
+                _updateSelectedState(isSelected)
             }
             updateSelectedState(isSelected)
         }
@@ -50,7 +50,8 @@ open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable
     open func updateSelectedState(_ isSelected: Bool) {
 
     }
-    internal func internalUpdateSelectedState(_ isSelected: Bool) {
+    /// ZJaDe: 框架内部 更新 SelectedState，因为有时候updateSelectedState会忘了写super
+    internal func _updateSelectedState(_ isSelected: Bool) {
 
     }
     /// ZJaDe: 如果canHighlighted值为false将不会出发点击cell的事件 如果仅仅是不想高亮 改变cell的selectionStyle属性

@@ -100,13 +100,10 @@ extension UITableAdapter {
     func _didSelectItem(at indexPath: IndexPath) {
         if self.autoDeselectRow {
             self.tableView?.deselectRow(at: indexPath, animated: true)
-        } else {
-            dataController[indexPath].isSelected = true
         }
         let item = dataController[indexPath]
         (item.value as? CellSelectedStateDesignable)?.didSelectItem()
     }
     func _didDeselectItem(at indexPath: IndexPath) {
-        dataController[indexPath].isSelected = false
     }
 }

@@ -43,6 +43,6 @@ extension ListItemModel: Hashable {
         hasher.combine(ObjectIdentifier(self))
     }
     public static func == (lhs: ListItemModel, rhs: ListItemModel) -> Bool {
-        lhs.hashValue == rhs.hashValue
+        lhs === rhs
     }
 }

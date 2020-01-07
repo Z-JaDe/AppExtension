@@ -18,7 +18,7 @@ open class Model: Hashable {
         hasher.combine(ObjectIdentifier(self))
     }
     public static func == (lhs: Model, rhs: Model) -> Bool {
-        lhs.hashValue == rhs.hashValue
+        lhs === rhs
     }
 
 //    deinit {
