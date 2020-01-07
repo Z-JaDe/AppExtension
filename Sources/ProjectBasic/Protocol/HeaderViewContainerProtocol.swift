@@ -16,7 +16,7 @@ public protocol HeaderViewContainerProtocol: AssociatedObjectProtocol {
 
     func headerAndScrollBinding(in view: UIView?)
     /// ZJaDe: 当滚动时监听
-    func whenScroll()
+    func observeDidScroll()
     /// ZJaDe: 滚动时更新高度
     func update(viewHeight height: CGFloat)
 }
@@ -79,9 +79,9 @@ import RxCocoa
 public extension HeaderViewContainerProtocol where ScrollViewType: UIScrollView {
     func headerAndScrollBinding(in view: UIView? = nil) {
         _headerAndScrollBinding(in: view)
-        whenScroll()
+        observeDidScroll()
     }
-    func whenScroll() {
+    func observeDidScroll() {
         subscribeWhenScroll {[weak self] (offSet) in
             guard let self = self else { return }
             let height = self.headerView.defaultHeight - offSet

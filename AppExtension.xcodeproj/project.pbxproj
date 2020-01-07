@@ -31,8 +31,9 @@
 		18691B9B2356C0C500274B12 /* AnyDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18691B982356C0C500274B12 /* AnyDecodable.swift */; };
 		18691B9C2356C0C500274B12 /* AnyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18691B992356C0C500274B12 /* AnyCodable.swift */; };
 		18691B9D2356C0C500274B12 /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18691B9A2356C0C500274B12 /* AnyEncodable.swift */; };
-		186B9F3523C3336000331C35 /* TableMultipleSelectionPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186B9F3423C3336000331C35 /* TableMultipleSelectionPlugin.swift */; };
-		186B9F3723C333CB00331C35 /* CollectionMultipleSelectionPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186B9F3623C333CB00331C35 /* CollectionMultipleSelectionPlugin.swift */; };
+		186B9F3523C3336000331C35 /* TableSelectionPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186B9F3423C3336000331C35 /* TableSelectionPlugin.swift */; };
+		186B9F3723C333CB00331C35 /* CollectionSelectionPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186B9F3623C333CB00331C35 /* CollectionSelectionPlugin.swift */; };
+		1896E6C323C4A3F700DF2BE5 /* ListSelectionPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1896E6C223C4A3F700DF2BE5 /* ListSelectionPlugin.swift */; };
 		18B208DA23546B88009A4972 /* AttributedStringMakerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B208D823546B82009A4972 /* AttributedStringMakerProtocol.swift */; };
 		18B208DD23548C3D009A4972 /* AttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B208DB23548C36009A4972 /* AttributedString.swift */; };
 		18B56D462272CEC000AADA00 /* LockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B56D452272CEC000AADA00 /* LockTest.swift */; };
@@ -795,13 +796,14 @@
 		18691B982356C0C500274B12 /* AnyDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyDecodable.swift; sourceTree = "<group>"; };
 		18691B992356C0C500274B12 /* AnyCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyCodable.swift; sourceTree = "<group>"; };
 		18691B9A2356C0C500274B12 /* AnyEncodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyEncodable.swift; sourceTree = "<group>"; };
-		186B9F3423C3336000331C35 /* TableMultipleSelectionPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableMultipleSelectionPlugin.swift; sourceTree = "<group>"; };
-		186B9F3623C333CB00331C35 /* CollectionMultipleSelectionPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionMultipleSelectionPlugin.swift; sourceTree = "<group>"; };
+		186B9F3423C3336000331C35 /* TableSelectionPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSelectionPlugin.swift; sourceTree = "<group>"; };
+		186B9F3623C333CB00331C35 /* CollectionSelectionPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSelectionPlugin.swift; sourceTree = "<group>"; };
 		1889011C23A1D61D000DB171 /* AppExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppExtension.entitlements; sourceTree = "<group>"; };
 		1892196023016F4B008A6BC3 /* Playground_Blank.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground_Blank.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1892196123016F4B008A6BC3 /* Playground_View.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground_View.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1892196323016FD4008A6BC3 /* Playground_Game.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground_Game.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1892196423016FF5008A6BC3 /* Playground_Map.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground_Map.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1896E6C223C4A3F700DF2BE5 /* ListSelectionPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSelectionPlugin.swift; sourceTree = "<group>"; };
 		18B208D823546B82009A4972 /* AttributedStringMakerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringMakerProtocol.swift; sourceTree = "<group>"; };
 		18B208DB23548C36009A4972 /* AttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedString.swift; sourceTree = "<group>"; };
 		18B56D452272CEC000AADA00 /* LockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockTest.swift; sourceTree = "<group>"; };
@@ -1592,8 +1594,9 @@
 		186B9F3323C3332700331C35 /* MultipleSelection */ = {
 			isa = PBXGroup;
 			children = (
-				186B9F3423C3336000331C35 /* TableMultipleSelectionPlugin.swift */,
-				186B9F3623C333CB00331C35 /* CollectionMultipleSelectionPlugin.swift */,
+				1896E6C223C4A3F700DF2BE5 /* ListSelectionPlugin.swift */,
+				186B9F3423C3336000331C35 /* TableSelectionPlugin.swift */,
+				186B9F3623C333CB00331C35 /* CollectionSelectionPlugin.swift */,
 			);
 			path = MultipleSelection;
 			sourceTree = "<group>";
@@ -4689,7 +4692,7 @@
 				18FCBE1B2296C76C00695868 /* UpdateLayout+SnapKit.swift in Sources */,
 				C90E74D722001608006CE73C /* AssetGridModel.swift in Sources */,
 				18CBF3AD232889BA00E6DDE2 /* CreateCellUseModel.swift in Sources */,
-				186B9F3523C3336000331C35 /* TableMultipleSelectionPlugin.swift in Sources */,
+				186B9F3523C3336000331C35 /* TableSelectionPlugin.swift in Sources */,
 				C9D412E821DF4B65004368D4 /* UICollectionAdapter.swift in Sources */,
 				C9D412E721DF4B52004368D4 /* UITableProxy.swift in Sources */,
 				C9D4132321DF6B74004368D4 /* LoadWebUrlProtocol.swift in Sources */,
@@ -4708,6 +4711,7 @@
 				C9D412EA21DF4B65004368D4 /* UICollectionProxy.swift in Sources */,
 				C91B1E7F21E328C0004FEE44 /* RefreshListProtocol+MJ.swift in Sources */,
 				1865798B239E224700A04076 /* MultipleSelectionProtocol.swift in Sources */,
+				1896E6C323C4A3F700DF2BE5 /* ListSelectionPlugin.swift in Sources */,
 				C9D412AD21DF45F4004368D4 /* InternalCollectionViewCell.swift in Sources */,
 				185143E82368456700CD1974 /* JSBridge+Register.swift in Sources */,
 				C9D412B221DF45FA004368D4 /* DynamicTableItemCell.swift in Sources */,
@@ -4718,7 +4722,7 @@
 				C9D412BE21DF468B004368D4 /* TableItemCell.swift in Sources */,
 				C9283C2921BEB91200361B87 /* ImageURLProtocol.swift in Sources */,
 				C9D412B421DF4600004368D4 /* ButtonCell.swift in Sources */,
-				186B9F3723C333CB00331C35 /* CollectionMultipleSelectionPlugin.swift in Sources */,
+				186B9F3723C333CB00331C35 /* CollectionSelectionPlugin.swift in Sources */,
 				C9D412BF21DF468B004368D4 /* CollectionItemCell.swift in Sources */,
 				C9283C3521BEC50500361B87 /* HeaderViewContainerProtocol.swift in Sources */,
 				C9D4131B21DF6B74004368D4 /* WebTableViewCell.swift in Sources */,

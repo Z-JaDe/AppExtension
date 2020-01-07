@@ -13,6 +13,10 @@ public protocol MultipleSelectionProtocol: AssociatedObjectProtocol {
     var maxSelectedCount: MaxSelectedCount {get set}
     /// ZJaDe: 找到item对应的下标
     func index(_ item: SelectItemType) -> Int?
+    /// ZJaDe: 当item选中时做一些处理 默认不能主动调用
+    func updateItemToSelected(_ item: inout SelectItemType)
+    /// ZJaDe: 当item未选中时做一些处理 默认不能主动调用
+    func updateItemToUnSelected(_ item: inout SelectItemType)
     /// ZJaDe: 更新item选中状态
     func updateSelectState(_ item: inout SelectItemType, _ isSelected: Bool)
     /// ZJaDe: 主动更改item的选中状态
@@ -43,10 +47,19 @@ extension MultipleSelectionProtocol where SelectItemType: Equatable {
         self.selectedItemArray.firstIndex(of: item)
     }
 }
-// MARK: - UpdateSelectState
+// MARK: -
 extension MultipleSelectionProtocol where SelectItemType: SelectedStateDesignable {
     public func updateSelectState(_ item: inout SelectItemType, _ isSelected: Bool) {
         item.isSelected = isSelected
+        if let index = self.index(item) {
+            if !isSelected {
+                self.selectedItemArray.remove(at: index)
+            }
+        } else {
+            if isSelected {
+                self.selectedItemArray.append(item)
+            }
+        }
         logDebug("\(self.selectedItemArray)")
         self.selectedItemArrayChanged.call(self.selectedItemArray)
     }
@@ -54,18 +67,17 @@ extension MultipleSelectionProtocol where SelectItemType: SelectedStateDesignabl
 // MARK: -
 extension MultipleSelectionProtocol {
     /// ZJaDe: 当item未选中时做一些处理 默认不能主动调用
-    public func whenItemUnSelected(_ item: inout SelectItemType) {
-        if let index = self.index(item) {
-            self.selectedItemArray.remove(at: index)
+    public func updateItemToUnSelected(_ item: inout SelectItemType) {
+        // 单选时不可以不选中
+        if maxSelectedCount == 1 && self.selectedItemArray.count == 1 {
+            return
         }
         updateSelectState(&item, false)
     }
     /// ZJaDe: 当item选中时做一些处理 默认不能主动调用
-    public func whenItemSelected(_ item: inout SelectItemType) {
-        if self.index(item) == nil {
-            self.selectedItemArray.append(item)
-        }
+    public func updateItemToSelected(_ item: inout SelectItemType) {
         updateSelectState(&item, true)
+        // 选中时，取消选中第一个
         if let count = maxSelectedCount.count {
             while self.selectedItemArray.count > count, let first = self.selectedItemArray.first {
                 changeSelectState(false, first)

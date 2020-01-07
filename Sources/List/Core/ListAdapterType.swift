@@ -18,7 +18,7 @@ public typealias DataSourceItemType = Diffable
 public protocol AdapterItemType: DataSourceItemType & SelectedStateDesignable & Equatable {}
 public protocol AdapterSectionType: DataSourceSectionType {}
 
-public protocol ListAdapterType {
+public protocol ListAdapterType: class {
     associatedtype DataSource: SectionedDataSourceType
     typealias Section = DataSource.S.Section
     typealias Item = DataSource.S.Item

@@ -8,66 +8,45 @@
 
 import Foundation
 
-public class CollectionSelectionPlugin: NSObject, UICollectionViewDelegate, MultipleSelectionProtocol {
+public class CollectionSelectionPlugin: ListSelectionPlugin<UICollectionAdapter>, UICollectionViewDelegate {
 
-    /// ZJaDe: 是否使用UICollectionView自带的选中逻辑
-    public var useUIKitSectionLogic: Bool = true {
-        didSet { updateAllowsSelection() }
-    }
-
-    weak var adapter: UICollectionAdapter?
-    public init(_ adapter: UICollectionAdapter) {
-        self.adapter = adapter
-        super.init()
-        updateAllowsSelection()
+    public override func configInit(_ adapter: UICollectionAdapter) {
+        super.configInit(adapter)
         if adapter.delegatePlugins.contains(where: {$0 === self}) == false {
             adapter.delegatePlugins.append(self)
         }
     }
-    func updateAllowsSelection() {
-        adapter?.autoDeselectRow = !useUIKitSectionLogic
-        adapter?.collectionView?.allowsSelection = true
-        adapter?.collectionView?.allowsMultipleSelection = true
+    override func updateAllowsSelection() {
+        guard let adapter = adapter else { return }
+        adapter.autoDeselectRow = !useUIKitSectionLogic
+        adapter.collectionView?.allowsSelection = true
+        adapter.collectionView?.allowsMultipleSelection = true
     }
     // MARK: MultipleSelectionProtocol
-    public typealias SelectItemType = UICollectionAdapter.Item
-    public func changeSelectState(_ isSelected: Bool, _ item: SelectItemType) {
+    override func updateUISelectState(_ indexPath: IndexPath) {
         if useUIKitSectionLogic {
             guard let adapter = adapter else { return }
-            guard let indexPath = adapter.dataController.indexPath(with: item) else { return }
+            let isSelected = adapter.dataController[indexPath].isSelected
             if isSelected {
                 adapter.collectionView?.selectItem(at: indexPath, animated: true, scrollPosition: [])
             } else {
                 adapter.collectionView?.deselectItem(at: indexPath, animated: true)
             }
         }
-        item.isSelected = isSelected
     }
     // MARK: UICollectionViewDelegate
     public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if useUIKitSectionLogic {
-            Async.main {
-                guard let adapter = self.adapter else { return }
-                guard adapter.dataController.indexPathCanBound(indexPath) else { return }
-                let itemSelected = adapter.dataController[indexPath].isSelected
-                if itemSelected && !cell.isSelected {
-                    collectionView.selectItem(at: indexPath, animated: false, scrollPosition: [])
-                } else if !itemSelected && cell.isSelected {
-                    collectionView.deselectItem(at: indexPath, animated: false)
-                }
-            }
-        }
+        willDisplay(cellIsSelected: cell.isSelected, indexPath: indexPath)
     }
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let adapter = adapter else { return }
         if adapter.dataController[indexPath].isSelected {
-            whenItemUnSelected(&adapter.dataController[indexPath])
+            changeSelectState(false, indexPath)
         } else {
-            whenItemSelected(&adapter.dataController[indexPath])
+            changeSelectState(true, indexPath)
         }
     }
     public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        guard let adapter = adapter else { return }
-        whenItemUnSelected(&adapter.dataController[indexPath])
+        changeSelectState(false, indexPath)
     }
 }

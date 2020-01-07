@@ -26,6 +26,20 @@ extension MaxSelectedCount {
         }
     }
 }
+extension MaxSelectedCount: Comparable {
+    public static func < (lhs: MaxSelectedCount, rhs: MaxSelectedCount) -> Bool {
+        switch (lhs, rhs) {
+        case (.noLimit, .noLimit):
+            return false
+        case (.noLimit, _):
+            return false
+        case (_, .noLimit):
+            return true
+        case (.value(let lhsV), .value(let rhsV)):
+            return lhsV < rhsV
+        }
+    }
+}
 extension MaxSelectedCount: ExpressibleByNilLiteral {
     public init(nilLiteral: ()) {
         self = .noLimit
