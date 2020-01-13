@@ -7,65 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF6836000005D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6836000005C0 /* Foundation.framework */; };
-		BF6836000005E0 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000002F0 /* UIImage+GIF.m */; };
-		BF6836000005F0 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000310 /* UIImage+ImageEffects.m */; };
-		BF683600000600 /* CalendarMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000000D0 /* CalendarMath.swift */; };
-		BF683600000610 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000000F0 /* Array.swift */; };
-		BF683600000620 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000100 /* Bool.swift */; };
-		BF683600000630 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000110 /* Bundle.swift */; };
-		BF683600000640 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000120 /* CGFloat.swift */; };
-		BF683600000650 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000130 /* CGRect.swift */; };
-		BF683600000660 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000140 /* Character.swift */; };
-		BF683600000670 /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000150 /* Comparable.swift */; };
-		BF683600000680 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000160 /* Date.swift */; };
-		BF683600000690 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000170 /* Dictionary.swift */; };
-		BF6836000006A0 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000180 /* Double.swift */; };
-		BF6836000006B0 /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000190 /* ErrorType.swift */; };
-		BF6836000006C0 /* FloatingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000001A0 /* FloatingPoint.swift */; };
-		BF6836000006D0 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000001B0 /* Int.swift */; };
-		BF6836000006E0 /* String+Encrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000001D0 /* String+Encrypt.swift */; };
-		BF6836000006F0 /* String+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000001E0 /* String+Hex.swift */; };
-		BF683600000700 /* String+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000001F0 /* String+Random.swift */; };
-		BF683600000710 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000200 /* String.swift */; };
-		BF683600000720 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000210 /* URL.swift */; };
-		BF683600000730 /* CIImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000240 /* CIImageFilter.swift */; };
-		BF683600000740 /* GraphicsImageContext+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000260 /* GraphicsImageContext+UIKit.swift */; };
-		BF683600000750 /* GraphicsImageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000270 /* GraphicsImageContext.swift */; };
-		BF683600000760 /* UIImage+Blend.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000280 /* UIImage+Blend.swift */; };
-		BF683600000770 /* UIImage+GraphicsImageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000290 /* UIImage+GraphicsImageContext.swift */; };
-		BF683600000780 /* ImageDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000002B0 /* ImageDrawer.swift */; };
-		BF683600000790 /* UIImage+ImageDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000002C0 /* UIImage+ImageDrawer.swift */; };
-		BF6836000007A0 /* UIImage+ImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000320 /* UIImage+ImageEffects.swift */; };
-		BF6836000007B0 /* UIImage+vImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000330 /* UIImage+vImage.swift */; };
-		BF6836000007C0 /* UIImage+vImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000340 /* UIImage+vImages.swift */; };
-		BF6836000007D0 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000350 /* UIImage.swift */; };
-		BF6836000007E0 /* JDSwiftFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000360 /* JDSwiftFunctions.swift */; };
-		BF6836000007F0 /* Frameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000380 /* Frameable.swift */; };
-		BF683600000800 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000003A0 /* UIButton.swift */; };
-		BF683600000810 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000003B0 /* UIColor.swift */; };
-		BF683600000820 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000003C0 /* UIDevice.swift */; };
-		BF683600000830 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000003D0 /* UIFont.swift */; };
-		BF683600000840 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000003E0 /* UIImageView.swift */; };
-		BF683600000850 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000003F0 /* UILabel.swift */; };
-		BF683600000860 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000400 /* UINavigationController.swift */; };
-		BF683600000870 /* UINavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000410 /* UINavigationItem.swift */; };
-		BF683600000880 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000420 /* UIScrollView.swift */; };
-		BF683600000890 /* UISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000430 /* UISlider.swift */; };
-		BF6836000008A0 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000440 /* UIStackView.swift */; };
-		BF6836000008B0 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000450 /* UIStoryboard.swift */; };
-		BF6836000008C0 /* UISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000460 /* UISwitch.swift */; };
-		BF6836000008D0 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000470 /* UITextField.swift */; };
-		BF6836000008E0 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000480 /* UITextView.swift */; };
-		BF6836000008F0 /* UIUserInterfaceSizeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000490 /* UIUserInterfaceSizeClass.swift */; };
-		BF683600000900 /* UIView+ContentPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000004A0 /* UIView+ContentPriority.swift */; };
-		BF683600000910 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000004B0 /* UIView.swift */; };
-		BF683600000920 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000004C0 /* UIViewController.swift */; };
-		BF683600000930 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000004D0 /* UIWindow.swift */; };
-		BF683600000940 /* UIImage+GIF.h in Headers */ = {isa = PBXBuildFile; fileRef = BF6836000002E0 /* UIImage+GIF.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF683600000950 /* UIImage+ImageEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = BF683600000300 /* UIImage+ImageEffects.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF6836000009A0 /* CocoaExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BF683600000990 /* CocoaExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF6836000009E0 /* CocoaExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000009D0 /* CocoaExtension-dummy.m */; };
+		BF6836000005F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6836000005E0 /* Foundation.framework */; };
+		BF683600000600 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000310 /* UIImage+GIF.m */; };
+		BF683600000610 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000330 /* UIImage+ImageEffects.m */; };
+		BF683600000620 /* CalendarMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000000D0 /* CalendarMath.swift */; };
+		BF683600000630 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000000F0 /* Array.swift */; };
+		BF683600000640 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000100 /* Bool.swift */; };
+		BF683600000650 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000110 /* Bundle.swift */; };
+		BF683600000660 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000120 /* CGFloat.swift */; };
+		BF683600000670 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000130 /* CGRect.swift */; };
+		BF683600000680 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000140 /* Character.swift */; };
+		BF683600000690 /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000150 /* Comparable.swift */; };
+		BF6836000006A0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000160 /* Date.swift */; };
+		BF6836000006B0 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000170 /* Dictionary.swift */; };
+		BF6836000006C0 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000180 /* Double.swift */; };
+		BF6836000006D0 /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000190 /* ErrorType.swift */; };
+		BF6836000006E0 /* FloatingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000001A0 /* FloatingPoint.swift */; };
+		BF6836000006F0 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000001B0 /* Int.swift */; };
+		BF683600000700 /* String+Encrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000001D0 /* String+Encrypt.swift */; };
+		BF683600000710 /* String+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000001E0 /* String+Hex.swift */; };
+		BF683600000720 /* String+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000001F0 /* String+Random.swift */; };
+		BF683600000730 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000200 /* String.swift */; };
+		BF683600000740 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000210 /* URL.swift */; };
+		BF683600000750 /* CIImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000240 /* CIImageFilter.swift */; };
+		BF683600000760 /* GraphicsImageContext+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000260 /* GraphicsImageContext+UIKit.swift */; };
+		BF683600000770 /* GraphicsImageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000270 /* GraphicsImageContext.swift */; };
+		BF683600000780 /* UIImage+Blend.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000280 /* UIImage+Blend.swift */; };
+		BF683600000790 /* UIImage+GraphicsImageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000290 /* UIImage+GraphicsImageContext.swift */; };
+		BF6836000007A0 /* ImageDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000002B0 /* ImageDrawer.swift */; };
+		BF6836000007B0 /* UIImage+ImageDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000002C0 /* UIImage+ImageDrawer.swift */; };
+		BF6836000007C0 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000002E0 /* QRCode.swift */; };
+		BF6836000007D0 /* UIImage+ImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000340 /* UIImage+ImageEffects.swift */; };
+		BF6836000007E0 /* UIImage+vImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000350 /* UIImage+vImage.swift */; };
+		BF6836000007F0 /* UIImage+vImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000360 /* UIImage+vImages.swift */; };
+		BF683600000800 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000370 /* UIImage.swift */; };
+		BF683600000810 /* JDSwiftFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000380 /* JDSwiftFunctions.swift */; };
+		BF683600000820 /* Frameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000003A0 /* Frameable.swift */; };
+		BF683600000830 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000003C0 /* UIButton.swift */; };
+		BF683600000840 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000003D0 /* UIColor.swift */; };
+		BF683600000850 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000003E0 /* UIDevice.swift */; };
+		BF683600000860 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000003F0 /* UIFont.swift */; };
+		BF683600000870 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000400 /* UIImageView.swift */; };
+		BF683600000880 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000410 /* UILabel.swift */; };
+		BF683600000890 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000420 /* UINavigationController.swift */; };
+		BF6836000008A0 /* UINavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000430 /* UINavigationItem.swift */; };
+		BF6836000008B0 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000440 /* UIScrollView.swift */; };
+		BF6836000008C0 /* UISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000450 /* UISlider.swift */; };
+		BF6836000008D0 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000460 /* UIStackView.swift */; };
+		BF6836000008E0 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000470 /* UIStoryboard.swift */; };
+		BF6836000008F0 /* UISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000480 /* UISwitch.swift */; };
+		BF683600000900 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000490 /* UITextField.swift */; };
+		BF683600000910 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000004A0 /* UITextView.swift */; };
+		BF683600000920 /* UIUserInterfaceSizeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000004B0 /* UIUserInterfaceSizeClass.swift */; };
+		BF683600000930 /* UIView+ContentPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000004C0 /* UIView+ContentPriority.swift */; };
+		BF683600000940 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000004D0 /* UIView.swift */; };
+		BF683600000950 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000004E0 /* UIViewController.swift */; };
+		BF683600000960 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000004F0 /* UIWindow.swift */; };
+		BF683600000970 /* UIImage+GIF.h in Headers */ = {isa = PBXBuildFile; fileRef = BF683600000300 /* UIImage+GIF.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF683600000980 /* UIImage+ImageEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = BF683600000320 /* UIImage+ImageEffects.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF6836000009D0 /* CocoaExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BF6836000009C0 /* CocoaExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF683600000A10 /* CocoaExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000A00 /* CocoaExtension-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,55 +96,56 @@
 		BF683600000290 /* UIImage+GraphicsImageContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+GraphicsImageContext.swift"; sourceTree = "<group>"; };
 		BF6836000002B0 /* ImageDrawer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageDrawer.swift; sourceTree = "<group>"; };
 		BF6836000002C0 /* UIImage+ImageDrawer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageDrawer.swift"; sourceTree = "<group>"; };
-		BF6836000002E0 /* UIImage+GIF.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
-		BF6836000002F0 /* UIImage+GIF.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
-		BF683600000300 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
-		BF683600000310 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
-		BF683600000320 /* UIImage+ImageEffects.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageEffects.swift"; sourceTree = "<group>"; };
-		BF683600000330 /* UIImage+vImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+vImage.swift"; sourceTree = "<group>"; };
-		BF683600000340 /* UIImage+vImages.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+vImages.swift"; sourceTree = "<group>"; };
-		BF683600000350 /* UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		BF683600000360 /* JDSwiftFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JDSwiftFunctions.swift; path = Sources/JDSwiftFunctions.swift; sourceTree = "<group>"; };
-		BF683600000380 /* Frameable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Frameable.swift; sourceTree = "<group>"; };
-		BF6836000003A0 /* UIButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
-		BF6836000003B0 /* UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		BF6836000003C0 /* UIDevice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
-		BF6836000003D0 /* UIFont.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
-		BF6836000003E0 /* UIImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
-		BF6836000003F0 /* UILabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
-		BF683600000400 /* UINavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
-		BF683600000410 /* UINavigationItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UINavigationItem.swift; sourceTree = "<group>"; };
-		BF683600000420 /* UIScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
-		BF683600000430 /* UISlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UISlider.swift; sourceTree = "<group>"; };
-		BF683600000440 /* UIStackView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
-		BF683600000450 /* UIStoryboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
-		BF683600000460 /* UISwitch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UISwitch.swift; sourceTree = "<group>"; };
-		BF683600000470 /* UITextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
-		BF683600000480 /* UITextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
-		BF683600000490 /* UIUserInterfaceSizeClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIUserInterfaceSizeClass.swift; sourceTree = "<group>"; };
-		BF6836000004A0 /* UIView+ContentPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+ContentPriority.swift"; sourceTree = "<group>"; };
-		BF6836000004B0 /* UIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		BF6836000004C0 /* UIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		BF6836000004D0 /* UIWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
-		BF6836000004F0 /* CocoaExtension.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = CocoaExtension.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BF683600000500 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		BF683600000510 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		BF6836000005C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		BF683600000970 /* CocoaExtension.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaExtension.xcconfig; sourceTree = "<group>"; };
-		BF683600000980 /* CocoaExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CocoaExtension.modulemap; sourceTree = "<group>"; };
-		BF683600000990 /* CocoaExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaExtension-umbrella.h"; sourceTree = "<group>"; };
-		BF6836000009B0 /* CocoaExtension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CocoaExtension-Info.plist"; sourceTree = "<group>"; };
-		BF6836000009C0 /* CocoaExtension-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaExtension-prefix.pch"; sourceTree = "<group>"; };
-		BF6836000009D0 /* CocoaExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaExtension-dummy.m"; sourceTree = "<group>"; };
+		BF6836000002E0 /* QRCode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
+		BF683600000300 /* UIImage+GIF.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
+		BF683600000310 /* UIImage+GIF.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
+		BF683600000320 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		BF683600000330 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		BF683600000340 /* UIImage+ImageEffects.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageEffects.swift"; sourceTree = "<group>"; };
+		BF683600000350 /* UIImage+vImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+vImage.swift"; sourceTree = "<group>"; };
+		BF683600000360 /* UIImage+vImages.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+vImages.swift"; sourceTree = "<group>"; };
+		BF683600000370 /* UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		BF683600000380 /* JDSwiftFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JDSwiftFunctions.swift; path = Sources/JDSwiftFunctions.swift; sourceTree = "<group>"; };
+		BF6836000003A0 /* Frameable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Frameable.swift; sourceTree = "<group>"; };
+		BF6836000003C0 /* UIButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		BF6836000003D0 /* UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		BF6836000003E0 /* UIDevice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
+		BF6836000003F0 /* UIFont.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		BF683600000400 /* UIImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		BF683600000410 /* UILabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		BF683600000420 /* UINavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		BF683600000430 /* UINavigationItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UINavigationItem.swift; sourceTree = "<group>"; };
+		BF683600000440 /* UIScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
+		BF683600000450 /* UISlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UISlider.swift; sourceTree = "<group>"; };
+		BF683600000460 /* UIStackView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		BF683600000470 /* UIStoryboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
+		BF683600000480 /* UISwitch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UISwitch.swift; sourceTree = "<group>"; };
+		BF683600000490 /* UITextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		BF6836000004A0 /* UITextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
+		BF6836000004B0 /* UIUserInterfaceSizeClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIUserInterfaceSizeClass.swift; sourceTree = "<group>"; };
+		BF6836000004C0 /* UIView+ContentPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+ContentPriority.swift"; sourceTree = "<group>"; };
+		BF6836000004D0 /* UIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		BF6836000004E0 /* UIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		BF6836000004F0 /* UIWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
+		BF683600000510 /* CocoaExtension.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = CocoaExtension.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BF683600000520 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		BF683600000530 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		BF6836000005E0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		BF6836000009A0 /* CocoaExtension.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaExtension.xcconfig; sourceTree = "<group>"; };
+		BF6836000009B0 /* CocoaExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CocoaExtension.modulemap; sourceTree = "<group>"; };
+		BF6836000009C0 /* CocoaExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaExtension-umbrella.h"; sourceTree = "<group>"; };
+		BF6836000009E0 /* CocoaExtension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CocoaExtension-Info.plist"; sourceTree = "<group>"; };
+		BF6836000009F0 /* CocoaExtension-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaExtension-prefix.pch"; sourceTree = "<group>"; };
+		BF683600000A00 /* CocoaExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaExtension-dummy.m"; sourceTree = "<group>"; };
 		F59C4CDB9A34F5994BAC151E26AEE714 /* CocoaExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaExtension.framework; path = CocoaExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BF683600000590 /* Frameworks */ = {
+		BF6836000005B0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF6836000005D0 /* Foundation.framework in Frameworks */,
+				BF6836000005F0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +172,7 @@
 		BF683600000060 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF6836000005B0 /* iOS */,
+				BF6836000005D0 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -178,14 +180,14 @@
 		BF6836000000B0 /* CocoaExtension */ = {
 			isa = PBXGroup;
 			children = (
-				BF683600000360 /* JDSwiftFunctions.swift */,
+				BF683600000380 /* JDSwiftFunctions.swift */,
 				BF6836000000C0 /* CalendarMath */,
 				BF6836000000E0 /* Founction */,
 				BF683600000220 /* Image */,
-				BF6836000004E0 /* Pod */,
-				BF683600000370 /* Protocol */,
-				BF683600000960 /* Support Files */,
-				BF683600000390 /* UIKit */,
+				BF683600000500 /* Pod */,
+				BF683600000390 /* Protocol */,
+				BF683600000990 /* Support Files */,
+				BF6836000003B0 /* UIKit */,
 			);
 			name = CocoaExtension;
 			path = ../BaseSupport/CocoaExtension;
@@ -241,7 +243,8 @@
 				BF683600000230 /* CIImageFilter */,
 				BF683600000250 /* GraphicsImageContext */,
 				BF6836000002A0 /* ImageDrawer */,
-				BF6836000002D0 /* UIImage */,
+				BF6836000002D0 /* QRCode */,
+				BF6836000002F0 /* UIImage */,
 			);
 			name = Image;
 			path = Sources/Image;
@@ -278,86 +281,95 @@
 			path = ImageDrawer;
 			sourceTree = "<group>";
 		};
-		BF6836000002D0 /* UIImage */ = {
+		BF6836000002D0 /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
-				BF683600000350 /* UIImage.swift */,
-				BF6836000002E0 /* UIImage+GIF.h */,
-				BF6836000002F0 /* UIImage+GIF.m */,
-				BF683600000300 /* UIImage+ImageEffects.h */,
-				BF683600000310 /* UIImage+ImageEffects.m */,
-				BF683600000320 /* UIImage+ImageEffects.swift */,
-				BF683600000330 /* UIImage+vImage.swift */,
-				BF683600000340 /* UIImage+vImages.swift */,
+				BF6836000002E0 /* QRCode.swift */,
+			);
+			name = QRCode;
+			path = QRCode;
+			sourceTree = "<group>";
+		};
+		BF6836000002F0 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				BF683600000370 /* UIImage.swift */,
+				BF683600000300 /* UIImage+GIF.h */,
+				BF683600000310 /* UIImage+GIF.m */,
+				BF683600000320 /* UIImage+ImageEffects.h */,
+				BF683600000330 /* UIImage+ImageEffects.m */,
+				BF683600000340 /* UIImage+ImageEffects.swift */,
+				BF683600000350 /* UIImage+vImage.swift */,
+				BF683600000360 /* UIImage+vImages.swift */,
 			);
 			name = UIImage;
 			path = UIImage;
 			sourceTree = "<group>";
 		};
-		BF683600000370 /* Protocol */ = {
+		BF683600000390 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				BF683600000380 /* Frameable.swift */,
+				BF6836000003A0 /* Frameable.swift */,
 			);
 			name = Protocol;
 			path = Sources/Protocol;
 			sourceTree = "<group>";
 		};
-		BF683600000390 /* UIKit */ = {
+		BF6836000003B0 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				BF6836000003A0 /* UIButton.swift */,
-				BF6836000003B0 /* UIColor.swift */,
-				BF6836000003C0 /* UIDevice.swift */,
-				BF6836000003D0 /* UIFont.swift */,
-				BF6836000003E0 /* UIImageView.swift */,
-				BF6836000003F0 /* UILabel.swift */,
-				BF683600000400 /* UINavigationController.swift */,
-				BF683600000410 /* UINavigationItem.swift */,
-				BF683600000420 /* UIScrollView.swift */,
-				BF683600000430 /* UISlider.swift */,
-				BF683600000440 /* UIStackView.swift */,
-				BF683600000450 /* UIStoryboard.swift */,
-				BF683600000460 /* UISwitch.swift */,
-				BF683600000470 /* UITextField.swift */,
-				BF683600000480 /* UITextView.swift */,
-				BF683600000490 /* UIUserInterfaceSizeClass.swift */,
-				BF6836000004B0 /* UIView.swift */,
-				BF6836000004A0 /* UIView+ContentPriority.swift */,
-				BF6836000004C0 /* UIViewController.swift */,
-				BF6836000004D0 /* UIWindow.swift */,
+				BF6836000003C0 /* UIButton.swift */,
+				BF6836000003D0 /* UIColor.swift */,
+				BF6836000003E0 /* UIDevice.swift */,
+				BF6836000003F0 /* UIFont.swift */,
+				BF683600000400 /* UIImageView.swift */,
+				BF683600000410 /* UILabel.swift */,
+				BF683600000420 /* UINavigationController.swift */,
+				BF683600000430 /* UINavigationItem.swift */,
+				BF683600000440 /* UIScrollView.swift */,
+				BF683600000450 /* UISlider.swift */,
+				BF683600000460 /* UIStackView.swift */,
+				BF683600000470 /* UIStoryboard.swift */,
+				BF683600000480 /* UISwitch.swift */,
+				BF683600000490 /* UITextField.swift */,
+				BF6836000004A0 /* UITextView.swift */,
+				BF6836000004B0 /* UIUserInterfaceSizeClass.swift */,
+				BF6836000004D0 /* UIView.swift */,
+				BF6836000004C0 /* UIView+ContentPriority.swift */,
+				BF6836000004E0 /* UIViewController.swift */,
+				BF6836000004F0 /* UIWindow.swift */,
 			);
 			name = UIKit;
 			path = Sources/UIKit;
 			sourceTree = "<group>";
 		};
-		BF6836000004E0 /* Pod */ = {
+		BF683600000500 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				BF6836000004F0 /* CocoaExtension.podspec */,
-				BF683600000500 /* LICENSE */,
-				BF683600000510 /* README.md */,
+				BF683600000510 /* CocoaExtension.podspec */,
+				BF683600000520 /* LICENSE */,
+				BF683600000530 /* README.md */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		BF6836000005B0 /* iOS */ = {
+		BF6836000005D0 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				BF6836000005C0 /* Foundation.framework */,
+				BF6836000005E0 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		BF683600000960 /* Support Files */ = {
+		BF683600000990 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				BF683600000980 /* CocoaExtension.modulemap */,
-				BF683600000970 /* CocoaExtension.xcconfig */,
-				BF6836000009D0 /* CocoaExtension-dummy.m */,
-				BF6836000009B0 /* CocoaExtension-Info.plist */,
-				BF6836000009C0 /* CocoaExtension-prefix.pch */,
-				BF683600000990 /* CocoaExtension-umbrella.h */,
+				BF6836000009B0 /* CocoaExtension.modulemap */,
+				BF6836000009A0 /* CocoaExtension.xcconfig */,
+				BF683600000A00 /* CocoaExtension-dummy.m */,
+				BF6836000009E0 /* CocoaExtension-Info.plist */,
+				BF6836000009F0 /* CocoaExtension-prefix.pch */,
+				BF6836000009C0 /* CocoaExtension-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../../Pods/Target Support Files/CocoaExtension";
@@ -366,13 +378,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		BF683600000570 /* Headers */ = {
+		BF683600000590 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF6836000009A0 /* CocoaExtension-umbrella.h in Headers */,
-				BF683600000940 /* UIImage+GIF.h in Headers */,
-				BF683600000950 /* UIImage+ImageEffects.h in Headers */,
+				BF6836000009D0 /* CocoaExtension-umbrella.h in Headers */,
+				BF683600000970 /* UIImage+GIF.h in Headers */,
+				BF683600000980 /* UIImage+ImageEffects.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,12 +393,12 @@
 /* Begin PBXNativeTarget section */
 		23782531680FA13450AF7A2BC0D7A401 /* CocoaExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF683600000530 /* Build configuration list for PBXNativeTarget "CocoaExtension" */;
+			buildConfigurationList = BF683600000550 /* Build configuration list for PBXNativeTarget "CocoaExtension" */;
 			buildPhases = (
-				BF683600000570 /* Headers */,
-				BF683600000580 /* Sources */,
-				BF683600000590 /* Frameworks */,
-				BF6836000005A0 /* Resources */,
+				BF683600000590 /* Headers */,
+				BF6836000005A0 /* Sources */,
+				BF6836000005B0 /* Frameworks */,
+				BF6836000005C0 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -425,7 +437,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BF6836000005A0 /* Resources */ = {
+		BF6836000005C0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -435,65 +447,66 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BF683600000580 /* Sources */ = {
+		BF6836000005A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF683600000610 /* Array.swift in Sources */,
-				BF683600000620 /* Bool.swift in Sources */,
-				BF683600000630 /* Bundle.swift in Sources */,
-				BF683600000600 /* CalendarMath.swift in Sources */,
-				BF683600000640 /* CGFloat.swift in Sources */,
-				BF683600000650 /* CGRect.swift in Sources */,
-				BF683600000660 /* Character.swift in Sources */,
-				BF683600000730 /* CIImageFilter.swift in Sources */,
-				BF6836000009E0 /* CocoaExtension-dummy.m in Sources */,
-				BF683600000670 /* Comparable.swift in Sources */,
-				BF683600000680 /* Date.swift in Sources */,
-				BF683600000690 /* Dictionary.swift in Sources */,
-				BF6836000006A0 /* Double.swift in Sources */,
-				BF6836000006B0 /* ErrorType.swift in Sources */,
-				BF6836000006C0 /* FloatingPoint.swift in Sources */,
-				BF6836000007F0 /* Frameable.swift in Sources */,
-				BF683600000740 /* GraphicsImageContext+UIKit.swift in Sources */,
-				BF683600000750 /* GraphicsImageContext.swift in Sources */,
-				BF683600000780 /* ImageDrawer.swift in Sources */,
-				BF6836000006D0 /* Int.swift in Sources */,
-				BF6836000007E0 /* JDSwiftFunctions.swift in Sources */,
-				BF6836000006E0 /* String+Encrypt.swift in Sources */,
-				BF6836000006F0 /* String+Hex.swift in Sources */,
-				BF683600000700 /* String+Random.swift in Sources */,
-				BF683600000710 /* String.swift in Sources */,
-				BF683600000800 /* UIButton.swift in Sources */,
-				BF683600000810 /* UIColor.swift in Sources */,
-				BF683600000820 /* UIDevice.swift in Sources */,
-				BF683600000830 /* UIFont.swift in Sources */,
-				BF683600000760 /* UIImage+Blend.swift in Sources */,
-				BF6836000005E0 /* UIImage+GIF.m in Sources */,
-				BF683600000770 /* UIImage+GraphicsImageContext.swift in Sources */,
-				BF683600000790 /* UIImage+ImageDrawer.swift in Sources */,
-				BF6836000005F0 /* UIImage+ImageEffects.m in Sources */,
-				BF6836000007A0 /* UIImage+ImageEffects.swift in Sources */,
-				BF6836000007B0 /* UIImage+vImage.swift in Sources */,
-				BF6836000007C0 /* UIImage+vImages.swift in Sources */,
-				BF6836000007D0 /* UIImage.swift in Sources */,
-				BF683600000840 /* UIImageView.swift in Sources */,
-				BF683600000850 /* UILabel.swift in Sources */,
-				BF683600000860 /* UINavigationController.swift in Sources */,
-				BF683600000870 /* UINavigationItem.swift in Sources */,
-				BF683600000880 /* UIScrollView.swift in Sources */,
-				BF683600000890 /* UISlider.swift in Sources */,
-				BF6836000008A0 /* UIStackView.swift in Sources */,
-				BF6836000008B0 /* UIStoryboard.swift in Sources */,
-				BF6836000008C0 /* UISwitch.swift in Sources */,
-				BF6836000008D0 /* UITextField.swift in Sources */,
-				BF6836000008E0 /* UITextView.swift in Sources */,
-				BF6836000008F0 /* UIUserInterfaceSizeClass.swift in Sources */,
-				BF683600000900 /* UIView+ContentPriority.swift in Sources */,
-				BF683600000910 /* UIView.swift in Sources */,
-				BF683600000920 /* UIViewController.swift in Sources */,
-				BF683600000930 /* UIWindow.swift in Sources */,
-				BF683600000720 /* URL.swift in Sources */,
+				BF683600000630 /* Array.swift in Sources */,
+				BF683600000640 /* Bool.swift in Sources */,
+				BF683600000650 /* Bundle.swift in Sources */,
+				BF683600000620 /* CalendarMath.swift in Sources */,
+				BF683600000660 /* CGFloat.swift in Sources */,
+				BF683600000670 /* CGRect.swift in Sources */,
+				BF683600000680 /* Character.swift in Sources */,
+				BF683600000750 /* CIImageFilter.swift in Sources */,
+				BF683600000A10 /* CocoaExtension-dummy.m in Sources */,
+				BF683600000690 /* Comparable.swift in Sources */,
+				BF6836000006A0 /* Date.swift in Sources */,
+				BF6836000006B0 /* Dictionary.swift in Sources */,
+				BF6836000006C0 /* Double.swift in Sources */,
+				BF6836000006D0 /* ErrorType.swift in Sources */,
+				BF6836000006E0 /* FloatingPoint.swift in Sources */,
+				BF683600000820 /* Frameable.swift in Sources */,
+				BF683600000760 /* GraphicsImageContext+UIKit.swift in Sources */,
+				BF683600000770 /* GraphicsImageContext.swift in Sources */,
+				BF6836000007A0 /* ImageDrawer.swift in Sources */,
+				BF6836000006F0 /* Int.swift in Sources */,
+				BF683600000810 /* JDSwiftFunctions.swift in Sources */,
+				BF6836000007C0 /* QRCode.swift in Sources */,
+				BF683600000700 /* String+Encrypt.swift in Sources */,
+				BF683600000710 /* String+Hex.swift in Sources */,
+				BF683600000720 /* String+Random.swift in Sources */,
+				BF683600000730 /* String.swift in Sources */,
+				BF683600000830 /* UIButton.swift in Sources */,
+				BF683600000840 /* UIColor.swift in Sources */,
+				BF683600000850 /* UIDevice.swift in Sources */,
+				BF683600000860 /* UIFont.swift in Sources */,
+				BF683600000780 /* UIImage+Blend.swift in Sources */,
+				BF683600000600 /* UIImage+GIF.m in Sources */,
+				BF683600000790 /* UIImage+GraphicsImageContext.swift in Sources */,
+				BF6836000007B0 /* UIImage+ImageDrawer.swift in Sources */,
+				BF683600000610 /* UIImage+ImageEffects.m in Sources */,
+				BF6836000007D0 /* UIImage+ImageEffects.swift in Sources */,
+				BF6836000007E0 /* UIImage+vImage.swift in Sources */,
+				BF6836000007F0 /* UIImage+vImages.swift in Sources */,
+				BF683600000800 /* UIImage.swift in Sources */,
+				BF683600000870 /* UIImageView.swift in Sources */,
+				BF683600000880 /* UILabel.swift in Sources */,
+				BF683600000890 /* UINavigationController.swift in Sources */,
+				BF6836000008A0 /* UINavigationItem.swift in Sources */,
+				BF6836000008B0 /* UIScrollView.swift in Sources */,
+				BF6836000008C0 /* UISlider.swift in Sources */,
+				BF6836000008D0 /* UIStackView.swift in Sources */,
+				BF6836000008E0 /* UIStoryboard.swift in Sources */,
+				BF6836000008F0 /* UISwitch.swift in Sources */,
+				BF683600000900 /* UITextField.swift in Sources */,
+				BF683600000910 /* UITextView.swift in Sources */,
+				BF683600000920 /* UIUserInterfaceSizeClass.swift in Sources */,
+				BF683600000930 /* UIView+ContentPriority.swift in Sources */,
+				BF683600000940 /* UIView.swift in Sources */,
+				BF683600000950 /* UIViewController.swift in Sources */,
+				BF683600000960 /* UIWindow.swift in Sources */,
+				BF683600000740 /* URL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,9 +637,9 @@
 			};
 			name = Release;
 		};
-		BF683600000540 /* Release */ = {
+		BF683600000560 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF683600000970 /* CocoaExtension.xcconfig */;
+			baseConfigurationReference = BF6836000009A0 /* CocoaExtension.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -661,9 +674,9 @@
 			};
 			name = Release;
 		};
-		BF683600000550 /* Debug */ = {
+		BF683600000570 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF683600000970 /* CocoaExtension.xcconfig */;
+			baseConfigurationReference = BF6836000009A0 /* CocoaExtension.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -709,11 +722,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF683600000530 /* Build configuration list for PBXNativeTarget "CocoaExtension" */ = {
+		BF683600000550 /* Build configuration list for PBXNativeTarget "CocoaExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BF683600000550 /* Debug */,
-				BF683600000540 /* Release */,
+				BF683600000570 /* Debug */,
+				BF683600000560 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
