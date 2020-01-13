@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class ListItemModel {
+open class ListItemModel: Hashable {
     public init() {}
     // MARK: - ID
     open lazy var cellFullName: String = {
@@ -25,8 +25,17 @@ open class ListItemModel {
     private(set) var needUpdateSentinel: Sentinel = Sentinel()
     // MARK: HiddenStateDesignable
     public var isHidden: Bool = false
+
+    // MARK: Hashable
+    open func hash(into hasher: inout Hasher) {
+        hasher.combine(ObjectIdentifier(self))
+    }
+    public static func == (lhs: ListItemModel, rhs: ListItemModel) -> Bool {
+        lhs === rhs
+    }
 }
 extension ListItemModel: NeedUpdateProtocol {
+    // TODO: 还未实现
     public func setNeedUpdate() {
         self.needUpdateSentinel.increase()
     }
@@ -35,14 +44,5 @@ extension ListItemModel: ClassNameDesignable {
     public func getCellName(_ modelName: String) -> String {
         let range = modelName.index(modelName.endIndex, offsetBy: -5) ..<  modelName.endIndex
         return modelName.replacingCharacters(in: range, with: self.viewNameSuffix)
-    }
-}
-
-extension ListItemModel: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(ObjectIdentifier(self))
-    }
-    public static func == (lhs: ListItemModel, rhs: ListItemModel) -> Bool {
-        lhs === rhs
     }
 }

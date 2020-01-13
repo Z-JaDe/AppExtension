@@ -121,6 +121,7 @@ open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable
     }
 }
 extension ItemCell: NeedUpdateProtocol {
+    // TODO: 还未实现
     public func setNeedUpdate() {
         self.needUpdateSentinel.increase()
     }
