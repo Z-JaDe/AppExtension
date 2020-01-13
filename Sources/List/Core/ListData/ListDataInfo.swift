@@ -39,11 +39,11 @@ public class ListDataInfo<DataType> {
         self.completionHandle = closure
         return self
     }
-    internal func performCompletion() {
+    public func _performCompletion() {
         self.completionHandle()
     }
     // MARK: - 
-    internal func infoRelease() {
+    public func _infoRelease() {
         self.completionHandle = {}
     }
 }

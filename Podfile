@@ -65,8 +65,6 @@ target:'UserNotificationManager' do
 end
 target:'List' do
   baseCorePod
-  rxPod
-  pod 'DifferenceKit'
 end
 target:'UIComponents' do
   baseCorePod

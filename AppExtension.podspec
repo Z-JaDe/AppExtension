@@ -55,7 +55,6 @@ Pod::Spec.new do |s|
     s.subspec "List" do |ss|
         ss.source_files  = "Sources/List/**/*.{swift}"
         ss.dependency "AppExtension/Core"
-        ss.dependency "DifferenceKit"
     end
     s.subspec "RxExtensions" do |ss|
         ss.source_files  = "Sources/RxExtensions/**/*.{swift}"
@@ -110,6 +109,7 @@ Pod::Spec.new do |s|
         ss.dependency "AppExtension/RxExtensions"
         #List
         ss.dependency "AppExtension/List"
+        ss.dependency "DifferenceKit"
         ss.dependency "AppExtension/EmptyDataSet"
 
         ss.dependency "RxNetwork"

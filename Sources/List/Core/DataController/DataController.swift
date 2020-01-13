@@ -8,16 +8,6 @@
 
 import Foundation
 
-struct SectionModelSnapshot<Section, Item: Diffable> {
-    var model: Section
-    var items: [Item]
-
-    init(model: Section, items: [Item]) {
-        self.model = model
-        self.items = items
-    }
-}
-
 public final class DataController<S: SectionModelType> {
     public init() {}
     public typealias I = S.Item

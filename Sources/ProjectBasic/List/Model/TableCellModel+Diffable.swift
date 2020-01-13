@@ -23,10 +23,4 @@ extension TableCellModel: TableAdapterItemDiffable {
         }
         return self == source
     }
-    public func isContentEqual(to source: AnyTableAdapterItem) -> Bool {
-        guard let source = source.cellModel else {
-            return false
-        }
-        return self.isContentEqual(to: source)
-    }
 }

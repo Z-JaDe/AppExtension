@@ -39,6 +39,13 @@ public class Updater {
         let setData: (C) -> Void
         let completion: (Bool) -> Void
 
+        public init(updating: Updating, interrupt: ((Changeset<C>) -> Bool)?, setData: @escaping (C) -> Void, completion: @escaping (Bool) -> Void) {
+            self.updating = updating
+            self.interrupt = interrupt
+            self.setData = setData
+            self.completion = completion
+        }
+
         func isNeedReload(using stagedChangeset: StagedChangeset<C>) -> Bool {
             guard let interrupt = interrupt else {
                 return false

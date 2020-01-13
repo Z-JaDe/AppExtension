@@ -11,19 +11,14 @@ import Foundation
 public protocol TableAdapterItemDiffable {
     func hash(into hasher: inout Hasher)
     func isEqual(to source: AnyTableAdapterItem) -> Bool
-    func isContentEqual(to source: AnyTableAdapterItem) -> Bool
 }
 
-// MARK: - Diffable & Hashable
-extension AnyTableAdapterItem: Diffable, Hashable {
+extension AnyTableAdapterItem: Hashable {
     public static func == (lhs: AnyTableAdapterItem, rhs: AnyTableAdapterItem) -> Bool {
         lhs.value.isEqual(to: rhs)
     }
     public func hash(into hasher: inout Hasher) {
         value.hash(into: &hasher)
-    }
-    public func isContentEqual(to source: AnyTableAdapterItem) -> Bool {
-        value.isContentEqual(to: source)
     }
 }
 // MARK: - CustomStringConvertible

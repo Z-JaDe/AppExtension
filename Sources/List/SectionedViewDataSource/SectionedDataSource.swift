@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import DifferenceKit
 
 public protocol SectionedDataSourceType {
     associatedtype S: SectionModelType
@@ -33,7 +32,7 @@ open class SectionedDataSource<S: SectionModelType>: NSObject, SectionedDataSour
     // If data source has already been bound, then mutating it
     // afterwards isn't something desired.
     // This simulates immutability after binding
-    internal var _dataSourceBound: Bool = false
+    public var _dataSourceBound: Bool = false
     internal func ensureNotMutatedAfterBinding() {
         assert(!_dataSourceBound, "Data source is already bound. Please write this line before binding call (`bindTo`, `drive`). Data source must first be completely configured, and then bound after that, otherwise there could be runtime bugs, glitches, or partial malfunctions.")
     }
@@ -43,22 +42,4 @@ open class SectionedDataSource<S: SectionModelType>: NSObject, SectionedDataSour
 
     public typealias Element = ListDataInfo<[S]>
 
-    public func dataChange(_ newValue: Element, _ updater: Updater) {
-        #if DEBUG
-        self._dataSourceBound = true
-        #endif
-        self.dataController.updateNewData(newValue, updater)
-    }
-}
-extension DataController {
-    func updateNewData(_ newData: ListDataInfo<[S]>, _ updater: Updater) {
-        updater.update(
-            using: StagedChangeset<[S]>(source: self.sectionModels, target: newData.data),
-            dataSetter: Updater.DataSetter(updating: newData.updating, interrupt: {$0.data.count > 100}, setData: setSections, completion: { (_) in
-                newData.performCompletion()
-                newData.infoRelease()
-                self.reloadDataCompletion.call()
-            })
-        )
-    }
 }

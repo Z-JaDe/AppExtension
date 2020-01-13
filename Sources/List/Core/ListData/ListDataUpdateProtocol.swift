@@ -10,9 +10,10 @@ import Foundation
 
 /// 更新数据源的协议
 public protocol ListDataUpdateProtocol: class {
-    associatedtype Section: Diffable
-    associatedtype Item: Diffable & Equatable
+    associatedtype Section
+    associatedtype Item
     typealias _ListData = ListData<Section, Item>
+    typealias _SectionData = _ListData.Element
     typealias _ListDataInfo = ListDataInfo<_ListData>
 
     var dataArray: _ListData {get}
@@ -39,7 +40,7 @@ extension ListDataUpdateProtocol {
             self.changeListDataInfo(listDataInfo)
         }
     }
-    public func reloadData(_ closure: (_ListDataInfo) -> _ListDataInfo) {
+    public func updateData(_ closure: (_ListDataInfo) -> _ListDataInfo) {
         self.reloadData(closure(createListInfo(dataArray)))
     }
 }

@@ -12,11 +12,8 @@ public protocol CellSelectedStateDesignable {
     func didSelectItem()
 }
 
-public typealias DataSourceSectionType = Diffable & InitProtocol
-public typealias DataSourceItemType = Diffable
-
-public protocol AdapterItemType: DataSourceItemType & SelectedStateDesignable & Equatable {}
-public protocol AdapterSectionType: DataSourceSectionType {}
+public protocol AdapterItemType: SelectedStateDesignable & Equatable {}
+public protocol AdapterSectionType: InitProtocol {}
 
 public protocol ListAdapterType: class {
     associatedtype DataSource: SectionedDataSourceType

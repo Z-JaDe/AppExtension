@@ -8,12 +8,12 @@
 
 import UIKit
 
-extension AnyTableAdapterItem: AdapterItemType {}
+extension AnyTableAdapterItem: AdapterItemType, Diffable {}
 extension TableItemModel: _AdapterItemType {}
 extension TableCellModel: _AdapterItemType {}
 extension StaticTableItemCell: _AdapterItemType {}
 
-extension TableSection: _AdapterSectionType {}
+extension TableSection: _AdapterSectionType, Diffable {}
 
 public typealias TableSectionModel = SectionModelItem<TableSection, AnyTableAdapterItem>
 

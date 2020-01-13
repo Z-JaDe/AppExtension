@@ -7,29 +7,5 @@
 //
 
 import Foundation
-// TODO: reloadData一个分区时报错 正式版XCode11出来后 看看能优化不
-extension ListDataUpdateProtocol {
-    typealias ListItemBuilder = ListBuilder<(Section, [Item])>
-    public func reloadData(@ListItemBuilder content: () -> [(Section, [Item])]) {
-        self.reloadData(_ListData(content().map(SectionData.init)))
-    }
-}
+// TODO:xreloadData一个分区时报错 正式版XCode11出来后 看看能优化不
 
-@_functionBuilder
-public struct ListBuilder<T> {
-    public static func buildExpression(_ expression: T) -> [T] {
-        return [expression]
-    }
-    public static func buildBlock(_ children: [T]...) -> [T] {
-        return children.flatMap { $0 }
-    }
-    public static func buildBlock(_ children: T...) -> [T] {
-        return children
-    }
-    public static func buildBlock(_ component: [T]) -> [T] {
-        return component
-    }
-    public static func buildOptional(_ children: [T]?) -> [T] {
-      return children ?? []
-    }
-}

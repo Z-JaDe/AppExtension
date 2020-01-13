@@ -55,19 +55,19 @@ extension ListSelectionPlugin: MultipleSelectionProtocol where Adapter.Item: Equ
     ///可以更新UIKit
     public func changeSelectState(_ isSelected: Bool, _ indexPath: IndexPath) {
         if isSelected {
-            updateItemToSelected(indexPath)
+            updateItemToSelected(indexPath: indexPath)
         } else {
-            updateItemToUnSelected(indexPath)
+            updateItemToUnSelected(indexPath: indexPath)
         }
         updateUISelectState(indexPath)
     }
     ///不会更新UIKit
-    public func updateItemToSelected(_ indexPath: IndexPath) {
+    public func updateItemToSelected(indexPath: IndexPath) {
         guard let adapter = adapter else { return }
         updateItemToSelected(&adapter.dataController[indexPath])
     }
     ///不会更新UIKit
-    public func updateItemToUnSelected(_ indexPath: IndexPath) {
+    public func updateItemToUnSelected(indexPath: IndexPath) {
         guard let adapter = adapter else { return }
         updateItemToUnSelected(&adapter.dataController[indexPath])
     }

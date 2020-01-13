@@ -11,7 +11,7 @@ import Foundation
 extension ListDataUpdateProtocol where Section: Equatable & InitProtocol, Item == AnyTableAdapterItem {
     /// ZJaDe: 重新刷新 返回 ListDataInfo
     public func reloadData(section: Section? = nil, _ itemArray: [TableItemModel]?, isRefresh: Bool, _ closure: ((_ListDataInfo) -> (_ListDataInfo))? = nil) {
-        let _itemArray: [AnyTableAdapterItem] = itemArray?.map({.model($0)}) ?? []
+        let _itemArray: [AnyTableAdapterItem] = itemArray?.map(AnyTableAdapterItem.model) ?? []
         var newData = self.dataArray
         if isRefresh {
             newData.reset(section: section, items: _itemArray)
@@ -24,7 +24,7 @@ extension ListDataUpdateProtocol where Section: Equatable & InitProtocol, Item =
 }
 extension ListData where Item: StaticTableItemCell, Section == TableSection {
     public func createListInfo(_ updating: Updating) -> TableListDataInfo {
-        self.map({.cell($0)}).createListInfo(updating)
+        self.map(AnyTableAdapterItem.cell).createListInfo(updating)
     }
 }
 
@@ -32,28 +32,20 @@ extension ListData where Item: StaticTableItemCell, Section == TableSection {
 extension ListDataUpdateProtocol where Item == AnyTableAdapterItem {
     /// ZJaDe: 重新刷新cell
     public func reloadData(_ listCellData: ListData<Section, StaticTableItemCell>?) {
-        self.reloadData(listCellData?.map({.cell($0)}))
+        self.reloadData(listCellData?.map(AnyTableAdapterItem.cell))
     }
     /// ZJaDe: 重新刷新cell
     public func reloadData(_ listModelData: ListData<Section, TableItemModel>?) {
-        self.reloadData(listModelData?.map({.model($0)}))
-    }
-}
-public extension ListBuilder where T == (TableSection, [AnyTableAdapterItem]) {
-    static func buildBlock(_ content: (TableSection, [StaticTableItemCell])...) -> [T] {
-        return content.map {($0.0, $0.1.map({.cell($0)}))}
-    }
-    static func buildBlock(_ content: (TableSection, [TableItemModel])...) -> [T] {
-        return content.map {($0.0, $0.1.map({.model($0)}))}
+        self.reloadData(listModelData?.map(AnyTableAdapterItem.model))
     }
 }
 
 //
 //extension SectionData where Item == AnyTableAdapterItem {
 //    public init<C: Swift.Collection>(_ section: Section, _ elements: C) where C.Element == StaticTableItemCell {
-//        self.init(section, elements.map {.cell($0)})
+//        self.init(section, elements.map(AnyTableAdapterItem.cell))
 //    }
 //    public init<C: Swift.Collection>(_ section: Section, _ elements: C) where C.Element == TableItemModel {
-//        self.init(section, elements.map {.model($0)})
+//        self.init(section, elements.map(AnyTableAdapterItem.model))
 //    }
 //}
