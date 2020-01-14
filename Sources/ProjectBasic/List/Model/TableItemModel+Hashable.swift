@@ -1,6 +1,6 @@
 //
-//  StaticTableItemCell+Diffable.swift
-//  AppExtension
+//  TableItemModel+Hashable.swift
+//  List
 //
 //  Created by Apple on 2019/9/11.
 //  Copyright © 2019 ZJaDe. All rights reserved.
@@ -9,16 +9,16 @@
 import Foundation
 
 extension AnyTableAdapterItem {
-    public var cell: StaticTableItemCell? {
-        self.value as? StaticTableItemCell
+    public var model: TableItemModel? {
+        self.value as? TableItemModel
     }
-    public static func cell(_ value: StaticTableItemCell) -> AnyTableAdapterItem {
+    public static func model(_ value: TableItemModel) -> AnyTableAdapterItem {
         AnyTableAdapterItem(value)
     }
 }
-extension StaticTableItemCell: TableAdapterItemDiffable {
+extension TableItemModel: TableAdapterItemHashable {
     public func isEqual(to source: AnyTableAdapterItem) -> Bool {
-        guard let source = source.cell else {
+        guard let source = source.model else {
             return false
         }
         return self == source

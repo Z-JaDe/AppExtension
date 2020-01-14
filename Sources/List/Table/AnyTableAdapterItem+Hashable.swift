@@ -1,5 +1,5 @@
 //
-//  AnyTableAdapterItem+Diffable.swift
+//  AnyTableAdapterItem+Hashable.swift
 //  List
 //
 //  Created by Apple on 2019/9/11.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol TableAdapterItemDiffable {
+public protocol TableAdapterItemHashable {
     func hash(into hasher: inout Hasher)
     func isEqual(to source: AnyTableAdapterItem) -> Bool
 }

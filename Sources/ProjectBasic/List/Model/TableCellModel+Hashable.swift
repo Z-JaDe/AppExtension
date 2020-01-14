@@ -1,5 +1,5 @@
 //
-//  TableCellModel+Diffable.swift
+//  TableCellModel+Hashable.swift
 //  AppExtension
 //
 //  Created by Apple on 2019/9/11.
@@ -16,7 +16,7 @@ extension AnyTableAdapterItem {
         AnyTableAdapterItem(value)
     }
 }
-extension TableCellModel: TableAdapterItemDiffable {
+extension TableCellModel: TableAdapterItemHashable {
     public func isEqual(to source: AnyTableAdapterItem) -> Bool {
         guard let source = source.cellModel else {
             return false
