@@ -39,3 +39,22 @@ extension ListDataUpdateProtocol where Item == AnyTableAdapterItem {
         self.reloadData(listModelData?.map(AnyTableAdapterItem.model))
     }
 }
+
+
+public extension ListBuilder where Item == AnyTableAdapterItem {
+    static func buildBlock(_ content: _Component<StaticTableItemCell>...) -> Components {
+        return Components(content.map(SectionData.init))
+    }
+    static func buildBlock(_ content: _Component<TableItemModel>...) -> Components {
+        return Components(content.map(SectionData.init))
+    }
+}
+
+extension SectionData where Item == AnyTableAdapterItem {
+    public init<C: Swift.Collection>(_ section: Section, _ elements: C) where C.Element == StaticTableItemCell {
+        self.init(section, elements.map(AnyTableAdapterItem.cell))
+    }
+    public init<C: Swift.Collection>(_ section: Section, _ elements: C) where C.Element == TableItemModel {
+        self.init(section, elements.map(AnyTableAdapterItem.model))
+    }
+}
