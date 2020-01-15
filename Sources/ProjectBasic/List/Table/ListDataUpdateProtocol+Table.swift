@@ -40,7 +40,6 @@ extension ListDataUpdateProtocol where Item == AnyTableAdapterItem {
     }
 }
 
-
 public extension ListBuilder where Item == AnyTableAdapterItem {
     static func buildBlock(_ content: _Component<StaticTableItemCell>...) -> Components {
         return Components(content.map(SectionData.init))
