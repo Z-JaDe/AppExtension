@@ -108,12 +108,12 @@ Pod::Spec.new do |s|
         ss.dependency "ModalManager"
         ss.dependency 'Validation' #校验库 正则 身份证 银行卡
         ss.dependency 'Encryption' #加密库 RSA MD5
+        ss.dependency "RxNetwork"
         #List
         ss.dependency "AppExtension/List"
         ss.dependency "DifferenceKit"
         ss.dependency "AppExtension/EmptyDataSet"
 
-        ss.dependency "RxNetwork"
         ss.dependency "SnapKit"
     end
     #项目集成
