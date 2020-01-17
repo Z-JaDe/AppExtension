@@ -12,7 +12,7 @@ extension UITableProxy {
     var dataController: UITableAdapter.DataSource.DataControllerType {
         adapter.dataSource.dataController
     }
-    func tableCellItem(at indexPath: IndexPath) -> AnyTableAdapterItem.ValueType {
+    func tableCellItem(at indexPath: IndexPath) -> AnyTableAdapterItem.Value {
         return dataController[indexPath].value
     }
 }

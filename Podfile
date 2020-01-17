@@ -12,22 +12,20 @@ end
 def userForkPod (name)
   pod name, :path => "BaseSupport/Fork/#{name}"
 end
-
+######################################################################################
 def baseCorePod
-  userPod 'Validation'
-  userPod 'Encryption'
   userPod 'FunctionalSwift'
   userPod 'CocoaExtension'
-  userPod 'ModalManager'
-  userPod 'RxNetwork'
 end
 
 def collectionKitPod
   userForkPod 'CollectionKit'
 end
 
-def alamofirePod
+def networkPod
   pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire'
+  userPod 'RxNetwork'
+  pod 'Kingfisher'
 end
 
 def rxPod (hasCocoa = true)
@@ -89,17 +87,19 @@ target:'NavigationFlow' do
   baseCorePod
   rxExtensionPod
 end
-
+######################################################################################
 def commonPods
   baseCorePod
   rxExtensionPod
   snapKitPod
   
   pod 'SwiftLint'
-  
-  alamofirePod
-  
-  pod 'Kingfisher'
+
+  networkPod
+  userPod 'ModalManager'
+  userPod 'Validation' #校验库 正则 身份证 银行卡
+  userPod 'Encryption' #加密库 RSA MD5
+
   pod 'MBProgressHUD'
   userForkPod 'SwiftyUserDefaults'
   
@@ -112,9 +112,7 @@ end
 
 def projectBasicPod
   commonPods
-  alamofirePod
-  
-  pod 'Kingfisher'
+
   pod 'MBProgressHUD'
   pod 'ReSwift', :git => 'https://github.com/ReSwift/ReSwift.git'
 end

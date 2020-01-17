@@ -40,10 +40,7 @@ Pod::Spec.new do |s|
 
         ss.dependency "AppExtension/Async"
         ss.dependency "CocoaExtension"
-        ss.dependency "Encryption"
         ss.dependency "FunctionalSwift"
-        ss.dependency "Validation"
-        ss.dependency "ModalManager"
     end
     #子模块
     s.subspec "UserNotificationManager" do |ss|
@@ -107,6 +104,10 @@ Pod::Spec.new do |s|
         ss.dependency "AppExtension/Codable"
         ss.dependency "AppExtension/UIComponents"
         ss.dependency "AppExtension/RxExtensions"
+
+        ss.dependency "ModalManager"
+        ss.dependency 'Validation' #校验库 正则 身份证 银行卡
+        ss.dependency 'Encryption' #加密库 RSA MD5
         #List
         ss.dependency "AppExtension/List"
         ss.dependency "DifferenceKit"

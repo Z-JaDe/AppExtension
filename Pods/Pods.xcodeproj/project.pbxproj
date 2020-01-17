@@ -57,1529 +57,1039 @@
 /* Begin PBXContainerItemProxy section */
 		46EB2E00001640 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000C0 /* Alamofire.xcodeproj */;
+			containerPortal = 46EB2E000000C0 /* CocoaExtension.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
-			remoteInfo = Alamofire;
+			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
+			remoteInfo = CocoaExtension;
 		};
 		46EB2E00001660 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000D0 /* CocoaExtension.xcodeproj */;
+			containerPortal = 46EB2E000000D0 /* FunctionalSwift.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
-			remoteInfo = CocoaExtension;
+			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
+			remoteInfo = FunctionalSwift;
 		};
 		46EB2E00001680 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000E0 /* CryptoSwift.xcodeproj */;
+			containerPortal = 46EB2E000000C0 /* CocoaExtension.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
-			remoteInfo = CryptoSwift;
+			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
+			remoteInfo = CocoaExtension;
 		};
 		46EB2E000016A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000F0 /* Encryption.xcodeproj */;
+			containerPortal = 46EB2E000000D0 /* FunctionalSwift.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 7E033E130DE06E2CF897CDFD6FA4DC60;
-			remoteInfo = Encryption;
+			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
+			remoteInfo = FunctionalSwift;
 		};
 		46EB2E000016C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000100 /* FunctionalSwift.xcodeproj */;
+			containerPortal = 46EB2E000000E0 /* RxSwift.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
-			remoteInfo = FunctionalSwift;
+			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
+			remoteInfo = RxSwift;
 		};
 		46EB2E000016E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000110 /* ModalManager.xcodeproj */;
+			containerPortal = 46EB2E000000F0 /* RxCocoa.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = BCC6CF70FA683E5DE72FECE8BC51E31F;
-			remoteInfo = ModalManager;
+			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
+			remoteInfo = RxCocoa;
 		};
 		46EB2E00001700 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000120 /* RxNetwork.xcodeproj */;
+			containerPortal = 46EB2E00000100 /* RxRelay.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = BC77B7E6DD2071E3D29825D44F226CB5;
-			remoteInfo = RxNetwork;
+			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
+			remoteInfo = RxRelay;
 		};
 		46EB2E00001720 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000130 /* RxSwift.xcodeproj */;
+			containerPortal = 46EB2E00000110 /* SnapKit.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
-			remoteInfo = RxSwift;
+			remoteGlobalIDString = 6913FCF4B90C224E55FE5C821AFB90D2;
+			remoteInfo = SnapKit;
 		};
 		46EB2E00001740 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000140 /* Validation.xcodeproj */;
+			containerPortal = 46EB2E00000120 /* RxGesture.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 42D344306BFC89976EC9FF0E0A9E0F4D;
-			remoteInfo = Validation;
+			remoteGlobalIDString = 761EDC2D01B03DA09BA153A91621384F;
+			remoteInfo = RxGesture;
 		};
 		46EB2E00001760 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000C0 /* Alamofire.xcodeproj */;
+			containerPortal = 46EB2E00000130 /* RxOptional.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
-			remoteInfo = Alamofire;
+			remoteGlobalIDString = 320A66A0FD10A6799EDACAF311BC28F4;
+			remoteInfo = RxOptional;
 		};
 		46EB2E00001780 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000D0 /* CocoaExtension.xcodeproj */;
+			containerPortal = 46EB2E00000140 /* RxSwiftExt.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
-			remoteInfo = CocoaExtension;
+			remoteGlobalIDString = 27EB8A78CD48CBA869F1CD0C2E3E61B8;
+			remoteInfo = RxSwiftExt;
 		};
 		46EB2E000017A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000E0 /* CryptoSwift.xcodeproj */;
+			containerPortal = 46EB2E00000150 /* Alamofire.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
-			remoteInfo = CryptoSwift;
+			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
+			remoteInfo = Alamofire;
 		};
 		46EB2E000017C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000F0 /* Encryption.xcodeproj */;
+			containerPortal = 46EB2E00000160 /* CollectionKit.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 7E033E130DE06E2CF897CDFD6FA4DC60;
-			remoteInfo = Encryption;
+			remoteGlobalIDString = C914F41EF29629279F1362AED9CBF87B;
+			remoteInfo = CollectionKit;
 		};
 		46EB2E000017E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000100 /* FunctionalSwift.xcodeproj */;
+			containerPortal = 46EB2E00000170 /* CryptoSwift.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
-			remoteInfo = FunctionalSwift;
+			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
+			remoteInfo = CryptoSwift;
 		};
 		46EB2E00001800 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000110 /* ModalManager.xcodeproj */;
+			containerPortal = 46EB2E00000180 /* DifferenceKit.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = BCC6CF70FA683E5DE72FECE8BC51E31F;
-			remoteInfo = ModalManager;
+			remoteGlobalIDString = 9A546BD24EDC370DF7999D9406601F34;
+			remoteInfo = DifferenceKit;
 		};
 		46EB2E00001820 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000120 /* RxNetwork.xcodeproj */;
+			containerPortal = 46EB2E00000190 /* Encryption.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = BC77B7E6DD2071E3D29825D44F226CB5;
-			remoteInfo = RxNetwork;
+			remoteGlobalIDString = 7E033E130DE06E2CF897CDFD6FA4DC60;
+			remoteInfo = Encryption;
 		};
 		46EB2E00001840 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000130 /* RxSwift.xcodeproj */;
+			containerPortal = 46EB2E000001A0 /* Kingfisher.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
-			remoteInfo = RxSwift;
+			remoteGlobalIDString = 05BB3BFEAA03766641420DCD88978468;
+			remoteInfo = Kingfisher;
 		};
 		46EB2E00001860 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000140 /* Validation.xcodeproj */;
+			containerPortal = 46EB2E000001B0 /* MBProgressHUD.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 42D344306BFC89976EC9FF0E0A9E0F4D;
-			remoteInfo = Validation;
+			remoteGlobalIDString = 0F48A71D28991325602E8C8A19DF1F64;
+			remoteInfo = MBProgressHUD;
 		};
 		46EB2E00001880 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000150 /* RxCocoa.xcodeproj */;
+			containerPortal = 46EB2E000001C0 /* MJRefresh.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
-			remoteInfo = RxCocoa;
+			remoteGlobalIDString = E94AEF767442EDAAAAB2129CDFA2C2ED;
+			remoteInfo = MJRefresh;
 		};
 		46EB2E000018A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000160 /* RxRelay.xcodeproj */;
+			containerPortal = 46EB2E000001D0 /* ModalManager.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
-			remoteInfo = RxRelay;
+			remoteGlobalIDString = BCC6CF70FA683E5DE72FECE8BC51E31F;
+			remoteInfo = ModalManager;
 		};
 		46EB2E000018C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000170 /* SnapKit.xcodeproj */;
+			containerPortal = 46EB2E000001E0 /* Motion.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 6913FCF4B90C224E55FE5C821AFB90D2;
-			remoteInfo = SnapKit;
+			remoteGlobalIDString = 86B4EC2291DDB6B1C43A9FB029DB6C66;
+			remoteInfo = Motion;
 		};
 		46EB2E000018E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000180 /* RxGesture.xcodeproj */;
+			containerPortal = 46EB2E000001F0 /* ReSwift.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 761EDC2D01B03DA09BA153A91621384F;
-			remoteInfo = RxGesture;
+			remoteGlobalIDString = 32081789D91AD7C7D087ABCBF0DAB8EB;
+			remoteInfo = ReSwift;
 		};
 		46EB2E00001900 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000190 /* RxOptional.xcodeproj */;
+			containerPortal = 46EB2E00000200 /* RxNetwork.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 320A66A0FD10A6799EDACAF311BC28F4;
-			remoteInfo = RxOptional;
+			remoteGlobalIDString = BC77B7E6DD2071E3D29825D44F226CB5;
+			remoteInfo = RxNetwork;
 		};
 		46EB2E00001920 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001A0 /* RxSwiftExt.xcodeproj */;
+			containerPortal = 46EB2E00000210 /* SwiftLint.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 27EB8A78CD48CBA869F1CD0C2E3E61B8;
-			remoteInfo = RxSwiftExt;
+			remoteGlobalIDString = DF739ADE66FA54F9BBFF97A8CB609E34;
+			remoteInfo = SwiftLint;
 		};
 		46EB2E00001940 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001B0 /* CollectionKit.xcodeproj */;
+			containerPortal = 46EB2E00000220 /* SwiftyUserDefaults.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = C914F41EF29629279F1362AED9CBF87B;
-			remoteInfo = CollectionKit;
+			remoteGlobalIDString = 39DEFC5DCB08596C1137C1183EBF13FF;
+			remoteInfo = SwiftyUserDefaults;
 		};
 		46EB2E00001960 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001C0 /* DifferenceKit.xcodeproj */;
+			containerPortal = 46EB2E00000230 /* Validation.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 9A546BD24EDC370DF7999D9406601F34;
-			remoteInfo = DifferenceKit;
+			remoteGlobalIDString = 42D344306BFC89976EC9FF0E0A9E0F4D;
+			remoteInfo = Validation;
 		};
 		46EB2E00001980 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001D0 /* Kingfisher.xcodeproj */;
+			containerPortal = 46EB2E000000C0 /* CocoaExtension.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 05BB3BFEAA03766641420DCD88978468;
-			remoteInfo = Kingfisher;
+			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
+			remoteInfo = CocoaExtension;
 		};
 		46EB2E000019A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001E0 /* MBProgressHUD.xcodeproj */;
+			containerPortal = 46EB2E000000D0 /* FunctionalSwift.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 0F48A71D28991325602E8C8A19DF1F64;
-			remoteInfo = MBProgressHUD;
+			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
+			remoteInfo = FunctionalSwift;
 		};
 		46EB2E000019C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001F0 /* MJRefresh.xcodeproj */;
+			containerPortal = 46EB2E000000E0 /* RxSwift.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = E94AEF767442EDAAAAB2129CDFA2C2ED;
-			remoteInfo = MJRefresh;
+			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
+			remoteInfo = RxSwift;
 		};
 		46EB2E000019E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000200 /* Motion.xcodeproj */;
+			containerPortal = 46EB2E000000F0 /* RxCocoa.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 86B4EC2291DDB6B1C43A9FB029DB6C66;
-			remoteInfo = Motion;
+			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
+			remoteInfo = RxCocoa;
 		};
 		46EB2E00001A00 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000210 /* ReSwift.xcodeproj */;
+			containerPortal = 46EB2E00000100 /* RxRelay.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 32081789D91AD7C7D087ABCBF0DAB8EB;
-			remoteInfo = ReSwift;
+			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
+			remoteInfo = RxRelay;
 		};
 		46EB2E00001A20 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000220 /* SwiftLint.xcodeproj */;
+			containerPortal = 46EB2E00000110 /* SnapKit.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = DF739ADE66FA54F9BBFF97A8CB609E34;
-			remoteInfo = SwiftLint;
+			remoteGlobalIDString = 6913FCF4B90C224E55FE5C821AFB90D2;
+			remoteInfo = SnapKit;
 		};
 		46EB2E00001A40 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000230 /* SwiftyUserDefaults.xcodeproj */;
+			containerPortal = 46EB2E00000120 /* RxGesture.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 39DEFC5DCB08596C1137C1183EBF13FF;
-			remoteInfo = SwiftyUserDefaults;
+			remoteGlobalIDString = 761EDC2D01B03DA09BA153A91621384F;
+			remoteInfo = RxGesture;
 		};
 		46EB2E00001A60 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000C0 /* Alamofire.xcodeproj */;
+			containerPortal = 46EB2E00000130 /* RxOptional.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
-			remoteInfo = Alamofire;
+			remoteGlobalIDString = 320A66A0FD10A6799EDACAF311BC28F4;
+			remoteInfo = RxOptional;
 		};
 		46EB2E00001A80 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000D0 /* CocoaExtension.xcodeproj */;
+			containerPortal = 46EB2E00000140 /* RxSwiftExt.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
-			remoteInfo = CocoaExtension;
+			remoteGlobalIDString = 27EB8A78CD48CBA869F1CD0C2E3E61B8;
+			remoteInfo = RxSwiftExt;
 		};
 		46EB2E00001AA0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000E0 /* CryptoSwift.xcodeproj */;
+			containerPortal = 46EB2E00000150 /* Alamofire.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
-			remoteInfo = CryptoSwift;
+			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
+			remoteInfo = Alamofire;
 		};
 		46EB2E00001AC0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000F0 /* Encryption.xcodeproj */;
+			containerPortal = 46EB2E00000160 /* CollectionKit.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 7E033E130DE06E2CF897CDFD6FA4DC60;
-			remoteInfo = Encryption;
+			remoteGlobalIDString = C914F41EF29629279F1362AED9CBF87B;
+			remoteInfo = CollectionKit;
 		};
 		46EB2E00001AE0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000100 /* FunctionalSwift.xcodeproj */;
+			containerPortal = 46EB2E00000170 /* CryptoSwift.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
-			remoteInfo = FunctionalSwift;
+			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
+			remoteInfo = CryptoSwift;
 		};
 		46EB2E00001B00 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000110 /* ModalManager.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BCC6CF70FA683E5DE72FECE8BC51E31F;
-			remoteInfo = ModalManager;
-		};
-		46EB2E00001B20 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000120 /* RxNetwork.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC77B7E6DD2071E3D29825D44F226CB5;
-			remoteInfo = RxNetwork;
-		};
-		46EB2E00001B40 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000130 /* RxSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
-			remoteInfo = RxSwift;
-		};
-		46EB2E00001B60 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000140 /* Validation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 42D344306BFC89976EC9FF0E0A9E0F4D;
-			remoteInfo = Validation;
-		};
-		46EB2E00001B80 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000150 /* RxCocoa.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
-			remoteInfo = RxCocoa;
-		};
-		46EB2E00001BA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000160 /* RxRelay.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
-			remoteInfo = RxRelay;
-		};
-		46EB2E00001BC0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000170 /* SnapKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 6913FCF4B90C224E55FE5C821AFB90D2;
-			remoteInfo = SnapKit;
-		};
-		46EB2E00001BE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000180 /* RxGesture.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 761EDC2D01B03DA09BA153A91621384F;
-			remoteInfo = RxGesture;
-		};
-		46EB2E00001C00 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000190 /* RxOptional.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 320A66A0FD10A6799EDACAF311BC28F4;
-			remoteInfo = RxOptional;
-		};
-		46EB2E00001C20 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001A0 /* RxSwiftExt.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 27EB8A78CD48CBA869F1CD0C2E3E61B8;
-			remoteInfo = RxSwiftExt;
-		};
-		46EB2E00001C40 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001B0 /* CollectionKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = C914F41EF29629279F1362AED9CBF87B;
-			remoteInfo = CollectionKit;
-		};
-		46EB2E00001C60 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001C0 /* DifferenceKit.xcodeproj */;
+			containerPortal = 46EB2E00000180 /* DifferenceKit.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 9A546BD24EDC370DF7999D9406601F34;
 			remoteInfo = DifferenceKit;
 		};
-		46EB2E00001C80 /* PBXContainerItemProxy */ = {
+		46EB2E00001B20 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001D0 /* Kingfisher.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 05BB3BFEAA03766641420DCD88978468;
-			remoteInfo = Kingfisher;
-		};
-		46EB2E00001CA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001E0 /* MBProgressHUD.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0F48A71D28991325602E8C8A19DF1F64;
-			remoteInfo = MBProgressHUD;
-		};
-		46EB2E00001CC0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001F0 /* MJRefresh.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = E94AEF767442EDAAAAB2129CDFA2C2ED;
-			remoteInfo = MJRefresh;
-		};
-		46EB2E00001CE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000200 /* Motion.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 86B4EC2291DDB6B1C43A9FB029DB6C66;
-			remoteInfo = Motion;
-		};
-		46EB2E00001D00 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000210 /* ReSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 32081789D91AD7C7D087ABCBF0DAB8EB;
-			remoteInfo = ReSwift;
-		};
-		46EB2E00001D20 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000220 /* SwiftLint.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = DF739ADE66FA54F9BBFF97A8CB609E34;
-			remoteInfo = SwiftLint;
-		};
-		46EB2E00001D40 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000230 /* SwiftyUserDefaults.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 39DEFC5DCB08596C1137C1183EBF13FF;
-			remoteInfo = SwiftyUserDefaults;
-		};
-		46EB2E00001D60 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000C0 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
-			remoteInfo = Alamofire;
-		};
-		46EB2E00001D80 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000D0 /* CocoaExtension.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
-			remoteInfo = CocoaExtension;
-		};
-		46EB2E00001DA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000E0 /* CryptoSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
-			remoteInfo = CryptoSwift;
-		};
-		46EB2E00001DC0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000F0 /* Encryption.xcodeproj */;
+			containerPortal = 46EB2E00000190 /* Encryption.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 7E033E130DE06E2CF897CDFD6FA4DC60;
 			remoteInfo = Encryption;
 		};
-		46EB2E00001DE0 /* PBXContainerItemProxy */ = {
+		46EB2E00001B40 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000100 /* FunctionalSwift.xcodeproj */;
+			containerPortal = 46EB2E000001A0 /* Kingfisher.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 05BB3BFEAA03766641420DCD88978468;
+			remoteInfo = Kingfisher;
+		};
+		46EB2E00001B60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000001B0 /* MBProgressHUD.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F48A71D28991325602E8C8A19DF1F64;
+			remoteInfo = MBProgressHUD;
+		};
+		46EB2E00001B80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000001C0 /* MJRefresh.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E94AEF767442EDAAAAB2129CDFA2C2ED;
+			remoteInfo = MJRefresh;
+		};
+		46EB2E00001BA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000001D0 /* ModalManager.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCC6CF70FA683E5DE72FECE8BC51E31F;
+			remoteInfo = ModalManager;
+		};
+		46EB2E00001BC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000001E0 /* Motion.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 86B4EC2291DDB6B1C43A9FB029DB6C66;
+			remoteInfo = Motion;
+		};
+		46EB2E00001BE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000001F0 /* ReSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 32081789D91AD7C7D087ABCBF0DAB8EB;
+			remoteInfo = ReSwift;
+		};
+		46EB2E00001C00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000200 /* RxNetwork.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC77B7E6DD2071E3D29825D44F226CB5;
+			remoteInfo = RxNetwork;
+		};
+		46EB2E00001C20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000210 /* SwiftLint.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DF739ADE66FA54F9BBFF97A8CB609E34;
+			remoteInfo = SwiftLint;
+		};
+		46EB2E00001C40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000220 /* SwiftyUserDefaults.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 39DEFC5DCB08596C1137C1183EBF13FF;
+			remoteInfo = SwiftyUserDefaults;
+		};
+		46EB2E00001C60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000230 /* Validation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 42D344306BFC89976EC9FF0E0A9E0F4D;
+			remoteInfo = Validation;
+		};
+		46EB2E00001C80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000000C0 /* CocoaExtension.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
+			remoteInfo = CocoaExtension;
+		};
+		46EB2E00001CA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000000D0 /* FunctionalSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
 			remoteInfo = FunctionalSwift;
 		};
-		46EB2E00001E00 /* PBXContainerItemProxy */ = {
+		46EB2E00001CC0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000110 /* ModalManager.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BCC6CF70FA683E5DE72FECE8BC51E31F;
-			remoteInfo = ModalManager;
-		};
-		46EB2E00001E20 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000120 /* RxNetwork.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC77B7E6DD2071E3D29825D44F226CB5;
-			remoteInfo = RxNetwork;
-		};
-		46EB2E00001E40 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000130 /* RxSwift.xcodeproj */;
+			containerPortal = 46EB2E000000E0 /* RxSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
 			remoteInfo = RxSwift;
 		};
-		46EB2E00001E60 /* PBXContainerItemProxy */ = {
+		46EB2E00001CE0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000140 /* Validation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 42D344306BFC89976EC9FF0E0A9E0F4D;
-			remoteInfo = Validation;
-		};
-		46EB2E00001E80 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000150 /* RxCocoa.xcodeproj */;
+			containerPortal = 46EB2E000000F0 /* RxCocoa.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
 			remoteInfo = RxCocoa;
 		};
-		46EB2E00001EA0 /* PBXContainerItemProxy */ = {
+		46EB2E00001D00 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000160 /* RxRelay.xcodeproj */;
+			containerPortal = 46EB2E00000100 /* RxRelay.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
 			remoteInfo = RxRelay;
 		};
-		46EB2E00001EC0 /* PBXContainerItemProxy */ = {
+		46EB2E00001D20 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000170 /* SnapKit.xcodeproj */;
+			containerPortal = 46EB2E00000110 /* SnapKit.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 6913FCF4B90C224E55FE5C821AFB90D2;
 			remoteInfo = SnapKit;
 		};
-		46EB2E00001EE0 /* PBXContainerItemProxy */ = {
+		46EB2E00001D40 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000180 /* RxGesture.xcodeproj */;
+			containerPortal = 46EB2E00000120 /* RxGesture.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 761EDC2D01B03DA09BA153A91621384F;
 			remoteInfo = RxGesture;
 		};
-		46EB2E00001F00 /* PBXContainerItemProxy */ = {
+		46EB2E00001D60 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000190 /* RxOptional.xcodeproj */;
+			containerPortal = 46EB2E00000130 /* RxOptional.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 320A66A0FD10A6799EDACAF311BC28F4;
 			remoteInfo = RxOptional;
 		};
-		46EB2E00001F20 /* PBXContainerItemProxy */ = {
+		46EB2E00001D80 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001A0 /* RxSwiftExt.xcodeproj */;
+			containerPortal = 46EB2E00000140 /* RxSwiftExt.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 27EB8A78CD48CBA869F1CD0C2E3E61B8;
 			remoteInfo = RxSwiftExt;
 		};
-		46EB2E00001F40 /* PBXContainerItemProxy */ = {
+		46EB2E00001DA0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001B0 /* CollectionKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = C914F41EF29629279F1362AED9CBF87B;
-			remoteInfo = CollectionKit;
-		};
-		46EB2E00001F60 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001C0 /* DifferenceKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 9A546BD24EDC370DF7999D9406601F34;
-			remoteInfo = DifferenceKit;
-		};
-		46EB2E00001F80 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001D0 /* Kingfisher.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 05BB3BFEAA03766641420DCD88978468;
-			remoteInfo = Kingfisher;
-		};
-		46EB2E00001FA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001E0 /* MBProgressHUD.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0F48A71D28991325602E8C8A19DF1F64;
-			remoteInfo = MBProgressHUD;
-		};
-		46EB2E00001FC0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001F0 /* MJRefresh.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = E94AEF767442EDAAAAB2129CDFA2C2ED;
-			remoteInfo = MJRefresh;
-		};
-		46EB2E00001FE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000200 /* Motion.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 86B4EC2291DDB6B1C43A9FB029DB6C66;
-			remoteInfo = Motion;
-		};
-		46EB2E00002000 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000210 /* ReSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 32081789D91AD7C7D087ABCBF0DAB8EB;
-			remoteInfo = ReSwift;
-		};
-		46EB2E00002020 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000220 /* SwiftLint.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = DF739ADE66FA54F9BBFF97A8CB609E34;
-			remoteInfo = SwiftLint;
-		};
-		46EB2E00002040 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000230 /* SwiftyUserDefaults.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 39DEFC5DCB08596C1137C1183EBF13FF;
-			remoteInfo = SwiftyUserDefaults;
-		};
-		46EB2E00002060 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000C0 /* Alamofire.xcodeproj */;
+			containerPortal = 46EB2E00000150 /* Alamofire.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
 			remoteInfo = Alamofire;
 		};
-		46EB2E00002080 /* PBXContainerItemProxy */ = {
+		46EB2E00001DC0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000D0 /* CocoaExtension.xcodeproj */;
+			containerPortal = 46EB2E00000160 /* CollectionKit.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
-			remoteInfo = CocoaExtension;
+			remoteGlobalIDString = C914F41EF29629279F1362AED9CBF87B;
+			remoteInfo = CollectionKit;
 		};
-		46EB2E000020A0 /* PBXContainerItemProxy */ = {
+		46EB2E00001DE0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000E0 /* CryptoSwift.xcodeproj */;
+			containerPortal = 46EB2E00000170 /* CryptoSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
 			remoteInfo = CryptoSwift;
 		};
-		46EB2E000020C0 /* PBXContainerItemProxy */ = {
+		46EB2E00001E00 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000F0 /* Encryption.xcodeproj */;
+			containerPortal = 46EB2E00000180 /* DifferenceKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A546BD24EDC370DF7999D9406601F34;
+			remoteInfo = DifferenceKit;
+		};
+		46EB2E00001E20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000190 /* Encryption.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 7E033E130DE06E2CF897CDFD6FA4DC60;
 			remoteInfo = Encryption;
 		};
+		46EB2E00001E40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000001A0 /* Kingfisher.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 05BB3BFEAA03766641420DCD88978468;
+			remoteInfo = Kingfisher;
+		};
+		46EB2E00001E60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000001B0 /* MBProgressHUD.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F48A71D28991325602E8C8A19DF1F64;
+			remoteInfo = MBProgressHUD;
+		};
+		46EB2E00001E80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000001C0 /* MJRefresh.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E94AEF767442EDAAAAB2129CDFA2C2ED;
+			remoteInfo = MJRefresh;
+		};
+		46EB2E00001EA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000001D0 /* ModalManager.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCC6CF70FA683E5DE72FECE8BC51E31F;
+			remoteInfo = ModalManager;
+		};
+		46EB2E00001EC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000001E0 /* Motion.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 86B4EC2291DDB6B1C43A9FB029DB6C66;
+			remoteInfo = Motion;
+		};
+		46EB2E00001EE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000001F0 /* ReSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 32081789D91AD7C7D087ABCBF0DAB8EB;
+			remoteInfo = ReSwift;
+		};
+		46EB2E00001F00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000200 /* RxNetwork.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC77B7E6DD2071E3D29825D44F226CB5;
+			remoteInfo = RxNetwork;
+		};
+		46EB2E00001F20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000210 /* SwiftLint.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DF739ADE66FA54F9BBFF97A8CB609E34;
+			remoteInfo = SwiftLint;
+		};
+		46EB2E00001F40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000220 /* SwiftyUserDefaults.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 39DEFC5DCB08596C1137C1183EBF13FF;
+			remoteInfo = SwiftyUserDefaults;
+		};
+		46EB2E00001F60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000230 /* Validation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 42D344306BFC89976EC9FF0E0A9E0F4D;
+			remoteInfo = Validation;
+		};
+		46EB2E00001F80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000000C0 /* CocoaExtension.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
+			remoteInfo = CocoaExtension;
+		};
+		46EB2E00001FA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000000D0 /* FunctionalSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
+			remoteInfo = FunctionalSwift;
+		};
+		46EB2E00001FC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000000C0 /* CocoaExtension.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
+			remoteInfo = CocoaExtension;
+		};
+		46EB2E00001FE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000000D0 /* FunctionalSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
+			remoteInfo = FunctionalSwift;
+		};
+		46EB2E00002000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000000C0 /* CocoaExtension.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
+			remoteInfo = CocoaExtension;
+		};
+		46EB2E00002020 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000000D0 /* FunctionalSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
+			remoteInfo = FunctionalSwift;
+		};
+		46EB2E00002040 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000000E0 /* RxSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
+			remoteInfo = RxSwift;
+		};
+		46EB2E00002060 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000000F0 /* RxCocoa.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
+			remoteInfo = RxCocoa;
+		};
+		46EB2E00002080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000100 /* RxRelay.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
+			remoteInfo = RxRelay;
+		};
+		46EB2E000020A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000110 /* SnapKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6913FCF4B90C224E55FE5C821AFB90D2;
+			remoteInfo = SnapKit;
+		};
+		46EB2E000020C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000000C0 /* CocoaExtension.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
+			remoteInfo = CocoaExtension;
+		};
 		46EB2E000020E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000100 /* FunctionalSwift.xcodeproj */;
+			containerPortal = 46EB2E000000D0 /* FunctionalSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
 			remoteInfo = FunctionalSwift;
 		};
 		46EB2E00002100 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000110 /* ModalManager.xcodeproj */;
+			containerPortal = 46EB2E000000C0 /* CocoaExtension.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = BCC6CF70FA683E5DE72FECE8BC51E31F;
-			remoteInfo = ModalManager;
+			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
+			remoteInfo = CocoaExtension;
 		};
 		46EB2E00002120 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000120 /* RxNetwork.xcodeproj */;
+			containerPortal = 46EB2E000000D0 /* FunctionalSwift.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = BC77B7E6DD2071E3D29825D44F226CB5;
-			remoteInfo = RxNetwork;
+			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
+			remoteInfo = FunctionalSwift;
 		};
 		46EB2E00002140 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000130 /* RxSwift.xcodeproj */;
+			containerPortal = 46EB2E000000E0 /* RxSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
 			remoteInfo = RxSwift;
 		};
 		46EB2E00002160 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000140 /* Validation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 42D344306BFC89976EC9FF0E0A9E0F4D;
-			remoteInfo = Validation;
-		};
-		46EB2E00002180 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000C0 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
-			remoteInfo = Alamofire;
-		};
-		46EB2E000021A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000D0 /* CocoaExtension.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
-			remoteInfo = CocoaExtension;
-		};
-		46EB2E000021C0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000E0 /* CryptoSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
-			remoteInfo = CryptoSwift;
-		};
-		46EB2E000021E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000F0 /* Encryption.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E033E130DE06E2CF897CDFD6FA4DC60;
-			remoteInfo = Encryption;
-		};
-		46EB2E00002200 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000100 /* FunctionalSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
-			remoteInfo = FunctionalSwift;
-		};
-		46EB2E00002220 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000110 /* ModalManager.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BCC6CF70FA683E5DE72FECE8BC51E31F;
-			remoteInfo = ModalManager;
-		};
-		46EB2E00002240 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000120 /* RxNetwork.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC77B7E6DD2071E3D29825D44F226CB5;
-			remoteInfo = RxNetwork;
-		};
-		46EB2E00002260 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000130 /* RxSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
-			remoteInfo = RxSwift;
-		};
-		46EB2E00002280 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000140 /* Validation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 42D344306BFC89976EC9FF0E0A9E0F4D;
-			remoteInfo = Validation;
-		};
-		46EB2E000022A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000C0 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
-			remoteInfo = Alamofire;
-		};
-		46EB2E000022C0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000D0 /* CocoaExtension.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
-			remoteInfo = CocoaExtension;
-		};
-		46EB2E000022E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000E0 /* CryptoSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
-			remoteInfo = CryptoSwift;
-		};
-		46EB2E00002300 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000F0 /* Encryption.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E033E130DE06E2CF897CDFD6FA4DC60;
-			remoteInfo = Encryption;
-		};
-		46EB2E00002320 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000100 /* FunctionalSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
-			remoteInfo = FunctionalSwift;
-		};
-		46EB2E00002340 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000110 /* ModalManager.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BCC6CF70FA683E5DE72FECE8BC51E31F;
-			remoteInfo = ModalManager;
-		};
-		46EB2E00002360 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000120 /* RxNetwork.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC77B7E6DD2071E3D29825D44F226CB5;
-			remoteInfo = RxNetwork;
-		};
-		46EB2E00002380 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000130 /* RxSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
-			remoteInfo = RxSwift;
-		};
-		46EB2E000023A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000140 /* Validation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 42D344306BFC89976EC9FF0E0A9E0F4D;
-			remoteInfo = Validation;
-		};
-		46EB2E000023C0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000150 /* RxCocoa.xcodeproj */;
+			containerPortal = 46EB2E000000F0 /* RxCocoa.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
 			remoteInfo = RxCocoa;
 		};
-		46EB2E000023E0 /* PBXContainerItemProxy */ = {
+		46EB2E00002180 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000160 /* RxRelay.xcodeproj */;
+			containerPortal = 46EB2E00000100 /* RxRelay.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
 			remoteInfo = RxRelay;
 		};
-		46EB2E00002400 /* PBXContainerItemProxy */ = {
+		46EB2E000021A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000170 /* SnapKit.xcodeproj */;
+			containerPortal = 46EB2E00000120 /* RxGesture.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 761EDC2D01B03DA09BA153A91621384F;
+			remoteInfo = RxGesture;
+		};
+		46EB2E000021C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000130 /* RxOptional.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 320A66A0FD10A6799EDACAF311BC28F4;
+			remoteInfo = RxOptional;
+		};
+		46EB2E000021E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000140 /* RxSwiftExt.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 27EB8A78CD48CBA869F1CD0C2E3E61B8;
+			remoteInfo = RxSwiftExt;
+		};
+		46EB2E00002200 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000000C0 /* CocoaExtension.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
+			remoteInfo = CocoaExtension;
+		};
+		46EB2E00002220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000000D0 /* FunctionalSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
+			remoteInfo = FunctionalSwift;
+		};
+		46EB2E00002240 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000000E0 /* RxSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
+			remoteInfo = RxSwift;
+		};
+		46EB2E00002260 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000000F0 /* RxCocoa.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
+			remoteInfo = RxCocoa;
+		};
+		46EB2E00002280 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000100 /* RxRelay.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
+			remoteInfo = RxRelay;
+		};
+		46EB2E000022A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000110 /* SnapKit.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 6913FCF4B90C224E55FE5C821AFB90D2;
 			remoteInfo = SnapKit;
 		};
-		46EB2E00002420 /* PBXContainerItemProxy */ = {
+		46EB2E000022C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000C0 /* Alamofire.xcodeproj */;
+			containerPortal = 46EB2E00000120 /* RxGesture.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 761EDC2D01B03DA09BA153A91621384F;
+			remoteInfo = RxGesture;
+		};
+		46EB2E000022E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000130 /* RxOptional.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 320A66A0FD10A6799EDACAF311BC28F4;
+			remoteInfo = RxOptional;
+		};
+		46EB2E00002300 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000140 /* RxSwiftExt.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 27EB8A78CD48CBA869F1CD0C2E3E61B8;
+			remoteInfo = RxSwiftExt;
+		};
+		46EB2E00002320 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000150 /* Alamofire.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
 			remoteInfo = Alamofire;
+		};
+		46EB2E00002340 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000160 /* CollectionKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C914F41EF29629279F1362AED9CBF87B;
+			remoteInfo = CollectionKit;
+		};
+		46EB2E00002360 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000170 /* CryptoSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
+			remoteInfo = CryptoSwift;
+		};
+		46EB2E00002380 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000180 /* DifferenceKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A546BD24EDC370DF7999D9406601F34;
+			remoteInfo = DifferenceKit;
+		};
+		46EB2E000023A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000190 /* Encryption.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E033E130DE06E2CF897CDFD6FA4DC60;
+			remoteInfo = Encryption;
+		};
+		46EB2E000023C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000001A0 /* Kingfisher.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 05BB3BFEAA03766641420DCD88978468;
+			remoteInfo = Kingfisher;
+		};
+		46EB2E000023E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000001B0 /* MBProgressHUD.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F48A71D28991325602E8C8A19DF1F64;
+			remoteInfo = MBProgressHUD;
+		};
+		46EB2E00002400 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000001C0 /* MJRefresh.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E94AEF767442EDAAAAB2129CDFA2C2ED;
+			remoteInfo = MJRefresh;
+		};
+		46EB2E00002420 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000001D0 /* ModalManager.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCC6CF70FA683E5DE72FECE8BC51E31F;
+			remoteInfo = ModalManager;
 		};
 		46EB2E00002440 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000D0 /* CocoaExtension.xcodeproj */;
+			containerPortal = 46EB2E000001E0 /* Motion.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
-			remoteInfo = CocoaExtension;
+			remoteGlobalIDString = 86B4EC2291DDB6B1C43A9FB029DB6C66;
+			remoteInfo = Motion;
 		};
 		46EB2E00002460 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000E0 /* CryptoSwift.xcodeproj */;
+			containerPortal = 46EB2E000001F0 /* ReSwift.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
-			remoteInfo = CryptoSwift;
+			remoteGlobalIDString = 32081789D91AD7C7D087ABCBF0DAB8EB;
+			remoteInfo = ReSwift;
 		};
 		46EB2E00002480 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000F0 /* Encryption.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E033E130DE06E2CF897CDFD6FA4DC60;
-			remoteInfo = Encryption;
-		};
-		46EB2E000024A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000100 /* FunctionalSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
-			remoteInfo = FunctionalSwift;
-		};
-		46EB2E000024C0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000110 /* ModalManager.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BCC6CF70FA683E5DE72FECE8BC51E31F;
-			remoteInfo = ModalManager;
-		};
-		46EB2E000024E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000120 /* RxNetwork.xcodeproj */;
+			containerPortal = 46EB2E00000200 /* RxNetwork.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = BC77B7E6DD2071E3D29825D44F226CB5;
 			remoteInfo = RxNetwork;
 		};
-		46EB2E00002500 /* PBXContainerItemProxy */ = {
+		46EB2E000024A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000130 /* RxSwift.xcodeproj */;
+			containerPortal = 46EB2E00000210 /* SwiftLint.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
-			remoteInfo = RxSwift;
+			remoteGlobalIDString = DF739ADE66FA54F9BBFF97A8CB609E34;
+			remoteInfo = SwiftLint;
 		};
-		46EB2E00002520 /* PBXContainerItemProxy */ = {
+		46EB2E000024C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000140 /* Validation.xcodeproj */;
+			containerPortal = 46EB2E00000220 /* SwiftyUserDefaults.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 39DEFC5DCB08596C1137C1183EBF13FF;
+			remoteInfo = SwiftyUserDefaults;
+		};
+		46EB2E000024E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000230 /* Validation.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 42D344306BFC89976EC9FF0E0A9E0F4D;
 			remoteInfo = Validation;
 		};
-		46EB2E00002540 /* PBXContainerItemProxy */ = {
+		46EB2E00002500 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000C0 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
-			remoteInfo = Alamofire;
-		};
-		46EB2E00002560 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000D0 /* CocoaExtension.xcodeproj */;
+			containerPortal = 46EB2E000000C0 /* CocoaExtension.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
 			remoteInfo = CocoaExtension;
 		};
-		46EB2E00002580 /* PBXContainerItemProxy */ = {
+		46EB2E00002520 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000E0 /* CryptoSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
-			remoteInfo = CryptoSwift;
-		};
-		46EB2E000025A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000F0 /* Encryption.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E033E130DE06E2CF897CDFD6FA4DC60;
-			remoteInfo = Encryption;
-		};
-		46EB2E000025C0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000100 /* FunctionalSwift.xcodeproj */;
+			containerPortal = 46EB2E000000D0 /* FunctionalSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
 			remoteInfo = FunctionalSwift;
 		};
-		46EB2E000025E0 /* PBXContainerItemProxy */ = {
+		46EB2E00002540 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000110 /* ModalManager.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BCC6CF70FA683E5DE72FECE8BC51E31F;
-			remoteInfo = ModalManager;
-		};
-		46EB2E00002600 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000120 /* RxNetwork.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC77B7E6DD2071E3D29825D44F226CB5;
-			remoteInfo = RxNetwork;
-		};
-		46EB2E00002620 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000130 /* RxSwift.xcodeproj */;
+			containerPortal = 46EB2E000000E0 /* RxSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
 			remoteInfo = RxSwift;
 		};
+		46EB2E00002560 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000000F0 /* RxCocoa.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
+			remoteInfo = RxCocoa;
+		};
+		46EB2E00002580 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000100 /* RxRelay.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
+			remoteInfo = RxRelay;
+		};
+		46EB2E000025A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000120 /* RxGesture.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 761EDC2D01B03DA09BA153A91621384F;
+			remoteInfo = RxGesture;
+		};
+		46EB2E000025C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000130 /* RxOptional.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 320A66A0FD10A6799EDACAF311BC28F4;
+			remoteInfo = RxOptional;
+		};
+		46EB2E000025E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000140 /* RxSwiftExt.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 27EB8A78CD48CBA869F1CD0C2E3E61B8;
+			remoteInfo = RxSwiftExt;
+		};
+		46EB2E00002600 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000000C0 /* CocoaExtension.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
+			remoteInfo = CocoaExtension;
+		};
+		46EB2E00002620 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000000D0 /* FunctionalSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
+			remoteInfo = FunctionalSwift;
+		};
 		46EB2E00002640 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000140 /* Validation.xcodeproj */;
+			containerPortal = 46EB2E000000E0 /* RxSwift.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 42D344306BFC89976EC9FF0E0A9E0F4D;
-			remoteInfo = Validation;
+			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
+			remoteInfo = RxSwift;
 		};
 		46EB2E00002660 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000150 /* RxCocoa.xcodeproj */;
+			containerPortal = 46EB2E000000F0 /* RxCocoa.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
 			remoteInfo = RxCocoa;
 		};
 		46EB2E00002680 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000160 /* RxRelay.xcodeproj */;
+			containerPortal = 46EB2E00000100 /* RxRelay.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
 			remoteInfo = RxRelay;
 		};
 		46EB2E000026A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000180 /* RxGesture.xcodeproj */;
+			containerPortal = 46EB2E00000110 /* SnapKit.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 761EDC2D01B03DA09BA153A91621384F;
-			remoteInfo = RxGesture;
+			remoteGlobalIDString = 6913FCF4B90C224E55FE5C821AFB90D2;
+			remoteInfo = SnapKit;
 		};
 		46EB2E000026C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000190 /* RxOptional.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 320A66A0FD10A6799EDACAF311BC28F4;
-			remoteInfo = RxOptional;
-		};
-		46EB2E000026E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001A0 /* RxSwiftExt.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 27EB8A78CD48CBA869F1CD0C2E3E61B8;
-			remoteInfo = RxSwiftExt;
-		};
-		46EB2E00002700 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000C0 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
-			remoteInfo = Alamofire;
-		};
-		46EB2E00002720 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000D0 /* CocoaExtension.xcodeproj */;
+			containerPortal = 46EB2E000000C0 /* CocoaExtension.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
 			remoteInfo = CocoaExtension;
 		};
-		46EB2E00002740 /* PBXContainerItemProxy */ = {
+		46EB2E000026E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000E0 /* CryptoSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
-			remoteInfo = CryptoSwift;
-		};
-		46EB2E00002760 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000F0 /* Encryption.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E033E130DE06E2CF897CDFD6FA4DC60;
-			remoteInfo = Encryption;
-		};
-		46EB2E00002780 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000100 /* FunctionalSwift.xcodeproj */;
+			containerPortal = 46EB2E000000D0 /* FunctionalSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
 			remoteInfo = FunctionalSwift;
 		};
+		46EB2E00002700 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000000E0 /* RxSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
+			remoteInfo = RxSwift;
+		};
+		46EB2E00002720 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E000000F0 /* RxCocoa.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
+			remoteInfo = RxCocoa;
+		};
+		46EB2E00002740 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000100 /* RxRelay.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
+			remoteInfo = RxRelay;
+		};
+		46EB2E00002760 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000110 /* SnapKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6913FCF4B90C224E55FE5C821AFB90D2;
+			remoteInfo = SnapKit;
+		};
+		46EB2E00002780 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000160 /* CollectionKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C914F41EF29629279F1362AED9CBF87B;
+			remoteInfo = CollectionKit;
+		};
 		46EB2E000027A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000110 /* ModalManager.xcodeproj */;
+			containerPortal = 46EB2E000000C0 /* CocoaExtension.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = BCC6CF70FA683E5DE72FECE8BC51E31F;
-			remoteInfo = ModalManager;
+			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
+			remoteInfo = CocoaExtension;
 		};
 		46EB2E000027C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000120 /* RxNetwork.xcodeproj */;
+			containerPortal = 46EB2E000000D0 /* FunctionalSwift.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = BC77B7E6DD2071E3D29825D44F226CB5;
-			remoteInfo = RxNetwork;
+			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
+			remoteInfo = FunctionalSwift;
 		};
 		46EB2E000027E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000130 /* RxSwift.xcodeproj */;
+			containerPortal = 46EB2E000000E0 /* RxSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
 			remoteInfo = RxSwift;
 		};
 		46EB2E00002800 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000140 /* Validation.xcodeproj */;
+			containerPortal = 46EB2E000000F0 /* RxCocoa.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 42D344306BFC89976EC9FF0E0A9E0F4D;
-			remoteInfo = Validation;
+			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
+			remoteInfo = RxCocoa;
 		};
 		46EB2E00002820 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000150 /* RxCocoa.xcodeproj */;
+			containerPortal = 46EB2E00000100 /* RxRelay.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
-			remoteInfo = RxCocoa;
+			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
+			remoteInfo = RxRelay;
 		};
 		46EB2E00002840 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000160 /* RxRelay.xcodeproj */;
+			containerPortal = 46EB2E00000110 /* SnapKit.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
-			remoteInfo = RxRelay;
+			remoteGlobalIDString = 6913FCF4B90C224E55FE5C821AFB90D2;
+			remoteInfo = SnapKit;
 		};
 		46EB2E00002860 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000170 /* SnapKit.xcodeproj */;
+			containerPortal = 46EB2E000000C0 /* CocoaExtension.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 6913FCF4B90C224E55FE5C821AFB90D2;
-			remoteInfo = SnapKit;
+			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
+			remoteInfo = CocoaExtension;
 		};
 		46EB2E00002880 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000180 /* RxGesture.xcodeproj */;
+			containerPortal = 46EB2E000000D0 /* FunctionalSwift.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 761EDC2D01B03DA09BA153A91621384F;
-			remoteInfo = RxGesture;
+			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
+			remoteInfo = FunctionalSwift;
 		};
 		46EB2E000028A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000190 /* RxOptional.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 320A66A0FD10A6799EDACAF311BC28F4;
-			remoteInfo = RxOptional;
-		};
-		46EB2E000028C0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001A0 /* RxSwiftExt.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 27EB8A78CD48CBA869F1CD0C2E3E61B8;
-			remoteInfo = RxSwiftExt;
-		};
-		46EB2E000028E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001B0 /* CollectionKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = C914F41EF29629279F1362AED9CBF87B;
-			remoteInfo = CollectionKit;
-		};
-		46EB2E00002900 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001C0 /* DifferenceKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 9A546BD24EDC370DF7999D9406601F34;
-			remoteInfo = DifferenceKit;
-		};
-		46EB2E00002920 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001D0 /* Kingfisher.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 05BB3BFEAA03766641420DCD88978468;
-			remoteInfo = Kingfisher;
-		};
-		46EB2E00002940 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001E0 /* MBProgressHUD.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0F48A71D28991325602E8C8A19DF1F64;
-			remoteInfo = MBProgressHUD;
-		};
-		46EB2E00002960 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001F0 /* MJRefresh.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = E94AEF767442EDAAAAB2129CDFA2C2ED;
-			remoteInfo = MJRefresh;
-		};
-		46EB2E00002980 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000200 /* Motion.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 86B4EC2291DDB6B1C43A9FB029DB6C66;
-			remoteInfo = Motion;
-		};
-		46EB2E000029A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000210 /* ReSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 32081789D91AD7C7D087ABCBF0DAB8EB;
-			remoteInfo = ReSwift;
-		};
-		46EB2E000029C0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000220 /* SwiftLint.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = DF739ADE66FA54F9BBFF97A8CB609E34;
-			remoteInfo = SwiftLint;
-		};
-		46EB2E000029E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000230 /* SwiftyUserDefaults.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 39DEFC5DCB08596C1137C1183EBF13FF;
-			remoteInfo = SwiftyUserDefaults;
-		};
-		46EB2E00002A00 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000C0 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
-			remoteInfo = Alamofire;
-		};
-		46EB2E00002A20 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000D0 /* CocoaExtension.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
-			remoteInfo = CocoaExtension;
-		};
-		46EB2E00002A40 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000E0 /* CryptoSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
-			remoteInfo = CryptoSwift;
-		};
-		46EB2E00002A60 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000F0 /* Encryption.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E033E130DE06E2CF897CDFD6FA4DC60;
-			remoteInfo = Encryption;
-		};
-		46EB2E00002A80 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000100 /* FunctionalSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
-			remoteInfo = FunctionalSwift;
-		};
-		46EB2E00002AA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000110 /* ModalManager.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BCC6CF70FA683E5DE72FECE8BC51E31F;
-			remoteInfo = ModalManager;
-		};
-		46EB2E00002AC0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000120 /* RxNetwork.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC77B7E6DD2071E3D29825D44F226CB5;
-			remoteInfo = RxNetwork;
-		};
-		46EB2E00002AE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000130 /* RxSwift.xcodeproj */;
+			containerPortal = 46EB2E000000E0 /* RxSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
 			remoteInfo = RxSwift;
-		};
-		46EB2E00002B00 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000140 /* Validation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 42D344306BFC89976EC9FF0E0A9E0F4D;
-			remoteInfo = Validation;
-		};
-		46EB2E00002B20 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000150 /* RxCocoa.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
-			remoteInfo = RxCocoa;
-		};
-		46EB2E00002B40 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000160 /* RxRelay.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
-			remoteInfo = RxRelay;
-		};
-		46EB2E00002B60 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000180 /* RxGesture.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 761EDC2D01B03DA09BA153A91621384F;
-			remoteInfo = RxGesture;
-		};
-		46EB2E00002B80 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000190 /* RxOptional.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 320A66A0FD10A6799EDACAF311BC28F4;
-			remoteInfo = RxOptional;
-		};
-		46EB2E00002BA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001A0 /* RxSwiftExt.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 27EB8A78CD48CBA869F1CD0C2E3E61B8;
-			remoteInfo = RxSwiftExt;
-		};
-		46EB2E00002BC0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000C0 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
-			remoteInfo = Alamofire;
-		};
-		46EB2E00002BE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000D0 /* CocoaExtension.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
-			remoteInfo = CocoaExtension;
-		};
-		46EB2E00002C00 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000E0 /* CryptoSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
-			remoteInfo = CryptoSwift;
-		};
-		46EB2E00002C20 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000F0 /* Encryption.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E033E130DE06E2CF897CDFD6FA4DC60;
-			remoteInfo = Encryption;
-		};
-		46EB2E00002C40 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000100 /* FunctionalSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
-			remoteInfo = FunctionalSwift;
-		};
-		46EB2E00002C60 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000110 /* ModalManager.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BCC6CF70FA683E5DE72FECE8BC51E31F;
-			remoteInfo = ModalManager;
-		};
-		46EB2E00002C80 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000120 /* RxNetwork.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC77B7E6DD2071E3D29825D44F226CB5;
-			remoteInfo = RxNetwork;
-		};
-		46EB2E00002CA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000130 /* RxSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
-			remoteInfo = RxSwift;
-		};
-		46EB2E00002CC0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000140 /* Validation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 42D344306BFC89976EC9FF0E0A9E0F4D;
-			remoteInfo = Validation;
-		};
-		46EB2E00002CE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000150 /* RxCocoa.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
-			remoteInfo = RxCocoa;
-		};
-		46EB2E00002D00 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000160 /* RxRelay.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
-			remoteInfo = RxRelay;
-		};
-		46EB2E00002D20 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000170 /* SnapKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 6913FCF4B90C224E55FE5C821AFB90D2;
-			remoteInfo = SnapKit;
-		};
-		46EB2E00002D40 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000C0 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
-			remoteInfo = Alamofire;
-		};
-		46EB2E00002D60 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000D0 /* CocoaExtension.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
-			remoteInfo = CocoaExtension;
-		};
-		46EB2E00002D80 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000E0 /* CryptoSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
-			remoteInfo = CryptoSwift;
-		};
-		46EB2E00002DA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000F0 /* Encryption.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E033E130DE06E2CF897CDFD6FA4DC60;
-			remoteInfo = Encryption;
-		};
-		46EB2E00002DC0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000100 /* FunctionalSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
-			remoteInfo = FunctionalSwift;
-		};
-		46EB2E00002DE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000110 /* ModalManager.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BCC6CF70FA683E5DE72FECE8BC51E31F;
-			remoteInfo = ModalManager;
-		};
-		46EB2E00002E00 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000120 /* RxNetwork.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC77B7E6DD2071E3D29825D44F226CB5;
-			remoteInfo = RxNetwork;
-		};
-		46EB2E00002E20 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000130 /* RxSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
-			remoteInfo = RxSwift;
-		};
-		46EB2E00002E40 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000140 /* Validation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 42D344306BFC89976EC9FF0E0A9E0F4D;
-			remoteInfo = Validation;
-		};
-		46EB2E00002E60 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000150 /* RxCocoa.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
-			remoteInfo = RxCocoa;
-		};
-		46EB2E00002E80 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000160 /* RxRelay.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
-			remoteInfo = RxRelay;
-		};
-		46EB2E00002EA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000170 /* SnapKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 6913FCF4B90C224E55FE5C821AFB90D2;
-			remoteInfo = SnapKit;
-		};
-		46EB2E00002EC0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000001B0 /* CollectionKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = C914F41EF29629279F1362AED9CBF87B;
-			remoteInfo = CollectionKit;
-		};
-		46EB2E00002EE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000C0 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
-			remoteInfo = Alamofire;
-		};
-		46EB2E00002F00 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000D0 /* CocoaExtension.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
-			remoteInfo = CocoaExtension;
-		};
-		46EB2E00002F20 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000E0 /* CryptoSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
-			remoteInfo = CryptoSwift;
-		};
-		46EB2E00002F40 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000F0 /* Encryption.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E033E130DE06E2CF897CDFD6FA4DC60;
-			remoteInfo = Encryption;
-		};
-		46EB2E00002F60 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000100 /* FunctionalSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
-			remoteInfo = FunctionalSwift;
-		};
-		46EB2E00002F80 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000110 /* ModalManager.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BCC6CF70FA683E5DE72FECE8BC51E31F;
-			remoteInfo = ModalManager;
-		};
-		46EB2E00002FA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000120 /* RxNetwork.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC77B7E6DD2071E3D29825D44F226CB5;
-			remoteInfo = RxNetwork;
-		};
-		46EB2E00002FC0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000130 /* RxSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
-			remoteInfo = RxSwift;
-		};
-		46EB2E00002FE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000140 /* Validation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 42D344306BFC89976EC9FF0E0A9E0F4D;
-			remoteInfo = Validation;
-		};
-		46EB2E00003000 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000150 /* RxCocoa.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
-			remoteInfo = RxCocoa;
-		};
-		46EB2E00003020 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000160 /* RxRelay.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
-			remoteInfo = RxRelay;
-		};
-		46EB2E00003040 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000170 /* SnapKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 6913FCF4B90C224E55FE5C821AFB90D2;
-			remoteInfo = SnapKit;
-		};
-		46EB2E00003060 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000C0 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
-			remoteInfo = Alamofire;
-		};
-		46EB2E00003080 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000D0 /* CocoaExtension.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 23782531680FA13450AF7A2BC0D7A401;
-			remoteInfo = CocoaExtension;
-		};
-		46EB2E000030A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000E0 /* CryptoSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4E1375FA494E41BCCDD9424A50665074;
-			remoteInfo = CryptoSwift;
-		};
-		46EB2E000030C0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E000000F0 /* Encryption.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E033E130DE06E2CF897CDFD6FA4DC60;
-			remoteInfo = Encryption;
-		};
-		46EB2E000030E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000100 /* FunctionalSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4FE15D53CEA2CAD342622BA0977A205C;
-			remoteInfo = FunctionalSwift;
-		};
-		46EB2E00003100 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000110 /* ModalManager.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BCC6CF70FA683E5DE72FECE8BC51E31F;
-			remoteInfo = ModalManager;
-		};
-		46EB2E00003120 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000120 /* RxNetwork.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC77B7E6DD2071E3D29825D44F226CB5;
-			remoteInfo = RxNetwork;
-		};
-		46EB2E00003140 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000130 /* RxSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
-			remoteInfo = RxSwift;
-		};
-		46EB2E00003160 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46EB2E00000140 /* Validation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 42D344306BFC89976EC9FF0E0A9E0F4D;
-			remoteInfo = Validation;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -1588,30 +1098,30 @@
 		367DAEA25A5B480EE41B6D60C64D51AD /* Pods_RxExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RxExtensions.framework; path = "Pods-RxExtensions.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41183CD396BC2D5AE8019578CA781945 /* Pods_UIComponents_CollectionKitExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_UIComponents_CollectionKitExtensions.framework; path = "Pods-UIComponents-CollectionKitExtensions.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46EB2E000000B0 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		46EB2E000000C0 /* Alamofire */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire; path = Alamofire.xcodeproj; sourceTree = "<group>"; };
-		46EB2E000000D0 /* CocoaExtension */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocoaExtension; path = CocoaExtension.xcodeproj; sourceTree = "<group>"; };
-		46EB2E000000E0 /* CryptoSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift; path = CryptoSwift.xcodeproj; sourceTree = "<group>"; };
-		46EB2E000000F0 /* Encryption */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Encryption; path = Encryption.xcodeproj; sourceTree = "<group>"; };
-		46EB2E00000100 /* FunctionalSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FunctionalSwift; path = FunctionalSwift.xcodeproj; sourceTree = "<group>"; };
-		46EB2E00000110 /* ModalManager */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ModalManager; path = ModalManager.xcodeproj; sourceTree = "<group>"; };
-		46EB2E00000120 /* RxNetwork */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxNetwork; path = RxNetwork.xcodeproj; sourceTree = "<group>"; };
-		46EB2E00000130 /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxSwift; path = RxSwift.xcodeproj; sourceTree = "<group>"; };
-		46EB2E00000140 /* Validation */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Validation; path = Validation.xcodeproj; sourceTree = "<group>"; };
-		46EB2E00000150 /* RxCocoa */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxCocoa; path = RxCocoa.xcodeproj; sourceTree = "<group>"; };
-		46EB2E00000160 /* RxRelay */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxRelay; path = RxRelay.xcodeproj; sourceTree = "<group>"; };
-		46EB2E00000170 /* SnapKit */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit; path = SnapKit.xcodeproj; sourceTree = "<group>"; };
-		46EB2E00000180 /* RxGesture */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxGesture; path = RxGesture.xcodeproj; sourceTree = "<group>"; };
-		46EB2E00000190 /* RxOptional */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxOptional; path = RxOptional.xcodeproj; sourceTree = "<group>"; };
-		46EB2E000001A0 /* RxSwiftExt */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxSwiftExt; path = RxSwiftExt.xcodeproj; sourceTree = "<group>"; };
-		46EB2E000001B0 /* CollectionKit */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CollectionKit; path = CollectionKit.xcodeproj; sourceTree = "<group>"; };
-		46EB2E000001C0 /* DifferenceKit */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DifferenceKit; path = DifferenceKit.xcodeproj; sourceTree = "<group>"; };
-		46EB2E000001D0 /* Kingfisher */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kingfisher; path = Kingfisher.xcodeproj; sourceTree = "<group>"; };
-		46EB2E000001E0 /* MBProgressHUD */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD; path = MBProgressHUD.xcodeproj; sourceTree = "<group>"; };
-		46EB2E000001F0 /* MJRefresh */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MJRefresh; path = MJRefresh.xcodeproj; sourceTree = "<group>"; };
-		46EB2E00000200 /* Motion */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Motion; path = Motion.xcodeproj; sourceTree = "<group>"; };
-		46EB2E00000210 /* ReSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReSwift; path = ReSwift.xcodeproj; sourceTree = "<group>"; };
-		46EB2E00000220 /* SwiftLint */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftLint; path = SwiftLint.xcodeproj; sourceTree = "<group>"; };
-		46EB2E00000230 /* SwiftyUserDefaults */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyUserDefaults; path = SwiftyUserDefaults.xcodeproj; sourceTree = "<group>"; };
+		46EB2E000000C0 /* CocoaExtension */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocoaExtension; path = CocoaExtension.xcodeproj; sourceTree = "<group>"; };
+		46EB2E000000D0 /* FunctionalSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FunctionalSwift; path = FunctionalSwift.xcodeproj; sourceTree = "<group>"; };
+		46EB2E000000E0 /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxSwift; path = RxSwift.xcodeproj; sourceTree = "<group>"; };
+		46EB2E000000F0 /* RxCocoa */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxCocoa; path = RxCocoa.xcodeproj; sourceTree = "<group>"; };
+		46EB2E00000100 /* RxRelay */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxRelay; path = RxRelay.xcodeproj; sourceTree = "<group>"; };
+		46EB2E00000110 /* SnapKit */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit; path = SnapKit.xcodeproj; sourceTree = "<group>"; };
+		46EB2E00000120 /* RxGesture */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxGesture; path = RxGesture.xcodeproj; sourceTree = "<group>"; };
+		46EB2E00000130 /* RxOptional */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxOptional; path = RxOptional.xcodeproj; sourceTree = "<group>"; };
+		46EB2E00000140 /* RxSwiftExt */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxSwiftExt; path = RxSwiftExt.xcodeproj; sourceTree = "<group>"; };
+		46EB2E00000150 /* Alamofire */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire; path = Alamofire.xcodeproj; sourceTree = "<group>"; };
+		46EB2E00000160 /* CollectionKit */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CollectionKit; path = CollectionKit.xcodeproj; sourceTree = "<group>"; };
+		46EB2E00000170 /* CryptoSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift; path = CryptoSwift.xcodeproj; sourceTree = "<group>"; };
+		46EB2E00000180 /* DifferenceKit */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DifferenceKit; path = DifferenceKit.xcodeproj; sourceTree = "<group>"; };
+		46EB2E00000190 /* Encryption */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Encryption; path = Encryption.xcodeproj; sourceTree = "<group>"; };
+		46EB2E000001A0 /* Kingfisher */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kingfisher; path = Kingfisher.xcodeproj; sourceTree = "<group>"; };
+		46EB2E000001B0 /* MBProgressHUD */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD; path = MBProgressHUD.xcodeproj; sourceTree = "<group>"; };
+		46EB2E000001C0 /* MJRefresh */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MJRefresh; path = MJRefresh.xcodeproj; sourceTree = "<group>"; };
+		46EB2E000001D0 /* ModalManager */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ModalManager; path = ModalManager.xcodeproj; sourceTree = "<group>"; };
+		46EB2E000001E0 /* Motion */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Motion; path = Motion.xcodeproj; sourceTree = "<group>"; };
+		46EB2E000001F0 /* ReSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReSwift; path = ReSwift.xcodeproj; sourceTree = "<group>"; };
+		46EB2E00000200 /* RxNetwork */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxNetwork; path = RxNetwork.xcodeproj; sourceTree = "<group>"; };
+		46EB2E00000210 /* SwiftLint */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftLint; path = SwiftLint.xcodeproj; sourceTree = "<group>"; };
+		46EB2E00000220 /* SwiftyUserDefaults */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyUserDefaults; path = SwiftyUserDefaults.xcodeproj; sourceTree = "<group>"; };
+		46EB2E00000230 /* Validation */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Validation; path = Validation.xcodeproj; sourceTree = "<group>"; };
 		46EB2E000002E0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		46EB2E00000310 /* Pods-AnimatedTransition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AnimatedTransition.release.xcconfig"; sourceTree = "<group>"; };
 		46EB2E00000320 /* Pods-AnimatedTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AnimatedTransition.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1941,19 +1451,19 @@
 		46EB2E00000080 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				46EB2E000000C0 /* Alamofire */,
-				46EB2E000000E0 /* CryptoSwift */,
-				46EB2E000001C0 /* DifferenceKit */,
-				46EB2E000001D0 /* Kingfisher */,
-				46EB2E000001E0 /* MBProgressHUD */,
-				46EB2E000001F0 /* MJRefresh */,
-				46EB2E00000200 /* Motion */,
-				46EB2E00000210 /* ReSwift */,
-				46EB2E00000150 /* RxCocoa */,
-				46EB2E00000160 /* RxRelay */,
-				46EB2E00000130 /* RxSwift */,
-				46EB2E00000170 /* SnapKit */,
-				46EB2E00000220 /* SwiftLint */,
+				46EB2E00000150 /* Alamofire */,
+				46EB2E00000170 /* CryptoSwift */,
+				46EB2E00000180 /* DifferenceKit */,
+				46EB2E000001A0 /* Kingfisher */,
+				46EB2E000001B0 /* MBProgressHUD */,
+				46EB2E000001C0 /* MJRefresh */,
+				46EB2E000001E0 /* Motion */,
+				46EB2E000001F0 /* ReSwift */,
+				46EB2E000000F0 /* RxCocoa */,
+				46EB2E00000100 /* RxRelay */,
+				46EB2E000000E0 /* RxSwift */,
+				46EB2E00000110 /* SnapKit */,
+				46EB2E00000210 /* SwiftLint */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1961,17 +1471,17 @@
 		46EB2E00000090 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				46EB2E000000D0 /* CocoaExtension */,
-				46EB2E000001B0 /* CollectionKit */,
-				46EB2E000000F0 /* Encryption */,
-				46EB2E00000100 /* FunctionalSwift */,
-				46EB2E00000110 /* ModalManager */,
-				46EB2E00000180 /* RxGesture */,
-				46EB2E00000120 /* RxNetwork */,
-				46EB2E00000190 /* RxOptional */,
-				46EB2E000001A0 /* RxSwiftExt */,
-				46EB2E00000230 /* SwiftyUserDefaults */,
-				46EB2E00000140 /* Validation */,
+				46EB2E000000C0 /* CocoaExtension */,
+				46EB2E00000160 /* CollectionKit */,
+				46EB2E00000190 /* Encryption */,
+				46EB2E000000D0 /* FunctionalSwift */,
+				46EB2E000001D0 /* ModalManager */,
+				46EB2E00000120 /* RxGesture */,
+				46EB2E00000200 /* RxNetwork */,
+				46EB2E00000130 /* RxOptional */,
+				46EB2E00000140 /* RxSwiftExt */,
+				46EB2E00000220 /* SwiftyUserDefaults */,
+				46EB2E00000230 /* Validation */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -2365,19 +1875,13 @@
 			buildRules = (
 			);
 			dependencies = (
-				46EB2E00002D50 /* PBXTargetDependency */,
-				46EB2E00002D70 /* PBXTargetDependency */,
-				46EB2E00002ED0 /* PBXTargetDependency */,
-				46EB2E00002D90 /* PBXTargetDependency */,
-				46EB2E00002DB0 /* PBXTargetDependency */,
-				46EB2E00002DD0 /* PBXTargetDependency */,
-				46EB2E00002DF0 /* PBXTargetDependency */,
-				46EB2E00002E70 /* PBXTargetDependency */,
-				46EB2E00002E10 /* PBXTargetDependency */,
-				46EB2E00002E90 /* PBXTargetDependency */,
-				46EB2E00002E30 /* PBXTargetDependency */,
-				46EB2E00002EB0 /* PBXTargetDependency */,
-				46EB2E00002E50 /* PBXTargetDependency */,
+				46EB2E000026D0 /* PBXTargetDependency */,
+				46EB2E00002790 /* PBXTargetDependency */,
+				46EB2E000026F0 /* PBXTargetDependency */,
+				46EB2E00002730 /* PBXTargetDependency */,
+				46EB2E00002750 /* PBXTargetDependency */,
+				46EB2E00002710 /* PBXTargetDependency */,
+				46EB2E00002770 /* PBXTargetDependency */,
 			);
 			name = "Pods-UIComponents-CollectionKitExtensions";
 			productName = "Pods-UIComponents-CollectionKitExtensions";
@@ -2396,18 +1900,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				46EB2E00002EF0 /* PBXTargetDependency */,
-				46EB2E00002F10 /* PBXTargetDependency */,
-				46EB2E00002F30 /* PBXTargetDependency */,
-				46EB2E00002F50 /* PBXTargetDependency */,
-				46EB2E00002F70 /* PBXTargetDependency */,
-				46EB2E00002F90 /* PBXTargetDependency */,
-				46EB2E00003010 /* PBXTargetDependency */,
-				46EB2E00002FB0 /* PBXTargetDependency */,
-				46EB2E00003030 /* PBXTargetDependency */,
-				46EB2E00002FD0 /* PBXTargetDependency */,
-				46EB2E00003050 /* PBXTargetDependency */,
-				46EB2E00002FF0 /* PBXTargetDependency */,
+				46EB2E000027B0 /* PBXTargetDependency */,
+				46EB2E000027D0 /* PBXTargetDependency */,
+				46EB2E00002810 /* PBXTargetDependency */,
+				46EB2E00002830 /* PBXTargetDependency */,
+				46EB2E000027F0 /* PBXTargetDependency */,
+				46EB2E00002850 /* PBXTargetDependency */,
 			);
 			name = "Pods-UIComponents-ScrollExtensions";
 			productName = "Pods-UIComponents-ScrollExtensions";
@@ -2428,13 +1926,6 @@
 			dependencies = (
 				46EB2E00001650 /* PBXTargetDependency */,
 				46EB2E00001670 /* PBXTargetDependency */,
-				46EB2E00001690 /* PBXTargetDependency */,
-				46EB2E000016B0 /* PBXTargetDependency */,
-				46EB2E000016D0 /* PBXTargetDependency */,
-				46EB2E000016F0 /* PBXTargetDependency */,
-				46EB2E00001710 /* PBXTargetDependency */,
-				46EB2E00001730 /* PBXTargetDependency */,
-				46EB2E00001750 /* PBXTargetDependency */,
 			);
 			name = "Pods-AnimatedTransition";
 			productName = "Pods-AnimatedTransition";
@@ -2453,15 +1944,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				46EB2E00002430 /* PBXTargetDependency */,
-				46EB2E00002450 /* PBXTargetDependency */,
-				46EB2E00002470 /* PBXTargetDependency */,
-				46EB2E00002490 /* PBXTargetDependency */,
-				46EB2E000024B0 /* PBXTargetDependency */,
-				46EB2E000024D0 /* PBXTargetDependency */,
-				46EB2E000024F0 /* PBXTargetDependency */,
-				46EB2E00002510 /* PBXTargetDependency */,
-				46EB2E00002530 /* PBXTargetDependency */,
+				46EB2E000020D0 /* PBXTargetDependency */,
+				46EB2E000020F0 /* PBXTargetDependency */,
 			);
 			name = "Pods-List";
 			productName = "Pods-List";
@@ -2480,30 +1964,30 @@
 			buildRules = (
 			);
 			dependencies = (
-				46EB2E00001A70 /* PBXTargetDependency */,
-				46EB2E00001A90 /* PBXTargetDependency */,
-				46EB2E00001C50 /* PBXTargetDependency */,
 				46EB2E00001AB0 /* PBXTargetDependency */,
-				46EB2E00001C70 /* PBXTargetDependency */,
+				46EB2E00001990 /* PBXTargetDependency */,
 				46EB2E00001AD0 /* PBXTargetDependency */,
 				46EB2E00001AF0 /* PBXTargetDependency */,
-				46EB2E00001C90 /* PBXTargetDependency */,
-				46EB2E00001CB0 /* PBXTargetDependency */,
-				46EB2E00001CD0 /* PBXTargetDependency */,
 				46EB2E00001B10 /* PBXTargetDependency */,
-				46EB2E00001CF0 /* PBXTargetDependency */,
-				46EB2E00001D10 /* PBXTargetDependency */,
-				46EB2E00001B90 /* PBXTargetDependency */,
-				46EB2E00001BF0 /* PBXTargetDependency */,
 				46EB2E00001B30 /* PBXTargetDependency */,
-				46EB2E00001C10 /* PBXTargetDependency */,
-				46EB2E00001BB0 /* PBXTargetDependency */,
+				46EB2E000019B0 /* PBXTargetDependency */,
 				46EB2E00001B50 /* PBXTargetDependency */,
-				46EB2E00001C30 /* PBXTargetDependency */,
-				46EB2E00001BD0 /* PBXTargetDependency */,
-				46EB2E00001D30 /* PBXTargetDependency */,
-				46EB2E00001D50 /* PBXTargetDependency */,
 				46EB2E00001B70 /* PBXTargetDependency */,
+				46EB2E00001B90 /* PBXTargetDependency */,
+				46EB2E00001BB0 /* PBXTargetDependency */,
+				46EB2E00001BD0 /* PBXTargetDependency */,
+				46EB2E00001BF0 /* PBXTargetDependency */,
+				46EB2E000019F0 /* PBXTargetDependency */,
+				46EB2E00001A50 /* PBXTargetDependency */,
+				46EB2E00001C10 /* PBXTargetDependency */,
+				46EB2E00001A70 /* PBXTargetDependency */,
+				46EB2E00001A10 /* PBXTargetDependency */,
+				46EB2E000019D0 /* PBXTargetDependency */,
+				46EB2E00001A90 /* PBXTargetDependency */,
+				46EB2E00001A30 /* PBXTargetDependency */,
+				46EB2E00001C30 /* PBXTargetDependency */,
+				46EB2E00001C50 /* PBXTargetDependency */,
+				46EB2E00001C70 /* PBXTargetDependency */,
 			);
 			name = "Pods-AppExtension-AppExtensionTests";
 			productName = "Pods-AppExtension-AppExtensionTests";
@@ -2522,20 +2006,14 @@
 			buildRules = (
 			);
 			dependencies = (
-				46EB2E00002A10 /* PBXTargetDependency */,
-				46EB2E00002A30 /* PBXTargetDependency */,
-				46EB2E00002A50 /* PBXTargetDependency */,
-				46EB2E00002A70 /* PBXTargetDependency */,
-				46EB2E00002A90 /* PBXTargetDependency */,
-				46EB2E00002AB0 /* PBXTargetDependency */,
-				46EB2E00002B30 /* PBXTargetDependency */,
-				46EB2E00002B70 /* PBXTargetDependency */,
-				46EB2E00002AD0 /* PBXTargetDependency */,
-				46EB2E00002B90 /* PBXTargetDependency */,
-				46EB2E00002B50 /* PBXTargetDependency */,
-				46EB2E00002AF0 /* PBXTargetDependency */,
-				46EB2E00002BB0 /* PBXTargetDependency */,
-				46EB2E00002B10 /* PBXTargetDependency */,
+				46EB2E00002510 /* PBXTargetDependency */,
+				46EB2E00002530 /* PBXTargetDependency */,
+				46EB2E00002570 /* PBXTargetDependency */,
+				46EB2E000025B0 /* PBXTargetDependency */,
+				46EB2E000025D0 /* PBXTargetDependency */,
+				46EB2E00002590 /* PBXTargetDependency */,
+				46EB2E00002550 /* PBXTargetDependency */,
+				46EB2E000025F0 /* PBXTargetDependency */,
 			);
 			name = "Pods-RxExtensions";
 			productName = "Pods-RxExtensions";
@@ -2554,18 +2032,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				46EB2E000022B0 /* PBXTargetDependency */,
-				46EB2E000022D0 /* PBXTargetDependency */,
-				46EB2E000022F0 /* PBXTargetDependency */,
-				46EB2E00002310 /* PBXTargetDependency */,
-				46EB2E00002330 /* PBXTargetDependency */,
-				46EB2E00002350 /* PBXTargetDependency */,
-				46EB2E000023D0 /* PBXTargetDependency */,
-				46EB2E00002370 /* PBXTargetDependency */,
-				46EB2E000023F0 /* PBXTargetDependency */,
-				46EB2E00002390 /* PBXTargetDependency */,
-				46EB2E00002410 /* PBXTargetDependency */,
-				46EB2E000023B0 /* PBXTargetDependency */,
+				46EB2E00002010 /* PBXTargetDependency */,
+				46EB2E00002030 /* PBXTargetDependency */,
+				46EB2E00002070 /* PBXTargetDependency */,
+				46EB2E00002090 /* PBXTargetDependency */,
+				46EB2E00002050 /* PBXTargetDependency */,
+				46EB2E000020B0 /* PBXTargetDependency */,
 			);
 			name = "Pods-EmptyDataSet";
 			productName = "Pods-EmptyDataSet";
@@ -2584,20 +2056,14 @@
 			buildRules = (
 			);
 			dependencies = (
-				46EB2E00002550 /* PBXTargetDependency */,
-				46EB2E00002570 /* PBXTargetDependency */,
-				46EB2E00002590 /* PBXTargetDependency */,
-				46EB2E000025B0 /* PBXTargetDependency */,
-				46EB2E000025D0 /* PBXTargetDependency */,
-				46EB2E000025F0 /* PBXTargetDependency */,
-				46EB2E00002670 /* PBXTargetDependency */,
-				46EB2E000026B0 /* PBXTargetDependency */,
-				46EB2E00002610 /* PBXTargetDependency */,
-				46EB2E000026D0 /* PBXTargetDependency */,
-				46EB2E00002690 /* PBXTargetDependency */,
-				46EB2E00002630 /* PBXTargetDependency */,
-				46EB2E000026F0 /* PBXTargetDependency */,
-				46EB2E00002650 /* PBXTargetDependency */,
+				46EB2E00002110 /* PBXTargetDependency */,
+				46EB2E00002130 /* PBXTargetDependency */,
+				46EB2E00002170 /* PBXTargetDependency */,
+				46EB2E000021B0 /* PBXTargetDependency */,
+				46EB2E000021D0 /* PBXTargetDependency */,
+				46EB2E00002190 /* PBXTargetDependency */,
+				46EB2E00002150 /* PBXTargetDependency */,
+				46EB2E000021F0 /* PBXTargetDependency */,
 			);
 			name = "Pods-NavigationFlow";
 			productName = "Pods-NavigationFlow";
@@ -2616,30 +2082,30 @@
 			buildRules = (
 			);
 			dependencies = (
-				46EB2E00001D70 /* PBXTargetDependency */,
-				46EB2E00001D90 /* PBXTargetDependency */,
-				46EB2E00001F50 /* PBXTargetDependency */,
 				46EB2E00001DB0 /* PBXTargetDependency */,
-				46EB2E00001F70 /* PBXTargetDependency */,
+				46EB2E00001C90 /* PBXTargetDependency */,
 				46EB2E00001DD0 /* PBXTargetDependency */,
 				46EB2E00001DF0 /* PBXTargetDependency */,
-				46EB2E00001F90 /* PBXTargetDependency */,
-				46EB2E00001FB0 /* PBXTargetDependency */,
-				46EB2E00001FD0 /* PBXTargetDependency */,
 				46EB2E00001E10 /* PBXTargetDependency */,
-				46EB2E00001FF0 /* PBXTargetDependency */,
-				46EB2E00002010 /* PBXTargetDependency */,
-				46EB2E00001E90 /* PBXTargetDependency */,
-				46EB2E00001EF0 /* PBXTargetDependency */,
 				46EB2E00001E30 /* PBXTargetDependency */,
-				46EB2E00001F10 /* PBXTargetDependency */,
-				46EB2E00001EB0 /* PBXTargetDependency */,
+				46EB2E00001CB0 /* PBXTargetDependency */,
 				46EB2E00001E50 /* PBXTargetDependency */,
-				46EB2E00001F30 /* PBXTargetDependency */,
-				46EB2E00001ED0 /* PBXTargetDependency */,
-				46EB2E00002030 /* PBXTargetDependency */,
-				46EB2E00002050 /* PBXTargetDependency */,
 				46EB2E00001E70 /* PBXTargetDependency */,
+				46EB2E00001E90 /* PBXTargetDependency */,
+				46EB2E00001EB0 /* PBXTargetDependency */,
+				46EB2E00001ED0 /* PBXTargetDependency */,
+				46EB2E00001EF0 /* PBXTargetDependency */,
+				46EB2E00001CF0 /* PBXTargetDependency */,
+				46EB2E00001D50 /* PBXTargetDependency */,
+				46EB2E00001F10 /* PBXTargetDependency */,
+				46EB2E00001D70 /* PBXTargetDependency */,
+				46EB2E00001D10 /* PBXTargetDependency */,
+				46EB2E00001CD0 /* PBXTargetDependency */,
+				46EB2E00001D90 /* PBXTargetDependency */,
+				46EB2E00001D30 /* PBXTargetDependency */,
+				46EB2E00001F30 /* PBXTargetDependency */,
+				46EB2E00001F50 /* PBXTargetDependency */,
+				46EB2E00001F70 /* PBXTargetDependency */,
 			);
 			name = "Pods-AppExtension-AppExtensionUITests";
 			productName = "Pods-AppExtension-AppExtensionUITests";
@@ -2658,15 +2124,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				46EB2E00002190 /* PBXTargetDependency */,
-				46EB2E000021B0 /* PBXTargetDependency */,
-				46EB2E000021D0 /* PBXTargetDependency */,
-				46EB2E000021F0 /* PBXTargetDependency */,
-				46EB2E00002210 /* PBXTargetDependency */,
-				46EB2E00002230 /* PBXTargetDependency */,
-				46EB2E00002250 /* PBXTargetDependency */,
-				46EB2E00002270 /* PBXTargetDependency */,
-				46EB2E00002290 /* PBXTargetDependency */,
+				46EB2E00001FD0 /* PBXTargetDependency */,
+				46EB2E00001FF0 /* PBXTargetDependency */,
 			);
 			name = "Pods-Core";
 			productName = "Pods-Core";
@@ -2685,30 +2144,30 @@
 			buildRules = (
 			);
 			dependencies = (
-				46EB2E00002710 /* PBXTargetDependency */,
-				46EB2E00002730 /* PBXTargetDependency */,
-				46EB2E000028F0 /* PBXTargetDependency */,
-				46EB2E00002750 /* PBXTargetDependency */,
-				46EB2E00002910 /* PBXTargetDependency */,
-				46EB2E00002770 /* PBXTargetDependency */,
-				46EB2E00002790 /* PBXTargetDependency */,
-				46EB2E00002930 /* PBXTargetDependency */,
-				46EB2E00002950 /* PBXTargetDependency */,
-				46EB2E00002970 /* PBXTargetDependency */,
-				46EB2E000027B0 /* PBXTargetDependency */,
-				46EB2E00002990 /* PBXTargetDependency */,
-				46EB2E000029B0 /* PBXTargetDependency */,
-				46EB2E00002830 /* PBXTargetDependency */,
-				46EB2E00002890 /* PBXTargetDependency */,
-				46EB2E000027D0 /* PBXTargetDependency */,
-				46EB2E000028B0 /* PBXTargetDependency */,
-				46EB2E00002850 /* PBXTargetDependency */,
-				46EB2E000027F0 /* PBXTargetDependency */,
-				46EB2E000028D0 /* PBXTargetDependency */,
-				46EB2E00002870 /* PBXTargetDependency */,
-				46EB2E000029D0 /* PBXTargetDependency */,
-				46EB2E000029F0 /* PBXTargetDependency */,
-				46EB2E00002810 /* PBXTargetDependency */,
+				46EB2E00002330 /* PBXTargetDependency */,
+				46EB2E00002210 /* PBXTargetDependency */,
+				46EB2E00002350 /* PBXTargetDependency */,
+				46EB2E00002370 /* PBXTargetDependency */,
+				46EB2E00002390 /* PBXTargetDependency */,
+				46EB2E000023B0 /* PBXTargetDependency */,
+				46EB2E00002230 /* PBXTargetDependency */,
+				46EB2E000023D0 /* PBXTargetDependency */,
+				46EB2E000023F0 /* PBXTargetDependency */,
+				46EB2E00002410 /* PBXTargetDependency */,
+				46EB2E00002430 /* PBXTargetDependency */,
+				46EB2E00002450 /* PBXTargetDependency */,
+				46EB2E00002470 /* PBXTargetDependency */,
+				46EB2E00002270 /* PBXTargetDependency */,
+				46EB2E000022D0 /* PBXTargetDependency */,
+				46EB2E00002490 /* PBXTargetDependency */,
+				46EB2E000022F0 /* PBXTargetDependency */,
+				46EB2E00002290 /* PBXTargetDependency */,
+				46EB2E00002250 /* PBXTargetDependency */,
+				46EB2E00002310 /* PBXTargetDependency */,
+				46EB2E000022B0 /* PBXTargetDependency */,
+				46EB2E000024B0 /* PBXTargetDependency */,
+				46EB2E000024D0 /* PBXTargetDependency */,
+				46EB2E000024F0 /* PBXTargetDependency */,
 			);
 			name = "Pods-ProjectBasic";
 			productName = "Pods-ProjectBasic";
@@ -2727,15 +2186,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				46EB2E00002070 /* PBXTargetDependency */,
-				46EB2E00002090 /* PBXTargetDependency */,
-				46EB2E000020B0 /* PBXTargetDependency */,
-				46EB2E000020D0 /* PBXTargetDependency */,
-				46EB2E000020F0 /* PBXTargetDependency */,
-				46EB2E00002110 /* PBXTargetDependency */,
-				46EB2E00002130 /* PBXTargetDependency */,
-				46EB2E00002150 /* PBXTargetDependency */,
-				46EB2E00002170 /* PBXTargetDependency */,
+				46EB2E00001F90 /* PBXTargetDependency */,
+				46EB2E00001FB0 /* PBXTargetDependency */,
 			);
 			name = "Pods-Coordinator";
 			productName = "Pods-Coordinator";
@@ -2754,18 +2206,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				46EB2E00002BD0 /* PBXTargetDependency */,
-				46EB2E00002BF0 /* PBXTargetDependency */,
-				46EB2E00002C10 /* PBXTargetDependency */,
-				46EB2E00002C30 /* PBXTargetDependency */,
-				46EB2E00002C50 /* PBXTargetDependency */,
-				46EB2E00002C70 /* PBXTargetDependency */,
-				46EB2E00002CF0 /* PBXTargetDependency */,
-				46EB2E00002C90 /* PBXTargetDependency */,
-				46EB2E00002D10 /* PBXTargetDependency */,
-				46EB2E00002CB0 /* PBXTargetDependency */,
-				46EB2E00002D30 /* PBXTargetDependency */,
-				46EB2E00002CD0 /* PBXTargetDependency */,
+				46EB2E00002610 /* PBXTargetDependency */,
+				46EB2E00002630 /* PBXTargetDependency */,
+				46EB2E00002670 /* PBXTargetDependency */,
+				46EB2E00002690 /* PBXTargetDependency */,
+				46EB2E00002650 /* PBXTargetDependency */,
+				46EB2E000026B0 /* PBXTargetDependency */,
 			);
 			name = "Pods-UIComponents";
 			productName = "Pods-UIComponents";
@@ -2784,30 +2230,30 @@
 			buildRules = (
 			);
 			dependencies = (
-				46EB2E00001770 /* PBXTargetDependency */,
-				46EB2E00001790 /* PBXTargetDependency */,
-				46EB2E00001950 /* PBXTargetDependency */,
 				46EB2E000017B0 /* PBXTargetDependency */,
-				46EB2E00001970 /* PBXTargetDependency */,
+				46EB2E00001690 /* PBXTargetDependency */,
 				46EB2E000017D0 /* PBXTargetDependency */,
 				46EB2E000017F0 /* PBXTargetDependency */,
-				46EB2E00001990 /* PBXTargetDependency */,
-				46EB2E000019B0 /* PBXTargetDependency */,
-				46EB2E000019D0 /* PBXTargetDependency */,
 				46EB2E00001810 /* PBXTargetDependency */,
-				46EB2E000019F0 /* PBXTargetDependency */,
-				46EB2E00001A10 /* PBXTargetDependency */,
-				46EB2E00001890 /* PBXTargetDependency */,
-				46EB2E000018F0 /* PBXTargetDependency */,
 				46EB2E00001830 /* PBXTargetDependency */,
-				46EB2E00001910 /* PBXTargetDependency */,
-				46EB2E000018B0 /* PBXTargetDependency */,
+				46EB2E000016B0 /* PBXTargetDependency */,
 				46EB2E00001850 /* PBXTargetDependency */,
-				46EB2E00001930 /* PBXTargetDependency */,
-				46EB2E000018D0 /* PBXTargetDependency */,
-				46EB2E00001A30 /* PBXTargetDependency */,
-				46EB2E00001A50 /* PBXTargetDependency */,
 				46EB2E00001870 /* PBXTargetDependency */,
+				46EB2E00001890 /* PBXTargetDependency */,
+				46EB2E000018B0 /* PBXTargetDependency */,
+				46EB2E000018D0 /* PBXTargetDependency */,
+				46EB2E000018F0 /* PBXTargetDependency */,
+				46EB2E000016F0 /* PBXTargetDependency */,
+				46EB2E00001750 /* PBXTargetDependency */,
+				46EB2E00001910 /* PBXTargetDependency */,
+				46EB2E00001770 /* PBXTargetDependency */,
+				46EB2E00001710 /* PBXTargetDependency */,
+				46EB2E000016D0 /* PBXTargetDependency */,
+				46EB2E00001790 /* PBXTargetDependency */,
+				46EB2E00001730 /* PBXTargetDependency */,
+				46EB2E00001930 /* PBXTargetDependency */,
+				46EB2E00001950 /* PBXTargetDependency */,
+				46EB2E00001970 /* PBXTargetDependency */,
 			);
 			name = "Pods-AppExtension";
 			productName = "Pods-AppExtension";
@@ -2826,15 +2272,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				46EB2E00003070 /* PBXTargetDependency */,
-				46EB2E00003090 /* PBXTargetDependency */,
-				46EB2E000030B0 /* PBXTargetDependency */,
-				46EB2E000030D0 /* PBXTargetDependency */,
-				46EB2E000030F0 /* PBXTargetDependency */,
-				46EB2E00003110 /* PBXTargetDependency */,
-				46EB2E00003130 /* PBXTargetDependency */,
-				46EB2E00003150 /* PBXTargetDependency */,
-				46EB2E00003170 /* PBXTargetDependency */,
+				46EB2E00002870 /* PBXTargetDependency */,
+				46EB2E00002890 /* PBXTargetDependency */,
+				46EB2E000028B0 /* PBXTargetDependency */,
 			);
 			name = "Pods-UserNotificationManager";
 			productName = "Pods-UserNotificationManager";
@@ -2863,76 +2303,76 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProjectRef = 46EB2E000000C0 /* Alamofire */;
+					ProjectRef = 46EB2E000000C0 /* CocoaExtension */;
 				},
 				{
-					ProjectRef = 46EB2E000000D0 /* CocoaExtension */;
+					ProjectRef = 46EB2E000000D0 /* FunctionalSwift */;
 				},
 				{
-					ProjectRef = 46EB2E000000E0 /* CryptoSwift */;
+					ProjectRef = 46EB2E000000E0 /* RxSwift */;
 				},
 				{
-					ProjectRef = 46EB2E000000F0 /* Encryption */;
+					ProjectRef = 46EB2E000000F0 /* RxCocoa */;
 				},
 				{
-					ProjectRef = 46EB2E00000100 /* FunctionalSwift */;
+					ProjectRef = 46EB2E00000100 /* RxRelay */;
 				},
 				{
-					ProjectRef = 46EB2E00000110 /* ModalManager */;
+					ProjectRef = 46EB2E00000110 /* SnapKit */;
 				},
 				{
-					ProjectRef = 46EB2E00000120 /* RxNetwork */;
+					ProjectRef = 46EB2E00000120 /* RxGesture */;
 				},
 				{
-					ProjectRef = 46EB2E00000130 /* RxSwift */;
+					ProjectRef = 46EB2E00000130 /* RxOptional */;
 				},
 				{
-					ProjectRef = 46EB2E00000140 /* Validation */;
+					ProjectRef = 46EB2E00000140 /* RxSwiftExt */;
 				},
 				{
-					ProjectRef = 46EB2E00000150 /* RxCocoa */;
+					ProjectRef = 46EB2E00000150 /* Alamofire */;
 				},
 				{
-					ProjectRef = 46EB2E00000160 /* RxRelay */;
+					ProjectRef = 46EB2E00000160 /* CollectionKit */;
 				},
 				{
-					ProjectRef = 46EB2E00000170 /* SnapKit */;
+					ProjectRef = 46EB2E00000170 /* CryptoSwift */;
 				},
 				{
-					ProjectRef = 46EB2E00000180 /* RxGesture */;
+					ProjectRef = 46EB2E00000180 /* DifferenceKit */;
 				},
 				{
-					ProjectRef = 46EB2E00000190 /* RxOptional */;
+					ProjectRef = 46EB2E00000190 /* Encryption */;
 				},
 				{
-					ProjectRef = 46EB2E000001A0 /* RxSwiftExt */;
+					ProjectRef = 46EB2E000001A0 /* Kingfisher */;
 				},
 				{
-					ProjectRef = 46EB2E000001B0 /* CollectionKit */;
+					ProjectRef = 46EB2E000001B0 /* MBProgressHUD */;
 				},
 				{
-					ProjectRef = 46EB2E000001C0 /* DifferenceKit */;
+					ProjectRef = 46EB2E000001C0 /* MJRefresh */;
 				},
 				{
-					ProjectRef = 46EB2E000001D0 /* Kingfisher */;
+					ProjectRef = 46EB2E000001D0 /* ModalManager */;
 				},
 				{
-					ProjectRef = 46EB2E000001E0 /* MBProgressHUD */;
+					ProjectRef = 46EB2E000001E0 /* Motion */;
 				},
 				{
-					ProjectRef = 46EB2E000001F0 /* MJRefresh */;
+					ProjectRef = 46EB2E000001F0 /* ReSwift */;
 				},
 				{
-					ProjectRef = 46EB2E00000200 /* Motion */;
+					ProjectRef = 46EB2E00000200 /* RxNetwork */;
 				},
 				{
-					ProjectRef = 46EB2E00000210 /* ReSwift */;
+					ProjectRef = 46EB2E00000210 /* SwiftLint */;
 				},
 				{
-					ProjectRef = 46EB2E00000220 /* SwiftLint */;
+					ProjectRef = 46EB2E00000220 /* SwiftyUserDefaults */;
 				},
 				{
-					ProjectRef = 46EB2E00000230 /* SwiftyUserDefaults */;
+					ProjectRef = 46EB2E00000230 /* Validation */;
 				},
 			);
 			projectRoot = "";
@@ -3190,427 +2630,427 @@
 /* Begin PBXTargetDependency section */
 		46EB2E00001650 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Alamofire;
+			name = CocoaExtension;
 			targetProxy = 46EB2E00001640 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001670 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CocoaExtension;
+			name = FunctionalSwift;
 			targetProxy = 46EB2E00001660 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001690 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CryptoSwift;
+			name = CocoaExtension;
 			targetProxy = 46EB2E00001680 /* PBXContainerItemProxy */;
 		};
 		46EB2E000016B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Encryption;
+			name = FunctionalSwift;
 			targetProxy = 46EB2E000016A0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000016D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = FunctionalSwift;
+			name = RxSwift;
 			targetProxy = 46EB2E000016C0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000016F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ModalManager;
+			name = RxCocoa;
 			targetProxy = 46EB2E000016E0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001710 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxNetwork;
+			name = RxRelay;
 			targetProxy = 46EB2E00001700 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001730 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwift;
+			name = SnapKit;
 			targetProxy = 46EB2E00001720 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001750 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Validation;
+			name = RxGesture;
 			targetProxy = 46EB2E00001740 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001770 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Alamofire;
+			name = RxOptional;
 			targetProxy = 46EB2E00001760 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001790 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CocoaExtension;
+			name = RxSwiftExt;
 			targetProxy = 46EB2E00001780 /* PBXContainerItemProxy */;
 		};
 		46EB2E000017B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CryptoSwift;
+			name = Alamofire;
 			targetProxy = 46EB2E000017A0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000017D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Encryption;
+			name = CollectionKit;
 			targetProxy = 46EB2E000017C0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000017F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = FunctionalSwift;
+			name = CryptoSwift;
 			targetProxy = 46EB2E000017E0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001810 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ModalManager;
+			name = DifferenceKit;
 			targetProxy = 46EB2E00001800 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001830 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxNetwork;
+			name = Encryption;
 			targetProxy = 46EB2E00001820 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001850 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwift;
+			name = Kingfisher;
 			targetProxy = 46EB2E00001840 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001870 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Validation;
+			name = MBProgressHUD;
 			targetProxy = 46EB2E00001860 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001890 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxCocoa;
+			name = MJRefresh;
 			targetProxy = 46EB2E00001880 /* PBXContainerItemProxy */;
 		};
 		46EB2E000018B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxRelay;
+			name = ModalManager;
 			targetProxy = 46EB2E000018A0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000018D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SnapKit;
+			name = Motion;
 			targetProxy = 46EB2E000018C0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000018F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxGesture;
+			name = ReSwift;
 			targetProxy = 46EB2E000018E0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001910 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxOptional;
+			name = RxNetwork;
 			targetProxy = 46EB2E00001900 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001930 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwiftExt;
+			name = SwiftLint;
 			targetProxy = 46EB2E00001920 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001950 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CollectionKit;
+			name = SwiftyUserDefaults;
 			targetProxy = 46EB2E00001940 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001970 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = DifferenceKit;
+			name = Validation;
 			targetProxy = 46EB2E00001960 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001990 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Kingfisher;
+			name = CocoaExtension;
 			targetProxy = 46EB2E00001980 /* PBXContainerItemProxy */;
 		};
 		46EB2E000019B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = MBProgressHUD;
+			name = FunctionalSwift;
 			targetProxy = 46EB2E000019A0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000019D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = MJRefresh;
+			name = RxSwift;
 			targetProxy = 46EB2E000019C0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000019F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Motion;
+			name = RxCocoa;
 			targetProxy = 46EB2E000019E0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001A10 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ReSwift;
+			name = RxRelay;
 			targetProxy = 46EB2E00001A00 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001A30 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SwiftLint;
+			name = SnapKit;
 			targetProxy = 46EB2E00001A20 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001A50 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SwiftyUserDefaults;
+			name = RxGesture;
 			targetProxy = 46EB2E00001A40 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001A70 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Alamofire;
+			name = RxOptional;
 			targetProxy = 46EB2E00001A60 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001A90 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CocoaExtension;
+			name = RxSwiftExt;
 			targetProxy = 46EB2E00001A80 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001AB0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CryptoSwift;
+			name = Alamofire;
 			targetProxy = 46EB2E00001AA0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001AD0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Encryption;
+			name = CollectionKit;
 			targetProxy = 46EB2E00001AC0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001AF0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = FunctionalSwift;
+			name = CryptoSwift;
 			targetProxy = 46EB2E00001AE0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001B10 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ModalManager;
+			name = DifferenceKit;
 			targetProxy = 46EB2E00001B00 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001B30 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxNetwork;
+			name = Encryption;
 			targetProxy = 46EB2E00001B20 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001B50 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwift;
+			name = Kingfisher;
 			targetProxy = 46EB2E00001B40 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001B70 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Validation;
+			name = MBProgressHUD;
 			targetProxy = 46EB2E00001B60 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001B90 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxCocoa;
+			name = MJRefresh;
 			targetProxy = 46EB2E00001B80 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001BB0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxRelay;
+			name = ModalManager;
 			targetProxy = 46EB2E00001BA0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001BD0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SnapKit;
+			name = Motion;
 			targetProxy = 46EB2E00001BC0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001BF0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxGesture;
+			name = ReSwift;
 			targetProxy = 46EB2E00001BE0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001C10 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxOptional;
+			name = RxNetwork;
 			targetProxy = 46EB2E00001C00 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001C30 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwiftExt;
+			name = SwiftLint;
 			targetProxy = 46EB2E00001C20 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001C50 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CollectionKit;
+			name = SwiftyUserDefaults;
 			targetProxy = 46EB2E00001C40 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001C70 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = DifferenceKit;
+			name = Validation;
 			targetProxy = 46EB2E00001C60 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001C90 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Kingfisher;
+			name = CocoaExtension;
 			targetProxy = 46EB2E00001C80 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001CB0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = MBProgressHUD;
+			name = FunctionalSwift;
 			targetProxy = 46EB2E00001CA0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001CD0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = MJRefresh;
+			name = RxSwift;
 			targetProxy = 46EB2E00001CC0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001CF0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Motion;
+			name = RxCocoa;
 			targetProxy = 46EB2E00001CE0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001D10 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ReSwift;
+			name = RxRelay;
 			targetProxy = 46EB2E00001D00 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001D30 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SwiftLint;
+			name = SnapKit;
 			targetProxy = 46EB2E00001D20 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001D50 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SwiftyUserDefaults;
+			name = RxGesture;
 			targetProxy = 46EB2E00001D40 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001D70 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Alamofire;
+			name = RxOptional;
 			targetProxy = 46EB2E00001D60 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001D90 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CocoaExtension;
+			name = RxSwiftExt;
 			targetProxy = 46EB2E00001D80 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001DB0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CryptoSwift;
+			name = Alamofire;
 			targetProxy = 46EB2E00001DA0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001DD0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Encryption;
+			name = CollectionKit;
 			targetProxy = 46EB2E00001DC0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001DF0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = FunctionalSwift;
+			name = CryptoSwift;
 			targetProxy = 46EB2E00001DE0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001E10 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ModalManager;
+			name = DifferenceKit;
 			targetProxy = 46EB2E00001E00 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001E30 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxNetwork;
+			name = Encryption;
 			targetProxy = 46EB2E00001E20 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001E50 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwift;
+			name = Kingfisher;
 			targetProxy = 46EB2E00001E40 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001E70 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Validation;
+			name = MBProgressHUD;
 			targetProxy = 46EB2E00001E60 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001E90 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxCocoa;
+			name = MJRefresh;
 			targetProxy = 46EB2E00001E80 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001EB0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxRelay;
+			name = ModalManager;
 			targetProxy = 46EB2E00001EA0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001ED0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SnapKit;
+			name = Motion;
 			targetProxy = 46EB2E00001EC0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001EF0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxGesture;
+			name = ReSwift;
 			targetProxy = 46EB2E00001EE0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001F10 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxOptional;
+			name = RxNetwork;
 			targetProxy = 46EB2E00001F00 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001F30 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwiftExt;
+			name = SwiftLint;
 			targetProxy = 46EB2E00001F20 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001F50 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CollectionKit;
+			name = SwiftyUserDefaults;
 			targetProxy = 46EB2E00001F40 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001F70 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = DifferenceKit;
+			name = Validation;
 			targetProxy = 46EB2E00001F60 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001F90 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Kingfisher;
+			name = CocoaExtension;
 			targetProxy = 46EB2E00001F80 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001FB0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = MBProgressHUD;
+			name = FunctionalSwift;
 			targetProxy = 46EB2E00001FA0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001FD0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = MJRefresh;
+			name = CocoaExtension;
 			targetProxy = 46EB2E00001FC0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00001FF0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Motion;
+			name = FunctionalSwift;
 			targetProxy = 46EB2E00001FE0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002010 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ReSwift;
+			name = CocoaExtension;
 			targetProxy = 46EB2E00002000 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002030 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SwiftLint;
+			name = FunctionalSwift;
 			targetProxy = 46EB2E00002020 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002050 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SwiftyUserDefaults;
+			name = RxSwift;
 			targetProxy = 46EB2E00002040 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002070 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Alamofire;
+			name = RxCocoa;
 			targetProxy = 46EB2E00002060 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002090 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CocoaExtension;
+			name = RxRelay;
 			targetProxy = 46EB2E00002080 /* PBXContainerItemProxy */;
 		};
 		46EB2E000020B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CryptoSwift;
+			name = SnapKit;
 			targetProxy = 46EB2E000020A0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000020D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Encryption;
+			name = CocoaExtension;
 			targetProxy = 46EB2E000020C0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000020F0 /* PBXTargetDependency */ = {
@@ -3620,12 +3060,12 @@
 		};
 		46EB2E00002110 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ModalManager;
+			name = CocoaExtension;
 			targetProxy = 46EB2E00002100 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002130 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxNetwork;
+			name = FunctionalSwift;
 			targetProxy = 46EB2E00002120 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002150 /* PBXTargetDependency */ = {
@@ -3635,202 +3075,202 @@
 		};
 		46EB2E00002170 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Validation;
+			name = RxCocoa;
 			targetProxy = 46EB2E00002160 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002190 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Alamofire;
+			name = RxRelay;
 			targetProxy = 46EB2E00002180 /* PBXContainerItemProxy */;
 		};
 		46EB2E000021B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CocoaExtension;
+			name = RxGesture;
 			targetProxy = 46EB2E000021A0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000021D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CryptoSwift;
+			name = RxOptional;
 			targetProxy = 46EB2E000021C0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000021F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Encryption;
+			name = RxSwiftExt;
 			targetProxy = 46EB2E000021E0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002210 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = FunctionalSwift;
+			name = CocoaExtension;
 			targetProxy = 46EB2E00002200 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002230 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ModalManager;
+			name = FunctionalSwift;
 			targetProxy = 46EB2E00002220 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002250 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxNetwork;
+			name = RxSwift;
 			targetProxy = 46EB2E00002240 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002270 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwift;
+			name = RxCocoa;
 			targetProxy = 46EB2E00002260 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002290 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Validation;
+			name = RxRelay;
 			targetProxy = 46EB2E00002280 /* PBXContainerItemProxy */;
 		};
 		46EB2E000022B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Alamofire;
+			name = SnapKit;
 			targetProxy = 46EB2E000022A0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000022D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CocoaExtension;
+			name = RxGesture;
 			targetProxy = 46EB2E000022C0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000022F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CryptoSwift;
+			name = RxOptional;
 			targetProxy = 46EB2E000022E0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002310 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Encryption;
+			name = RxSwiftExt;
 			targetProxy = 46EB2E00002300 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002330 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = FunctionalSwift;
+			name = Alamofire;
 			targetProxy = 46EB2E00002320 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002350 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ModalManager;
+			name = CollectionKit;
 			targetProxy = 46EB2E00002340 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002370 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxNetwork;
+			name = CryptoSwift;
 			targetProxy = 46EB2E00002360 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002390 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwift;
+			name = DifferenceKit;
 			targetProxy = 46EB2E00002380 /* PBXContainerItemProxy */;
 		};
 		46EB2E000023B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Validation;
+			name = Encryption;
 			targetProxy = 46EB2E000023A0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000023D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxCocoa;
+			name = Kingfisher;
 			targetProxy = 46EB2E000023C0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000023F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxRelay;
+			name = MBProgressHUD;
 			targetProxy = 46EB2E000023E0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002410 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SnapKit;
+			name = MJRefresh;
 			targetProxy = 46EB2E00002400 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002430 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Alamofire;
+			name = ModalManager;
 			targetProxy = 46EB2E00002420 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002450 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CocoaExtension;
+			name = Motion;
 			targetProxy = 46EB2E00002440 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002470 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CryptoSwift;
+			name = ReSwift;
 			targetProxy = 46EB2E00002460 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002490 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Encryption;
+			name = RxNetwork;
 			targetProxy = 46EB2E00002480 /* PBXContainerItemProxy */;
 		};
 		46EB2E000024B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = FunctionalSwift;
+			name = SwiftLint;
 			targetProxy = 46EB2E000024A0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000024D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ModalManager;
+			name = SwiftyUserDefaults;
 			targetProxy = 46EB2E000024C0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000024F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxNetwork;
+			name = Validation;
 			targetProxy = 46EB2E000024E0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002510 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwift;
+			name = CocoaExtension;
 			targetProxy = 46EB2E00002500 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002530 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Validation;
+			name = FunctionalSwift;
 			targetProxy = 46EB2E00002520 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002550 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Alamofire;
+			name = RxSwift;
 			targetProxy = 46EB2E00002540 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002570 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CocoaExtension;
+			name = RxCocoa;
 			targetProxy = 46EB2E00002560 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002590 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CryptoSwift;
+			name = RxRelay;
 			targetProxy = 46EB2E00002580 /* PBXContainerItemProxy */;
 		};
 		46EB2E000025B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Encryption;
+			name = RxGesture;
 			targetProxy = 46EB2E000025A0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000025D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = FunctionalSwift;
+			name = RxOptional;
 			targetProxy = 46EB2E000025C0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000025F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ModalManager;
+			name = RxSwiftExt;
 			targetProxy = 46EB2E000025E0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002610 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxNetwork;
+			name = CocoaExtension;
 			targetProxy = 46EB2E00002600 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002630 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwift;
+			name = FunctionalSwift;
 			targetProxy = 46EB2E00002620 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002650 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Validation;
+			name = RxSwift;
 			targetProxy = 46EB2E00002640 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002670 /* PBXTargetDependency */ = {
@@ -3845,52 +3285,52 @@
 		};
 		46EB2E000026B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxGesture;
+			name = SnapKit;
 			targetProxy = 46EB2E000026A0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000026D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxOptional;
+			name = CocoaExtension;
 			targetProxy = 46EB2E000026C0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000026F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxSwiftExt;
+			name = FunctionalSwift;
 			targetProxy = 46EB2E000026E0 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002710 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Alamofire;
+			name = RxSwift;
 			targetProxy = 46EB2E00002700 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002730 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CocoaExtension;
+			name = RxCocoa;
 			targetProxy = 46EB2E00002720 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002750 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = CryptoSwift;
+			name = RxRelay;
 			targetProxy = 46EB2E00002740 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002770 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Encryption;
+			name = SnapKit;
 			targetProxy = 46EB2E00002760 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002790 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = FunctionalSwift;
+			name = CollectionKit;
 			targetProxy = 46EB2E00002780 /* PBXContainerItemProxy */;
 		};
 		46EB2E000027B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ModalManager;
+			name = CocoaExtension;
 			targetProxy = 46EB2E000027A0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000027D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxNetwork;
+			name = FunctionalSwift;
 			targetProxy = 46EB2E000027C0 /* PBXContainerItemProxy */;
 		};
 		46EB2E000027F0 /* PBXTargetDependency */ = {
@@ -3900,383 +3340,33 @@
 		};
 		46EB2E00002810 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Validation;
+			name = RxCocoa;
 			targetProxy = 46EB2E00002800 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002830 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxCocoa;
+			name = RxRelay;
 			targetProxy = 46EB2E00002820 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002850 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxRelay;
+			name = SnapKit;
 			targetProxy = 46EB2E00002840 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002870 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SnapKit;
+			name = CocoaExtension;
 			targetProxy = 46EB2E00002860 /* PBXContainerItemProxy */;
 		};
 		46EB2E00002890 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxGesture;
+			name = FunctionalSwift;
 			targetProxy = 46EB2E00002880 /* PBXContainerItemProxy */;
 		};
 		46EB2E000028B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RxOptional;
+			name = RxSwift;
 			targetProxy = 46EB2E000028A0 /* PBXContainerItemProxy */;
-		};
-		46EB2E000028D0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxSwiftExt;
-			targetProxy = 46EB2E000028C0 /* PBXContainerItemProxy */;
-		};
-		46EB2E000028F0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CollectionKit;
-			targetProxy = 46EB2E000028E0 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002910 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DifferenceKit;
-			targetProxy = 46EB2E00002900 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002930 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Kingfisher;
-			targetProxy = 46EB2E00002920 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002950 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MBProgressHUD;
-			targetProxy = 46EB2E00002940 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002970 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MJRefresh;
-			targetProxy = 46EB2E00002960 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002990 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Motion;
-			targetProxy = 46EB2E00002980 /* PBXContainerItemProxy */;
-		};
-		46EB2E000029B0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ReSwift;
-			targetProxy = 46EB2E000029A0 /* PBXContainerItemProxy */;
-		};
-		46EB2E000029D0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftLint;
-			targetProxy = 46EB2E000029C0 /* PBXContainerItemProxy */;
-		};
-		46EB2E000029F0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftyUserDefaults;
-			targetProxy = 46EB2E000029E0 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002A10 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			targetProxy = 46EB2E00002A00 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002A30 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CocoaExtension;
-			targetProxy = 46EB2E00002A20 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002A50 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CryptoSwift;
-			targetProxy = 46EB2E00002A40 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002A70 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Encryption;
-			targetProxy = 46EB2E00002A60 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002A90 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FunctionalSwift;
-			targetProxy = 46EB2E00002A80 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002AB0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ModalManager;
-			targetProxy = 46EB2E00002AA0 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002AD0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxNetwork;
-			targetProxy = 46EB2E00002AC0 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002AF0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxSwift;
-			targetProxy = 46EB2E00002AE0 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002B10 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Validation;
-			targetProxy = 46EB2E00002B00 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002B30 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxCocoa;
-			targetProxy = 46EB2E00002B20 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002B50 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxRelay;
-			targetProxy = 46EB2E00002B40 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002B70 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxGesture;
-			targetProxy = 46EB2E00002B60 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002B90 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxOptional;
-			targetProxy = 46EB2E00002B80 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002BB0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxSwiftExt;
-			targetProxy = 46EB2E00002BA0 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002BD0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			targetProxy = 46EB2E00002BC0 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002BF0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CocoaExtension;
-			targetProxy = 46EB2E00002BE0 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002C10 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CryptoSwift;
-			targetProxy = 46EB2E00002C00 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002C30 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Encryption;
-			targetProxy = 46EB2E00002C20 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002C50 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FunctionalSwift;
-			targetProxy = 46EB2E00002C40 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002C70 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ModalManager;
-			targetProxy = 46EB2E00002C60 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002C90 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxNetwork;
-			targetProxy = 46EB2E00002C80 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002CB0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxSwift;
-			targetProxy = 46EB2E00002CA0 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002CD0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Validation;
-			targetProxy = 46EB2E00002CC0 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002CF0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxCocoa;
-			targetProxy = 46EB2E00002CE0 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002D10 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxRelay;
-			targetProxy = 46EB2E00002D00 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002D30 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SnapKit;
-			targetProxy = 46EB2E00002D20 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002D50 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			targetProxy = 46EB2E00002D40 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002D70 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CocoaExtension;
-			targetProxy = 46EB2E00002D60 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002D90 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CryptoSwift;
-			targetProxy = 46EB2E00002D80 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002DB0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Encryption;
-			targetProxy = 46EB2E00002DA0 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002DD0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FunctionalSwift;
-			targetProxy = 46EB2E00002DC0 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002DF0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ModalManager;
-			targetProxy = 46EB2E00002DE0 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002E10 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxNetwork;
-			targetProxy = 46EB2E00002E00 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002E30 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxSwift;
-			targetProxy = 46EB2E00002E20 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002E50 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Validation;
-			targetProxy = 46EB2E00002E40 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002E70 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxCocoa;
-			targetProxy = 46EB2E00002E60 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002E90 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxRelay;
-			targetProxy = 46EB2E00002E80 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002EB0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SnapKit;
-			targetProxy = 46EB2E00002EA0 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002ED0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CollectionKit;
-			targetProxy = 46EB2E00002EC0 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002EF0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			targetProxy = 46EB2E00002EE0 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002F10 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CocoaExtension;
-			targetProxy = 46EB2E00002F00 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002F30 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CryptoSwift;
-			targetProxy = 46EB2E00002F20 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002F50 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Encryption;
-			targetProxy = 46EB2E00002F40 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002F70 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FunctionalSwift;
-			targetProxy = 46EB2E00002F60 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002F90 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ModalManager;
-			targetProxy = 46EB2E00002F80 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002FB0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxNetwork;
-			targetProxy = 46EB2E00002FA0 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002FD0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxSwift;
-			targetProxy = 46EB2E00002FC0 /* PBXContainerItemProxy */;
-		};
-		46EB2E00002FF0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Validation;
-			targetProxy = 46EB2E00002FE0 /* PBXContainerItemProxy */;
-		};
-		46EB2E00003010 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxCocoa;
-			targetProxy = 46EB2E00003000 /* PBXContainerItemProxy */;
-		};
-		46EB2E00003030 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxRelay;
-			targetProxy = 46EB2E00003020 /* PBXContainerItemProxy */;
-		};
-		46EB2E00003050 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SnapKit;
-			targetProxy = 46EB2E00003040 /* PBXContainerItemProxy */;
-		};
-		46EB2E00003070 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			targetProxy = 46EB2E00003060 /* PBXContainerItemProxy */;
-		};
-		46EB2E00003090 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CocoaExtension;
-			targetProxy = 46EB2E00003080 /* PBXContainerItemProxy */;
-		};
-		46EB2E000030B0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CryptoSwift;
-			targetProxy = 46EB2E000030A0 /* PBXContainerItemProxy */;
-		};
-		46EB2E000030D0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Encryption;
-			targetProxy = 46EB2E000030C0 /* PBXContainerItemProxy */;
-		};
-		46EB2E000030F0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FunctionalSwift;
-			targetProxy = 46EB2E000030E0 /* PBXContainerItemProxy */;
-		};
-		46EB2E00003110 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ModalManager;
-			targetProxy = 46EB2E00003100 /* PBXContainerItemProxy */;
-		};
-		46EB2E00003130 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxNetwork;
-			targetProxy = 46EB2E00003120 /* PBXContainerItemProxy */;
-		};
-		46EB2E00003150 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RxSwift;
-			targetProxy = 46EB2E00003140 /* PBXContainerItemProxy */;
-		};
-		46EB2E00003170 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Validation;
-			targetProxy = 46EB2E00003160 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

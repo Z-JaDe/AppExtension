@@ -12,7 +12,6 @@ public protocol CollectionProtocol: RandomAccessCollection,
     RangeReplaceableCollection,
     MutableCollection {
     associatedtype Element
-    // TODO: 优化成let
     var value: ContiguousArray<Element> {get set}
     init<C: Swift.Collection>(_ changesets: C) where C.Element == Element
 }
