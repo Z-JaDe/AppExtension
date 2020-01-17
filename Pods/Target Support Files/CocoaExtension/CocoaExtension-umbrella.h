@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "UIImage+GIF.h"
 #import "UIImage+ImageEffects.h"
 
 FOUNDATION_EXPORT double CocoaExtensionVersionNumber;
