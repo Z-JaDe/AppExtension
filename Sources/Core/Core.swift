@@ -13,3 +13,10 @@ import Foundation
 #endif
 @_exported import FunctionalSwift
 @_exported import CocoaExtension
+
+public func measure(closure: () -> Void) {
+    let start = CACurrentMediaTime()
+    closure()
+    let end = CACurrentMediaTime()
+    print("测量时间：\(end - start)")
+}

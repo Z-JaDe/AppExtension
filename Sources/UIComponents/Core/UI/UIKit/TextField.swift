@@ -26,16 +26,17 @@ open class TextField: UITextField {
         self.placeholderColor = Color.placeholder
     }
     open override var placeholder: String? {
-        didSet {
-            self.placeholderFont = self.placeholderFont.flatMap({$0})
-            self.placeholderColor = self.placeholderColor.flatMap({$0})
-        }
+        didSet { updatePlaceholder() }
     }
     public var placeholderFont: UIFont? {
-        didSet { self.attributedPlaceholder = self.attributedPlaceholder.flatMap({$0.font(placeholderFont).finalize()}) }
+        didSet { updatePlaceholder() }
     }
     public var placeholderColor: UIColor? {
-        didSet { self.attributedPlaceholder = self.attributedPlaceholder.flatMap({$0.color(placeholderColor).finalize()}) }
+        didSet { updatePlaceholder() }
+    }
+    func updatePlaceholder() {
+        self.attributedPlaceholder = self.attributedPlaceholder?
+                .mergeStyle(.color(placeholderColor), .font(placeholderFont)).finalize()
     }
     // MARK: -
     /// 输入框text位置

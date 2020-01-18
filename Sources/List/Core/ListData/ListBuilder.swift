@@ -13,37 +13,32 @@ public struct ListBuilder<Section, Item> {
     public typealias _Component<I> = (Section, [I])
     public typealias Component = _Component<Item>
     public typealias Components = ListData<Section, Item>
-    ///不知原因 无效
-    public static func buildBlock() -> Components {
-        return []
-    }
-    ///不知原因 无效
-    public static func buildBlock(_ content: Component) -> Components {
-        return Components(content)
-    }
+
     public static func buildBlock(_ content: Component...) -> Components {
         return Components(content.map(SectionData.init))
     }
-}
-extension ListBuilder {
     public static func buildBlock(_ content: Components...) -> Components {
         return Components(content.flatMap({$0}))
     }
 }
 extension ListBuilder {
     public static func buildIf(_ content: Component?) -> Components {
-        if let content = content {
-            return Components(content)
-        } else {
-            return []
-        }
+        content.map(Components.init) ?? []
     }
     public static func buildIf(_ content: Components?) -> Components {
-        if let content = content {
-            return content
-        } else {
-            return []
-        }
+        content ?? []
+    }
+    public static func buildEither(first: Component) -> Components {
+        [first]
+    }
+    public static func buildEither(second: Component) -> Components {
+        [second]
+    }
+    public static func buildEither(first: Components) -> Components {
+        first
+    }
+    public static func buildEither(second: Components) -> Components {
+        second
     }
 }
 
