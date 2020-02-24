@@ -869,10 +869,6 @@
 		18691B992356C0C500274B12 /* AnyCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyCodable.swift; sourceTree = "<group>"; };
 		18691B9A2356C0C500274B12 /* AnyEncodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyEncodable.swift; sourceTree = "<group>"; };
 		1889011C23A1D61D000DB171 /* AppExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppExtension.entitlements; sourceTree = "<group>"; };
-		1892196023016F4B008A6BC3 /* Playground_Blank.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground_Blank.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		1892196123016F4B008A6BC3 /* Playground_View.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground_View.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		1892196323016FD4008A6BC3 /* Playground_Game.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground_Game.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		1892196423016FF5008A6BC3 /* Playground_Map.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground_Map.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		18B56D452272CEC000AADA00 /* LockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockTest.swift; sourceTree = "<group>"; };
 		18C0A382230542CA0042F8AA /* CollectionViewable+CurrentIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewable+CurrentIndex.swift"; sourceTree = "<group>"; };
 		18C0A384230543190042F8AA /* TotalCountable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCountable.swift; sourceTree = "<group>"; };
@@ -2943,10 +2939,6 @@
 		C962C18720CE17990061FC20 = {
 			isa = PBXGroup;
 			children = (
-				1892196423016FF5008A6BC3 /* Playground_Map.playground */,
-				1892196023016F4B008A6BC3 /* Playground_Blank.playground */,
-				1892196323016FD4008A6BC3 /* Playground_Game.playground */,
-				1892196123016F4B008A6BC3 /* Playground_View.playground */,
 				C910FEBC20CFF55600761301 /* AppExtension.podspec */,
 				C9640E2B20DB49BD00528E7A /* Sources */,
 				C962C19220CE17990061FC20 /* AppExtension */,
