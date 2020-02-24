@@ -19,14 +19,14 @@ public enum ItemSpace {
 
 public protocol ItemsOneWayScrollable: OneWayScrollable {
     associatedtype CellView: UIView
-    typealias LayoutItemType = LayoutItem<CellView>
+    typealias _LayoutItem = LayoutItem<CellView>
     var itemSpace: ItemSpace {get set}
 
     func setNeedsLayoutCells()
 }
 public extension ItemsOneWayScrollable {
     /// ZJaDe: 更新itemArr的尺寸布局，cellLength不为空时表示给定尺寸
-    func layoutCellsSize(_ cellArr: [LayoutItemType], _ cellLength: CGFloat?, _ cellSize: CGFloat?) {
+    func layoutCellsSize(_ cellArr: [_LayoutItem], _ cellLength: CGFloat?, _ cellSize: CGFloat?) {
         cellArr.lazy.enumerated().forEach { (_, cell) in
             switch self.scrollDirection {
             case .horizontal:
@@ -41,15 +41,15 @@ public extension ItemsOneWayScrollable {
         }
     }
     @discardableResult
-    func layoutCellsOrigin(_ cellArr: [LayoutItemType], _ startOrigin: CGFloat) -> CGFloat {
+    func layoutCellsOrigin(_ cellArr: [_LayoutItem], _ startOrigin: CGFloat) -> CGFloat {
         cellArr.reduce(startOrigin) { (offSet, item) -> CGFloat in
             item.setLeading(offSet)
             return item.trailing
         }
     }
     // MARK: -
-    func createLayoutCell(_ cell: CellView) -> LayoutItemType {
-        LayoutItemType(cell, itemSpace, scrollDirection)
+    func createLayoutCell(_ cell: CellView) -> _LayoutItem {
+        _LayoutItem(cell, itemSpace, scrollDirection)
     }
 }
 public extension ItemsOneWayScrollable where Self: UIView {

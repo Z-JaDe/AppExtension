@@ -41,3 +41,6 @@
 [submodule "BaseSupport/Fork/CollectionKit"]
 	path = BaseSupport/Fork/CollectionKit
 	url = git@github.com:Z-JaDe/CollectionKit.git
+[submodule "BaseSupport/iCarouselSwift"]
+	path = BaseSupport/iCarouselSwift
+	url = git@github.com:Z-JaDe/iCarouselSwift.git

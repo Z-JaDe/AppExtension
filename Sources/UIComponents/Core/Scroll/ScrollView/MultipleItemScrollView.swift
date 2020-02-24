@@ -8,7 +8,7 @@
 import Foundation
 
 open class MultipleItemScrollView<CellView>: ScrollView, ItemsOneWayScrollable where CellView: UIView {
-    private var _layoutCells: [LayoutItemType] = []
+    private var _layoutCells: [_LayoutItem] = []
     public var itemSpace: ItemSpace = .leading(0) {
         didSet {setNeedsLayoutCells()}
     }
@@ -80,7 +80,7 @@ open class MultipleItemScrollView<CellView>: ScrollView, ItemsOneWayScrollable w
 }
 extension MultipleItemScrollView {
     /// ZJaDe: layoutCells相关，子类重写会用到
-    public var layoutCells: [LayoutItemType] {
+    public var layoutCells: [_LayoutItem] {
         _layoutCells
     }
     /// ZJaDe: layoutCells相关，子类重写会用到
@@ -88,7 +88,7 @@ extension MultipleItemScrollView {
         self._layoutCells = []
     }
     /// ZJaDe: layoutCells相关，子类重写会用到
-    public func resetLayoutCells(_ value: [LayoutItemType]) {
+    public func resetLayoutCells(_ value: [_LayoutItem]) {
         layoutCells.forEach { (cell) in
             cell.view.removeFromSuperview()
         }
@@ -108,12 +108,12 @@ extension MultipleItemScrollView {
         removeCellFromSuperview(removeCell.view)
     }
     /// ZJaDe: layoutCells相关，子类重写会用到
-    public func insert(layoutCell: LayoutItemType, at index: Int) {
+    public func insert(layoutCell: _LayoutItem, at index: Int) {
         _layoutCells.insert(layoutCell, at: index)
         self.insertSubview(layoutCell.view, at: index)
     }
     /// ZJaDe: layoutCells相关，子类重写会用到
-    public func append(layoutCell: LayoutItemType) {
+    public func append(layoutCell: _LayoutItem) {
         _layoutCells.append(layoutCell)
         self.addSubview(layoutCell.view)
     }
