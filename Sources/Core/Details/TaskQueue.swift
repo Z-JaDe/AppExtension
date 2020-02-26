@@ -14,7 +14,7 @@ public protocol ProcessTask {
     func isEqual(other: ProcessTask) -> Bool
 }
 public struct AsyncTask: ProcessTask {
-    let hashValue: Int32 = taskSentinel.increase()
+    let tag: Int32 = taskSentinel.increase()
     let task: (@escaping () -> Void) -> Void
     init(closure: @escaping (@escaping () -> Void) -> Void) {
         self.task = closure
@@ -27,11 +27,11 @@ public struct AsyncTask: ProcessTask {
         guard let other = other as? AsyncTask else {
             return false
         }
-        return self.hashValue == other.hashValue
+        return self.tag == other.tag
     }
 }
 public struct SyncTask: ProcessTask {
-    let hashValue: Int32 = taskSentinel.increase()
+    let tag: Int32 = taskSentinel.increase()
     let task: () -> Void
     init(closure: @escaping () -> Void) {
         self.task = closure
@@ -45,7 +45,7 @@ public struct SyncTask: ProcessTask {
         guard let other = other as? SyncTask else {
             return false
         }
-        return self.hashValue == other.hashValue
+        return self.tag == other.tag
     }
 }
 

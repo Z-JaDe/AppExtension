@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class AsyncLayer: CALayer {
+open class AsyncLayer: CALayer {
     private var sentinel: Sentinel = Sentinel()
     public var isDisplaysAsynchronously: Bool = true
     public var displayTask: AsyncLayerDisplayTask = AsyncLayerDisplayTask()
@@ -47,7 +47,7 @@ extension AsyncLayer {
             }
         } else {
             cancelAsyncDisplay()
-            self.displayAsync(displayClosure, {return false})
+            self.displayAsync(displayClosure, { false })
         }
     }
     private func displayAsync(_ displayClosure: AsyncLayerDisplayTask.DisplayClosure, _ isCancelled: @escaping () -> Bool) {
@@ -57,32 +57,19 @@ extension AsyncLayer {
         let backgroundColor: CGColor? = getBackgroundColor()
 
         guard size.width >= 1 && size.height >= 1 else {
-            self.updateContentsInMain(nil, completion: {
-                self.didDisplayInMain(true)
-            })
+            didDisplayAndUpdateContentsInMain(nil)
             return
         }
         if isCancelled() { return self.didDisplayInMain(false) }
-        UIGraphicsBeginImageContextWithOptions(size, isOpaque, scale)
-        let context: CGContext = UIGraphicsGetCurrentContext()!
-        self.setBackgroundColor(backgroundColor, in: context)
-        displayClosure(context, size, isCancelled)
-
-        if isCancelled() {
-            UIGraphicsEndImageContext()
-            return self.didDisplayInMain(false)
+        let format = UIGraphicsImageRendererFormat()
+        format.opaque = isOpaque
+        format.scale = scale
+        let image = UIGraphicsImageRenderer(size: size, format: format).image { (context) in
+            let context = context.cgContext
+            self.setBackgroundColor(backgroundColor, in: context)
+            displayClosure(context, size, isCancelled)
         }
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        if isCancelled() { return self.didDisplayInMain(false) }
-        self.updateContentsInMain(image?.cgImage, completion: {
-            if isCancelled() {
-                return self.didDisplay(false)
-            } else {
-                self.didDisplay(true)
-            }
-        })
+        didDisplayAndUpdateContentsInMain(image.cgImage, isCancelled)
     }
 }
 extension AsyncLayer {
@@ -102,18 +89,27 @@ extension AsyncLayer {
             context.restoreGState()
         }
     }
-    private func updateContentsInMain(_ contents: CGImage?, completion: @escaping () -> Void) {
+    private func didDisplayAndUpdateContentsInMain(_ contents: CGImage?, _ isCancelled: @escaping () -> Bool = { false }) {
+        if isCancelled() {
+            didDisplay(false)
+        }
         performInMain {
-            self.contents = contents
-            completion()
+            if isCancelled() {
+                self.didDisplay(false)
+            } else {
+                self.contents = contents
+                self.didDisplay(true)
+            }
         }
     }
 }
 extension AsyncLayer {
     // MARK: -
+    @inline(__always)
     private func willDisplay() {
         self.displayTask.willDisplay?(self)
     }
+    @inline(__always)
     private func didDisplayInMain(_ isFinished: Bool) {
         performInMain {
             self.didDisplay(isFinished)
@@ -126,19 +122,21 @@ extension AsyncLayer {
             return DispatchQueue.main.async(execute: action)
         }
     }
+    @inline(__always)
     private func didDisplay(_ isFinished: Bool) {
         self.displayTask.didDisplay?(self, isFinished)
     }
     // MARK: -
+    @inline(__always)
     private func cancelAsyncDisplay() {
         sentinel.increase()
     }
 }
 // MARK: -
-public class AsyncLayerDisplayTask {
-    typealias DisplayClosure = (CGContext, CGSize, () -> Bool) -> Void
+public final class AsyncLayerDisplayTask {
+    public typealias DisplayClosure = (CGContext, CGSize, () -> Bool) -> Void
     public init() {}
-    var willDisplay: ((CALayer) -> Void)?
-    var display: DisplayClosure?
-    var didDisplay: ((CALayer, Bool) -> Void)?
+    public var willDisplay: ((CALayer) -> Void)?
+    public var display: DisplayClosure?
+    public var didDisplay: ((CALayer, Bool) -> Void)?
 }

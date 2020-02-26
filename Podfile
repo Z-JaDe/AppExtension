@@ -99,6 +99,7 @@ def commonPods
   userPod 'ModalManager'
   userPod 'Validation' #校验库 正则 身份证 银行卡
   userPod 'Encryption' #加密库 RSA MD5
+  userPod 'iCarouselSwift'
 
   pod 'MBProgressHUD'
   userForkPod 'SwiftyUserDefaults'

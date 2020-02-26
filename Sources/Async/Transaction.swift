@@ -26,16 +26,15 @@ extension Transaction: Hashable {
         hasher.combine(selector)
     }
     public static func == (lhs: Transaction, rhs: Transaction) -> Bool {
-        if lhs.hashValue == rhs.hashValue {
-            return true
+        guard lhs.hashValue == rhs.hashValue else {
+            return false
+        }
+        if lhs.target !== rhs.target {
+            return false
+        } else if lhs.selector != rhs.selector {
+            return false
         } else {
-            if lhs.target !== rhs.target {
-                return false
-            } else if lhs.selector != rhs.selector {
-                return false
-            } else {
-                return true
-            }
+            return true
         }
     }
 }
