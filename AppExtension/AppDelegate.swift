@@ -40,23 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        gcdTest()
 //        copyTest()
 //        Foo().bar()
-        let a = ASDD()
-        a.queue.async {
-            print(1)
-            print(a)
-            print(2)
-            print(a.queue.isInCurrentQueue)
-            print(DispatchQueue.main.isInCurrentQueue)
-            a.queue.async {
-                print(3)
-                print(a)
-                print(4)
-                let value = a.queue.syncIfNeed {
-                    return 5
-                }
-                print(value)
-            }
-        }
         return true
     }
 
