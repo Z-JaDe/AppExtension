@@ -3812,6 +3812,7 @@
 			projectRoot = "";
 			targets = (
 				C962C18F20CE17990061FC20 /* AppExtension */,
+				18691B7F2356BAAB00274B12 /* ZJaDeTester */,
 				C962C4F120CE19C60061FC20 /* Animater */,
 				C962C87320CE1D4D0061FC20 /* Codable */,
 				C962C8A220CE28BC0061FC20 /* Core */,
@@ -3829,7 +3830,6 @@
 				C91240E321C124BD00F13151 /* CollectionKitExtensions */,
 				C9669D9121C766F6007B6668 /* NavigationFlow */,
 				C91BB57B21CA1494001D7789 /* Coordinator */,
-				18691B7F2356BAAB00274B12 /* ZJaDeTester */,
 			);
 		};
 /* End PBXProject section */
@@ -5106,6 +5106,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ZJaDeTester/Preview Content\"";
+				DEVELOPMENT_TEAM = 553C2VE52E;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ZJaDeTester/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -5128,6 +5129,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ZJaDeTester/Preview Content\"";
+				DEVELOPMENT_TEAM = 553C2VE52E;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ZJaDeTester/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
