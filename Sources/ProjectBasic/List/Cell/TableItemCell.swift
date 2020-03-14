@@ -111,21 +111,39 @@ open class TableItemCell: ItemCell, TableCellContentItem, WritableDefaultHeightP
         }
         return resultSize
     }
+    open override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
+        var resultSize: CGSize
+        if self.defaultHeight > 0, targetSize.width > 0 {
+            resultSize = CGSize(width: targetSize.width, height: self.defaultHeight)
+        } else {
+            resultSize = super.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: horizontalFittingPriority, verticalFittingPriority: verticalFittingPriority)
+            if self.defaultHeight > 0 {
+                resultSize.height = self.defaultHeight
+            }
+        }
+        return resultSize
+    }
     open override func systemLayoutSizeFitting(_ targetSize: CGSize) -> CGSize {
         var resultSize: CGSize
-        if self.defaultHeight > 0 {
+        if self.defaultHeight > 0, targetSize.width > 0 {
             resultSize = CGSize(width: targetSize.width, height: self.defaultHeight)
         } else {
             resultSize = super.systemLayoutSizeFitting(targetSize)
+            if self.defaultHeight > 0 {
+                resultSize.height = self.defaultHeight
+            }
         }
         return resultSize
     }
     open override func sizeThatFits(_ size: CGSize) -> CGSize {
         var resultSize: CGSize
-        if self.defaultHeight > 0 {
+        if self.defaultHeight > 0, size.width > 0 {
             resultSize = CGSize(width: size.width, height: self.defaultHeight)
         } else {
             resultSize = super.sizeThatFits(size)
+            if self.defaultHeight > 0 {
+                resultSize.height = self.defaultHeight
+            }
         }
         return resultSize
     }

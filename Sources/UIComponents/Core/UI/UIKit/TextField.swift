@@ -35,8 +35,16 @@ open class TextField: UITextField {
         didSet { updatePlaceholder() }
     }
     func updatePlaceholder() {
-        self.attributedPlaceholder = self.attributedPlaceholder?
-                .mergeStyle(.color(placeholderColor), .font(placeholderFont)).finalize()
+        if let attr = self.attributedPlaceholder {
+            var maker = AttributedString(attr)
+            if let color = self.placeholderColor {
+                maker = maker.mergeStyle(.color(color))
+            }
+            if let font = self.placeholderFont {
+                maker = maker.mergeStyle(.font(font))
+            }
+            self.attributedPlaceholder = maker.finalize()
+        }
     }
     // MARK: -
     /// 输入框text位置
