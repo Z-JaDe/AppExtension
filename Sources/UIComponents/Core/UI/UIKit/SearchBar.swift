@@ -21,8 +21,8 @@ open class SearchBar: UISearchBar, WritableDefaultHeightProtocol {
         }
         return resultSize
     }
-    open override func systemLayoutSizeFitting(_ targetSize: CGSize) -> CGSize {
-        var resultSize = super.systemLayoutSizeFitting(targetSize)
+    open override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
+        var resultSize = super.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: horizontalFittingPriority, verticalFittingPriority: verticalFittingPriority)
         if self.defaultHeight > 0 {
             resultSize.height = self.defaultHeight
         }
