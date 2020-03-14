@@ -91,8 +91,12 @@ open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable
     /// ZJaDe: 负责一些逻辑处理，但是不负责界面布局
     open func willAppear() {
         self.cellState.onNext(.willAppear)
+    }
+    func changeCellStateToDidAppear() {
         if (try? self.cellState.value()) == .willAppear {
             self.cellState.onNext(.didAppear)
+        } else {
+            assertionFailure("Cell状态不对\((try? self.cellState.value()))")
         }
     }
     /// ZJaDe: 负责一些逻辑处理，但是不负责界面布局

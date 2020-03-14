@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RxSwift
 
 extension TableItemCell {
     public static var selectedBackgroundDefaultColor: UIColor = Color.colorFromRGB("#fffdef")!

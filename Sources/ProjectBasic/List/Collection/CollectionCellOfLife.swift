@@ -49,13 +49,22 @@ extension CollectionItemModel: CollectionCellOfLife {
         return cell
     }
     func cellWillAppear(in cell: UICollectionViewCell) {
-        _weakContentCell = (cell as! InternalCollectionViewCell).contentItem as? DynamicCell
-        _weakContentCell?.setModel(self)
-        _weakContentCell?.willAppear()
+        guard let _cell = (cell as! InternalCollectionViewCell).contentItem as? DynamicCell else {
+            assertionFailure("没获取到DynamicCell")
+            return
+        }
+        _weakContentCell = _cell
+        _cell.setModel(self)
+        _cell.willAppear()
+        _cell.changeCellStateToDidAppear()
     }
     func cellDidDisAppear() {
-        getCell()?.didDisappear()
-        getCell()?.setModel(nil)
+        guard let _cell = getCell() else {
+            assertionFailure("DynamicCell提前释放了？")
+            return
+        }
+        _cell.didDisappear()
+        _cell.setModel(nil)
         _weakContentCell = nil
     }
     func shouldHighlight() -> Bool {

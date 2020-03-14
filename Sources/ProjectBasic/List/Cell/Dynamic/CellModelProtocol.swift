@@ -36,6 +36,8 @@ public extension CellModelProtocol where Self: ItemCell {
     }
 }
 // MARK: -
+#if canImport(RxSwift) && canImport(MJRefresh)
+import RxSwift
 public protocol UpdateModelProtocol: class {
     func configDataWithModel()
 
@@ -54,7 +56,7 @@ public extension UpdateModelProtocol {
 }
 public extension UpdateModelProtocol where Self: ItemCell {
     func setNeedUpdateModel() {
-        setNeedUpdateModel(self.cellState.asObservable().map {$0.isAppear}.distinctUntilChanged())
+        setNeedUpdateModel(self.cellState.asObservable().map{$0.isAppear}.distinctUntilChanged())
     }
 }
 public extension UpdateModelProtocol where Self: NSObject {
@@ -67,3 +69,4 @@ public extension UpdateModelProtocol where Self: NSObject {
         }
     }
 }
+#endif

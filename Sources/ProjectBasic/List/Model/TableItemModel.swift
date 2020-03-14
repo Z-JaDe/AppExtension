@@ -15,9 +15,7 @@ open class TableItemModel: ListItemModel {
     /// ZJaDe: 手动释放
     weak var _weakContentCell: DynamicTableItemCell? {
         didSet {
-            guard let cell = _weakContentCell else {
-                return
-            }
+            guard let cell = _weakContentCell else { return }
             cell.isEnabled = self.isEnabled
             cell.isSelected = self.isSelected
             cell.didLayoutSubviewsClosure = {[weak self] _ in

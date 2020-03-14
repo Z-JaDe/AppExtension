@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import RxSwift
+
 open class DynamicTableItemCell: TableItemCell {
 
     var isTempCell: Bool = false

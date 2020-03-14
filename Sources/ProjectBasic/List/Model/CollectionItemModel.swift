@@ -15,7 +15,8 @@ open class CollectionItemModel: ListItemModel {
     /// ZJaDe: 手动释放
     weak var _weakContentCell: DynamicCollectionItemCell? {
         didSet {
-            _weakContentCell?.isEnabled = self.isEnabled
+            guard let cell = _weakContentCell else { return }
+            cell.isEnabled = self.isEnabled
         }
     }
     func getCell() -> DynamicCollectionItemCell? {
