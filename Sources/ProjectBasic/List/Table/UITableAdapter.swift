@@ -29,9 +29,6 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
     public weak private(set) var tableView: UITableView?
     public func tableViewInit(_ tableView: UITableView) {
         self.tableView = tableView
-        // 注册的用的全部都是InternalTableViewCell, 真正的cell是InternalTableViewCell.contentItem
-        tableView.register(InternalTableViewCell.self, forCellReuseIdentifier: InternalTableViewCell.reuseIdentifier)
-
         dataSourceDefaultInit(dataSource)
 
         tableView.delegate = _delegateHooker ?? tableProxy
@@ -107,7 +104,7 @@ extension AnyTableAdapterItem {
             }
         }
         // swiftlint:disable force_cast
-        return (self.value as! CreateTableCellrotocol).createCell(in: tableView, for: indexPath)
+        return (self.value as! TableCellOfLife).createCell(in: tableView, for: indexPath)
     }
 }
 extension UITableAdapter {

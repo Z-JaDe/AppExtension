@@ -28,7 +28,7 @@ extension ItemCell {
     public static var accessoryTypeUnSelectedImage: UIImage = UIImage(named: "ic_accessoryType_unselected") ?? UIImage()
     public static var accessoryTypeSelectedImage: UIImage = UIImage(named: "ic_accessoryType_selected") ?? UIImage()
 }
-open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable & EnabledStateDesignable, HighlightedStateDesignable, BufferPoolItemProtocol {
+open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable & EnabledStateDesignable, HighlightedStateDesignable {
     // MARK: NeedUpdateProtocol
     private(set) var needUpdateSentinel: Sentinel = Sentinel()
     // MARK: selectedAccessoryType
@@ -103,14 +103,11 @@ open class ItemCell: CustomView, SelectedStateDesignable & HiddenStateDesignable
     // MARK: - CellSelectProtocol
     /// ZJaDe: 点击cell回调闭包
     public let didSelectItemCallBacker: CallBackerNoParams = CallBackerNoParams()
-    /// ZJaDe: 点击cell信号监听
-    private let didSelectItemPubject: PublishSubject<Void> = PublishSubject<Void>()
-    /// ZJaDe: 点击cell信号监听，throttle
-    public func throttleDidSelectItem(_ timeInterval: RxTimeInterval = .seconds(1)) -> Observable<Void> {
-        self.didSelectItemPubject.throttle(timeInterval, scheduler: MainScheduler.asyncInstance)
-    }
     open func didSelectItem() {
         self.sendDidSelectItemEvent()
+    }
+    func sendDidSelectItemEvent() {
+        self.didSelectItemCallBacker.call()
     }
 
     // MARK: didLayoutSubviewsClosure
@@ -142,9 +139,5 @@ extension ItemCell {
     }
     func resetAppearDisposeBag() {
         self.resetDisposeBagWithTag("_appear")
-    }
-    func sendDidSelectItemEvent() {
-        self.didSelectItemCallBacker.call()
-        self.didSelectItemPubject.onNext(())
     }
 }

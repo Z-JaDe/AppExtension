@@ -31,37 +31,3 @@ open class StaticTableItemCell: TableItemCell {
     public var checkParamsClosure: CheckParamsClosure?
 }
 extension StaticTableItemCell: CellSelectedStateDesignable {}
-extension StaticTableItemCell: TableCellConfigProtocol {
-    public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
-        // swiftlint:disable force_cast
-        let cell: InternalTableViewCell = _createCell(in: tableView, for: indexPath, InternalTableViewCell.reuseIdentifier) as! InternalTableViewCell
-        //        let item = self.cell()
-        //        logDebug("\(item)创建一个cell")
-        return cell
-    }
-    func willAppear(in cell: UITableViewCell) {
-        guard let cell = cell as? InternalTableViewCell else {
-            return
-        }
-        cell.contentItem = self
-        self.willAppear()
-        //        logDebug("\(item)将要显示")
-    }
-}
-extension StaticTableItemCell: TableCellHeightProtocol {
-    public func updateHeight(_ closure: (() -> Void)? = nil) {
-        self.updateHeight(self, closure)
-    }
-    public func setNeedResetCellHeight() {
-        _setNeedResetCellHeight()
-    }
-
-    public func calculateCellHeight(_ tableView: UITableView, wait: Bool) {
-        let tableViewWidth = tableView.bounds.size.width
-        if tableViewWidth <= 0 { return }
-        /*************** 计算高度 ***************/
-        let itemCellWidth = getItemCellWidth(tableView)
-        let cellHeight = layoutHeight(itemCellWidth)
-        self.changeTempCellHeight(cellHeight + insetVerticalSpace())
-    }
-}

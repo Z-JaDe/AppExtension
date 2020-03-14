@@ -30,7 +30,6 @@ open class CollectionItemCell: ItemCell, CollectionCellContentItem {
     }
     open override func didDisappear() {
         super.didDisappear()
-        self.getInternalCell()?.contentItem = nil
     }
     /// ZJaDe: insets
     public var insets: UIEdgeInsets = Space.cellInsets {

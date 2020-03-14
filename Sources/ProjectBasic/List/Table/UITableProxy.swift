@@ -69,7 +69,7 @@ open class UITableProxy: NSObject, UITableViewDelegate {
     }
     // MARK: -
     open func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        guard let item = tableCellItem(at: indexPath) as? TableCellConfigProtocol else {
+        guard let item = tableCellItem(at: indexPath) as? TableCellOfLife else {
             return true
         }
         return item.shouldHighlight()
@@ -82,8 +82,8 @@ open class UITableProxy: NSObject, UITableViewDelegate {
     }
     open func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let item = tableCellItem(at: indexPath)
-        if let item = item as? TableCellConfigProtocol {
-            item.willAppear(in: cell)
+        if let item = item as? TableCellOfLife {
+            item.cellWillAppear(in: cell)
         }
         if let isEnabled = self.adapter.isEnabled {
             (item as? EnabledStateDesignable)?.refreshEnabledState(isEnabled)
@@ -91,7 +91,7 @@ open class UITableProxy: NSObject, UITableViewDelegate {
     }
     open func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let cell = cell as? InternalTableViewCell {
-            cell.contentItem?.didDisappear()
+            (cell.contentItem as? TableCellOfLife)?.cellDidDisAppear()
         }
     }
 }

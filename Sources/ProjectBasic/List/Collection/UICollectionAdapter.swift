@@ -20,7 +20,6 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionS
 
     public func collectionViewInit(_ collectionView: UICollectionView) {
         self.collectionView = collectionView
-        collectionView.register(InternalCollectionViewCell.self, forCellWithReuseIdentifier: InternalCollectionViewCell.reuseIdentifier)
         collectionView.register(InternalCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: InternalCollectionReusableView.reuseIdentifier)
         collectionView.register(InternalCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: InternalCollectionReusableView.reuseIdentifier)
 

@@ -48,14 +48,14 @@ open class UICollectionProxy: NSObject, UICollectionViewDelegate {
     // MARK: - Tracking the Addition and Removal of Views
     open func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let item = collectionCellItem(at: indexPath)
-        item.willAppear(in: cell)
+        item.cellWillAppear(in: cell)
         if let isEnabled = self.adapter.isEnabled {
             item.refreshEnabledState(isEnabled)
         }
     }
     open func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if let cell = cell as? InternalCollectionViewCell {
-            cell.contentItem?.didDisappear()
+            (cell.contentItem as? CollectionCellOfLife)?.cellDidDisAppear()
         }
     }
     open func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {

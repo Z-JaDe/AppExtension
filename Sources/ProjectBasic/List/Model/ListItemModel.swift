@@ -10,17 +10,7 @@ import UIKit
 
 open class ListItemModel: Hashable {
     public init() {}
-    // MARK: - ID
-    open lazy var cellFullName: String = {
-        var name: String = self.getCellName(self.classFullName)
-        return name
-    }()
-    open var viewNameSuffix: String {
-        "Cell"
-    }
-    open func getCellClsName() -> String {
-        self.cellFullName
-    }
+    public lazy var cellInfo: CellInfo = CellInfo(modelName: self.classFullName)
     // MARK: NeedUpdateProtocol
     private(set) var needUpdateSentinel: Sentinel = Sentinel()
     // MARK: HiddenStateDesignable
@@ -41,8 +31,18 @@ extension ListItemModel: NeedUpdateProtocol {
     }
 }
 extension ListItemModel: ClassNameDesignable {
-    public func getCellName(_ modelName: String) -> String {
-        let range = modelName.index(modelName.endIndex, offsetBy: -5) ..<  modelName.endIndex
-        return modelName.replacingCharacters(in: range, with: self.viewNameSuffix)
+    public struct CellInfo {
+        var nameSuffix: String
+        var clsName: String
+        var reuseIdentifier: String
+        init(modelName: String) {
+            self.nameSuffix = "Cell"
+            self.clsName = Self.getCellName(modelName, nameSuffix)
+            self.reuseIdentifier = clsName
+        }
+        static func getCellName(_ modelName: String, _ nameSuffix: String) -> String {
+            let range = modelName.index(modelName.endIndex, offsetBy: -5) ..<  modelName.endIndex
+            return modelName.replacingCharacters(in: range, with: nameSuffix)
+        }
     }
 }

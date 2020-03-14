@@ -10,30 +10,33 @@ import Foundation
 
 open class TableCellModel: ListItemModel {
 
-    weak var _cell: UITableViewCell? {
+    weak var _weakCell: UITableViewCell? {
         didSet {
-            guard let cell = _cell else {
+            guard let cell = _weakCell else {
                 return
             }
-            var __cell = _cell as? EnabledStateDesignable
-            __cell?.isEnabled = self.isEnabled
+            var temp = _weakCell as? EnabledStateDesignable
+            temp?.isEnabled = self.isEnabled
             cell.isSelected = self.isSelected
         }
+    }
+    func getCell() -> UITableViewCell? {
+        return _weakCell
     }
 
     // MARK: SelectedStateDesignable
     public var isSelected: Bool = false {
-        didSet { _cell?.setSelected(self.isSelected, animated: false) }
+        didSet { getCell()?.setSelected(self.isSelected, animated: false) }
     }
     // MARK: EnabledStateDesignable
     public var isEnabled: Bool? {
         didSet {
-            var cell = _cell as? EnabledStateDesignable
+            var cell = getCell() as? EnabledStateDesignable
             cell?.isEnabled = self.isEnabled
         }
     }
     open func updateEnabledState(_ isEnabled: Bool) {
-        (_cell as? EnabledStateDesignable)?.refreshEnabledState(isEnabled)
+        (getCell() as? EnabledStateDesignable)?.refreshEnabledState(isEnabled)
     }
     // MARK: -
     open func bindingCellData(_ cell: UITableViewCell) {
@@ -44,48 +47,6 @@ open class TableCellModel: ListItemModel {
 }
 extension TableCellModel: CellSelectedStateDesignable {
     public func didSelectItem() {
-        (_cell as? CellSelectedStateDesignable)?.didSelectItem()
-    }
-}
-extension TableCellModel: TableCellConfigProtocol {
-    public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
-        _createCell(in: tableView, for: indexPath, getCellClsName())
-    }
-    func willAppear(in cell: UITableViewCell) {
-        self._cell = cell
-        bindingCellData(cell)
-    }
-    func shouldHighlight() -> Bool {
-        true
-    }
-}
-extension TableCellModel: TableCellHeightProtocol {
-    public func setNeedResetCellHeight() {
-        _setNeedResetCellHeight()
-    }
-
-    /// ZJaDe: 计算高度
-    public func calculateCellHeight(_ tableView: UITableView, wait: Bool) {
-        let tableViewWidth = tableView.bounds.size.width
-        if tableViewWidth <= 0 { return }
-        /*************** 获取tempCell，并赋值 ***************/
-        let cell = self.getTempCell(getCellClsName(), tableView: tableView)
-        self.bindingCellData(cell)
-        /*************** 计算高度 ***************/
-        let itemCellWidth = cell.getItemCellWidth(tableView)
-        let cellHeight = cell.layoutHeight(itemCellWidth)
-        self.changeTempCellHeight(cellHeight)
-    }
-}
-extension TableCellModel {
-    // MARK: -
-    private static var tempCells: [String: UITableViewCell] = [:]
-    func getTempCell(_ cellName: String, tableView: UITableView) -> UITableViewCell {
-        if let cell = TableCellModel.tempCells[cellName] {
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellName)
-            return cell!
-        }
+        (getCell() as? CellSelectedStateDesignable)?.didSelectItem()
     }
 }

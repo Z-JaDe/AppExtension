@@ -12,23 +12,46 @@ open class DynamicTableItemCell: TableItemCell {
 
     var isTempCell: Bool = false
 
-    var _model: TableItemModel? {
+    private var _model: TableItemModel? {
         didSet {
             if let model = self._model {
                 didChangedModel(model)
             }
         }
     }
+    @inline(__always)
+    func getModel() -> TableItemModel? {
+        _model
+    }
+    @inline(__always)
+    func setModel(_ model: TableItemModel?) {
+        _model = model
+    }
     func didChangedModel(_ model: TableItemModel) {}
 
-    open override func didDisappear() {
-        super.didDisappear()
-        _model?.recycleCell(self)
-    }
     override func _updateSelectedState(_ isSelected: Bool) {
         super._updateSelectedState(isSelected)
-        if _model?.isSelected != isSelected {
-            _model?.isSelected = isSelected
+        if getModel()?.isSelected != isSelected {
+            getModel()?.isSelected = isSelected
         }
+    }
+}
+open class TableModelCell<ModelType: TableItemModel>: DynamicTableItemCell, CellModelProtocol {
+
+    public var model: ModelType? {
+        get { return getModel() as? ModelType }
+        set { setModel(newValue) }
+    }
+
+    override func didChangedModel(_ model: TableItemModel) {
+        if isTempCell {
+            configDataWithModel()
+        } else {
+            setNeedUpdateModel()
+        }
+    }
+
+    open func configData(with model: ModelType) {
+
     }
 }

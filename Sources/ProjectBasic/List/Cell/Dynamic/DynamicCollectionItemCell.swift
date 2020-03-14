@@ -12,23 +12,42 @@ open class DynamicCollectionItemCell: CollectionItemCell {
 
     var isTempCell: Bool = false
 
-    var _model: CollectionItemModel? {
+    private var _model: CollectionItemModel? {
         didSet {
             if let model = self._model {
                 didChangedModel(model)
             }
         }
     }
+    @inline(__always)
+    func getModel() -> CollectionItemModel? {
+        _model
+    }
+    @inline(__always)
+    func setModel(_ model: CollectionItemModel?) {
+        _model = model
+    }
     func didChangedModel(_ model: CollectionItemModel) {}
 
-    open override func didDisappear() {
-        super.didDisappear()
-        _model?.recycleCell(self)
-    }
     override func _updateSelectedState(_ isSelected: Bool) {
         super._updateSelectedState(isSelected)
-        if _model?.isSelected != isSelected {
-            _model?.isSelected = isSelected
+        if getModel()?.isSelected != isSelected {
+            getModel()?.isSelected = isSelected
         }
+    }
+}
+open class CollectionModelCell<ModelType: CollectionItemModel>: DynamicCollectionItemCell, CellModelProtocol {
+
+    public var model: ModelType? {
+        get { return getModel() as? ModelType }
+        set { setModel(newValue) }
+    }
+
+    override func didChangedModel(_ model: CollectionItemModel) {
+        setNeedUpdateModel()
+    }
+
+    open func configData(with model: ModelType) {
+
     }
 }

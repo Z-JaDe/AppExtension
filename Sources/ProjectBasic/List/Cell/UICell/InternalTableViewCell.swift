@@ -35,7 +35,6 @@ public extension TableCellContentItem {
     }
 }
 class InternalTableViewCell: UITableViewCell {
-    static let reuseIdentifier: String = InternalTableViewCell.classFullName
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configInit()
@@ -47,13 +46,9 @@ class InternalTableViewCell: UITableViewCell {
         super.prepareForReuse()
         self.accessoryView = nil
     }
-    var tempContentItem: TableCellContentItem?
     var contentItem: TableCellContentItem? {
-        willSet {
-            newValue?.getInternalCell()?.contentItem = nil
-        }
+        willSet { newValue?.getInternalCell()?.contentItem = nil }
         didSet {
-            self.tempContentItem = nil
             oldValue?.removeFromSuperview()
             if let contentItem = self.contentItem {
                 self.contentView.addSubview(contentItem)
