@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class ListViewController<ScrollViewType>: ScrollViewController<ScrollViewType>
+open class ListViewController<ScrollViewType>: GenericsScrollViewController<ScrollViewType>
     where ScrollViewType: UIScrollView {
 
     open var scrollItem: ScrollViewType {

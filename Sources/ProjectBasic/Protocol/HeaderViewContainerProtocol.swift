@@ -9,9 +9,9 @@
 import UIKit
 
 public protocol HeaderViewContainerProtocol: AssociatedObjectProtocol {
-    associatedtype HeaderViewType: DefaultHeightProtocol&UIView
+    associatedtype HeaderViewType: DefaultHeightProtocol & UIView
     var headerView: HeaderViewType {get}
-    associatedtype ScrollViewType: Scrollable&UIView
+    associatedtype ScrollViewType: Scrollable & UIView
     var scrollView: ScrollViewType {get}
 
     func headerAndScrollBinding(in view: UIView?)
