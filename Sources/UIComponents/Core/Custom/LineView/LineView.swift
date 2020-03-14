@@ -55,9 +55,9 @@ open class LineView: CustomView {
     open override var intrinsicContentSize: CGSize {
         switch self.lineAxis {
         case .horizontal:
-            return CGSize(width: 1234, height: self.lineHeight)
+            return CGSize(width: UIView.noIntrinsicMetric, height: self.lineHeight)
         case .vertical:
-            return CGSize(width: self.lineHeight, height: 1234)
+            return CGSize(width: self.lineHeight, height: UIView.noIntrinsicMetric)
         }
     }
     open override func layoutSubviews() {
