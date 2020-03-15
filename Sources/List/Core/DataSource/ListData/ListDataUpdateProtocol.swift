@@ -25,8 +25,8 @@ extension ListDataUpdateProtocol {
     public func updateData() {
         self.reloadData(self.dataArray)
     }
-    public func updateData(_ closure: (_ListData) -> _ListData) {
-        self.reloadData(closure(dataArray))
+    public func updateData(_ closure: (_ListData) -> _ListData, _ completion: (() -> Void)? = nil) {
+        self.reloadData(closure(dataArray), completion)
     }
     /// ZJaDe: 重新刷新 传入 listData
     public func reloadData(_ listData: _ListData?, _ completion: (() -> Void)? = nil) {
