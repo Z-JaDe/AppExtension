@@ -36,7 +36,6 @@
 		180436C823CC8792008E19A5 /* StaticTableItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804369123CC8792008E19A5 /* StaticTableItemCell.swift */; };
 		180436C923CC8792008E19A5 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804369223CC8792008E19A5 /* ButtonCell.swift */; };
 		180436CA23CC8792008E19A5 /* CustomTableItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804369323CC8792008E19A5 /* CustomTableItemCell.swift */; };
-		180436CB23CC8792008E19A5 /* StaticTableItemCell+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804369423CC8792008E19A5 /* StaticTableItemCell+Hashable.swift */; };
 		180436CC23CC8792008E19A5 /* DetailTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804369523CC8792008E19A5 /* DetailTitleCell.swift */; };
 		180436CD23CC8792008E19A5 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804369623CC8792008E19A5 /* SwitchCell.swift */; };
 		180436CE23CC8792008E19A5 /* CollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804369723CC8792008E19A5 /* CollectionReusableView.swift */; };
@@ -44,12 +43,10 @@
 		180436D023CC8792008E19A5 /* UITableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804369A23CC8792008E19A5 /* UITableAdapter.swift */; };
 		180436D123CC8792008E19A5 /* TableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804369B23CC8792008E19A5 /* TableViewHeaderFooterView.swift */; };
 		180436D223CC8792008E19A5 /* ListDataUpdateProtocol+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804369C23CC8792008E19A5 /* ListDataUpdateProtocol+Table.swift */; };
-		180436D323CC8792008E19A5 /* TableItemModel+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804369E23CC8792008E19A5 /* TableItemModel+Hashable.swift */; };
 		180436D523CC8792008E19A5 /* TableItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436A023CC8792008E19A5 /* TableItemModel.swift */; };
 		180436D623CC8792008E19A5 /* ListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436A123CC8792008E19A5 /* ListItemModel.swift */; };
 		180436D723CC8792008E19A5 /* TableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436A223CC8792008E19A5 /* TableCellModel.swift */; };
 		180436D823CC8793008E19A5 /* CollectionItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436A323CC8792008E19A5 /* CollectionItemModel.swift */; };
-		180436D923CC8793008E19A5 /* TableCellModel+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436A423CC8792008E19A5 /* TableCellModel+Hashable.swift */; };
 		180436DA23CC8793008E19A5 /* TableCellOfLife.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436A623CC8792008E19A5 /* TableCellOfLife.swift */; };
 		180436DB23CC8793008E19A5 /* UITableView+CellHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436A823CC8792008E19A5 /* UITableView+CellHeight.swift */; };
 		180436DC23CC8793008E19A5 /* UITableViewCell+Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436A923CC8792008E19A5 /* UITableViewCell+Height.swift */; };
@@ -75,9 +72,8 @@
 		1804371623CC87A8008E19A5 /* TableViewUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436FA23CC87A7008E19A5 /* TableViewUpdating.swift */; };
 		1804371823CC87A8008E19A5 /* List.h in Headers */ = {isa = PBXBuildFile; fileRef = 180436FC23CC87A7008E19A5 /* List.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1804371923CC87A8008E19A5 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436FD23CC87A7008E19A5 /* List.swift */; };
-		1804371A23CC87A8008E19A5 /* AnyTableAdapterItem+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436FF23CC87A7008E19A5 /* AnyTableAdapterItem+Hashable.swift */; };
 		1804371B23CC87A8008E19A5 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804370023CC87A7008E19A5 /* TableViewDataSource.swift */; };
-		1804371D23CC87A8008E19A5 /* AnyTableAdapterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804370223CC87A7008E19A5 /* AnyTableAdapterItem.swift */; };
+		1804371D23CC87A8008E19A5 /* ListAdapterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804370223CC87A7008E19A5 /* ListAdapterItem.swift */; };
 		1804372023CC889C008E19A5 /* SectionModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804371F23CC889C008E19A5 /* SectionModelType.swift */; };
 		1804376B23CC8DB7008E19A5 /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436F823CC87A7008E19A5 /* Updater.swift */; };
 		1805B3CE2276A82900F0574D /* GCDTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805B3CD2276A82900F0574D /* GCDTest.swift */; };
@@ -432,6 +428,7 @@
 		C9D4133021DF8DB6004368D4 /* ModalContainerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4132E21DF8DB6004368D4 /* ModalContainerProtocol.swift */; };
 		C9DF833E2179D1640044334E /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DF833D2179D1640044334E /* Core.swift */; };
 		F07B7D4261FF1E0E896A2386 /* Pods_UserNotificationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8259DE5E679FB6045C03FD7F /* Pods_UserNotificationManager.framework */; };
+		F918CCAA241E4A3B0093ADD2 /* AnyTableAdapterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F918CCA9241E4A3B0093ADD2 /* AnyTableAdapterItem.swift */; };
 		F93F85A3237C75E40068CC59 /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F81A210069AC00B8DF84 /* Permission.swift */; };
 		F93F85A4237C75E40068CC59 /* PermissionScope+AVFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F81B210069AC00B8DF84 /* PermissionScope+AVFoundation.swift */; };
 		F93F85A5237C75E40068CC59 /* PermissionScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F81C210069AC00B8DF84 /* PermissionScope.swift */; };
@@ -792,7 +789,6 @@
 		1804369123CC8792008E19A5 /* StaticTableItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticTableItemCell.swift; sourceTree = "<group>"; };
 		1804369223CC8792008E19A5 /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		1804369323CC8792008E19A5 /* CustomTableItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableItemCell.swift; sourceTree = "<group>"; };
-		1804369423CC8792008E19A5 /* StaticTableItemCell+Hashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StaticTableItemCell+Hashable.swift"; sourceTree = "<group>"; };
 		1804369523CC8792008E19A5 /* DetailTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTitleCell.swift; sourceTree = "<group>"; };
 		1804369623CC8792008E19A5 /* SwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 		1804369723CC8792008E19A5 /* CollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionReusableView.swift; sourceTree = "<group>"; };
@@ -800,12 +796,10 @@
 		1804369A23CC8792008E19A5 /* UITableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableAdapter.swift; sourceTree = "<group>"; };
 		1804369B23CC8792008E19A5 /* TableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		1804369C23CC8792008E19A5 /* ListDataUpdateProtocol+Table.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListDataUpdateProtocol+Table.swift"; sourceTree = "<group>"; };
-		1804369E23CC8792008E19A5 /* TableItemModel+Hashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableItemModel+Hashable.swift"; sourceTree = "<group>"; };
 		180436A023CC8792008E19A5 /* TableItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableItemModel.swift; sourceTree = "<group>"; };
 		180436A123CC8792008E19A5 /* ListItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemModel.swift; sourceTree = "<group>"; };
 		180436A223CC8792008E19A5 /* TableCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellModel.swift; sourceTree = "<group>"; };
 		180436A323CC8792008E19A5 /* CollectionItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionItemModel.swift; sourceTree = "<group>"; };
-		180436A423CC8792008E19A5 /* TableCellModel+Hashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableCellModel+Hashable.swift"; sourceTree = "<group>"; };
 		180436A623CC8792008E19A5 /* TableCellOfLife.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellOfLife.swift; sourceTree = "<group>"; };
 		180436A823CC8792008E19A5 /* UITableView+CellHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+CellHeight.swift"; sourceTree = "<group>"; };
 		180436A923CC8792008E19A5 /* UITableViewCell+Height.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Height.swift"; sourceTree = "<group>"; };
@@ -833,9 +827,8 @@
 		180436FB23CC87A7008E19A5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		180436FC23CC87A7008E19A5 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
 		180436FD23CC87A7008E19A5 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
-		180436FF23CC87A7008E19A5 /* AnyTableAdapterItem+Hashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnyTableAdapterItem+Hashable.swift"; sourceTree = "<group>"; };
 		1804370023CC87A7008E19A5 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
-		1804370223CC87A7008E19A5 /* AnyTableAdapterItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyTableAdapterItem.swift; sourceTree = "<group>"; };
+		1804370223CC87A7008E19A5 /* ListAdapterItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListAdapterItem.swift; sourceTree = "<group>"; };
 		1804370323CC87A7008E19A5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1804371F23CC889C008E19A5 /* SectionModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModelType.swift; sourceTree = "<group>"; };
 		1805B3CD2276A82900F0574D /* GCDTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDTest.swift; sourceTree = "<group>"; };
@@ -1339,6 +1332,7 @@
 		F2EDE1719CD8900446713BC0 /* Pods-BaseCore-Coordinator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-Coordinator.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-Coordinator/Pods-BaseCore-Coordinator.release.xcconfig"; sourceTree = "<group>"; };
 		F6E57D3300B9F747CFFC950A /* Pods_UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7AE32BA071C16D86EABE7A9 /* Pods-BaseCore-Custom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-Custom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-Custom/Pods-BaseCore-Custom.debug.xcconfig"; sourceTree = "<group>"; };
+		F918CCA9241E4A3B0093ADD2 /* AnyTableAdapterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTableAdapterItem.swift; sourceTree = "<group>"; };
 		F99B24A422B61F600059B440 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9A8858F234101A400AE6F3F /* ResultHandleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultHandleProtocol.swift; sourceTree = "<group>"; };
 		FBB540AD4ED8A9E82B48CF5B /* Pods-CommonPods-AppExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommonPods-AppExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommonPods-AppExtension/Pods-CommonPods-AppExtension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1547,6 +1541,7 @@
 				1804367323CC8791008E19A5 /* Adapter */,
 				1804367523CC8791008E19A5 /* ListSection */,
 				1804367823CC8791008E19A5 /* DifferenceKitCompatible.swift */,
+				F918CCA9241E4A3B0093ADD2 /* AnyTableAdapterItem.swift */,
 				180436F823CC87A7008E19A5 /* Updater.swift */,
 			);
 			path = Core;
@@ -1631,7 +1626,6 @@
 				1804369123CC8792008E19A5 /* StaticTableItemCell.swift */,
 				1804369223CC8792008E19A5 /* ButtonCell.swift */,
 				1804369323CC8792008E19A5 /* CustomTableItemCell.swift */,
-				1804369423CC8792008E19A5 /* StaticTableItemCell+Hashable.swift */,
 				1804369523CC8792008E19A5 /* DetailTitleCell.swift */,
 				1804369623CC8792008E19A5 /* SwitchCell.swift */,
 			);
@@ -1645,8 +1639,6 @@
 				180436A123CC8792008E19A5 /* ListItemModel.swift */,
 				180436A223CC8792008E19A5 /* TableCellModel.swift */,
 				180436A323CC8792008E19A5 /* CollectionItemModel.swift */,
-				1804369E23CC8792008E19A5 /* TableItemModel+Hashable.swift */,
-				180436A423CC8792008E19A5 /* TableCellModel+Hashable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1665,25 +1657,15 @@
 		180436E023CC87A7008E19A5 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				180436E123CC87A7008E19A5 /* Collection */,
 				180436E423CC87A7008E19A5 /* Core */,
-				180436F323CC87A7008E19A5 /* SectionedViewDataSource */,
+				F918CCAB241E4BF60093ADD2 /* DataSource */,
 				180436F623CC87A7008E19A5 /* Updater */,
-				180436FE23CC87A7008E19A5 /* Table */,
 				180436FB23CC87A7008E19A5 /* README.md */,
 				180436FC23CC87A7008E19A5 /* List.h */,
 				180436FD23CC87A7008E19A5 /* List.swift */,
 				1804370323CC87A7008E19A5 /* Info.plist */,
 			);
 			path = List;
-			sourceTree = "<group>";
-		};
-		180436E123CC87A7008E19A5 /* Collection */ = {
-			isa = PBXGroup;
-			children = (
-				180436E223CC87A7008E19A5 /* CollectionViewDataSource.swift */,
-			);
-			path = Collection;
 			sourceTree = "<group>";
 		};
 		180436E423CC87A7008E19A5 /* Core */ = {
@@ -1729,15 +1711,6 @@
 			path = ListData;
 			sourceTree = "<group>";
 		};
-		180436F323CC87A7008E19A5 /* SectionedViewDataSource */ = {
-			isa = PBXGroup;
-			children = (
-				180436F423CC87A7008E19A5 /* SectionedDataSource.swift */,
-				180436F523CC87A7008E19A5 /* SectionedDataSource+ParamProtocol.swift */,
-			);
-			path = SectionedViewDataSource;
-			sourceTree = "<group>";
-		};
 		180436F623CC87A7008E19A5 /* Updater */ = {
 			isa = PBXGroup;
 			children = (
@@ -1746,16 +1719,6 @@
 				180436FA23CC87A7008E19A5 /* TableViewUpdating.swift */,
 			);
 			path = Updater;
-			sourceTree = "<group>";
-		};
-		180436FE23CC87A7008E19A5 /* Table */ = {
-			isa = PBXGroup;
-			children = (
-				180436FF23CC87A7008E19A5 /* AnyTableAdapterItem+Hashable.swift */,
-				1804370023CC87A7008E19A5 /* TableViewDataSource.swift */,
-				1804370223CC87A7008E19A5 /* AnyTableAdapterItem.swift */,
-			);
-			path = Table;
 			sourceTree = "<group>";
 		};
 		1843273B239605FE00007E5C /* Core */ = {
@@ -3175,6 +3138,18 @@
 				1804368C23CC8792008E19A5 /* ItemCell+Animation.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		F918CCAB241E4BF60093ADD2 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				180436F423CC87A7008E19A5 /* SectionedDataSource.swift */,
+				180436F523CC87A7008E19A5 /* SectionedDataSource+ParamProtocol.swift */,
+				1804370023CC87A7008E19A5 /* TableViewDataSource.swift */,
+				180436E223CC87A7008E19A5 /* CollectionViewDataSource.swift */,
+				1804370223CC87A7008E19A5 /* ListAdapterItem.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -4604,6 +4579,7 @@
 				C932F8B321006DC500B8DF84 /* ConfigModelProtocol.swift in Sources */,
 				C91B1E7521E31DB3004FEE44 /* Store+Rx.swift in Sources */,
 				C9D4129B21DF4218004368D4 /* BaseViewController.swift in Sources */,
+				F918CCAA241E4A3B0093ADD2 /* AnyTableAdapterItem.swift in Sources */,
 				18CBF51C2328F62800E6DDE2 /* MultipartFormData+Images.swift in Sources */,
 				C932F8F421006DC500B8DF84 /* EntityManager+Operation.swift in Sources */,
 				180436D223CC8792008E19A5 /* ListDataUpdateProtocol+Table.swift in Sources */,
@@ -4682,19 +4658,16 @@
 				C932F8F521006DC500B8DF84 /* EntityManager.swift in Sources */,
 				C932F823210069AD00B8DF84 /* JDProgressHUD.swift in Sources */,
 				180436B023CC8792008E19A5 /* UICollectionAdapter.swift in Sources */,
-				180436CB23CC8792008E19A5 /* StaticTableItemCell+Hashable.swift in Sources */,
 				C90E74D522001608006CE73C /* AssetGridCell.swift in Sources */,
 				180436D023CC8792008E19A5 /* UITableAdapter.swift in Sources */,
 				C90E76FC21C88F1C00707519 /* NetworkProtocol.swift in Sources */,
 				180436C423CC8792008E19A5 /* ItemCell+Animation.swift in Sources */,
-				180436D323CC8792008E19A5 /* TableItemModel+Hashable.swift in Sources */,
 				180436CE23CC8792008E19A5 /* CollectionReusableView.swift in Sources */,
 				180B46B722812B31001AE9B1 /* NeedUpdate.swift in Sources */,
 				180436B323CC8792008E19A5 /* TableSection.swift in Sources */,
 				C9D4132921DF807C004368D4 /* RootViewController.swift in Sources */,
 				C9D412A621DF4326004368D4 /* TableViewController.swift in Sources */,
 				C932F7A821005A9F00B8DF84 /* ProjectBasic.swift in Sources */,
-				180436D923CC8793008E19A5 /* TableCellModel+Hashable.swift in Sources */,
 				180436DC23CC8793008E19A5 /* UITableViewCell+Height.swift in Sources */,
 				C932F824210069AD00B8DF84 /* MessageHUDProtocol.swift in Sources */,
 				C90CC67B21E710C400BEF2DA /* ListResult.swift in Sources */,
@@ -4740,7 +4713,6 @@
 				1804370623CC87A8008E19A5 /* ListAdapterType.swift in Sources */,
 				1804370E23CC87A8008E19A5 /* ListData+EditItems.swift in Sources */,
 				1804370923CC87A8008E19A5 /* DataController.swift in Sources */,
-				1804371A23CC87A8008E19A5 /* AnyTableAdapterItem+Hashable.swift in Sources */,
 				1804370B23CC87A8008E19A5 /* ListDataUpdateProtocol.swift in Sources */,
 				1804371223CC87A8008E19A5 /* SectionedDataSource+ParamProtocol.swift in Sources */,
 				1804371323CC87A8008E19A5 /* Updating.swift in Sources */,
@@ -4756,7 +4728,7 @@
 				1804370C23CC87A8008E19A5 /* ListBuilder.swift in Sources */,
 				1804370823CC87A8008E19A5 /* NeedUpdateProtocol.swift in Sources */,
 				1804371023CC87A8008E19A5 /* ListDataInfo.swift in Sources */,
-				1804371D23CC87A8008E19A5 /* AnyTableAdapterItem.swift in Sources */,
+				1804371D23CC87A8008E19A5 /* ListAdapterItem.swift in Sources */,
 				1804370F23CC87A8008E19A5 /* ListData.swift in Sources */,
 				1804371523CC87A8008E19A5 /* CollectionViewUpdating.swift in Sources */,
 			);

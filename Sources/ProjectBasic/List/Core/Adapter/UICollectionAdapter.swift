@@ -8,8 +8,8 @@
 
 import UIKit
 
-extension CollectionItemModel: _AdapterItemType, Diffable {}
-extension CollectionSection: _AdapterSectionType, Diffable {}
+extension CollectionItemModel: _AdapterItemType {}
+extension CollectionSection: _AdapterSectionType {}
 
 public typealias CollectionSectionModel = SectionModelItem<CollectionSection, CollectionItemModel>
 

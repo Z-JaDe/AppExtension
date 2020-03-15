@@ -71,6 +71,9 @@ open class AssetGridViewController: AdapterCollectionViewController, PHPhotoLibr
             }
             array.append(model)
         }
+//        self.adapter.dataArray.forEach { (<#SectionData<UICollectionAdapter.Section, UICollectionAdapter.Item>#>) in
+//            <#code#>
+//        }
         self.adapter.reloadData(array, isRefresh: true)
     }
     open func requestSelectedImages(_ closure: @escaping ([UIImage]) -> Void) {

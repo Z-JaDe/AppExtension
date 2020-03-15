@@ -46,7 +46,12 @@ extension SectionModelItem {
         return SectionModelItem(section, items)
     }
 }
-
+// MARK: -
+extension CollectionItemModel: Diffable {}
+extension CollectionSection: Diffable {}
+extension AnyTableAdapterItem: Diffable {}
+extension TableSection: Diffable {}
+// MARK: -
 extension ListData where Section: Diffable, Item: Diffable {
     public func compactMapToSectionModels() -> [SectionModelItem<Section, Item>] {
         compactMap(ListData.mapToSectionModel)
