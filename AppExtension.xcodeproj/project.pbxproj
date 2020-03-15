@@ -16,7 +16,6 @@
 		180436B223CC8792008E19A5 /* ListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804367423CC8791008E19A5 /* ListAdapter.swift */; };
 		180436B323CC8792008E19A5 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804367623CC8791008E19A5 /* TableSection.swift */; };
 		180436B423CC8792008E19A5 /* CollectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804367723CC8791008E19A5 /* CollectionSection.swift */; };
-		180436B523CC8792008E19A5 /* DifferenceKitCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804367823CC8791008E19A5 /* DifferenceKitCompatible.swift */; };
 		180436B623CC8792008E19A5 /* CollectionSelectionPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804367B23CC8791008E19A5 /* CollectionSelectionPlugin.swift */; };
 		180436B723CC8792008E19A5 /* TableSelectionPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804367C23CC8791008E19A5 /* TableSelectionPlugin.swift */; };
 		180436B823CC8792008E19A5 /* ListSelectionPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804367D23CC8791008E19A5 /* ListSelectionPlugin.swift */; };
@@ -770,7 +769,6 @@
 		1804367423CC8791008E19A5 /* ListAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListAdapter.swift; sourceTree = "<group>"; };
 		1804367623CC8791008E19A5 /* TableSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		1804367723CC8791008E19A5 /* CollectionSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionSection.swift; sourceTree = "<group>"; };
-		1804367823CC8791008E19A5 /* DifferenceKitCompatible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifferenceKitCompatible.swift; sourceTree = "<group>"; };
 		1804367B23CC8791008E19A5 /* CollectionSelectionPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionSelectionPlugin.swift; sourceTree = "<group>"; };
 		1804367C23CC8791008E19A5 /* TableSelectionPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSelectionPlugin.swift; sourceTree = "<group>"; };
 		1804367D23CC8791008E19A5 /* ListSelectionPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListSelectionPlugin.swift; sourceTree = "<group>"; };
@@ -1516,6 +1514,7 @@
 			isa = PBXGroup;
 			children = (
 				1804367223CC8791008E19A5 /* Core */,
+				F918CE1A241EAB840093ADD2 /* DifferenceKit */,
 				1804366B23CC8791008E19A5 /* RefreshList */,
 				1804367923CC8791008E19A5 /* Plugin */,
 			);
@@ -1541,7 +1540,6 @@
 				1804369D23CC8792008E19A5 /* Model */,
 				F918CC58241E3DEB0093ADD2 /* CellOfLife */,
 				F918CD81241E9E500093ADD2 /* Updater */,
-				1804367823CC8791008E19A5 /* DifferenceKitCompatible.swift */,
 				F918CCA9241E4A3B0093ADD2 /* AnyTableAdapterItem.swift */,
 			);
 			path = Core;
@@ -1660,7 +1658,7 @@
 			isa = PBXGroup;
 			children = (
 				180436E423CC87A7008E19A5 /* Core */,
-				180436F623CC87A7008E19A5 /* Updater */,
+				180436F623CC87A7008E19A5 /* Updating */,
 				180436FB23CC87A7008E19A5 /* README.md */,
 				180436FC23CC87A7008E19A5 /* List.h */,
 				180436FD23CC87A7008E19A5 /* List.swift */,
@@ -1711,14 +1709,14 @@
 			path = ListData;
 			sourceTree = "<group>";
 		};
-		180436F623CC87A7008E19A5 /* Updater */ = {
+		180436F623CC87A7008E19A5 /* Updating */ = {
 			isa = PBXGroup;
 			children = (
 				180436F723CC87A7008E19A5 /* Updating.swift */,
 				180436F923CC87A7008E19A5 /* CollectionViewUpdating.swift */,
 				180436FA23CC87A7008E19A5 /* TableViewUpdating.swift */,
 			);
-			path = Updater;
+			path = Updating;
 			sourceTree = "<group>";
 		};
 		1843273B239605FE00007E5C /* Core */ = {
@@ -3158,9 +3156,16 @@
 			children = (
 				180436F823CC87A7008E19A5 /* Updater.swift */,
 				F918CD7F241E9E450093ADD2 /* Data+Updater.swift */,
-				F918CD7D241E99150093ADD2 /* DifferenceKitUpdater.swift */,
 			);
 			path = Updater;
+			sourceTree = "<group>";
+		};
+		F918CE1A241EAB840093ADD2 /* DifferenceKit */ = {
+			isa = PBXGroup;
+			children = (
+				F918CD7D241E99150093ADD2 /* DifferenceKitUpdater.swift */,
+			);
+			path = DifferenceKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -4603,7 +4608,6 @@
 				180436BF23CC8792008E19A5 /* DynamicTableItemCell.swift in Sources */,
 				180436C523CC8792008E19A5 /* TitleCell.swift in Sources */,
 				C9D4131F21DF6B74004368D4 /* WKUIProxy.swift in Sources */,
-				180436B523CC8792008E19A5 /* DifferenceKitCompatible.swift in Sources */,
 				180436BD23CC8792008E19A5 /* CellModelProtocol.swift in Sources */,
 				18CBF5212328F69000E6DDE2 /* ResultContext+CallBack.swift in Sources */,
 				C9D412A721DF4326004368D4 /* CollectionViewController.swift in Sources */,

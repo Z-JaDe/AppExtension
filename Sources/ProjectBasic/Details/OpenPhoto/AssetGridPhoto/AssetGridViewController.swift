@@ -55,25 +55,29 @@ open class AssetGridViewController: AdapterCollectionViewController, PHPhotoLibr
             self.updateImages(fetchResult)
         }
     }
-    // TODO: 如果已经选择图 ，相册列表又刷新了， 需要保证之前的图还是选中状态
+    var cacheModel: [PHAsset: AssetGridModel] = [:]
     open func updateImages(_ fetchResult: PHFetchResult<PHAsset>) {
         let targetSize = self.itemSize()
         var array = [AssetGridModel]()
+        var tempCacheModel: [PHAsset: AssetGridModel] = [:]
         fetchResult.enumerateObjects { (asset, _, _) in
             guard asset.sourceType == .typeUserLibrary else {
                 return
             }
-            let model = AssetGridModel()
+            let model = self.cacheModel[asset] ?? {
+                let model = AssetGridModel()
+                model.cellSize = targetSize
+                model.asset = asset
+                model.asset.requestImage(targetSize) { (image) in
+                    model.image.onNext(image)
+                }
+                return model
+            }()
             model.cellSize = targetSize
-            model.asset = asset
-            model.asset.requestImage(targetSize) { (image) in
-                model.image.onNext(image)
-            }
             array.append(model)
+            tempCacheModel[asset] = model
         }
-//        self.adapter.dataArray.forEach { (<#SectionData<UICollectionAdapter.Section, UICollectionAdapter.Item>#>) in
-//            <#code#>
-//        }
+        self.cacheModel = tempCacheModel
         self.adapter.reloadList(array, isRefresh: true)
     }
     open func requestSelectedImages(_ closure: @escaping ([UIImage]) -> Void) {

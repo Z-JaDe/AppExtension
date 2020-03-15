@@ -11,15 +11,15 @@ import UIKit
 private var updaterKey: UInt8 = 0
 extension UIScrollView {
     public var updater: Updater {
-        get { associatedObject(&updaterKey, createIfNeed: Updater()) }
+        get { associatedObject(&updaterKey, createIfNeed: DifferenceKitUpdater()) }
         set { setAssociatedObject(&updaterKey, newValue) }
     }
 }
 
 open class Updater {
-    let taskQueue: TaskQueue = TaskQueue()
+    private let taskQueue: TaskQueue = TaskQueue()
     internal var dataSet = false
-
+    public var tempUpdateMode: UpdateMode?
     init() {
         self.taskQueue.taskResume()
     }
@@ -27,19 +27,36 @@ open class Updater {
         taskQueue.isWorking
     }
 
-    public struct DataSetter<C: Swift.Collection> {
+    public struct DataSetter<Element> {
         var updating: Updating
-        let setData: (C) -> Void
+        let setData: ([Element]) -> Void
         let completion: (Bool) -> Void
 
-        public init(updating: Updating, setData: @escaping (C) -> Void, completion: @escaping (Bool) -> Void) {
+        public init(updating: Updating, setData: @escaping ([Element]) -> Void, completion: @escaping (Bool) -> Void) {
             self.updating = updating
             self.setData = setData
             self.completion = completion
         }
     }
-    open func update<C: Swift.Collection>(source: C, target: C, dataSetter: DataSetter<C>) {
-        
+    open func update<Element: Hashable>(source: [Element], target: [Element], dataSetter: DataSetter<Element>) {
+        dataSafeExecute { (doneClosure) in
+            dataSetter._reload(data: target, done: doneClosure)
+        }
+    }
+}
+extension Updater.DataSetter {
+    @inline(__always)
+    public func _reload(data: [Element]?, done: @escaping () -> Void) {
+        guard let data = data else {
+            self.completion(true)
+            done()
+            return
+        }
+        setData(data)
+        updating.reload {
+            self.completion(true)
+            done()
+        }
     }
 }
 // MARK: -
@@ -56,12 +73,12 @@ extension Updater {
 extension Updater {
     /// 每次执行 若是有旧的更新数据的任务，先删除再添加
     @inline(__always)
-    private func dataSafeExecute(_ task: @escaping (@escaping () -> Void) -> Void) {
+    internal func dataSafeExecute(_ task: @escaping (@escaping () -> Void) -> Void) {
         taskQueue.cleanAllFreeTasks()
         taskQueue.addAsyncTask(task)
     }
     @inline(__always)
-    private func safeExecute(_ task: @escaping (@escaping () -> Void) -> Void) {
+    internal func safeExecute(_ task: @escaping (@escaping () -> Void) -> Void) {
         taskQueue.addAsyncTask(task)
     }
 }

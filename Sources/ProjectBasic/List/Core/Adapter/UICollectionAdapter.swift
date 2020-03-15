@@ -38,12 +38,15 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionS
             return item.createCell(in: collectionView, at: indexPath)
         }
     }
-    public lazy var updating: Updating = collectionView!.createUpdating(animated: true)
     override func dataChanged(_ completion: (() -> Void)?) {
         guard let collectionView = collectionView else { return }
         guard let dataInfo = dataInfo else { return }
         let mapDataInfo = dataInfo.compactMapToSectionModels()
-        dataSource.dataChange(mapDataInfo, collectionView.updater, updating, completion)
+        let updater = self.updater ?? collectionView.updater
+        updater.tempUpdateMode = self.tempUpdateMode
+        self.tempUpdateMode = nil
+        let updating = self.updating ?? collectionView.createUpdating(animated: true)
+        dataSource.dataChange(mapDataInfo, updater, updating, completion)
     }
 }
 extension UICollectionAdapter { //Hooker

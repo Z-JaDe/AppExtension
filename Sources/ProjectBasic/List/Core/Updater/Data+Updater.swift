@@ -17,7 +17,7 @@ extension SectionedDataSource {
 }
 extension DataController {
     func dataChange(_ newValue: [S], _ updater: Updater, _ updating: Updating, _ completion: (() -> Void)?) {
-        let dataSetter = Updater.DataSetter<[S]>(updating: updating, setData: setSections, completion: { [weak self] (_) in
+        let dataSetter = Updater.DataSetter<S>(updating: updating, setData: setSections, completion: { [weak self] (_) in
             completion?()
             self?.reloadDataCompletion.call()
         })

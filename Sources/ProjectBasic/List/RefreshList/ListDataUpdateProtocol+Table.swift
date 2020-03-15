@@ -18,6 +18,7 @@ extension ListDataUpdateProtocol where Section: Equatable & InitProtocol, Item =
         } else if _itemArray.isNotEmpty {
             newData.append(section: section, items: _itemArray)
         }
+        self.setNextUpdateMode(.everything)
         self.reloadData(newData, completion)
     }
 }

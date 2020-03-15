@@ -16,8 +16,8 @@ public protocol ListDataUpdateProtocol: class {
     typealias _SectionData = _ListData.Element
 
     var dataArray: _ListData {get}
-    var updating: Updating {get}
     func changeListData(_ newData: _ListData, _ completion: (() -> Void)?)
+    func setNextUpdateMode(_ updateMode: UpdateMode)
 }
 
 extension ListDataUpdateProtocol {
@@ -25,18 +25,17 @@ extension ListDataUpdateProtocol {
     public func updateData() {
         self.reloadData(self.dataArray)
     }
+    public func updateData(_ closure: (_ListData) -> _ListData) {
+        self.reloadData(closure(dataArray))
+    }
     /// ZJaDe: 重新刷新 传入 listData
     public func reloadData(_ listData: _ListData?, _ completion: (() -> Void)? = nil) {
         if let listData = listData {
             self.changeListData(listData, completion)
         }
     }
-    public func updateData(_ closure: (_ListData) -> _ListData) {
-        self.reloadData(closure(dataArray))
-    }
 }
 extension ListDataUpdateProtocol where Section: Equatable & InitProtocol {
-    // TODO: Async/Await 出来后需优化
     /// ZJaDe: 重新刷新 返回 ListData
     public func reloadList(section: Section? = nil, _ itemArray: [Item]?, isRefresh: Bool, _ completion: (() -> Void)? = nil) {
         let _itemArray = itemArray ?? []
@@ -46,6 +45,7 @@ extension ListDataUpdateProtocol where Section: Equatable & InitProtocol {
         } else if _itemArray.isEmpty == false {
             newData.append(section: section, items: _itemArray)
         }
+        self.setNextUpdateMode(.everything)
         self.reloadData(newData, completion)
     }
 }

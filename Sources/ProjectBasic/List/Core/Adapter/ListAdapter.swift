@@ -42,6 +42,12 @@ where DataSource.S.Item: AdapterItemType, DataSource.S.Section: AdapterSectionTy
     }
     internal func dataChanged(_ completion: (() -> Void)?) {
     }
+    // MARK: -
+    /// 刷新器，局部刷新 完全刷新 如果为nil则使用默认的
+    public var updater: Updater?
+    /// UI刷新，一般不会变动 如果为nil则使用默认的
+    public var updating: Updating?
+    var tempUpdateMode: UpdateMode?
 }
 extension ListAdapter: DisposeBagProtocol {}
 extension ListAdapter: ListAdapterType {
@@ -51,5 +57,32 @@ extension ListAdapter: ListAdapterType {
     public func changeListData(_ newData: _ListData, _ completion: (() -> Void)? = nil) {
         self.dataInfo = newData
         dataChanged(completion)
+    }
+    ///设置下次刷新是否 reloadData
+    public func setNextUpdateMode(_ updateMode: UpdateMode) {
+        tempUpdateMode = updateMode
+    }
+}
+extension ListData where Section: Hashable, Item: Hashable & AdapterItemCompatible {
+    public func compactMapToSectionModels() -> [SectionModelItem<Section, Item>] {
+        compactMap(ListData.mapToSectionModel)
+    }
+    /// 转成(组, model)类型信号
+    /// 将ListDataType转换为SectionModelType
+    static func mapToSectionModel(_ element: ListData.Element) -> SectionModelItem<Section, Item>? {
+        if let section = element.section as? HiddenStateDesignable, section.isHidden {
+            return nil
+        }
+        let items = element.items.filter({ (item) -> Bool in
+            if let item = item.realItem as? HiddenStateDesignable {
+                return item.isHidden != true
+            } else {
+                return true
+            }
+        })
+        if items.isEmpty {
+            return nil
+        }
+        return SectionModelItem(element.section, items)
     }
 }

@@ -45,7 +45,6 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
             return item.createCell(in: tableView, for: indexPath)
         }
     }
-    public lazy var updating: Updating = tableView!.createUpdating(.fade)
     public let insertSecionModels: CallBackerReduce = CallBackerReduce<_ListData>()
     override func dataChanged(_ completion: (() -> Void)?) {
         guard let tableView = tableView else { return }
@@ -53,7 +52,11 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
         let dataArray = self.insertSecionModels.callReduce(dataInfo)
         let mapDataInfo = dataArray.compactMapToSectionModels()
         self.updateItemsIfNeed()
-        dataSource.dataChange(mapDataInfo, tableView.updater, updating, completion)
+        let updater = self.updater ?? tableView.updater
+        updater.tempUpdateMode = self.tempUpdateMode
+        self.tempUpdateMode = nil
+        let updating = self.updating ?? tableView.createUpdating(.fade)
+        dataSource.dataChange(mapDataInfo, updater, updating, completion)
     }
 }
 extension UITableAdapter { //Hooker
