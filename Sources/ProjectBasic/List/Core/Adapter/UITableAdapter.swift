@@ -24,9 +24,6 @@ public typealias TableSectionModel = SectionModelItem<TableSection, AnyTableAdap
 public typealias TableListData = ListData<TableSection, AnyTableAdapterItem>
 public typealias TableStaticData = ListData<TableSection, StaticTableItemCell>
 
-public typealias TableListDataInfo = ListDataInfo<TableListData>
-public typealias TableStaticListDataInfo = ListDataInfo<TableStaticData>
-
 extension DelegateHooker: UITableViewDelegate {}
 open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
     private var timer: Timer?
@@ -38,25 +35,26 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
 
         tableView.delegate = _delegateHooker ?? tableProxy
         tableView.dataSource = dataSource
-        dataChanged()
+        dataChanged({})
     }
     /// ZJaDe: 设置自定义的代理时，需要注意尽量使用UITableProxy或者它的子类，这样会自动实现一些默认配置
     public lazy var tableProxy: UITableProxy = UITableProxy(self)
-    public var dataSource: DataSource = DataSource() {
-        didSet { dataSourceDefaultInit(dataSource) }
-    }
-    open func dataSourceDefaultInit(_ dataSource: DataSource) {
+    open override func dataSourceDefaultInit(_ dataSource: DataSource) {
+        super.dataSourceDefaultInit(dataSource)
         dataSource.configureCell = { (_, tableView, indexPath, item) in
             return item.createCell(in: tableView, for: indexPath)
         }
-        dataSource.didMoveItem = {[weak self] (dataSource, source, destination) in
-            guard let self = self else { return }
-            self.dataInfo = self.dataInfo?.map({$0.move(source, destination)})
-        }
     }
     public lazy var updating: Updating = tableView!.createUpdating(.fade)
-    var dataInfo: _ListDataInfo?
     public let insertSecionModels: CallBackerReduce = CallBackerReduce<_ListData>()
+    override func dataChanged(_ completion: (() -> Void)?) {
+        guard let tableView = tableView else { return }
+        guard let dataInfo = dataInfo else { return }
+        let dataArray = self.insertSecionModels.callReduce(dataInfo)
+        let mapDataInfo = dataArray.compactMapToSectionModels()
+        self.updateItemsIfNeed()
+        dataSource.dataChange(mapDataInfo, tableView.updater, updating, completion)
+    }
 }
 extension UITableAdapter { //Hooker
     private var delegateHooker: DelegateHooker<UITableViewDelegate> {
@@ -77,25 +75,6 @@ extension UITableAdapter { //Hooker
     public var delegatePlugins: [UITableViewDelegate] {
         get { delegateHooker.plugins }
         set { delegateHooker.plugins = newValue }
-    }
-}
-extension UITableAdapter: ListAdapterType {
-    public var dataArray: _ListData {
-        self.dataInfo?.data ?? .init()
-    }
-    public func changeListDataInfo(_ newData: _ListDataInfo) {
-        self.dataInfo = newData
-        dataChanged()
-    }
-    func dataChanged() {
-        guard let tableView = tableView else { return }
-        guard let dataInfo = dataInfo else { return }
-        let mapDataInfo = dataInfo.map({ (dataArray) -> [SectionModelItem<Section, Item>] in
-            let dataArray = self.insertSecionModels.callReduce(dataArray)
-            return dataArray.compactMapToSectionModels()
-        })
-        self.updateItemsIfNeed()
-        dataSource.dataChange(mapDataInfo, tableView.updater)
     }
 }
 extension UITableAdapter: ListDataUpdateProtocol {}

@@ -17,6 +17,7 @@ where DataSource.S.Item: AdapterItemType, DataSource.S.Section: AdapterSectionTy
     public typealias DataSource = DataSource
     public typealias Section = DataSource.S.Section
     public typealias Item = DataSource.S.Item
+    public typealias _ListData = ListData<Section, Item>
     public init() {
         self.configInit()
     }
@@ -28,5 +29,27 @@ where DataSource.S.Item: AdapterItemType, DataSource.S.Section: AdapterSectionTy
     }
     /// ZJaDe: 是否自动改回未选中，子类实现相关逻辑
     public var autoDeselectRow = true
+
+    var dataInfo: ListData<Section, Item>?
+    public var dataSource: DataSource = DataSource() {
+        didSet { dataSourceDefaultInit(dataSource) }
+    }
+    open func dataSourceDefaultInit(_ dataSource: DataSource) {
+        dataSource.didMoveItem = { [weak self] (source, destination) in
+            guard let self = self else { return }
+            self.dataInfo = self.dataInfo?.move(source, destination)
+        }
+    }
+    internal func dataChanged(_ completion: (() -> Void)?) {
+    }
 }
 extension ListAdapter: DisposeBagProtocol {}
+extension ListAdapter: ListAdapterType {
+    public var dataArray: ListData<Section, Item> {
+        self.dataInfo ?? .init()
+    }
+    public func changeListData(_ newData: _ListData, _ completion: (() -> Void)? = nil) {
+        self.dataInfo = newData
+        dataChanged(completion)
+    }
+}

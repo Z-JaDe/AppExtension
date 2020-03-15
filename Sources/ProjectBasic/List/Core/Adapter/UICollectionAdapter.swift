@@ -27,25 +27,24 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionS
         dataSourceDefaultInit(dataSource)
         collectionView.delegate = _delegateHooker ?? collectionProxy
         collectionView.dataSource = dataSource
-        dataChanged()
+        dataChanged({})
     }
 
     /// ZJaDe: 设置自定义的代理时，需要注意尽量使用UICollectionProxy或者它的子类，这样会自动实现一些默认配置
     public lazy var collectionProxy: UICollectionProxy = UICollectionProxy(self)
-    public var dataSource: DataSource = DataSource() {
-        didSet { dataSourceDefaultInit(dataSource) }
-    }
-    open func dataSourceDefaultInit(_ dataSource: DataSource) {
+    open override func dataSourceDefaultInit(_ dataSource: DataSource) {
+        super.dataSourceDefaultInit(dataSource)
         dataSource.configureCell = {(_, collectionView, indexPath, item) in
             return item.createCell(in: collectionView, at: indexPath)
         }
-        dataSource.didMoveItem = { [weak self] (dataSource, source, destination) in
-            guard let self = self else { return }
-            self.dataInfo = self.dataInfo?.map({$0.move(source, destination)})
-        }
     }
-    public lazy var updating: Updating = collectionView!.createUpdating(updateMode: .partial)
-    var dataInfo: _ListDataInfo?
+    public lazy var updating: Updating = collectionView!.createUpdating(animated: true)
+    override func dataChanged(_ completion: (() -> Void)?) {
+        guard let collectionView = collectionView else { return }
+        guard let dataInfo = dataInfo else { return }
+        let mapDataInfo = dataInfo.compactMapToSectionModels()
+        dataSource.dataChange(mapDataInfo, collectionView.updater, updating, completion)
+    }
 }
 extension UICollectionAdapter { //Hooker
     private var delegateHooker: DelegateHooker<UICollectionViewDelegate> {
@@ -66,23 +65,6 @@ extension UICollectionAdapter { //Hooker
     public var delegatePlugins: [UICollectionViewDelegate] {
         get { delegateHooker.plugins }
         set { delegateHooker.plugins = newValue }
-    }
-}
-extension UICollectionAdapter: ListAdapterType {
-    public var dataArray: _ListData {
-        self.dataInfo?.data ?? .init()
-    }
-    public func changeListDataInfo(_ newData: _ListDataInfo) {
-        self.dataInfo = newData
-        dataChanged()
-    }
-    func dataChanged() {
-        guard let collectionView = collectionView else { return }
-        guard let dataInfo = dataInfo else { return }
-        let mapDataInfo = dataInfo.map({ (dataArray) -> [SectionModelItem<Section, Item>] in
-            return dataArray.compactMapToSectionModels()
-        })
-        dataSource.dataChange(mapDataInfo, collectionView.updater)
     }
 }
 extension UICollectionAdapter: ListDataUpdateProtocol {}

@@ -58,24 +58,3 @@ extension ListData where Section: Diffable, Item: Diffable & AdapterItemCompatib
         return SectionModelItem(element.section, items)
     }
 }
-
-extension SectionedDataSource where S: DiffableSection {
-    public func dataChange(_ newValue: Element, _ updater: Updater) {
-        #if DEBUG
-        self._dataSourceBound = true
-        #endif
-        self.dataController.updateNewData(newValue, updater)
-    }
-}
-extension DataController where S: DiffableSection {
-    func updateNewData(_ newData: ListDataInfo<[S]>, _ updater: Updater) {
-        updater.update(
-            using: StagedChangeset<[S]>(source: self.sectionModels, target: newData.data),
-            dataSetter: Updater.DataSetter(updating: newData.updating, interrupt: {$0.data.count > 100}, setData: setSections, completion: { (_) in
-                newData._performCompletion()
-                newData._infoRelease()
-                self.reloadDataCompletion.call()
-            })
-        )
-    }
-}

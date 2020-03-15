@@ -10,7 +10,7 @@ import Foundation
 
 public struct SectionData<Section, Item> {
     public let section: Section
-    public var items: [Item]
+    public internal(set) var items: [Item]
     public init<C: Swift.Collection>(_ section: Section, _ elements: C) where C.Element == Item {
         self.section = section
         self.items = Array(elements)

@@ -95,7 +95,7 @@ open class CollectionViewDataSource<S: SectionModelType>: SectionedDataSource<S>
         let source = dataController[sourceIndexPath]
         let destination = dataController[destinationIndexPath]
         dataController.move(sourceIndexPath, target: destinationIndexPath)
-        self.didMoveItem?(self, source, destination)
+        self.didMoveItem?(source, destination)
         self.moveItem(self, sourceIndexPath, destinationIndexPath)
     }
 

@@ -64,7 +64,6 @@
 		1804370D23CC87A8008E19A5 /* SectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436EF23CC87A7008E19A5 /* SectionData.swift */; };
 		1804370E23CC87A8008E19A5 /* ListData+EditItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436F023CC87A7008E19A5 /* ListData+EditItems.swift */; };
 		1804370F23CC87A8008E19A5 /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436F123CC87A7008E19A5 /* ListData.swift */; };
-		1804371023CC87A8008E19A5 /* ListDataInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436F223CC87A7008E19A5 /* ListDataInfo.swift */; };
 		1804371123CC87A8008E19A5 /* SectionedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436F423CC87A7008E19A5 /* SectionedDataSource.swift */; };
 		1804371223CC87A8008E19A5 /* SectionedDataSource+ParamProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436F523CC87A7008E19A5 /* SectionedDataSource+ParamProtocol.swift */; };
 		1804371323CC87A8008E19A5 /* Updating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436F723CC87A7008E19A5 /* Updating.swift */; };
@@ -429,6 +428,8 @@
 		F07B7D4261FF1E0E896A2386 /* Pods_UserNotificationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8259DE5E679FB6045C03FD7F /* Pods_UserNotificationManager.framework */; };
 		F918CCAA241E4A3B0093ADD2 /* AnyTableAdapterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F918CCA9241E4A3B0093ADD2 /* AnyTableAdapterItem.swift */; };
 		F918CD7C241E69700093ADD2 /* ListAdapterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804370223CC87A7008E19A5 /* ListAdapterItem.swift */; };
+		F918CD7E241E99150093ADD2 /* DifferenceKitUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = F918CD7D241E99150093ADD2 /* DifferenceKitUpdater.swift */; };
+		F918CD80241E9E450093ADD2 /* Data+Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = F918CD7F241E9E450093ADD2 /* Data+Updater.swift */; };
 		F93F85A3237C75E40068CC59 /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F81A210069AC00B8DF84 /* Permission.swift */; };
 		F93F85A4237C75E40068CC59 /* PermissionScope+AVFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F81B210069AC00B8DF84 /* PermissionScope+AVFoundation.swift */; };
 		F93F85A5237C75E40068CC59 /* PermissionScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F81C210069AC00B8DF84 /* PermissionScope.swift */; };
@@ -817,7 +818,6 @@
 		180436EF23CC87A7008E19A5 /* SectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionData.swift; sourceTree = "<group>"; };
 		180436F023CC87A7008E19A5 /* ListData+EditItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListData+EditItems.swift"; sourceTree = "<group>"; };
 		180436F123CC87A7008E19A5 /* ListData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
-		180436F223CC87A7008E19A5 /* ListDataInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDataInfo.swift; sourceTree = "<group>"; };
 		180436F423CC87A7008E19A5 /* SectionedDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionedDataSource.swift; sourceTree = "<group>"; };
 		180436F523CC87A7008E19A5 /* SectionedDataSource+ParamProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SectionedDataSource+ParamProtocol.swift"; sourceTree = "<group>"; };
 		180436F723CC87A7008E19A5 /* Updating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Updating.swift; sourceTree = "<group>"; };
@@ -1333,6 +1333,8 @@
 		F6E57D3300B9F747CFFC950A /* Pods_UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7AE32BA071C16D86EABE7A9 /* Pods-BaseCore-Custom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-Custom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-Custom/Pods-BaseCore-Custom.debug.xcconfig"; sourceTree = "<group>"; };
 		F918CCA9241E4A3B0093ADD2 /* AnyTableAdapterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTableAdapterItem.swift; sourceTree = "<group>"; };
+		F918CD7D241E99150093ADD2 /* DifferenceKitUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifferenceKitUpdater.swift; sourceTree = "<group>"; };
+		F918CD7F241E9E450093ADD2 /* Data+Updater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Updater.swift"; sourceTree = "<group>"; };
 		F99B24A422B61F600059B440 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9A8858F234101A400AE6F3F /* ResultHandleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultHandleProtocol.swift; sourceTree = "<group>"; };
 		FBB540AD4ED8A9E82B48CF5B /* Pods-CommonPods-AppExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommonPods-AppExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommonPods-AppExtension/Pods-CommonPods-AppExtension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1534,15 +1536,13 @@
 		1804367223CC8791008E19A5 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				1804367523CC8791008E19A5 /* ListSection */,
 				1804367323CC8791008E19A5 /* Adapter */,
-				F918CC59241E3ED70093ADD2 /* HeaderFooterView */,
-				1804367E23CC8791008E19A5 /* Cell */,
+				1804367E23CC8791008E19A5 /* View */,
 				1804369D23CC8792008E19A5 /* Model */,
 				F918CC58241E3DEB0093ADD2 /* CellOfLife */,
+				F918CD81241E9E500093ADD2 /* Updater */,
 				1804367823CC8791008E19A5 /* DifferenceKitCompatible.swift */,
 				F918CCA9241E4A3B0093ADD2 /* AnyTableAdapterItem.swift */,
-				180436F823CC87A7008E19A5 /* Updater.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -1560,13 +1560,13 @@
 			path = Adapter;
 			sourceTree = "<group>";
 		};
-		1804367523CC8791008E19A5 /* ListSection */ = {
+		1804367523CC8791008E19A5 /* Section */ = {
 			isa = PBXGroup;
 			children = (
 				1804367623CC8791008E19A5 /* TableSection.swift */,
 				1804367723CC8791008E19A5 /* CollectionSection.swift */,
 			);
-			path = ListSection;
+			path = Section;
 			sourceTree = "<group>";
 		};
 		1804367923CC8791008E19A5 /* Plugin */ = {
@@ -1587,15 +1587,16 @@
 			path = MultipleSelection;
 			sourceTree = "<group>";
 		};
-		1804367E23CC8791008E19A5 /* Cell */ = {
+		1804367E23CC8791008E19A5 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				1804367F23CC8791008E19A5 /* UICell */,
+				F918CC59241E3ED70093ADD2 /* HeaderFooterView */,
 				F918CC5C241E42040093ADD2 /* Base */,
 				1804368323CC8791008E19A5 /* Dynamic */,
 				1804368D23CC8792008E19A5 /* Static */,
 			);
-			path = Cell;
+			path = View;
 			sourceTree = "<group>";
 		};
 		1804367F23CC8791008E19A5 /* UICell */ = {
@@ -1635,6 +1636,7 @@
 		1804369D23CC8792008E19A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1804367523CC8791008E19A5 /* Section */,
 				180436A023CC8792008E19A5 /* TableItemModel.swift */,
 				180436A123CC8792008E19A5 /* ListItemModel.swift */,
 				180436A223CC8792008E19A5 /* TableCellModel.swift */,
@@ -1658,7 +1660,6 @@
 			isa = PBXGroup;
 			children = (
 				180436E423CC87A7008E19A5 /* Core */,
-				F918CCAB241E4BF60093ADD2 /* DataSource */,
 				180436F623CC87A7008E19A5 /* Updater */,
 				180436FB23CC87A7008E19A5 /* README.md */,
 				180436FC23CC87A7008E19A5 /* List.h */,
@@ -1675,8 +1676,7 @@
 				180436EB23CC87A7008E19A5 /* ListSection.swift */,
 				1804370223CC87A7008E19A5 /* ListAdapterItem.swift */,
 				180436E623CC87A7008E19A5 /* Protocol */,
-				180436E923CC87A7008E19A5 /* DataController */,
-				180436EC23CC87A7008E19A5 /* ListData */,
+				F918CCAB241E4BF60093ADD2 /* DataSource */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -1707,7 +1707,6 @@
 				180436EF23CC87A7008E19A5 /* SectionData.swift */,
 				180436F023CC87A7008E19A5 /* ListData+EditItems.swift */,
 				180436F123CC87A7008E19A5 /* ListData.swift */,
-				180436F223CC87A7008E19A5 /* ListDataInfo.swift */,
 			);
 			path = ListData;
 			sourceTree = "<group>";
@@ -3144,12 +3143,24 @@
 		F918CCAB241E4BF60093ADD2 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				180436EC23CC87A7008E19A5 /* ListData */,
+				180436E923CC87A7008E19A5 /* DataController */,
 				180436F423CC87A7008E19A5 /* SectionedDataSource.swift */,
 				180436F523CC87A7008E19A5 /* SectionedDataSource+ParamProtocol.swift */,
 				1804370023CC87A7008E19A5 /* TableViewDataSource.swift */,
 				180436E223CC87A7008E19A5 /* CollectionViewDataSource.swift */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		F918CD81241E9E500093ADD2 /* Updater */ = {
+			isa = PBXGroup;
+			children = (
+				180436F823CC87A7008E19A5 /* Updater.swift */,
+				F918CD7F241E9E450093ADD2 /* Data+Updater.swift */,
+				F918CD7D241E99150093ADD2 /* DifferenceKitUpdater.swift */,
+			);
+			path = Updater;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -4605,6 +4616,7 @@
 				C932F8C521006DC500B8DF84 /* Model.swift in Sources */,
 				1865798C239E224700A04076 /* MaxSelectedCount.swift in Sources */,
 				C9D4131A21DF6B74004368D4 /* BaseWebViewController.swift in Sources */,
+				F918CD7E241E99150093ADD2 /* DifferenceKitUpdater.swift in Sources */,
 				180436C223CC8792008E19A5 /* ItemCell.swift in Sources */,
 				18FCBE1B2296C76C00695868 /* UpdateLayout+SnapKit.swift in Sources */,
 				180436B623CC8792008E19A5 /* CollectionSelectionPlugin.swift in Sources */,
@@ -4652,6 +4664,7 @@
 				180436C823CC8792008E19A5 /* StaticTableItemCell.swift in Sources */,
 				C90CC67D21E710C400BEF2DA /* ResultCode.swift in Sources */,
 				180436B123CC8792008E19A5 /* UICollectionProxy.swift in Sources */,
+				F918CD80241E9E450093ADD2 /* Data+Updater.swift in Sources */,
 				180436B823CC8792008E19A5 /* ListSelectionPlugin.swift in Sources */,
 				180436BA23CC8792008E19A5 /* InternalCollectionViewCell.swift in Sources */,
 				180436C723CC8792008E19A5 /* TextViewCell.swift in Sources */,
@@ -4728,7 +4741,6 @@
 				1804371923CC87A8008E19A5 /* List.swift in Sources */,
 				1804370C23CC87A8008E19A5 /* ListBuilder.swift in Sources */,
 				1804370823CC87A8008E19A5 /* NeedUpdateProtocol.swift in Sources */,
-				1804371023CC87A8008E19A5 /* ListDataInfo.swift in Sources */,
 				1804370F23CC87A8008E19A5 /* ListData.swift in Sources */,
 				1804371523CC87A8008E19A5 /* CollectionViewUpdating.swift in Sources */,
 			);

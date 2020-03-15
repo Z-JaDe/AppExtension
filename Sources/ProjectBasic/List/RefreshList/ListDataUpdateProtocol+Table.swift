@@ -9,8 +9,8 @@
 import Foundation
 
 extension ListDataUpdateProtocol where Section: Equatable & InitProtocol, Item == AnyTableAdapterItem {
-    /// ZJaDe: 重新刷新 返回 ListDataInfo
-    public func reloadData(section: Section? = nil, _ itemArray: [TableItemModel]?, isRefresh: Bool, _ closure: ((_ListDataInfo) -> (_ListDataInfo))? = nil) {
+    /// ZJaDe: 重新刷新 返回 ListData
+    public func reloadList(section: Section? = nil, _ itemArray: [TableItemModel]?, isRefresh: Bool, _ completion: (() -> Void)? = nil) {
         let _itemArray: [AnyTableAdapterItem] = itemArray?.map(AnyTableAdapterItem.model) ?? []
         var newData = self.dataArray
         if isRefresh {
@@ -18,13 +18,7 @@ extension ListDataUpdateProtocol where Section: Equatable & InitProtocol, Item =
         } else if _itemArray.isNotEmpty {
             newData.append(section: section, items: _itemArray)
         }
-        let result = newData.createListInfo(updating)
-        self.reloadData(closure?(result) ?? result)
-    }
-}
-extension ListData where Item: StaticTableItemCell, Section == TableSection {
-    public func createListInfo(_ updating: Updating) -> TableListDataInfo {
-        self.map(AnyTableAdapterItem.cell).createListInfo(updating)
+        self.reloadData(newData, completion)
     }
 }
 

@@ -16,15 +16,9 @@ public extension UITableView {
 
 public struct TableViewUpdating {
     private weak var tableView: UITableView?
-    private var animation: UITableView.RowAnimation
-    public var updateMode: UpdateMode {
-        get { animation == .none ? .everything : .partial }
-        set {
-            switch newValue {
-            case .everything: animation = .none
-            case .partial: animation = .automatic
-            }
-        }
+    public var animation: UITableView.RowAnimation
+    private var animated: Bool {
+        animation == .none
     }
     public init(_ target: UITableView, _ animation: UITableView.RowAnimation) {
         self.tableView = target

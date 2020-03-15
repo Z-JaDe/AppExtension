@@ -8,20 +8,24 @@
 
 import Foundation
 
-public protocol SectionedDataSourceType {
+public protocol SectionedDataSourceType: class {
     associatedtype S: SectionModelType
     typealias DataControllerType = DataController<S>
     var dataController: DataControllerType {get}
+    init()
+    init(dataController: DataController<S>)
+
+    var didMoveItem: ((S.Item, S.Item) -> Void)? { get set }
 }
 
 open class SectionedDataSource<S: SectionModelType>: NSObject, SectionedDataSourceType {
     public let dataController: DataController<S>
-    public init(dataController: DataController<S>) {
+    public required init(dataController: DataController<S>) {
         self.dataController = dataController
         super.init()
         configInit()
     }
-    public convenience override init() {
+    public required convenience override init() {
         self.init(dataController: DataController())
     }
     open func configInit() {
@@ -38,8 +42,7 @@ open class SectionedDataSource<S: SectionModelType>: NSObject, SectionedDataSour
     }
     #endif
     /// ZJaDe: 手动 移动编辑后调用该闭包
-    public var didMoveItem: ((SectionedDataSource, S.Item, S.Item) -> Void)?
+    public var didMoveItem: ((S.Item, S.Item) -> Void)?
 
-    public typealias Element = ListDataInfo<[S]>
-
+    public typealias Element = [S]
 }

@@ -14,40 +14,31 @@ public protocol ListDataUpdateProtocol: class {
     associatedtype Item
     typealias _ListData = ListData<Section, Item>
     typealias _SectionData = _ListData.Element
-    typealias _ListDataInfo = ListDataInfo<_ListData>
 
     var dataArray: _ListData {get}
     var updating: Updating {get}
-    func changeListDataInfo(_ newData: _ListDataInfo)
+    func changeListData(_ newData: _ListData, _ completion: (() -> Void)?)
 }
-extension ListDataUpdateProtocol {
-    public func createListInfo(_ newData: _ListData) -> _ListDataInfo {
-        _ListDataInfo(data: newData, updating: updating)
-    }
-}
+
 extension ListDataUpdateProtocol {
     /// ZJaDe: 更新
     public func updateData() {
         self.reloadData(self.dataArray)
     }
     /// ZJaDe: 重新刷新 传入 listData
-    public func reloadData(_ listData: _ListData?) {
-        self.reloadData(listData?.createListInfo(updating))
-    }
-    /// ZJaDe: 重新刷新 传入 listDataInfo
-    public func reloadData(_ listDataInfo: _ListDataInfo?) {
-        if let listDataInfo = listDataInfo {
-            self.changeListDataInfo(listDataInfo)
+    public func reloadData(_ listData: _ListData?, _ completion: (() -> Void)? = nil) {
+        if let listData = listData {
+            self.changeListData(listData, completion)
         }
     }
-    public func updateData(_ closure: (_ListDataInfo) -> _ListDataInfo) {
-        self.reloadData(closure(createListInfo(dataArray)))
+    public func updateData(_ closure: (_ListData) -> _ListData) {
+        self.reloadData(closure(dataArray))
     }
 }
 extension ListDataUpdateProtocol where Section: Equatable & InitProtocol {
     // TODO: Async/Await 出来后需优化
-    /// ZJaDe: 重新刷新 返回 ListDataInfo
-    public func reloadData(section: Section? = nil, _ itemArray: [Item]?, isRefresh: Bool, _ closure: ((_ListDataInfo) -> (_ListDataInfo))? = nil) {
+    /// ZJaDe: 重新刷新 返回 ListData
+    public func reloadList(section: Section? = nil, _ itemArray: [Item]?, isRefresh: Bool, _ completion: (() -> Void)? = nil) {
         let _itemArray = itemArray ?? []
         var newData = self.dataArray
         if isRefresh {
@@ -55,7 +46,6 @@ extension ListDataUpdateProtocol where Section: Equatable & InitProtocol {
         } else if _itemArray.isEmpty == false {
             newData.append(section: section, items: _itemArray)
         }
-        let result = newData.createListInfo(updating)
-        self.reloadData(closure?(result) ?? result)
+        self.reloadData(newData, completion)
     }
 }

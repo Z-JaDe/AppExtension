@@ -14,7 +14,6 @@ public enum UpdateMode {
 }
 
 public protocol Updating {
-    var updateMode: UpdateMode { get set }
     var isInHierarchy: Bool { get }
 
     func performBatch(updates: (() -> Void)?, completion: @escaping (Bool) -> Void)
@@ -30,9 +29,4 @@ public protocol Updating {
     func moveSection(_ section: Int, toSection newSection: Int)
 
     func reload(completion: @escaping () -> Void)
-}
-extension Updating {
-    public var animated: Bool {
-        return updateMode == .partial
-    }
 }

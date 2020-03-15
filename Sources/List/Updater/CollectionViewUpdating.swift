@@ -9,17 +9,17 @@
 import UIKit
 
 public extension UICollectionView {
-    func createUpdating(updateMode: UpdateMode) -> CollectionViewUpdating {
-        return CollectionViewUpdating(self, updateMode: updateMode)
+    func createUpdating(animated: Bool) -> CollectionViewUpdating {
+        return CollectionViewUpdating(self, animated: animated)
     }
 }
 
 public struct CollectionViewUpdating {
     private weak var collectionView: UICollectionView?
-    public var updateMode: UpdateMode
-    public init(_ target: UICollectionView, updateMode: UpdateMode) {
+    public var animated: Bool
+    public init(_ target: UICollectionView, animated: Bool) {
         self.collectionView = target
-        self.updateMode = updateMode
+        self.animated = animated
     }
 }
 extension CollectionViewUpdating: Updating {

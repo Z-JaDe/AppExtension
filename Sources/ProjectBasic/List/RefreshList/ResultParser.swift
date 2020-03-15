@@ -63,10 +63,8 @@ extension ResultParser where RefreshList: RefreshListProtocol {
 // MARK: - ResultParser扩展table collection
 extension ResultParser where AdapterType.Section: Equatable&InitProtocol, RefreshList: RefreshListProtocol {
     public func itemArray(_ itemArray: [AdapterType.Item]?, _ isRefresh: Bool) -> ResultParser {
-        self.adapter.reloadData(section: self.section, itemArray, isRefresh: isRefresh, {
-            $0.setUpdateMode(.everything).completion {
-                self.endRefreshing(count: itemArray?.count)
-            }
+        self.adapter.reloadList(section: self.section, itemArray, isRefresh: isRefresh, {
+            self.endRefreshing(count: itemArray?.count)
         })
         return self
     }

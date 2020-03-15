@@ -109,7 +109,7 @@ open class TableViewDataSource<S: SectionModelType>: SectionedDataSource<S>, UIT
         let source = dataController[sourceIndexPath]
         let destination = dataController[destinationIndexPath]
         dataController.move(sourceIndexPath, target: destinationIndexPath)
-        self.didMoveItem?(self, source, destination)
+        self.didMoveItem?(source, destination)
     }
 
     #if os(iOS)
