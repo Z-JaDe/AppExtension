@@ -15,7 +15,7 @@
 		180436B123CC8792008E19A5 /* UICollectionProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804367123CC8791008E19A5 /* UICollectionProxy.swift */; };
 		180436B223CC8792008E19A5 /* ListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804367423CC8791008E19A5 /* ListAdapter.swift */; };
 		180436B323CC8792008E19A5 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804367623CC8791008E19A5 /* TableSection.swift */; };
-		180436B423CC8792008E19A5 /* CollectSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804367723CC8791008E19A5 /* CollectSection.swift */; };
+		180436B423CC8792008E19A5 /* CollectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804367723CC8791008E19A5 /* CollectionSection.swift */; };
 		180436B523CC8792008E19A5 /* DifferenceKitCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804367823CC8791008E19A5 /* DifferenceKitCompatible.swift */; };
 		180436B623CC8792008E19A5 /* CollectionSelectionPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804367B23CC8791008E19A5 /* CollectionSelectionPlugin.swift */; };
 		180436B723CC8792008E19A5 /* TableSelectionPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804367C23CC8791008E19A5 /* TableSelectionPlugin.swift */; };
@@ -771,7 +771,7 @@
 		1804367123CC8791008E19A5 /* UICollectionProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionProxy.swift; sourceTree = "<group>"; };
 		1804367423CC8791008E19A5 /* ListAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListAdapter.swift; sourceTree = "<group>"; };
 		1804367623CC8791008E19A5 /* TableSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
-		1804367723CC8791008E19A5 /* CollectSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectSection.swift; sourceTree = "<group>"; };
+		1804367723CC8791008E19A5 /* CollectionSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionSection.swift; sourceTree = "<group>"; };
 		1804367823CC8791008E19A5 /* DifferenceKitCompatible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifferenceKitCompatible.swift; sourceTree = "<group>"; };
 		1804367B23CC8791008E19A5 /* CollectionSelectionPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionSelectionPlugin.swift; sourceTree = "<group>"; };
 		1804367C23CC8791008E19A5 /* TableSelectionPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSelectionPlugin.swift; sourceTree = "<group>"; };
@@ -1519,13 +1519,9 @@
 		1804366A23CC8791008E19A5 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				1804366B23CC8791008E19A5 /* RefreshList */,
 				1804367223CC8791008E19A5 /* Core */,
+				1804366B23CC8791008E19A5 /* RefreshList */,
 				1804367923CC8791008E19A5 /* Plugin */,
-				1804367E23CC8791008E19A5 /* Cell */,
-				1804369D23CC8792008E19A5 /* Model */,
-				1804366F23CC8791008E19A5 /* Collection */,
-				1804369823CC8792008E19A5 /* Table */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -1534,26 +1530,21 @@
 			isa = PBXGroup;
 			children = (
 				1804366C23CC8791008E19A5 /* RefreshListProtocol+MJ.swift */,
+				1804369C23CC8792008E19A5 /* ListDataUpdateProtocol+Table.swift */,
 				1804366D23CC8791008E19A5 /* ResultParser.swift */,
 				1804366E23CC8791008E19A5 /* RefreshListProtocol.swift */,
 			);
 			path = RefreshList;
 			sourceTree = "<group>";
 		};
-		1804366F23CC8791008E19A5 /* Collection */ = {
-			isa = PBXGroup;
-			children = (
-				1804367023CC8791008E19A5 /* UICollectionAdapter.swift */,
-				1804367123CC8791008E19A5 /* UICollectionProxy.swift */,
-				180436AC23CC8792008E19A5 /* CollectionCellOfLife.swift */,
-			);
-			path = Collection;
-			sourceTree = "<group>";
-		};
 		1804367223CC8791008E19A5 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				1804367323CC8791008E19A5 /* ListAdapter */,
+				F918CC59241E3ED70093ADD2 /* HeaderFooterView */,
+				1804367E23CC8791008E19A5 /* Cell */,
+				1804369D23CC8792008E19A5 /* Model */,
+				F918CC58241E3DEB0093ADD2 /* CellOfLife */,
+				1804367323CC8791008E19A5 /* Adapter */,
 				1804367523CC8791008E19A5 /* ListSection */,
 				1804367823CC8791008E19A5 /* DifferenceKitCompatible.swift */,
 				180436F823CC87A7008E19A5 /* Updater.swift */,
@@ -1561,19 +1552,24 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		1804367323CC8791008E19A5 /* ListAdapter */ = {
+		1804367323CC8791008E19A5 /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
+				180436A723CC8792008E19A5 /* TableCellHeight */,
 				1804367423CC8791008E19A5 /* ListAdapter.swift */,
+				1804367023CC8791008E19A5 /* UICollectionAdapter.swift */,
+				1804369A23CC8792008E19A5 /* UITableAdapter.swift */,
+				1804367123CC8791008E19A5 /* UICollectionProxy.swift */,
+				1804369923CC8792008E19A5 /* UITableProxy.swift */,
 			);
-			path = ListAdapter;
+			path = Adapter;
 			sourceTree = "<group>";
 		};
 		1804367523CC8791008E19A5 /* ListSection */ = {
 			isa = PBXGroup;
 			children = (
 				1804367623CC8791008E19A5 /* TableSection.swift */,
-				1804367723CC8791008E19A5 /* CollectSection.swift */,
+				1804367723CC8791008E19A5 /* CollectionSection.swift */,
 			);
 			path = ListSection;
 			sourceTree = "<group>";
@@ -1600,14 +1596,9 @@
 			isa = PBXGroup;
 			children = (
 				1804367F23CC8791008E19A5 /* UICell */,
+				F918CC5C241E42040093ADD2 /* Base */,
 				1804368323CC8791008E19A5 /* Dynamic */,
 				1804368D23CC8792008E19A5 /* Static */,
-				1804368923CC8791008E19A5 /* ItemCellBackgroundView.swift */,
-				1804368A23CC8791008E19A5 /* ItemCell.swift */,
-				1804368223CC8791008E19A5 /* TableItemCell.swift */,
-				1804368B23CC8791008E19A5 /* CollectionItemCell.swift */,
-				1804368C23CC8792008E19A5 /* ItemCell+Animation.swift */,
-				1804369723CC8792008E19A5 /* CollectionReusableView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1645,19 +1636,6 @@
 				1804369623CC8792008E19A5 /* SwitchCell.swift */,
 			);
 			path = Static;
-			sourceTree = "<group>";
-		};
-		1804369823CC8792008E19A5 /* Table */ = {
-			isa = PBXGroup;
-			children = (
-				180436A723CC8792008E19A5 /* TableCellHeight */,
-				1804369923CC8792008E19A5 /* UITableProxy.swift */,
-				1804369A23CC8792008E19A5 /* UITableAdapter.swift */,
-				180436A623CC8792008E19A5 /* TableCellOfLife.swift */,
-				1804369B23CC8792008E19A5 /* TableViewHeaderFooterView.swift */,
-				1804369C23CC8792008E19A5 /* ListDataUpdateProtocol+Table.swift */,
-			);
-			path = Table;
 			sourceTree = "<group>";
 		};
 		1804369D23CC8792008E19A5 /* Model */ = {
@@ -3169,6 +3147,36 @@
 			path = Modal;
 			sourceTree = "<group>";
 		};
+		F918CC58241E3DEB0093ADD2 /* CellOfLife */ = {
+			isa = PBXGroup;
+			children = (
+				180436AC23CC8792008E19A5 /* CollectionCellOfLife.swift */,
+				180436A623CC8792008E19A5 /* TableCellOfLife.swift */,
+			);
+			path = CellOfLife;
+			sourceTree = "<group>";
+		};
+		F918CC59241E3ED70093ADD2 /* HeaderFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				1804369723CC8792008E19A5 /* CollectionReusableView.swift */,
+				1804369B23CC8792008E19A5 /* TableViewHeaderFooterView.swift */,
+			);
+			path = HeaderFooterView;
+			sourceTree = "<group>";
+		};
+		F918CC5C241E42040093ADD2 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				1804368923CC8791008E19A5 /* ItemCellBackgroundView.swift */,
+				1804368A23CC8791008E19A5 /* ItemCell.swift */,
+				1804368223CC8791008E19A5 /* TableItemCell.swift */,
+				1804368B23CC8791008E19A5 /* CollectionItemCell.swift */,
+				1804368C23CC8792008E19A5 /* ItemCell+Animation.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -4592,7 +4600,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				180436B723CC8792008E19A5 /* TableSelectionPlugin.swift in Sources */,
-				180436B423CC8792008E19A5 /* CollectSection.swift in Sources */,
+				180436B423CC8792008E19A5 /* CollectionSection.swift in Sources */,
 				C932F8B321006DC500B8DF84 /* ConfigModelProtocol.swift in Sources */,
 				C91B1E7521E31DB3004FEE44 /* Store+Rx.swift in Sources */,
 				C9D4129B21DF4218004368D4 /* BaseViewController.swift in Sources */,

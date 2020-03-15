@@ -8,10 +8,6 @@
 
 import Foundation
 
-public protocol CellSelectedStateDesignable {
-    func didSelectItem()
-}
-
 public protocol AdapterItemType: SelectedStateDesignable & Equatable {}
 public protocol AdapterSectionType: InitProtocol {}
 
