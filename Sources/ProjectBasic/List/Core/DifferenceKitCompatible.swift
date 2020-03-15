@@ -1,5 +1,5 @@
 //
-//  SectionModelData.swift
+//  DifferenceKitCompatible.swift
 //  AppExtension
 //
 //  Created by ZJaDe on 2018/8/24.
@@ -13,7 +13,7 @@ public typealias Diffable = Differentiable
 public typealias DiffableSection = DifferentiableSection
 public typealias SectionModelItem = ArraySection
 
-extension SectionModelItem: SectionModelType {
+extension SectionModelItem: SectionModelType where Element: AdapterItemCompatible {
     public typealias Section = Model
     public var section: Section {
         self.model
@@ -28,31 +28,14 @@ extension SectionModelItem: SectionModelType {
         self.init(source: original, elements: items)
     }
 }
-extension SectionModelItem {
-    var nilIfHidden: SectionModelItem<Model, Item>? {
-        if let section = self.section as? HiddenStateDesignable, section.isHidden {
-            return nil
-        }
-        let items = self.items.filter({ (item) -> Bool in
-            if let item = item as? HiddenStateDesignable {
-                return item.isHidden != true
-            } else {
-                return true
-            }
-        })
-        if items.isEmpty {
-            return nil
-        }
-        return SectionModelItem(section, items)
-    }
-}
+
 // MARK: -
 extension CollectionItemModel: Diffable {}
 extension CollectionSection: Diffable {}
 extension AnyTableAdapterItem: Diffable {}
 extension TableSection: Diffable {}
 // MARK: -
-extension ListData where Section: Diffable, Item: Diffable {
+extension ListData where Section: Diffable, Item: Diffable & AdapterItemCompatible {
     public func compactMapToSectionModels() -> [SectionModelItem<Section, Item>] {
         compactMap(ListData.mapToSectionModel)
     }
@@ -63,7 +46,7 @@ extension ListData where Section: Diffable, Item: Diffable {
             return nil
         }
         let items = element.items.filter({ (item) -> Bool in
-            if let item = item as? HiddenStateDesignable {
+            if let item = item.realItem as? HiddenStateDesignable {
                 return item.isHidden != true
             } else {
                 return true

@@ -34,7 +34,7 @@ open class DynamicTableItemCell: TableItemCell {
         getModel()?._weakContentCell = nil
         setModel(nil)
     }
-    
+
     override func _updateSelectedState(_ isSelected: Bool) {
         super._updateSelectedState(isSelected)
         if getModel()?.isSelected != isSelected {

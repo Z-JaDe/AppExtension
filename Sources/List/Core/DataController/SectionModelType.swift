@@ -20,7 +20,7 @@ struct SectionModelSnapshot<Section, Item> {
 
 public protocol SectionModelType {
     associatedtype Section
-    associatedtype Item
+    associatedtype Item: AdapterItemCompatible
     var section: Section {get}
     var items: [Item] {get}
     init(original: Self, items: [Item])

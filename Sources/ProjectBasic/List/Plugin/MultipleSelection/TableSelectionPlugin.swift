@@ -24,14 +24,13 @@ public class TableSelectionPlugin: ListSelectionPlugin<UITableAdapter>, UITableV
     }
     // MARK: MultipleSelectionProtocol
     override func updateUISelectState(_ indexPath: IndexPath) {
-        if useUIKitSectionLogic {
-            guard let adapter = adapter else { return }
-            let isSelected = adapter.dataController[indexPath].isSelected
-            if isSelected {
-                adapter.tableView?.selectRow(at: indexPath, animated: true, scrollPosition: .none)
-            } else {
-                adapter.tableView?.deselectRow(at: indexPath, animated: true)
-            }
+        guard useUIKitSectionLogic else { return }
+        guard let adapter = adapter else { return }
+        guard let isSelected = checkIsSelected(indexPath) else { return }
+        if isSelected {
+            adapter.tableView?.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+        } else {
+            adapter.tableView?.deselectRow(at: indexPath, animated: true)
         }
     }
     // MARK: UITableViewDelegate
@@ -39,8 +38,8 @@ public class TableSelectionPlugin: ListSelectionPlugin<UITableAdapter>, UITableV
         willDisplay(cellIsSelected: cell.isSelected, indexPath: indexPath)
     }
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let adapter = adapter else { return }
-        if adapter.dataController[indexPath].isSelected {
+        guard let isSelected = checkIsSelected(indexPath) else { return }
+        if isSelected {
             changeSelectState(false, indexPath)
         } else {
             changeSelectState(true, indexPath)

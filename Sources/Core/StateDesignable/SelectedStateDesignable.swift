@@ -11,6 +11,3 @@ import Foundation
 public protocol SelectedStateDesignable {
     var isSelected: Bool {get set}
 }
-public protocol CanSelectedStateDesignable: SelectedStateDesignable {
-    var canSelected: Bool {get}
-}

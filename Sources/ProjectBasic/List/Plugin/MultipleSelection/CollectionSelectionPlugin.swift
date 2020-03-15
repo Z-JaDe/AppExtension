@@ -26,7 +26,7 @@ public class CollectionSelectionPlugin: ListSelectionPlugin<UICollectionAdapter>
     override func updateUISelectState(_ indexPath: IndexPath) {
         if useUIKitSectionLogic {
             guard let adapter = adapter else { return }
-            let isSelected = adapter.dataController[indexPath].isSelected
+            guard let isSelected = checkIsSelected(indexPath) else { return }
             if isSelected {
                 adapter.collectionView?.selectItem(at: indexPath, animated: true, scrollPosition: [])
             } else {
@@ -39,8 +39,8 @@ public class CollectionSelectionPlugin: ListSelectionPlugin<UICollectionAdapter>
         willDisplay(cellIsSelected: cell.isSelected, indexPath: indexPath)
     }
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let adapter = adapter else { return }
-        if adapter.dataController[indexPath].isSelected {
+        guard let isSelected = checkIsSelected(indexPath) else { return }
+        if isSelected {
             changeSelectState(false, indexPath)
         } else {
             changeSelectState(true, indexPath)

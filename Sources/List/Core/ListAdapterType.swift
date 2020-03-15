@@ -8,10 +8,10 @@
 
 import Foundation
 
-public protocol AdapterItemType: SelectedStateDesignable & Equatable {}
 public protocol AdapterSectionType: InitProtocol {}
+public protocol AdapterItemType: AdapterItemCompatible & Equatable {}
 
-public protocol ListAdapterType: class {
+public protocol ListAdapterType: class where Section: AdapterSectionType, Item: AdapterItemType {
     associatedtype DataSource: SectionedDataSourceType
     typealias Section = DataSource.S.Section
     typealias Item = DataSource.S.Item

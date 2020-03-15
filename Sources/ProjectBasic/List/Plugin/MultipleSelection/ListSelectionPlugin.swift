@@ -30,24 +30,42 @@ public class ListSelectionPlugin<Adapter: ListAdapterType>: NSObject {
     internal func updateUISelectState(_ indexPath: IndexPath) {
     }
 }
-extension ListSelectionPlugin where Adapter.Item: Equatable & SelectedStateDesignable {
+extension ListSelectionPlugin {
+    func checkIsSelected(_ indexPath: IndexPath) -> Bool? {
+        return adapter?.dataController.checkIsSelected(indexPath)
+    }
+}
+extension ListSelectionPlugin where Adapter.Item: Equatable {
+    func changeItemSelectedState(_ item: inout Adapter.Item, _ isSelected: Bool) {
+        if var _item = item as? SelectedStateDesignable {
+            _item.isSelected = isSelected
+            // swiftlint:disable force_cast
+            item = _item as! Adapter.Item
+        } else if let _item = item as? ListAdapterItem {
+            if var _value = _item.value as? SelectedStateDesignable {
+                _value.isSelected = isSelected
+            }
+        }
+    }
     func willDisplay(cellIsSelected: Bool, indexPath: IndexPath) {
-        if useUIKitSectionLogic {
-            Async.main {
-                guard let adapter = self.adapter else { return }
-                guard adapter.dataController.indexPathCanBound(indexPath) else { return }
-                let itemSelected = adapter.dataController[indexPath].isSelected
-                if itemSelected {
-                    self.changeSelectState(true, indexPath)
-                } else if itemSelected != cellIsSelected {
-                    self.updateUISelectState(indexPath)
-                }
+        guard useUIKitSectionLogic else { return }
+        Async.main {
+            guard let itemSelected = self.checkIsSelected(indexPath) else { return }
+            if itemSelected {
+                self.changeSelectState(true, indexPath)
+            } else if itemSelected != cellIsSelected {
+                self.updateUISelectState(indexPath)
             }
         }
     }
 }
-extension ListSelectionPlugin: MultipleSelectionProtocol where Adapter.Item: Equatable & SelectedStateDesignable {
+extension ListSelectionPlugin: MultipleSelectionProtocol where Adapter.Item: Equatable {
     public typealias SelectItemType = Adapter.Item
+    public func updateSelectState(_ item: inout SelectItemType, _ isSelected: Bool) {
+        changeItemSelectedState(&item, isSelected)
+        updateSelectedItemArrayWhenSelectStateChanged(item, isSelected)
+    }
+
     public func changeSelectState(_ isSelected: Bool, _ item: SelectItemType) {
         guard let indexPath = adapter?.dataController.indexPath(with: item) else { return }
         changeSelectState(isSelected, indexPath)

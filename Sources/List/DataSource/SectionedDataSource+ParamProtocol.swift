@@ -11,13 +11,7 @@ import Foundation
 extension SectionedDataSource: DataSourceItemsParamProtocol {
     public func eachModel(_ closure: ((Any) -> Bool)) -> Bool {
         for sectionModel in self.dataController.sectionModels {
-            let items: [Any] = sectionModel.items.map({ (item) in
-                if let item = item as? ListAdapterItem {
-                    return item.value
-                } else {
-                    return item
-                }
-            })
+            let items: [Any] = sectionModel.items.map({ $0.realItem })
             let isContinue = items.eachModel(closure)
             if !isContinue {
                 return false

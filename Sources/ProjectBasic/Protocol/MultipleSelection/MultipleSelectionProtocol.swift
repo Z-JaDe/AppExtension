@@ -9,15 +9,9 @@
 import Foundation
 
 public protocol MultipleSelectionProtocol: AssociatedObjectProtocol {
-    associatedtype SelectItemType
+    associatedtype SelectItemType: Equatable
     var maxSelectedCount: MaxSelectedCount {get set}
-    /// ZJaDe: 找到item对应的下标
-    func index(_ item: SelectItemType) -> Int?
-    /// ZJaDe: 当item选中时做一些处理 默认不能主动调用
-    func updateItemToSelected(_ item: inout SelectItemType)
-    /// ZJaDe: 当item未选中时做一些处理 默认不能主动调用
-    func updateItemToUnSelected(_ item: inout SelectItemType)
-    /// ZJaDe: 更新item选中状态
+    /// ZJaDe: 更新item选中状态 默认不能主动调用
     func updateSelectState(_ item: inout SelectItemType, _ isSelected: Bool)
     /// ZJaDe: 主动更改item的选中状态
     func changeSelectState(_ isSelected: Bool, _ item: SelectItemType)
@@ -42,15 +36,13 @@ public extension MultipleSelectionProtocol {
         set { setAssociatedObject(&maxSelectedCountKey, newValue) }
     }
 }
-extension MultipleSelectionProtocol where SelectItemType: Equatable {
-    public func index(_ item: SelectItemType) -> Int? {
+extension MultipleSelectionProtocol {
+    @inline(__always)
+    func index(_ item: SelectItemType) -> Int? {
         self.selectedItemArray.firstIndex(of: item)
     }
-}
-// MARK: -
-extension MultipleSelectionProtocol where SelectItemType: SelectedStateDesignable {
-    public func updateSelectState(_ item: inout SelectItemType, _ isSelected: Bool) {
-        item.isSelected = isSelected
+    /// Item选中状态更新时，更新selectedItemArray
+    public func updateSelectedItemArrayWhenSelectStateChanged(_ item: SelectItemType, _ isSelected: Bool) {
         if let index = self.index(item) {
             if !isSelected {
                 self.selectedItemArray.remove(at: index)
@@ -62,6 +54,12 @@ extension MultipleSelectionProtocol where SelectItemType: SelectedStateDesignabl
         }
         logDebug("\(self.selectedItemArray)")
         self.selectedItemArrayChanged.call(self.selectedItemArray)
+    }
+}
+// MARK: -
+extension MultipleSelectionProtocol where SelectItemType: SelectedStateDesignable {
+    func updateSelectState(_ item: inout SelectItemType, _ isSelected: Bool) {
+        updateSelectedItemArrayWhenSelectStateChanged(item, isSelected)
     }
 }
 // MARK: -

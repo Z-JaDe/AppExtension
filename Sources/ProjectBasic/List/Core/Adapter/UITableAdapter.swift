@@ -8,7 +8,11 @@
 
 import UIKit
 
-extension AnyTableAdapterItem: AdapterItemType {}
+extension AnyTableAdapterItem: AdapterItemType {
+    public var realItem: Any {
+        self.value
+    }
+}
 extension TableItemModel: _AdapterItemType {}
 extension TableCellModel: _AdapterItemType {}
 extension StaticTableItemCell: _AdapterItemType {}

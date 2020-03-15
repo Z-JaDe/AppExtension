@@ -63,3 +63,14 @@ extension DataController where S.Item: Equatable {
         return nil
     }
 }
+// MARK: -
+extension DataController {
+    public func checkIsSelected(_ indexPath: IndexPath) -> Bool? {
+        guard indexPathCanBound(indexPath) else { return nil }
+        let item = self[indexPath]
+        if let _item = item.realItem as? SelectedStateDesignable {
+            return _item.isSelected
+        }
+        return nil
+    }
+}

@@ -8,33 +8,29 @@
 
 import Foundation
 
+public protocol AdapterItemCompatible {
+    var realItem: Any {get}
+}
+extension AdapterItemCompatible {
+    public var realItem: Any {
+        self
+    }
+}
+// MARK: -
 public protocol ListAdapterItemHashable {
     func hash(into hasher: inout Hasher)
     func isEqual(to source: ListAdapterItem) -> Bool
 }
-public protocol ListAdapterItem: HiddenStateDesignable & SelectedStateDesignable & CustomStringConvertible {
-    typealias Value = AnyObject & HiddenStateDesignable & SelectedStateDesignable & ListAdapterItemHashable
-    var value: Value {get}
+public protocol ListAdapterItem: AdapterItemCompatible, CustomStringConvertible {
+    typealias Value = AnyObject & ListAdapterItemHashable
+    var value: Value { get }
+}
+extension ListAdapterItem {
+    var realItem: Any {
+        return self
+    }
 }
 // MARK: -
-extension ListAdapterItem {
-    public var isHidden: Bool {
-        get { value.isHidden }
-        nonmutating set {
-            var value = self.value
-            value.isHidden = newValue
-        }
-    }
-}
-extension ListAdapterItem {
-    public var isSelected: Bool {
-        get { value.isSelected }
-        nonmutating set {
-            var value = self.value
-            value.isSelected = newValue
-        }
-    }
-}
 extension ListAdapterItem where Self: Hashable {
     public static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.value.isEqual(to: rhs)

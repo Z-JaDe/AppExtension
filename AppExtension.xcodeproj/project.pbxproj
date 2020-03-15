@@ -73,7 +73,6 @@
 		1804371823CC87A8008E19A5 /* List.h in Headers */ = {isa = PBXBuildFile; fileRef = 180436FC23CC87A7008E19A5 /* List.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1804371923CC87A8008E19A5 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436FD23CC87A7008E19A5 /* List.swift */; };
 		1804371B23CC87A8008E19A5 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804370023CC87A7008E19A5 /* TableViewDataSource.swift */; };
-		1804371D23CC87A8008E19A5 /* ListAdapterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804370223CC87A7008E19A5 /* ListAdapterItem.swift */; };
 		1804372023CC889C008E19A5 /* SectionModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804371F23CC889C008E19A5 /* SectionModelType.swift */; };
 		1804376B23CC8DB7008E19A5 /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436F823CC87A7008E19A5 /* Updater.swift */; };
 		1805B3CE2276A82900F0574D /* GCDTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805B3CD2276A82900F0574D /* GCDTest.swift */; };
@@ -429,6 +428,7 @@
 		C9DF833E2179D1640044334E /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DF833D2179D1640044334E /* Core.swift */; };
 		F07B7D4261FF1E0E896A2386 /* Pods_UserNotificationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8259DE5E679FB6045C03FD7F /* Pods_UserNotificationManager.framework */; };
 		F918CCAA241E4A3B0093ADD2 /* AnyTableAdapterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F918CCA9241E4A3B0093ADD2 /* AnyTableAdapterItem.swift */; };
+		F918CD7C241E69700093ADD2 /* ListAdapterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804370223CC87A7008E19A5 /* ListAdapterItem.swift */; };
 		F93F85A3237C75E40068CC59 /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F81A210069AC00B8DF84 /* Permission.swift */; };
 		F93F85A4237C75E40068CC59 /* PermissionScope+AVFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F81B210069AC00B8DF84 /* PermissionScope+AVFoundation.swift */; };
 		F93F85A5237C75E40068CC59 /* PermissionScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F81C210069AC00B8DF84 /* PermissionScope.swift */; };
@@ -1534,12 +1534,12 @@
 		1804367223CC8791008E19A5 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				1804367523CC8791008E19A5 /* ListSection */,
+				1804367323CC8791008E19A5 /* Adapter */,
 				F918CC59241E3ED70093ADD2 /* HeaderFooterView */,
 				1804367E23CC8791008E19A5 /* Cell */,
 				1804369D23CC8792008E19A5 /* Model */,
 				F918CC58241E3DEB0093ADD2 /* CellOfLife */,
-				1804367323CC8791008E19A5 /* Adapter */,
-				1804367523CC8791008E19A5 /* ListSection */,
 				1804367823CC8791008E19A5 /* DifferenceKitCompatible.swift */,
 				F918CCA9241E4A3B0093ADD2 /* AnyTableAdapterItem.swift */,
 				180436F823CC87A7008E19A5 /* Updater.swift */,
@@ -1673,6 +1673,7 @@
 			children = (
 				180436E523CC87A7008E19A5 /* ListAdapterType.swift */,
 				180436EB23CC87A7008E19A5 /* ListSection.swift */,
+				1804370223CC87A7008E19A5 /* ListAdapterItem.swift */,
 				180436E623CC87A7008E19A5 /* Protocol */,
 				180436E923CC87A7008E19A5 /* DataController */,
 				180436EC23CC87A7008E19A5 /* ListData */,
@@ -3147,7 +3148,6 @@
 				180436F523CC87A7008E19A5 /* SectionedDataSource+ParamProtocol.swift */,
 				1804370023CC87A7008E19A5 /* TableViewDataSource.swift */,
 				180436E223CC87A7008E19A5 /* CollectionViewDataSource.swift */,
-				1804370223CC87A7008E19A5 /* ListAdapterItem.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -4710,6 +4710,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F918CD7C241E69700093ADD2 /* ListAdapterItem.swift in Sources */,
 				1804370623CC87A8008E19A5 /* ListAdapterType.swift in Sources */,
 				1804370E23CC87A8008E19A5 /* ListData+EditItems.swift in Sources */,
 				1804370923CC87A8008E19A5 /* DataController.swift in Sources */,
@@ -4728,7 +4729,6 @@
 				1804370C23CC87A8008E19A5 /* ListBuilder.swift in Sources */,
 				1804370823CC87A8008E19A5 /* NeedUpdateProtocol.swift in Sources */,
 				1804371023CC87A8008E19A5 /* ListDataInfo.swift in Sources */,
-				1804371D23CC87A8008E19A5 /* ListAdapterItem.swift in Sources */,
 				1804370F23CC87A8008E19A5 /* ListData.swift in Sources */,
 				1804371523CC87A8008E19A5 /* CollectionViewUpdating.swift in Sources */,
 			);
