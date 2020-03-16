@@ -21,8 +21,8 @@
 		C0231A00000330 /* DefaultsSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000160 /* DefaultsSerializable.swift */; };
 		C0231A00000340 /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000170 /* OptionalType.swift */; };
 		C0231A00000350 /* PropertyWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0231A00000180 /* PropertyWrappers.swift */; };
-		C0231A000003A0 /* SwiftyUserDefaults-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C0231A00000390 /* SwiftyUserDefaults-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C0231A000003E0 /* SwiftyUserDefaults-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C0231A000003D0 /* SwiftyUserDefaults-dummy.m */; };
+		C0231A000003B0 /* SwiftyUserDefaults-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C0231A000003A0 /* SwiftyUserDefaults-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C0231A000003F0 /* SwiftyUserDefaults-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C0231A000003E0 /* SwiftyUserDefaults-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,12 +44,13 @@
 		C0231A000001B0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		C0231A000001C0 /* SwiftyUserDefaults.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SwiftyUserDefaults.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C0231A00000270 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		C0231A00000370 /* SwiftyUserDefaults.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyUserDefaults.xcconfig; sourceTree = "<group>"; };
-		C0231A00000380 /* SwiftyUserDefaults.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyUserDefaults.modulemap; sourceTree = "<group>"; };
-		C0231A00000390 /* SwiftyUserDefaults-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyUserDefaults-umbrella.h"; sourceTree = "<group>"; };
-		C0231A000003B0 /* SwiftyUserDefaults-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyUserDefaults-Info.plist"; sourceTree = "<group>"; };
-		C0231A000003C0 /* SwiftyUserDefaults-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyUserDefaults-prefix.pch"; sourceTree = "<group>"; };
-		C0231A000003D0 /* SwiftyUserDefaults-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyUserDefaults-dummy.m"; sourceTree = "<group>"; };
+		C0231A00000370 /* SwiftyUserDefaults.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyUserDefaults.debug.xcconfig; sourceTree = "<group>"; };
+		C0231A00000380 /* SwiftyUserDefaults.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyUserDefaults.release.xcconfig; sourceTree = "<group>"; };
+		C0231A00000390 /* SwiftyUserDefaults.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyUserDefaults.modulemap; sourceTree = "<group>"; };
+		C0231A000003A0 /* SwiftyUserDefaults-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyUserDefaults-umbrella.h"; sourceTree = "<group>"; };
+		C0231A000003C0 /* SwiftyUserDefaults-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyUserDefaults-Info.plist"; sourceTree = "<group>"; };
+		C0231A000003D0 /* SwiftyUserDefaults-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyUserDefaults-prefix.pch"; sourceTree = "<group>"; };
+		C0231A000003E0 /* SwiftyUserDefaults-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyUserDefaults-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,12 +134,13 @@
 		C0231A00000360 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C0231A00000380 /* SwiftyUserDefaults.modulemap */,
-				C0231A00000370 /* SwiftyUserDefaults.xcconfig */,
-				C0231A000003D0 /* SwiftyUserDefaults-dummy.m */,
-				C0231A000003B0 /* SwiftyUserDefaults-Info.plist */,
-				C0231A000003C0 /* SwiftyUserDefaults-prefix.pch */,
-				C0231A00000390 /* SwiftyUserDefaults-umbrella.h */,
+				C0231A00000390 /* SwiftyUserDefaults.modulemap */,
+				C0231A000003E0 /* SwiftyUserDefaults-dummy.m */,
+				C0231A000003C0 /* SwiftyUserDefaults-Info.plist */,
+				C0231A000003D0 /* SwiftyUserDefaults-prefix.pch */,
+				C0231A000003A0 /* SwiftyUserDefaults-umbrella.h */,
+				C0231A00000370 /* SwiftyUserDefaults.debug.xcconfig */,
+				C0231A00000380 /* SwiftyUserDefaults.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../../../Pods/Target Support Files/SwiftyUserDefaults";
@@ -151,7 +153,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0231A000003A0 /* SwiftyUserDefaults-umbrella.h in Headers */,
+				C0231A000003B0 /* SwiftyUserDefaults-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,7 +233,7 @@
 				C0231A00000330 /* DefaultsSerializable.swift in Sources */,
 				C0231A00000340 /* OptionalType.swift in Sources */,
 				C0231A00000350 /* PropertyWrappers.swift in Sources */,
-				C0231A000003E0 /* SwiftyUserDefaults-dummy.m in Sources */,
+				C0231A000003F0 /* SwiftyUserDefaults-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +366,7 @@
 		};
 		C0231A000001F0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C0231A00000370 /* SwiftyUserDefaults.xcconfig */;
+			baseConfigurationReference = C0231A00000380 /* SwiftyUserDefaults.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -400,7 +402,7 @@
 		};
 		C0231A00000200 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C0231A00000370 /* SwiftyUserDefaults.xcconfig */;
+			baseConfigurationReference = C0231A00000370 /* SwiftyUserDefaults.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

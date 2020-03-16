@@ -21,8 +21,8 @@
 		0D408A000002F0 /* AtomicBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000160 /* AtomicBool.swift */; };
 		0D408A00000300 /* Coding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000170 /* Coding.swift */; };
 		0D408A00000310 /* TypeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000180 /* TypeHelper.swift */; };
-		0D408A00000360 /* ReSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D408A00000350 /* ReSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0D408A000003A0 /* ReSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A00000390 /* ReSwift-dummy.m */; };
+		0D408A00000370 /* ReSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D408A00000360 /* ReSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D408A000003B0 /* ReSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D408A000003A0 /* ReSwift-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,12 +40,13 @@
 		0D408A00000170 /* Coding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Coding.swift; path = ReSwift/Utils/Coding.swift; sourceTree = "<group>"; };
 		0D408A00000180 /* TypeHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TypeHelper.swift; path = ReSwift/Utils/TypeHelper.swift; sourceTree = "<group>"; };
 		0D408A00000230 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		0D408A00000330 /* ReSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReSwift.xcconfig; sourceTree = "<group>"; };
-		0D408A00000340 /* ReSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ReSwift.modulemap; sourceTree = "<group>"; };
-		0D408A00000350 /* ReSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReSwift-umbrella.h"; sourceTree = "<group>"; };
-		0D408A00000370 /* ReSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ReSwift-Info.plist"; sourceTree = "<group>"; };
-		0D408A00000380 /* ReSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReSwift-prefix.pch"; sourceTree = "<group>"; };
-		0D408A00000390 /* ReSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReSwift-dummy.m"; sourceTree = "<group>"; };
+		0D408A00000330 /* ReSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReSwift.debug.xcconfig; sourceTree = "<group>"; };
+		0D408A00000340 /* ReSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReSwift.release.xcconfig; sourceTree = "<group>"; };
+		0D408A00000350 /* ReSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ReSwift.modulemap; sourceTree = "<group>"; };
+		0D408A00000360 /* ReSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReSwift-umbrella.h"; sourceTree = "<group>"; };
+		0D408A00000380 /* ReSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ReSwift-Info.plist"; sourceTree = "<group>"; };
+		0D408A00000390 /* ReSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReSwift-prefix.pch"; sourceTree = "<group>"; };
+		0D408A000003A0 /* ReSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReSwift-dummy.m"; sourceTree = "<group>"; };
 		D2C38D98D363688C737160E89571875A /* ReSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ReSwift.framework; path = ReSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -119,12 +120,13 @@
 		0D408A00000320 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0D408A00000340 /* ReSwift.modulemap */,
-				0D408A00000330 /* ReSwift.xcconfig */,
-				0D408A00000390 /* ReSwift-dummy.m */,
-				0D408A00000370 /* ReSwift-Info.plist */,
-				0D408A00000380 /* ReSwift-prefix.pch */,
-				0D408A00000350 /* ReSwift-umbrella.h */,
+				0D408A00000350 /* ReSwift.modulemap */,
+				0D408A000003A0 /* ReSwift-dummy.m */,
+				0D408A00000380 /* ReSwift-Info.plist */,
+				0D408A00000390 /* ReSwift-prefix.pch */,
+				0D408A00000360 /* ReSwift-umbrella.h */,
+				0D408A00000330 /* ReSwift.debug.xcconfig */,
+				0D408A00000340 /* ReSwift.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/ReSwift";
@@ -137,7 +139,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D408A00000360 /* ReSwift-umbrella.h in Headers */,
+				0D408A00000370 /* ReSwift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +213,7 @@
 				0D408A00000260 /* DispatchingStoreType.swift in Sources */,
 				0D408A00000270 /* Middleware.swift in Sources */,
 				0D408A00000280 /* Reducer.swift in Sources */,
-				0D408A000003A0 /* ReSwift-dummy.m in Sources */,
+				0D408A000003B0 /* ReSwift-dummy.m in Sources */,
 				0D408A00000290 /* State.swift in Sources */,
 				0D408A000002A0 /* Store.swift in Sources */,
 				0D408A000002B0 /* StoreSubscriber.swift in Sources */,
@@ -350,7 +352,7 @@
 		};
 		0D408A000001B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D408A00000330 /* ReSwift.xcconfig */;
+			baseConfigurationReference = 0D408A00000340 /* ReSwift.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -386,7 +388,7 @@
 		};
 		0D408A000001C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D408A00000330 /* ReSwift.xcconfig */;
+			baseConfigurationReference = 0D408A00000330 /* ReSwift.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

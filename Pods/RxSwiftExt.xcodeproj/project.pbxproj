@@ -47,23 +47,23 @@
 		A3D671000006B0 /* UIScrollView+reachedBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000340 /* UIScrollView+reachedBottom.swift */; };
 		A3D671000006C0 /* UIViewPropertyAnimator+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000350 /* UIViewPropertyAnimator+Rx.swift */; };
 		A3D671000006D0 /* unwrap+SharedSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000360 /* unwrap+SharedSequence.swift */; };
-		A3D67100000720 /* RxSwiftExt-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A3D67100000710 /* RxSwiftExt-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A3D67100000760 /* RxSwiftExt-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000750 /* RxSwiftExt-dummy.m */; };
-		A3D671000007B0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3D671000007A0 /* RxSwift.framework */; };
-		A3D67100000800 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3D671000007F0 /* RxCocoa.framework */; };
+		A3D67100000730 /* RxSwiftExt-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A3D67100000720 /* RxSwiftExt-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3D67100000770 /* RxSwiftExt-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000760 /* RxSwiftExt-dummy.m */; };
+		A3D671000007C0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3D671000007B0 /* RxSwift.framework */; };
+		A3D67100000810 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3D67100000800 /* RxCocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A3D67100000780 /* PBXContainerItemProxy */ = {
+		A3D67100000790 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A3D67100000770 /* RxSwift.xcodeproj */;
+			containerPortal = A3D67100000780 /* RxSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
 			remoteInfo = RxSwift;
 		};
-		A3D671000007D0 /* PBXContainerItemProxy */ = {
+		A3D671000007E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A3D671000007C0 /* RxCocoa.xcodeproj */;
+			containerPortal = A3D671000007D0 /* RxCocoa.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
 			remoteInfo = RxCocoa;
@@ -115,16 +115,17 @@
 		A3D67100000390 /* Readme.md */ = {isa = PBXFileReference; includeInIndex = 1; path = Readme.md; sourceTree = "<group>"; };
 		A3D671000003A0 /* RxSwiftExt.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = RxSwiftExt.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A3D67100000450 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		A3D671000006F0 /* RxSwiftExt.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxSwiftExt.xcconfig; sourceTree = "<group>"; };
-		A3D67100000700 /* RxSwiftExt.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RxSwiftExt.modulemap; sourceTree = "<group>"; };
-		A3D67100000710 /* RxSwiftExt-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxSwiftExt-umbrella.h"; sourceTree = "<group>"; };
-		A3D67100000730 /* RxSwiftExt-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RxSwiftExt-Info.plist"; sourceTree = "<group>"; };
-		A3D67100000740 /* RxSwiftExt-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxSwiftExt-prefix.pch"; sourceTree = "<group>"; };
-		A3D67100000750 /* RxSwiftExt-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxSwiftExt-dummy.m"; sourceTree = "<group>"; };
-		A3D67100000770 /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxSwift; path = RxSwift.xcodeproj; sourceTree = "<group>"; };
-		A3D671000007A0 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A3D671000007C0 /* RxCocoa */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxCocoa; path = RxCocoa.xcodeproj; sourceTree = "<group>"; };
-		A3D671000007F0 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3D671000006F0 /* RxSwiftExt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxSwiftExt.debug.xcconfig; sourceTree = "<group>"; };
+		A3D67100000700 /* RxSwiftExt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxSwiftExt.release.xcconfig; sourceTree = "<group>"; };
+		A3D67100000710 /* RxSwiftExt.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RxSwiftExt.modulemap; sourceTree = "<group>"; };
+		A3D67100000720 /* RxSwiftExt-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxSwiftExt-umbrella.h"; sourceTree = "<group>"; };
+		A3D67100000740 /* RxSwiftExt-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RxSwiftExt-Info.plist"; sourceTree = "<group>"; };
+		A3D67100000750 /* RxSwiftExt-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxSwiftExt-prefix.pch"; sourceTree = "<group>"; };
+		A3D67100000760 /* RxSwiftExt-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxSwiftExt-dummy.m"; sourceTree = "<group>"; };
+		A3D67100000780 /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxSwift; path = RxSwift.xcodeproj; sourceTree = "<group>"; };
+		A3D671000007B0 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3D671000007D0 /* RxCocoa */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxCocoa; path = RxCocoa.xcodeproj; sourceTree = "<group>"; };
+		A3D67100000800 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,8 +134,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3D67100000460 /* Foundation.framework in Frameworks */,
-				A3D67100000800 /* RxCocoa.framework in Frameworks */,
-				A3D671000007B0 /* RxSwift.framework in Frameworks */,
+				A3D67100000810 /* RxCocoa.framework in Frameworks */,
+				A3D671000007C0 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,8 +163,8 @@
 		A3D67100000060 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A3D671000007F0 /* RxCocoa.framework */,
-				A3D671000007A0 /* RxSwift.framework */,
+				A3D67100000800 /* RxCocoa.framework */,
+				A3D671000007B0 /* RxSwift.framework */,
 				A3D67100000440 /* iOS */,
 			);
 			name = Frameworks;
@@ -172,8 +173,8 @@
 		A3D671000000A0 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				A3D671000007C0 /* RxCocoa */,
-				A3D67100000770 /* RxSwift */,
+				A3D671000007D0 /* RxCocoa */,
+				A3D67100000780 /* RxSwift */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
@@ -282,12 +283,13 @@
 		A3D671000006E0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A3D67100000700 /* RxSwiftExt.modulemap */,
-				A3D671000006F0 /* RxSwiftExt.xcconfig */,
-				A3D67100000750 /* RxSwiftExt-dummy.m */,
-				A3D67100000730 /* RxSwiftExt-Info.plist */,
-				A3D67100000740 /* RxSwiftExt-prefix.pch */,
-				A3D67100000710 /* RxSwiftExt-umbrella.h */,
+				A3D67100000710 /* RxSwiftExt.modulemap */,
+				A3D67100000760 /* RxSwiftExt-dummy.m */,
+				A3D67100000740 /* RxSwiftExt-Info.plist */,
+				A3D67100000750 /* RxSwiftExt-prefix.pch */,
+				A3D67100000720 /* RxSwiftExt-umbrella.h */,
+				A3D671000006F0 /* RxSwiftExt.debug.xcconfig */,
+				A3D67100000700 /* RxSwiftExt.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../../../Pods/Target Support Files/RxSwiftExt";
@@ -300,7 +302,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3D67100000720 /* RxSwiftExt-umbrella.h in Headers */,
+				A3D67100000730 /* RxSwiftExt-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,8 +321,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				A3D671000007E0 /* PBXTargetDependency */,
-				A3D67100000790 /* PBXTargetDependency */,
+				A3D671000007F0 /* PBXTargetDependency */,
+				A3D671000007A0 /* PBXTargetDependency */,
 			);
 			name = RxSwiftExt;
 			productName = RxSwiftExt;
@@ -349,10 +351,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProjectRef = A3D67100000770 /* RxSwift */;
+					ProjectRef = A3D67100000780 /* RxSwift */;
 				},
 				{
-					ProjectRef = A3D671000007C0 /* RxCocoa */;
+					ProjectRef = A3D671000007D0 /* RxCocoa */;
 				},
 			);
 			projectRoot = "";
@@ -409,7 +411,7 @@
 				A3D671000005F0 /* pausableBuffered.swift in Sources */,
 				A3D67100000600 /* repeatWithBehavior.swift in Sources */,
 				A3D67100000610 /* retryWithBehavior.swift in Sources */,
-				A3D67100000760 /* RxSwiftExt-dummy.m in Sources */,
+				A3D67100000770 /* RxSwiftExt-dummy.m in Sources */,
 				A3D67100000620 /* toSortedArray.swift in Sources */,
 				A3D671000006B0 /* UIScrollView+reachedBottom.swift in Sources */,
 				A3D671000006C0 /* UIViewPropertyAnimator+Rx.swift in Sources */,
@@ -423,15 +425,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A3D67100000790 /* PBXTargetDependency */ = {
+		A3D671000007A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RxSwift;
-			targetProxy = A3D67100000780 /* PBXContainerItemProxy */;
+			targetProxy = A3D67100000790 /* PBXContainerItemProxy */;
 		};
-		A3D671000007E0 /* PBXTargetDependency */ = {
+		A3D671000007F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RxCocoa;
-			targetProxy = A3D671000007D0 /* PBXContainerItemProxy */;
+			targetProxy = A3D671000007E0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -562,7 +564,7 @@
 		};
 		A3D671000003D0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3D671000006F0 /* RxSwiftExt.xcconfig */;
+			baseConfigurationReference = A3D67100000700 /* RxSwiftExt.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -598,7 +600,7 @@
 		};
 		A3D671000003E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3D671000006F0 /* RxSwiftExt.xcconfig */;
+			baseConfigurationReference = A3D671000006F0 /* RxSwiftExt.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

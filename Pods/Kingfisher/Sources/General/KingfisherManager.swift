@@ -125,7 +125,7 @@ public class KingfisherManager {
     /// Gets an image from a given resource.
     /// - Parameters:
     ///   - resource: The `Resource` object defines data information like key or URL.
-    ///   - options: Options to use when creating the animated image.
+    ///   - options: Options to use when creating the image.
     ///   - progressBlock: Called when the image downloading progress gets updated. If the response does not contain an
     ///                    `expectedContentLength`, this block will not be called. `progressBlock` is always called in
     ///                    main queue.
@@ -150,9 +150,8 @@ public class KingfisherManager {
         downloadTaskUpdated: DownloadTaskUpdatedBlock? = nil,
         completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)?) -> DownloadTask?
     {
-        let source = Source.network(resource)
         return retrieveImage(
-            with: source,
+            with: resource.convertToSource(),
             options: options,
             progressBlock: progressBlock,
             downloadTaskUpdated: downloadTaskUpdated,
@@ -164,7 +163,7 @@ public class KingfisherManager {
     ///
     /// - Parameters:
     ///   - source: The `Source` object defines data information from network or a data provider.
-    ///   - options: Options to use when creating the animated image.
+    ///   - options: Options to use when creating the image.
     ///   - progressBlock: Called when the image downloading progress gets updated. If the response does not contain an
     ///                    `expectedContentLength`, this block will not be called. `progressBlock` is always called in
     ///                    main queue.
@@ -497,9 +496,15 @@ public class KingfisherManager {
         }
 
         // Check whether the unprocessed image existing or not.
-        let originalImageCached = originalCache.imageCachedType(
-            forKey: key, processorIdentifier: DefaultImageProcessor.default.identifier).cached
-        if originalImageCached {
+        let originalImageCacheType = originalCache.imageCachedType(
+            forKey: key, processorIdentifier: DefaultImageProcessor.default.identifier)
+        let canAcceptDiskCache = !options.fromMemoryCacheOrRefresh
+        
+        let canUseOriginalImageCache =
+            (canAcceptDiskCache && originalImageCacheType.cached) ||
+            (!canAcceptDiskCache && originalImageCacheType == .memory)
+        
+        if canUseOriginalImageCache {
             // Now we are ready to get found the original image from cache. We need the unprocessed image, so remove
             // any processor from options first.
             var optionsWithoutProcessor = options
@@ -509,6 +514,7 @@ public class KingfisherManager {
                 result.match(
                     onSuccess: { cacheResult in
                         guard let image = cacheResult.image else {
+                            assertionFailure("The image (under key: \(key) should be existing in the original cache.")
                             return
                         }
 
@@ -582,6 +588,11 @@ struct RetrievingContext {
     let originalSource: Source
     var propagationErrors: [PropagationError] = []
 
+    init(options: KingfisherParsedOptionsInfo, originalSource: Source) {
+        self.originalSource = originalSource
+        self.options = options
+    }
+
     mutating func popAlternativeSource() -> Source? {
         guard var alternativeSources = options.alternativeSources, !alternativeSources.isEmpty else {
             return nil
@@ -616,12 +627,19 @@ class CacheCallbackCoordinator {
 
     private let shouldWaitForCache: Bool
     private let shouldCacheOriginal: Bool
+    private let stateQueue: DispatchQueue
+    private var threadSafeState: State = .idle
 
-    private (set) var state: State = .idle
+    private (set) var state: State {
+        set { stateQueue.sync { threadSafeState = newValue } }
+        get { stateQueue.sync { threadSafeState } }
+    }
 
     init(shouldWaitForCache: Bool, shouldCacheOriginal: Bool) {
         self.shouldWaitForCache = shouldWaitForCache
         self.shouldCacheOriginal = shouldCacheOriginal
+        let stateQueueName = "com.onevcat.Kingfisher.CacheCallbackCoordinator.stateQueue.\(UUID().uuidString)"
+        self.stateQueue = DispatchQueue(label: stateQueueName)
     }
 
     func apply(_ action: Action, trigger: () -> Void) {

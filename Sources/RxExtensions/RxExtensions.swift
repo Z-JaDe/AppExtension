@@ -8,7 +8,7 @@
 
 import Foundation
 
-/** ZJaDe: 
+/* ZJaDe: 
  这个framework给第三方添加一些扩展 或者结合第三方添加一些新的功能
  */
 

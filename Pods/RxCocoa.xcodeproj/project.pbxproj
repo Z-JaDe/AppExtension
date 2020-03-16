@@ -129,23 +129,23 @@
 		7649F000001070 /* _RXKVOObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 7649F000000630 /* _RXKVOObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7649F000001080 /* _RXObjCRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 7649F000000640 /* _RXObjCRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7649F000001090 /* RxCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = 7649F000000690 /* RxCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7649F0000010E0 /* RxCocoa-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7649F0000010D0 /* RxCocoa-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7649F000001120 /* RxCocoa-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7649F000001110 /* RxCocoa-dummy.m */; };
-		7649F000001170 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7649F000001160 /* RxSwift.framework */; };
-		7649F0000011C0 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7649F0000011B0 /* RxRelay.framework */; };
+		7649F0000010F0 /* RxCocoa-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7649F0000010E0 /* RxCocoa-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7649F000001130 /* RxCocoa-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7649F000001120 /* RxCocoa-dummy.m */; };
+		7649F000001180 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7649F000001170 /* RxSwift.framework */; };
+		7649F0000011D0 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7649F0000011C0 /* RxRelay.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7649F000001140 /* PBXContainerItemProxy */ = {
+		7649F000001150 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7649F000001130 /* RxSwift.xcodeproj */;
+			containerPortal = 7649F000001140 /* RxSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
 			remoteInfo = RxSwift;
 		};
-		7649F000001190 /* PBXContainerItemProxy */ = {
+		7649F0000011A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7649F000001180 /* RxRelay.xcodeproj */;
+			containerPortal = 7649F000001190 /* RxRelay.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 564FA919E05BFD512DA9163BAB640EEE;
 			remoteInfo = RxRelay;
@@ -275,16 +275,17 @@
 		7649F000000830 /* Platform.Linux.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Platform.Linux.swift; path = Platform/Platform.Linux.swift; sourceTree = "<group>"; };
 		7649F000000840 /* RecursiveLock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecursiveLock.swift; path = Platform/RecursiveLock.swift; sourceTree = "<group>"; };
 		7649F0000008F0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7649F0000010B0 /* RxCocoa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxCocoa.xcconfig; sourceTree = "<group>"; };
-		7649F0000010C0 /* RxCocoa.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RxCocoa.modulemap; sourceTree = "<group>"; };
-		7649F0000010D0 /* RxCocoa-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxCocoa-umbrella.h"; sourceTree = "<group>"; };
-		7649F0000010F0 /* RxCocoa-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RxCocoa-Info.plist"; sourceTree = "<group>"; };
-		7649F000001100 /* RxCocoa-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxCocoa-prefix.pch"; sourceTree = "<group>"; };
-		7649F000001110 /* RxCocoa-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxCocoa-dummy.m"; sourceTree = "<group>"; };
-		7649F000001130 /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxSwift; path = RxSwift.xcodeproj; sourceTree = "<group>"; };
-		7649F000001160 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7649F000001180 /* RxRelay */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxRelay; path = RxRelay.xcodeproj; sourceTree = "<group>"; };
-		7649F0000011B0 /* RxRelay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxRelay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7649F0000010B0 /* RxCocoa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxCocoa.debug.xcconfig; sourceTree = "<group>"; };
+		7649F0000010C0 /* RxCocoa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxCocoa.release.xcconfig; sourceTree = "<group>"; };
+		7649F0000010D0 /* RxCocoa.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RxCocoa.modulemap; sourceTree = "<group>"; };
+		7649F0000010E0 /* RxCocoa-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxCocoa-umbrella.h"; sourceTree = "<group>"; };
+		7649F000001100 /* RxCocoa-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RxCocoa-Info.plist"; sourceTree = "<group>"; };
+		7649F000001110 /* RxCocoa-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxCocoa-prefix.pch"; sourceTree = "<group>"; };
+		7649F000001120 /* RxCocoa-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxCocoa-dummy.m"; sourceTree = "<group>"; };
+		7649F000001140 /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxSwift; path = RxSwift.xcodeproj; sourceTree = "<group>"; };
+		7649F000001170 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7649F000001190 /* RxRelay */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxRelay; path = RxRelay.xcodeproj; sourceTree = "<group>"; };
+		7649F0000011C0 /* RxRelay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxRelay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F49FD34447716E9C149BEC0B4BF25379 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RxCocoa.framework; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -294,8 +295,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7649F000000900 /* Foundation.framework in Frameworks */,
-				7649F0000011C0 /* RxRelay.framework in Frameworks */,
-				7649F000001170 /* RxSwift.framework in Frameworks */,
+				7649F0000011D0 /* RxRelay.framework in Frameworks */,
+				7649F000001180 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,8 +324,8 @@
 		7649F000000060 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7649F0000011B0 /* RxRelay.framework */,
-				7649F000001160 /* RxSwift.framework */,
+				7649F0000011C0 /* RxRelay.framework */,
+				7649F000001170 /* RxSwift.framework */,
 				7649F0000008E0 /* iOS */,
 			);
 			name = Frameworks;
@@ -333,8 +334,8 @@
 		7649F0000000A0 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				7649F000001180 /* RxRelay */,
-				7649F000001130 /* RxSwift */,
+				7649F000001190 /* RxRelay */,
+				7649F000001140 /* RxSwift */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
@@ -480,12 +481,13 @@
 		7649F0000010A0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				7649F0000010C0 /* RxCocoa.modulemap */,
-				7649F0000010B0 /* RxCocoa.xcconfig */,
-				7649F000001110 /* RxCocoa-dummy.m */,
-				7649F0000010F0 /* RxCocoa-Info.plist */,
-				7649F000001100 /* RxCocoa-prefix.pch */,
-				7649F0000010D0 /* RxCocoa-umbrella.h */,
+				7649F0000010D0 /* RxCocoa.modulemap */,
+				7649F000001120 /* RxCocoa-dummy.m */,
+				7649F000001100 /* RxCocoa-Info.plist */,
+				7649F000001110 /* RxCocoa-prefix.pch */,
+				7649F0000010E0 /* RxCocoa-umbrella.h */,
+				7649F0000010B0 /* RxCocoa.debug.xcconfig */,
+				7649F0000010C0 /* RxCocoa.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/RxCocoa";
@@ -502,7 +504,7 @@
 				7649F000001060 /* _RXDelegateProxy.h in Headers */,
 				7649F000001070 /* _RXKVOObserver.h in Headers */,
 				7649F000001080 /* _RXObjCRuntime.h in Headers */,
-				7649F0000010E0 /* RxCocoa-umbrella.h in Headers */,
+				7649F0000010F0 /* RxCocoa-umbrella.h in Headers */,
 				7649F000001090 /* RxCocoa.h in Headers */,
 				7649F000001040 /* RxCocoaRuntime.h in Headers */,
 			);
@@ -523,8 +525,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				7649F0000011A0 /* PBXTargetDependency */,
-				7649F000001150 /* PBXTargetDependency */,
+				7649F0000011B0 /* PBXTargetDependency */,
+				7649F000001160 /* PBXTargetDependency */,
 			);
 			name = RxCocoa;
 			productName = RxCocoa;
@@ -553,10 +555,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProjectRef = 7649F000001130 /* RxSwift */;
+					ProjectRef = 7649F000001140 /* RxSwift */;
 				},
 				{
-					ProjectRef = 7649F000001180 /* RxRelay */;
+					ProjectRef = 7649F000001190 /* RxRelay */;
 				},
 			);
 			projectRoot = "";
@@ -630,7 +632,7 @@
 				7649F000000F90 /* PublishRelay+Signal.swift in Sources */,
 				7649F000000FF0 /* Queue.swift in Sources */,
 				7649F000001030 /* RecursiveLock.swift in Sources */,
-				7649F000001120 /* RxCocoa-dummy.m in Sources */,
+				7649F000001130 /* RxCocoa-dummy.m in Sources */,
 				7649F000000E90 /* RxCocoa.swift in Sources */,
 				7649F0000009C0 /* RxCocoaObjCRuntimeError+Extensions.swift in Sources */,
 				7649F000000B20 /* RxCollectionViewDataSourcePrefetchingProxy.swift in Sources */,
@@ -703,15 +705,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7649F000001150 /* PBXTargetDependency */ = {
+		7649F000001160 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RxSwift;
-			targetProxy = 7649F000001140 /* PBXContainerItemProxy */;
+			targetProxy = 7649F000001150 /* PBXContainerItemProxy */;
 		};
-		7649F0000011A0 /* PBXTargetDependency */ = {
+		7649F0000011B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RxRelay;
-			targetProxy = 7649F000001190 /* PBXContainerItemProxy */;
+			targetProxy = 7649F0000011A0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -842,7 +844,7 @@
 		};
 		7649F000000870 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7649F0000010B0 /* RxCocoa.xcconfig */;
+			baseConfigurationReference = 7649F0000010C0 /* RxCocoa.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -878,7 +880,7 @@
 		};
 		7649F000000880 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7649F0000010B0 /* RxCocoa.xcconfig */;
+			baseConfigurationReference = 7649F0000010B0 /* RxCocoa.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

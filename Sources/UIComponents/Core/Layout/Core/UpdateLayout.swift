@@ -1,10 +1,10 @@
-////
-////  UpdateLayout.swift
-////  ZiWoYou
-////
-////  Created by ZJaDe on 16/11/11.
-////  Copyright © 2016 Z_JaDe. All rights reserved.
-////
+//
+//  UpdateLayout.swift
+//  ZiWoYou
+//
+//  Created by ZJaDe on 16/11/11.
+//  Copyright © 2016 Z_JaDe. All rights reserved.
+//
 
 import UIKit
 

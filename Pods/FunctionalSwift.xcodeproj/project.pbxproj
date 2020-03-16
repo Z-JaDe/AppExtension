@@ -16,8 +16,8 @@
 		D48D23000002A0 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D2300000120 /* Function.swift */; };
 		D48D23000002B0 /* Swifter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D2300000130 /* Swifter.swift */; };
 		D48D23000002C0 /* Traversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D2300000140 /* Traversal.swift */; };
-		D48D2300000310 /* FunctionalSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D48D2300000300 /* FunctionalSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D48D2300000350 /* FunctionalSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D48D2300000340 /* FunctionalSwift-dummy.m */; };
+		D48D2300000320 /* FunctionalSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D48D2300000310 /* FunctionalSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D48D2300000360 /* FunctionalSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D48D2300000350 /* FunctionalSwift-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,12 +33,13 @@
 		D48D2300000170 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		D48D2300000180 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		D48D2300000230 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D48D23000002E0 /* FunctionalSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FunctionalSwift.xcconfig; sourceTree = "<group>"; };
-		D48D23000002F0 /* FunctionalSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FunctionalSwift.modulemap; sourceTree = "<group>"; };
-		D48D2300000300 /* FunctionalSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FunctionalSwift-umbrella.h"; sourceTree = "<group>"; };
-		D48D2300000320 /* FunctionalSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FunctionalSwift-Info.plist"; sourceTree = "<group>"; };
-		D48D2300000330 /* FunctionalSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FunctionalSwift-prefix.pch"; sourceTree = "<group>"; };
-		D48D2300000340 /* FunctionalSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FunctionalSwift-dummy.m"; sourceTree = "<group>"; };
+		D48D23000002E0 /* FunctionalSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FunctionalSwift.debug.xcconfig; sourceTree = "<group>"; };
+		D48D23000002F0 /* FunctionalSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FunctionalSwift.release.xcconfig; sourceTree = "<group>"; };
+		D48D2300000300 /* FunctionalSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FunctionalSwift.modulemap; sourceTree = "<group>"; };
+		D48D2300000310 /* FunctionalSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FunctionalSwift-umbrella.h"; sourceTree = "<group>"; };
+		D48D2300000330 /* FunctionalSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FunctionalSwift-Info.plist"; sourceTree = "<group>"; };
+		D48D2300000340 /* FunctionalSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FunctionalSwift-prefix.pch"; sourceTree = "<group>"; };
+		D48D2300000350 /* FunctionalSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FunctionalSwift-dummy.m"; sourceTree = "<group>"; };
 		FC5ED4FD2379E74EC3C2DFE0D3CE53F1 /* FunctionalSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FunctionalSwift.framework; path = FunctionalSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -127,12 +128,13 @@
 		D48D23000002D0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D48D23000002F0 /* FunctionalSwift.modulemap */,
-				D48D23000002E0 /* FunctionalSwift.xcconfig */,
-				D48D2300000340 /* FunctionalSwift-dummy.m */,
-				D48D2300000320 /* FunctionalSwift-Info.plist */,
-				D48D2300000330 /* FunctionalSwift-prefix.pch */,
-				D48D2300000300 /* FunctionalSwift-umbrella.h */,
+				D48D2300000300 /* FunctionalSwift.modulemap */,
+				D48D2300000350 /* FunctionalSwift-dummy.m */,
+				D48D2300000330 /* FunctionalSwift-Info.plist */,
+				D48D2300000340 /* FunctionalSwift-prefix.pch */,
+				D48D2300000310 /* FunctionalSwift-umbrella.h */,
+				D48D23000002E0 /* FunctionalSwift.debug.xcconfig */,
+				D48D23000002F0 /* FunctionalSwift.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../../Pods/Target Support Files/FunctionalSwift";
@@ -145,7 +147,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D48D2300000310 /* FunctionalSwift-umbrella.h in Headers */,
+				D48D2300000320 /* FunctionalSwift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +219,7 @@
 				D48D2300000290 /* Dispatch.swift in Sources */,
 				D48D2300000270 /* Edit.swift in Sources */,
 				D48D23000002A0 /* Function.swift in Sources */,
-				D48D2300000350 /* FunctionalSwift-dummy.m in Sources */,
+				D48D2300000360 /* FunctionalSwift-dummy.m in Sources */,
 				D48D2300000280 /* Operator.swift in Sources */,
 				D48D23000002B0 /* Swifter.swift in Sources */,
 				D48D23000002C0 /* Traversal.swift in Sources */,
@@ -353,7 +355,7 @@
 		};
 		D48D23000001B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D48D23000002E0 /* FunctionalSwift.xcconfig */;
+			baseConfigurationReference = D48D23000002F0 /* FunctionalSwift.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -389,7 +391,7 @@
 		};
 		D48D23000001C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D48D23000002E0 /* FunctionalSwift.xcconfig */;
+			baseConfigurationReference = D48D23000002E0 /* FunctionalSwift.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

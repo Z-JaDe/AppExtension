@@ -15,23 +15,23 @@
 		8AA2AC00000270 /* RxOptionalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2AC00000100 /* RxOptionalError.swift */; };
 		8AA2AC00000280 /* SharedSequence+Occupiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2AC00000110 /* SharedSequence+Occupiable.swift */; };
 		8AA2AC00000290 /* SharedSequence+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2AC00000120 /* SharedSequence+Optional.swift */; };
-		8AA2AC000002E0 /* RxOptional-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AA2AC000002D0 /* RxOptional-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8AA2AC00000320 /* RxOptional-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2AC00000310 /* RxOptional-dummy.m */; };
-		8AA2AC00000370 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA2AC00000360 /* RxSwift.framework */; };
-		8AA2AC000003C0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA2AC000003B0 /* RxCocoa.framework */; };
+		8AA2AC000002F0 /* RxOptional-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AA2AC000002E0 /* RxOptional-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8AA2AC00000330 /* RxOptional-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2AC00000320 /* RxOptional-dummy.m */; };
+		8AA2AC00000380 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA2AC00000370 /* RxSwift.framework */; };
+		8AA2AC000003D0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA2AC000003C0 /* RxCocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8AA2AC00000340 /* PBXContainerItemProxy */ = {
+		8AA2AC00000350 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8AA2AC00000330 /* RxSwift.xcodeproj */;
+			containerPortal = 8AA2AC00000340 /* RxSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
 			remoteInfo = RxSwift;
 		};
-		8AA2AC00000390 /* PBXContainerItemProxy */ = {
+		8AA2AC000003A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8AA2AC00000380 /* RxCocoa.xcodeproj */;
+			containerPortal = 8AA2AC00000390 /* RxCocoa.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = BC5183FBB16A06C1D86620B00CFE6269;
 			remoteInfo = RxCocoa;
@@ -51,16 +51,17 @@
 		8AA2AC00000150 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		8AA2AC00000160 /* RxOptional.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = RxOptional.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8AA2AC00000210 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		8AA2AC000002B0 /* RxOptional.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxOptional.xcconfig; sourceTree = "<group>"; };
-		8AA2AC000002C0 /* RxOptional.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RxOptional.modulemap; sourceTree = "<group>"; };
-		8AA2AC000002D0 /* RxOptional-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxOptional-umbrella.h"; sourceTree = "<group>"; };
-		8AA2AC000002F0 /* RxOptional-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RxOptional-Info.plist"; sourceTree = "<group>"; };
-		8AA2AC00000300 /* RxOptional-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxOptional-prefix.pch"; sourceTree = "<group>"; };
-		8AA2AC00000310 /* RxOptional-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxOptional-dummy.m"; sourceTree = "<group>"; };
-		8AA2AC00000330 /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxSwift; path = RxSwift.xcodeproj; sourceTree = "<group>"; };
-		8AA2AC00000360 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8AA2AC00000380 /* RxCocoa */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxCocoa; path = RxCocoa.xcodeproj; sourceTree = "<group>"; };
-		8AA2AC000003B0 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AA2AC000002B0 /* RxOptional.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxOptional.debug.xcconfig; sourceTree = "<group>"; };
+		8AA2AC000002C0 /* RxOptional.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxOptional.release.xcconfig; sourceTree = "<group>"; };
+		8AA2AC000002D0 /* RxOptional.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RxOptional.modulemap; sourceTree = "<group>"; };
+		8AA2AC000002E0 /* RxOptional-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxOptional-umbrella.h"; sourceTree = "<group>"; };
+		8AA2AC00000300 /* RxOptional-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RxOptional-Info.plist"; sourceTree = "<group>"; };
+		8AA2AC00000310 /* RxOptional-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxOptional-prefix.pch"; sourceTree = "<group>"; };
+		8AA2AC00000320 /* RxOptional-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxOptional-dummy.m"; sourceTree = "<group>"; };
+		8AA2AC00000340 /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxSwift; path = RxSwift.xcodeproj; sourceTree = "<group>"; };
+		8AA2AC00000370 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AA2AC00000390 /* RxCocoa */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxCocoa; path = RxCocoa.xcodeproj; sourceTree = "<group>"; };
+		8AA2AC000003C0 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +70,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AA2AC00000220 /* Foundation.framework in Frameworks */,
-				8AA2AC000003C0 /* RxCocoa.framework in Frameworks */,
-				8AA2AC00000370 /* RxSwift.framework in Frameworks */,
+				8AA2AC000003D0 /* RxCocoa.framework in Frameworks */,
+				8AA2AC00000380 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,8 +99,8 @@
 		8AA2AC00000060 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8AA2AC000003B0 /* RxCocoa.framework */,
-				8AA2AC00000360 /* RxSwift.framework */,
+				8AA2AC000003C0 /* RxCocoa.framework */,
+				8AA2AC00000370 /* RxSwift.framework */,
 				8AA2AC00000200 /* iOS */,
 			);
 			name = Frameworks;
@@ -108,8 +109,8 @@
 		8AA2AC000000A0 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				8AA2AC00000380 /* RxCocoa */,
-				8AA2AC00000330 /* RxSwift */,
+				8AA2AC00000390 /* RxCocoa */,
+				8AA2AC00000340 /* RxSwift */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
@@ -152,12 +153,13 @@
 		8AA2AC000002A0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				8AA2AC000002C0 /* RxOptional.modulemap */,
-				8AA2AC000002B0 /* RxOptional.xcconfig */,
-				8AA2AC00000310 /* RxOptional-dummy.m */,
-				8AA2AC000002F0 /* RxOptional-Info.plist */,
-				8AA2AC00000300 /* RxOptional-prefix.pch */,
-				8AA2AC000002D0 /* RxOptional-umbrella.h */,
+				8AA2AC000002D0 /* RxOptional.modulemap */,
+				8AA2AC00000320 /* RxOptional-dummy.m */,
+				8AA2AC00000300 /* RxOptional-Info.plist */,
+				8AA2AC00000310 /* RxOptional-prefix.pch */,
+				8AA2AC000002E0 /* RxOptional-umbrella.h */,
+				8AA2AC000002B0 /* RxOptional.debug.xcconfig */,
+				8AA2AC000002C0 /* RxOptional.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../../../Pods/Target Support Files/RxOptional";
@@ -170,7 +172,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AA2AC000002E0 /* RxOptional-umbrella.h in Headers */,
+				8AA2AC000002F0 /* RxOptional-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,8 +191,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				8AA2AC000003A0 /* PBXTargetDependency */,
-				8AA2AC00000350 /* PBXTargetDependency */,
+				8AA2AC000003B0 /* PBXTargetDependency */,
+				8AA2AC00000360 /* PBXTargetDependency */,
 			);
 			name = RxOptional;
 			productName = RxOptional;
@@ -219,10 +221,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProjectRef = 8AA2AC00000330 /* RxSwift */;
+					ProjectRef = 8AA2AC00000340 /* RxSwift */;
 				},
 				{
-					ProjectRef = 8AA2AC00000380 /* RxCocoa */;
+					ProjectRef = 8AA2AC00000390 /* RxCocoa */;
 				},
 			);
 			projectRoot = "";
@@ -251,7 +253,7 @@
 				8AA2AC00000240 /* Observable+Optional.swift in Sources */,
 				8AA2AC00000250 /* Occupiable.swift in Sources */,
 				8AA2AC00000260 /* OptionalType.swift in Sources */,
-				8AA2AC00000320 /* RxOptional-dummy.m in Sources */,
+				8AA2AC00000330 /* RxOptional-dummy.m in Sources */,
 				8AA2AC00000270 /* RxOptionalError.swift in Sources */,
 				8AA2AC00000280 /* SharedSequence+Occupiable.swift in Sources */,
 				8AA2AC00000290 /* SharedSequence+Optional.swift in Sources */,
@@ -261,15 +263,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8AA2AC00000350 /* PBXTargetDependency */ = {
+		8AA2AC00000360 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RxSwift;
-			targetProxy = 8AA2AC00000340 /* PBXContainerItemProxy */;
+			targetProxy = 8AA2AC00000350 /* PBXContainerItemProxy */;
 		};
-		8AA2AC000003A0 /* PBXTargetDependency */ = {
+		8AA2AC000003B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RxCocoa;
-			targetProxy = 8AA2AC00000390 /* PBXContainerItemProxy */;
+			targetProxy = 8AA2AC000003A0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -400,7 +402,7 @@
 		};
 		8AA2AC00000190 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8AA2AC000002B0 /* RxOptional.xcconfig */;
+			baseConfigurationReference = 8AA2AC000002C0 /* RxOptional.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -436,7 +438,7 @@
 		};
 		8AA2AC000001A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8AA2AC000002B0 /* RxOptional.xcconfig */;
+			baseConfigurationReference = 8AA2AC000002B0 /* RxOptional.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

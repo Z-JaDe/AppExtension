@@ -39,7 +39,7 @@ public class WeChatLoginPlugin: ThirdLoginPlugin {
         }
         let req = SendAuthReq()
         req.scope = sdkInfo.wechatAuthScope
-        /// ZJaDe: -[SendAuthReq setOpenId:]: unrecognized selector sent to instance 0x17064b19
+        // ZJaDe: -[SendAuthReq setOpenId:]: unrecognized selector sent to instance 0x17064b19
         //        req.openId = Defaults[.wx_openId]
         if let viewCon = UIApplication.shared.keyWindow?.rootViewController {
             WXApi.sendAuthReq(req, viewController: viewCon, delegate: WechatManager.shared)

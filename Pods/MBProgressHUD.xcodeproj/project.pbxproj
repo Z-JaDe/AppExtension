@@ -10,24 +10,25 @@
 		89B4C600000190 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B4C600000180 /* Foundation.framework */; };
 		89B4C6000001A0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B4C6000000D0 /* MBProgressHUD.m */; };
 		89B4C6000001B0 /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 89B4C6000000C0 /* MBProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		89B4C600000200 /* MBProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 89B4C6000001F0 /* MBProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		89B4C600000240 /* MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B4C600000230 /* MBProgressHUD-dummy.m */; };
-		89B4C600000260 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B4C600000250 /* CoreGraphics.framework */; };
-		89B4C600000280 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B4C600000270 /* QuartzCore.framework */; };
+		89B4C600000210 /* MBProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 89B4C600000200 /* MBProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89B4C600000250 /* MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B4C600000240 /* MBProgressHUD-dummy.m */; };
+		89B4C600000270 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B4C600000260 /* CoreGraphics.framework */; };
+		89B4C600000290 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B4C600000280 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		89B4C6000000C0 /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		89B4C6000000D0 /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		89B4C600000180 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		89B4C6000001D0 /* MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.xcconfig; sourceTree = "<group>"; };
-		89B4C6000001E0 /* MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MBProgressHUD.modulemap; sourceTree = "<group>"; };
-		89B4C6000001F0 /* MBProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-umbrella.h"; sourceTree = "<group>"; };
-		89B4C600000210 /* MBProgressHUD-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MBProgressHUD-Info.plist"; sourceTree = "<group>"; };
-		89B4C600000220 /* MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
-		89B4C600000230 /* MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
-		89B4C600000250 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		89B4C600000270 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		89B4C6000001D0 /* MBProgressHUD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.debug.xcconfig; sourceTree = "<group>"; };
+		89B4C6000001E0 /* MBProgressHUD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.release.xcconfig; sourceTree = "<group>"; };
+		89B4C6000001F0 /* MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MBProgressHUD.modulemap; sourceTree = "<group>"; };
+		89B4C600000200 /* MBProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-umbrella.h"; sourceTree = "<group>"; };
+		89B4C600000220 /* MBProgressHUD-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MBProgressHUD-Info.plist"; sourceTree = "<group>"; };
+		89B4C600000230 /* MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		89B4C600000240 /* MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		89B4C600000260 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		89B4C600000280 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		D4D0090781C017225C10FE4EA74951C6 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MBProgressHUD.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -36,9 +37,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89B4C600000260 /* CoreGraphics.framework in Frameworks */,
+				89B4C600000270 /* CoreGraphics.framework in Frameworks */,
 				89B4C600000190 /* Foundation.framework in Frameworks */,
-				89B4C600000280 /* QuartzCore.framework in Frameworks */,
+				89B4C600000290 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,9 +85,9 @@
 		89B4C600000170 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				89B4C600000250 /* CoreGraphics.framework */,
+				89B4C600000260 /* CoreGraphics.framework */,
 				89B4C600000180 /* Foundation.framework */,
-				89B4C600000270 /* QuartzCore.framework */,
+				89B4C600000280 /* QuartzCore.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -94,12 +95,13 @@
 		89B4C6000001C0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				89B4C6000001E0 /* MBProgressHUD.modulemap */,
-				89B4C6000001D0 /* MBProgressHUD.xcconfig */,
-				89B4C600000230 /* MBProgressHUD-dummy.m */,
-				89B4C600000210 /* MBProgressHUD-Info.plist */,
-				89B4C600000220 /* MBProgressHUD-prefix.pch */,
-				89B4C6000001F0 /* MBProgressHUD-umbrella.h */,
+				89B4C6000001F0 /* MBProgressHUD.modulemap */,
+				89B4C600000240 /* MBProgressHUD-dummy.m */,
+				89B4C600000220 /* MBProgressHUD-Info.plist */,
+				89B4C600000230 /* MBProgressHUD-prefix.pch */,
+				89B4C600000200 /* MBProgressHUD-umbrella.h */,
+				89B4C6000001D0 /* MBProgressHUD.debug.xcconfig */,
+				89B4C6000001E0 /* MBProgressHUD.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/MBProgressHUD";
@@ -112,7 +114,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89B4C600000200 /* MBProgressHUD-umbrella.h in Headers */,
+				89B4C600000210 /* MBProgressHUD-umbrella.h in Headers */,
 				89B4C6000001B0 /* MBProgressHUD.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,7 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89B4C600000240 /* MBProgressHUD-dummy.m in Sources */,
+				89B4C600000250 /* MBProgressHUD-dummy.m in Sources */,
 				89B4C6000001A0 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,7 +316,7 @@
 		};
 		89B4C600000100 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89B4C6000001D0 /* MBProgressHUD.xcconfig */;
+			baseConfigurationReference = 89B4C6000001E0 /* MBProgressHUD.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -350,7 +352,7 @@
 		};
 		89B4C600000110 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89B4C6000001D0 /* MBProgressHUD.xcconfig */;
+			baseConfigurationReference = 89B4C6000001D0 /* MBProgressHUD.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

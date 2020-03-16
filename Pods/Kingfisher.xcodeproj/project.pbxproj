@@ -56,10 +56,10 @@
 		D7A4C900000760 /* AnimatedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A4C9000003A0 /* AnimatedImageView.swift */; };
 		D7A4C900000770 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A4C9000003B0 /* Indicator.swift */; };
 		D7A4C900000780 /* Kingfisher.h in Headers */ = {isa = PBXBuildFile; fileRef = D7A4C9000003C0 /* Kingfisher.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D7A4C9000007D0 /* Kingfisher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D7A4C9000007C0 /* Kingfisher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D7A4C900000810 /* Kingfisher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A4C900000800 /* Kingfisher-dummy.m */; };
-		D7A4C900000830 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A4C900000820 /* CFNetwork.framework */; };
-		D7A4C900000850 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A4C900000840 /* Accelerate.framework */; };
+		D7A4C9000007E0 /* Kingfisher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D7A4C9000007D0 /* Kingfisher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7A4C900000820 /* Kingfisher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A4C900000810 /* Kingfisher-dummy.m */; };
+		D7A4C900000840 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A4C900000830 /* CFNetwork.framework */; };
+		D7A4C900000860 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A4C900000850 /* Accelerate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,14 +113,15 @@
 		D7A4C9000003B0 /* Indicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Indicator.swift; path = Sources/Views/Indicator.swift; sourceTree = "<group>"; };
 		D7A4C9000003C0 /* Kingfisher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Kingfisher.h; path = Sources/Kingfisher.h; sourceTree = "<group>"; };
 		D7A4C900000470 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D7A4C9000007A0 /* Kingfisher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.xcconfig; sourceTree = "<group>"; };
-		D7A4C9000007B0 /* Kingfisher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Kingfisher.modulemap; sourceTree = "<group>"; };
-		D7A4C9000007C0 /* Kingfisher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-umbrella.h"; sourceTree = "<group>"; };
-		D7A4C9000007E0 /* Kingfisher-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Kingfisher-Info.plist"; sourceTree = "<group>"; };
-		D7A4C9000007F0 /* Kingfisher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-prefix.pch"; sourceTree = "<group>"; };
-		D7A4C900000800 /* Kingfisher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kingfisher-dummy.m"; sourceTree = "<group>"; };
-		D7A4C900000820 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		D7A4C900000840 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
+		D7A4C9000007A0 /* Kingfisher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.debug.xcconfig; sourceTree = "<group>"; };
+		D7A4C9000007B0 /* Kingfisher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.release.xcconfig; sourceTree = "<group>"; };
+		D7A4C9000007C0 /* Kingfisher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Kingfisher.modulemap; sourceTree = "<group>"; };
+		D7A4C9000007D0 /* Kingfisher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-umbrella.h"; sourceTree = "<group>"; };
+		D7A4C9000007F0 /* Kingfisher-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Kingfisher-Info.plist"; sourceTree = "<group>"; };
+		D7A4C900000800 /* Kingfisher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-prefix.pch"; sourceTree = "<group>"; };
+		D7A4C900000810 /* Kingfisher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kingfisher-dummy.m"; sourceTree = "<group>"; };
+		D7A4C900000830 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		D7A4C900000850 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +129,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7A4C900000850 /* Accelerate.framework in Frameworks */,
-				D7A4C900000830 /* CFNetwork.framework in Frameworks */,
+				D7A4C900000860 /* Accelerate.framework in Frameworks */,
+				D7A4C900000840 /* CFNetwork.framework in Frameworks */,
 				D7A4C900000480 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,8 +231,8 @@
 		D7A4C900000460 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D7A4C900000840 /* Accelerate.framework */,
-				D7A4C900000820 /* CFNetwork.framework */,
+				D7A4C900000850 /* Accelerate.framework */,
+				D7A4C900000830 /* CFNetwork.framework */,
 				D7A4C900000470 /* Foundation.framework */,
 			);
 			name = iOS;
@@ -240,12 +241,13 @@
 		D7A4C900000790 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D7A4C9000007B0 /* Kingfisher.modulemap */,
-				D7A4C9000007A0 /* Kingfisher.xcconfig */,
-				D7A4C900000800 /* Kingfisher-dummy.m */,
-				D7A4C9000007E0 /* Kingfisher-Info.plist */,
-				D7A4C9000007F0 /* Kingfisher-prefix.pch */,
-				D7A4C9000007C0 /* Kingfisher-umbrella.h */,
+				D7A4C9000007C0 /* Kingfisher.modulemap */,
+				D7A4C900000810 /* Kingfisher-dummy.m */,
+				D7A4C9000007F0 /* Kingfisher-Info.plist */,
+				D7A4C900000800 /* Kingfisher-prefix.pch */,
+				D7A4C9000007D0 /* Kingfisher-umbrella.h */,
+				D7A4C9000007A0 /* Kingfisher.debug.xcconfig */,
+				D7A4C9000007B0 /* Kingfisher.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Kingfisher";
@@ -258,7 +260,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7A4C9000007D0 /* Kingfisher-umbrella.h in Headers */,
+				D7A4C9000007E0 /* Kingfisher-umbrella.h in Headers */,
 				D7A4C900000780 /* Kingfisher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,7 +355,7 @@
 				D7A4C900000620 /* ImageTransition.swift in Sources */,
 				D7A4C9000004F0 /* ImageView+Kingfisher.swift in Sources */,
 				D7A4C900000770 /* Indicator.swift in Sources */,
-				D7A4C900000810 /* Kingfisher-dummy.m in Sources */,
+				D7A4C900000820 /* Kingfisher-dummy.m in Sources */,
 				D7A4C900000570 /* Kingfisher.swift in Sources */,
 				D7A4C900000580 /* KingfisherError.swift in Sources */,
 				D7A4C900000590 /* KingfisherManager.swift in Sources */,
@@ -506,7 +508,7 @@
 		};
 		D7A4C9000003F0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7A4C9000007A0 /* Kingfisher.xcconfig */;
+			baseConfigurationReference = D7A4C9000007B0 /* Kingfisher.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -543,7 +545,7 @@
 		};
 		D7A4C900000400 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7A4C9000007A0 /* Kingfisher.xcconfig */;
+			baseConfigurationReference = D7A4C9000007A0 /* Kingfisher.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";

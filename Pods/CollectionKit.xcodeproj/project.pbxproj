@@ -59,9 +59,9 @@
 		3B3FBA000008A0 /* ClosureViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000470 /* ClosureViewSource.swift */; };
 		3B3FBA000008B0 /* ComposedViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000480 /* ComposedViewSource.swift */; };
 		3B3FBA000008C0 /* ViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000490 /* ViewSource.swift */; };
-		3B3FBA00000910 /* CollectionKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000900 /* CollectionKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3B3FBA00000950 /* CollectionKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000940 /* CollectionKit-dummy.m */; };
-		3B3FBA00000970 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000960 /* UIKit.framework */; };
+		3B3FBA00000920 /* CollectionKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000910 /* CollectionKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3FBA00000960 /* CollectionKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000950 /* CollectionKit-dummy.m */; };
+		3B3FBA00000980 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3FBA00000970 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,13 +121,14 @@
 		3B3FBA000004C0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		3B3FBA000004D0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		3B3FBA00000580 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3B3FBA000008E0 /* CollectionKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CollectionKit.xcconfig; sourceTree = "<group>"; };
-		3B3FBA000008F0 /* CollectionKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CollectionKit.modulemap; sourceTree = "<group>"; };
-		3B3FBA00000900 /* CollectionKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollectionKit-umbrella.h"; sourceTree = "<group>"; };
-		3B3FBA00000920 /* CollectionKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CollectionKit-Info.plist"; sourceTree = "<group>"; };
-		3B3FBA00000930 /* CollectionKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollectionKit-prefix.pch"; sourceTree = "<group>"; };
-		3B3FBA00000940 /* CollectionKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CollectionKit-dummy.m"; sourceTree = "<group>"; };
-		3B3FBA00000960 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		3B3FBA000008E0 /* CollectionKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CollectionKit.debug.xcconfig; sourceTree = "<group>"; };
+		3B3FBA000008F0 /* CollectionKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CollectionKit.release.xcconfig; sourceTree = "<group>"; };
+		3B3FBA00000900 /* CollectionKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CollectionKit.modulemap; sourceTree = "<group>"; };
+		3B3FBA00000910 /* CollectionKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollectionKit-umbrella.h"; sourceTree = "<group>"; };
+		3B3FBA00000930 /* CollectionKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CollectionKit-Info.plist"; sourceTree = "<group>"; };
+		3B3FBA00000940 /* CollectionKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollectionKit-prefix.pch"; sourceTree = "<group>"; };
+		3B3FBA00000950 /* CollectionKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CollectionKit-dummy.m"; sourceTree = "<group>"; };
+		3B3FBA00000970 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B3FBA00000590 /* Foundation.framework in Frameworks */,
-				3B3FBA00000970 /* UIKit.framework in Frameworks */,
+				3B3FBA00000980 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				3B3FBA00000580 /* Foundation.framework */,
-				3B3FBA00000960 /* UIKit.framework */,
+				3B3FBA00000970 /* UIKit.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -349,12 +350,13 @@
 		3B3FBA000008D0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				3B3FBA000008F0 /* CollectionKit.modulemap */,
-				3B3FBA000008E0 /* CollectionKit.xcconfig */,
-				3B3FBA00000940 /* CollectionKit-dummy.m */,
-				3B3FBA00000920 /* CollectionKit-Info.plist */,
-				3B3FBA00000930 /* CollectionKit-prefix.pch */,
-				3B3FBA00000900 /* CollectionKit-umbrella.h */,
+				3B3FBA00000900 /* CollectionKit.modulemap */,
+				3B3FBA00000950 /* CollectionKit-dummy.m */,
+				3B3FBA00000930 /* CollectionKit-Info.plist */,
+				3B3FBA00000940 /* CollectionKit-prefix.pch */,
+				3B3FBA00000910 /* CollectionKit-umbrella.h */,
+				3B3FBA000008E0 /* CollectionKit.debug.xcconfig */,
+				3B3FBA000008F0 /* CollectionKit.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../../../Pods/Target Support Files/CollectionKit";
@@ -367,7 +369,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B3FBA00000910 /* CollectionKit-umbrella.h in Headers */,
+				3B3FBA00000920 /* CollectionKit-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +446,7 @@
 				3B3FBA00000680 /* ClosureLayout.swift in Sources */,
 				3B3FBA00000850 /* ClosureSizeSource.swift in Sources */,
 				3B3FBA000008A0 /* ClosureViewSource.swift in Sources */,
-				3B3FBA00000950 /* CollectionKit-dummy.m in Sources */,
+				3B3FBA00000960 /* CollectionKit-dummy.m in Sources */,
 				3B3FBA00000750 /* CollectionReloadable.swift in Sources */,
 				3B3FBA00000760 /* CollectionReuseViewManager.swift in Sources */,
 				3B3FBA00000610 /* CollectionView.swift in Sources */,
@@ -618,7 +620,7 @@
 		};
 		3B3FBA00000500 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B3FBA000008E0 /* CollectionKit.xcconfig */;
+			baseConfigurationReference = 3B3FBA000008F0 /* CollectionKit.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -654,7 +656,7 @@
 		};
 		3B3FBA00000510 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B3FBA000008E0 /* CollectionKit.xcconfig */;
+			baseConfigurationReference = 3B3FBA000008E0 /* CollectionKit.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

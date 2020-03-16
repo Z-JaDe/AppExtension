@@ -11,8 +11,8 @@
 		E0C4F500000200 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C4F5000000D0 /* Regex.swift */; };
 		E0C4F500000210 /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C4F5000000E0 /* String+Validation.swift */; };
 		E0C4F500000220 /* String+ValidationPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C4F5000000F0 /* String+ValidationPassword.swift */; };
-		E0C4F500000270 /* Validation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E0C4F500000260 /* Validation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E0C4F5000002B0 /* Validation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C4F5000002A0 /* Validation-dummy.m */; };
+		E0C4F500000280 /* Validation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E0C4F500000270 /* Validation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E0C4F5000002C0 /* Validation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C4F5000002B0 /* Validation-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,12 +24,13 @@
 		E0C4F500000120 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		E0C4F500000130 /* Validation.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Validation.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E0C4F5000001E0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		E0C4F500000240 /* Validation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Validation.xcconfig; sourceTree = "<group>"; };
-		E0C4F500000250 /* Validation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Validation.modulemap; sourceTree = "<group>"; };
-		E0C4F500000260 /* Validation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Validation-umbrella.h"; sourceTree = "<group>"; };
-		E0C4F500000280 /* Validation-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Validation-Info.plist"; sourceTree = "<group>"; };
-		E0C4F500000290 /* Validation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Validation-prefix.pch"; sourceTree = "<group>"; };
-		E0C4F5000002A0 /* Validation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Validation-dummy.m"; sourceTree = "<group>"; };
+		E0C4F500000240 /* Validation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Validation.debug.xcconfig; sourceTree = "<group>"; };
+		E0C4F500000250 /* Validation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Validation.release.xcconfig; sourceTree = "<group>"; };
+		E0C4F500000260 /* Validation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Validation.modulemap; sourceTree = "<group>"; };
+		E0C4F500000270 /* Validation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Validation-umbrella.h"; sourceTree = "<group>"; };
+		E0C4F500000290 /* Validation-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Validation-Info.plist"; sourceTree = "<group>"; };
+		E0C4F5000002A0 /* Validation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Validation-prefix.pch"; sourceTree = "<group>"; };
+		E0C4F5000002B0 /* Validation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Validation-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,12 +113,13 @@
 		E0C4F500000230 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E0C4F500000250 /* Validation.modulemap */,
-				E0C4F500000240 /* Validation.xcconfig */,
-				E0C4F5000002A0 /* Validation-dummy.m */,
-				E0C4F500000280 /* Validation-Info.plist */,
-				E0C4F500000290 /* Validation-prefix.pch */,
-				E0C4F500000260 /* Validation-umbrella.h */,
+				E0C4F500000260 /* Validation.modulemap */,
+				E0C4F5000002B0 /* Validation-dummy.m */,
+				E0C4F500000290 /* Validation-Info.plist */,
+				E0C4F5000002A0 /* Validation-prefix.pch */,
+				E0C4F500000270 /* Validation-umbrella.h */,
+				E0C4F500000240 /* Validation.debug.xcconfig */,
+				E0C4F500000250 /* Validation.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../../Pods/Target Support Files/Validation";
@@ -130,7 +132,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0C4F500000270 /* Validation-umbrella.h in Headers */,
+				E0C4F500000280 /* Validation-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +202,7 @@
 				E0C4F500000200 /* Regex.swift in Sources */,
 				E0C4F500000210 /* String+Validation.swift in Sources */,
 				E0C4F500000220 /* String+ValidationPassword.swift in Sources */,
-				E0C4F5000002B0 /* Validation-dummy.m in Sources */,
+				E0C4F5000002C0 /* Validation-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +335,7 @@
 		};
 		E0C4F500000160 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E0C4F500000240 /* Validation.xcconfig */;
+			baseConfigurationReference = E0C4F500000250 /* Validation.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -369,7 +371,7 @@
 		};
 		E0C4F500000170 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E0C4F500000240 /* Validation.xcconfig */;
+			baseConfigurationReference = E0C4F500000240 /* Validation.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

@@ -7,83 +7,84 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CECF1E00000610 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECF1E00000600 /* Foundation.framework */; };
-		CECF1E00000620 /* AEAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000000C0 /* AEAD.swift */; };
-		CECF1E00000630 /* AEADChaCha20Poly1305.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000000D0 /* AEADChaCha20Poly1305.swift */; };
-		CECF1E00000640 /* AES.Cryptors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000000E0 /* AES.Cryptors.swift */; };
-		CECF1E00000650 /* AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000000F0 /* AES.swift */; };
-		CECF1E00000660 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000100 /* Array+Extension.swift */; };
-		CECF1E00000670 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000110 /* Authenticator.swift */; };
-		CECF1E00000680 /* BatchedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000120 /* BatchedCollection.swift */; };
-		CECF1E00000690 /* Bit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000130 /* Bit.swift */; };
-		CECF1E000006A0 /* BlockCipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000140 /* BlockCipher.swift */; };
-		CECF1E000006B0 /* BlockDecryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000150 /* BlockDecryptor.swift */; };
-		CECF1E000006C0 /* BlockEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000160 /* BlockEncryptor.swift */; };
-		CECF1E000006D0 /* BlockMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000170 /* BlockMode.swift */; };
-		CECF1E000006E0 /* BlockModeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000180 /* BlockModeOptions.swift */; };
-		CECF1E000006F0 /* CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000190 /* CBC.swift */; };
-		CECF1E00000700 /* CCM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000001A0 /* CCM.swift */; };
-		CECF1E00000710 /* CFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000001B0 /* CFB.swift */; };
-		CECF1E00000720 /* CipherModeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000001C0 /* CipherModeWorker.swift */; };
-		CECF1E00000730 /* CTR.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000001D0 /* CTR.swift */; };
-		CECF1E00000740 /* ECB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000001E0 /* ECB.swift */; };
-		CECF1E00000750 /* GCM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000001F0 /* GCM.swift */; };
-		CECF1E00000760 /* OFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000200 /* OFB.swift */; };
-		CECF1E00000770 /* PCBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000210 /* PCBC.swift */; };
-		CECF1E00000780 /* Blowfish.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000220 /* Blowfish.swift */; };
-		CECF1E00000790 /* CBCMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000230 /* CBCMAC.swift */; };
-		CECF1E000007A0 /* ChaCha20.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000240 /* ChaCha20.swift */; };
-		CECF1E000007B0 /* Checksum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000250 /* Checksum.swift */; };
-		CECF1E000007C0 /* Cipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000260 /* Cipher.swift */; };
-		CECF1E000007D0 /* CMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000270 /* CMAC.swift */; };
-		CECF1E000007E0 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000280 /* Collection+Extension.swift */; };
-		CECF1E000007F0 /* CompactMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000290 /* CompactMap.swift */; };
-		CECF1E00000800 /* Cryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000002A0 /* Cryptor.swift */; };
-		CECF1E00000810 /* Cryptors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000002B0 /* Cryptors.swift */; };
-		CECF1E00000820 /* Digest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000002C0 /* Digest.swift */; };
-		CECF1E00000830 /* DigestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000002D0 /* DigestType.swift */; };
-		CECF1E00000840 /* AES+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000002E0 /* AES+Foundation.swift */; };
-		CECF1E00000850 /* Array+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000002F0 /* Array+Foundation.swift */; };
-		CECF1E00000860 /* Blowfish+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000300 /* Blowfish+Foundation.swift */; };
-		CECF1E00000870 /* ChaCha20+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000310 /* ChaCha20+Foundation.swift */; };
-		CECF1E00000880 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000320 /* Data+Extension.swift */; };
-		CECF1E00000890 /* HMAC+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000330 /* HMAC+Foundation.swift */; };
-		CECF1E000008A0 /* Rabbit+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000340 /* Rabbit+Foundation.swift */; };
-		CECF1E000008B0 /* String+FoundationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000350 /* String+FoundationExtension.swift */; };
-		CECF1E000008C0 /* Utils+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000360 /* Utils+Foundation.swift */; };
-		CECF1E000008D0 /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000370 /* Generics.swift */; };
-		CECF1E000008E0 /* HKDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000380 /* HKDF.swift */; };
-		CECF1E000008F0 /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000390 /* HMAC.swift */; };
-		CECF1E00000900 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000003A0 /* Int+Extension.swift */; };
-		CECF1E00000910 /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000003B0 /* MD5.swift */; };
-		CECF1E00000920 /* NoPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000003C0 /* NoPadding.swift */; };
-		CECF1E00000930 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000003D0 /* Operators.swift */; };
-		CECF1E00000940 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000003E0 /* Padding.swift */; };
-		CECF1E00000950 /* PBKDF1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000003F0 /* PBKDF1.swift */; };
-		CECF1E00000960 /* PBKDF2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000400 /* PBKDF2.swift */; };
-		CECF1E00000970 /* PKCS5.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000410 /* PKCS5.swift */; };
-		CECF1E00000980 /* PKCS7.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000420 /* PKCS7.swift */; };
-		CECF1E00000990 /* PKCS7Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000430 /* PKCS7Padding.swift */; };
-		CECF1E000009A0 /* Poly1305.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000440 /* Poly1305.swift */; };
-		CECF1E000009B0 /* Rabbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000450 /* Rabbit.swift */; };
-		CECF1E000009C0 /* Scrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000460 /* Scrypt.swift */; };
-		CECF1E000009D0 /* SecureBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000470 /* SecureBytes.swift */; };
-		CECF1E000009E0 /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000480 /* SHA1.swift */; };
-		CECF1E000009F0 /* SHA2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000490 /* SHA2.swift */; };
-		CECF1E00000A00 /* SHA3.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000004A0 /* SHA3.swift */; };
-		CECF1E00000A10 /* StreamDecryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000004B0 /* StreamDecryptor.swift */; };
-		CECF1E00000A20 /* StreamEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000004C0 /* StreamEncryptor.swift */; };
-		CECF1E00000A30 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000004D0 /* String+Extension.swift */; };
-		CECF1E00000A40 /* UInt128.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000004E0 /* UInt128.swift */; };
-		CECF1E00000A50 /* UInt16+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000004F0 /* UInt16+Extension.swift */; };
-		CECF1E00000A60 /* UInt32+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000500 /* UInt32+Extension.swift */; };
-		CECF1E00000A70 /* UInt64+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000510 /* UInt64+Extension.swift */; };
-		CECF1E00000A80 /* UInt8+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000520 /* UInt8+Extension.swift */; };
-		CECF1E00000A90 /* Updatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000530 /* Updatable.swift */; };
-		CECF1E00000AA0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000540 /* Utils.swift */; };
-		CECF1E00000AB0 /* ZeroPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000550 /* ZeroPadding.swift */; };
-		CECF1E00000B00 /* CryptoSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CECF1E00000AF0 /* CryptoSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CECF1E00000B40 /* CryptoSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000B30 /* CryptoSwift-dummy.m */; };
+		CECF1E00000620 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECF1E00000610 /* Foundation.framework */; };
+		CECF1E00000630 /* AEAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000000C0 /* AEAD.swift */; };
+		CECF1E00000640 /* AEADChaCha20Poly1305.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000000D0 /* AEADChaCha20Poly1305.swift */; };
+		CECF1E00000650 /* AES.Cryptors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000000E0 /* AES.Cryptors.swift */; };
+		CECF1E00000660 /* AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000000F0 /* AES.swift */; };
+		CECF1E00000670 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000100 /* Array+Extension.swift */; };
+		CECF1E00000680 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000110 /* Authenticator.swift */; };
+		CECF1E00000690 /* BatchedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000120 /* BatchedCollection.swift */; };
+		CECF1E000006A0 /* Bit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000130 /* Bit.swift */; };
+		CECF1E000006B0 /* BlockCipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000140 /* BlockCipher.swift */; };
+		CECF1E000006C0 /* BlockDecryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000150 /* BlockDecryptor.swift */; };
+		CECF1E000006D0 /* BlockEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000160 /* BlockEncryptor.swift */; };
+		CECF1E000006E0 /* BlockMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000170 /* BlockMode.swift */; };
+		CECF1E000006F0 /* BlockModeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000180 /* BlockModeOptions.swift */; };
+		CECF1E00000700 /* CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000190 /* CBC.swift */; };
+		CECF1E00000710 /* CCM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000001A0 /* CCM.swift */; };
+		CECF1E00000720 /* CFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000001B0 /* CFB.swift */; };
+		CECF1E00000730 /* CipherModeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000001C0 /* CipherModeWorker.swift */; };
+		CECF1E00000740 /* CTR.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000001D0 /* CTR.swift */; };
+		CECF1E00000750 /* ECB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000001E0 /* ECB.swift */; };
+		CECF1E00000760 /* GCM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000001F0 /* GCM.swift */; };
+		CECF1E00000770 /* OFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000200 /* OFB.swift */; };
+		CECF1E00000780 /* PCBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000210 /* PCBC.swift */; };
+		CECF1E00000790 /* Blowfish.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000220 /* Blowfish.swift */; };
+		CECF1E000007A0 /* CBCMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000230 /* CBCMAC.swift */; };
+		CECF1E000007B0 /* ChaCha20.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000240 /* ChaCha20.swift */; };
+		CECF1E000007C0 /* Checksum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000250 /* Checksum.swift */; };
+		CECF1E000007D0 /* Cipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000260 /* Cipher.swift */; };
+		CECF1E000007E0 /* CMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000270 /* CMAC.swift */; };
+		CECF1E000007F0 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000280 /* Collection+Extension.swift */; };
+		CECF1E00000800 /* CompactMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000290 /* CompactMap.swift */; };
+		CECF1E00000810 /* Cryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000002A0 /* Cryptor.swift */; };
+		CECF1E00000820 /* Cryptors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000002B0 /* Cryptors.swift */; };
+		CECF1E00000830 /* Digest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000002C0 /* Digest.swift */; };
+		CECF1E00000840 /* DigestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000002D0 /* DigestType.swift */; };
+		CECF1E00000850 /* AES+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000002E0 /* AES+Foundation.swift */; };
+		CECF1E00000860 /* Array+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000002F0 /* Array+Foundation.swift */; };
+		CECF1E00000870 /* Blowfish+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000300 /* Blowfish+Foundation.swift */; };
+		CECF1E00000880 /* ChaCha20+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000310 /* ChaCha20+Foundation.swift */; };
+		CECF1E00000890 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000320 /* Data+Extension.swift */; };
+		CECF1E000008A0 /* HMAC+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000330 /* HMAC+Foundation.swift */; };
+		CECF1E000008B0 /* Rabbit+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000340 /* Rabbit+Foundation.swift */; };
+		CECF1E000008C0 /* String+FoundationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000350 /* String+FoundationExtension.swift */; };
+		CECF1E000008D0 /* Utils+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000360 /* Utils+Foundation.swift */; };
+		CECF1E000008E0 /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000370 /* Generics.swift */; };
+		CECF1E000008F0 /* HKDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000380 /* HKDF.swift */; };
+		CECF1E00000900 /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000390 /* HMAC.swift */; };
+		CECF1E00000910 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000003A0 /* Int+Extension.swift */; };
+		CECF1E00000920 /* ISO78164Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000003B0 /* ISO78164Padding.swift */; };
+		CECF1E00000930 /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000003C0 /* MD5.swift */; };
+		CECF1E00000940 /* NoPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000003D0 /* NoPadding.swift */; };
+		CECF1E00000950 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000003E0 /* Operators.swift */; };
+		CECF1E00000960 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000003F0 /* Padding.swift */; };
+		CECF1E00000970 /* PBKDF1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000400 /* PBKDF1.swift */; };
+		CECF1E00000980 /* PBKDF2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000410 /* PBKDF2.swift */; };
+		CECF1E00000990 /* PKCS5.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000420 /* PKCS5.swift */; };
+		CECF1E000009A0 /* PKCS7.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000430 /* PKCS7.swift */; };
+		CECF1E000009B0 /* PKCS7Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000440 /* PKCS7Padding.swift */; };
+		CECF1E000009C0 /* Poly1305.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000450 /* Poly1305.swift */; };
+		CECF1E000009D0 /* Rabbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000460 /* Rabbit.swift */; };
+		CECF1E000009E0 /* Scrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000470 /* Scrypt.swift */; };
+		CECF1E000009F0 /* SecureBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000480 /* SecureBytes.swift */; };
+		CECF1E00000A00 /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000490 /* SHA1.swift */; };
+		CECF1E00000A10 /* SHA2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000004A0 /* SHA2.swift */; };
+		CECF1E00000A20 /* SHA3.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000004B0 /* SHA3.swift */; };
+		CECF1E00000A30 /* StreamDecryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000004C0 /* StreamDecryptor.swift */; };
+		CECF1E00000A40 /* StreamEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000004D0 /* StreamEncryptor.swift */; };
+		CECF1E00000A50 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000004E0 /* String+Extension.swift */; };
+		CECF1E00000A60 /* UInt128.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E000004F0 /* UInt128.swift */; };
+		CECF1E00000A70 /* UInt16+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000500 /* UInt16+Extension.swift */; };
+		CECF1E00000A80 /* UInt32+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000510 /* UInt32+Extension.swift */; };
+		CECF1E00000A90 /* UInt64+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000520 /* UInt64+Extension.swift */; };
+		CECF1E00000AA0 /* UInt8+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000530 /* UInt8+Extension.swift */; };
+		CECF1E00000AB0 /* Updatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000540 /* Updatable.swift */; };
+		CECF1E00000AC0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000550 /* Utils.swift */; };
+		CECF1E00000AD0 /* ZeroPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000560 /* ZeroPadding.swift */; };
+		CECF1E00000B30 /* CryptoSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CECF1E00000B20 /* CryptoSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CECF1E00000B70 /* CryptoSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CECF1E00000B60 /* CryptoSwift-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,48 +136,50 @@
 		CECF1E00000380 /* HKDF.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HKDF.swift; path = Sources/CryptoSwift/HKDF.swift; sourceTree = "<group>"; };
 		CECF1E00000390 /* HMAC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HMAC.swift; path = Sources/CryptoSwift/HMAC.swift; sourceTree = "<group>"; };
 		CECF1E000003A0 /* Int+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Int+Extension.swift"; path = "Sources/CryptoSwift/Int+Extension.swift"; sourceTree = "<group>"; };
-		CECF1E000003B0 /* MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MD5.swift; path = Sources/CryptoSwift/MD5.swift; sourceTree = "<group>"; };
-		CECF1E000003C0 /* NoPadding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NoPadding.swift; path = Sources/CryptoSwift/NoPadding.swift; sourceTree = "<group>"; };
-		CECF1E000003D0 /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/CryptoSwift/Operators.swift; sourceTree = "<group>"; };
-		CECF1E000003E0 /* Padding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Padding.swift; path = Sources/CryptoSwift/Padding.swift; sourceTree = "<group>"; };
-		CECF1E000003F0 /* PBKDF1.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PBKDF1.swift; path = Sources/CryptoSwift/PKCS/PBKDF1.swift; sourceTree = "<group>"; };
-		CECF1E00000400 /* PBKDF2.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PBKDF2.swift; path = Sources/CryptoSwift/PKCS/PBKDF2.swift; sourceTree = "<group>"; };
-		CECF1E00000410 /* PKCS5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKCS5.swift; path = Sources/CryptoSwift/PKCS/PKCS5.swift; sourceTree = "<group>"; };
-		CECF1E00000420 /* PKCS7.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKCS7.swift; path = Sources/CryptoSwift/PKCS/PKCS7.swift; sourceTree = "<group>"; };
-		CECF1E00000430 /* PKCS7Padding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKCS7Padding.swift; path = Sources/CryptoSwift/PKCS/PKCS7Padding.swift; sourceTree = "<group>"; };
-		CECF1E00000440 /* Poly1305.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Poly1305.swift; path = Sources/CryptoSwift/Poly1305.swift; sourceTree = "<group>"; };
-		CECF1E00000450 /* Rabbit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Rabbit.swift; path = Sources/CryptoSwift/Rabbit.swift; sourceTree = "<group>"; };
-		CECF1E00000460 /* Scrypt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Scrypt.swift; path = Sources/CryptoSwift/Scrypt.swift; sourceTree = "<group>"; };
-		CECF1E00000470 /* SecureBytes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SecureBytes.swift; path = Sources/CryptoSwift/SecureBytes.swift; sourceTree = "<group>"; };
-		CECF1E00000480 /* SHA1.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA1.swift; path = Sources/CryptoSwift/SHA1.swift; sourceTree = "<group>"; };
-		CECF1E00000490 /* SHA2.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA2.swift; path = Sources/CryptoSwift/SHA2.swift; sourceTree = "<group>"; };
-		CECF1E000004A0 /* SHA3.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA3.swift; path = Sources/CryptoSwift/SHA3.swift; sourceTree = "<group>"; };
-		CECF1E000004B0 /* StreamDecryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StreamDecryptor.swift; path = Sources/CryptoSwift/StreamDecryptor.swift; sourceTree = "<group>"; };
-		CECF1E000004C0 /* StreamEncryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StreamEncryptor.swift; path = Sources/CryptoSwift/StreamEncryptor.swift; sourceTree = "<group>"; };
-		CECF1E000004D0 /* String+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "Sources/CryptoSwift/String+Extension.swift"; sourceTree = "<group>"; };
-		CECF1E000004E0 /* UInt128.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UInt128.swift; path = Sources/CryptoSwift/UInt128.swift; sourceTree = "<group>"; };
-		CECF1E000004F0 /* UInt16+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt16+Extension.swift"; path = "Sources/CryptoSwift/UInt16+Extension.swift"; sourceTree = "<group>"; };
-		CECF1E00000500 /* UInt32+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt32+Extension.swift"; path = "Sources/CryptoSwift/UInt32+Extension.swift"; sourceTree = "<group>"; };
-		CECF1E00000510 /* UInt64+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt64+Extension.swift"; path = "Sources/CryptoSwift/UInt64+Extension.swift"; sourceTree = "<group>"; };
-		CECF1E00000520 /* UInt8+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt8+Extension.swift"; path = "Sources/CryptoSwift/UInt8+Extension.swift"; sourceTree = "<group>"; };
-		CECF1E00000530 /* Updatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Updatable.swift; path = Sources/CryptoSwift/Updatable.swift; sourceTree = "<group>"; };
-		CECF1E00000540 /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Sources/CryptoSwift/Utils.swift; sourceTree = "<group>"; };
-		CECF1E00000550 /* ZeroPadding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZeroPadding.swift; path = Sources/CryptoSwift/ZeroPadding.swift; sourceTree = "<group>"; };
-		CECF1E00000600 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CECF1E00000AD0 /* CryptoSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CryptoSwift.xcconfig; sourceTree = "<group>"; };
-		CECF1E00000AE0 /* CryptoSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CryptoSwift.modulemap; sourceTree = "<group>"; };
-		CECF1E00000AF0 /* CryptoSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CryptoSwift-umbrella.h"; sourceTree = "<group>"; };
-		CECF1E00000B10 /* CryptoSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CryptoSwift-Info.plist"; sourceTree = "<group>"; };
-		CECF1E00000B20 /* CryptoSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CryptoSwift-prefix.pch"; sourceTree = "<group>"; };
-		CECF1E00000B30 /* CryptoSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CryptoSwift-dummy.m"; sourceTree = "<group>"; };
+		CECF1E000003B0 /* ISO78164Padding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISO78164Padding.swift; path = Sources/CryptoSwift/ISO78164Padding.swift; sourceTree = "<group>"; };
+		CECF1E000003C0 /* MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MD5.swift; path = Sources/CryptoSwift/MD5.swift; sourceTree = "<group>"; };
+		CECF1E000003D0 /* NoPadding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NoPadding.swift; path = Sources/CryptoSwift/NoPadding.swift; sourceTree = "<group>"; };
+		CECF1E000003E0 /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/CryptoSwift/Operators.swift; sourceTree = "<group>"; };
+		CECF1E000003F0 /* Padding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Padding.swift; path = Sources/CryptoSwift/Padding.swift; sourceTree = "<group>"; };
+		CECF1E00000400 /* PBKDF1.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PBKDF1.swift; path = Sources/CryptoSwift/PKCS/PBKDF1.swift; sourceTree = "<group>"; };
+		CECF1E00000410 /* PBKDF2.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PBKDF2.swift; path = Sources/CryptoSwift/PKCS/PBKDF2.swift; sourceTree = "<group>"; };
+		CECF1E00000420 /* PKCS5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKCS5.swift; path = Sources/CryptoSwift/PKCS/PKCS5.swift; sourceTree = "<group>"; };
+		CECF1E00000430 /* PKCS7.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKCS7.swift; path = Sources/CryptoSwift/PKCS/PKCS7.swift; sourceTree = "<group>"; };
+		CECF1E00000440 /* PKCS7Padding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKCS7Padding.swift; path = Sources/CryptoSwift/PKCS/PKCS7Padding.swift; sourceTree = "<group>"; };
+		CECF1E00000450 /* Poly1305.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Poly1305.swift; path = Sources/CryptoSwift/Poly1305.swift; sourceTree = "<group>"; };
+		CECF1E00000460 /* Rabbit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Rabbit.swift; path = Sources/CryptoSwift/Rabbit.swift; sourceTree = "<group>"; };
+		CECF1E00000470 /* Scrypt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Scrypt.swift; path = Sources/CryptoSwift/Scrypt.swift; sourceTree = "<group>"; };
+		CECF1E00000480 /* SecureBytes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SecureBytes.swift; path = Sources/CryptoSwift/SecureBytes.swift; sourceTree = "<group>"; };
+		CECF1E00000490 /* SHA1.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA1.swift; path = Sources/CryptoSwift/SHA1.swift; sourceTree = "<group>"; };
+		CECF1E000004A0 /* SHA2.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA2.swift; path = Sources/CryptoSwift/SHA2.swift; sourceTree = "<group>"; };
+		CECF1E000004B0 /* SHA3.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA3.swift; path = Sources/CryptoSwift/SHA3.swift; sourceTree = "<group>"; };
+		CECF1E000004C0 /* StreamDecryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StreamDecryptor.swift; path = Sources/CryptoSwift/StreamDecryptor.swift; sourceTree = "<group>"; };
+		CECF1E000004D0 /* StreamEncryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StreamEncryptor.swift; path = Sources/CryptoSwift/StreamEncryptor.swift; sourceTree = "<group>"; };
+		CECF1E000004E0 /* String+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "Sources/CryptoSwift/String+Extension.swift"; sourceTree = "<group>"; };
+		CECF1E000004F0 /* UInt128.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UInt128.swift; path = Sources/CryptoSwift/UInt128.swift; sourceTree = "<group>"; };
+		CECF1E00000500 /* UInt16+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt16+Extension.swift"; path = "Sources/CryptoSwift/UInt16+Extension.swift"; sourceTree = "<group>"; };
+		CECF1E00000510 /* UInt32+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt32+Extension.swift"; path = "Sources/CryptoSwift/UInt32+Extension.swift"; sourceTree = "<group>"; };
+		CECF1E00000520 /* UInt64+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt64+Extension.swift"; path = "Sources/CryptoSwift/UInt64+Extension.swift"; sourceTree = "<group>"; };
+		CECF1E00000530 /* UInt8+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt8+Extension.swift"; path = "Sources/CryptoSwift/UInt8+Extension.swift"; sourceTree = "<group>"; };
+		CECF1E00000540 /* Updatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Updatable.swift; path = Sources/CryptoSwift/Updatable.swift; sourceTree = "<group>"; };
+		CECF1E00000550 /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Sources/CryptoSwift/Utils.swift; sourceTree = "<group>"; };
+		CECF1E00000560 /* ZeroPadding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZeroPadding.swift; path = Sources/CryptoSwift/ZeroPadding.swift; sourceTree = "<group>"; };
+		CECF1E00000610 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CECF1E00000AF0 /* CryptoSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CryptoSwift.debug.xcconfig; sourceTree = "<group>"; };
+		CECF1E00000B00 /* CryptoSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CryptoSwift.release.xcconfig; sourceTree = "<group>"; };
+		CECF1E00000B10 /* CryptoSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CryptoSwift.modulemap; sourceTree = "<group>"; };
+		CECF1E00000B20 /* CryptoSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CryptoSwift-umbrella.h"; sourceTree = "<group>"; };
+		CECF1E00000B40 /* CryptoSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CryptoSwift-Info.plist"; sourceTree = "<group>"; };
+		CECF1E00000B50 /* CryptoSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CryptoSwift-prefix.pch"; sourceTree = "<group>"; };
+		CECF1E00000B60 /* CryptoSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CryptoSwift-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CECF1E000005D0 /* Frameworks */ = {
+		CECF1E000005E0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CECF1E00000610 /* Foundation.framework in Frameworks */,
+				CECF1E00000620 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +206,7 @@
 		CECF1E00000060 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CECF1E000005F0 /* iOS */,
+				CECF1E00000600 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -253,61 +256,63 @@
 				CECF1E00000390 /* HMAC.swift */,
 				CECF1E00000330 /* HMAC+Foundation.swift */,
 				CECF1E000003A0 /* Int+Extension.swift */,
-				CECF1E000003B0 /* MD5.swift */,
-				CECF1E000003C0 /* NoPadding.swift */,
+				CECF1E000003B0 /* ISO78164Padding.swift */,
+				CECF1E000003C0 /* MD5.swift */,
+				CECF1E000003D0 /* NoPadding.swift */,
 				CECF1E00000200 /* OFB.swift */,
-				CECF1E000003D0 /* Operators.swift */,
-				CECF1E000003E0 /* Padding.swift */,
-				CECF1E000003F0 /* PBKDF1.swift */,
-				CECF1E00000400 /* PBKDF2.swift */,
+				CECF1E000003E0 /* Operators.swift */,
+				CECF1E000003F0 /* Padding.swift */,
+				CECF1E00000400 /* PBKDF1.swift */,
+				CECF1E00000410 /* PBKDF2.swift */,
 				CECF1E00000210 /* PCBC.swift */,
-				CECF1E00000410 /* PKCS5.swift */,
-				CECF1E00000420 /* PKCS7.swift */,
-				CECF1E00000430 /* PKCS7Padding.swift */,
-				CECF1E00000440 /* Poly1305.swift */,
-				CECF1E00000450 /* Rabbit.swift */,
+				CECF1E00000420 /* PKCS5.swift */,
+				CECF1E00000430 /* PKCS7.swift */,
+				CECF1E00000440 /* PKCS7Padding.swift */,
+				CECF1E00000450 /* Poly1305.swift */,
+				CECF1E00000460 /* Rabbit.swift */,
 				CECF1E00000340 /* Rabbit+Foundation.swift */,
-				CECF1E00000460 /* Scrypt.swift */,
-				CECF1E00000470 /* SecureBytes.swift */,
-				CECF1E00000480 /* SHA1.swift */,
-				CECF1E00000490 /* SHA2.swift */,
-				CECF1E000004A0 /* SHA3.swift */,
-				CECF1E000004B0 /* StreamDecryptor.swift */,
-				CECF1E000004C0 /* StreamEncryptor.swift */,
-				CECF1E000004D0 /* String+Extension.swift */,
+				CECF1E00000470 /* Scrypt.swift */,
+				CECF1E00000480 /* SecureBytes.swift */,
+				CECF1E00000490 /* SHA1.swift */,
+				CECF1E000004A0 /* SHA2.swift */,
+				CECF1E000004B0 /* SHA3.swift */,
+				CECF1E000004C0 /* StreamDecryptor.swift */,
+				CECF1E000004D0 /* StreamEncryptor.swift */,
+				CECF1E000004E0 /* String+Extension.swift */,
 				CECF1E00000350 /* String+FoundationExtension.swift */,
-				CECF1E000004E0 /* UInt128.swift */,
-				CECF1E000004F0 /* UInt16+Extension.swift */,
-				CECF1E00000500 /* UInt32+Extension.swift */,
-				CECF1E00000510 /* UInt64+Extension.swift */,
-				CECF1E00000520 /* UInt8+Extension.swift */,
-				CECF1E00000530 /* Updatable.swift */,
-				CECF1E00000540 /* Utils.swift */,
+				CECF1E000004F0 /* UInt128.swift */,
+				CECF1E00000500 /* UInt16+Extension.swift */,
+				CECF1E00000510 /* UInt32+Extension.swift */,
+				CECF1E00000520 /* UInt64+Extension.swift */,
+				CECF1E00000530 /* UInt8+Extension.swift */,
+				CECF1E00000540 /* Updatable.swift */,
+				CECF1E00000550 /* Utils.swift */,
 				CECF1E00000360 /* Utils+Foundation.swift */,
-				CECF1E00000550 /* ZeroPadding.swift */,
-				CECF1E00000AC0 /* Support Files */,
+				CECF1E00000560 /* ZeroPadding.swift */,
+				CECF1E00000AE0 /* Support Files */,
 			);
 			name = CryptoSwift;
 			path = CryptoSwift;
 			sourceTree = "<group>";
 		};
-		CECF1E000005F0 /* iOS */ = {
+		CECF1E00000600 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				CECF1E00000600 /* Foundation.framework */,
+				CECF1E00000610 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		CECF1E00000AC0 /* Support Files */ = {
+		CECF1E00000AE0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				CECF1E00000AE0 /* CryptoSwift.modulemap */,
-				CECF1E00000AD0 /* CryptoSwift.xcconfig */,
-				CECF1E00000B30 /* CryptoSwift-dummy.m */,
-				CECF1E00000B10 /* CryptoSwift-Info.plist */,
-				CECF1E00000B20 /* CryptoSwift-prefix.pch */,
-				CECF1E00000AF0 /* CryptoSwift-umbrella.h */,
+				CECF1E00000B10 /* CryptoSwift.modulemap */,
+				CECF1E00000B60 /* CryptoSwift-dummy.m */,
+				CECF1E00000B40 /* CryptoSwift-Info.plist */,
+				CECF1E00000B50 /* CryptoSwift-prefix.pch */,
+				CECF1E00000B20 /* CryptoSwift-umbrella.h */,
+				CECF1E00000AF0 /* CryptoSwift.debug.xcconfig */,
+				CECF1E00000B00 /* CryptoSwift.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/CryptoSwift";
@@ -316,11 +321,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		CECF1E000005B0 /* Headers */ = {
+		CECF1E000005C0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CECF1E00000B00 /* CryptoSwift-umbrella.h in Headers */,
+				CECF1E00000B30 /* CryptoSwift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,12 +334,12 @@
 /* Begin PBXNativeTarget section */
 		4E1375FA494E41BCCDD9424A50665074 /* CryptoSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CECF1E00000570 /* Build configuration list for PBXNativeTarget "CryptoSwift" */;
+			buildConfigurationList = CECF1E00000580 /* Build configuration list for PBXNativeTarget "CryptoSwift" */;
 			buildPhases = (
-				CECF1E000005B0 /* Headers */,
-				CECF1E000005C0 /* Sources */,
-				CECF1E000005D0 /* Frameworks */,
-				CECF1E000005E0 /* Resources */,
+				CECF1E000005C0 /* Headers */,
+				CECF1E000005D0 /* Sources */,
+				CECF1E000005E0 /* Frameworks */,
+				CECF1E000005F0 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -373,7 +378,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CECF1E000005E0 /* Resources */ = {
+		CECF1E000005F0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -383,85 +388,86 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		CECF1E000005C0 /* Sources */ = {
+		CECF1E000005D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CECF1E00000620 /* AEAD.swift in Sources */,
-				CECF1E00000630 /* AEADChaCha20Poly1305.swift in Sources */,
-				CECF1E00000840 /* AES+Foundation.swift in Sources */,
-				CECF1E00000640 /* AES.Cryptors.swift in Sources */,
-				CECF1E00000650 /* AES.swift in Sources */,
-				CECF1E00000660 /* Array+Extension.swift in Sources */,
-				CECF1E00000850 /* Array+Foundation.swift in Sources */,
-				CECF1E00000670 /* Authenticator.swift in Sources */,
-				CECF1E00000680 /* BatchedCollection.swift in Sources */,
-				CECF1E00000690 /* Bit.swift in Sources */,
-				CECF1E000006A0 /* BlockCipher.swift in Sources */,
-				CECF1E000006B0 /* BlockDecryptor.swift in Sources */,
-				CECF1E000006C0 /* BlockEncryptor.swift in Sources */,
-				CECF1E000006D0 /* BlockMode.swift in Sources */,
-				CECF1E000006E0 /* BlockModeOptions.swift in Sources */,
-				CECF1E00000860 /* Blowfish+Foundation.swift in Sources */,
-				CECF1E00000780 /* Blowfish.swift in Sources */,
-				CECF1E000006F0 /* CBC.swift in Sources */,
-				CECF1E00000790 /* CBCMAC.swift in Sources */,
-				CECF1E00000700 /* CCM.swift in Sources */,
-				CECF1E00000710 /* CFB.swift in Sources */,
-				CECF1E00000870 /* ChaCha20+Foundation.swift in Sources */,
-				CECF1E000007A0 /* ChaCha20.swift in Sources */,
-				CECF1E000007B0 /* Checksum.swift in Sources */,
-				CECF1E000007C0 /* Cipher.swift in Sources */,
-				CECF1E00000720 /* CipherModeWorker.swift in Sources */,
-				CECF1E000007D0 /* CMAC.swift in Sources */,
-				CECF1E000007E0 /* Collection+Extension.swift in Sources */,
-				CECF1E000007F0 /* CompactMap.swift in Sources */,
-				CECF1E00000800 /* Cryptor.swift in Sources */,
-				CECF1E00000810 /* Cryptors.swift in Sources */,
-				CECF1E00000B40 /* CryptoSwift-dummy.m in Sources */,
-				CECF1E00000730 /* CTR.swift in Sources */,
-				CECF1E00000880 /* Data+Extension.swift in Sources */,
-				CECF1E00000820 /* Digest.swift in Sources */,
-				CECF1E00000830 /* DigestType.swift in Sources */,
-				CECF1E00000740 /* ECB.swift in Sources */,
-				CECF1E00000750 /* GCM.swift in Sources */,
-				CECF1E000008D0 /* Generics.swift in Sources */,
-				CECF1E000008E0 /* HKDF.swift in Sources */,
-				CECF1E00000890 /* HMAC+Foundation.swift in Sources */,
-				CECF1E000008F0 /* HMAC.swift in Sources */,
-				CECF1E00000900 /* Int+Extension.swift in Sources */,
-				CECF1E00000910 /* MD5.swift in Sources */,
-				CECF1E00000920 /* NoPadding.swift in Sources */,
-				CECF1E00000760 /* OFB.swift in Sources */,
-				CECF1E00000930 /* Operators.swift in Sources */,
-				CECF1E00000940 /* Padding.swift in Sources */,
-				CECF1E00000950 /* PBKDF1.swift in Sources */,
-				CECF1E00000960 /* PBKDF2.swift in Sources */,
-				CECF1E00000770 /* PCBC.swift in Sources */,
-				CECF1E00000970 /* PKCS5.swift in Sources */,
-				CECF1E00000980 /* PKCS7.swift in Sources */,
-				CECF1E00000990 /* PKCS7Padding.swift in Sources */,
-				CECF1E000009A0 /* Poly1305.swift in Sources */,
-				CECF1E000008A0 /* Rabbit+Foundation.swift in Sources */,
-				CECF1E000009B0 /* Rabbit.swift in Sources */,
-				CECF1E000009C0 /* Scrypt.swift in Sources */,
-				CECF1E000009D0 /* SecureBytes.swift in Sources */,
-				CECF1E000009E0 /* SHA1.swift in Sources */,
-				CECF1E000009F0 /* SHA2.swift in Sources */,
-				CECF1E00000A00 /* SHA3.swift in Sources */,
-				CECF1E00000A10 /* StreamDecryptor.swift in Sources */,
-				CECF1E00000A20 /* StreamEncryptor.swift in Sources */,
-				CECF1E00000A30 /* String+Extension.swift in Sources */,
-				CECF1E000008B0 /* String+FoundationExtension.swift in Sources */,
-				CECF1E00000A40 /* UInt128.swift in Sources */,
-				CECF1E00000A50 /* UInt16+Extension.swift in Sources */,
-				CECF1E00000A60 /* UInt32+Extension.swift in Sources */,
-				CECF1E00000A70 /* UInt64+Extension.swift in Sources */,
-				CECF1E00000A80 /* UInt8+Extension.swift in Sources */,
-				CECF1E00000A90 /* Updatable.swift in Sources */,
-				CECF1E000008C0 /* Utils+Foundation.swift in Sources */,
-				CECF1E00000AA0 /* Utils.swift in Sources */,
-				CECF1E00000AB0 /* ZeroPadding.swift in Sources */,
+				CECF1E00000630 /* AEAD.swift in Sources */,
+				CECF1E00000640 /* AEADChaCha20Poly1305.swift in Sources */,
+				CECF1E00000850 /* AES+Foundation.swift in Sources */,
+				CECF1E00000650 /* AES.Cryptors.swift in Sources */,
+				CECF1E00000660 /* AES.swift in Sources */,
+				CECF1E00000670 /* Array+Extension.swift in Sources */,
+				CECF1E00000860 /* Array+Foundation.swift in Sources */,
+				CECF1E00000680 /* Authenticator.swift in Sources */,
+				CECF1E00000690 /* BatchedCollection.swift in Sources */,
+				CECF1E000006A0 /* Bit.swift in Sources */,
+				CECF1E000006B0 /* BlockCipher.swift in Sources */,
+				CECF1E000006C0 /* BlockDecryptor.swift in Sources */,
+				CECF1E000006D0 /* BlockEncryptor.swift in Sources */,
+				CECF1E000006E0 /* BlockMode.swift in Sources */,
+				CECF1E000006F0 /* BlockModeOptions.swift in Sources */,
+				CECF1E00000870 /* Blowfish+Foundation.swift in Sources */,
+				CECF1E00000790 /* Blowfish.swift in Sources */,
+				CECF1E00000700 /* CBC.swift in Sources */,
+				CECF1E000007A0 /* CBCMAC.swift in Sources */,
+				CECF1E00000710 /* CCM.swift in Sources */,
+				CECF1E00000720 /* CFB.swift in Sources */,
+				CECF1E00000880 /* ChaCha20+Foundation.swift in Sources */,
+				CECF1E000007B0 /* ChaCha20.swift in Sources */,
+				CECF1E000007C0 /* Checksum.swift in Sources */,
+				CECF1E000007D0 /* Cipher.swift in Sources */,
+				CECF1E00000730 /* CipherModeWorker.swift in Sources */,
+				CECF1E000007E0 /* CMAC.swift in Sources */,
+				CECF1E000007F0 /* Collection+Extension.swift in Sources */,
+				CECF1E00000800 /* CompactMap.swift in Sources */,
+				CECF1E00000810 /* Cryptor.swift in Sources */,
+				CECF1E00000820 /* Cryptors.swift in Sources */,
+				CECF1E00000B70 /* CryptoSwift-dummy.m in Sources */,
+				CECF1E00000740 /* CTR.swift in Sources */,
+				CECF1E00000890 /* Data+Extension.swift in Sources */,
+				CECF1E00000830 /* Digest.swift in Sources */,
+				CECF1E00000840 /* DigestType.swift in Sources */,
+				CECF1E00000750 /* ECB.swift in Sources */,
+				CECF1E00000760 /* GCM.swift in Sources */,
+				CECF1E000008E0 /* Generics.swift in Sources */,
+				CECF1E000008F0 /* HKDF.swift in Sources */,
+				CECF1E000008A0 /* HMAC+Foundation.swift in Sources */,
+				CECF1E00000900 /* HMAC.swift in Sources */,
+				CECF1E00000910 /* Int+Extension.swift in Sources */,
+				CECF1E00000920 /* ISO78164Padding.swift in Sources */,
+				CECF1E00000930 /* MD5.swift in Sources */,
+				CECF1E00000940 /* NoPadding.swift in Sources */,
+				CECF1E00000770 /* OFB.swift in Sources */,
+				CECF1E00000950 /* Operators.swift in Sources */,
+				CECF1E00000960 /* Padding.swift in Sources */,
+				CECF1E00000970 /* PBKDF1.swift in Sources */,
+				CECF1E00000980 /* PBKDF2.swift in Sources */,
+				CECF1E00000780 /* PCBC.swift in Sources */,
+				CECF1E00000990 /* PKCS5.swift in Sources */,
+				CECF1E000009A0 /* PKCS7.swift in Sources */,
+				CECF1E000009B0 /* PKCS7Padding.swift in Sources */,
+				CECF1E000009C0 /* Poly1305.swift in Sources */,
+				CECF1E000008B0 /* Rabbit+Foundation.swift in Sources */,
+				CECF1E000009D0 /* Rabbit.swift in Sources */,
+				CECF1E000009E0 /* Scrypt.swift in Sources */,
+				CECF1E000009F0 /* SecureBytes.swift in Sources */,
+				CECF1E00000A00 /* SHA1.swift in Sources */,
+				CECF1E00000A10 /* SHA2.swift in Sources */,
+				CECF1E00000A20 /* SHA3.swift in Sources */,
+				CECF1E00000A30 /* StreamDecryptor.swift in Sources */,
+				CECF1E00000A40 /* StreamEncryptor.swift in Sources */,
+				CECF1E00000A50 /* String+Extension.swift in Sources */,
+				CECF1E000008C0 /* String+FoundationExtension.swift in Sources */,
+				CECF1E00000A60 /* UInt128.swift in Sources */,
+				CECF1E00000A70 /* UInt16+Extension.swift in Sources */,
+				CECF1E00000A80 /* UInt32+Extension.swift in Sources */,
+				CECF1E00000A90 /* UInt64+Extension.swift in Sources */,
+				CECF1E00000AA0 /* UInt8+Extension.swift in Sources */,
+				CECF1E00000AB0 /* Updatable.swift in Sources */,
+				CECF1E000008D0 /* Utils+Foundation.swift in Sources */,
+				CECF1E00000AC0 /* Utils.swift in Sources */,
+				CECF1E00000AD0 /* ZeroPadding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,9 +598,9 @@
 			};
 			name = Release;
 		};
-		CECF1E00000580 /* Release */ = {
+		CECF1E00000590 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CECF1E00000AD0 /* CryptoSwift.xcconfig */;
+			baseConfigurationReference = CECF1E00000B00 /* CryptoSwift.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -620,7 +626,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -628,9 +634,9 @@
 			};
 			name = Release;
 		};
-		CECF1E00000590 /* Debug */ = {
+		CECF1E000005A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CECF1E00000AD0 /* CryptoSwift.xcconfig */;
+			baseConfigurationReference = CECF1E00000AF0 /* CryptoSwift.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -656,7 +662,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -675,11 +681,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CECF1E00000570 /* Build configuration list for PBXNativeTarget "CryptoSwift" */ = {
+		CECF1E00000580 /* Build configuration list for PBXNativeTarget "CryptoSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CECF1E00000590 /* Debug */,
-				CECF1E00000580 /* Release */,
+				CECF1E000005A0 /* Debug */,
+				CECF1E00000590 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

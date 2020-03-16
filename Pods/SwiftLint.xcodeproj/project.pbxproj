@@ -19,7 +19,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXFileReference section */
-		69006D00000110 /* SwiftLint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.xcconfig; sourceTree = "<group>"; };
+		69006D00000110 /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
+		69006D00000120 /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -58,7 +59,8 @@
 		69006D00000100 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				69006D00000110 /* SwiftLint.xcconfig */,
+				69006D00000110 /* SwiftLint.debug.xcconfig */,
+				69006D00000120 /* SwiftLint.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SwiftLint";
@@ -218,7 +220,7 @@
 		};
 		69006D000000E0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69006D00000110 /* SwiftLint.xcconfig */;
+			baseConfigurationReference = 69006D00000120 /* SwiftLint.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -235,7 +237,7 @@
 		};
 		69006D000000F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69006D00000110 /* SwiftLint.xcconfig */;
+			baseConfigurationReference = 69006D00000110 /* SwiftLint.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

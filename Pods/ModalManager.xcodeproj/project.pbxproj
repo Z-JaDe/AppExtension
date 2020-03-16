@@ -15,8 +15,8 @@
 		ADEEA800000270 /* ModalAnimatedTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEA800000110 /* ModalAnimatedTransitioningDelegate.swift */; };
 		ADEEA800000280 /* ModalContainerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEA800000120 /* ModalContainerProtocol.swift */; };
 		ADEEA800000290 /* ModalPresentationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEA800000130 /* ModalPresentationDelegate.swift */; };
-		ADEEA8000002E0 /* ModalManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ADEEA8000002D0 /* ModalManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ADEEA800000320 /* ModalManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEEA800000310 /* ModalManager-dummy.m */; };
+		ADEEA8000002F0 /* ModalManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ADEEA8000002E0 /* ModalManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ADEEA800000330 /* ModalManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEEA800000320 /* ModalManager-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,12 +31,13 @@
 		ADEEA800000150 /* ModalManager.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ModalManager.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		ADEEA800000160 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		ADEEA800000210 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		ADEEA8000002B0 /* ModalManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ModalManager.xcconfig; sourceTree = "<group>"; };
-		ADEEA8000002C0 /* ModalManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ModalManager.modulemap; sourceTree = "<group>"; };
-		ADEEA8000002D0 /* ModalManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ModalManager-umbrella.h"; sourceTree = "<group>"; };
-		ADEEA8000002F0 /* ModalManager-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ModalManager-Info.plist"; sourceTree = "<group>"; };
-		ADEEA800000300 /* ModalManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ModalManager-prefix.pch"; sourceTree = "<group>"; };
-		ADEEA800000310 /* ModalManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ModalManager-dummy.m"; sourceTree = "<group>"; };
+		ADEEA8000002B0 /* ModalManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ModalManager.debug.xcconfig; sourceTree = "<group>"; };
+		ADEEA8000002C0 /* ModalManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ModalManager.release.xcconfig; sourceTree = "<group>"; };
+		ADEEA8000002D0 /* ModalManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ModalManager.modulemap; sourceTree = "<group>"; };
+		ADEEA8000002E0 /* ModalManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ModalManager-umbrella.h"; sourceTree = "<group>"; };
+		ADEEA800000300 /* ModalManager-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ModalManager-Info.plist"; sourceTree = "<group>"; };
+		ADEEA800000310 /* ModalManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ModalManager-prefix.pch"; sourceTree = "<group>"; };
+		ADEEA800000320 /* ModalManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ModalManager-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,12 +123,13 @@
 		ADEEA8000002A0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				ADEEA8000002C0 /* ModalManager.modulemap */,
-				ADEEA8000002B0 /* ModalManager.xcconfig */,
-				ADEEA800000310 /* ModalManager-dummy.m */,
-				ADEEA8000002F0 /* ModalManager-Info.plist */,
-				ADEEA800000300 /* ModalManager-prefix.pch */,
-				ADEEA8000002D0 /* ModalManager-umbrella.h */,
+				ADEEA8000002D0 /* ModalManager.modulemap */,
+				ADEEA800000320 /* ModalManager-dummy.m */,
+				ADEEA800000300 /* ModalManager-Info.plist */,
+				ADEEA800000310 /* ModalManager-prefix.pch */,
+				ADEEA8000002E0 /* ModalManager-umbrella.h */,
+				ADEEA8000002B0 /* ModalManager.debug.xcconfig */,
+				ADEEA8000002C0 /* ModalManager.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../../Pods/Target Support Files/ModalManager";
@@ -140,7 +142,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADEEA8000002E0 /* ModalManager-umbrella.h in Headers */,
+				ADEEA8000002F0 /* ModalManager-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +212,7 @@
 				ADEEA800000230 /* ModalAnimatedTransitioning.swift in Sources */,
 				ADEEA800000270 /* ModalAnimatedTransitioningDelegate.swift in Sources */,
 				ADEEA800000280 /* ModalContainerProtocol.swift in Sources */,
-				ADEEA800000320 /* ModalManager-dummy.m in Sources */,
+				ADEEA800000330 /* ModalManager-dummy.m in Sources */,
 				ADEEA800000290 /* ModalPresentationDelegate.swift in Sources */,
 				ADEEA800000240 /* ModalViewController+ContentView.swift in Sources */,
 				ADEEA800000250 /* ModalViewController.swift in Sources */,
@@ -347,7 +349,7 @@
 		};
 		ADEEA800000190 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ADEEA8000002B0 /* ModalManager.xcconfig */;
+			baseConfigurationReference = ADEEA8000002C0 /* ModalManager.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -383,7 +385,7 @@
 		};
 		ADEEA8000001A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ADEEA8000002B0 /* ModalManager.xcconfig */;
+			baseConfigurationReference = ADEEA8000002B0 /* ModalManager.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

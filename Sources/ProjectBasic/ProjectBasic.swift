@@ -8,7 +8,7 @@
 
 import Foundation
 
-/** ZJaDe: 
+/* ZJaDe: 
  这个framework会添加一些自定义的功能，协议等
  */
 

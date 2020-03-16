@@ -158,8 +158,8 @@
 		94F41A00001410 /* Platform.Darwin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F41A000009F0 /* Platform.Darwin.swift */; };
 		94F41A00001420 /* Platform.Linux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F41A00000A00 /* Platform.Linux.swift */; };
 		94F41A00001430 /* RecursiveLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F41A00000A10 /* RecursiveLock.swift */; };
-		94F41A00001480 /* RxSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 94F41A00001470 /* RxSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		94F41A000014C0 /* RxSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F41A000014B0 /* RxSwift-dummy.m */; };
+		94F41A00001490 /* RxSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 94F41A00001480 /* RxSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		94F41A000014D0 /* RxSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F41A000014C0 /* RxSwift-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -315,12 +315,13 @@
 		94F41A00000A00 /* Platform.Linux.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Platform.Linux.swift; path = Platform/Platform.Linux.swift; sourceTree = "<group>"; };
 		94F41A00000A10 /* RecursiveLock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecursiveLock.swift; path = Platform/RecursiveLock.swift; sourceTree = "<group>"; };
 		94F41A00000AC0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		94F41A00001450 /* RxSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxSwift.xcconfig; sourceTree = "<group>"; };
-		94F41A00001460 /* RxSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RxSwift.modulemap; sourceTree = "<group>"; };
-		94F41A00001470 /* RxSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxSwift-umbrella.h"; sourceTree = "<group>"; };
-		94F41A00001490 /* RxSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RxSwift-Info.plist"; sourceTree = "<group>"; };
-		94F41A000014A0 /* RxSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxSwift-prefix.pch"; sourceTree = "<group>"; };
-		94F41A000014B0 /* RxSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxSwift-dummy.m"; sourceTree = "<group>"; };
+		94F41A00001450 /* RxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxSwift.debug.xcconfig; sourceTree = "<group>"; };
+		94F41A00001460 /* RxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxSwift.release.xcconfig; sourceTree = "<group>"; };
+		94F41A00001470 /* RxSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RxSwift.modulemap; sourceTree = "<group>"; };
+		94F41A00001480 /* RxSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxSwift-umbrella.h"; sourceTree = "<group>"; };
+		94F41A000014A0 /* RxSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RxSwift-Info.plist"; sourceTree = "<group>"; };
+		94F41A000014B0 /* RxSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxSwift-prefix.pch"; sourceTree = "<group>"; };
+		94F41A000014C0 /* RxSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxSwift-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -530,12 +531,13 @@
 		94F41A00001440 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				94F41A00001460 /* RxSwift.modulemap */,
-				94F41A00001450 /* RxSwift.xcconfig */,
-				94F41A000014B0 /* RxSwift-dummy.m */,
-				94F41A00001490 /* RxSwift-Info.plist */,
-				94F41A000014A0 /* RxSwift-prefix.pch */,
-				94F41A00001470 /* RxSwift-umbrella.h */,
+				94F41A00001470 /* RxSwift.modulemap */,
+				94F41A000014C0 /* RxSwift-dummy.m */,
+				94F41A000014A0 /* RxSwift-Info.plist */,
+				94F41A000014B0 /* RxSwift-prefix.pch */,
+				94F41A00001480 /* RxSwift-umbrella.h */,
+				94F41A00001450 /* RxSwift.debug.xcconfig */,
+				94F41A00001460 /* RxSwift.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/RxSwift";
@@ -548,7 +550,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94F41A00001480 /* RxSwift-umbrella.h in Headers */,
+				94F41A00001490 /* RxSwift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,7 +722,7 @@
 				94F41A00000F70 /* RetryWhen.swift in Sources */,
 				94F41A000011A0 /* Rx.swift in Sources */,
 				94F41A000011B0 /* RxMutableBox.swift in Sources */,
-				94F41A000014C0 /* RxSwift-dummy.m in Sources */,
+				94F41A000014D0 /* RxSwift-dummy.m in Sources */,
 				94F41A00000F80 /* Sample.swift in Sources */,
 				94F41A00000F90 /* Scan.swift in Sources */,
 				94F41A00000C30 /* ScheduledDisposable.swift in Sources */,
@@ -898,7 +900,7 @@
 		};
 		94F41A00000A40 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94F41A00001450 /* RxSwift.xcconfig */;
+			baseConfigurationReference = 94F41A00001460 /* RxSwift.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -934,7 +936,7 @@
 		};
 		94F41A00000A50 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94F41A00001450 /* RxSwift.xcconfig */;
+			baseConfigurationReference = 94F41A00001450 /* RxSwift.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

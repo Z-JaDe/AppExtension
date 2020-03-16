@@ -20,8 +20,8 @@
 		A746A200000310 /* iCarouselAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A746A200000150 /* iCarouselAnimator.swift */; };
 		A746A200000320 /* iCarouselDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A746A200000160 /* iCarouselDataSource.swift */; };
 		A746A200000330 /* iCarouselDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A746A200000170 /* iCarouselDelegate.swift */; };
-		A746A200000380 /* iCarouselSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A746A200000370 /* iCarouselSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A746A2000003C0 /* iCarouselSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A746A2000003B0 /* iCarouselSwift-dummy.m */; };
+		A746A200000390 /* iCarouselSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A746A200000380 /* iCarouselSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A746A2000003D0 /* iCarouselSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A746A2000003C0 /* iCarouselSwift-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,12 +42,13 @@
 		A746A2000001A0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		A746A2000001B0 /* iCarouselSwift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = iCarouselSwift.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A746A200000260 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		A746A200000350 /* iCarouselSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iCarouselSwift.xcconfig; sourceTree = "<group>"; };
-		A746A200000360 /* iCarouselSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = iCarouselSwift.modulemap; sourceTree = "<group>"; };
-		A746A200000370 /* iCarouselSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iCarouselSwift-umbrella.h"; sourceTree = "<group>"; };
-		A746A200000390 /* iCarouselSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "iCarouselSwift-Info.plist"; sourceTree = "<group>"; };
-		A746A2000003A0 /* iCarouselSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iCarouselSwift-prefix.pch"; sourceTree = "<group>"; };
-		A746A2000003B0 /* iCarouselSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iCarouselSwift-dummy.m"; sourceTree = "<group>"; };
+		A746A200000350 /* iCarouselSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iCarouselSwift.debug.xcconfig; sourceTree = "<group>"; };
+		A746A200000360 /* iCarouselSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iCarouselSwift.release.xcconfig; sourceTree = "<group>"; };
+		A746A200000370 /* iCarouselSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = iCarouselSwift.modulemap; sourceTree = "<group>"; };
+		A746A200000380 /* iCarouselSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iCarouselSwift-umbrella.h"; sourceTree = "<group>"; };
+		A746A2000003A0 /* iCarouselSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "iCarouselSwift-Info.plist"; sourceTree = "<group>"; };
+		A746A2000003B0 /* iCarouselSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iCarouselSwift-prefix.pch"; sourceTree = "<group>"; };
+		A746A2000003C0 /* iCarouselSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iCarouselSwift-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,12 +131,13 @@
 		A746A200000340 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A746A200000360 /* iCarouselSwift.modulemap */,
-				A746A200000350 /* iCarouselSwift.xcconfig */,
-				A746A2000003B0 /* iCarouselSwift-dummy.m */,
-				A746A200000390 /* iCarouselSwift-Info.plist */,
-				A746A2000003A0 /* iCarouselSwift-prefix.pch */,
-				A746A200000370 /* iCarouselSwift-umbrella.h */,
+				A746A200000370 /* iCarouselSwift.modulemap */,
+				A746A2000003C0 /* iCarouselSwift-dummy.m */,
+				A746A2000003A0 /* iCarouselSwift-Info.plist */,
+				A746A2000003B0 /* iCarouselSwift-prefix.pch */,
+				A746A200000380 /* iCarouselSwift-umbrella.h */,
+				A746A200000350 /* iCarouselSwift.debug.xcconfig */,
+				A746A200000360 /* iCarouselSwift.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../../Pods/Target Support Files/iCarouselSwift";
@@ -148,7 +150,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A746A200000380 /* iCarouselSwift-umbrella.h in Headers */,
+				A746A200000390 /* iCarouselSwift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,7 +229,7 @@
 				A746A200000310 /* iCarouselAnimator.swift in Sources */,
 				A746A200000320 /* iCarouselDataSource.swift in Sources */,
 				A746A200000330 /* iCarouselDelegate.swift in Sources */,
-				A746A2000003C0 /* iCarouselSwift-dummy.m in Sources */,
+				A746A2000003D0 /* iCarouselSwift-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,7 +362,7 @@
 		};
 		A746A2000001E0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A746A200000350 /* iCarouselSwift.xcconfig */;
+			baseConfigurationReference = A746A200000360 /* iCarouselSwift.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -397,7 +399,7 @@
 		};
 		A746A2000001F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A746A200000350 /* iCarouselSwift.xcconfig */;
+			baseConfigurationReference = A746A200000350 /* iCarouselSwift.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";

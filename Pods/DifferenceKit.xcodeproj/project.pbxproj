@@ -7,20 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA6EAB00000230 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6EAB00000220 /* Foundation.framework */; };
-		AA6EAB00000240 /* Algorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB000000D0 /* Algorithm.swift */; };
-		AA6EAB00000250 /* AnyDifferentiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB000000E0 /* AnyDifferentiable.swift */; };
-		AA6EAB00000260 /* ArraySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB000000F0 /* ArraySection.swift */; };
-		AA6EAB00000270 /* Changeset.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB00000100 /* Changeset.swift */; };
-		AA6EAB00000280 /* ContentEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB00000110 /* ContentEquatable.swift */; };
-		AA6EAB00000290 /* Differentiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB00000120 /* Differentiable.swift */; };
-		AA6EAB000002A0 /* DifferentiableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB00000130 /* DifferentiableSection.swift */; };
-		AA6EAB000002B0 /* ElementPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB00000140 /* ElementPath.swift */; };
-		AA6EAB000002C0 /* StagedChangeset.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB00000150 /* StagedChangeset.swift */; };
-		AA6EAB000002D0 /* UIKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB00000170 /* UIKitExtension.swift */; };
-		AA6EAB00000320 /* DifferenceKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AA6EAB00000310 /* DifferenceKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA6EAB00000360 /* DifferenceKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB00000350 /* DifferenceKit-dummy.m */; };
-		AA6EAB00000380 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6EAB00000370 /* UIKit.framework */; };
+		AA6EAB00000240 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6EAB00000230 /* Foundation.framework */; };
+		AA6EAB00000250 /* Algorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB000000D0 /* Algorithm.swift */; };
+		AA6EAB00000260 /* AnyDifferentiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB000000E0 /* AnyDifferentiable.swift */; };
+		AA6EAB00000270 /* ArraySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB000000F0 /* ArraySection.swift */; };
+		AA6EAB00000280 /* Changeset.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB00000100 /* Changeset.swift */; };
+		AA6EAB00000290 /* ContentEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB00000110 /* ContentEquatable.swift */; };
+		AA6EAB000002A0 /* ContentIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB00000120 /* ContentIdentifiable.swift */; };
+		AA6EAB000002B0 /* Differentiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB00000130 /* Differentiable.swift */; };
+		AA6EAB000002C0 /* DifferentiableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB00000140 /* DifferentiableSection.swift */; };
+		AA6EAB000002D0 /* ElementPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB00000150 /* ElementPath.swift */; };
+		AA6EAB000002E0 /* StagedChangeset.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB00000160 /* StagedChangeset.swift */; };
+		AA6EAB000002F0 /* UIKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB00000180 /* UIKitExtension.swift */; };
+		AA6EAB00000350 /* DifferenceKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AA6EAB00000340 /* DifferenceKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA6EAB00000390 /* DifferenceKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6EAB00000380 /* DifferenceKit-dummy.m */; };
+		AA6EAB000003B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6EAB000003A0 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,28 +31,30 @@
 		AA6EAB000000F0 /* ArraySection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ArraySection.swift; path = Sources/ArraySection.swift; sourceTree = "<group>"; };
 		AA6EAB00000100 /* Changeset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Changeset.swift; path = Sources/Changeset.swift; sourceTree = "<group>"; };
 		AA6EAB00000110 /* ContentEquatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContentEquatable.swift; path = Sources/ContentEquatable.swift; sourceTree = "<group>"; };
-		AA6EAB00000120 /* Differentiable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Differentiable.swift; path = Sources/Differentiable.swift; sourceTree = "<group>"; };
-		AA6EAB00000130 /* DifferentiableSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DifferentiableSection.swift; path = Sources/DifferentiableSection.swift; sourceTree = "<group>"; };
-		AA6EAB00000140 /* ElementPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ElementPath.swift; path = Sources/ElementPath.swift; sourceTree = "<group>"; };
-		AA6EAB00000150 /* StagedChangeset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StagedChangeset.swift; path = Sources/StagedChangeset.swift; sourceTree = "<group>"; };
-		AA6EAB00000170 /* UIKitExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIKitExtension.swift; path = Sources/Extensions/UIKitExtension.swift; sourceTree = "<group>"; };
-		AA6EAB00000220 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		AA6EAB000002F0 /* DifferenceKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DifferenceKit.xcconfig; sourceTree = "<group>"; };
-		AA6EAB00000300 /* DifferenceKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DifferenceKit.modulemap; sourceTree = "<group>"; };
-		AA6EAB00000310 /* DifferenceKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DifferenceKit-umbrella.h"; sourceTree = "<group>"; };
-		AA6EAB00000330 /* DifferenceKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DifferenceKit-Info.plist"; sourceTree = "<group>"; };
-		AA6EAB00000340 /* DifferenceKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DifferenceKit-prefix.pch"; sourceTree = "<group>"; };
-		AA6EAB00000350 /* DifferenceKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DifferenceKit-dummy.m"; sourceTree = "<group>"; };
-		AA6EAB00000370 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		AA6EAB00000120 /* ContentIdentifiable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContentIdentifiable.swift; path = Sources/ContentIdentifiable.swift; sourceTree = "<group>"; };
+		AA6EAB00000130 /* Differentiable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Differentiable.swift; path = Sources/Differentiable.swift; sourceTree = "<group>"; };
+		AA6EAB00000140 /* DifferentiableSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DifferentiableSection.swift; path = Sources/DifferentiableSection.swift; sourceTree = "<group>"; };
+		AA6EAB00000150 /* ElementPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ElementPath.swift; path = Sources/ElementPath.swift; sourceTree = "<group>"; };
+		AA6EAB00000160 /* StagedChangeset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StagedChangeset.swift; path = Sources/StagedChangeset.swift; sourceTree = "<group>"; };
+		AA6EAB00000180 /* UIKitExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIKitExtension.swift; path = Sources/Extensions/UIKitExtension.swift; sourceTree = "<group>"; };
+		AA6EAB00000230 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		AA6EAB00000310 /* DifferenceKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DifferenceKit.debug.xcconfig; sourceTree = "<group>"; };
+		AA6EAB00000320 /* DifferenceKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DifferenceKit.release.xcconfig; sourceTree = "<group>"; };
+		AA6EAB00000330 /* DifferenceKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DifferenceKit.modulemap; sourceTree = "<group>"; };
+		AA6EAB00000340 /* DifferenceKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DifferenceKit-umbrella.h"; sourceTree = "<group>"; };
+		AA6EAB00000360 /* DifferenceKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DifferenceKit-Info.plist"; sourceTree = "<group>"; };
+		AA6EAB00000370 /* DifferenceKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DifferenceKit-prefix.pch"; sourceTree = "<group>"; };
+		AA6EAB00000380 /* DifferenceKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DifferenceKit-dummy.m"; sourceTree = "<group>"; };
+		AA6EAB000003A0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AA6EAB000001F0 /* Frameworks */ = {
+		AA6EAB00000200 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA6EAB00000230 /* Foundation.framework in Frameworks */,
-				AA6EAB00000380 /* UIKit.framework in Frameworks */,
+				AA6EAB00000240 /* Foundation.framework in Frameworks */,
+				AA6EAB000003B0 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +81,7 @@
 		AA6EAB00000060 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AA6EAB00000210 /* iOS */,
+				AA6EAB00000220 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -87,8 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				AA6EAB000000C0 /* Core */,
-				AA6EAB000002E0 /* Support Files */,
-				AA6EAB00000160 /* UIKitExtension */,
+				AA6EAB00000300 /* Support Files */,
+				AA6EAB00000170 /* UIKitExtension */,
 			);
 			name = DifferenceKit;
 			path = DifferenceKit;
@@ -102,40 +105,42 @@
 				AA6EAB000000F0 /* ArraySection.swift */,
 				AA6EAB00000100 /* Changeset.swift */,
 				AA6EAB00000110 /* ContentEquatable.swift */,
-				AA6EAB00000120 /* Differentiable.swift */,
-				AA6EAB00000130 /* DifferentiableSection.swift */,
-				AA6EAB00000140 /* ElementPath.swift */,
-				AA6EAB00000150 /* StagedChangeset.swift */,
+				AA6EAB00000120 /* ContentIdentifiable.swift */,
+				AA6EAB00000130 /* Differentiable.swift */,
+				AA6EAB00000140 /* DifferentiableSection.swift */,
+				AA6EAB00000150 /* ElementPath.swift */,
+				AA6EAB00000160 /* StagedChangeset.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
 		};
-		AA6EAB00000160 /* UIKitExtension */ = {
+		AA6EAB00000170 /* UIKitExtension */ = {
 			isa = PBXGroup;
 			children = (
-				AA6EAB00000170 /* UIKitExtension.swift */,
+				AA6EAB00000180 /* UIKitExtension.swift */,
 			);
 			name = UIKitExtension;
 			sourceTree = "<group>";
 		};
-		AA6EAB00000210 /* iOS */ = {
+		AA6EAB00000220 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				AA6EAB00000220 /* Foundation.framework */,
-				AA6EAB00000370 /* UIKit.framework */,
+				AA6EAB00000230 /* Foundation.framework */,
+				AA6EAB000003A0 /* UIKit.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		AA6EAB000002E0 /* Support Files */ = {
+		AA6EAB00000300 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				AA6EAB00000300 /* DifferenceKit.modulemap */,
-				AA6EAB000002F0 /* DifferenceKit.xcconfig */,
-				AA6EAB00000350 /* DifferenceKit-dummy.m */,
-				AA6EAB00000330 /* DifferenceKit-Info.plist */,
-				AA6EAB00000340 /* DifferenceKit-prefix.pch */,
-				AA6EAB00000310 /* DifferenceKit-umbrella.h */,
+				AA6EAB00000330 /* DifferenceKit.modulemap */,
+				AA6EAB00000380 /* DifferenceKit-dummy.m */,
+				AA6EAB00000360 /* DifferenceKit-Info.plist */,
+				AA6EAB00000370 /* DifferenceKit-prefix.pch */,
+				AA6EAB00000340 /* DifferenceKit-umbrella.h */,
+				AA6EAB00000310 /* DifferenceKit.debug.xcconfig */,
+				AA6EAB00000320 /* DifferenceKit.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/DifferenceKit";
@@ -144,11 +149,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		AA6EAB000001D0 /* Headers */ = {
+		AA6EAB000001E0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA6EAB00000320 /* DifferenceKit-umbrella.h in Headers */,
+				AA6EAB00000350 /* DifferenceKit-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,12 +162,12 @@
 /* Begin PBXNativeTarget section */
 		9A546BD24EDC370DF7999D9406601F34 /* DifferenceKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA6EAB00000190 /* Build configuration list for PBXNativeTarget "DifferenceKit" */;
+			buildConfigurationList = AA6EAB000001A0 /* Build configuration list for PBXNativeTarget "DifferenceKit" */;
 			buildPhases = (
-				AA6EAB000001D0 /* Headers */,
-				AA6EAB000001E0 /* Sources */,
-				AA6EAB000001F0 /* Frameworks */,
-				AA6EAB00000200 /* Resources */,
+				AA6EAB000001E0 /* Headers */,
+				AA6EAB000001F0 /* Sources */,
+				AA6EAB00000200 /* Frameworks */,
+				AA6EAB00000210 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -201,7 +206,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AA6EAB00000200 /* Resources */ = {
+		AA6EAB00000210 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -211,21 +216,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		AA6EAB000001E0 /* Sources */ = {
+		AA6EAB000001F0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA6EAB00000240 /* Algorithm.swift in Sources */,
-				AA6EAB00000250 /* AnyDifferentiable.swift in Sources */,
-				AA6EAB00000260 /* ArraySection.swift in Sources */,
-				AA6EAB00000270 /* Changeset.swift in Sources */,
-				AA6EAB00000280 /* ContentEquatable.swift in Sources */,
-				AA6EAB00000360 /* DifferenceKit-dummy.m in Sources */,
-				AA6EAB00000290 /* Differentiable.swift in Sources */,
-				AA6EAB000002A0 /* DifferentiableSection.swift in Sources */,
-				AA6EAB000002B0 /* ElementPath.swift in Sources */,
-				AA6EAB000002C0 /* StagedChangeset.swift in Sources */,
-				AA6EAB000002D0 /* UIKitExtension.swift in Sources */,
+				AA6EAB00000250 /* Algorithm.swift in Sources */,
+				AA6EAB00000260 /* AnyDifferentiable.swift in Sources */,
+				AA6EAB00000270 /* ArraySection.swift in Sources */,
+				AA6EAB00000280 /* Changeset.swift in Sources */,
+				AA6EAB00000290 /* ContentEquatable.swift in Sources */,
+				AA6EAB000002A0 /* ContentIdentifiable.swift in Sources */,
+				AA6EAB00000390 /* DifferenceKit-dummy.m in Sources */,
+				AA6EAB000002B0 /* Differentiable.swift in Sources */,
+				AA6EAB000002C0 /* DifferentiableSection.swift in Sources */,
+				AA6EAB000002D0 /* ElementPath.swift in Sources */,
+				AA6EAB000002E0 /* StagedChangeset.swift in Sources */,
+				AA6EAB000002F0 /* UIKitExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,9 +362,9 @@
 			};
 			name = Release;
 		};
-		AA6EAB000001A0 /* Release */ = {
+		AA6EAB000001B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA6EAB000002F0 /* DifferenceKit.xcconfig */;
+			baseConfigurationReference = AA6EAB00000320 /* DifferenceKit.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -392,9 +398,9 @@
 			};
 			name = Release;
 		};
-		AA6EAB000001B0 /* Debug */ = {
+		AA6EAB000001C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA6EAB000002F0 /* DifferenceKit.xcconfig */;
+			baseConfigurationReference = AA6EAB00000310 /* DifferenceKit.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -439,11 +445,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AA6EAB00000190 /* Build configuration list for PBXNativeTarget "DifferenceKit" */ = {
+		AA6EAB000001A0 /* Build configuration list for PBXNativeTarget "DifferenceKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AA6EAB000001B0 /* Debug */,
-				AA6EAB000001A0 /* Release */,
+				AA6EAB000001C0 /* Debug */,
+				AA6EAB000001B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -53,8 +53,8 @@
 		E3487C00000700 /* MotionTransition+UITabBarControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000370 /* MotionTransition+UITabBarControllerDelegate.swift */; };
 		E3487C00000710 /* MotionTransition+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000380 /* MotionTransition+UIViewControllerTransitioningDelegate.swift */; };
 		E3487C00000720 /* MotionTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3487C00000390 /* MotionTransition.swift */; };
-		E3487C00000770 /* Motion-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E3487C00000760 /* Motion-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E3487C000007B0 /* Motion-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E3487C000007A0 /* Motion-dummy.m */; };
+		E3487C00000780 /* Motion-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E3487C00000770 /* Motion-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3487C000007C0 /* Motion-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E3487C000007B0 /* Motion-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,12 +105,13 @@
 		E3487C00000380 /* MotionTransition+UIViewControllerTransitioningDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MotionTransition+UIViewControllerTransitioningDelegate.swift"; path = "Sources/Transition/MotionTransition+UIViewControllerTransitioningDelegate.swift"; sourceTree = "<group>"; };
 		E3487C00000390 /* MotionTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MotionTransition.swift; path = Sources/Transition/MotionTransition.swift; sourceTree = "<group>"; };
 		E3487C00000440 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		E3487C00000740 /* Motion.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Motion.xcconfig; sourceTree = "<group>"; };
-		E3487C00000750 /* Motion.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Motion.modulemap; sourceTree = "<group>"; };
-		E3487C00000760 /* Motion-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Motion-umbrella.h"; sourceTree = "<group>"; };
-		E3487C00000780 /* Motion-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Motion-Info.plist"; sourceTree = "<group>"; };
-		E3487C00000790 /* Motion-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Motion-prefix.pch"; sourceTree = "<group>"; };
-		E3487C000007A0 /* Motion-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Motion-dummy.m"; sourceTree = "<group>"; };
+		E3487C00000740 /* Motion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Motion.debug.xcconfig; sourceTree = "<group>"; };
+		E3487C00000750 /* Motion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Motion.release.xcconfig; sourceTree = "<group>"; };
+		E3487C00000760 /* Motion.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Motion.modulemap; sourceTree = "<group>"; };
+		E3487C00000770 /* Motion-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Motion-umbrella.h"; sourceTree = "<group>"; };
+		E3487C00000790 /* Motion-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Motion-Info.plist"; sourceTree = "<group>"; };
+		E3487C000007A0 /* Motion-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Motion-prefix.pch"; sourceTree = "<group>"; };
+		E3487C000007B0 /* Motion-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Motion-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,12 +224,13 @@
 		E3487C00000730 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E3487C00000750 /* Motion.modulemap */,
-				E3487C00000740 /* Motion.xcconfig */,
-				E3487C000007A0 /* Motion-dummy.m */,
-				E3487C00000780 /* Motion-Info.plist */,
-				E3487C00000790 /* Motion-prefix.pch */,
-				E3487C00000760 /* Motion-umbrella.h */,
+				E3487C00000760 /* Motion.modulemap */,
+				E3487C000007B0 /* Motion-dummy.m */,
+				E3487C00000790 /* Motion-Info.plist */,
+				E3487C000007A0 /* Motion-prefix.pch */,
+				E3487C00000770 /* Motion-umbrella.h */,
+				E3487C00000740 /* Motion.debug.xcconfig */,
+				E3487C00000750 /* Motion.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Motion";
@@ -241,7 +243,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3487C00000770 /* Motion-umbrella.h in Headers */,
+				E3487C00000780 /* Motion-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,7 +323,7 @@
 				E3487C00000520 /* Motion+UIKit.swift in Sources */,
 				E3487C00000530 /* Motion+UIView.swift in Sources */,
 				E3487C00000540 /* Motion+UIViewController.swift in Sources */,
-				E3487C000007B0 /* Motion-dummy.m in Sources */,
+				E3487C000007C0 /* Motion-dummy.m in Sources */,
 				E3487C00000550 /* MotionAnimation.swift in Sources */,
 				E3487C00000560 /* MotionAnimationState.swift in Sources */,
 				E3487C00000460 /* MotionAnimator.swift in Sources */,
@@ -486,7 +488,7 @@
 		};
 		E3487C000003C0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3487C00000740 /* Motion.xcconfig */;
+			baseConfigurationReference = E3487C00000750 /* Motion.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -522,7 +524,7 @@
 		};
 		E3487C000003D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3487C00000740 /* Motion.xcconfig */;
+			baseConfigurationReference = E3487C00000740 /* Motion.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

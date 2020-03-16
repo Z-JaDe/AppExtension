@@ -22,23 +22,23 @@
 		5E608A00000390 /* RxProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A000001B0 /* RxProgress.swift */; };
 		5E608A000003A0 /* Session+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A000001C0 /* Session+Rx.swift */; };
 		5E608A000003B0 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A000001D0 /* Validation.swift */; };
-		5E608A00000400 /* RxNetwork-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E608A000003F0 /* RxNetwork-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5E608A00000440 /* RxNetwork-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A00000430 /* RxNetwork-dummy.m */; };
-		5E608A00000490 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E608A00000480 /* RxSwift.framework */; };
-		5E608A000004E0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E608A000004D0 /* Alamofire.framework */; };
+		5E608A00000410 /* RxNetwork-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E608A00000400 /* RxNetwork-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E608A00000450 /* RxNetwork-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A00000440 /* RxNetwork-dummy.m */; };
+		5E608A000004A0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E608A00000490 /* RxSwift.framework */; };
+		5E608A000004F0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E608A000004E0 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5E608A00000460 /* PBXContainerItemProxy */ = {
+		5E608A00000470 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5E608A00000450 /* RxSwift.xcodeproj */;
+			containerPortal = 5E608A00000460 /* RxSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
 			remoteInfo = RxSwift;
 		};
-		5E608A000004B0 /* PBXContainerItemProxy */ = {
+		5E608A000004C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5E608A000004A0 /* Alamofire.xcodeproj */;
+			containerPortal = 5E608A000004B0 /* Alamofire.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
 			remoteInfo = Alamofire;
@@ -64,16 +64,17 @@
 		5E608A00000200 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		5E608A00000210 /* RxNetwork.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = RxNetwork.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5E608A000002C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		5E608A000003D0 /* RxNetwork.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxNetwork.xcconfig; sourceTree = "<group>"; };
-		5E608A000003E0 /* RxNetwork.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RxNetwork.modulemap; sourceTree = "<group>"; };
-		5E608A000003F0 /* RxNetwork-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxNetwork-umbrella.h"; sourceTree = "<group>"; };
-		5E608A00000410 /* RxNetwork-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RxNetwork-Info.plist"; sourceTree = "<group>"; };
-		5E608A00000420 /* RxNetwork-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxNetwork-prefix.pch"; sourceTree = "<group>"; };
-		5E608A00000430 /* RxNetwork-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxNetwork-dummy.m"; sourceTree = "<group>"; };
-		5E608A00000450 /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxSwift; path = RxSwift.xcodeproj; sourceTree = "<group>"; };
-		5E608A00000480 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E608A000004A0 /* Alamofire */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire; path = Alamofire.xcodeproj; sourceTree = "<group>"; };
-		5E608A000004D0 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E608A000003D0 /* RxNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxNetwork.debug.xcconfig; sourceTree = "<group>"; };
+		5E608A000003E0 /* RxNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxNetwork.release.xcconfig; sourceTree = "<group>"; };
+		5E608A000003F0 /* RxNetwork.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RxNetwork.modulemap; sourceTree = "<group>"; };
+		5E608A00000400 /* RxNetwork-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxNetwork-umbrella.h"; sourceTree = "<group>"; };
+		5E608A00000420 /* RxNetwork-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RxNetwork-Info.plist"; sourceTree = "<group>"; };
+		5E608A00000430 /* RxNetwork-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxNetwork-prefix.pch"; sourceTree = "<group>"; };
+		5E608A00000440 /* RxNetwork-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxNetwork-dummy.m"; sourceTree = "<group>"; };
+		5E608A00000460 /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxSwift; path = RxSwift.xcodeproj; sourceTree = "<group>"; };
+		5E608A00000490 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E608A000004B0 /* Alamofire */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire; path = Alamofire.xcodeproj; sourceTree = "<group>"; };
+		5E608A000004E0 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F3F1F2A502920A7A2CB6E435434D0BE /* RxNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RxNetwork.framework; path = RxNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -82,9 +83,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E608A000004E0 /* Alamofire.framework in Frameworks */,
+				5E608A000004F0 /* Alamofire.framework in Frameworks */,
 				5E608A000002D0 /* Foundation.framework in Frameworks */,
-				5E608A00000490 /* RxSwift.framework in Frameworks */,
+				5E608A000004A0 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,8 +113,8 @@
 		5E608A00000060 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5E608A000004D0 /* Alamofire.framework */,
-				5E608A00000480 /* RxSwift.framework */,
+				5E608A000004E0 /* Alamofire.framework */,
+				5E608A00000490 /* RxSwift.framework */,
 				5E608A000002B0 /* iOS */,
 			);
 			name = Frameworks;
@@ -122,8 +123,8 @@
 		5E608A000000A0 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				5E608A000004A0 /* Alamofire */,
-				5E608A00000450 /* RxSwift */,
+				5E608A000004B0 /* Alamofire */,
+				5E608A00000460 /* RxSwift */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
@@ -209,12 +210,13 @@
 		5E608A000003C0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				5E608A000003E0 /* RxNetwork.modulemap */,
-				5E608A000003D0 /* RxNetwork.xcconfig */,
-				5E608A00000430 /* RxNetwork-dummy.m */,
-				5E608A00000410 /* RxNetwork-Info.plist */,
-				5E608A00000420 /* RxNetwork-prefix.pch */,
-				5E608A000003F0 /* RxNetwork-umbrella.h */,
+				5E608A000003F0 /* RxNetwork.modulemap */,
+				5E608A00000440 /* RxNetwork-dummy.m */,
+				5E608A00000420 /* RxNetwork-Info.plist */,
+				5E608A00000430 /* RxNetwork-prefix.pch */,
+				5E608A00000400 /* RxNetwork-umbrella.h */,
+				5E608A000003D0 /* RxNetwork.debug.xcconfig */,
+				5E608A000003E0 /* RxNetwork.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../../Pods/Target Support Files/RxNetwork";
@@ -227,7 +229,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E608A00000400 /* RxNetwork-umbrella.h in Headers */,
+				5E608A00000410 /* RxNetwork-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,8 +248,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				5E608A000004C0 /* PBXTargetDependency */,
-				5E608A00000470 /* PBXTargetDependency */,
+				5E608A000004D0 /* PBXTargetDependency */,
+				5E608A00000480 /* PBXTargetDependency */,
 			);
 			name = RxNetwork;
 			productName = RxNetwork;
@@ -276,10 +278,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProjectRef = 5E608A00000450 /* RxSwift */;
+					ProjectRef = 5E608A00000460 /* RxSwift */;
 				},
 				{
-					ProjectRef = 5E608A000004A0 /* Alamofire */;
+					ProjectRef = 5E608A000004B0 /* Alamofire */;
 				},
 			);
 			projectRoot = "";
@@ -313,7 +315,7 @@
 				5E608A00000310 /* NetworkError.swift in Sources */,
 				5E608A00000320 /* Response.swift in Sources */,
 				5E608A00000330 /* ResponseSerializer.swift in Sources */,
-				5E608A00000440 /* RxNetwork-dummy.m in Sources */,
+				5E608A00000450 /* RxNetwork-dummy.m in Sources */,
 				5E608A00000390 /* RxProgress.swift in Sources */,
 				5E608A00000360 /* Session+MonitorNetwork.swift in Sources */,
 				5E608A000003A0 /* Session+Rx.swift in Sources */,
@@ -325,15 +327,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5E608A00000470 /* PBXTargetDependency */ = {
+		5E608A00000480 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RxSwift;
-			targetProxy = 5E608A00000460 /* PBXContainerItemProxy */;
+			targetProxy = 5E608A00000470 /* PBXContainerItemProxy */;
 		};
-		5E608A000004C0 /* PBXTargetDependency */ = {
+		5E608A000004D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
-			targetProxy = 5E608A000004B0 /* PBXContainerItemProxy */;
+			targetProxy = 5E608A000004C0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -464,7 +466,7 @@
 		};
 		5E608A00000240 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E608A000003D0 /* RxNetwork.xcconfig */;
+			baseConfigurationReference = 5E608A000003E0 /* RxNetwork.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -501,7 +503,7 @@
 		};
 		5E608A00000250 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E608A000003D0 /* RxNetwork.xcconfig */;
+			baseConfigurationReference = 5E608A000003D0 /* RxNetwork.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";

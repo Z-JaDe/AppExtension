@@ -1,10 +1,10 @@
-////
-////  UIView+layout.swift
-////  ZiWoYou
-////
-////  Created by ZJaDe on 16/10/15.
-////  Copyright © 2016 Z_JaDe. All rights reserved.
-////
+//
+//  UIView+layout.swift
+//  ZiWoYou
+//
+//  Created by ZJaDe on 16/10/15.
+//  Copyright © 2016 Z_JaDe. All rights reserved.
+//
 
 import UIKit
 

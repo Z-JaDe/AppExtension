@@ -77,8 +77,8 @@
 		BF683600000B30 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6836000005F0 /* UIViewController.swift */; };
 		BF683600000B40 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000600 /* UIWindow.swift */; };
 		BF683600000B50 /* UIImage+ImageEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = BF683600000440 /* UIImage+ImageEffects.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF683600000BA0 /* CocoaExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BF683600000B90 /* CocoaExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF683600000BE0 /* CocoaExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000BD0 /* CocoaExtension-dummy.m */; };
+		BF683600000BB0 /* CocoaExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BF683600000BA0 /* CocoaExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF683600000BF0 /* CocoaExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BF683600000BE0 /* CocoaExtension-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,12 +155,13 @@
 		BF683600000630 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		BF683600000640 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		BF6836000006F0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		BF683600000B70 /* CocoaExtension.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaExtension.xcconfig; sourceTree = "<group>"; };
-		BF683600000B80 /* CocoaExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CocoaExtension.modulemap; sourceTree = "<group>"; };
-		BF683600000B90 /* CocoaExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaExtension-umbrella.h"; sourceTree = "<group>"; };
-		BF683600000BB0 /* CocoaExtension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CocoaExtension-Info.plist"; sourceTree = "<group>"; };
-		BF683600000BC0 /* CocoaExtension-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaExtension-prefix.pch"; sourceTree = "<group>"; };
-		BF683600000BD0 /* CocoaExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaExtension-dummy.m"; sourceTree = "<group>"; };
+		BF683600000B70 /* CocoaExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaExtension.debug.xcconfig; sourceTree = "<group>"; };
+		BF683600000B80 /* CocoaExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaExtension.release.xcconfig; sourceTree = "<group>"; };
+		BF683600000B90 /* CocoaExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CocoaExtension.modulemap; sourceTree = "<group>"; };
+		BF683600000BA0 /* CocoaExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaExtension-umbrella.h"; sourceTree = "<group>"; };
+		BF683600000BC0 /* CocoaExtension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CocoaExtension-Info.plist"; sourceTree = "<group>"; };
+		BF683600000BD0 /* CocoaExtension-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaExtension-prefix.pch"; sourceTree = "<group>"; };
+		BF683600000BE0 /* CocoaExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaExtension-dummy.m"; sourceTree = "<group>"; };
 		F59C4CDB9A34F5994BAC151E26AEE714 /* CocoaExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaExtension.framework; path = CocoaExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -445,12 +446,13 @@
 		BF683600000B60 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				BF683600000B80 /* CocoaExtension.modulemap */,
-				BF683600000B70 /* CocoaExtension.xcconfig */,
-				BF683600000BD0 /* CocoaExtension-dummy.m */,
-				BF683600000BB0 /* CocoaExtension-Info.plist */,
-				BF683600000BC0 /* CocoaExtension-prefix.pch */,
-				BF683600000B90 /* CocoaExtension-umbrella.h */,
+				BF683600000B90 /* CocoaExtension.modulemap */,
+				BF683600000BE0 /* CocoaExtension-dummy.m */,
+				BF683600000BC0 /* CocoaExtension-Info.plist */,
+				BF683600000BD0 /* CocoaExtension-prefix.pch */,
+				BF683600000BA0 /* CocoaExtension-umbrella.h */,
+				BF683600000B70 /* CocoaExtension.debug.xcconfig */,
+				BF683600000B80 /* CocoaExtension.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../../Pods/Target Support Files/CocoaExtension";
@@ -463,7 +465,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF683600000BA0 /* CocoaExtension-umbrella.h in Headers */,
+				BF683600000BB0 /* CocoaExtension-umbrella.h in Headers */,
 				BF683600000B50 /* UIImage+ImageEffects.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,7 +553,7 @@
 				BF683600000810 /* CGRect.swift in Sources */,
 				BF683600000820 /* Character.swift in Sources */,
 				BF683600000930 /* CIImageFilter.swift in Sources */,
-				BF683600000BE0 /* CocoaExtension-dummy.m in Sources */,
+				BF683600000BF0 /* CocoaExtension-dummy.m in Sources */,
 				BF683600000830 /* Comparable.swift in Sources */,
 				BF683600000840 /* Date.swift in Sources */,
 				BF683600000850 /* Dictionary.swift in Sources */,
@@ -732,7 +734,7 @@
 		};
 		BF683600000670 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF683600000B70 /* CocoaExtension.xcconfig */;
+			baseConfigurationReference = BF683600000B80 /* CocoaExtension.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -769,7 +771,7 @@
 		};
 		BF683600000680 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF683600000B70 /* CocoaExtension.xcconfig */;
+			baseConfigurationReference = BF683600000B70 /* CocoaExtension.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";

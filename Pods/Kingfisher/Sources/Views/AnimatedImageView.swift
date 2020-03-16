@@ -32,7 +32,6 @@
 //  respective owners.
 
 #if !os(watchOS)
-
 #if canImport(UIKit)
 import UIKit
 import ImageIO
@@ -299,7 +298,7 @@ open class AnimatedImageView: UIImageView {
             duration = displayLink.duration
         } else {
             // Some devices (like iPad Pro 10.5) will have a different FPS.
-            duration = 1.0 / Double(preferredFramesPerSecond)
+            duration = 1.0 / TimeInterval(preferredFramesPerSecond)
         }
 
         animator.shouldChangeFrame(with: duration) { [weak self] hasNewFrame in
@@ -534,10 +533,11 @@ extension AnimatedImageView {
 
         private func incrementCurrentFrameIndex() {
             currentFrameIndex = increment(frameIndex: currentFrameIndex)
-            if isReachMaxRepeatCount && isLastFrame {
-                isFinished = true
-            } else if currentFrameIndex == 0 {
+            if isLastFrame {
                 currentRepeatCount += 1
+                if isReachMaxRepeatCount {
+                    isFinished = true
+                }
                 delegate?.animator(self, didPlayAnimationLoops: currentRepeatCount)
             }
         }
@@ -612,5 +612,4 @@ class SafeArray<Element> {
     }
 }
 #endif
-
 #endif

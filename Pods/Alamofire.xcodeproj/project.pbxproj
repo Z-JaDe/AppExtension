@@ -40,9 +40,9 @@
 		521BBB00000550 /* URLRequest+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BBB00000290 /* URLRequest+Alamofire.swift */; };
 		521BBB00000560 /* URLSessionConfiguration+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BBB000002A0 /* URLSessionConfiguration+Alamofire.swift */; };
 		521BBB00000570 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BBB000002B0 /* Validation.swift */; };
-		521BBB000005C0 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 521BBB000005B0 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		521BBB00000600 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BBB000005F0 /* Alamofire-dummy.m */; };
-		521BBB00000620 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 521BBB00000610 /* CFNetwork.framework */; };
+		521BBB000005D0 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 521BBB000005C0 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		521BBB00000610 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BBB00000600 /* Alamofire-dummy.m */; };
+		521BBB00000630 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 521BBB00000620 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,13 +79,14 @@
 		521BBB000002A0 /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSessionConfiguration+Alamofire.swift"; path = "Source/URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
 		521BBB000002B0 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		521BBB00000360 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		521BBB00000590 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
-		521BBB000005A0 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
-		521BBB000005B0 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		521BBB000005D0 /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
-		521BBB000005E0 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		521BBB000005F0 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
-		521BBB00000610 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		521BBB00000590 /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
+		521BBB000005A0 /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
+		521BBB000005B0 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		521BBB000005C0 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		521BBB000005E0 /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
+		521BBB000005F0 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		521BBB00000600 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		521BBB00000620 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		D063EE811069D306211D06E68BEF5C09 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				521BBB00000620 /* CFNetwork.framework in Frameworks */,
+				521BBB00000630 /* CFNetwork.framework in Frameworks */,
 				521BBB00000370 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,7 +172,7 @@
 		521BBB00000350 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				521BBB00000610 /* CFNetwork.framework */,
+				521BBB00000620 /* CFNetwork.framework */,
 				521BBB00000360 /* Foundation.framework */,
 			);
 			name = iOS;
@@ -180,12 +181,13 @@
 		521BBB00000580 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				521BBB000005A0 /* Alamofire.modulemap */,
-				521BBB00000590 /* Alamofire.xcconfig */,
-				521BBB000005F0 /* Alamofire-dummy.m */,
-				521BBB000005D0 /* Alamofire-Info.plist */,
-				521BBB000005E0 /* Alamofire-prefix.pch */,
-				521BBB000005B0 /* Alamofire-umbrella.h */,
+				521BBB000005B0 /* Alamofire.modulemap */,
+				521BBB00000600 /* Alamofire-dummy.m */,
+				521BBB000005E0 /* Alamofire-Info.plist */,
+				521BBB000005F0 /* Alamofire-prefix.pch */,
+				521BBB000005C0 /* Alamofire-umbrella.h */,
+				521BBB00000590 /* Alamofire.debug.xcconfig */,
+				521BBB000005A0 /* Alamofire.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Alamofire";
@@ -198,7 +200,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				521BBB000005C0 /* Alamofire-umbrella.h in Headers */,
+				521BBB000005D0 /* Alamofire-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				521BBB00000380 /* AFError.swift in Sources */,
-				521BBB00000600 /* Alamofire-dummy.m in Sources */,
+				521BBB00000610 /* Alamofire-dummy.m in Sources */,
 				521BBB00000390 /* Alamofire.swift in Sources */,
 				521BBB000003A0 /* AlamofireExtended.swift in Sources */,
 				521BBB000003B0 /* CachedResponseHandler.swift in Sources */,
@@ -430,7 +432,7 @@
 		};
 		521BBB000002E0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 521BBB00000590 /* Alamofire.xcconfig */;
+			baseConfigurationReference = 521BBB000005A0 /* Alamofire.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -467,7 +469,7 @@
 		};
 		521BBB000002F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 521BBB00000590 /* Alamofire.xcconfig */;
+			baseConfigurationReference = 521BBB00000590 /* Alamofire.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
