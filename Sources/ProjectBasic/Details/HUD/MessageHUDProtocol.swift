@@ -8,6 +8,24 @@
 
 #if canImport(MBProgressHUD)
 import Foundation
+import RxSwift
+extension Observable {
+    public func showProgressHUD(_ text: String, in view: UIView? = nil) -> Observable<Element> {
+        var hud: HUD?
+        return `do`(afterCompleted: {
+            hud?.hide()
+        }, onSubscribed: {
+            hud = HUD.showMessage(text, to: view)
+        })
+    }
+    public func showProgressHUD(_ text: String, in hudManager: MessageHUDProtocol) -> Observable<Element> {
+        return `do`(afterCompleted: {
+            hudManager.hideMessage(text)
+        }, onSubscribed: {
+            _ = hudManager.showMessage(text)
+        })
+    }
+}
 extension UIViewController: MessageHUDProtocol {}
 public protocol MessageHUDProtocol: AssociatedObjectProtocol {
     func showMessage(_ message: String) -> HUD

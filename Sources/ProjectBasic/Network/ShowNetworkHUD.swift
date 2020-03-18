@@ -10,22 +10,18 @@ import UIKit
 import RxNetwork
 public typealias TaskVC = MessageHUDProtocol & TaskQueueProtocol
 
-public enum ShowNetworkHUD<ResultCodeType> where ResultCodeType: RawRepresentable & Equatable {
+public enum ShowNetworkHUD {
     case `default`
     case hide
-    ///忽略不展示的错误码
-    case ignoreErrorCodes([ResultCodeType])
     case show
-    case showIn(UIViewController & TaskVC)
+    case showIn(TaskVC)
 }
 
 public extension ShowNetworkHUD {
     func showResultSuccessful(_ text: String) {
-        guard text.isNotEmpty else {
-            return
-        }
+        guard text.isNotEmpty else { return }
         switch self {
-        case .default, .hide, .ignoreErrorCodes:
+        case .default, .hide:
             break
         case .show:
             HUD.showSuccess(text)
@@ -55,24 +51,11 @@ public extension ShowNetworkHUD {
         #endif
 
     }
-    func showResultError(_ text: String, resultCode: ResultCodeType? = nil) {
-        guard text.isNotEmpty else {
-            return
-        }
+    func showResultError(_ text: String) {
+        guard text.isNotEmpty else { return }
         switch self {
         case .hide:
             break
-        case .ignoreErrorCodes(let resultCodes):
-            guard let resultCode = resultCode else {
-                return
-            }
-            if resultCodes.contains(resultCode) == false {
-                #if DEBUG
-                HUD.showError(text, delay: 10.0)
-                #else
-                HUD.showError(text)
-                #endif
-            }
         case .default, .show:
             #if DEBUG
             HUD.showError(text, delay: 10.0)
