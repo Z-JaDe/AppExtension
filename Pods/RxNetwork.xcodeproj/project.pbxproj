@@ -7,38 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E608A000002D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E608A000002C0 /* Foundation.framework */; };
-		5E608A000002E0 /* ErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A000000D0 /* ErrorProtocol.swift */; };
-		5E608A000002F0 /* NetworkContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A000000E0 /* NetworkContext.swift */; };
-		5E608A00000300 /* NetworkContextCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A000000F0 /* NetworkContextCompatible.swift */; };
-		5E608A00000310 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A00000100 /* NetworkError.swift */; };
-		5E608A00000320 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A00000110 /* Response.swift */; };
-		5E608A00000330 /* ResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A00000120 /* ResponseSerializer.swift */; };
-		5E608A00000340 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A00000130 /* TargetType.swift */; };
-		5E608A00000350 /* MonitorNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A00000150 /* MonitorNetwork.swift */; };
-		5E608A00000360 /* Session+MonitorNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A00000160 /* Session+MonitorNetwork.swift */; };
-		5E608A00000370 /* NetworkContext+RxMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A00000180 /* NetworkContext+RxMap.swift */; };
-		5E608A00000380 /* NetworkContext+RxResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A00000190 /* NetworkContext+RxResponse.swift */; };
-		5E608A00000390 /* RxProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A000001B0 /* RxProgress.swift */; };
-		5E608A000003A0 /* Session+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A000001C0 /* Session+Rx.swift */; };
-		5E608A000003B0 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A000001D0 /* Validation.swift */; };
-		5E608A00000410 /* RxNetwork-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E608A00000400 /* RxNetwork-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5E608A00000450 /* RxNetwork-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A00000440 /* RxNetwork-dummy.m */; };
-		5E608A000004A0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E608A00000490 /* RxSwift.framework */; };
-		5E608A000004F0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E608A000004E0 /* Alamofire.framework */; };
+		5E608A00000290 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E608A00000280 /* Foundation.framework */; };
+		5E608A000002A0 /* ErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A000000D0 /* ErrorProtocol.swift */; };
+		5E608A000002B0 /* NetworkContextCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A000000E0 /* NetworkContextCompatible.swift */; };
+		5E608A000002C0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A000000F0 /* NetworkError.swift */; };
+		5E608A000002D0 /* ResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A00000100 /* ResponseSerializer.swift */; };
+		5E608A000002E0 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A00000110 /* TargetType.swift */; };
+		5E608A000002F0 /* MonitorNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A00000130 /* MonitorNetwork.swift */; };
+		5E608A00000300 /* Session+MonitorNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A00000140 /* Session+MonitorNetwork.swift */; };
+		5E608A00000310 /* NetworkContext+RxResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A00000160 /* NetworkContext+RxResponse.swift */; };
+		5E608A00000320 /* RxProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A00000170 /* RxProgress.swift */; };
+		5E608A00000330 /* Session+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A00000180 /* Session+Rx.swift */; };
+		5E608A00000340 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A00000190 /* Validation.swift */; };
+		5E608A000003A0 /* RxNetwork-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E608A00000390 /* RxNetwork-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E608A000003E0 /* RxNetwork-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E608A000003D0 /* RxNetwork-dummy.m */; };
+		5E608A00000430 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E608A00000420 /* RxSwift.framework */; };
+		5E608A00000480 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E608A00000470 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5E608A00000470 /* PBXContainerItemProxy */ = {
+		5E608A00000400 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5E608A00000460 /* RxSwift.xcodeproj */;
+			containerPortal = 5E608A000003F0 /* RxSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = F0179EE061353B7A322F596E97844774;
 			remoteInfo = RxSwift;
 		};
-		5E608A000004C0 /* PBXContainerItemProxy */ = {
+		5E608A00000450 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5E608A000004B0 /* Alamofire.xcodeproj */;
+			containerPortal = 5E608A00000440 /* Alamofire.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 81B7E9B7CD0CADA087A4BB042FBA92E7;
 			remoteInfo = Alamofire;
@@ -47,45 +44,42 @@
 
 /* Begin PBXFileReference section */
 		5E608A000000D0 /* ErrorProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ErrorProtocol.swift; sourceTree = "<group>"; };
-		5E608A000000E0 /* NetworkContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetworkContext.swift; sourceTree = "<group>"; };
-		5E608A000000F0 /* NetworkContextCompatible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetworkContextCompatible.swift; sourceTree = "<group>"; };
-		5E608A00000100 /* NetworkError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		5E608A00000110 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		5E608A00000120 /* ResponseSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ResponseSerializer.swift; sourceTree = "<group>"; };
-		5E608A00000130 /* TargetType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
-		5E608A00000150 /* MonitorNetwork.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MonitorNetwork.swift; sourceTree = "<group>"; };
-		5E608A00000160 /* Session+MonitorNetwork.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Session+MonitorNetwork.swift"; sourceTree = "<group>"; };
-		5E608A00000180 /* NetworkContext+RxMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NetworkContext+RxMap.swift"; sourceTree = "<group>"; };
-		5E608A00000190 /* NetworkContext+RxResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NetworkContext+RxResponse.swift"; sourceTree = "<group>"; };
-		5E608A000001B0 /* RxProgress.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RxProgress.swift; sourceTree = "<group>"; };
-		5E608A000001C0 /* Session+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Session+Rx.swift"; sourceTree = "<group>"; };
-		5E608A000001D0 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		5E608A000001F0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		5E608A00000200 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		5E608A00000210 /* RxNetwork.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = RxNetwork.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		5E608A000002C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		5E608A000003D0 /* RxNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxNetwork.debug.xcconfig; sourceTree = "<group>"; };
-		5E608A000003E0 /* RxNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxNetwork.release.xcconfig; sourceTree = "<group>"; };
-		5E608A000003F0 /* RxNetwork.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RxNetwork.modulemap; sourceTree = "<group>"; };
-		5E608A00000400 /* RxNetwork-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxNetwork-umbrella.h"; sourceTree = "<group>"; };
-		5E608A00000420 /* RxNetwork-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RxNetwork-Info.plist"; sourceTree = "<group>"; };
-		5E608A00000430 /* RxNetwork-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxNetwork-prefix.pch"; sourceTree = "<group>"; };
-		5E608A00000440 /* RxNetwork-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxNetwork-dummy.m"; sourceTree = "<group>"; };
-		5E608A00000460 /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxSwift; path = RxSwift.xcodeproj; sourceTree = "<group>"; };
-		5E608A00000490 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E608A000004B0 /* Alamofire */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire; path = Alamofire.xcodeproj; sourceTree = "<group>"; };
-		5E608A000004E0 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E608A000000E0 /* NetworkContextCompatible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetworkContextCompatible.swift; sourceTree = "<group>"; };
+		5E608A000000F0 /* NetworkError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		5E608A00000100 /* ResponseSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ResponseSerializer.swift; sourceTree = "<group>"; };
+		5E608A00000110 /* TargetType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		5E608A00000130 /* MonitorNetwork.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MonitorNetwork.swift; sourceTree = "<group>"; };
+		5E608A00000140 /* Session+MonitorNetwork.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Session+MonitorNetwork.swift"; sourceTree = "<group>"; };
+		5E608A00000160 /* NetworkContext+RxResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NetworkContext+RxResponse.swift"; sourceTree = "<group>"; };
+		5E608A00000170 /* RxProgress.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RxProgress.swift; sourceTree = "<group>"; };
+		5E608A00000180 /* Session+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Session+Rx.swift"; sourceTree = "<group>"; };
+		5E608A00000190 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		5E608A000001B0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		5E608A000001C0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		5E608A000001D0 /* RxNetwork.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = RxNetwork.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5E608A00000280 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5E608A00000360 /* RxNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxNetwork.debug.xcconfig; sourceTree = "<group>"; };
+		5E608A00000370 /* RxNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxNetwork.release.xcconfig; sourceTree = "<group>"; };
+		5E608A00000380 /* RxNetwork.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RxNetwork.modulemap; sourceTree = "<group>"; };
+		5E608A00000390 /* RxNetwork-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxNetwork-umbrella.h"; sourceTree = "<group>"; };
+		5E608A000003B0 /* RxNetwork-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RxNetwork-Info.plist"; sourceTree = "<group>"; };
+		5E608A000003C0 /* RxNetwork-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxNetwork-prefix.pch"; sourceTree = "<group>"; };
+		5E608A000003D0 /* RxNetwork-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxNetwork-dummy.m"; sourceTree = "<group>"; };
+		5E608A000003F0 /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxSwift; path = RxSwift.xcodeproj; sourceTree = "<group>"; };
+		5E608A00000420 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E608A00000440 /* Alamofire */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire; path = Alamofire.xcodeproj; sourceTree = "<group>"; };
+		5E608A00000470 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F3F1F2A502920A7A2CB6E435434D0BE /* RxNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RxNetwork.framework; path = RxNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5E608A00000290 /* Frameworks */ = {
+		5E608A00000250 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E608A000004F0 /* Alamofire.framework in Frameworks */,
-				5E608A000002D0 /* Foundation.framework in Frameworks */,
-				5E608A000004A0 /* RxSwift.framework in Frameworks */,
+				5E608A00000480 /* Alamofire.framework in Frameworks */,
+				5E608A00000290 /* Foundation.framework in Frameworks */,
+				5E608A00000430 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,9 +107,9 @@
 		5E608A00000060 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5E608A000004E0 /* Alamofire.framework */,
-				5E608A00000490 /* RxSwift.framework */,
-				5E608A000002B0 /* iOS */,
+				5E608A00000470 /* Alamofire.framework */,
+				5E608A00000420 /* RxSwift.framework */,
+				5E608A00000270 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -123,8 +117,8 @@
 		5E608A000000A0 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				5E608A000004B0 /* Alamofire */,
-				5E608A00000460 /* RxSwift */,
+				5E608A00000440 /* Alamofire */,
+				5E608A000003F0 /* RxSwift */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
@@ -133,11 +127,10 @@
 			isa = PBXGroup;
 			children = (
 				5E608A000000C0 /* Core */,
-				5E608A00000140 /* MonitorNetwork */,
-				5E608A00000170 /* NetworkContext */,
-				5E608A000001E0 /* Pod */,
-				5E608A000001A0 /* Session */,
-				5E608A000003C0 /* Support Files */,
+				5E608A00000120 /* MonitorNetwork */,
+				5E608A000001A0 /* Pod */,
+				5E608A00000150 /* Session */,
+				5E608A00000350 /* Support Files */,
 			);
 			name = RxNetwork;
 			path = ../BaseSupport/RxNetwork;
@@ -147,76 +140,65 @@
 			isa = PBXGroup;
 			children = (
 				5E608A000000D0 /* ErrorProtocol.swift */,
-				5E608A000000E0 /* NetworkContext.swift */,
-				5E608A000000F0 /* NetworkContextCompatible.swift */,
-				5E608A00000100 /* NetworkError.swift */,
-				5E608A00000110 /* Response.swift */,
-				5E608A00000120 /* ResponseSerializer.swift */,
-				5E608A00000130 /* TargetType.swift */,
+				5E608A000000E0 /* NetworkContextCompatible.swift */,
+				5E608A000000F0 /* NetworkError.swift */,
+				5E608A00000100 /* ResponseSerializer.swift */,
+				5E608A00000110 /* TargetType.swift */,
 			);
 			name = Core;
 			path = Sources/Core;
 			sourceTree = "<group>";
 		};
-		5E608A00000140 /* MonitorNetwork */ = {
+		5E608A00000120 /* MonitorNetwork */ = {
 			isa = PBXGroup;
 			children = (
-				5E608A00000150 /* MonitorNetwork.swift */,
-				5E608A00000160 /* Session+MonitorNetwork.swift */,
+				5E608A00000130 /* MonitorNetwork.swift */,
+				5E608A00000140 /* Session+MonitorNetwork.swift */,
 			);
 			name = MonitorNetwork;
 			path = Sources/MonitorNetwork;
 			sourceTree = "<group>";
 		};
-		5E608A00000170 /* NetworkContext */ = {
+		5E608A00000150 /* Session */ = {
 			isa = PBXGroup;
 			children = (
-				5E608A00000180 /* NetworkContext+RxMap.swift */,
-				5E608A00000190 /* NetworkContext+RxResponse.swift */,
-			);
-			name = NetworkContext;
-			path = Sources/NetworkContext;
-			sourceTree = "<group>";
-		};
-		5E608A000001A0 /* Session */ = {
-			isa = PBXGroup;
-			children = (
-				5E608A000001B0 /* RxProgress.swift */,
-				5E608A000001C0 /* Session+Rx.swift */,
-				5E608A000001D0 /* Validation.swift */,
+				5E608A00000160 /* NetworkContext+RxResponse.swift */,
+				5E608A00000170 /* RxProgress.swift */,
+				5E608A00000180 /* Session+Rx.swift */,
+				5E608A00000190 /* Validation.swift */,
 			);
 			name = Session;
 			path = Sources/Session;
 			sourceTree = "<group>";
 		};
-		5E608A000001E0 /* Pod */ = {
+		5E608A000001A0 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				5E608A000001F0 /* LICENSE */,
-				5E608A00000200 /* README.md */,
-				5E608A00000210 /* RxNetwork.podspec */,
+				5E608A000001B0 /* LICENSE */,
+				5E608A000001C0 /* README.md */,
+				5E608A000001D0 /* RxNetwork.podspec */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		5E608A000002B0 /* iOS */ = {
+		5E608A00000270 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				5E608A000002C0 /* Foundation.framework */,
+				5E608A00000280 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		5E608A000003C0 /* Support Files */ = {
+		5E608A00000350 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				5E608A000003F0 /* RxNetwork.modulemap */,
-				5E608A00000440 /* RxNetwork-dummy.m */,
-				5E608A00000420 /* RxNetwork-Info.plist */,
-				5E608A00000430 /* RxNetwork-prefix.pch */,
-				5E608A00000400 /* RxNetwork-umbrella.h */,
-				5E608A000003D0 /* RxNetwork.debug.xcconfig */,
-				5E608A000003E0 /* RxNetwork.release.xcconfig */,
+				5E608A00000380 /* RxNetwork.modulemap */,
+				5E608A000003D0 /* RxNetwork-dummy.m */,
+				5E608A000003B0 /* RxNetwork-Info.plist */,
+				5E608A000003C0 /* RxNetwork-prefix.pch */,
+				5E608A00000390 /* RxNetwork-umbrella.h */,
+				5E608A00000360 /* RxNetwork.debug.xcconfig */,
+				5E608A00000370 /* RxNetwork.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../../Pods/Target Support Files/RxNetwork";
@@ -225,11 +207,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		5E608A00000270 /* Headers */ = {
+		5E608A00000230 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E608A00000410 /* RxNetwork-umbrella.h in Headers */,
+				5E608A000003A0 /* RxNetwork-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,18 +220,18 @@
 /* Begin PBXNativeTarget section */
 		BC77B7E6DD2071E3D29825D44F226CB5 /* RxNetwork */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5E608A00000230 /* Build configuration list for PBXNativeTarget "RxNetwork" */;
+			buildConfigurationList = 5E608A000001F0 /* Build configuration list for PBXNativeTarget "RxNetwork" */;
 			buildPhases = (
-				5E608A00000270 /* Headers */,
-				5E608A00000280 /* Sources */,
-				5E608A00000290 /* Frameworks */,
-				5E608A000002A0 /* Resources */,
+				5E608A00000230 /* Headers */,
+				5E608A00000240 /* Sources */,
+				5E608A00000250 /* Frameworks */,
+				5E608A00000260 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5E608A000004D0 /* PBXTargetDependency */,
-				5E608A00000480 /* PBXTargetDependency */,
+				5E608A00000460 /* PBXTargetDependency */,
+				5E608A00000410 /* PBXTargetDependency */,
 			);
 			name = RxNetwork;
 			productName = RxNetwork;
@@ -278,10 +260,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProjectRef = 5E608A00000460 /* RxSwift */;
+					ProjectRef = 5E608A000003F0 /* RxSwift */;
 				},
 				{
-					ProjectRef = 5E608A000004B0 /* Alamofire */;
+					ProjectRef = 5E608A00000440 /* Alamofire */;
 				},
 			);
 			projectRoot = "";
@@ -292,7 +274,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5E608A000002A0 /* Resources */ = {
+		5E608A00000260 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -302,40 +284,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5E608A00000280 /* Sources */ = {
+		5E608A00000240 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E608A000002E0 /* ErrorProtocol.swift in Sources */,
-				5E608A00000350 /* MonitorNetwork.swift in Sources */,
-				5E608A00000370 /* NetworkContext+RxMap.swift in Sources */,
-				5E608A00000380 /* NetworkContext+RxResponse.swift in Sources */,
-				5E608A000002F0 /* NetworkContext.swift in Sources */,
-				5E608A00000300 /* NetworkContextCompatible.swift in Sources */,
-				5E608A00000310 /* NetworkError.swift in Sources */,
-				5E608A00000320 /* Response.swift in Sources */,
-				5E608A00000330 /* ResponseSerializer.swift in Sources */,
-				5E608A00000450 /* RxNetwork-dummy.m in Sources */,
-				5E608A00000390 /* RxProgress.swift in Sources */,
-				5E608A00000360 /* Session+MonitorNetwork.swift in Sources */,
-				5E608A000003A0 /* Session+Rx.swift in Sources */,
-				5E608A00000340 /* TargetType.swift in Sources */,
-				5E608A000003B0 /* Validation.swift in Sources */,
+				5E608A000002A0 /* ErrorProtocol.swift in Sources */,
+				5E608A000002F0 /* MonitorNetwork.swift in Sources */,
+				5E608A00000310 /* NetworkContext+RxResponse.swift in Sources */,
+				5E608A000002B0 /* NetworkContextCompatible.swift in Sources */,
+				5E608A000002C0 /* NetworkError.swift in Sources */,
+				5E608A000002D0 /* ResponseSerializer.swift in Sources */,
+				5E608A000003E0 /* RxNetwork-dummy.m in Sources */,
+				5E608A00000320 /* RxProgress.swift in Sources */,
+				5E608A00000300 /* Session+MonitorNetwork.swift in Sources */,
+				5E608A00000330 /* Session+Rx.swift in Sources */,
+				5E608A000002E0 /* TargetType.swift in Sources */,
+				5E608A00000340 /* Validation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5E608A00000480 /* PBXTargetDependency */ = {
+		5E608A00000410 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RxSwift;
-			targetProxy = 5E608A00000470 /* PBXContainerItemProxy */;
+			targetProxy = 5E608A00000400 /* PBXContainerItemProxy */;
 		};
-		5E608A000004D0 /* PBXTargetDependency */ = {
+		5E608A00000460 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
-			targetProxy = 5E608A000004C0 /* PBXContainerItemProxy */;
+			targetProxy = 5E608A00000450 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -464,9 +443,9 @@
 			};
 			name = Release;
 		};
-		5E608A00000240 /* Release */ = {
+		5E608A00000200 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E608A000003E0 /* RxNetwork.release.xcconfig */;
+			baseConfigurationReference = 5E608A00000370 /* RxNetwork.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -501,9 +480,9 @@
 			};
 			name = Release;
 		};
-		5E608A00000250 /* Debug */ = {
+		5E608A00000210 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E608A000003D0 /* RxNetwork.debug.xcconfig */;
+			baseConfigurationReference = 5E608A00000360 /* RxNetwork.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -549,11 +528,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5E608A00000230 /* Build configuration list for PBXNativeTarget "RxNetwork" */ = {
+		5E608A000001F0 /* Build configuration list for PBXNativeTarget "RxNetwork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5E608A00000250 /* Debug */,
-				5E608A00000240 /* Release */,
+				5E608A00000210 /* Debug */,
+				5E608A00000200 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -58,7 +58,7 @@ public extension ShowNetworkHUD {
             break
         case .default, .show:
             #if DEBUG
-            HUD.showError(text, delay: 10.0)
+            HUD.showError(text, duration: 10.0)
             #else
             HUD.showError(text)
             #endif

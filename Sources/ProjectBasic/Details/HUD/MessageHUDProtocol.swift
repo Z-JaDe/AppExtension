@@ -33,9 +33,9 @@ public protocol MessageHUDProtocol: AssociatedObjectProtocol {
     func hideMessage(_ message: String)
 
     func showSuccess(_ text: String)
-    func showSuccess(_ text: String, delay: TimeInterval)
+    func showSuccess(_ text: String, duration: TimeInterval)
     func showError(_ text: String)
-    func showError(_ text: String, delay: TimeInterval)
+    func showError(_ text: String, duration: TimeInterval)
 }
 private var hudKey: UInt8 = 0
 private var messageArrKey: UInt8 = 0
@@ -51,7 +51,7 @@ extension MessageHUDProtocol {
 extension MessageHUDProtocol where Self: UIViewController {
     fileprivate func show() {
         DispatchQueue.main.async {
-            self.hud._hud.label.numberOfLines = 0
+            self.hud.unwrap.label.numberOfLines = 0
             self.hud.text = self.messageArr.last ?? ""
             self.hud.show(to: self.view)
         }
@@ -95,14 +95,14 @@ public extension MessageHUDProtocol where Self: UIViewController {
     func showSuccess(_ text: String) {
         HUD.showSuccess(text, to: self.view)
     }
-    func showSuccess(_ text: String, delay: TimeInterval) {
-        HUD.showSuccess(text, delay: delay, to: self.view)
+    func showSuccess(_ text: String, duration: TimeInterval) {
+        HUD.showSuccess(text, duration: duration, to: self.view)
     }
     func showError(_ text: String) {
         HUD.showError(text, to: self.view)
     }
-    func showError(_ text: String, delay: TimeInterval) {
-        HUD.showError(text, delay: delay, to: self.view)
+    func showError(_ text: String, duration: TimeInterval) {
+        HUD.showError(text, duration: duration, to: self.view)
     }
 }
 #endif

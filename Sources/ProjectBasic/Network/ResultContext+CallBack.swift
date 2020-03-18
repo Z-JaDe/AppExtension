@@ -9,8 +9,8 @@
 import Foundation
 import RxSwift
 import RxNetwork
-extension Observable where Element: ResponseContextCompatible {
-    public func resultCallback(_ closure: @escaping (Result<Element.Value, Error>) -> Void) -> Disposable {
+extension Observable where Element: RNResponseCompatible {
+    public func resultCallback(_ closure: @escaping (Result<Element.Success, Error>) -> Void) -> Disposable {
         self.logDebug("_请求回调_").subscribe(onNext: { (element) in
             closure(element.result.mapError({$0}))
         }, onError: { (error) in
@@ -19,8 +19,8 @@ extension Observable where Element: ResponseContextCompatible {
     }
 }
 // MARK: -
-extension Observable where Element: ResponseContextCompatible {
-    public func valueCallback(_ closure: @escaping (Element.Value?) -> Void) -> Disposable {
+extension Observable where Element: RNResponseCompatible {
+    public func valueCallback(_ closure: @escaping (Element.Success?) -> Void) -> Disposable {
         self.resultCallback { (result) in
             closure(try? result.get())
         }

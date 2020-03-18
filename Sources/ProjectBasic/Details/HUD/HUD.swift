@@ -15,25 +15,25 @@ func rootWindow() -> UIWindow {
 
 public class HUD {
     public init() {}
-    fileprivate(set) lazy var _hud: JDProgressHUD = {
-        let _hud = JDProgressHUD(frame: CGRect.zero)
-        _hud.removeFromSuperViewOnHide = true
-        return _hud
+    fileprivate(set) lazy var unwrap: JDProgressHUD = {
+        let unwrap = JDProgressHUD(frame: CGRect.zero)
+        unwrap.removeFromSuperViewOnHide = true
+        return unwrap
     }()
     public var text: String {
-        get { _hud.label.text ?? "" }
-        set { _hud.label.text = newValue }
+        get { unwrap.label.text ?? "" }
+        set { unwrap.label.text = newValue }
     }
     public var canInteractive: Bool {
-        get { _hud.canInteractive }
-        set { _hud.canInteractive = newValue }
+        get { unwrap.canInteractive }
+        set { unwrap.canInteractive = newValue }
     }
 
     public func show(to view: UIView, animated: Bool = true) {
-        _hud.show(to: view, animated: animated)
+        unwrap.show(to: view, animated: animated)
     }
     public func hide(hideType: HUDHideType = .fade, delay: TimeInterval = 0, completion: (() -> Void)? = nil) {
-        _hud.hide(hideType: hideType, delay: delay, completion: completion)
+        unwrap.hide(hideType: hideType, delay: delay, completion: completion)
     }
 }
 
@@ -56,40 +56,42 @@ extension HUD {
 
 }
 extension HUD {
-    public static func showSuccess(_ text: String, delay: TimeInterval = 1.5, to view: UIView? = nil) {
-        self.showState(text, "success", delay, to: view)
+    public struct State {
+        public var icon: UIImage?
+        public var duration: TimeInterval
+        public static var success: State = State(icon: UIImage(named: "icunwrap_success"), duration: 1.5)
+        public static var info: State = State(icon: UIImage(named: "icunwrap_info"), duration: 1.5)
+        public static var error: State = State(icon: UIImage(named: "icunwrap_error"), duration: 2.5)
     }
-    public static func showInfo(_ text: String, delay: TimeInterval = 1.5, to view: UIView? = nil) {
-        let info = "info"
-        self.showState(text, image(info) != nil ? info : "success", delay, to: view)
+    public static func showSuccess(_ text: String, duration: TimeInterval? = nil, to view: UIView? = nil) {
+        showState(text, State.success, duration, to: view)
     }
-    public static func showError(_ text: String, delay: TimeInterval = 2.5, to view: UIView? = nil) {
-        self.showState(text, "error", delay, to: view)
+    public static func showInfo(_ text: String, duration: TimeInterval? = nil, to view: UIView? = nil) {
+        showState(text, State.info, duration, to: view)
     }
-    private static func showState(_ text: String, _ iconName: String, _ delay: TimeInterval, to view: UIView?) {
+    public static func showError(_ text: String, duration: TimeInterval? = nil, to view: UIView? = nil) {
+        showState(text, State.error, duration, to: view)
+    }
+    private static func showState(_ text: String, _ state: State, _ duration: TimeInterval?, to view: UIView?) {
         DispatchQueue.main.async {
             let hud = HUD()
             hud.canInteractive = true
-            hud._hud.hideWhenTap()
-            hud._hud.detailsLabel.text = text
-            if let image: UIImage = HUD.image(iconName) {
-                let customView = UIImageView(image: image)
-                hud._hud.customView = customView
+            hud.unwrap.hideWhenTap()
+            hud.unwrap.detailsLabel.text = text
+            if let icon = state.icon {
+                hud.unwrap.customView = UIImageView(image: icon)
             }
-            hud._hud.mode = .customView
-            hud._hud.offset.y = -50
+            hud.unwrap.mode = .customView
+            hud.unwrap.offset.y = -50
             let view = view ?? rootWindow()
             hud.show(to: view)
-            hud.hide(hideType: .falling, delay: delay)
+            hud.hide(hideType: .falling, delay: duration ?? state.duration)
         }
-    }
-    private static func image(_ name: String) -> UIImage? {
-        UIImage(named: "ic_hud_\(name)")
     }
 }
 extension HUD: Equatable {
     public static func == (lhs: HUD, rhs: HUD) -> Bool {
-        lhs._hud == rhs._hud
+        lhs.unwrap == rhs.unwrap
     }
 }
 extension HUD {
@@ -98,24 +100,24 @@ extension HUD {
     public static func showPrompt(_ text: String, to view: UIView? = nil) {
         DispatchQueue.main.async {
             let promptHUD = HUD()
-            let _hud = promptHUD._hud
-            _hud.canInteractive = true
-            _hud.hideWhenTap()
-            _hud.detailsLabel.text = text
-            _hud.mode = .text
-            _hud.margin = 10
-            _hud.offset.y = {
+            let unwrap = promptHUD.unwrap
+            unwrap.canInteractive = true
+            unwrap.hideWhenTap()
+            unwrap.detailsLabel.text = text
+            unwrap.mode = .text
+            unwrap.margin = 10
+            unwrap.offset.y = {
                 var offsetY = CGFloat(50 - promptHUDArray.count * 50)
                 if offsetY < -150 {
                     offsetY = -150
                 }
                 return offsetY
             }()
-            _hud.bezelView.style = .solidColor
-            _hud.bezelView.color = Color.black
-            _hud.bezelView.layer.borderWidth = 1
-            _hud.bezelView.layer.borderColor = Color.white.cgColor
-            _hud.detailsLabel.textColor = Color.white
+            unwrap.bezelView.style = .solidColor
+            unwrap.bezelView.color = Color.black
+            unwrap.bezelView.layer.borderWidth = 1
+            unwrap.bezelView.layer.borderColor = Color.white.cgColor
+            unwrap.detailsLabel.textColor = Color.white
 
             let view = view ?? rootWindow()
             promptHUDArray.append(promptHUD)
@@ -132,13 +134,13 @@ extension HUD {
 extension HUD {
     @discardableResult
     public func custom(_ closure: (MBBackgroundView) -> UIView) -> HUD {
-        self._hud.margin = 0
-        self._hud.mode = .customView
-        self._hud.bezelView.style = .solidColor
-        self._hud.bezelView.color = Color.clear
-        self._hud.backgroundView.style = .solidColor
-        self._hud.backgroundView.color = Color.black.withAlphaComponent(0.75)
-        self._hud.customView = closure(self._hud.backgroundView)
+        unwrap.margin = 0
+        unwrap.mode = .customView
+        unwrap.bezelView.style = .solidColor
+        unwrap.bezelView.color = Color.clear
+        unwrap.backgroundView.style = .solidColor
+        unwrap.backgroundView.color = Color.black.withAlphaComponent(0.75)
+        unwrap.customView = closure(unwrap.backgroundView)
         return self
     }
     public static func showCustom(_ closure: @escaping (MBBackgroundView) -> UIView) -> HUD {
