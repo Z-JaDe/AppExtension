@@ -13,28 +13,20 @@ import RxCocoa
 public class LazyGetDataTask<Value: Equatable>: DisposeBagProtocol {
     public init() {}
     enum RSARequestState {
-        case noRequest
-        case inRequest
+        case initialized
+        case requestIng
+        case finished
 
         func canRequest() -> Bool {
             switch self {
-            case .inRequest:
-                return false
-            case .noRequest:
-                return true
+            case .initialized, .finished: return true
+            case .requestIng: return false
             }
-        }
-    }
-    enum Result<Value> {
-        case success(Value)
-        case failure(Error)
-        init(value: Value) {
-            self = .success(value)
         }
     }
     private let valueSubject: PublishSubject<()> = PublishSubject()
     /// ZJaDe: value负责记录，同时控制信号发送
-    var result: Result<Value?> = Result(value: nil) {
+    var result: Result<Value?, Error> = .success(nil) {
         didSet {
             switch result {
             case .success(let value):
@@ -55,7 +47,7 @@ public class LazyGetDataTask<Value: Equatable>: DisposeBagProtocol {
         }
     }
 
-    private var requestState: RSARequestState = .noRequest
+    private var requestState: RSARequestState = .initialized
     public var requestClosure: ((AnyObserver<Value?>) -> Void)?
     /// ZJaDe: 手动设置value 发射信号
     public func change(_ value: Value) {
@@ -64,62 +56,62 @@ public class LazyGetDataTask<Value: Equatable>: DisposeBagProtocol {
     /// ZJaDe: value重置为nil 不发射信号，下次获取时再request数据
     public func cleanValue() {
         self.result = .success(nil)
-        self.requestState = .noRequest
+        self.requestState = .initialized
     }
     /// ZJaDe: value重置为nil 不发射信号，但是会马上request数据
     public func resetValue() {
         self.cleanValue()
         self.requestIfNeed()
     }
-
+    public enum ErrorEventHandle {
+        case error
+        case complete
+        case never
+    }
     public func valueObservable(whenError: ErrorEventHandle = .never) -> Observable<Value> {
-        self.valueSubject
-            .observeOn(MainScheduler.asyncInstance)
-            .flatMapLatest({[weak self] (_) -> Observable<Value> in
+        Observable<Value>.create { (observer) -> Disposable in
+            let disposable = self.valueSubject.observeOn(MainScheduler.asyncInstance).subscribeOnNext({ [weak self] (_) in
                 guard let self = self else {
-                    throw AppError.deallocError
+                    observer.onError(AppError.deallocError)
+                    return
                 }
                 switch self.result {
                 case .failure(let error):
                     switch whenError {
-                    case .complete: return .empty()
-                    case .error: throw error
-                    case .never: return .never()
+                    case .complete: observer.onCompleted()
+                    case .error: observer.onError(error)
+                    case .never: break
                     }
                 case .success(let value):
                     if let value = value {
-                        return .just(value)
-                    } else {
-                        return .never()
+                        observer.onNext(value)
                     }
-                }
-            }).do(onSubscribed: { [weak self] in
-                guard let self = self else { return }
-                if let value = self.value {
-                    DispatchQueue.main.async {
-                        self.result = .success(value)
-                    }
-                } else {
-                    self.requestIfNeed()
                 }
             })
-            .distinctUntilChanged()
-            .logDebug("task: \(Value.self), \(String(describing: self.value))")
+            if let value = self.value { // 不使用ReplaySubject 是因为result的failure不想被新的订阅信号直接接收
+                self.result = .success(value)
+            } else {
+                self.requestIfNeed()
+            }
+            defer {
+            }
+            return Disposables.create([disposable])
+        }.distinctUntilChanged().logDebug("task: \(Value.self), \(String(describing: self.value))")
     }
     func requestIfNeed() {
         guard self.requestState.canRequest() else {
             return
         }
         if let requestClosure = self.requestClosure {
-            self.requestState = .inRequest
+            self.requestState = .requestIng
             requestClosure(AnyObserver<Value?> { (event) in
                 switch event {
                 case .next(let value):
                     self.result = .success(value)
-                    self.requestState = .noRequest
+                    self.requestState = .finished
                 case .error(let error):
                     self.result = .failure(error)
-                    self.requestState = .noRequest
+                    self.requestState = .finished
                 case .completed:
                     break
                 }

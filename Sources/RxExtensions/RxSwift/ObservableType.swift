@@ -10,12 +10,6 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-public enum ErrorEventHandle {
-    case error
-    case complete
-    case never
-}
-
 public extension ObservableType {
     func mapToVoid() -> Observable<()> {
         map {_ in ()}

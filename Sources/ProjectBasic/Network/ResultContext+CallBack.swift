@@ -14,7 +14,7 @@ extension Observable where Element: RNResponseCompatible {
         self.logDebug("_请求回调_").subscribe(onNext: { (element) in
             closure(element.result.mapError({$0}))
         }, onError: { (error) in
-            closure(.failure(error))
+            closure(.failure(error._mapError()))
         })
     }
 }
