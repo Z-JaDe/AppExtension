@@ -11,22 +11,22 @@ import RxSwift
 import Alamofire
 import RxNetwork
 extension ObservableType where Element: DataRequest {
-    public func mapDictResult() -> Observable<RNDataResponse<DictResultModel>> {
+    public func mapDictResult() -> Single<RNDataResponse<DictResultModel>> {
         responseMap(type: DictResultModel.self)
     }
-    public func mapResult<T: Decodable>(type: T.Type) -> Observable<RNDataResponse<ResultModel<T>>> {
+    public func mapResult<T: Decodable>(type: T.Type) -> Single<RNDataResponse<ResultModel<T>>> {
         responseMap(type: ResultModel<T>.self)
     }
-    public func mapStringResult() -> Observable<RNDataResponse<StringResultModel>> {
+    public func mapStringResult() -> Single<RNDataResponse<StringResultModel>> {
         responseMap(type: StringResultModel.self)
     }
-    public func mapObject<T: Decodable>(type: T.Type) -> Observable<RNDataResponse<ObjectResultModel<T>>> {
+    public func mapObject<T: Decodable>(type: T.Type) -> Single<RNDataResponse<ObjectResultModel<T>>> {
         responseMap(type: ObjectResultModel<T>.self)
     }
-    public func mapArray<T: Decodable>(type: T.Type) -> Observable<RNDataResponse<ArrayResultModel<T>>> {
+    public func mapArray<T: Decodable>(type: T.Type) -> Single<RNDataResponse<ArrayResultModel<T>>> {
         responseMap(type: ArrayResultModel<T>.self)
     }
-    public func mapList<T: Decodable>(type: T.Type) -> Observable<RNDataResponse<ObjectResultModel<ListResultModel<T>>>> {
+    public func mapList<T: Decodable>(type: T.Type) -> Single<RNDataResponse<ObjectResultModel<ListResultModel<T>>>> {
         mapObject(type: ListResultModel<T>.self)
     }
 }

@@ -11,6 +11,7 @@ public protocol ResultModelType {
     var resultCode: ResultCode {get}
     var message: String {get}
     init(_ resultCode: ResultCode, _ message: String)
+    func map(resultCode: ResultCode) -> Self
 }
 extension ResultModelType {
     public var isSuccessful: Bool {
@@ -48,6 +49,9 @@ public struct ResultModel<DataType: Decodable>: Decodable, ResultModelType {
         self.resultCode = resultCode
         self.message = message
         self.data = data
+    }
+    public func map(resultCode: ResultCode) -> ResultModel<DataType> {
+        return ResultModel(resultCode, message, data)
     }
     typealias CodingKeys = ResultModelCodingKeys
     public init(from decoder: Decoder) throws {

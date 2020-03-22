@@ -8,10 +8,10 @@
 
 import Foundation
 import RxSwift
-extension Observable {
-    public func logDebug(_ identifier: String? = nil, trimOutput: Bool = false, file: String = #file, line: UInt = #line, function: String = #function) -> Observable {
+extension ObservableType {
+    public func logDebug(_ identifier: String? = nil, trimOutput: Bool = false, file: String = #file, line: UInt = #line, function: String = #function) -> Observable<Element> {
         #if DEBUG || Beta || POD_CONFIGURATION_BETA
-            return self//.debug(identifier, trimOutput: trimOutput, file: file, line: line, function: function)
+            return self.debug(identifier, trimOutput: trimOutput, file: file, line: line, function: function)
         #else
             return self
         #endif
@@ -19,9 +19,9 @@ extension Observable {
 }
 extension PrimitiveSequence {
     public func logDebug(_ identifier: String? = nil, trimOutput: Bool = false, file: String = #file, line: UInt = #line, function: String = #function)
-        -> PrimitiveSequence {
+        -> Self {
             #if DEBUG || Beta || POD_CONFIGURATION_BETA
-                return self//.debug(identifier, trimOutput: trimOutput, file: file, line: line, function: function)
+                return self.debug(identifier, trimOutput: trimOutput, file: file, line: line, function: function)
             #else
                 return self
             #endif
