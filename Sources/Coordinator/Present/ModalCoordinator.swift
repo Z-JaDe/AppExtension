@@ -7,7 +7,7 @@
 //
 
 import UIKit
-public protocol ModalCoordinatorCompatible: Coordinator, CoordinatorContainer, Presentable, AbstractPresentItemConvertible {
+public protocol ModalCoordinatorCompatible: Presentable, AbstractPresentItemConvertible {
     init()
     var viewCon: PresentItemType? {get}
     func createViewCon() -> PresentItemType
@@ -23,7 +23,7 @@ public extension ModalCoordinatorCompatible {
     }
 }
 /// ZJaDe: 可以被modal出来的 协调器
-open class ModalCoordinator<PresentItemType: UIViewController>: ModalCoordinatorCompatible {
+open class ModalCoordinator<PresentItemType: UIViewController>: Coordinator, CoordinatorContainer, ModalCoordinatorCompatible {
 
     public required init() {}
     public var coordinators: [Coordinator] = []
@@ -40,9 +40,6 @@ open class ModalCoordinator<PresentItemType: UIViewController>: ModalCoordinator
     }
 
     open func start(in viewCon: PresentItemType) {
-    }
-    open func didCancel() {
-
     }
 }
 extension ModalCoordinator where PresentItemType: CanCancelModalViewController {
