@@ -35,10 +35,10 @@ extension RootNavCoordinator: Presentable {
     }
 }
 // MARK: -
-open class RootNavItemCoordinator<NavItemCoordinatorType>: RootNavCoordinator where NavItemCoordinatorType: NavItemCoordinatorCompatible {
+open class RootNavItemCoordinator<NavItemCoordinator: NavItemCoordinatorCompatible>: RootNavCoordinator {
 
     open func start() {
-        let item = NavItemCoordinatorType.create(navCon)
+        let item = NavItemCoordinator.create(navCon)
         item.coordinator.start(in: item.viewCon)
         item.coordinator.jump(viewCon: item.viewCon)
     }

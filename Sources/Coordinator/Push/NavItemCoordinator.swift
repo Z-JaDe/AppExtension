@@ -32,7 +32,7 @@ public protocol NavItemCoordinatorCompatible: NavJumpable, AbstractNavItemConver
     func start(in viewCon: NavItemType)
 }
 public extension NavItemCoordinatorCompatible {
-    public var navItemViewCon: NavItemType? {
+    var navItemViewCon: NavItemType? {
         viewCon
     }
     static func create(_ navCon: UINavigationController?) -> (coordinator: Self, viewCon: NavItemType) {

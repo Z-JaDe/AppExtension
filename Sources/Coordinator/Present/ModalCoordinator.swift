@@ -15,7 +15,7 @@ public protocol ModalCoordinatorCompatible: Presentable, AbstractPresentItemConv
     func start(in viewCon: PresentItemType)
 }
 public extension ModalCoordinatorCompatible {
-    public var presentItemViewCon: PresentItemType? {
+    var presentItemViewCon: PresentItemType? {
         viewCon
     }
     static func create() -> (coor: Self, viewCon: PresentItemType) {
