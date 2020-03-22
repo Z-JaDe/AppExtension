@@ -36,12 +36,12 @@ open class TextField: UITextField {
     }
     func updatePlaceholder() {
         if let attr = self.attributedPlaceholder {
-            var maker = AttributedString(attr)
+            var maker = attr.asAttributedStringClass()
             if let color = self.placeholderColor {
-                maker = maker.mergeStyle(.color(color))
+                maker = maker.color(color)
             }
             if let font = self.placeholderFont {
-                maker = maker.mergeStyle(.font(font))
+                maker = maker.font(font)
             }
             self.attributedPlaceholder = maker.finalize()
         }
