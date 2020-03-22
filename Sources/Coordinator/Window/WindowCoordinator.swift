@@ -29,7 +29,7 @@ public extension AbstractWindowCoordinator {
             }
         }, completion: nil)
     }
-    public func asPresentItem() -> UIViewController? {
+    func asPresentItem() -> UIViewController? {
         self.window.rootViewController
     }
 }

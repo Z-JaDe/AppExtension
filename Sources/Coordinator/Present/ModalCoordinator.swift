@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 public protocol ModalCoordinatorCompatible: Presentable, AbstractPresentItemConvertible {
     init()
     var viewCon: PresentItemType? {get}
