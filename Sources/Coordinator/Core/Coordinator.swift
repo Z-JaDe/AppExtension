@@ -38,7 +38,7 @@ public extension CoordinatorContainer {
         return nil
     }
     func findChild<T: Coordinator>(_ type: T.Type) -> T? {
-        if let result = self.coordinators.lazy.compactMap({$0 as? T}).first {
+        if let result = self.child(type) {
             return result
         } else {
             return self.coordinators.lazy.compactMap({ ($0 as? CoordinatorContainer)?.findChild(type) }).first

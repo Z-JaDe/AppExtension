@@ -8,9 +8,10 @@
 
 import Foundation
 
-public typealias WindowRootItem = ViewControllerConvertible
-public protocol AbstractWindowCoordinator: Coordinator, Flow,
-    PresentJumpPlugin {
+public protocol WindowRootItem {
+    func asWindowRootViewController() -> UIViewController?
+}
+public protocol AbstractWindowCoordinator: Coordinator, Presentable {
 
     var window: UIWindow! {get}
     func start(in window: UIWindow)
@@ -28,7 +29,7 @@ public extension AbstractWindowCoordinator {
             }
         }, completion: nil)
     }
-    var rootViewController: UIViewController? {
+    public func asPresentItem() -> UIViewController? {
         self.window.rootViewController
     }
 }

@@ -16,9 +16,12 @@ public protocol Flow: class {
 
 }
 
-public typealias PushFlow = Flow & PushJumpPlugin
+public typealias PushFlow = Flow & NavJumpable
 
 public typealias AnyFlow = Flow
 
-public typealias PresentFlow = Flow & PresentJumpPlugin
-public typealias InPresentFlow = Flow & PresentJumpPlugin & CoordinatorContainer
+public typealias PresentFlow = Flow & Presentable
+public typealias InPresentFlow = Flow & Presentable & CoordinatorContainer
+
+extension NavItemCoordinator: Flow {}
+extension ModalCoordinator: Flow {}

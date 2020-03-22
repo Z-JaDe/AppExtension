@@ -1,5 +1,5 @@
 //
-//  AbstractNavItemCoordinator.swift
+//  NavItemCoordinator.swift
 //  Wallet
 //
 //  Created by 郑军铎 on 2018/11/1.
@@ -7,41 +7,61 @@
 //
 
 import Foundation
-public protocol NavItemCoordinatorProtocol {
-    associatedtype ViewConType: UIViewController
-    func createViewCon() -> ViewConType
-    func start(in viewCon: ViewConType)
-    init(_ navCon: UINavigationController?)
+
+open class HasNavCoordinator: NSObject, Coordinator, CoordinatorContainer {
+    public var coordinators: [Coordinator] = []
+    public weak var navCon: UINavigationController?
+    public required init(_ navCon: UINavigationController?) {
+        self.navCon = navCon
+    }
+    ///手动调用
+    open func startNoViewCon() {
+
+    }
 }
-public extension NavItemCoordinatorProtocol {
-    static func create(_ navCon: UINavigationController?) -> (coor: Self, viewCon: ViewConType) {
-        let coor = self.init(navCon)
-        return (coor, coor.createViewCon())
+extension HasNavCoordinator: NavJumpable {
+    public func asNavigationController() -> UINavigationController? {
+        navCon
+    }
+}
+// MARK: -
+public protocol NavItemCoordinatorCompatible: NavJumpable, AbstractNavItemConvertible {
+    init(_ navCon: UINavigationController?)
+    var viewCon: NavItemType? {get}
+    func createViewCon() -> NavItemType
+    func start(in viewCon: NavItemType)
+}
+public extension NavItemCoordinatorCompatible {
+    public var navItemViewCon: NavItemType? {
+        viewCon
+    }
+    static func create(_ navCon: UINavigationController?) -> (coordinator: Self, viewCon: NavItemType) {
+        let coordinator = self.init(navCon)
+        return (coordinator, coordinator.createViewCon())
     }
 }
 /// ZJaDe: nav流程中的一个 item
-public typealias AbstractNavItemCoordinator = HasNavConCoordinator & ViewControllerConvertible
+open class NavItemCoordinator<NavItemType: UIViewController>: HasNavCoordinator, NavItemCoordinatorCompatible {
 
-open class NavItemCoordinator<ViewConType>: AbstractNavItemCoordinator,
-    AssociatedViewControllerConvertible,
-    NavItemCoordinatorProtocol,
-    PresentJumpPlugin
-    where ViewConType: UIViewController {
-
-    open func start(in viewCon: ViewConType) {
+    open func start(in viewCon: NavItemType) {
 
     }
 
-    public private(set) weak var viewCon: ViewConType? {
+    public private(set) weak var viewCon: NavItemType? {
         didSet {
             oldValue?.coordinator = nil
             self.viewCon?.coordinator = self
         }
     }
 
-    open func createViewCon() -> ViewConType {
-        let viewCon = ViewConType()
+    open func createViewCon() -> NavItemType {
+        let viewCon = NavItemType()
         self.viewCon = viewCon
         return viewCon
+    }
+}
+extension NavItemCoordinator: PresentItemConvertible {
+    public func asPresentItem() -> UIViewController? {
+        viewCon
     }
 }

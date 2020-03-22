@@ -78,9 +78,9 @@ public extension Reactive where Base: UIViewController & RootViewStateProtocol {
             .mapToVoid()
         return ControlEvent(events: Observable.merge(dismissedSource, movedToParentSource))
     }
-    var firstTimeViewDidAppear: Maybe<Void> {
+    var firstTimeViewDidAppear: Single<Void> {
         self.isDidAppear
             .filterTrue()
-            .take(1).asMaybe()
+            .take(1).asSingle()
     }
 }
