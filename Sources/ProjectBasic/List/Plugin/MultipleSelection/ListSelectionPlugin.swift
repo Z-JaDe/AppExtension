@@ -37,6 +37,7 @@ extension ListSelectionPlugin {
 }
 extension ListSelectionPlugin where Adapter.Item: Equatable {
     func changeItemSelectedState(_ item: inout Adapter.Item, _ isSelected: Bool) {
+        // TODO: 隐式推断类型
         if var _item = item as? SelectedStateDesignable {
             _item.isSelected = isSelected
             // swiftlint:disable force_cast

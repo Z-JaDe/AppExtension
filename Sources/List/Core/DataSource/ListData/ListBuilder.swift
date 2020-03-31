@@ -17,9 +17,9 @@ public struct ListBuilder<Section, Item> {
     public static func buildBlock(_ content: Component...) -> Components {
         return Components(content.map(SectionData.init))
     }
-    public static func buildBlock(_ content: Components...) -> Components {
-        return Components(content.flatMap({$0}))
-    }
+//    public static func buildBlock(_ content: Components...) -> Components {
+//        return Components(content.flatMap({$0}))
+//    }
 }
 extension ListBuilder {
     public static func buildIf(_ content: Component?) -> Components {

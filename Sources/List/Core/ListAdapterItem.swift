@@ -25,11 +25,7 @@ public protocol ListAdapterItem: AdapterItemCompatible, CustomStringConvertible 
     typealias Value = AnyObject & ListAdapterItemHashable
     var value: Value { get }
 }
-extension ListAdapterItem {
-    var realItem: Any {
-        return self
-    }
-}
+
 // MARK: -
 extension ListAdapterItem where Self: Hashable {
     public static func == (lhs: Self, rhs: Self) -> Bool {

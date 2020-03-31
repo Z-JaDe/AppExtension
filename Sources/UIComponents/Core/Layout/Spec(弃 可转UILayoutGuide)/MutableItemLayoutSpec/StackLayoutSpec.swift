@@ -86,8 +86,8 @@ public class StackLayoutSpec: MutableItemLayoutSpec {
             return layout(.centerOffset(offSet))
         case .end(let offSet):
             return layout(.end(offSet))
-        case .spaceBetween(let inset):
-            return layout(.fill(inset.0, inset.1))
+        case .spaceBetween(let left, let right):
+            return layout(.fill(left, right))
         }
     }
 }

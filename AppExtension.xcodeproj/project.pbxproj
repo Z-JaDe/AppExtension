@@ -407,10 +407,7 @@
 		C9D412A621DF4326004368D4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D412A221DF4326004368D4 /* TableViewController.swift */; };
 		C9D412A721DF4326004368D4 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D412A321DF4326004368D4 /* CollectionViewController.swift */; };
 		C9D412C221DF4944004368D4 /* CollectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A1C2321AFF01C007D573C /* CollectionProtocol.swift */; };
-		C9D412F121DF4C57004368D4 /* HiddenStateDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F86321006DC500B8DF84 /* HiddenStateDesignable.swift */; };
-		C9D412F221DF4C57004368D4 /* EnabledStateDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F86421006DC500B8DF84 /* EnabledStateDesignable.swift */; };
-		C9D412F321DF4C57004368D4 /* SelectedStateDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F86521006DC500B8DF84 /* SelectedStateDesignable.swift */; };
-		C9D412F421DF4C57004368D4 /* HighlightedStateDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F86621006DC500B8DF84 /* HighlightedStateDesignable.swift */; };
+		C9D412F121DF4C57004368D4 /* StateDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F86321006DC500B8DF84 /* StateDesignable.swift */; };
 		C9D4131A21DF6B74004368D4 /* BaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4130D21DF6B74004368D4 /* BaseWebViewController.swift */; };
 		C9D4131B21DF6B74004368D4 /* WebTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131021DF6B74004368D4 /* WebTableViewCell.swift */; };
 		C9D4131F21DF6B74004368D4 /* WKUIProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4131521DF6B74004368D4 /* WKUIProxy.swift */; };
@@ -1133,10 +1130,7 @@
 		C932F85F21006DC500B8DF84 /* TitleItemDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleItemDesignable.swift; sourceTree = "<group>"; };
 		C932F86021006DC500B8DF84 /* TextDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDesignable.swift; sourceTree = "<group>"; };
 		C932F86121006DC500B8DF84 /* ClassNameDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassNameDesignable.swift; sourceTree = "<group>"; };
-		C932F86321006DC500B8DF84 /* HiddenStateDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiddenStateDesignable.swift; sourceTree = "<group>"; };
-		C932F86421006DC500B8DF84 /* EnabledStateDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnabledStateDesignable.swift; sourceTree = "<group>"; };
-		C932F86521006DC500B8DF84 /* SelectedStateDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedStateDesignable.swift; sourceTree = "<group>"; };
-		C932F86621006DC500B8DF84 /* HighlightedStateDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightedStateDesignable.swift; sourceTree = "<group>"; };
+		C932F86321006DC500B8DF84 /* StateDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateDesignable.swift; sourceTree = "<group>"; };
 		C932F86721006DC500B8DF84 /* PlaceholderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderDesignable.swift; sourceTree = "<group>"; };
 		C932F86821006DC500B8DF84 /* InputTypeDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTypeDesignable.swift; sourceTree = "<group>"; };
 		C932F86921006DC500B8DF84 /* BottomItemDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomItemDesignable.swift; sourceTree = "<group>"; };
@@ -2668,10 +2662,7 @@
 		C932F86221006DC500B8DF84 /* StateDesignable */ = {
 			isa = PBXGroup;
 			children = (
-				C932F86321006DC500B8DF84 /* HiddenStateDesignable.swift */,
-				C932F86421006DC500B8DF84 /* EnabledStateDesignable.swift */,
-				C932F86521006DC500B8DF84 /* SelectedStateDesignable.swift */,
-				C932F86621006DC500B8DF84 /* HighlightedStateDesignable.swift */,
+				C932F86321006DC500B8DF84 /* StateDesignable.swift */,
 			);
 			path = StateDesignable;
 			sourceTree = "<group>";
@@ -4813,17 +4804,14 @@
 				C932F85421006D9D00B8DF84 /* Color.swift in Sources */,
 				C9283B1421BE356600361B87 /* BufferPool.swift in Sources */,
 				C9283B1021BE352800361B87 /* ThenProtocol.swift in Sources */,
-				C9D412F221DF4C57004368D4 /* EnabledStateDesignable.swift in Sources */,
 				C9283B0C21BE34E300361B87 /* NotificationToken.swift in Sources */,
-				C9D412F421DF4C57004368D4 /* HighlightedStateDesignable.swift in Sources */,
 				1805B3D422772EF100F0574D /* DispatchQueue.swift in Sources */,
-				C9D412F121DF4C57004368D4 /* HiddenStateDesignable.swift in Sources */,
+				C9D412F121DF4C57004368D4 /* StateDesignable.swift in Sources */,
 				C9283B1221BE354A00361B87 /* Timer.swift in Sources */,
 				C9283B1321BE354A00361B87 /* SwiftTimer.swift in Sources */,
 				C932F84E21006D9D00B8DF84 /* Space.swift in Sources */,
 				C9283B0E21BE352800361B87 /* Async.swift in Sources */,
 				C9283B1621BE360100361B87 /* ClassNameDesignable.swift in Sources */,
-				C9D412F321DF4C57004368D4 /* SelectedStateDesignable.swift in Sources */,
 				C932F85221006D9D00B8DF84 /* FatalError.swift in Sources */,
 				C932F85021006D9D00B8DF84 /* Error.swift in Sources */,
 				C9283B0F21BE352800361B87 /* InitProtocol.swift in Sources */,
