@@ -144,7 +144,7 @@
 				2469CE000003B0 /* Support Files */,
 			);
 			name = RxGesture;
-			path = ../BaseSupport/Fork/RxGesture;
+			path = ../LocalPods/Fork/RxGesture;
 			sourceTree = "<group>";
 		};
 		2469CE00000110 /* iOS */ = {

@@ -133,7 +133,7 @@
 				5E608A00000350 /* Support Files */,
 			);
 			name = RxNetwork;
-			path = ../BaseSupport/RxNetwork;
+			path = ../LocalPods/RxNetwork;
 			sourceTree = "<group>";
 		};
 		5E608A000000C0 /* Core */ = {

@@ -107,7 +107,7 @@
 				A746A200000340 /* Support Files */,
 			);
 			name = iCarouselSwift;
-			path = ../BaseSupport/iCarouselSwift;
+			path = ../LocalPods/iCarouselSwift;
 			sourceTree = "<group>";
 		};
 		A746A200000180 /* Pod */ = {

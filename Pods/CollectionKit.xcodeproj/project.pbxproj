@@ -177,7 +177,7 @@
 				3B3FBA000008D0 /* Support Files */,
 			);
 			name = CollectionKit;
-			path = ../BaseSupport/Fork/CollectionKit;
+			path = ../LocalPods/Fork/CollectionKit;
 			sourceTree = "<group>";
 		};
 		3B3FBA000000C0 /* Core */ = {

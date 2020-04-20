@@ -129,7 +129,7 @@
 				8AA2AC000002A0 /* Support Files */,
 			);
 			name = RxOptional;
-			path = ../BaseSupport/Fork/RxOptional;
+			path = ../LocalPods/Fork/RxOptional;
 			sourceTree = "<group>";
 		};
 		8AA2AC00000130 /* Pod */ = {

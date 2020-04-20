@@ -93,7 +93,7 @@
 				D48D2300000100 /* Swifter */,
 			);
 			name = FunctionalSwift;
-			path = ../BaseSupport/FunctionalSwift;
+			path = ../LocalPods/FunctionalSwift;
 			sourceTree = "<group>";
 		};
 		D48D2300000100 /* Swifter */ = {

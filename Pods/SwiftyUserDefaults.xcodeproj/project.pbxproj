@@ -110,7 +110,7 @@
 				C0231A00000360 /* Support Files */,
 			);
 			name = SwiftyUserDefaults;
-			path = ../BaseSupport/Fork/SwiftyUserDefaults;
+			path = ../LocalPods/Fork/SwiftyUserDefaults;
 			sourceTree = "<group>";
 		};
 		C0231A00000190 /* Pod */ = {

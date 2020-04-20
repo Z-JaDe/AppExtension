@@ -56,28 +56,28 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire`)
-  - CocoaExtension (from `BaseSupport/CocoaExtension`)
-  - CollectionKit (from `BaseSupport/Fork/CollectionKit`)
+  - CocoaExtension (from `LocalPods/CocoaExtension`)
+  - CollectionKit (from `LocalPods/Fork/CollectionKit`)
   - DifferenceKit
-  - Encryption (from `BaseSupport/Encryption`)
-  - FunctionalSwift (from `BaseSupport/FunctionalSwift`)
-  - iCarouselSwift (from `BaseSupport/iCarouselSwift`)
+  - Encryption (from `LocalPods/Encryption`)
+  - FunctionalSwift (from `LocalPods/FunctionalSwift`)
+  - iCarouselSwift (from `LocalPods/iCarouselSwift`)
   - Kingfisher
   - MBProgressHUD
   - MJRefresh
-  - ModalManager (from `BaseSupport/ModalManager`)
+  - ModalManager (from `LocalPods/ModalManager`)
   - Motion
   - ReSwift (from `https://github.com/ReSwift/ReSwift.git`)
   - RxCocoa (from `https://github.com/ReactiveX/RxSwift`)
-  - RxGesture (from `BaseSupport/Fork/RxGesture`)
-  - RxNetwork (from `BaseSupport/RxNetwork`)
-  - RxOptional (from `BaseSupport/Fork/RxOptional`)
+  - RxGesture (from `LocalPods/Fork/RxGesture`)
+  - RxNetwork (from `LocalPods/RxNetwork`)
+  - RxOptional (from `LocalPods/Fork/RxOptional`)
   - RxSwift (from `https://github.com/ReactiveX/RxSwift`)
-  - RxSwiftExt (from `BaseSupport/Fork/RxSwiftExt`)
+  - RxSwiftExt (from `LocalPods/Fork/RxSwiftExt`)
   - SnapKit (from `https://github.com/SnapKit/SnapKit`)
   - SwiftLint
-  - SwiftyUserDefaults (from `BaseSupport/Fork/SwiftyUserDefaults`)
-  - Validation (from `BaseSupport/Validation`)
+  - SwiftyUserDefaults (from `LocalPods/Fork/SwiftyUserDefaults`)
+  - Validation (from `LocalPods/Validation`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -94,37 +94,37 @@ EXTERNAL SOURCES:
   Alamofire:
     :git: https://github.com/Alamofire/Alamofire
   CocoaExtension:
-    :path: BaseSupport/CocoaExtension
+    :path: LocalPods/CocoaExtension
   CollectionKit:
-    :path: BaseSupport/Fork/CollectionKit
+    :path: LocalPods/Fork/CollectionKit
   Encryption:
-    :path: BaseSupport/Encryption
+    :path: LocalPods/Encryption
   FunctionalSwift:
-    :path: BaseSupport/FunctionalSwift
+    :path: LocalPods/FunctionalSwift
   iCarouselSwift:
-    :path: BaseSupport/iCarouselSwift
+    :path: LocalPods/iCarouselSwift
   ModalManager:
-    :path: BaseSupport/ModalManager
+    :path: LocalPods/ModalManager
   ReSwift:
     :git: https://github.com/ReSwift/ReSwift.git
   RxCocoa:
     :git: https://github.com/ReactiveX/RxSwift
   RxGesture:
-    :path: BaseSupport/Fork/RxGesture
+    :path: LocalPods/Fork/RxGesture
   RxNetwork:
-    :path: BaseSupport/RxNetwork
+    :path: LocalPods/RxNetwork
   RxOptional:
-    :path: BaseSupport/Fork/RxOptional
+    :path: LocalPods/Fork/RxOptional
   RxSwift:
     :git: https://github.com/ReactiveX/RxSwift
   RxSwiftExt:
-    :path: BaseSupport/Fork/RxSwiftExt
+    :path: LocalPods/Fork/RxSwiftExt
   SnapKit:
     :git: https://github.com/SnapKit/SnapKit
   SwiftyUserDefaults:
-    :path: BaseSupport/Fork/SwiftyUserDefaults
+    :path: LocalPods/Fork/SwiftyUserDefaults
   Validation:
-    :path: BaseSupport/Validation
+    :path: LocalPods/Validation
 
 CHECKOUT OPTIONS:
   Alamofire:
@@ -170,6 +170,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 8880483e55be344dce2e5e2f18c70b0564ff7676
   Validation: 707530eb0fb44304faab08447d2d647c6c4ab0f7
 
-PODFILE CHECKSUM: 5993f660182140d6578f8a04d0d9f4c5ccd3065a
+PODFILE CHECKSUM: 149b7d902ec529fb39e95d314b68df6d5de7752d
 
 COCOAPODS: 1.9.1

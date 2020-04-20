@@ -161,7 +161,7 @@
 				F5476500000150 /* SwiftyRSA */,
 			);
 			name = Encryption;
-			path = ../BaseSupport/Encryption;
+			path = ../LocalPods/Encryption;
 			sourceTree = "<group>";
 		};
 		F54765000000D0 /* Keychain */ = {

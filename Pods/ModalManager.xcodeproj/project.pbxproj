@@ -88,7 +88,7 @@
 				ADEEA8000002A0 /* Support Files */,
 			);
 			name = ModalManager;
-			path = ../BaseSupport/ModalManager;
+			path = ../LocalPods/ModalManager;
 			sourceTree = "<group>";
 		};
 		ADEEA8000000C0 /* Base */ = {

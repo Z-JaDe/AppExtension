@@ -7,10 +7,10 @@ use_frameworks!
 install! 'cocoapods', deterministic_uuids: false, generate_multiple_pod_projects: true
 
 def userPod (name)
-  pod name, :path => "BaseSupport/#{name}"
+  pod name, :path => "LocalPods/#{name}"
 end
 def userForkPod (name)
-  pod name, :path => "BaseSupport/Fork/#{name}"
+  pod name, :path => "LocalPods/Fork/#{name}"
 end
 ######################################################################################
 def baseCorePod

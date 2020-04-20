@@ -80,7 +80,7 @@
 				E0C4F500000230 /* Support Files */,
 			);
 			name = Validation;
-			path = ../BaseSupport/Validation;
+			path = ../LocalPods/Validation;
 			sourceTree = "<group>";
 		};
 		E0C4F5000000C0 /* Regex */ = {
