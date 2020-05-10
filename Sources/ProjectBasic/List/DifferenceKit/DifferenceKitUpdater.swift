@@ -34,8 +34,9 @@ public class DifferenceKitUpdater: Updater {
                 let stagedChangeset = StagedChangeset(source: source.map(AnyDiffable.init), target: target.map(AnyDiffable.init))
                 if stagedChangeset.contains(where: {$0.data.count > 100}) {
                     dataSetter._reload(data: target, done: doneClosure)
+                } else {
+                    dataSetter._partialUpdate(using: stagedChangeset, done: doneClosure)
                 }
-                dataSetter._partialUpdate(using: stagedChangeset, done: doneClosure)
             }
         }
     }

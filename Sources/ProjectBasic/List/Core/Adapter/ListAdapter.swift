@@ -30,14 +30,14 @@ where DataSource.S.Item: AdapterItemType, DataSource.S.Section: AdapterSectionTy
     /// ZJaDe: 是否自动改回未选中，子类实现相关逻辑
     public var autoDeselectRow = true
 
-    var dataInfo: ListData<Section, Item>?
+    var listData: ListData<Section, Item>?
     public var dataSource: DataSource = DataSource() {
         didSet { dataSourceDefaultInit(dataSource) }
     }
     open func dataSourceDefaultInit(_ dataSource: DataSource) {
         dataSource.didMoveItem = { [weak self] (source, destination) in
             guard let self = self else { return }
-            self.dataInfo = self.dataInfo?.move(source, destination)
+            self.listData = self.listData?.move(source, destination)
         }
     }
     internal func dataChanged(_ completion: (() -> Void)?) {
@@ -52,10 +52,10 @@ where DataSource.S.Item: AdapterItemType, DataSource.S.Section: AdapterSectionTy
 extension ListAdapter: DisposeBagProtocol {}
 extension ListAdapter: ListAdapterType {
     public var dataArray: ListData<Section, Item> {
-        self.dataInfo ?? .init()
+        self.listData ?? .init()
     }
     public func changeListData(_ newData: _ListData, _ completion: (() -> Void)? = nil) {
-        self.dataInfo = newData
+        self.listData = newData
         dataChanged(completion)
     }
     ///设置下次刷新是否 reloadData

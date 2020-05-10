@@ -48,8 +48,8 @@ open class UITableAdapter: ListAdapter<TableViewDataSource<TableSectionModel>> {
     public let insertSecionModels: CallBackerReduce = CallBackerReduce<_ListData>()
     override func dataChanged(_ completion: (() -> Void)?) {
         guard let tableView = tableView else { return }
-        guard let dataInfo = dataInfo else { return }
-        let dataArray = self.insertSecionModels.callReduce(dataInfo)
+        guard let listData = listData else { return }
+        let dataArray = self.insertSecionModels.callReduce(listData)
         let mapDataInfo = dataArray.compactMapToSectionModels()
         self.updateItemsIfNeed()
         let updater = self.updater ?? tableView.updater

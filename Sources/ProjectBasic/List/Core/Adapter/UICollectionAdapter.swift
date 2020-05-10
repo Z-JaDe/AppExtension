@@ -40,8 +40,8 @@ open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionS
     }
     override func dataChanged(_ completion: (() -> Void)?) {
         guard let collectionView = collectionView else { return }
-        guard let dataInfo = dataInfo else { return }
-        let mapDataInfo = dataInfo.compactMapToSectionModels()
+        guard let listData = listData else { return }
+        let mapDataInfo = listData.compactMapToSectionModels()
         let updater = self.updater ?? collectionView.updater
         updater.tempUpdateMode = self.tempUpdateMode
         self.tempUpdateMode = nil
