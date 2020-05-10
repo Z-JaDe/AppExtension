@@ -30,7 +30,7 @@ public extension CollectionReusableViewable where ScrollViewType == PageScrollVi
             return
         }
         // ZJaDe: 单边延迟释放的个数
-        let count: CGFloat = max(cacheAppearCellCount, cacheDisappearCellCount).toCGFloat
+        let count: CGFloat = max(cacheAppearCellCount, cacheDisappearCellCount).cgfloat
         guard count >= 0 else { return }
         /** ZJaDe:
          释放cell条件：需要cell的边界在设定的边界之外才会释放

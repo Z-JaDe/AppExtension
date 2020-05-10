@@ -99,7 +99,7 @@ open class AssetGridViewController: AdapterCollectionViewController, PHPhotoLibr
         let edge = Space.VCEdge
         let itemSpace = Space.itemSpace
         let columnCount = 4
-        let width = (jd.screenWidth - (columnCount - 1).toCGFloat * itemSpace - edge * 2) / columnCount.toCGFloat - 1
+        let width = (jd.screenWidth - (columnCount - 1).cgfloat * itemSpace - edge * 2) / columnCount.cgfloat - 1
         return CGSize(width: width, height: width)
     }
 }

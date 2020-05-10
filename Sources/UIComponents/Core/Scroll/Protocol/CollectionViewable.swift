@@ -32,7 +32,7 @@ public extension CollectionViewable {
         realProgress(offSet: self.scrollView.viewHeadOffset(), length: self.scrollView.length)
     }
     func getCurrentIndex() -> Int {
-        getCurrentProgress().toInt
+        getCurrentProgress().int
     }
     /// ZJaDe: 重新设置visibleCells在scrollView里的位置
     func resetCellsOrigin(repeatCount: Int) {
@@ -45,7 +45,7 @@ public extension CollectionViewable {
         if totalCount == 1 {
             offSet = 0
         } else {
-            let totalOffset = length * repeatCount.toCGFloat * totalCount.toCGFloat
+            let totalOffset = length * repeatCount.cgfloat * totalCount.cgfloat
             if scrollViewOffSet > totalOffset * 0.75 {
                 offSet = -totalOffset * 0.5
             } else if scrollViewOffSet < totalOffset * 0.25 {
@@ -65,7 +65,7 @@ public extension CollectionViewable {
         let length = self.scrollView.length
         guard self.totalCount > 0, length > 0 else { return }
         let offSet = self.scrollView.viewCenterOffset().floorToNearest(increment: length)
-        let currentIndex = (offSet / length).toInt
+        let currentIndex = (offSet / length).int
         var indexOffset = self.realIndex(to) - self.realIndex(currentIndex)
         if self.totalCount > 1 {
             if to > from && indexOffset < 0 {
@@ -76,15 +76,15 @@ public extension CollectionViewable {
         } else {
             indexOffset = (to > from ? 1 : -1)
         }
-        self.scrollView.scrollTo(offSet: offSet + indexOffset.toCGFloat * length)
+        self.scrollView.scrollTo(offSet: offSet + indexOffset.cgfloat * length)
     }
     /// ZJaDe: 滚动到对应index，只针对Cell长度和ScrollView长度相等时
     func scroll(to index: Int, animated: Bool = true) {
         let length = self.scrollView.length
         guard self.totalCount > 0 && length > 0 else { return }
         let offSet = self.scrollView.viewCenterOffset().floorToNearest(increment: length)
-        let currentIndex = (offSet / length).toInt
+        let currentIndex = (offSet / length).int
         let indexOffset = self.realIndex(index) - self.realIndex(currentIndex)
-        self.scrollView.scrollTo(offSet: offSet + indexOffset.toCGFloat * length, animated: animated)
+        self.scrollView.scrollTo(offSet: offSet + indexOffset.cgfloat * length, animated: animated)
     }
 }

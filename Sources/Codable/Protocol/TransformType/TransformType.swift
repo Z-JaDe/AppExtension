@@ -9,14 +9,14 @@
 import UIKit
 
 public protocol TransformTypeProtocol {
-    var toCGFloat: CGFloat {get}
-    var toFloat: Float {get}
-    var toDouble: Double {get}
-    var toInt: Int {get}
+    var cgfloat: CGFloat {get}
+    var float: Float {get}
+    var double: Double {get}
+    var int: Int {get}
 }
 
 extension Int {
-    public var toUInt: UInt {
+    public var uInt: UInt {
         if self >= 0 {
             return UInt(self)
         } else {
@@ -25,15 +25,15 @@ extension Int {
     }
 }
 extension String {
-    public var toIntIfExist: Int? {return Int(self) ?? toDouble.toInt }
-    public var toCGFloatIfExist: CGFloat? {return toDoubleIfExist?.toCGFloat}
-    public var toDoubleIfExist: Double? {return Double(self)}
-    public var toFloatIfExist: Float? {return Float(self)}
-    public var toNSString: NSString {
+    public var intIfExist: Int? {return Int(self) ?? double.int }
+    public var cgfloatIfExist: CGFloat? {return doubleIfExist?.cgfloat}
+    public var doubleIfExist: Double? {return Double(self)}
+    public var floatIfExist: Float? {return Float(self)}
+    public var nsString: NSString {
         self as NSString
     }
 
-    public var toBool: Bool? {
+    public var bool: Bool? {
         let trimmed = self.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines).lowercased()
         switch trimmed {
         case "true", "1", "yes", "y":
@@ -46,7 +46,7 @@ extension String {
     }
 }
 extension CustomStringConvertible {
-    public var toString: String {
+    public var string: String {
         "\(self)"
     }
 }

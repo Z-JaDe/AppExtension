@@ -38,7 +38,7 @@ extension ExpressibleValueProtocol {
 extension ${type}LiteralTypeValueProtocol where Self: ExpressibleValueProtocol {
     % for key, value in expressible_type.items(): 
     public init(${key}Literal value: ${value}) {
-        self.init(value: value.to${expressible_type.get(type.lower())})
+        self.init(value: value.${expressible_type.get(type.lower()).lower()})
     }
     % end
     public init(nilLiteral: ()) {

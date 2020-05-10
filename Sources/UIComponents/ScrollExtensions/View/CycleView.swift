@@ -40,8 +40,8 @@ open class CycleView<CellView, CellData>: PageItemsView<CellView, CellData, Page
     open override func layoutSubviews() {
         super.layoutSubviews()
         /// ZJaDe: 布局更新时刷新contentLength
-        let repeatValue: CGFloat = self.dataArray.count > 1 ? repeatCount.toCGFloat : 1
-        self.scrollView.contentLength = repeatValue * self.scrollView.length * self.totalCount.toCGFloat
+        let repeatValue: CGFloat = self.dataArray.count > 1 ? repeatCount.cgfloat : 1
+        self.scrollView.contentLength = repeatValue * self.scrollView.length * self.totalCount.cgfloat
         /// ZJaDe: 布局更新时重新检查需要显示和消失的cells
         checkCellsLifeCycle(isNeedUpdate: false)
     }
@@ -86,8 +86,8 @@ extension CycleView {
 extension CycleView: CollectionReusableViewable {
     public func loadCell(_ currentOffset: CGFloat, _ indexOffset: Int, _ isNeedUpdate: Bool) {
         let length = self.scrollView.length
-        let currentIndex = (currentOffset / length).toInt
-        let offSet = currentOffset + indexOffset.toCGFloat * length
+        let currentIndex = (currentOffset / length).int
+        let offSet = currentOffset + indexOffset.cgfloat * length
         let itemIndex = realIndex(currentIndex + indexOffset)
         if let cell = self.scrollView.getCell(offSet) {
             if isNeedUpdate {

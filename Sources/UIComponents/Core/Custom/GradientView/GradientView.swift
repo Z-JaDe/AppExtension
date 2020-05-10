@@ -32,7 +32,7 @@ public class GradientView: CustomView {
     @discardableResult
     public func config(_ direction: Direction, _ colors: [UIColor]) -> Self {
         self.gradientLayer.colors = colors.map({$0.cgColor})
-        self.gradientLayer.locations = colors.enumerated().map({$0.offset.toDouble / (colors.count - 1).toDouble}).map(NSNumber.init)
+        self.gradientLayer.locations = colors.enumerated().map({$0.offset.double / (colors.count - 1).double}).map(NSNumber.init)
         switch direction {
         case .topToBottom:
             self.gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)

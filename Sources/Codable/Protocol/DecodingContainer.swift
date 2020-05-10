@@ -17,9 +17,9 @@ public extension SingleValueDecodingContainer {
         } else if let value = try? decode(Int.self) {
             return value
         } else if let value = try? decode(String.self) {
-            return value.toIntIfExist
+            return value.intIfExist
         } else {
-            return (try? decode(Double.self))?.toInt
+            return (try? decode(Double.self))?.int
         }
     }
     func decodeDouble() -> Double? {
@@ -28,7 +28,7 @@ public extension SingleValueDecodingContainer {
         } else if let value = try? decode(Double.self) {
             return value
         } else if let value = try? decode(String.self) {
-            return value.toDoubleIfExist
+            return value.doubleIfExist
         } else {
             return nil
         }
@@ -39,9 +39,9 @@ public extension SingleValueDecodingContainer {
         } else if let value = try? decode(String.self) {
             return value
         } else if let value = try? decode(Int.self) {
-            return value.toString
+            return value.string
         } else if let value = try? decode(Double.self) {
-            return value.toString
+            return value.string
         } else {
             return nil
         }
@@ -56,7 +56,7 @@ public extension SingleValueDecodingContainer {
         } else if let value = try? decode(Double.self) {
             return value != 0
         } else {
-            return (try? decode(String.self))?.toBool
+            return (try? decode(String.self))?.bool
         }
     }
 }

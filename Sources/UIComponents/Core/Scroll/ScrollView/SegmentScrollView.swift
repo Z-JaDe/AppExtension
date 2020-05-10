@@ -10,10 +10,10 @@ import Foundation
 
 extension SegmentScrollView.CellLength: ExpressibleByIntegerLiteral, ExpressibleByFloatLiteral {
     public init(integerLiteral value: Int) {
-        self = .length(value.toCGFloat)
+        self = .length(value.cgfloat)
     }
     public init(floatLiteral value: Double) {
-        self = .length(value.toCGFloat)
+        self = .length(value.cgfloat)
     }
 }
 public class SegmentScrollView<CellView>: MultipleItemScrollView<CellView>, TotalCountable where CellView: UIView {
@@ -61,10 +61,10 @@ public class SegmentScrollView<CellView>: MultipleItemScrollView<CellView>, Tota
         switch self.itemLength {
         case .showMaxCount(let maxCount):
             let count = maxCount.clamp(min: 1, max: self.totalCount)
-            return self.length / count.toCGFloat
+            return self.length / count.cgfloat
         case .showCount(var count):
             count = max(1, count)
-            return self.length / count.toCGFloat
+            return self.length / count.cgfloat
         case .length(let length):
             return length
         case .auto:
@@ -74,7 +74,7 @@ public class SegmentScrollView<CellView>: MultipleItemScrollView<CellView>, Tota
 
     /// ZJaDe: 根据offSet查找cell
     public override func getCell(_ offSet: CGFloat) -> CellView? {
-        let index = self.realProgress(offSet: offSet, length: self.length).toInt
+        let index = self.realProgress(offSet: offSet, length: self.length).int
         return self.itemArr[self.realIndex(index)]
     }
 }

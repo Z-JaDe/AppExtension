@@ -29,7 +29,7 @@ public struct Percent: FloatLiteralTypeValueProtocol,
         self.originString = "\(valueFormat(nil))"
     }
     public init(stringLiteral value: String) {
-        self.value = value.toDouble
+        self.value = value.double
         self.originString = value
     }
     // MARK: -

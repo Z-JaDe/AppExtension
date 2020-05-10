@@ -45,16 +45,16 @@ extension ExpressibleValueProtocol {
 }
 extension IntegerLiteralTypeValueProtocol where Self: ExpressibleValueProtocol {
     public init(booleanLiteral value: Bool) {
-        self.init(value: value.toInt)
+        self.init(value: value.int)
     }
     public init(integerLiteral value: Int) {
-        self.init(value: value.toInt)
+        self.init(value: value.int)
     }
     public init(floatLiteral value: Double) {
-        self.init(value: value.toInt)
+        self.init(value: value.int)
     }
     public init(stringLiteral value: String) {
-        self.init(value: value.toInt)
+        self.init(value: value.int)
     }
     public init(nilLiteral: ()) {
         self.init(value: nil)
@@ -62,16 +62,16 @@ extension IntegerLiteralTypeValueProtocol where Self: ExpressibleValueProtocol {
 }
 extension FloatLiteralTypeValueProtocol where Self: ExpressibleValueProtocol {
     public init(booleanLiteral value: Bool) {
-        self.init(value: value.toDouble)
+        self.init(value: value.double)
     }
     public init(integerLiteral value: Int) {
-        self.init(value: value.toDouble)
+        self.init(value: value.double)
     }
     public init(floatLiteral value: Double) {
-        self.init(value: value.toDouble)
+        self.init(value: value.double)
     }
     public init(stringLiteral value: String) {
-        self.init(value: value.toDouble)
+        self.init(value: value.double)
     }
     public init(nilLiteral: ()) {
         self.init(value: nil)
@@ -79,16 +79,16 @@ extension FloatLiteralTypeValueProtocol where Self: ExpressibleValueProtocol {
 }
 extension StringLiteralTypeValueProtocol where Self: ExpressibleValueProtocol {
     public init(booleanLiteral value: Bool) {
-        self.init(value: value.toString)
+        self.init(value: value.string)
     }
     public init(integerLiteral value: Int) {
-        self.init(value: value.toString)
+        self.init(value: value.string)
     }
     public init(floatLiteral value: Double) {
-        self.init(value: value.toString)
+        self.init(value: value.string)
     }
     public init(stringLiteral value: String) {
-        self.init(value: value.toString)
+        self.init(value: value.string)
     }
     public init(nilLiteral: ()) {
         self.init(value: nil)
@@ -96,16 +96,16 @@ extension StringLiteralTypeValueProtocol where Self: ExpressibleValueProtocol {
 }
 extension BooleanLiteralTypeValueProtocol where Self: ExpressibleValueProtocol {
     public init(booleanLiteral value: Bool) {
-        self.init(value: value.toBool)
+        self.init(value: value.bool)
     }
     public init(integerLiteral value: Int) {
-        self.init(value: value.toBool)
+        self.init(value: value.bool)
     }
     public init(floatLiteral value: Double) {
-        self.init(value: value.toBool)
+        self.init(value: value.bool)
     }
     public init(stringLiteral value: String) {
-        self.init(value: value.toBool)
+        self.init(value: value.bool)
     }
     public init(nilLiteral: ()) {
         self.init(value: nil)

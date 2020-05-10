@@ -4,11 +4,11 @@ sys.path.append('..')
 from CodableTypes import transform_types
 
 transform_to = [
-                'Int', 
-                'Float', 
-                'Double', 
-                'CGFloat', 
-                'Bool', 
+                'Int',
+                'Float',
+                'Double',
+                'CGFloat',
+                'Bool',
 ]
 
 }%
@@ -17,19 +17,20 @@ transform_to = [
 % for type in transform_types: 
 // ZJaDe: ${type}类型转换
 extension ${type}: TransformTypeProtocol {
-    % for to_type in transform_to: 
+    % for to_type in transform_to:
+    % l_to_type = to_type.lower()
     % if to_type == type: 
-    public var to${to_type}: ${to_type} { self }
+    public var ${l_to_type}: ${to_type} { self }
     % elif type == 'Bool': 
-    public var to${to_type}: ${to_type} { self ? 1 : 0 }
+    public var ${l_to_type}: ${to_type} { self ? 1 : 0 }
     % elif type == 'String': 
-        % if to_type != 'Bool': 
-    public var to${to_type}: ${to_type} { to${to_type}IfExist ?? 0 }
+        % if to_type != 'Bool':
+    public var ${l_to_type}: ${to_type} { ${l_to_type}IfExist ?? 0 }
         % end
-    % elif to_type == 'Bool': 
-    public var to${to_type}: ${to_type} { self != 0 }
+    % elif to_type == 'Bool':
+    public var ${l_to_type}: ${to_type} { self != 0 }
     % else: 
-    public var to${to_type}: ${to_type} { ${to_type}(self) }
+    public var ${l_to_type}: ${to_type} { ${to_type}(self) }
     % end
     % end
 }

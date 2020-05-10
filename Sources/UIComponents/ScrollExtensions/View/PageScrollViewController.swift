@@ -60,7 +60,7 @@ open class PageScrollViewController: UIViewController, UIScrollViewDelegate {
     }
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.scrollView.contentLength = self.scrollView.length * self.viewConArr.count.toCGFloat
+        self.scrollView.contentLength = self.scrollView.length * self.viewConArr.count.cgfloat
     }
     /// ZJaDe: 当currentIndex改变时
     internal func whenCurrentIndexChanged(_ from: Int, _ to: Int) {
@@ -92,7 +92,7 @@ open class PageScrollViewController: UIViewController, UIScrollViewDelegate {
     }
     func whenScrollEnd() {
         checkCellsLifeCycle(isNeedUpdate: false)
-        let index = realProgress(offSet: self.scrollView.viewHeadOffset(), length: self.scrollView.length).toInt
+        let index = realProgress(offSet: self.scrollView.viewHeadOffset(), length: self.scrollView.length).int
         self.scrollEndClosure?(index)
     }
     //    // ZJaDe: 手动控制问题太多
@@ -103,8 +103,8 @@ open class PageScrollViewController: UIViewController, UIScrollViewDelegate {
 extension PageScrollViewController: CollectionReusableViewable {
     public func loadCell(_ currentOffset: CGFloat, _ indexOffset: Int, _ isNeedUpdate: Bool) {
         let length = self.scrollView.length
-        let currentIndex = (currentOffset / length).toInt
-        let offSet = currentOffset + indexOffset.toCGFloat * length
+        let currentIndex = (currentOffset / length).int
+        let offSet = currentOffset + indexOffset.cgfloat * length
         let itemIndex = currentIndex + indexOffset
         guard (0..<self.scrollView.contentLength).contains(offSet) || isNeedUpdate == true else {
             /// ZJaDe: 防止滑动到开始或者结尾的时候 还加载了cell

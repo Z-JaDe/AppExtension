@@ -34,7 +34,7 @@ public extension TotalCountable {
      */
     func realProgress(offSet: CGFloat, length: CGFloat) -> CGFloat {
         guard self.totalCount > 0 && length > 0 else { return 0 }
-        let realOffset = offSet.truncatingRemainder(dividingBy: length * self.totalCount.toCGFloat)
+        let realOffset = offSet.truncatingRemainder(dividingBy: length * self.totalCount.cgfloat)
         return realOffset / length
     }
 }

@@ -31,7 +31,7 @@ public struct Rate: FloatLiteralTypeValueProtocol,
         self.originString = valueFormat(2)
     }
     public init(stringLiteral value: String) {
-        self.value = value.toDouble
+        self.value = value.double
         self.originString = value
     }
     // MARK: -
@@ -70,7 +70,7 @@ public struct ThousandRate: FloatLiteralTypeValueProtocol,
         self.originString = valueFormat(2)
     }
     public init(stringLiteral value: String) {
-        self.value = value.toDouble
+        self.value = value.double
         self.originString = value
     }
     // MARK: -
