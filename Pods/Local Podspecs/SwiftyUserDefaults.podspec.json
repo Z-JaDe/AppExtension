@@ -1,8 +1,8 @@
 {
   "name": "SwiftyUserDefaults",
-  "version": "5.0.0-beta.5",
+  "version": "5.0.0",
   "license": "MIT",
-  "summary": "Swifty API for NSUserDefaults",
+  "summary": "Swifty API for UserDefaults",
   "homepage": "https://github.com/sunshinejr/SwiftyUserDefaults",
   "authors": {
     "Radek Pietruszewski": "this.is@radex.io",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/radex/SwiftyUserDefaults.git",
-    "tag": "5.0.0-beta.5"
+    "tag": "5.0.0"
   },
   "requires_arc": true,
   "platforms": {

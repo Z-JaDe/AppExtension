@@ -1,7 +1,8 @@
 {
   "name": "RxGesture",
-  "version": "2.2.0",
+  "version": "3.0.2",
   "summary": "RxSwift reactive wrapper for view gestures.",
+  "swift_versions": "5.0",
   "description": "RxSwift reactive wrapper for view gestures. It lets you to easily observe\na single gesture like tap or a custom group of gestures on a view. You can\ncombine taps, presses, or swipes in any direction",
   "homepage": "https://github.com/RxSwiftCommunity/RxGesture",
   "license": "MIT",
@@ -11,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/RxSwiftCommunity/RxGesture.git",
-    "tag": "2.2.0"
+    "tag": "3.0.2"
   },
   "requires_arc": true,
   "platforms": {
@@ -27,10 +28,11 @@
   },
   "dependencies": {
     "RxSwift": [
-
+      "~> 5.1"
     ],
     "RxCocoa": [
-
+      "~> 5.1"
     ]
-  }
+  },
+  "swift_version": "5.0"
 }

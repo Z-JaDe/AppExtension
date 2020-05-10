@@ -1,6 +1,6 @@
 {
   "name": "Alamofire",
-  "version": "5.0.4",
+  "version": "5.1.0",
   "license": "MIT",
   "summary": "Elegant HTTP Networking in Swift",
   "homepage": "https://github.com/Alamofire/Alamofire",
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "https://github.com/Alamofire/Alamofire.git",
-    "tag": "5.0.4"
+    "tag": "5.1.0"
   },
   "documentation_url": "https://alamofire.github.io/Alamofire/",
   "platforms": {
@@ -19,10 +19,10 @@
     "watchos": "3.0"
   },
   "swift_versions": [
-    "5.0",
-    "5.1"
+    "5.1",
+    "5.2"
   ],
   "source_files": "Source/*.swift",
   "frameworks": "CFNetwork",
-  "swift_version": "5.1"
+  "swift_version": "5.2"
 }

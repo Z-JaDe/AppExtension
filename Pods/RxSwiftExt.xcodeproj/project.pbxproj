@@ -16,15 +16,15 @@
 		A3D671000004C0 /* count.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000130 /* count.swift */; };
 		A3D671000004D0 /* distinct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000140 /* distinct.swift */; };
 		A3D671000004E0 /* filterMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000150 /* filterMap.swift */; };
-		A3D671000004F0 /* flatMapSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000160 /* flatMapSync.swift */; };
-		A3D67100000500 /* fromAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000170 /* fromAsync.swift */; };
-		A3D67100000510 /* ignore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000180 /* ignore.swift */; };
-		A3D67100000520 /* ignoreErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000190 /* ignoreErrors.swift */; };
-		A3D67100000530 /* ignoreWhen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000001A0 /* ignoreWhen.swift */; };
-		A3D67100000540 /* mapAt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000001B0 /* mapAt.swift */; };
-		A3D67100000550 /* mapMany.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000001C0 /* mapMany.swift */; };
-		A3D67100000560 /* mapTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000001D0 /* mapTo.swift */; };
-		A3D67100000570 /* materialized+elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000001E0 /* materialized+elements.swift */; };
+		A3D671000004F0 /* fromAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000160 /* fromAsync.swift */; };
+		A3D67100000500 /* ignore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000170 /* ignore.swift */; };
+		A3D67100000510 /* ignoreErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000180 /* ignoreErrors.swift */; };
+		A3D67100000520 /* ignoreWhen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000190 /* ignoreWhen.swift */; };
+		A3D67100000530 /* mapAt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000001A0 /* mapAt.swift */; };
+		A3D67100000540 /* mapMany.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000001B0 /* mapMany.swift */; };
+		A3D67100000550 /* mapTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000001C0 /* mapTo.swift */; };
+		A3D67100000560 /* materialized+elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000001D0 /* materialized+elements.swift */; };
+		A3D67100000570 /* mergeWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000001E0 /* mergeWith.swift */; };
 		A3D67100000580 /* not.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D671000001F0 /* not.swift */; };
 		A3D67100000590 /* nwise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000200 /* nwise.swift */; };
 		A3D671000005A0 /* ObservableType+Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D67100000210 /* ObservableType+Weak.swift */; };
@@ -80,15 +80,15 @@
 		A3D67100000130 /* count.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = count.swift; sourceTree = "<group>"; };
 		A3D67100000140 /* distinct.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = distinct.swift; sourceTree = "<group>"; };
 		A3D67100000150 /* filterMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = filterMap.swift; sourceTree = "<group>"; };
-		A3D67100000160 /* flatMapSync.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = flatMapSync.swift; sourceTree = "<group>"; };
-		A3D67100000170 /* fromAsync.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = fromAsync.swift; sourceTree = "<group>"; };
-		A3D67100000180 /* ignore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ignore.swift; sourceTree = "<group>"; };
-		A3D67100000190 /* ignoreErrors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ignoreErrors.swift; sourceTree = "<group>"; };
-		A3D671000001A0 /* ignoreWhen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ignoreWhen.swift; sourceTree = "<group>"; };
-		A3D671000001B0 /* mapAt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = mapAt.swift; sourceTree = "<group>"; };
-		A3D671000001C0 /* mapMany.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = mapMany.swift; sourceTree = "<group>"; };
-		A3D671000001D0 /* mapTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = mapTo.swift; sourceTree = "<group>"; };
-		A3D671000001E0 /* materialized+elements.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "materialized+elements.swift"; sourceTree = "<group>"; };
+		A3D67100000160 /* fromAsync.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = fromAsync.swift; sourceTree = "<group>"; };
+		A3D67100000170 /* ignore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ignore.swift; sourceTree = "<group>"; };
+		A3D67100000180 /* ignoreErrors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ignoreErrors.swift; sourceTree = "<group>"; };
+		A3D67100000190 /* ignoreWhen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ignoreWhen.swift; sourceTree = "<group>"; };
+		A3D671000001A0 /* mapAt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = mapAt.swift; sourceTree = "<group>"; };
+		A3D671000001B0 /* mapMany.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = mapMany.swift; sourceTree = "<group>"; };
+		A3D671000001C0 /* mapTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = mapTo.swift; sourceTree = "<group>"; };
+		A3D671000001D0 /* materialized+elements.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "materialized+elements.swift"; sourceTree = "<group>"; };
+		A3D671000001E0 /* mergeWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = mergeWith.swift; sourceTree = "<group>"; };
 		A3D671000001F0 /* not.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = not.swift; sourceTree = "<group>"; };
 		A3D67100000200 /* nwise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = nwise.swift; sourceTree = "<group>"; };
 		A3D67100000210 /* ObservableType+Weak.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ObservableType+Weak.swift"; sourceTree = "<group>"; };
@@ -211,15 +211,15 @@
 				A3D67100000130 /* count.swift */,
 				A3D67100000140 /* distinct.swift */,
 				A3D67100000150 /* filterMap.swift */,
-				A3D67100000160 /* flatMapSync.swift */,
-				A3D67100000170 /* fromAsync.swift */,
-				A3D67100000180 /* ignore.swift */,
-				A3D67100000190 /* ignoreErrors.swift */,
-				A3D671000001A0 /* ignoreWhen.swift */,
-				A3D671000001B0 /* mapAt.swift */,
-				A3D671000001C0 /* mapMany.swift */,
-				A3D671000001D0 /* mapTo.swift */,
-				A3D671000001E0 /* materialized+elements.swift */,
+				A3D67100000160 /* fromAsync.swift */,
+				A3D67100000170 /* ignore.swift */,
+				A3D67100000180 /* ignoreErrors.swift */,
+				A3D67100000190 /* ignoreWhen.swift */,
+				A3D671000001A0 /* mapAt.swift */,
+				A3D671000001B0 /* mapMany.swift */,
+				A3D671000001C0 /* mapTo.swift */,
+				A3D671000001D0 /* materialized+elements.swift */,
+				A3D671000001E0 /* mergeWith.swift */,
 				A3D671000001F0 /* not.swift */,
 				A3D67100000200 /* nwise.swift */,
 				A3D67100000210 /* ObservableType+Weak.swift */,
@@ -389,16 +389,16 @@
 				A3D67100000670 /* distinct+RxCocoa.swift in Sources */,
 				A3D671000004D0 /* distinct.swift in Sources */,
 				A3D671000004E0 /* filterMap.swift in Sources */,
-				A3D671000004F0 /* flatMapSync.swift in Sources */,
-				A3D67100000500 /* fromAsync.swift in Sources */,
-				A3D67100000510 /* ignore.swift in Sources */,
-				A3D67100000520 /* ignoreErrors.swift in Sources */,
-				A3D67100000530 /* ignoreWhen.swift in Sources */,
-				A3D67100000540 /* mapAt.swift in Sources */,
-				A3D67100000550 /* mapMany.swift in Sources */,
+				A3D671000004F0 /* fromAsync.swift in Sources */,
+				A3D67100000500 /* ignore.swift in Sources */,
+				A3D67100000510 /* ignoreErrors.swift in Sources */,
+				A3D67100000520 /* ignoreWhen.swift in Sources */,
+				A3D67100000530 /* mapAt.swift in Sources */,
+				A3D67100000540 /* mapMany.swift in Sources */,
 				A3D67100000680 /* mapTo+RxCocoa.swift in Sources */,
-				A3D67100000560 /* mapTo.swift in Sources */,
-				A3D67100000570 /* materialized+elements.swift in Sources */,
+				A3D67100000550 /* mapTo.swift in Sources */,
+				A3D67100000560 /* materialized+elements.swift in Sources */,
+				A3D67100000570 /* mergeWith.swift in Sources */,
 				A3D67100000690 /* not+RxCocoa.swift in Sources */,
 				A3D67100000580 /* not.swift in Sources */,
 				A3D67100000590 /* nwise.swift in Sources */,
