@@ -24,14 +24,9 @@ extension DispatchQueue {
         ///考虑到多线程同时获取该属性的问题 特征值key 应该放到函数内部
         let labelSpec = DispatchSpecificKey<SpecificKey>()
         setSpecific(key: labelSpec, value: SpecificKey(value: value))
+        defer { setSpecific(key: labelSpec, value: nil) }
         ///当前执行上下文中的value
-        let currentContextValue = DispatchQueue.getSpecific(key: labelSpec)
-        if currentContextValue?.value == value {
-            setSpecific(key: labelSpec, value: nil)
-            return true
-        } else {
-            return false
-        }
+        return DispatchQueue.getSpecific(key: labelSpec)?.value == value
     }
     /**
         若当前在队列执行的任务代码中，会直接执行，否则会添加sync任务
