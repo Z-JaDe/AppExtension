@@ -82,7 +82,10 @@ extension TableViewUpdating: Updating {
     }
     // MARK: -
     public func reload(completion: @escaping () -> Void) {
-        tableView?.reloadData()
-        completion()
+        UIView.animate(withDuration: 0, animations: {
+            self.tableView?.reloadData()            
+        }) { (_) in
+            completion()
+        }
     }
 }
