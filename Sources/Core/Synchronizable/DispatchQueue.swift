@@ -15,18 +15,15 @@ public func performInMain(_ action: @escaping () -> Void) {
         DispatchQueue.main.async(execute: action)
     }
 }
-private struct SpecificKey {
-    let value: Int
-}
+
 extension DispatchQueue {
     public var isInCurrentQueue: Bool {
-        let value = Int.random(in: Int.min..<Int.max)
         ///考虑到多线程同时获取该属性的问题 特征值key 应该放到函数内部
-        let labelSpec = DispatchSpecificKey<SpecificKey>()
-        setSpecific(key: labelSpec, value: SpecificKey(value: value))
+        let labelSpec = DispatchSpecificKey<Void>()
+        setSpecific(key: labelSpec, value: ())
         defer { setSpecific(key: labelSpec, value: nil) }
         ///当前执行上下文中的value
-        return DispatchQueue.getSpecific(key: labelSpec)?.value == value
+        return DispatchQueue.getSpecific(key: labelSpec) != nil
     }
     /**
         若当前在队列执行的任务代码中，会直接执行，否则会添加sync任务
