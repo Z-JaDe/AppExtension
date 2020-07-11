@@ -28,10 +28,10 @@
   },
   "dependencies": {
     "RxSwift": [
-      "~> 5.1"
+
     ],
     "RxCocoa": [
-      "~> 5.1"
+
     ]
   },
   "swift_version": "5.0"

@@ -7,45 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F39E22000003B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39E22000003A0 /* Foundation.framework */; };
-		F39E22000003C0 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000000C0 /* Constraint.swift */; };
-		F39E22000003D0 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000000D0 /* ConstraintAttributes.swift */; };
-		F39E22000003E0 /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000000E0 /* ConstraintConfig.swift */; };
-		F39E22000003F0 /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000000F0 /* ConstraintConstantTarget.swift */; };
-		F39E2200000400 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000100 /* ConstraintDescription.swift */; };
-		F39E2200000410 /* ConstraintDirectionalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000110 /* ConstraintDirectionalInsets.swift */; };
-		F39E2200000420 /* ConstraintDirectionalInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000120 /* ConstraintDirectionalInsetTarget.swift */; };
-		F39E2200000430 /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000130 /* ConstraintDSL.swift */; };
-		F39E2200000440 /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000140 /* ConstraintInsets.swift */; };
-		F39E2200000450 /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000150 /* ConstraintInsetTarget.swift */; };
-		F39E2200000460 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000160 /* ConstraintItem.swift */; };
-		F39E2200000470 /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000170 /* ConstraintLayoutGuide+Extensions.swift */; };
-		F39E2200000480 /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000180 /* ConstraintLayoutGuide.swift */; };
-		F39E2200000490 /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000190 /* ConstraintLayoutGuideDSL.swift */; };
-		F39E22000004A0 /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000001A0 /* ConstraintLayoutSupport.swift */; };
-		F39E22000004B0 /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000001B0 /* ConstraintLayoutSupportDSL.swift */; };
-		F39E22000004C0 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000001C0 /* ConstraintMaker.swift */; };
-		F39E22000004D0 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000001D0 /* ConstraintMakerEditable.swift */; };
-		F39E22000004E0 /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000001E0 /* ConstraintMakerExtendable.swift */; };
-		F39E22000004F0 /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000001F0 /* ConstraintMakerFinalizable.swift */; };
-		F39E2200000500 /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000200 /* ConstraintMakerPriortizable.swift */; };
-		F39E2200000510 /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000210 /* ConstraintMakerRelatable.swift */; };
-		F39E2200000520 /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000220 /* ConstraintMultiplierTarget.swift */; };
-		F39E2200000530 /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000230 /* ConstraintOffsetTarget.swift */; };
-		F39E2200000540 /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000240 /* ConstraintPriority.swift */; };
-		F39E2200000550 /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000250 /* ConstraintPriorityTarget.swift */; };
-		F39E2200000560 /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000260 /* ConstraintRelatableTarget.swift */; };
-		F39E2200000570 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000270 /* ConstraintRelation.swift */; };
-		F39E2200000580 /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000280 /* ConstraintView+Extensions.swift */; };
-		F39E2200000590 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000290 /* ConstraintView.swift */; };
-		F39E22000005A0 /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000002A0 /* ConstraintViewDSL.swift */; };
-		F39E22000005B0 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000002B0 /* Debugging.swift */; };
-		F39E22000005C0 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000002C0 /* LayoutConstraint.swift */; };
-		F39E22000005D0 /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000002D0 /* LayoutConstraintItem.swift */; };
-		F39E22000005E0 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000002E0 /* Typealiases.swift */; };
-		F39E22000005F0 /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000002F0 /* UILayoutSupport+Extensions.swift */; };
-		F39E2200000650 /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F39E2200000640 /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F39E2200000690 /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000680 /* SnapKit-dummy.m */; };
+		F39E22000003C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39E22000003B0 /* Foundation.framework */; };
+		F39E22000003D0 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000000C0 /* Constraint.swift */; };
+		F39E22000003E0 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000000D0 /* ConstraintAttributes.swift */; };
+		F39E22000003F0 /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000000E0 /* ConstraintConfig.swift */; };
+		F39E2200000400 /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000000F0 /* ConstraintConstantTarget.swift */; };
+		F39E2200000410 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000100 /* ConstraintDescription.swift */; };
+		F39E2200000420 /* ConstraintDirectionalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000110 /* ConstraintDirectionalInsets.swift */; };
+		F39E2200000430 /* ConstraintDirectionalInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000120 /* ConstraintDirectionalInsetTarget.swift */; };
+		F39E2200000440 /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000130 /* ConstraintDSL.swift */; };
+		F39E2200000450 /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000140 /* ConstraintInsets.swift */; };
+		F39E2200000460 /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000150 /* ConstraintInsetTarget.swift */; };
+		F39E2200000470 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000160 /* ConstraintItem.swift */; };
+		F39E2200000480 /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000170 /* ConstraintLayoutGuide+Extensions.swift */; };
+		F39E2200000490 /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000180 /* ConstraintLayoutGuide.swift */; };
+		F39E22000004A0 /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000190 /* ConstraintLayoutGuideDSL.swift */; };
+		F39E22000004B0 /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000001A0 /* ConstraintLayoutSupport.swift */; };
+		F39E22000004C0 /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000001B0 /* ConstraintLayoutSupportDSL.swift */; };
+		F39E22000004D0 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000001C0 /* ConstraintMaker.swift */; };
+		F39E22000004E0 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000001D0 /* ConstraintMakerEditable.swift */; };
+		F39E22000004F0 /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000001E0 /* ConstraintMakerExtendable.swift */; };
+		F39E2200000500 /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000001F0 /* ConstraintMakerFinalizable.swift */; };
+		F39E2200000510 /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000200 /* ConstraintMakerPriortizable.swift */; };
+		F39E2200000520 /* ConstraintMakerRelatable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000210 /* ConstraintMakerRelatable+Extensions.swift */; };
+		F39E2200000530 /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000220 /* ConstraintMakerRelatable.swift */; };
+		F39E2200000540 /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000230 /* ConstraintMultiplierTarget.swift */; };
+		F39E2200000550 /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000240 /* ConstraintOffsetTarget.swift */; };
+		F39E2200000560 /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000250 /* ConstraintPriority.swift */; };
+		F39E2200000570 /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000260 /* ConstraintPriorityTarget.swift */; };
+		F39E2200000580 /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000270 /* ConstraintRelatableTarget.swift */; };
+		F39E2200000590 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000280 /* ConstraintRelation.swift */; };
+		F39E22000005A0 /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000290 /* ConstraintView+Extensions.swift */; };
+		F39E22000005B0 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000002A0 /* ConstraintView.swift */; };
+		F39E22000005C0 /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000002B0 /* ConstraintViewDSL.swift */; };
+		F39E22000005D0 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000002C0 /* Debugging.swift */; };
+		F39E22000005E0 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000002D0 /* LayoutConstraint.swift */; };
+		F39E22000005F0 /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000002E0 /* LayoutConstraintItem.swift */; };
+		F39E2200000600 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000002F0 /* Typealiases.swift */; };
+		F39E2200000610 /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E2200000300 /* UILayoutSupport+Extensions.swift */; };
+		F39E2200000670 /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F39E2200000660 /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F39E22000006B0 /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F39E22000006A0 /* SnapKit-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,37 +72,38 @@
 		F39E22000001E0 /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Source/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
 		F39E22000001F0 /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Source/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
 		F39E2200000200 /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPriortizable.swift; path = Source/ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
-		F39E2200000210 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Source/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
-		F39E2200000220 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Source/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
-		F39E2200000230 /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Source/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
-		F39E2200000240 /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Source/ConstraintPriority.swift; sourceTree = "<group>"; };
-		F39E2200000250 /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Source/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
-		F39E2200000260 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Source/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
-		F39E2200000270 /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
-		F39E2200000280 /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintView+Extensions.swift"; path = "Source/ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
-		F39E2200000290 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
-		F39E22000002A0 /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Source/ConstraintViewDSL.swift; sourceTree = "<group>"; };
-		F39E22000002B0 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Source/Debugging.swift; sourceTree = "<group>"; };
-		F39E22000002C0 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
-		F39E22000002D0 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
-		F39E22000002E0 /* Typealiases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Typealiases.swift; path = Source/Typealiases.swift; sourceTree = "<group>"; };
-		F39E22000002F0 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Source/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
-		F39E22000003A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		F39E2200000610 /* SnapKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.debug.xcconfig; sourceTree = "<group>"; };
-		F39E2200000620 /* SnapKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.release.xcconfig; sourceTree = "<group>"; };
-		F39E2200000630 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnapKit.modulemap; sourceTree = "<group>"; };
-		F39E2200000640 /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
-		F39E2200000660 /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
-		F39E2200000670 /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
-		F39E2200000680 /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
+		F39E2200000210 /* ConstraintMakerRelatable+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintMakerRelatable+Extensions.swift"; path = "Source/ConstraintMakerRelatable+Extensions.swift"; sourceTree = "<group>"; };
+		F39E2200000220 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Source/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
+		F39E2200000230 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Source/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
+		F39E2200000240 /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Source/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
+		F39E2200000250 /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Source/ConstraintPriority.swift; sourceTree = "<group>"; };
+		F39E2200000260 /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Source/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
+		F39E2200000270 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Source/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
+		F39E2200000280 /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
+		F39E2200000290 /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintView+Extensions.swift"; path = "Source/ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
+		F39E22000002A0 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
+		F39E22000002B0 /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Source/ConstraintViewDSL.swift; sourceTree = "<group>"; };
+		F39E22000002C0 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Source/Debugging.swift; sourceTree = "<group>"; };
+		F39E22000002D0 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
+		F39E22000002E0 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
+		F39E22000002F0 /* Typealiases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Typealiases.swift; path = Source/Typealiases.swift; sourceTree = "<group>"; };
+		F39E2200000300 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Source/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
+		F39E22000003B0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		F39E2200000630 /* SnapKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.debug.xcconfig; sourceTree = "<group>"; };
+		F39E2200000640 /* SnapKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.release.xcconfig; sourceTree = "<group>"; };
+		F39E2200000650 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnapKit.modulemap; sourceTree = "<group>"; };
+		F39E2200000660 /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
+		F39E2200000680 /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
+		F39E2200000690 /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
+		F39E22000006A0 /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F39E2200000370 /* Frameworks */ = {
+		F39E2200000380 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F39E22000003B0 /* Foundation.framework in Frameworks */,
+				F39E22000003C0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +130,7 @@
 		F39E2200000060 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F39E2200000390 /* iOS */,
+				F39E22000003A0 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -157,45 +159,46 @@
 				F39E22000001E0 /* ConstraintMakerExtendable.swift */,
 				F39E22000001F0 /* ConstraintMakerFinalizable.swift */,
 				F39E2200000200 /* ConstraintMakerPriortizable.swift */,
-				F39E2200000210 /* ConstraintMakerRelatable.swift */,
-				F39E2200000220 /* ConstraintMultiplierTarget.swift */,
-				F39E2200000230 /* ConstraintOffsetTarget.swift */,
-				F39E2200000240 /* ConstraintPriority.swift */,
-				F39E2200000250 /* ConstraintPriorityTarget.swift */,
-				F39E2200000260 /* ConstraintRelatableTarget.swift */,
-				F39E2200000270 /* ConstraintRelation.swift */,
-				F39E2200000290 /* ConstraintView.swift */,
-				F39E2200000280 /* ConstraintView+Extensions.swift */,
-				F39E22000002A0 /* ConstraintViewDSL.swift */,
-				F39E22000002B0 /* Debugging.swift */,
-				F39E22000002C0 /* LayoutConstraint.swift */,
-				F39E22000002D0 /* LayoutConstraintItem.swift */,
-				F39E22000002E0 /* Typealiases.swift */,
-				F39E22000002F0 /* UILayoutSupport+Extensions.swift */,
-				F39E2200000600 /* Support Files */,
+				F39E2200000220 /* ConstraintMakerRelatable.swift */,
+				F39E2200000210 /* ConstraintMakerRelatable+Extensions.swift */,
+				F39E2200000230 /* ConstraintMultiplierTarget.swift */,
+				F39E2200000240 /* ConstraintOffsetTarget.swift */,
+				F39E2200000250 /* ConstraintPriority.swift */,
+				F39E2200000260 /* ConstraintPriorityTarget.swift */,
+				F39E2200000270 /* ConstraintRelatableTarget.swift */,
+				F39E2200000280 /* ConstraintRelation.swift */,
+				F39E22000002A0 /* ConstraintView.swift */,
+				F39E2200000290 /* ConstraintView+Extensions.swift */,
+				F39E22000002B0 /* ConstraintViewDSL.swift */,
+				F39E22000002C0 /* Debugging.swift */,
+				F39E22000002D0 /* LayoutConstraint.swift */,
+				F39E22000002E0 /* LayoutConstraintItem.swift */,
+				F39E22000002F0 /* Typealiases.swift */,
+				F39E2200000300 /* UILayoutSupport+Extensions.swift */,
+				F39E2200000620 /* Support Files */,
 			);
 			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
-		F39E2200000390 /* iOS */ = {
+		F39E22000003A0 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				F39E22000003A0 /* Foundation.framework */,
+				F39E22000003B0 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		F39E2200000600 /* Support Files */ = {
+		F39E2200000620 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F39E2200000630 /* SnapKit.modulemap */,
-				F39E2200000680 /* SnapKit-dummy.m */,
-				F39E2200000660 /* SnapKit-Info.plist */,
-				F39E2200000670 /* SnapKit-prefix.pch */,
-				F39E2200000640 /* SnapKit-umbrella.h */,
-				F39E2200000610 /* SnapKit.debug.xcconfig */,
-				F39E2200000620 /* SnapKit.release.xcconfig */,
+				F39E2200000650 /* SnapKit.modulemap */,
+				F39E22000006A0 /* SnapKit-dummy.m */,
+				F39E2200000680 /* SnapKit-Info.plist */,
+				F39E2200000690 /* SnapKit-prefix.pch */,
+				F39E2200000660 /* SnapKit-umbrella.h */,
+				F39E2200000630 /* SnapKit.debug.xcconfig */,
+				F39E2200000640 /* SnapKit.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SnapKit";
@@ -204,11 +207,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		F39E2200000350 /* Headers */ = {
+		F39E2200000360 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F39E2200000650 /* SnapKit-umbrella.h in Headers */,
+				F39E2200000670 /* SnapKit-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,12 +220,12 @@
 /* Begin PBXNativeTarget section */
 		6913FCF4B90C224E55FE5C821AFB90D2 /* SnapKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F39E2200000310 /* Build configuration list for PBXNativeTarget "SnapKit" */;
+			buildConfigurationList = F39E2200000320 /* Build configuration list for PBXNativeTarget "SnapKit" */;
 			buildPhases = (
-				F39E2200000350 /* Headers */,
-				F39E2200000360 /* Sources */,
-				F39E2200000370 /* Frameworks */,
-				F39E2200000380 /* Resources */,
+				F39E2200000360 /* Headers */,
+				F39E2200000370 /* Sources */,
+				F39E2200000380 /* Frameworks */,
+				F39E2200000390 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -261,7 +264,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F39E2200000380 /* Resources */ = {
+		F39E2200000390 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -271,47 +274,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F39E2200000360 /* Sources */ = {
+		F39E2200000370 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F39E22000003C0 /* Constraint.swift in Sources */,
-				F39E22000003D0 /* ConstraintAttributes.swift in Sources */,
-				F39E22000003E0 /* ConstraintConfig.swift in Sources */,
-				F39E22000003F0 /* ConstraintConstantTarget.swift in Sources */,
-				F39E2200000400 /* ConstraintDescription.swift in Sources */,
-				F39E2200000410 /* ConstraintDirectionalInsets.swift in Sources */,
-				F39E2200000420 /* ConstraintDirectionalInsetTarget.swift in Sources */,
-				F39E2200000430 /* ConstraintDSL.swift in Sources */,
-				F39E2200000440 /* ConstraintInsets.swift in Sources */,
-				F39E2200000450 /* ConstraintInsetTarget.swift in Sources */,
-				F39E2200000460 /* ConstraintItem.swift in Sources */,
-				F39E2200000470 /* ConstraintLayoutGuide+Extensions.swift in Sources */,
-				F39E2200000480 /* ConstraintLayoutGuide.swift in Sources */,
-				F39E2200000490 /* ConstraintLayoutGuideDSL.swift in Sources */,
-				F39E22000004A0 /* ConstraintLayoutSupport.swift in Sources */,
-				F39E22000004B0 /* ConstraintLayoutSupportDSL.swift in Sources */,
-				F39E22000004C0 /* ConstraintMaker.swift in Sources */,
-				F39E22000004D0 /* ConstraintMakerEditable.swift in Sources */,
-				F39E22000004E0 /* ConstraintMakerExtendable.swift in Sources */,
-				F39E22000004F0 /* ConstraintMakerFinalizable.swift in Sources */,
-				F39E2200000500 /* ConstraintMakerPriortizable.swift in Sources */,
-				F39E2200000510 /* ConstraintMakerRelatable.swift in Sources */,
-				F39E2200000520 /* ConstraintMultiplierTarget.swift in Sources */,
-				F39E2200000530 /* ConstraintOffsetTarget.swift in Sources */,
-				F39E2200000540 /* ConstraintPriority.swift in Sources */,
-				F39E2200000550 /* ConstraintPriorityTarget.swift in Sources */,
-				F39E2200000560 /* ConstraintRelatableTarget.swift in Sources */,
-				F39E2200000570 /* ConstraintRelation.swift in Sources */,
-				F39E2200000580 /* ConstraintView+Extensions.swift in Sources */,
-				F39E2200000590 /* ConstraintView.swift in Sources */,
-				F39E22000005A0 /* ConstraintViewDSL.swift in Sources */,
-				F39E22000005B0 /* Debugging.swift in Sources */,
-				F39E22000005C0 /* LayoutConstraint.swift in Sources */,
-				F39E22000005D0 /* LayoutConstraintItem.swift in Sources */,
-				F39E2200000690 /* SnapKit-dummy.m in Sources */,
-				F39E22000005E0 /* Typealiases.swift in Sources */,
-				F39E22000005F0 /* UILayoutSupport+Extensions.swift in Sources */,
+				F39E22000003D0 /* Constraint.swift in Sources */,
+				F39E22000003E0 /* ConstraintAttributes.swift in Sources */,
+				F39E22000003F0 /* ConstraintConfig.swift in Sources */,
+				F39E2200000400 /* ConstraintConstantTarget.swift in Sources */,
+				F39E2200000410 /* ConstraintDescription.swift in Sources */,
+				F39E2200000420 /* ConstraintDirectionalInsets.swift in Sources */,
+				F39E2200000430 /* ConstraintDirectionalInsetTarget.swift in Sources */,
+				F39E2200000440 /* ConstraintDSL.swift in Sources */,
+				F39E2200000450 /* ConstraintInsets.swift in Sources */,
+				F39E2200000460 /* ConstraintInsetTarget.swift in Sources */,
+				F39E2200000470 /* ConstraintItem.swift in Sources */,
+				F39E2200000480 /* ConstraintLayoutGuide+Extensions.swift in Sources */,
+				F39E2200000490 /* ConstraintLayoutGuide.swift in Sources */,
+				F39E22000004A0 /* ConstraintLayoutGuideDSL.swift in Sources */,
+				F39E22000004B0 /* ConstraintLayoutSupport.swift in Sources */,
+				F39E22000004C0 /* ConstraintLayoutSupportDSL.swift in Sources */,
+				F39E22000004D0 /* ConstraintMaker.swift in Sources */,
+				F39E22000004E0 /* ConstraintMakerEditable.swift in Sources */,
+				F39E22000004F0 /* ConstraintMakerExtendable.swift in Sources */,
+				F39E2200000500 /* ConstraintMakerFinalizable.swift in Sources */,
+				F39E2200000510 /* ConstraintMakerPriortizable.swift in Sources */,
+				F39E2200000520 /* ConstraintMakerRelatable+Extensions.swift in Sources */,
+				F39E2200000530 /* ConstraintMakerRelatable.swift in Sources */,
+				F39E2200000540 /* ConstraintMultiplierTarget.swift in Sources */,
+				F39E2200000550 /* ConstraintOffsetTarget.swift in Sources */,
+				F39E2200000560 /* ConstraintPriority.swift in Sources */,
+				F39E2200000570 /* ConstraintPriorityTarget.swift in Sources */,
+				F39E2200000580 /* ConstraintRelatableTarget.swift in Sources */,
+				F39E2200000590 /* ConstraintRelation.swift in Sources */,
+				F39E22000005A0 /* ConstraintView+Extensions.swift in Sources */,
+				F39E22000005B0 /* ConstraintView.swift in Sources */,
+				F39E22000005C0 /* ConstraintViewDSL.swift in Sources */,
+				F39E22000005D0 /* Debugging.swift in Sources */,
+				F39E22000005E0 /* LayoutConstraint.swift in Sources */,
+				F39E22000005F0 /* LayoutConstraintItem.swift in Sources */,
+				F39E22000006B0 /* SnapKit-dummy.m in Sources */,
+				F39E2200000600 /* Typealiases.swift in Sources */,
+				F39E2200000610 /* UILayoutSupport+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,9 +446,9 @@
 			};
 			name = Release;
 		};
-		F39E2200000320 /* Release */ = {
+		F39E2200000330 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F39E2200000620 /* SnapKit.release.xcconfig */;
+			baseConfigurationReference = F39E2200000640 /* SnapKit.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -479,9 +483,9 @@
 			};
 			name = Release;
 		};
-		F39E2200000330 /* Debug */ = {
+		F39E2200000340 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F39E2200000610 /* SnapKit.debug.xcconfig */;
+			baseConfigurationReference = F39E2200000630 /* SnapKit.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -527,11 +531,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F39E2200000310 /* Build configuration list for PBXNativeTarget "SnapKit" */ = {
+		F39E2200000320 /* Build configuration list for PBXNativeTarget "SnapKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F39E2200000330 /* Debug */,
-				F39E2200000320 /* Release */,
+				F39E2200000340 /* Debug */,
+				F39E2200000330 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
