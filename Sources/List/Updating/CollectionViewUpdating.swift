@@ -71,10 +71,10 @@ extension CollectionViewUpdating: Updating {
     }
     // MARK: -
     public func reload(completion: @escaping () -> Void) {
-        UIView.animate(withDuration: 0, animations: {
+        UIView.animate(withDuration: 0) {
             self.collectionView?.reloadData()
             self.collectionView?.collectionViewLayout.invalidateLayout()
-        }) { (_) in
+        } completion: { (_) in
             completion()
         }
     }

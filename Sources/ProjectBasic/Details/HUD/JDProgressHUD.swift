@@ -81,16 +81,16 @@ class JDProgressHUD: MBProgressHUD {
                 self.animationType = .zoomIn
                 super.hide(animated: true)
             case .falling:
-                UIView.animate(withDuration: 0.5, animations: {
+                UIView.animate(withDuration: 0) {
                     self.bezelView.alpha = 0
                     self.offset.y = 200
                     self.setNeedsLayout()
                     self.layoutIfNeeded()
-                }, completion: { (_) in
+                } completion: { (_) in
                     super.hide(animated: false)
                     self.offset.y = 0
                     self.bezelView.alpha = 1
-                })
+                }
             }
         }
     }
