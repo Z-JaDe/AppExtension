@@ -1,9 +1,9 @@
 
 language: swift
-osx_image: xcode11
+osx_image: xcode12
 xcode_workspace: AppExtension.xcworkspace
 xcode_scheme: AppExtensionTests
-xcode_destination: platform=iOS Simulator,OS=13.0,name=iPhone 11
+xcode_destination: platform=iOS Simulator,OS=14.0,name=iPhone 12
 
 git:
   submodules: false
