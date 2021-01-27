@@ -72,7 +72,7 @@ DEPENDENCIES:
   - RxOptional
   - RxSwift (from `https://github.com/ReactiveX/RxSwift`)
   - RxSwiftExt
-  - SnapKit (from `https://github.com/SnapKit/SnapKit`)
+  - SnapKit
   - SwiftLint
   - SwiftyUserDefaults
   - Validation (from `LocalPods/Validation`)
@@ -90,6 +90,7 @@ SPEC REPOS:
     - RxOptional
     - RxRelay
     - RxSwiftExt
+    - SnapKit
     - SwiftLint
     - SwiftyUserDefaults
 
@@ -114,8 +115,6 @@ EXTERNAL SOURCES:
     :path: LocalPods/RxNetwork
   RxSwift:
     :git: https://github.com/ReactiveX/RxSwift
-  SnapKit:
-    :git: https://github.com/SnapKit/SnapKit
   Validation:
     :path: LocalPods/Validation
 
@@ -132,9 +131,6 @@ CHECKOUT OPTIONS:
   RxSwift:
     :commit: 978765880025d5f0b215890bc140f9f489fbe8ee
     :git: https://github.com/ReactiveX/RxSwift
-  SnapKit:
-    :commit: f9dec4789465be27ff516218c94afd0aa229ee00
-    :git: https://github.com/SnapKit/SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
@@ -158,11 +154,11 @@ SPEC CHECKSUMS:
   RxRelay: 8d593be109c06ea850df027351beba614b012ffb
   RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
   RxSwiftExt: 6637802b67dd4b60c00c661cc640316b693c0387
-  SnapKit: 953b6dbadafbf0ad57fb657c84f8c479cba4483b
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
   SwiftyUserDefaults: 33fcb42bd1feb53a37d873feb62c82967db5f7f6
   Validation: 60ace8848c16cf6916111e4ff298cf1c6c0dcf6a
 
-PODFILE CHECKSUM: e20937e6e440213780dd5ad1d7cc326f69afb2f0
+PODFILE CHECKSUM: 4e8642a8c4de3bf75af47e6c52f1452f4f83f4e4
 
 COCOAPODS: 1.10.1

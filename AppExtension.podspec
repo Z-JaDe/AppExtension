@@ -49,8 +49,8 @@ Pod::Spec.new do |s|
 
         ss.dependency "RxSwift"
     end
-    s.subspec "List" do |ss|
-        ss.source_files  = "Sources/List/**/*.{swift}"
+    s.subspec "CollectionList" do |ss|
+        ss.source_files  = "Sources/CollectionList/**/*.{swift}"
         ss.dependency "AppExtension/Core"
     end
     s.subspec "RxExtensions" do |ss|

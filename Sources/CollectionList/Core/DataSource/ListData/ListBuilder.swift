@@ -43,9 +43,9 @@ extension ListBuilder {
 }
 
 // MARK: -
-public extension ListDataUpdateProtocol {
-    typealias ListItemBuilder = ListBuilder<Section, Item>
-    func reloadData(@ListItemBuilder content: () -> _ListData) {
-        self.reloadData(content())
-    }
-}
+//public extension ListDataUpdateProtocol {
+//    typealias ListItemBuilder = ListBuilder<Section, Item>
+//    func reloadData(@ListItemBuilder content: () -> _ListData) {
+//        self.reloadData(content())
+//    }
+//}

@@ -10,8 +10,8 @@ import Foundation
 import RxSwift
 @available(iOS, deprecated: 9.0, message: "可以使用 pausableBuffered")
 public class NeedUpdateTask {
-    let buffer: TimeInterval
-    public init(buffer: TimeInterval = 0) {
+    let buffer: DispatchTimeInterval
+    public init(buffer: DispatchTimeInterval = .microseconds(0)) {
         self.buffer = buffer
     }
     /// ZJaDe: 只是标记需要更新，但是想要更新还是要等到limit通过

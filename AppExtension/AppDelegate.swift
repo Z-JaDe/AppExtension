@@ -18,7 +18,7 @@ import RxExtensions
 import UIComponents
 import EmptyDataSet
 import ProjectBasic
-import List
+import CollectionList
 
 @UIApplicationMain
 

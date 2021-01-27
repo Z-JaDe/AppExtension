@@ -45,7 +45,7 @@ def rxExtensionPod
 end
 
 def snapKitPod
-  pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit'
+  pod 'SnapKit'
 end
 
 target:'Core' do
@@ -61,7 +61,7 @@ target:'UserNotificationManager' do
   baseCorePod
   rxPod hasCocoa = false
 end
-target:'List' do
+target:'CollectionList' do
   baseCorePod
 end
 target:'UIComponents' do
@@ -92,8 +92,6 @@ def commonPods
   baseCorePod
   rxExtensionPod
   snapKitPod
-  
-  pod 'SwiftLint'
 
   networkPod
   userPod 'ModalManager'
@@ -122,6 +120,8 @@ target:'ProjectBasic' do
 end
 
 target:'AppExtension' do
+  pod 'SwiftLint'
+
   projectBasicPod
   target 'AppExtensionUITests'
   target 'AppExtensionTests'

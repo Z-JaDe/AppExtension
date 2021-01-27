@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Z_JaDe. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension Animater {
 

@@ -1,3 +1,5 @@
+
+import CoreGraphics
 // ZJaDe: gyb自动生成
 
 // ZJaDe: Bool类型转换
