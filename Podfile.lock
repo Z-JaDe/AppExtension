@@ -27,25 +27,25 @@ PODS:
   - RxCocoa (6.0.0):
     - RxRelay (= 6.0.0)
     - RxSwift (= 6.0.0)
-  - RxGesture (3.0.2):
-    - RxCocoa
-    - RxSwift
+  - RxGesture (4.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
   - RxNetwork (1.0.0):
     - Alamofire
     - RxSwift
-  - RxOptional (4.1.0):
-    - RxCocoa
-    - RxSwift
+  - RxOptional (5.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
   - RxRelay (6.0.0):
     - RxSwift (= 6.0.0)
   - RxSwift (6.0.0)
-  - RxSwiftExt (5.2.0):
-    - RxSwiftExt/Core (= 5.2.0)
-    - RxSwiftExt/RxCocoa (= 5.2.0)
-  - RxSwiftExt/Core (5.2.0):
-    - RxSwift
-  - RxSwiftExt/RxCocoa (5.2.0):
-    - RxCocoa
+  - RxSwiftExt (6.0.0):
+    - RxSwiftExt/Core (= 6.0.0)
+    - RxSwiftExt/RxCocoa (= 6.0.0)
+  - RxSwiftExt/Core (6.0.0):
+    - RxSwift (= 6.0.0)
+  - RxSwiftExt/RxCocoa (6.0.0):
+    - RxCocoa (= 6.0.0)
     - RxSwiftExt/Core
   - SnapKit (5.0.1)
   - SwiftLint (0.42.0)
@@ -55,7 +55,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire`)
   - CocoaExtension (from `LocalPods/CocoaExtension`)
-  - CollectionKit (from `LocalPods/Fork/CollectionKit`)
+  - CollectionKit
   - DifferenceKit
   - Encryption (from `LocalPods/Encryption`)
   - FunctionalSwift (from `LocalPods/FunctionalSwift`)
@@ -67,34 +67,37 @@ DEPENDENCIES:
   - Motion
   - ReSwift (from `https://github.com/ReSwift/ReSwift.git`)
   - RxCocoa (from `https://github.com/ReactiveX/RxSwift`)
-  - RxGesture (from `LocalPods/Fork/RxGesture`)
+  - RxGesture
   - RxNetwork (from `LocalPods/RxNetwork`)
-  - RxOptional (from `LocalPods/Fork/RxOptional`)
+  - RxOptional
   - RxSwift (from `https://github.com/ReactiveX/RxSwift`)
-  - RxSwiftExt (from `LocalPods/Fork/RxSwiftExt`)
+  - RxSwiftExt
   - SnapKit (from `https://github.com/SnapKit/SnapKit`)
   - SwiftLint
-  - SwiftyUserDefaults (from `LocalPods/Fork/SwiftyUserDefaults`)
+  - SwiftyUserDefaults
   - Validation (from `LocalPods/Validation`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - CollectionKit
     - CryptoSwift
     - DifferenceKit
     - Kingfisher
     - MBProgressHUD
     - MJRefresh
     - Motion
+    - RxGesture
+    - RxOptional
     - RxRelay
+    - RxSwiftExt
     - SwiftLint
+    - SwiftyUserDefaults
 
 EXTERNAL SOURCES:
   Alamofire:
     :git: https://github.com/Alamofire/Alamofire
   CocoaExtension:
     :path: LocalPods/CocoaExtension
-  CollectionKit:
-    :path: LocalPods/Fork/CollectionKit
   Encryption:
     :path: LocalPods/Encryption
   FunctionalSwift:
@@ -107,20 +110,12 @@ EXTERNAL SOURCES:
     :git: https://github.com/ReSwift/ReSwift.git
   RxCocoa:
     :git: https://github.com/ReactiveX/RxSwift
-  RxGesture:
-    :path: LocalPods/Fork/RxGesture
   RxNetwork:
     :path: LocalPods/RxNetwork
-  RxOptional:
-    :path: LocalPods/Fork/RxOptional
   RxSwift:
     :git: https://github.com/ReactiveX/RxSwift
-  RxSwiftExt:
-    :path: LocalPods/Fork/RxSwiftExt
   SnapKit:
     :git: https://github.com/SnapKit/SnapKit
-  SwiftyUserDefaults:
-    :path: LocalPods/Fork/SwiftyUserDefaults
   Validation:
     :path: LocalPods/Validation
 
@@ -157,17 +152,17 @@ SPEC CHECKSUMS:
   Motion: cf1e060e489f6661126374d5c60dbd2ed991605c
   ReSwift: 14e6f9409fe6bdc635e588208296a01f43b959c9
   RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
-  RxGesture: 38c047679e6e3b2badd46d17fd11e833852ce483
+  RxGesture: b095a86df33d199a33b46a644e7c58bdef8ab035
   RxNetwork: 7097c526894b0a23822ffc70cede5207c82534f1
-  RxOptional: 2ea8fe8473fe9676c3eecb3970eb7844e01db25b
+  RxOptional: cb0b05f0270854eb8ac322c4eb298c4945469fab
   RxRelay: 8d593be109c06ea850df027351beba614b012ffb
   RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
-  RxSwiftExt: 0e75b394b86e36ec75abcbf5bb4bc021ec477158
+  RxSwiftExt: 6637802b67dd4b60c00c661cc640316b693c0387
   SnapKit: 953b6dbadafbf0ad57fb657c84f8c479cba4483b
   SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
   SwiftyUserDefaults: 33fcb42bd1feb53a37d873feb62c82967db5f7f6
   Validation: 60ace8848c16cf6916111e4ff298cf1c6c0dcf6a
 
-PODFILE CHECKSUM: 7c593952e69b14b7a3667f17ba9d0f609bd19329
+PODFILE CHECKSUM: e20937e6e440213780dd5ad1d7cc326f69afb2f0
 
 COCOAPODS: 1.10.1

@@ -9,9 +9,9 @@ install! 'cocoapods', deterministic_uuids: false, generate_multiple_pod_projects
 def userPod (name)
   pod name, :path => "LocalPods/#{name}"
 end
-def userForkPod (name)
-  pod name, :path => "LocalPods/Fork/#{name}"
-end
+#def userForkPod (name)
+#  pod name, :path => "LocalPods/Fork/#{name}"
+#end
 ######################################################################################
 def baseCorePod
   userPod 'FunctionalSwift'
@@ -19,7 +19,7 @@ def baseCorePod
 end
 
 def collectionKitPod
-  userForkPod 'CollectionKit'
+  pod 'CollectionKit'
 end
 
 def networkPod
@@ -37,9 +37,9 @@ end
 
 def rxExtensionPod
   rxPod
-  userForkPod 'RxGesture'
-  userForkPod 'RxSwiftExt'
-  userForkPod 'RxOptional'
+  pod 'RxGesture'
+  pod 'RxSwiftExt'
+  pod 'RxOptional'
   #    pod 'RxAnimated'
   #    pod 'RxKeyboard'
 end
@@ -102,7 +102,7 @@ def commonPods
   userPod 'iCarouselSwift'
 
   pod 'MBProgressHUD'
-  userForkPod 'SwiftyUserDefaults'
+  pod 'SwiftyUserDefaults'
   
   pod 'Motion'
   collectionKitPod #仅测试

@@ -26,21 +26,6 @@
 	path = LocalPods/RxNetwork
 	url = git@github.com:Z-JaDe/RxNetwork.git
 
-[submodule "LocalPods/Fork/RxOptional"]
-	path = LocalPods/Fork/RxOptional
-	url = git@github.com:Z-JaDe/RxOptional.git
-[submodule "LocalPods/Fork/RxSwiftExt"]
-	path = LocalPods/Fork/RxSwiftExt
-	url = git@github.com:Z-JaDe/RxSwiftExt.git
-[submodule "LocalPods/Fork/RxGesture"]
-	path = LocalPods/Fork/RxGesture
-	url = git@github.com:Z-JaDe/RxGesture.git
-[submodule "LocalPods/Fork/SwiftyUserDefaults"]
-	path = LocalPods/Fork/SwiftyUserDefaults
-	url = git@github.com:Z-JaDe/SwiftyUserDefaults.git
-[submodule "LocalPods/Fork/CollectionKit"]
-	path = LocalPods/Fork/CollectionKit
-	url = git@github.com:Z-JaDe/CollectionKit.git
 [submodule "LocalPods/iCarouselSwift"]
 	path = LocalPods/iCarouselSwift
 	url = git@github.com:Z-JaDe/iCarouselSwift.git
