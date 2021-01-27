@@ -1,6 +1,0 @@
-framework module ModalManager {
-  umbrella header "ModalManager-umbrella.h"
-
-  export *
-  module * { export * }
-}

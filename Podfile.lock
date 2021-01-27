@@ -1,10 +1,10 @@
 PODS:
-  - Alamofire (5.2.1)
+  - Alamofire (5.4.1)
   - CocoaExtension (1.0.0)
   - CollectionKit (2.4.0):
     - CollectionKit/Core (= 2.4.0)
   - CollectionKit/Core (2.4.0)
-  - CryptoSwift (1.3.1)
+  - CryptoSwift (1.3.8)
   - DifferenceKit (1.1.5):
     - DifferenceKit/Core (= 1.1.5)
     - DifferenceKit/UIKitExtension (= 1.1.5)
@@ -16,19 +16,17 @@ PODS:
     - FunctionalSwift
   - FunctionalSwift (1.0.0)
   - iCarouselSwift (1.0.0)
-  - Kingfisher (5.14.1):
-    - Kingfisher/Core (= 5.14.1)
-  - Kingfisher/Core (5.14.1)
+  - Kingfisher (6.0.1)
   - MBProgressHUD (1.2.0)
-  - MJRefresh (3.4.3)
+  - MJRefresh (3.5.0)
   - ModalManager (1.0.0)
   - Motion (3.1.3):
     - Motion/Core (= 3.1.3)
   - Motion/Core (3.1.3)
-  - ReSwift (5.0.0)
-  - RxCocoa (5.1.1):
-    - RxRelay (~> 5)
-    - RxSwift (~> 5)
+  - ReSwift (6.0.0)
+  - RxCocoa (6.0.0):
+    - RxRelay (= 6.0.0)
+    - RxSwift (= 6.0.0)
   - RxGesture (3.0.2):
     - RxCocoa
     - RxSwift
@@ -38,9 +36,9 @@ PODS:
   - RxOptional (4.1.0):
     - RxCocoa
     - RxSwift
-  - RxRelay (5.1.1):
-    - RxSwift (~> 5)
-  - RxSwift (5.1.1)
+  - RxRelay (6.0.0):
+    - RxSwift (= 6.0.0)
+  - RxSwift (6.0.0)
   - RxSwiftExt (5.2.0):
     - RxSwiftExt/Core (= 5.2.0)
     - RxSwiftExt/RxCocoa (= 5.2.0)
@@ -50,7 +48,7 @@ PODS:
     - RxCocoa
     - RxSwiftExt/Core
   - SnapKit (5.0.1)
-  - SwiftLint (0.39.2)
+  - SwiftLint (0.42.0)
   - SwiftyUserDefaults (5.0.0)
   - Validation (1.0.0)
 
@@ -128,48 +126,48 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Alamofire:
-    :commit: ad1ebf11578ec5d4e9944cae0e615c1e64794153
+    :commit: eaf6e622dd41b07b251d8f01752eab31bc811493
     :git: https://github.com/Alamofire/Alamofire
   ReSwift:
-    :commit: e623331b63cd0b65e04cdb7a031fc42a41e5f558
+    :commit: 4ef9ab80d3905749e1c69a5b4f1dee1d83615c8d
     :git: https://github.com/ReSwift/ReSwift.git
   RxCocoa:
-    :commit: a580d07ed002217fd91d8446c3a852486e9beefa
+    :commit: 978765880025d5f0b215890bc140f9f489fbe8ee
     :git: https://github.com/ReactiveX/RxSwift
   RxSwift:
-    :commit: a580d07ed002217fd91d8446c3a852486e9beefa
+    :commit: 978765880025d5f0b215890bc140f9f489fbe8ee
     :git: https://github.com/ReactiveX/RxSwift
   SnapKit:
-    :commit: 4cac0e9ac1874de8b2062ecb8cb5b31a6e1543e5
+    :commit: f9dec4789465be27ff516218c94afd0aa229ee00
     :git: https://github.com/SnapKit/SnapKit
 
 SPEC CHECKSUMS:
-  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
-  CocoaExtension: d5b997c4ac17c378ae2d9415bcdeeecf9e05842f
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  CocoaExtension: cc7fcad08a5c8f2719c58a403da68bb72a05d9b2
   CollectionKit: 8f01e7629185bb81072c4aa734d105df5c2d1c8b
-  CryptoSwift: f12f037f6d0fcd6d48c96db0071b653de64e6c4d
+  CryptoSwift: 01b0f0cba1d5c212e5a335ff6c054fb75a204f00
   DifferenceKit: 516f12e336ed65a3a0665847b5c3cb5cad4bd4ea
-  Encryption: d59b0359431ca79a9eb05886ce8cdf8d41ca6a64
-  FunctionalSwift: f74b7191c3dc62e6540983ce80c935194503172b
-  iCarouselSwift: 7b7dab3d6d8f3dcfcbd81535852166c740b4938d
-  Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
+  Encryption: d992a81d621d3be73620b81595cefdd6b1a84c55
+  FunctionalSwift: d6253480363907c0cb624bda10f439709ba7a971
+  iCarouselSwift: 500d3c40110ea61f8511a270d5de1b20c25b8560
+  Kingfisher: adde87a4f74f6a3845395769354efff593581740
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
-  ModalManager: 99623f5326a2a53064fa5576792174dd61cf8f5a
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
+  ModalManager: 5771441d7b57d3fe23a7b90b204b6171ebc6959b
   Motion: cf1e060e489f6661126374d5c60dbd2ed991605c
-  ReSwift: 820555642f938e2e6c79f3ff75d70a2f45d4ef80
-  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  ReSwift: 14e6f9409fe6bdc635e588208296a01f43b959c9
+  RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
   RxGesture: 38c047679e6e3b2badd46d17fd11e833852ce483
-  RxNetwork: 0c5bdab623ee3423c31ab27099059c67f81e7437
+  RxNetwork: 7097c526894b0a23822ffc70cede5207c82534f1
   RxOptional: 2ea8fe8473fe9676c3eecb3970eb7844e01db25b
-  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
-  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxRelay: 8d593be109c06ea850df027351beba614b012ffb
+  RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
   RxSwiftExt: 0e75b394b86e36ec75abcbf5bb4bc021ec477158
   SnapKit: 953b6dbadafbf0ad57fb657c84f8c479cba4483b
-  SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
+  SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
   SwiftyUserDefaults: 33fcb42bd1feb53a37d873feb62c82967db5f7f6
-  Validation: 707530eb0fb44304faab08447d2d647c6c4ab0f7
+  Validation: 60ace8848c16cf6916111e4ff298cf1c6c0dcf6a
 
-PODFILE CHECKSUM: 149b7d902ec529fb39e95d314b68df6d5de7752d
+PODFILE CHECKSUM: 7c593952e69b14b7a3667f17ba9d0f609bd19329
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.1

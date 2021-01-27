@@ -1,6 +1,0 @@
-framework module CocoaExtension {
-  umbrella header "CocoaExtension-umbrella.h"
-
-  export *
-  module * { export * }
-}
