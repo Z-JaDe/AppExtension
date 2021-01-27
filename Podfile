@@ -1,7 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '10.0'
-use_frameworks!
+platform :ios, '13.0'
+use_frameworks! :linkage => :static
 #Framework
 
 install! 'cocoapods', deterministic_uuids: false, generate_multiple_pod_projects: true
