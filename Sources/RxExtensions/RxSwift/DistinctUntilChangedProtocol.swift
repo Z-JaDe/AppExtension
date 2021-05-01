@@ -8,20 +8,20 @@
 
 import Foundation
 public protocol DistinctUntilChangedProtocol {
-    associatedtype E
-    func distinctUntilChanged<K>(_ keySelector: @escaping (E) -> K, comparer: @escaping (K, K) -> Bool) -> Self
-    func distinctUntilChanged(_ comparer: @escaping (E, E) -> Bool) -> Self
-    func distinctUntilChanged<K: Equatable>(_ keySelector: @escaping (E) -> K) -> Self
+    associatedtype Element
+    func distinctUntilChanged<K>(_ keySelector: @escaping (Element) -> K, comparer: @escaping (K, K) -> Bool) -> Self
+    func distinctUntilChanged(_ comparer: @escaping (Element, Element) -> Bool) -> Self
+    func distinctUntilChanged<K: Equatable>(_ keySelector: @escaping (Element) -> K) -> Self
 }
 extension DistinctUntilChangedProtocol {
-    public func distinctUntilChanged(_ comparer: @escaping (E, E) -> Bool) -> Self {
+    public func distinctUntilChanged(_ comparer: @escaping (Element, Element) -> Bool) -> Self {
         self.distinctUntilChanged({$0}, comparer: comparer)
     }
-    public func distinctUntilChanged<K: Equatable>(_ keySelector: @escaping (E) -> K) -> Self {
+    public func distinctUntilChanged<K: Equatable>(_ keySelector: @escaping (Element) -> K) -> Self {
         self.distinctUntilChanged(keySelector, comparer: {$0 == $1})
     }
 }
-extension DistinctUntilChangedProtocol where E: Equatable {
+extension DistinctUntilChangedProtocol where Element: Equatable {
     public func distinctUntilChanged() -> Self {
         self.distinctUntilChanged({$0}, comparer: {$0 == $1})
     }

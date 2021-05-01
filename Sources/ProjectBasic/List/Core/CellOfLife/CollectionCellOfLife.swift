@@ -10,7 +10,7 @@ import Foundation
 /**
  自己实现复用cell，willAppear和didDisappear需要代理里面调用，UICollectionAdapter默认已经调用
  */
-protocol CollectionCellOfLife {
+public protocol CollectionCellOfLife {
     func createCell(in collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell
     func cellWillAppear(in cell: UICollectionViewCell)
 //    func cellDidDisAppear() ///cell消失时 有可能数据源已经丢失
@@ -20,7 +20,6 @@ protocol CollectionCellOfLife {
     func cellDidDeselected()
 }
 extension CollectionCellOfLife {
-    @inline(__always)
     func _createCell<T: UICollectionViewCell>(in collectionView: UICollectionView, for indexPath: IndexPath, _ reuseIdentifier: String) -> T {
         collectionView.register(T.self, forCellWithReuseIdentifier: reuseIdentifier)
         // swiftlint:disable force_cast
@@ -30,7 +29,7 @@ extension CollectionCellOfLife {
 // MARK: -
 extension CollectionItemModel: CollectionCellOfLife {
     typealias DynamicCell = DynamicCollectionItemCell
-    func createCell(in collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell {
+    public func createCell(in collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell {
         let reuseIdentifier = cellInfo.reuseIdentifier
         let cell: InternalCollectionViewCell = _createCell(in: collectionView, for: indexPath, reuseIdentifier)
         guard let cls = NSClassFromString(cellInfo.clsName) as? DynamicCell.Type else {
@@ -52,7 +51,7 @@ extension CollectionItemModel: CollectionCellOfLife {
         }
         return cell
     }
-    func cellWillAppear(in cell: UICollectionViewCell) {
+    public func cellWillAppear(in cell: UICollectionViewCell) {
         guard let _cell = (cell as! InternalCollectionViewCell).contentItem as? DynamicCell else {
             assertionFailure("没获取到DynamicCell")
             return
@@ -64,12 +63,12 @@ extension CollectionItemModel: CollectionCellOfLife {
         _cell.willAppear()
         _cell.changeCellStateToDidAppear()
     }
-    func cellShouldHighlight() -> Bool {
+    public func cellShouldHighlight() -> Bool {
         getCell()?.shouldHighlight() ?? true
     }
-    func cellDidSelected() {
+    public func cellDidSelected() {
         getCell()?.didSelectedItem()
     }
-    func cellDidDeselected() {
+    public func cellDidDeselected() {
     }
 }

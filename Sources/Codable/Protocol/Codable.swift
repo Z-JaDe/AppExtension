@@ -46,7 +46,7 @@ extension Encodable {
     }
 }
 
-//extension KeyedDecodingContainer {
+// extension KeyedDecodingContainer {
 //    public func decode(_ type: Bool.Type, forKey key: KeyedDecodingContainer.Key) throws -> Bool {
 //        return try decodeIfPresent(type, forKey: key) ?? false
 //    }
@@ -140,5 +140,5 @@ extension Encodable {
 //        }
 //        return try container.decode(type)
 //    }
-//}
+// }
 //

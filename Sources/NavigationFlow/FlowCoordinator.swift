@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxSwiftExt
 
-protocol FlowCoordinatorDelegate: class {
+protocol FlowCoordinatorDelegate: AnyObject {
     func navigateToAnotherFlow(withParent parent: FlowItemCoordinator, withNextFlowItem nextFlowItem: NextFlowItem)
 
     func endFlowCoordinator(withIdentifier identifier: String)
@@ -57,7 +57,7 @@ class FlowItemCoordinator: DisposeBagProtocol {
                 let presentable = nextFlowItem.nextPresentable
                 let stepper = nextFlowItem.nextStepper
                 return stepper.steps.pausable(presentable.rxVisible)
-            }.takeUntil(self.flow.rxDismissed.asObservable()) // ZJaDe: 流结束的时候结束订阅
+            }.take(until: self.flow.rxDismissed.asObservable()) // ZJaDe: 流结束的时候结束订阅
             .asDriver(onErrorJustReturn: NoneStep()).drive(onNext: { [weak self] (step) in
                 let newStepContext = StepContext(with: step) // ZJaDe: 开启下一个Setp循环
                 self?.steps.onNext(newStepContext)

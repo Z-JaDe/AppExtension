@@ -118,14 +118,14 @@ extension UIAlertController {
         let isPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
         let root = keyWindow?.rootViewController?.view
 
-        //self.responds(to: #selector(getter: popoverPresentationController))
+        // self.responds(to: #selector(getter: popoverPresentationController))
         if let source = source {
             popoverPresentationController?.sourceView = source
             popoverPresentationController?.sourceRect = source.bounds
         } else if isPad, let source = root, style == .actionSheet {
             popoverPresentationController?.sourceView = source
             popoverPresentationController?.sourceRect = CGRect(x: source.bounds.midX, y: source.bounds.midY, width: 0, height: 0)
-            //popoverPresentationController?.permittedArrowDirections = .down
+            // popoverPresentationController?.permittedArrowDirections = .down
             popoverPresentationController?.permittedArrowDirections = .init(rawValue: 0)
         }
 
@@ -147,8 +147,8 @@ extension UIAlertController {
         }
     }
     func addAction(image: UIImage? = nil, title: String, color: UIColor? = nil, style: UIAlertAction.Style = .default, isEnabled: Bool = true, handler: ((UIAlertAction) -> Void)? = nil) {
-        //let isPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
-        //let action = UIAlertAction(title: title, style: isPad && style == .cancel ? .default : style, handler: handler)
+        // let isPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
+        // let action = UIAlertAction(title: title, style: isPad && style == .cancel ? .default : style, handler: handler)
         let action = UIAlertAction(title: title, style: style, handler: handler)
         action.isEnabled = isEnabled
 

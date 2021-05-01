@@ -27,9 +27,7 @@ open class SegmentView<CellView, CellData>: MultipleItemsView<CellView, CellData
         super.configData(dataArray)
         func bind(itemView: CellView, itemData: CellData, index: Int) {
             update(cell: itemView, index: index)
-            if var itemView = itemView as? SelectedStateDesignable {
-                itemView.isSelected = false
-            }
+            (itemView as? SelectedStateDesignable)?.isSelected = false
         }
         /// ZJaDe: 设置cellArr数据
         self.cellArr.countIsEqual(
@@ -92,16 +90,12 @@ open class SegmentView<CellView, CellData>: MultipleItemsView<CellView, CellData
             }) {
                 self.changeSelectState?(oldContext, false)
             }
-            if var itemView = oldValue as? SelectedStateDesignable {
-                itemView.isSelected = false
-            }
+            (oldValue as? SelectedStateDesignable)?.isSelected = false
             /// ZJaDe: 
             if let context = currentItem.map({CellTapContext(view: $0, data: dataArray[currentIndex], index: currentIndex)}) {
                 self.changeSelectState?(context, true)
             }
-            if var itemView = self.currentItem as? SelectedStateDesignable {
-                itemView.isSelected = true
-            }
+            (self.currentItem as? SelectedStateDesignable)?.isSelected = true
         }
     }
     // MARK: -

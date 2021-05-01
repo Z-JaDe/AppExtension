@@ -71,7 +71,7 @@ extension RefreshListProtocol {
         guard let scrollView = self.scrollItem as? NSObject else { return }
         let disposeBag = scrollView.resetDisposeBagWithTag("_refreshOb_contentOffset")
         scrollView.rx.observeWeakly(CGPoint.self, "contentOffset")
-            .observeOn(MainScheduler.asyncInstance)
+            .observe(on: MainScheduler.asyncInstance)
             .subscribeOnNext {[weak self] (_) in
                 guard let self = self else { return }
                 guard self.preloadEnabled == true else { return }

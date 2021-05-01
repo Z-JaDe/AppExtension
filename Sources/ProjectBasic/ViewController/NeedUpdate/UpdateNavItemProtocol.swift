@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-public protocol UpdateNavItemProtocol: class {
+public protocol UpdateNavItemProtocol: AnyObject {
     /// ZJaDe: 请求
     func updateNavItem(_ navItem: UINavigationItem)
     func setNeedUpdateNavItem()

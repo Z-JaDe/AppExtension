@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol EmptyDataSetContentProtocol: class {
+public protocol EmptyDataSetContentProtocol: AnyObject {
     typealias ContainerView = EmptyDataSetView
     func configEmptyDataSetLoadFailed(_ containerView: ContainerView)
     func configEmptyDataSetLoading(_ containerView: ContainerView)

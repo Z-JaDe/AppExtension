@@ -20,7 +20,7 @@ private final class WeakWarppedObject {
         self.target = target
     }
 }
-public protocol AssociatedObjectProtocol: class {
+public protocol AssociatedObjectProtocol: AnyObject {
     // MARK: - get
     /// ZJaDe: V的类型不能是协议 或者部分协议，要不然取值的时候会转换成nil
     func associatedObject<V>(_ key: UnsafeRawPointer) -> V?

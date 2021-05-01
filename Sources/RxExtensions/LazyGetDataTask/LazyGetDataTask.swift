@@ -70,7 +70,7 @@ public class LazyGetDataTask<Value: Equatable>: DisposeBagProtocol {
     }
     public func valueObservable(whenError: ErrorEventHandle = .never) -> Observable<Value> {
         Observable<Value>.create { (observer) -> Disposable in
-            let disposable = self.valueSubject.observeOn(MainScheduler.asyncInstance).subscribeOnNext({ [weak self] (_) in
+            let disposable = self.valueSubject.observe(on: MainScheduler.asyncInstance).subscribeOnNext({ [weak self] (_) in
                 guard let self = self else {
                     observer.onError(AppError.deallocError)
                     return

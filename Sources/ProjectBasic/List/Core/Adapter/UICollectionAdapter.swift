@@ -8,48 +8,33 @@
 
 import UIKit
 
-extension CollectionItemModel: _AdapterItemType {}
-extension CollectionSection: _AdapterSectionType {}
-
-public typealias CollectionSectionModel = SectionModelItem<CollectionSection, CollectionItemModel>
-
 extension DelegateHooker: UICollectionViewDelegate {}
-open class UICollectionAdapter: ListAdapter<CollectionViewDataSource<CollectionSectionModel>> {
+open class UICollectionAdapter: NSObject {
+
+    public weak private(set) var collectionView: UICollectionView?
 
     private var _delegateHooker: DelegateHooker<UICollectionViewDelegate>?
-    public weak private(set) var collectionView: UICollectionView?
+    /// ZJaDe: 设置自定义的代理时，需要注意尽量使用UICollectionProxy或者它的子类，这样会自动实现一些默认配置
+    public lazy var collectionProxy: UICollectionProxy = UICollectionProxy(self)
+    public var dataSource: CollectionViewDataSource!
 
     public func collectionViewInit(_ collectionView: UICollectionView) {
         self.collectionView = collectionView
         collectionView.register(InternalCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: InternalCollectionReusableView.reuseIdentifier)
         collectionView.register(InternalCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: InternalCollectionReusableView.reuseIdentifier)
 
-        dataSourceDefaultInit(dataSource)
+        dataSourceDefaultInit(collectionView)
         collectionView.delegate = _delegateHooker ?? collectionProxy
         collectionView.dataSource = dataSource
-        dataChanged({})
     }
 
-    /// ZJaDe: 设置自定义的代理时，需要注意尽量使用UICollectionProxy或者它的子类，这样会自动实现一些默认配置
-    public lazy var collectionProxy: UICollectionProxy = UICollectionProxy(self)
-    open override func dataSourceDefaultInit(_ dataSource: DataSource) {
-        super.dataSourceDefaultInit(dataSource)
-        dataSource.configureCell = {(_, collectionView, indexPath, item) in
-            return item.createCell(in: collectionView, at: indexPath)
-        }
-    }
-    override func dataChanged(_ completion: (() -> Void)?) {
-        guard let collectionView = collectionView else { return }
-        guard let listData = listData else { return }
-        let mapDataInfo = listData.compactMapToSectionModels()
-        let updater = self.updater ?? collectionView.updater
-        updater.tempUpdateMode = self.tempUpdateMode
-        self.tempUpdateMode = nil
-        let updating = self.updating ?? collectionView.createUpdating(animated: true)
-        dataSource.dataChange(mapDataInfo, updater, updating, completion)
+    open func dataSourceDefaultInit(_ collectionView: UICollectionView) {
+        dataSource = CollectionViewDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
+            item.base.createCell(in: collectionView, at: indexPath)
+        })
     }
 }
-extension UICollectionAdapter { //Hooker
+extension UICollectionAdapter { // Hooker
     private var delegateHooker: DelegateHooker<UICollectionViewDelegate> {
         if let hooker = _delegateHooker {
             return hooker
@@ -70,4 +55,11 @@ extension UICollectionAdapter { //Hooker
         set { delegateHooker.plugins = newValue }
     }
 }
-extension UICollectionAdapter: ListDataUpdateProtocol {}
+extension UICollectionViewDelegate {
+    func addIn(_ adapter: UICollectionAdapter) -> Self {
+        if adapter.delegatePlugins.contains(where: {$0 === self}) == false {
+            adapter.delegatePlugins.append(self)
+        }
+        return self
+    }
+}

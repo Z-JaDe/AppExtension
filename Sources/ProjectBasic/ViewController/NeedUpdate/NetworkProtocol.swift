@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-public protocol NetworkProtocol: class {
+public protocol NetworkProtocol: AnyObject {
     /// ZJaDe: 请求
     func request()
     func setNeedRequest()

@@ -19,7 +19,7 @@ extension UIViewController: NavItemConvertible {
     }
 }
 // MARK: -
-public protocol NavItemConvertible: class {
+public protocol NavItemConvertible: AnyObject {
     func asNavItem() -> UIViewController?
 }
 public protocol AbstractNavItemConvertible: NavItemConvertible {

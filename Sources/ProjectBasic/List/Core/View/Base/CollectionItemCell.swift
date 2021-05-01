@@ -23,9 +23,9 @@ open class CollectionItemCell: ItemCell, CollectionCellContentItem {
     }
     /// 设置contentItem属性后刷新这里触发SNTableCell
     func updateUI(_ cell: InternalCollectionViewCell) {
-        ///isSelected由cell和model共同控制
+        /// isSelected由cell和model共同控制
 //        cell.isSelected = self.isSelected
-        ///isHighlighted由cell控制
+        /// isHighlighted由cell控制
         self.isHighlighted = cell.isHighlighted
     }
     open override func didDisappear() {

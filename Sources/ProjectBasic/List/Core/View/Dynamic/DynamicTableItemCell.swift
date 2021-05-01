@@ -19,11 +19,9 @@ open class DynamicTableItemCell: TableItemCell {
             }
         }
     }
-    @inline(__always)
     func getModel() -> TableItemModel? {
         _model
     }
-    @inline(__always)
     func setModel(_ model: TableItemModel?) {
         _model = model
     }

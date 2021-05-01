@@ -21,7 +21,7 @@ public extension PermissionScope {
         switch status {
         case .restricted:
             self.requestError("app没有被授权访问相册, 可能是家长控制权限", closure)
-        case .authorized:
+        case .authorized, .limited:
             self.requestSuccessful(closure)
         case .denied:
             self.requestError("app被禁止访问相册", closure)

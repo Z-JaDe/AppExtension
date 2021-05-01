@@ -105,11 +105,9 @@ extension AsyncLayer {
 }
 extension AsyncLayer {
     // MARK: -
-    @inline(__always)
     private func willDisplay() {
         self.displayTask.willDisplay?(self)
     }
-    @inline(__always)
     private func didDisplayInMain(_ isFinished: Bool) {
         performInMain {
             self.didDisplay(isFinished)
@@ -122,12 +120,10 @@ extension AsyncLayer {
             return DispatchQueue.main.async(execute: action)
         }
     }
-    @inline(__always)
     private func didDisplay(_ isFinished: Bool) {
         self.displayTask.didDisplay?(self, isFinished)
     }
     // MARK: -
-    @inline(__always)
     private func cancelAsyncDisplay() {
         sentinel.increase()
     }

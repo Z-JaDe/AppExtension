@@ -13,7 +13,7 @@ extension UIViewController: Presentable {
     }
 }
 // MARK: -
-public protocol PresentItemConvertible: class {
+public protocol PresentItemConvertible: AnyObject {
     func asPresentItem() -> UIViewController?
 }
 public protocol AbstractPresentItemConvertible: PresentItemConvertible {

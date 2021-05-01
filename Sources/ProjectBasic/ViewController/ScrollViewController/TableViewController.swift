@@ -21,7 +21,17 @@ open class NormalTableViewController: ListViewController<TableView> {
         return tableView
     }
 }
-open class AdapterTableViewController: AdapterListViewController<TableView, UITableAdapter> {
+open class AdapterTableViewController: ListViewController<TableView> {
+    // MARK: - RefreshListProtocol
+    open var networkPage: Int = 0
+    /// 默认值若有变化 子类可重写
+    open var limit: UInt? = 20
+
+    public lazy private(set) var adapter: UITableAdapter = self.loadAdapter()
+    func loadAdapter() -> UITableAdapter {
+        UITableAdapter()
+    }
+
     /// ZJaDe: view加载之前设置有效
     public var style: UITableView.Style = .plain
 
@@ -35,30 +45,6 @@ open class AdapterTableViewController: AdapterListViewController<TableView, UITa
         return tableView
     }
 
-    // MARK: -
-    private lazy var tableHeaderSection: TableSection = TableSection()
-    private lazy var tableFooterSection: TableSection = TableSection()
-    private lazy var tableHeaderCell: CustomTableItemCell<UIView> = CustomTableItemCell()
-    private lazy var tableFooterCell: CustomTableItemCell<UIView> = CustomTableItemCell()
-    public var tableHeaderView: UIView? {
-        get { self.tableHeaderCell.customView }
-        set {
-            self.tableHeaderCell.customView = newValue
-            if self.adapter.dataArray.isEmpty == false {
-                self.adapter.updateData()
-            }
-        }
-    }
-    public var tableFooterView: UIView? {
-        get { self.tableFooterCell.customView }
-        set {
-            self.tableFooterCell.customView = newValue
-            if self.adapter.dataArray.isEmpty == false {
-                self.adapter.updateData()
-            }
-        }
-    }
-
     open override func viewDidLoad() {
         super.viewDidLoad()
         adapterViewInit()
@@ -69,18 +55,11 @@ open class AdapterTableViewController: AdapterListViewController<TableView, UITa
             adapter.tableViewInit(self.rootView)
         }
     }
-    override func loadAdapter() -> UITableAdapter {
-        let adapter = UITableAdapter()
-        adapter.insertSecionModels.register(on: self, key: "defaultHeaderAndFooter") { (self, dataArray) in
-            var dataArray = dataArray
-            if self.tableHeaderView != nil {
-                dataArray.insert(SectionData(self.tableHeaderSection, [.cell(self.tableHeaderCell)]), at: 0)
-            }
-            if self.tableFooterView != nil {
-                dataArray.append(SectionData(self.tableFooterSection, [.cell(self.tableFooterCell)]))
-            }
-            return dataArray
+}
+extension AdapterTableViewController: RefreshListProtocol {
+    public var parser: ResultParser<AdapterTableViewController> {
+        ResultParser(self) { [weak self] in
+            self?.adapter.dataSource.snapshot().numberOfItems ?? 0
         }
-        return adapter
     }
 }

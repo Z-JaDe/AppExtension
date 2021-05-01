@@ -56,25 +56,25 @@ public struct Color {
     public static let darkBlack: UIColor = UIColor.black
 }
 extension Color {
-    ///app主色调--蓝色
+    /// app主色调--蓝色
     public static var tintColor: UIColor = Color.yellow
     //    public static var selectedCell: UIColor = Color.colorFromRGB(0xfffdef)
-    //控制器默认背景颜色
+    // 控制器默认背景颜色
 
-    ///黑色遮罩
+    /// 黑色遮罩
     public static var blackMask: UIColor = darkBlack.withAlphaComponent(0.3)
 
     public static var viewBackground: UIColor = colorFromRGB(0xF1F1F1)
-    //    public static var lightViewBackground: UIColor = Color.colorFromRGB(0xf9f9f9)
-    ///分割线颜色
+    // public static var lightViewBackground: UIColor = Color.colorFromRGB(0xf9f9f9)
+    /// 分割线颜色
     public static var separatorLine: UIColor = colorFromRGB(0xebebeb)
-    ///边框颜色
+    /// 边框颜色
     public static var boderLine: UIColor = separatorLine
-    ///阴影颜色
+    /// 阴影颜色
     public static var shadow: UIColor = darkBlack
-    ///不可用颜色
+    /// 不可用颜色
     public static var disable: UIColor = colorFromRGB(0xCCCCCC)
-    ///占位颜色
+    /// 占位颜色
     public static var placeholder: UIColor = colorFromRGB(0xc7c7cd)
 
     public struct List {}

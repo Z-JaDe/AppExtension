@@ -53,7 +53,7 @@ public class SegmentScrollView<CellView>: MultipleItemScrollView<CellView>, Tota
             self.scrollTo(offSet: lastCell.trailing - self.length, animated: false)
         }
     }
-    public func layoutCellsSize(_ cellArr: [_LayoutItem]) {
+    public func layoutCellsSize(_ cellArr: [LayoutItemType]) {
         layoutCellsSize(cellArr, self.getCellLength(), self.length2)
     }
     /// ZJaDe: 返回itemView宽度或者长度

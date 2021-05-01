@@ -14,7 +14,6 @@ extension TableItemCell {
             logError("\(self)->tableView找不到")
             return
         }
-        guard tableView.updater.isUpdating == false else { return }
         guard CATransform3DIsIdentity(self.layer.transform) else { return }
         guard (try? self.cellState.value()) == .didAppear else { return }
         if item.cellHeightLayoutType == .hasLayout {
@@ -27,7 +26,9 @@ extension TableItemCell {
         }
         guard item.cellHeightLayoutType == .resetLayout else { return }
         self.setNeedUpdate()
-        tableView.updater.performBatch(updating: tableView.createUpdating(.automatic), updates: updates, completion: { _ in })
+        tableView.performBatchUpdates {
+
+        } completion: { _ in }
     }
 }
 extension TableItemCell {

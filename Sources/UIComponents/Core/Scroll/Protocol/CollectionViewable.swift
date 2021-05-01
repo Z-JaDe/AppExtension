@@ -17,7 +17,7 @@ public struct TapContext<View: UIView, Data> {
         self.index = index
     }
 }
-public protocol CollectionViewable: class, TotalCountable {
+public protocol CollectionViewable: AnyObject, TotalCountable {
     associatedtype ScrollViewType: OneWayScrollable
     var scrollView: ScrollViewType {get}
     associatedtype CellView: UIView

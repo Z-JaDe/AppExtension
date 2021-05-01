@@ -14,7 +14,7 @@ open class HasNavCoordinator: NSObject, Coordinator, CoordinatorContainer {
     public required init(_ navCon: UINavigationController?) {
         self.navCon = navCon
     }
-    ///手动调用
+    /// 手动调用
     open func startNoViewCon() {
 
     }

@@ -65,9 +65,7 @@ extension DataSourceItemsParamProtocol {
     }
     public func checkAllParams() -> Bool {
         func checkModelParams(_ model: Any) -> Bool? {
-            guard let model = model as? CheckParamsProtocol else {
-                return nil
-            }
+            guard let model = model as? CheckParamsProtocol else { return nil }
             if let closure = model.checkParamsClosure {
                 return closure()
             } else if model.key.isEmpty {
@@ -106,5 +104,19 @@ extension Array: DataSourceItemsParamProtocol {
         }
         return true
     }
-
+}
+extension NSDiffableDataSourceSnapshot: DataSourceItemsParamProtocol {
+    public func eachModel(_ closure: ((Any) -> Bool)) -> Bool {
+        self.itemIdentifiers.eachModel(closure)
+    }
+}
+extension NSDiffableDataSourceSnapshot where ItemIdentifierType == AnyTableAdapterItem {
+    public func eachModel(_ closure: ((Any) -> Bool)) -> Bool {
+        self.itemIdentifiers.map {$0.base}.eachModel(closure)
+    }
+}
+extension NSDiffableDataSourceSnapshot where ItemIdentifierType == AnyCollectionAdapterItem {
+    public func eachModel(_ closure: ((Any) -> Bool)) -> Bool {
+        self.itemIdentifiers.map {$0.base}.eachModel(closure)
+    }
 }

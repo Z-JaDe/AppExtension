@@ -21,7 +21,7 @@ open class ViewController: UIViewController, ViewControllerProtocol {
         statusBarStyle
     }
     // MARK: - init
-    ///是否已经初始化完毕，当调用loadView的时候可以作判断
+    /// 是否已经初始化完毕，当调用loadView的时候可以作判断
     private var isDidInited: Bool = false
     public init() {
         super.init(nibName: nil, bundle: nil)
@@ -110,7 +110,7 @@ open class ViewController: UIViewController, ViewControllerProtocol {
         viewState.onNext(.viewDidDisappear)
     }
 }
-///不支持xib storyboard
+/// 不支持xib storyboard
 open class GenericsViewController<ViewType>: ViewController where ViewType: UIView {
     // MARK: - view
     public final override func createRootView(_ frame: CGRect) -> UIView? {

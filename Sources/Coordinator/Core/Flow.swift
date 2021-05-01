@@ -12,7 +12,7 @@ import Foundation
  遵循对应Flow协议，就可以开启对应流程，比如打开一个注册页，或者打开一个设置页
  */
 
-public protocol Flow: class {
+public protocol Flow: AnyObject {
 
 }
 

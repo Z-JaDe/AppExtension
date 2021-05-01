@@ -26,7 +26,7 @@ extension EmptyDataSetView {
             return Disposables.create()
         })
             .share(replay: 1)
-            .observeOn(MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
             .delay(.milliseconds(100), scheduler: MainScheduler.instance)
             .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
     }

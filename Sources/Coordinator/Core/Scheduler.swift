@@ -8,5 +8,5 @@
 
 import Foundation
 
-public protocol Scheduler: class {
+public protocol Scheduler: AnyObject {
 }

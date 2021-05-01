@@ -14,10 +14,10 @@ import Foundation
  Coordinator 项目中 一般 一个Coordinator代表UI逻辑
  Coordinator可以由Flow来初始化
  */
-public protocol Coordinator: class {
+public protocol Coordinator: AnyObject {
 
 }
-public protocol CoordinatorContainer: class {
+public protocol CoordinatorContainer: AnyObject {
     var coordinators: [Coordinator] { get set}
 }
 

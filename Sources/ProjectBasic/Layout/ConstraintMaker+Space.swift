@@ -21,7 +21,7 @@ extension UIView {
         }
     }
 }
-//extension ConstraintMaker {
+// extension ConstraintMaker {
 //    /// ZJaDe: 宽比高
 //    public func width_height(scale: CGFloat) {
 //        if let view = item as? UIView {
@@ -38,7 +38,7 @@ extension UIView {
 //            logError("item 非 UIView type")
 //        }
 //    }
-//}
+// }
 extension ConstraintMaker {
     @discardableResult
     public func topSpaceToVC(_ viewController: UIViewController) -> ConstraintMakerEditable {

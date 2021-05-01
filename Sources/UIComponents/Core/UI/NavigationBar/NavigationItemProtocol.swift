@@ -15,7 +15,7 @@ public enum NavBarShadowType {
     case none
 }
 
-public protocol NavigationItemProtocol: class {
+public protocol NavigationItemProtocol: AnyObject {
     var navBarIsHidden: Bool {get}
     var navBarTintColor: UIColor {get}
     var navTintColor: UIColor {get}

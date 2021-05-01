@@ -10,18 +10,18 @@ import Foundation
 
 public protocol MultipleSelectionProtocol: AssociatedObjectProtocol {
     associatedtype SelectItemType: Equatable
-    var maxSelectedCount: MaxSelectedCount {get set}
+    // var maxSelectedCount: MaxSelectedCount {get set}
     /// ZJaDe: 更新item选中状态 默认不能主动调用
-    func updateSelectState(_ item: inout SelectItemType, _ isSelected: Bool)
+    func setSelectState(item: SelectItemType, _ isSelected: Bool)
     /// ZJaDe: 主动更改item的选中状态
-    func changeSelectState(_ isSelected: Bool, _ item: SelectItemType)
+    func changeSelectState(item: SelectItemType, _ isSelected: Bool)
 }
 private var selectedItemArrayKey: UInt8 = 0
 private var selectedItemArrayChangedKey: UInt8 = 0
 private var maxSelectedCountKey: UInt8 = 0
 public extension MultipleSelectionProtocol {
     /// ZJaDe: 存储选中的cell
-    private(set) var selectedItemArray: [SelectItemType] {
+    var selectedItemArray: [SelectItemType] {
         get { associatedObject(&selectedItemArrayKey, createIfNeed: []) }
         set { setAssociatedObject(&selectedItemArrayKey, newValue) }
     }
@@ -37,7 +37,6 @@ public extension MultipleSelectionProtocol {
     }
 }
 extension MultipleSelectionProtocol {
-    @inline(__always)
     func index(_ item: SelectItemType) -> Int? {
         self.selectedItemArray.firstIndex(of: item)
     }
@@ -58,27 +57,27 @@ extension MultipleSelectionProtocol {
 }
 // MARK: -
 extension MultipleSelectionProtocol where SelectItemType: SelectedStateDesignable {
-    func updateSelectState(_ item: inout SelectItemType, _ isSelected: Bool) {
+    func setSelectState(item: SelectItemType, _ isSelected: Bool) {
         updateSelectedItemArrayWhenSelectStateChanged(item, isSelected)
     }
 }
 // MARK: -
 extension MultipleSelectionProtocol {
     /// ZJaDe: 当item未选中时做一些处理 默认不能主动调用
-    public func updateItemToUnSelected(_ item: inout SelectItemType) {
+    public func updateItemToUnSelected(item: SelectItemType) {
         // 单选时不可以不选中
         if maxSelectedCount == 1 && self.selectedItemArray.count == 1 {
             return
         }
-        updateSelectState(&item, false)
+        setSelectState(item: item, false)
     }
     /// ZJaDe: 当item选中时做一些处理 默认不能主动调用
-    public func updateItemToSelected(_ item: inout SelectItemType) {
-        updateSelectState(&item, true)
+    public func updateItemToSelected(item: SelectItemType) {
+        setSelectState(item: item, true)
         // 选中时，取消选中第一个
         if let count = maxSelectedCount.count {
             while self.selectedItemArray.count > count, let first = self.selectedItemArray.first {
-                changeSelectState(false, first)
+                changeSelectState(item: first, false)
             }
         }
     }
@@ -88,7 +87,7 @@ extension MultipleSelectionProtocol {
     /// ZJaDe: 主动更改items的选中状态
     public func changeSelectState(_ isSelected: Bool, _ items: [SelectItemType]) {
         for item in items {
-            self.changeSelectState(isSelected, item)
+            self.changeSelectState(item: item, isSelected)
         }
     }
 }

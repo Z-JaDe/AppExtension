@@ -12,7 +12,7 @@ open class AssetGridViewController: AdapterCollectionViewController, PHPhotoLibr
     var fetchResult: PHFetchResult<PHAsset>!
     let imageManager = PHImageManager()
 
-    public private(set) lazy var selectionPlugin: CollectionSelectionPlugin = CollectionSelectionPlugin(adapter)
+    public private(set) lazy var selectionPlugin: CollectionSelectionPlugin = CollectionSelectionPlugin(adapter.dataSource).addIn(adapter)
     public var selectedItemArray: [CollectionSelectionPlugin.SelectItemType] {
         selectionPlugin.selectedItemArray
     }
@@ -78,10 +78,10 @@ open class AssetGridViewController: AdapterCollectionViewController, PHPhotoLibr
             tempCacheModel[asset] = model
         }
         self.cacheModel = tempCacheModel
-        self.adapter.reloadList(array, isRefresh: true)
+        self.adapter.dataSource.reloadData(array, isRefresh: true)
     }
     open func requestSelectedImages(_ closure: @escaping ([UIImage]) -> Void) {
-        let assets: [PHAsset] = self.selectedItemArray.compactMap({($0 as? AssetGridModel)?.asset})
+        let assets: [PHAsset] = self.selectedItemArray.compactMap({($0.base as? AssetGridModel)?.asset})
         guard assets.isNotEmpty else {
             closure([])
             return

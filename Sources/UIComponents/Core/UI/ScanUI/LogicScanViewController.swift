@@ -146,7 +146,7 @@ extension LogicScanViewController {
         }
         /// ZJaDe: availableMetadataObjectTypes依赖于input，所以要先把input output添加到session中再做判断
         if !output.availableMetadataObjectTypes.isEmpty {
-            output.metadataObjectTypes = output.availableMetadataObjectTypes//[.qr, .ean13, .ean8, .code128]
+            output.metadataObjectTypes = output.availableMetadataObjectTypes// [.qr, .ean13, .ean8, .code128]
         }
     }
     func rectOfInterest(scanViewRect: CGRect) -> CGRect {

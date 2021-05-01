@@ -38,9 +38,9 @@ open class TableItemCell: ItemCell, TableCellContentItem, WritableDefaultHeightP
         cell.selectionStyle = self.selectionStyle
         cell.backgroundColor = self.cellBackgroundColor
 
-        ///isSelected由cell和model共同控制
+        /// isSelected由cell和model共同控制
 //        cell.isSelected = self.isSelected
-        ///isHighlighted由cell控制
+        /// isHighlighted由cell控制
         self.isHighlighted = cell.isHighlighted
     }
     open override func didDisappear() {

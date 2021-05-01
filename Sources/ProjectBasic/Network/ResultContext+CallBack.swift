@@ -35,7 +35,7 @@ extension PrimitiveSequence where Trait == SingleTrait, Element: RNResponseCompa
     public func resultCallback(_ closure: @escaping (Result<Element.Success, Error>) -> Void) -> Disposable {
         self.logDebug("_请求回调_").subscribe(onSuccess: { (element) in
             closure(element.result.mapError({$0}))
-        }, onError: { (error) in
+        }, onFailure: { (error) in
             closure(.failure(error._mapError()))
         })
     }

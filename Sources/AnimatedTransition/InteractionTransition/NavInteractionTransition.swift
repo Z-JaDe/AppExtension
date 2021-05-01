@@ -6,9 +6,9 @@
 //  Copyright © 2017年 Z_JaDe. All rights reserved.
 //
 
-//import UIKit
+// import UIKit
 //
-//open class NavInteractionTransition: InteractionTransition {
+// open class NavInteractionTransition: InteractionTransition {
 //    open var popOnRightToLeft: Bool = false
 //
 //    override func handleGestureBegin(_ gesture: UIGestureRecognizer, _ view: UIView) {
@@ -38,4 +38,4 @@
 //            self.shouldCompleteTransition = false
 //        }
 //    }
-//}
+// }

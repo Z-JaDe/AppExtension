@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-public protocol RootViewStateProtocol: class {
+public protocol RootViewStateProtocol: AnyObject {
     var viewState: BehaviorSubject<RootViewState> {get}
 }
 

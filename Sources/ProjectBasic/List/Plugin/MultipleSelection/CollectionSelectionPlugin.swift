@@ -8,29 +8,23 @@
 
 import Foundation
 
-public class CollectionSelectionPlugin: ListSelectionPlugin<UICollectionAdapter>, UICollectionViewDelegate {
+public class CollectionSelectionPlugin: ListSelectionPlugin<CollectionViewDataSource>, UICollectionViewDelegate {
 
-    public override func configInit(_ adapter: UICollectionAdapter) {
-        super.configInit(adapter)
-        if adapter.delegatePlugins.contains(where: {$0 === self}) == false {
-            adapter.delegatePlugins.append(self)
-        }
-    }
     override func updateAllowsSelection() {
-        guard let adapter = adapter else { return }
-        adapter.autoDeselectRow = !useUIKitSectionLogic
-        adapter.collectionView?.allowsSelection = true
-        adapter.collectionView?.allowsMultipleSelection = true
+        guard let dataSource = dataSource else { return }
+        dataSource.autoDeselectRow = !useUIKitSectionLogic
+        dataSource.collectionView?.allowsSelection = true
+        dataSource.collectionView?.allowsMultipleSelection = true
     }
     // MARK: MultipleSelectionProtocol
     override func updateUISelectState(_ indexPath: IndexPath) {
         if useUIKitSectionLogic {
-            guard let adapter = adapter else { return }
-            guard let isSelected = checkIsSelected(indexPath) else { return }
+            guard let dataSource = dataSource else { return }
+            guard let isSelected = dataSource.checkIsSelected(indexPath) else { return }
             if isSelected {
-                adapter.collectionView?.selectItem(at: indexPath, animated: true, scrollPosition: [])
+                dataSource.collectionView?.selectItem(at: indexPath, animated: true, scrollPosition: [])
             } else {
-                adapter.collectionView?.deselectItem(at: indexPath, animated: true)
+                dataSource.collectionView?.deselectItem(at: indexPath, animated: true)
             }
         }
     }
@@ -39,14 +33,14 @@ public class CollectionSelectionPlugin: ListSelectionPlugin<UICollectionAdapter>
         willDisplay(cellIsSelected: cell.isSelected, indexPath: indexPath)
     }
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let isSelected = checkIsSelected(indexPath) else { return }
+        guard let isSelected = dataSource?.checkIsSelected(indexPath) else { return }
         if isSelected {
-            changeSelectState(false, indexPath)
+            changeSelectState(indexPath: indexPath, false)
         } else {
-            changeSelectState(true, indexPath)
+            changeSelectState(indexPath: indexPath, true)
         }
     }
     public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        changeSelectState(false, indexPath)
+        changeSelectState(indexPath: indexPath, false)
     }
 }

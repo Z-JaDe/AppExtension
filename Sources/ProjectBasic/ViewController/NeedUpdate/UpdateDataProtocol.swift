@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-public protocol UpdateDataProtocol: class {
+public protocol UpdateDataProtocol: AnyObject {
     /// ZJaDe: 更新数据
     func updateData()
     func setNeedUpdateData()

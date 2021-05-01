@@ -17,7 +17,7 @@ opt_in_rules: # 启用指定的规则
 disabled_rules:
   # - trailing_whitespae #空行中包含了空格
   - line_length #一行字符长度
-  - type_name
+  # - type_name
   - identifier_name
 
 line_length:

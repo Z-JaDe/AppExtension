@@ -10,7 +10,7 @@ import UIKit
 import MobileCoreServices
 
 open class ImagePickerController: UIImagePickerController {
-    open var callBack: (UIImage) -> Void = { (image) in
+    open var callBack: (UIImage) -> Void = { _ in
         logDebug("回调没有写")
     }
     open override func viewDidLoad() {

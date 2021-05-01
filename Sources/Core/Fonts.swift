@@ -41,37 +41,37 @@ extension Font {
 // MARK: -
 public struct Font {
 
-    ///大标题
+    /// 大标题
     public static var thinh1 = thinFontSize(24)
-    ///主标题
+    /// 主标题
     public static var thinh2 = thinFontSize(18)
-    ///正文
+    /// 正文
     public static var thinh3 = thinFontSize(16)
-    ///副文
+    /// 副文
     public static var thinh4 = thinFontSize(13)
-    ///最小
+    /// 最小
     public static var thinh5 = thinFontSize(11)
 
-    ///大标题
+    /// 大标题
     public static var h1 = fontSize(24)
-    ///主标题
+    /// 主标题
     public static var h2 = fontSize(18)
-    ///正文
+    /// 正文
     public static var h3 = fontSize(16)
-    ///副文
+    /// 副文
     public static var h4 = fontSize(13)
-    ///最小
+    /// 最小
     public static var h5 = fontSize(11)
 
-    ///大标题
+    /// 大标题
     public static var boldh1 = boldFontSize(24)
-    ///主标题
+    /// 主标题
     public static var boldh2 = boldFontSize(18)
-    ///正文
+    /// 正文
     public static var boldh3 = boldFontSize(16)
-    ///副文
+    /// 副文
     public static var boldh4 = boldFontSize(13)
-    ///最小
+    /// 最小
     public static var boldh5 = boldFontSize(11)
 
     public static var thinFontSize: (CGFloat) -> UIFont = systemFontOfSize

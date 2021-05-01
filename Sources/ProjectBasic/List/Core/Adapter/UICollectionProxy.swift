@@ -9,20 +9,8 @@
 import UIKit
 
 extension UICollectionProxy {
-    var dataController: UICollectionAdapter.DataSource.DataControllerType {
-        adapter.dataSource.dataController
-    }
-    func collectionSection(at section: Int) -> CollectionSection? {
-        guard dataController.sectionIndexCanBound(section) else {
-            return nil
-        }
-        return dataController[section].section
-    }
-    func collectionCellItem(at indexPath: IndexPath) -> UICollectionAdapter.Item? {
-        guard dataController.indexPathCanBound(indexPath) else {
-            return nil
-        }
-        return dataController[indexPath]
+    func collectionCellItem(at indexPath: IndexPath) -> AnyCollectionAdapterItem? {
+        adapter.dataSource.item(for: indexPath)
     }
 }
 
@@ -33,25 +21,25 @@ open class UICollectionProxy: NSObject, UICollectionViewDelegate {
     }
     // MARK: - Managing the Selected Cells
     open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if adapter.autoDeselectRow {
+        if adapter.dataSource.autoDeselectRow {
             collectionView.deselectItem(at: indexPath, animated: true)
         }
         guard let item = collectionCellItem(at: indexPath) else { return }
-        item.cellDidSelected()
+        item.base.cellDidSelected()
     }
     open func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         guard let item = collectionCellItem(at: indexPath) else { return }
-        item.cellDidDeselected()
+        item.base.cellDidDeselected()
     }
     // MARK: - Managing Cell Highlighting
     open func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         guard let item = collectionCellItem(at: indexPath) else { return true }
-        return item.cellShouldHighlight()
+        return item.base.cellShouldHighlight()
     }
     // MARK: - Tracking the Addition and Removal of Views
     open func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard let item = collectionCellItem(at: indexPath) else { return }
-        item.cellWillAppear(in: cell)
+        item.base.cellWillAppear(in: cell)
     }
     open func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if let cell = cell as? InternalCollectionViewCell {

@@ -19,11 +19,9 @@ open class DynamicCollectionItemCell: CollectionItemCell {
             }
         }
     }
-    @inline(__always)
     func getModel() -> CollectionItemModel? {
         _model
     }
-    @inline(__always)
     func setModel(_ model: CollectionItemModel?) {
         _model = model
     }

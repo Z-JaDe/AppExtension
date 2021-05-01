@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: -
-public protocol ConstraintProtocol: class {
+public protocol ConstraintProtocol: AnyObject {
     var isActive: Bool { get set }
 }
 extension NSLayoutConstraint: ConstraintProtocol {}

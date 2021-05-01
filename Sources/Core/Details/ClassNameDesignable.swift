@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol ClassNameDesignable: class {
+public protocol ClassNameDesignable: AnyObject {
     var classFullName: String {get}
     static var classFullName: String {get}
 

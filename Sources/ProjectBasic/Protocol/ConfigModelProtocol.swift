@@ -7,7 +7,7 @@
 //
 
 import Foundation
-public protocol ConfigModelProtocol: class {
+public protocol ConfigModelProtocol: AnyObject {
     associatedtype ModelType
     var model: ModelType {get set}
     /// 不能通过直接调用的方式，应该使用设置model的方式
@@ -24,7 +24,7 @@ public extension ConfigModelProtocol {
         self.model = model
     }
 }
-public protocol ConfigOptionModelProtocol: class {
+public protocol ConfigOptionModelProtocol: AnyObject {
     associatedtype ModelType
     var model: ModelType? {get set}
     /// 不能通过直接调用的方式，应该使用设置model的方式
@@ -42,7 +42,7 @@ public extension ConfigOptionModelProtocol {
     }
 }
 
-public protocol ConfigViewModelProtocol: class {
+public protocol ConfigViewModelProtocol: AnyObject {
     associatedtype ViewModelType
     var viewModel: ViewModelType! {get set}
     /// 不能通过直接调用的方式，应该使用设置model的方式

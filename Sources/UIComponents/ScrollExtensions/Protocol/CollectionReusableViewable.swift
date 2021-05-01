@@ -59,8 +59,8 @@ public extension CollectionReusableViewable where ScrollViewType == PageScrollVi
         //        logDebug("visibleCells: \n\(self.scrollView.visibleCells.map({"\($0.debugDescription)"}).joined(separator: "\n"))")
     }
 }
-//extension UIView {
+// extension UIView {
 //    open override var debugDescription: String {
 //        return "\(self.hashValue) \(type(of: self)): \(self.frame))"
 //    }
-//}
+// }

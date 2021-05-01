@@ -38,7 +38,7 @@ public extension CellModelProtocol where Self: ItemCell {
 // MARK: -
 #if canImport(RxSwift) && canImport(MJRefresh)
 import RxSwift
-public protocol UpdateModelProtocol: class {
+public protocol UpdateModelProtocol: AnyObject {
     func configDataWithModel()
 
     func setNeedUpdateModel()

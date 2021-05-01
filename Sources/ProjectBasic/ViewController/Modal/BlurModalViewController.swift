@@ -127,10 +127,10 @@ open class BlurPresentationController: PresentationController {
 //                }
 //            }.disposed(by: self.disposeBagWithTag("screenshotsImage"))
 //    }
-//public protocol ModalContainerScreenshotsProtocol: class {
+// public protocol ModalContainerScreenshotsProtocol: class {
 //    func screenshotsImage() -> UIImage?
-//}
-//extension ModalContainerScreenshotsProtocol where Self: UIViewController {
+// }
+// extension ModalContainerScreenshotsProtocol where Self: UIViewController {
 //    public func screenshotsImage() -> UIImage? {
 //        if self.view.subviews.isNotEmpty {
 //            return self.view.toImage()
@@ -138,8 +138,8 @@ open class BlurPresentationController: PresentationController {
 //            return nil
 //        }
 //    }
-//}
-//extension NavItemSingleContainerViewController {
+// }
+// extension NavItemSingleContainerViewController {
 //    public func screenshotsImage() -> UIImage? {
 //        if self.contentView.subviews.isNotEmpty {
 //            return self.contentView.toImage()
@@ -147,4 +147,4 @@ open class BlurPresentationController: PresentationController {
 //            return nil
 //        }
 //    }
-//}
+// }

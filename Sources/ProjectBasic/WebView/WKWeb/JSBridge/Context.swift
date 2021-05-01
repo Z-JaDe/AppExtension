@@ -114,7 +114,7 @@ private class BridgeSchemeHandler: NSObject, WKURLSchemeHandler {
 
     func webView(_ webView: WKWebView, stop urlSchemeTask: WKURLSchemeTask) {}
 }
-///WebView创建时注入监听__JSBridge__ready__的js代码
+/// WebView创建时注入监听__JSBridge__ready__的js代码
 internal func buildWebViewConfig(libraryCode: String, incognito: Bool) -> WKWebViewConfiguration {
     let source = "\(internalLibrary);try{(function () {\(libraryCode)}());__JSBridge__ready__(true)} catch (err) {__JSBridge__ready__(false, err)}"
     let script = WKUserScript(source: source, injectionTime: .atDocumentStart, forMainFrameOnly: true)
@@ -147,9 +147,9 @@ internal class Context: NSObject, WKScriptMessageHandler {
             }
         }
     }
-    ///存储当前WebView加载状态
+    /// 存储当前WebView加载状态
     private let readySubject: ReplaySubject<State> = ReplaySubject.create(bufferSize: 1)
-    ///调用call一次就增加一次
+    /// 调用call一次就增加一次
     private var nextIdentifier = 1
     /// 原生调用JS会用到; 根据Id存储 js任务执行后的结果监听处理
     private var handlers = [Int: AnyObserver<String>]()
@@ -189,7 +189,7 @@ internal class Context: NSObject, WKScriptMessageHandler {
         }
 
         guard let id = dict["id"] as? Int else { return }
-        ///call
+        /// call
         if let result = dict["result"] as? String {
             guard let handler = handlers.removeValue(forKey: id) else { return }
 
@@ -201,7 +201,7 @@ internal class Context: NSObject, WKScriptMessageHandler {
 
             return handler.onError(JSError(fromDictionary: error))
         }
-        ///register
+        /// register
         guard let method = dict["method"] as? String else { return }
         guard let fn = functions[method] else { return }
         let params = dict["params"] as? [String] ?? []

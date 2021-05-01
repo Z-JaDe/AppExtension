@@ -63,7 +63,7 @@ let transactionRunLoopObserver: CFRunLoopObserver! = {
     CFRunLoopAddObserver(runloop, observer, .commonModes)
     return observer
 }()
-private let runLoopObserverCallBack: CFRunLoopObserverCallBack = { (observer, activity, info) -> Void in
+private let runLoopObserverCallBack: CFRunLoopObserverCallBack = { (_, _, _) -> Void in
     for transaction in transactionSet {
         transaction.perform()
     }

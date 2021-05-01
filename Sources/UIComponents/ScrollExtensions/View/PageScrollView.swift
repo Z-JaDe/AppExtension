@@ -29,7 +29,7 @@ public class PageScrollView<CellView>: MultipleItemScrollView<CellView> where Ce
         layoutCellsSize(layoutCells)
         layoutCellsOrigin(self.layoutCells, self.layoutCells.first?.leading ?? 0)
     }
-    public func layoutCellsSize(_ cellArr: [_LayoutItem]) {
+    public func layoutCellsSize(_ cellArr: [LayoutItemType]) {
         switch self.itemSize {
         case .itemsFill:
              layoutCellsSize(cellArr, self.length, nil)

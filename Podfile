@@ -23,15 +23,15 @@ def collectionKitPod
 end
 
 def networkPod
-  pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire'
+  pod 'Alamofire'
   userPod 'RxNetwork'
   pod 'Kingfisher'
 end
 
 def rxPod (hasCocoa = true)
-  pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
+  pod 'RxSwift'
   if hasCocoa
-    pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift'
+    pod 'RxCocoa'
   end
 end
 
@@ -60,9 +60,6 @@ end
 target:'UserNotificationManager' do
   baseCorePod
   rxPod hasCocoa = false
-end
-target:'CollectionList' do
-  baseCorePod
 end
 target:'UIComponents' do
   baseCorePod
@@ -106,14 +103,13 @@ def commonPods
   collectionKitPod #仅测试
   
   pod 'MJRefresh'
-  pod 'DifferenceKit'
 end
 
 def projectBasicPod
   commonPods
 
   pod 'MBProgressHUD'
-  pod 'ReSwift', :git => 'https://github.com/ReSwift/ReSwift.git'
+  pod 'ReSwift'
 end
 target:'ProjectBasic' do
   projectBasicPod

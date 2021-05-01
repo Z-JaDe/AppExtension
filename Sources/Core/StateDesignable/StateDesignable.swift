@@ -14,7 +14,10 @@ public protocol HiddenStateDesignable {
 public protocol EnabledStateDesignable {
     var isEnabled: Bool {get set}
 }
-public protocol SelectedStateDesignable {
+public protocol SelectedStateDesignableReadonly {
+    var isSelected: Bool {get}
+}
+public protocol SelectedStateDesignable: AnyObject, SelectedStateDesignableReadonly {
     var isSelected: Bool {get set}
 }
 public protocol HighlightedStateDesignable {

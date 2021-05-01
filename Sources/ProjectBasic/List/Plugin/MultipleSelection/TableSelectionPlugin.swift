@@ -8,29 +8,23 @@
 
 import Foundation
 
-public class TableSelectionPlugin: ListSelectionPlugin<UITableAdapter>, UITableViewDelegate {
+public class TableSelectionPlugin: ListSelectionPlugin<TableViewDataSource>, UITableViewDelegate {
 
-    public override func configInit(_ adapter: UITableAdapter) {
-        super.configInit(adapter)
-        if adapter.delegatePlugins.contains(where: {$0 === self}) == false {
-            adapter.delegatePlugins.append(self)
-        }
-    }
     override func updateAllowsSelection() {
-        guard let adapter = adapter else { return }
-        adapter.autoDeselectRow = !useUIKitSectionLogic
-        adapter.tableView?.allowsSelection = true
-        adapter.tableView?.allowsMultipleSelection = true
+        guard let dataSource = dataSource else { return }
+        dataSource.autoDeselectRow = !useUIKitSectionLogic
+        dataSource.tableView?.allowsSelection = true
+        dataSource.tableView?.allowsMultipleSelection = true
     }
     // MARK: MultipleSelectionProtocol
     override func updateUISelectState(_ indexPath: IndexPath) {
         guard useUIKitSectionLogic else { return }
-        guard let adapter = adapter else { return }
-        guard let isSelected = checkIsSelected(indexPath) else { return }
+        guard let dataSource = dataSource else { return }
+        guard let isSelected = dataSource.checkIsSelected(indexPath) else { return }
         if isSelected {
-            adapter.tableView?.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+            dataSource.tableView?.selectRow(at: indexPath, animated: true, scrollPosition: .none)
         } else {
-            adapter.tableView?.deselectRow(at: indexPath, animated: true)
+            dataSource.tableView?.deselectRow(at: indexPath, animated: true)
         }
     }
     // MARK: UITableViewDelegate
@@ -38,14 +32,14 @@ public class TableSelectionPlugin: ListSelectionPlugin<UITableAdapter>, UITableV
         willDisplay(cellIsSelected: cell.isSelected, indexPath: indexPath)
     }
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let isSelected = checkIsSelected(indexPath) else { return }
+        guard let isSelected = dataSource?.checkIsSelected(indexPath) else { return }
         if isSelected {
-            changeSelectState(false, indexPath)
+            changeSelectState(indexPath: indexPath, false)
         } else {
-            changeSelectState(true, indexPath)
+            changeSelectState(indexPath: indexPath, true)
         }
     }
     public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        changeSelectState(false, indexPath)
+        changeSelectState(indexPath: indexPath, false)
     }
 }

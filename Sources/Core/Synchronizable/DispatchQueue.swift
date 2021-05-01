@@ -18,11 +18,11 @@ public func performInMain(_ action: @escaping () -> Void) {
 
 extension DispatchQueue {
     public var isInCurrentQueue: Bool {
-        ///考虑到多线程同时获取该属性的问题 特征值key 应该放到函数内部
+        /// 考虑到多线程同时获取该属性的问题 特征值key 应该放到函数内部
         let labelSpec = DispatchSpecificKey<Void>()
         setSpecific(key: labelSpec, value: ())
         defer { setSpecific(key: labelSpec, value: nil) }
-        ///当前执行上下文中的value
+        /// 当前执行上下文中的value
         return DispatchQueue.getSpecific(key: labelSpec) != nil
     }
     /**
@@ -33,13 +33,13 @@ extension DispatchQueue {
     public func syncIfNeed<T>(_ action: () throws -> T) rethrows -> T {
         if self == DispatchQueue.main {
             if Thread.isMainThread {
-                //self是main队列且在主线程时，可以直接执行action。即使当前是在其他队列的任务代码中，也不影响。
+                // self是main队列且在主线程时，可以直接执行action。即使当前是在其他队列的任务代码中，也不影响。
                 return try action()
             } else {
                 return try sync(execute: action)
             }
         } else if self.isInCurrentQueue {
-            //当前是在self队列的任务代码执行中时，可以直接执行action。
+            // 当前是在self队列的任务代码执行中时，可以直接执行action。
             return try action()
         } else {
             return try sync(execute: action)

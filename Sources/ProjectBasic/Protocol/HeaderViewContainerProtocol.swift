@@ -91,7 +91,7 @@ public extension HeaderViewContainerProtocol where ScrollViewType: UIScrollView 
     func subscribeWhenScroll(_ updateClosure: @escaping (CGFloat) -> Void) {
         let disposeBag = self.scrollView.resetDisposeBagWithTag("_headerScroll")
         self.scrollView.rx.contentOffset
-            .observeOn(MainScheduler.asyncInstance)
+            .observe(on: MainScheduler.asyncInstance)
             .subscribeOnNext {[weak self] (contentOffset) in
                 guard let self = self else { return }
                 updateClosure(contentOffset.y + self.scrollView.contentInset.top)

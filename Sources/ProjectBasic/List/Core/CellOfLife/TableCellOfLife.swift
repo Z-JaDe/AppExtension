@@ -10,7 +10,7 @@ import Foundation
 /**
  自己实现复用cell，willAppear和didDisappear需要代理里面调用，UITableAdapter默认已经调用
  */
-protocol TableCellOfLife {
+public protocol TableCellOfLife {
     func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell
     func cellWillAppear(in cell: UITableViewCell)
 //    func cellDidDisAppear() ///cell消失时 有可能数据源已经丢失
@@ -20,7 +20,6 @@ protocol TableCellOfLife {
     func cellDidDeselected()
 }
 extension TableCellOfLife {
-    @inline(__always)
     func _createCell<T: UITableViewCell>(in tableView: UITableView, for indexPath: IndexPath, _ reuseIdentifier: String) -> T {
         tableView.register(T.self, forCellReuseIdentifier: reuseIdentifier)
         // swiftlint:disable force_cast
@@ -30,7 +29,7 @@ extension TableCellOfLife {
 // MARK: -
 extension TableItemModel: TableCellOfLife {
     typealias DynamicCell = DynamicTableItemCell
-    func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
+    public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
         let reuseIdentifier = cellInfo.reuseIdentifier
         let cell: InternalTableViewCell = _createCell(in: tableView, for: indexPath, reuseIdentifier)
         guard let cls = NSClassFromString(cellInfo.clsName) as? DynamicCell.Type else {
@@ -52,7 +51,7 @@ extension TableItemModel: TableCellOfLife {
         }
         return cell
     }
-    func cellWillAppear(in cell: UITableViewCell) {
+    public func cellWillAppear(in cell: UITableViewCell) {
         guard let _cell = (cell as! InternalTableViewCell).contentItem as? DynamicCell else {
             assertionFailure("没获取到DynamicCell")
             return
@@ -67,13 +66,13 @@ extension TableItemModel: TableCellOfLife {
         _cell.willAppear()
         _cell.changeCellStateToDidAppear()
     }
-    func cellShouldHighlight() -> Bool {
+    public func cellShouldHighlight() -> Bool {
         getCell()?.shouldHighlight() ?? true
     }
-    func cellDidSelected() {
+    public func cellDidSelected() {
         getCell()?.didSelectedItem()
     }
-    func cellDidDeselected() {
+    public func cellDidDeselected() {
     }
 }
 private var tempItemCellsKey: UInt8 = 0
@@ -103,7 +102,7 @@ extension TableItemModel {
 
 // MARK: -
 extension StaticTableItemCell: TableCellOfLife {
-    func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
+    public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
         let reuseIdentifier = classFullName
         let cell: InternalTableViewCell = _createCell(in: tableView, for: indexPath, reuseIdentifier)
         if let contentItem = cell.contentItem {
@@ -117,21 +116,21 @@ extension StaticTableItemCell: TableCellOfLife {
         }
         return cell
     }
-    func cellWillAppear(in cell: UITableViewCell) {
+    public func cellWillAppear(in cell: UITableViewCell) {
         self.willAppear()
         self.changeCellStateToDidAppear()
     }
-    func cellShouldHighlight() -> Bool {
+    public func cellShouldHighlight() -> Bool {
         self.shouldHighlight()
     }
-    func cellDidSelected() {
+    public func cellDidSelected() {
         self.didSelectedItem()
     }
-    func cellDidDeselected() {
+    public func cellDidDeselected() {
     }
 }
 // MARK: -
-protocol CellSelectedStateDesignable: class {
+public protocol CellSelectedStateDesignable: AnyObject {
     func didSelectedItem()
 }
 extension TableCellModel: TableCellOfLife {
@@ -139,7 +138,7 @@ extension TableCellModel: TableCellOfLife {
         let reuseIdentifier = cellInfo.reuseIdentifier
         return _createCell(in: tableView, for: indexPath, reuseIdentifier)
     }
-    func cellWillAppear(in cell: UITableViewCell) {
+    public func cellWillAppear(in cell: UITableViewCell) {
         _weakCell = cell
         if var cell = cell as? EnabledStateDesignable {
             cell.isEnabled = self.isEnabled
@@ -147,13 +146,13 @@ extension TableCellModel: TableCellOfLife {
         cell.isSelected = self.isSelected
         bindingCellData(cell)
     }
-    func cellShouldHighlight() -> Bool {
+    public func cellShouldHighlight() -> Bool {
         true
     }
-    func cellDidSelected() {
+    public func cellDidSelected() {
         (getCell() as? CellSelectedStateDesignable)?.didSelectedItem()
     }
-    func cellDidDeselected() {
+    public func cellDidDeselected() {
     }
 }
 private var tempCellsKey: UInt8 = 0
