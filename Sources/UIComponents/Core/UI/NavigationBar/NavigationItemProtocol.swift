@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CocoaExtension
 
 public enum NavBarShadowType {
     case shadow(UIColor)

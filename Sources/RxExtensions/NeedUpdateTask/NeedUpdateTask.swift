@@ -8,6 +8,8 @@
 
 import Foundation
 import RxSwift
+import FunctionalSwift
+
 @available(iOS, deprecated: 9.0, message: "可以使用 pausableBuffered")
 public class NeedUpdateTask {
     let buffer: DispatchTimeInterval

@@ -8,6 +8,8 @@
 
 import UIKit
 import Photos
+import CocoaExtension
+
 open class AssetGridViewController: AdapterCollectionViewController, PHPhotoLibraryChangeObserver {
     var fetchResult: PHFetchResult<PHAsset>!
     let imageManager = PHImageManager()

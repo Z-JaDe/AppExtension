@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import CocoaExtension
 
 open class LogicScanViewController: UIViewController {
     public typealias ParseCodeClosureType = (String, @escaping (Bool) -> Void) -> Void

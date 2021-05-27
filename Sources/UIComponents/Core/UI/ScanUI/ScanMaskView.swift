@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CocoaExtension
 
 public class ScanMaskView: CustomView {
     public let scanBoderView: ImageView = ImageView()

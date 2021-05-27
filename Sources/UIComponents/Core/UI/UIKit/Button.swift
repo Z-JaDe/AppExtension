@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CocoaExtension
 
 open class Button: UIButton {
     public override init(frame: CGRect) {

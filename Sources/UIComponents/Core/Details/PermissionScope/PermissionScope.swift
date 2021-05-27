@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CocoaExtension
 
 public class PermissionScope: TaskQueueProtocol {
     public lazy var taskQueue: TaskQueue = TaskQueue()

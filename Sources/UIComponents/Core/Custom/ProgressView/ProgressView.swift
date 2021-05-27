@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CocoaExtension
 
 /** ZJaDe: 
  ProgressLayer 尺寸和cornerRadius由内部控制

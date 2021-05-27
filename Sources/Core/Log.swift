@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CocoaExtension
 
 private let dateFormat = "'当前时间: 'HH: mm: ss.SSS"
 public protocol LogUploadProtocol {

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Validation
+
 extension Font.List {
     public static var textField: UIFont = Font.thinh2
 }

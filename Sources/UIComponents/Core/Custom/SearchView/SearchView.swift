@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CocoaExtension
 
 open class SearchView: CustomView {
     public let textField: TextField = TextField()

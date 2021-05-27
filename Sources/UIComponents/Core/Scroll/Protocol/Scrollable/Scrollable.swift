@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import CocoaExtension
+
 // MARK: -
 public protocol Scrollable: Frameable {
     var contentInset: UIEdgeInsets {get set}

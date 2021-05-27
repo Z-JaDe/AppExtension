@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CocoaExtension
 
 open class Label: UILabel {
     open override var font: UIFont! {

@@ -9,6 +9,7 @@
 import Foundation
 import ModalManager
 import RxSwift
+import CocoaExtension
 
 open class BlurModalViewController: ModalViewController {
     open override var presentationControllerClass: PresentationController.Type {

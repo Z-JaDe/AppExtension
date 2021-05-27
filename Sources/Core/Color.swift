@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CocoaExtension
 
 public protocol ColorConfigerProtocol {
     func resetColors(_ configer: ColorConfiger)

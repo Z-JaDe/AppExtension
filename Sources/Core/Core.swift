@@ -11,8 +11,6 @@ import Foundation
 #if !AppExtensionPods
 @_exported import Async
 #endif
-@_exported import FunctionalSwift
-@_exported import CocoaExtension
 
 public func measure(closure: () -> Void) {
     let start = CACurrentMediaTime()

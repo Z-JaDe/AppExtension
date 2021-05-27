@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CocoaExtension
 
 public struct BoderContext {
     public enum Direction: Hashable, CaseIterable {
