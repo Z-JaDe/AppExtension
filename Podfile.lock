@@ -12,15 +12,15 @@ PODS:
   - iCarouselSwift (1.0.0)
   - Kingfisher (6.3.0)
   - MBProgressHUD (1.2.0)
-  - MJRefresh (3.5.0)
+  - MJRefresh (3.6.1)
   - ModalManager (1.0.0)
   - Motion (3.1.3):
     - Motion/Core (= 3.1.3)
   - Motion/Core (3.1.3)
-  - ReSwift (6.0.0)
-  - RxCocoa (6.1.0):
-    - RxRelay (= 6.1.0)
-    - RxSwift (= 6.1.0)
+  - ReSwift (6.1.0)
+  - RxCocoa (6.2.0):
+    - RxRelay (= 6.2.0)
+    - RxSwift (= 6.2.0)
   - RxGesture (4.0.2):
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
@@ -30,9 +30,9 @@ PODS:
   - RxOptional (5.0.2):
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
-  - RxRelay (6.1.0):
-    - RxSwift (= 6.1.0)
-  - RxSwift (6.1.0)
+  - RxRelay (6.2.0):
+    - RxSwift (= 6.2.0)
+  - RxSwift (6.2.0)
   - RxSwiftExt (6.0.1):
     - RxSwiftExt/Core (= 6.0.1)
     - RxSwiftExt/RxCocoa (= 6.0.1)
@@ -116,22 +116,22 @@ SPEC CHECKSUMS:
   iCarouselSwift: 500d3c40110ea61f8511a270d5de1b20c25b8560
   Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
+  MJRefresh: d2c1970d1cf6e77fcfcdfe76c943dfab8dbfa5c1
   ModalManager: 5771441d7b57d3fe23a7b90b204b6171ebc6959b
   Motion: cf1e060e489f6661126374d5c60dbd2ed991605c
-  ReSwift: 14e6f9409fe6bdc635e588208296a01f43b959c9
-  RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
+  ReSwift: eab3c01e4279ba81b54a61e4fd6499634d20123a
+  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxGesture: f059f2aeef966fb17dad56ee440e76410f10e55f
   RxNetwork: 7097c526894b0a23822ffc70cede5207c82534f1
   RxOptional: 3664964c96b69dd20c9cf78bdfe546615e26eca8
-  RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
-  RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
+  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
+  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
   RxSwiftExt: d61c4b9b06e0a448041b1c659e0f1b5c5a035afc
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
   Validation: 60ace8848c16cf6916111e4ff298cf1c6c0dcf6a
 
-PODFILE CHECKSUM: 24ac68a8a96e998b500d90da7ad30d8d95b619de
+PODFILE CHECKSUM: a5c1fc8a837376f9683666cf33e2f4620554eb15
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.1
