@@ -1,4 +1,6 @@
+#if canImport(Foundation)
 import Foundation
+#endif
 
 /**
  A type-erased `Decodable` value.
@@ -13,22 +15,23 @@ import Foundation
      let json = """
      {
          "boolean": true,
-         "integer": 1,
-         "double": 3.14159265358979323846,
+         "integer": 42,
+         "double": 3.141592653589793,
          "string": "string",
          "array": [1, 2, 3],
          "nested": {
              "a": "alpha",
              "b": "bravo",
              "c": "charlie"
-         }
+         },
+         "null": null
      }
      """.data(using: .utf8)!
 
      let decoder = JSONDecoder()
-     let dictionary = try! decoder.decode([String: AnyCodable].self, from: json)
+     let dictionary = try! decoder.decode([String: AnyDecodable].self, from: json)
  */
-public struct AnyDecodable: Decodable {
+@frozen public struct AnyDecodable: Decodable {
     public let value: Any
 
     public init<T>(_ value: T?) {
@@ -49,7 +52,11 @@ extension _AnyDecodable {
         let container = try decoder.singleValueContainer()
 
         if container.decodeNil() {
-            self.init(NSNull())
+            #if canImport(Foundation)
+                self.init(NSNull())
+            #else
+                self.init(Self?.none)
+            #endif
         } else if let bool = try? container.decode(Bool.self) {
             self.init(bool)
         } else if let int = try? container.decode(Int.self) {
@@ -60,12 +67,12 @@ extension _AnyDecodable {
             self.init(double)
         } else if let string = try? container.decode(String.self) {
             self.init(string)
-        } else if let array = try? container.decode([AnyCodable].self) {
+        } else if let array = try? container.decode([AnyDecodable].self) {
             self.init(array.map { $0.value })
-        } else if let dictionary = try? container.decode([String: AnyCodable].self) {
+        } else if let dictionary = try? container.decode([String: AnyDecodable].self) {
             self.init(dictionary.mapValues { $0.value })
         } else {
-            throw DecodingError.dataCorruptedError(in: container, debugDescription: "AnyCodable value cannot be decoded")
+            throw DecodingError.dataCorruptedError(in: container, debugDescription: "AnyDecodable value cannot be decoded")
         }
     }
 }
@@ -74,8 +81,10 @@ extension AnyDecodable: Equatable {
     // swiftlint:disable cyclomatic_complexity
     public static func == (lhs: AnyDecodable, rhs: AnyDecodable) -> Bool {
         switch (lhs.value, rhs.value) {
+#if canImport(Foundation)
         case is (NSNull, NSNull), is (Void, Void):
             return true
+#endif
         case let (lhs as Bool, rhs as Bool):
             return lhs == rhs
         case let (lhs as Int, rhs as Int):
@@ -134,6 +143,47 @@ extension AnyDecodable: CustomDebugStringConvertible {
             return "AnyDecodable(\(value.debugDescription))"
         default:
             return "AnyDecodable(\(description))"
+        }
+    }
+}
+
+extension AnyDecodable: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        switch value {
+        case let value as Bool:
+            hasher.combine(value)
+        case let value as Int:
+            hasher.combine(value)
+        case let value as Int8:
+            hasher.combine(value)
+        case let value as Int16:
+            hasher.combine(value)
+        case let value as Int32:
+            hasher.combine(value)
+        case let value as Int64:
+            hasher.combine(value)
+        case let value as UInt:
+            hasher.combine(value)
+        case let value as UInt8:
+            hasher.combine(value)
+        case let value as UInt16:
+            hasher.combine(value)
+        case let value as UInt32:
+            hasher.combine(value)
+        case let value as UInt64:
+            hasher.combine(value)
+        case let value as Float:
+            hasher.combine(value)
+        case let value as Double:
+            hasher.combine(value)
+        case let value as String:
+            hasher.combine(value)
+        case let value as [String: AnyDecodable]:
+            hasher.combine(value)
+        case let value as [AnyDecodable]:
+            hasher.combine(value)
+        default:
+            break
         }
     }
 }

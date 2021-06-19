@@ -1,4 +1,6 @@
+#if canImport(Foundation)
 import Foundation
+#endif
 
 /**
  A type-erased `Encodable` value.
@@ -12,21 +14,22 @@ import Foundation
 
      let dictionary: [String: AnyEncodable] = [
          "boolean": true,
-         "integer": 1,
-         "double": 3.14159265358979323846,
+         "integer": 42,
+         "double": 3.141592653589793,
          "string": "string",
          "array": [1, 2, 3],
          "nested": [
              "a": "alpha",
              "b": "bravo",
              "c": "charlie"
-         ]
+         ],
+         "null": nil
      ]
 
      let encoder = JSONEncoder()
      let json = try! encoder.encode(dictionary)
  */
-public struct AnyEncodable: Encodable {
+@frozen public struct AnyEncodable: Encodable {
     public let value: Any
 
     public init<T>(_ value: T?) {
@@ -39,6 +42,7 @@ protocol _AnyEncodable {
     var value: Any { get }
     init<T>(_ value: T?)
 }
+
 extension AnyEncodable: _AnyEncodable {}
 
 // MARK: - Encodable
@@ -49,11 +53,13 @@ extension _AnyEncodable {
         var container = encoder.singleValueContainer()
 
         switch value {
-            #if os(macOS) || os(iOS) || os(watchOS) || os(tvOS)
+        #if canImport(Foundation)
         case let number as NSNumber:
             try encode(nsnumber: number, into: &container)
-            #endif
-        case is NSNull, is Void:
+        case is NSNull:
+            try container.encodeNil()
+        #endif
+        case is Void:
             try container.encodeNil()
         case let bool as Bool:
             try container.encode(bool)
@@ -83,50 +89,50 @@ extension _AnyEncodable {
             try container.encode(double)
         case let string as String:
             try container.encode(string)
+        #if canImport(Foundation)
         case let date as Date:
             try container.encode(date)
         case let url as URL:
             try container.encode(url)
+        #endif
         case let array as [Any?]:
-            try container.encode(array.map { AnyCodable($0) })
+            try container.encode(array.map { AnyEncodable($0) })
         case let dictionary as [String: Any?]:
-            try container.encode(dictionary.mapValues { AnyCodable($0) })
+            try container.encode(dictionary.mapValues { AnyEncodable($0) })
         default:
-            let context = EncodingError.Context(codingPath: container.codingPath, debugDescription: "AnyCodable value cannot be encoded")
+            let context = EncodingError.Context(codingPath: container.codingPath, debugDescription: "AnyEncodable value cannot be encoded")
             throw EncodingError.invalidValue(value, context)
         }
     }
 
-    #if os(macOS) || os(iOS) || os(watchOS) || os(tvOS)
-    // swiftlint:disable cyclomatic_complexity
+    #if canImport(Foundation)
     private func encode(nsnumber: NSNumber, into container: inout SingleValueEncodingContainer) throws {
-        switch CFNumberGetType(nsnumber) {
-        case .charType:
+        switch Character(Unicode.Scalar(UInt8(nsnumber.objCType.pointee))) {
+        case "c", "C":
             try container.encode(nsnumber.boolValue)
-        case .sInt8Type:
+        case "s":
             try container.encode(nsnumber.int8Value)
-        case .sInt16Type:
+        case "i":
             try container.encode(nsnumber.int16Value)
-        case .sInt32Type:
+        case "l":
             try container.encode(nsnumber.int32Value)
-        case .sInt64Type:
+        case "q":
             try container.encode(nsnumber.int64Value)
-        case .shortType:
+        case "S":
+            try container.encode(nsnumber.uint8Value)
+        case "I":
             try container.encode(nsnumber.uint16Value)
-        case .longType:
+        case "L":
             try container.encode(nsnumber.uint32Value)
-        case .longLongType:
+        case "Q":
             try container.encode(nsnumber.uint64Value)
-        case .intType, .nsIntegerType, .cfIndexType:
-            try container.encode(nsnumber.intValue)
-        case .floatType, .float32Type:
+        case "f":
             try container.encode(nsnumber.floatValue)
-        case .doubleType, .float64Type, .cgFloatType:
+        case "d":
             try container.encode(nsnumber.doubleValue)
-        #if swift(>=5.0)
-        @unknown default:
-            fatalError()
-        #endif
+        default:
+            let context = EncodingError.Context(codingPath: container.codingPath, debugDescription: "NSNumber cannot be encoded because its type is not handled")
+            throw EncodingError.invalidValue(nsnumber, context)
         }
     }
     #endif
@@ -204,6 +210,7 @@ extension AnyEncodable: ExpressibleByBooleanLiteral {}
 extension AnyEncodable: ExpressibleByIntegerLiteral {}
 extension AnyEncodable: ExpressibleByFloatLiteral {}
 extension AnyEncodable: ExpressibleByStringLiteral {}
+extension AnyEncodable: ExpressibleByStringInterpolation {}
 extension AnyEncodable: ExpressibleByArrayLiteral {}
 extension AnyEncodable: ExpressibleByDictionaryLiteral {}
 
@@ -238,5 +245,46 @@ extension _AnyEncodable {
 
     public init(dictionaryLiteral elements: (AnyHashable, Any)...) {
         self.init([AnyHashable: Any](elements, uniquingKeysWith: { first, _ in first }))
+    }
+}
+
+extension AnyEncodable: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        switch value {
+        case let value as Bool:
+            hasher.combine(value)
+        case let value as Int:
+            hasher.combine(value)
+        case let value as Int8:
+            hasher.combine(value)
+        case let value as Int16:
+            hasher.combine(value)
+        case let value as Int32:
+            hasher.combine(value)
+        case let value as Int64:
+            hasher.combine(value)
+        case let value as UInt:
+            hasher.combine(value)
+        case let value as UInt8:
+            hasher.combine(value)
+        case let value as UInt16:
+            hasher.combine(value)
+        case let value as UInt32:
+            hasher.combine(value)
+        case let value as UInt64:
+            hasher.combine(value)
+        case let value as Float:
+            hasher.combine(value)
+        case let value as Double:
+            hasher.combine(value)
+        case let value as String:
+            hasher.combine(value)
+        case let value as [String: AnyEncodable]:
+            hasher.combine(value)
+        case let value as [AnyEncodable]:
+            hasher.combine(value)
+        default:
+            break
+        }
     }
 }
