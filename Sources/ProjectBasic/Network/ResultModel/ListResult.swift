@@ -11,10 +11,10 @@ import Foundation
 public protocol ListResultModelType: Codable {
     associatedtype Item: Codable
     var list: [Item] {get set}
-    var count: Count? {get}
+    var count: Int? {get}
 }
 public class ListResultModel<ListItem: Codable>: Codable, ListResultModelType {
-    public var count: Count?
+    public var count: Int?
     public var list: [ListItem] = []
     public init() {}
 }

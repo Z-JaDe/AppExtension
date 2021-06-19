@@ -26,6 +26,8 @@ Pod::Spec.new do |s|
     end
     s.subspec "Codable" do |ss|
         ss.source_files  = "Sources/Codable/**/*.{swift}"
+        ss.dependency "AnyCodable"
+        ss.dependency "BetterCodable"
     end
     s.subspec "Animater" do |ss|
         ss.source_files  = "Sources/Animater/**/*.{swift}"

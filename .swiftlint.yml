@@ -1,15 +1,15 @@
 included: # 执行 linting 时包含的路径。如果出现这个 `--path` 会被忽略。
   - Sources
-  - BaseSupport/CocoaExtension/Sources
-  - BaseSupport/Encryption/Sources
-  - BaseSupport/FunctionalSwift/Sources
-  - BaseSupport/iCarouselSwift/Sources
-  - BaseSupport/JDEther/Sources
-  - BaseSupport/ModalManager/Sources
-  - BaseSupport/RxNetwork/Sources
-  - BaseSupport/SwifterRouter/Sources
-  - BaseSupport/Validation/Sources
-  - BaseSupport/YogaFlexBoxKit/Sources
+  - LocalPods/CocoaExtension/Sources
+  - LocalPods/Encryption/Sources
+  - LocalPods/FunctionalSwift/Sources
+  - LocalPods/iCarouselSwift/Sources
+  - LocalPods/JDEther/Sources
+  - LocalPods/ModalManager/Sources
+  - LocalPods/RxNetwork/Sources
+  - LocalPods/SwifterRouter/Sources
+  - LocalPods/Validation/Sources
+  - LocalPods/YogaFlexBoxKit/Sources
 
 opt_in_rules: # 启用指定的规则
   - file_length

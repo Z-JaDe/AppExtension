@@ -51,6 +51,10 @@ end
 target:'Core' do
   baseCorePod
 end
+target:'Codable' do
+  pod "AnyCodable"
+  pod "BetterCodable"
+end
 target:'Coordinator' do
   baseCorePod
 end

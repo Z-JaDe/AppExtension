@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (5.4.3)
+  - AnyCodable (1.2.0)
+  - BetterCodable (0.1.0)
   - CocoaExtension (1.0.0)
   - CollectionKit (2.4.0):
     - CollectionKit/Core (= 2.4.0)
@@ -48,6 +50,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AnyCodable
+  - BetterCodable
   - CocoaExtension (from `LocalPods/CocoaExtension`)
   - CollectionKit
   - Encryption (from `LocalPods/Encryption`)
@@ -73,6 +77,8 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - AnyCodable
+    - BetterCodable
     - CollectionKit
     - CryptoSwift
     - Kingfisher
@@ -108,6 +114,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  AnyCodable: bb05e19c676899e0fd511652f2d83bfa044e2503
+  BetterCodable: 4f8f68b97856ed62612d8f5d987ed5ce2627172a
   CocoaExtension: cc7fcad08a5c8f2719c58a403da68bb72a05d9b2
   CollectionKit: 8f01e7629185bb81072c4aa734d105df5c2d1c8b
   CryptoSwift: 7cc902df1784de3b389a387756c7d710f197730c
@@ -132,6 +140,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
   Validation: 60ace8848c16cf6916111e4ff298cf1c6c0dcf6a
 
-PODFILE CHECKSUM: a5c1fc8a837376f9683666cf33e2f4620554eb15
+PODFILE CHECKSUM: 2047a16730ecd70a171b364e42d1985cce8aafa6
 
 COCOAPODS: 1.10.1
