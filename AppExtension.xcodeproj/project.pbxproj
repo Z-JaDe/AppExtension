@@ -367,6 +367,7 @@
 		F93F85A7237C75EC0068CC59 /* LogicScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A7D0A21D1C16E00720E4F /* LogicScanViewController.swift */; };
 		F93F85A8237C75EC0068CC59 /* ScanMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A7D0C21D1C52900720E4F /* ScanMaskView.swift */; };
 		F93F85A9237C761D0068CC59 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C932F7F6210069AC00B8DF84 /* Alert.swift */; };
+		F982402B26A71518002ABC5E /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = F982402A26A71518002ABC5E /* Price.swift */; };
 		F98392EC24274CCC00822DB8 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98392EB24274CCB00822DB8 /* Presentable.swift */; };
 		F99B24A522B61F600059B440 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F99B24A422B61F600059B440 /* LaunchScreen.storyboard */; };
 		F9A83F21263D68BA0041033A /* ListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180436EB23CC87A7008E19A5 /* ListSection.swift */; };
@@ -1187,6 +1188,7 @@
 		F2EDE1719CD8900446713BC0 /* Pods-BaseCore-Coordinator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-Coordinator.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-Coordinator/Pods-BaseCore-Coordinator.release.xcconfig"; sourceTree = "<group>"; };
 		F6E57D3300B9F747CFFC950A /* Pods_UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7AE32BA071C16D86EABE7A9 /* Pods-BaseCore-Custom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseCore-Custom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseCore-Custom/Pods-BaseCore-Custom.debug.xcconfig"; sourceTree = "<group>"; };
+		F982402A26A71518002ABC5E /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		F98392EB24274CCB00822DB8 /* Presentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
 		F99B24A422B61F600059B440 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9A83F27263D699F0041033A /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -2089,6 +2091,7 @@
 				C979FAAA215CDB97000F7435 /* CodableTypes.py */,
 				C962C88020CE1D660061FC20 /* TransformType */,
 				C962C88A20CE1D670061FC20 /* Codable.swift */,
+				F982402A26A71518002ABC5E /* Price.swift */,
 				C962C88320CE1D660061FC20 /* DecodingContainer.swift */,
 			);
 			path = Protocol;
@@ -4408,6 +4411,7 @@
 				C962C88F20CE1D670061FC20 /* TransformType.swift in Sources */,
 				C979FA9D215CAEEE000F7435 /* TransformTypeExtension.swift in Sources */,
 				C962C89720CE1D670061FC20 /* Codable.swift in Sources */,
+				F982402B26A71518002ABC5E /* Price.swift in Sources */,
 				C962C89120CE1D670061FC20 /* DecodingContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
