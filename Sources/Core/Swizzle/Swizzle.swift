@@ -24,7 +24,7 @@ extension String: SelectorProtocol {
 extension NSObject {
     /// ZJaDe: 未完善 不可用
     @discardableResult
-    public class func swizzle<T: SelectorProtocol, U: SelectorProtocol>(original: T, swizzled: U) -> Bool {
+    public static func swizzle<T: SelectorProtocol, U: SelectorProtocol>(original: T, swizzled: U) -> Bool {
         let originalSel = original.selectorValue
         let swizzledSel = swizzled.selectorValue
         guard let originalMethod = class_getInstanceMethod(self, originalSel) else {

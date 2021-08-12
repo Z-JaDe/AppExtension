@@ -21,7 +21,7 @@ public class OneStepper: Stepper {
 public final class CompositeStepper: Stepper {
     public private(set) var steps: Observable<Step>
     public init(steppers: [Stepper]) {
-        let allSteps = steppers.map { $0.steps }
+        let allSteps = steppers.map(\.steps)
         self.steps = Observable.merge(allSteps)
     }
 }

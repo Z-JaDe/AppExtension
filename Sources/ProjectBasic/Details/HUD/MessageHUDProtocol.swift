@@ -8,6 +8,7 @@
 
 #if canImport(MBProgressHUD)
 import Foundation
+#if canImport(RxSwift)
 import RxSwift
 extension Observable {
     public func showProgressHUD(_ text: String, in view: UIView? = nil) -> Observable<Element> {
@@ -26,6 +27,7 @@ extension Observable {
         })
     }
 }
+#endif
 extension UIViewController: MessageHUDProtocol {}
 public protocol MessageHUDProtocol: AssociatedObjectProtocol {
     func showMessage(_ message: String) -> HUD
