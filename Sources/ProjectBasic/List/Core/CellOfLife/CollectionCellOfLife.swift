@@ -14,10 +14,6 @@ public protocol CollectionCellOfLife {
     func createCell(in collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell
     func cellWillAppear(in cell: UICollectionViewCell)
 //    func cellDidDisAppear() ///cell消失时 有可能数据源已经丢失
-
-    func cellShouldHighlight() -> Bool
-    func cellDidSelected()
-    func cellDidDeselected()
 }
 extension CollectionCellOfLife {
     func _createCell<T: UICollectionViewCell>(in collectionView: UICollectionView, for indexPath: IndexPath, _ reuseIdentifier: String) -> T {

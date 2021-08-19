@@ -9,7 +9,6 @@
 import UIKit
 
 open class TableViewDataSource: UITableViewDiffableDataSource<AnyAdapterSection, AnyTableAdapterItem> {
-    public var autoDeselectRow: Bool = true
     public let reloadDataCompletion: CallBackerNoParams = CallBackerNoParams()
 
     private lazy var tableHeaderCell: CustomTableItemCell<UIView> = CustomTableItemCell()

@@ -8,6 +8,59 @@
 
 import UIKit
 
+extension DelegateHooker: UITableViewDelegate {}
+
+public class UITableAdapter_Old: UITableAdapter {
+    public var autoDeselectRow: Bool = true
+    private var _delegateHooker: DelegateHooker<UITableViewDelegate>?
+    
+    override func tableViewInit(_ tableView: UITableView) {
+        super.tableViewInit(tableView)
+        tableView.delegate = _delegateHooker ?? tableProxy
+    }
+}
+extension UITableAdapter_Old { // Hooker
+    private var delegateHooker: DelegateHooker<UITableViewDelegate> {
+        if let hooker = _delegateHooker {
+            return hooker
+        }
+        let hooker = DelegateHooker<UITableViewDelegate>(defaultTarget: tableProxy)
+        self.tableView?.delegate = hooker
+        _delegateHooker = hooker
+        return hooker
+    }
+    public func transformDelegate(_ target: UITableViewDelegate?) {
+        delegateHooker.transform(to: target)
+    }
+    public func setAddDelegate(_ target: UITableViewDelegate?) {
+        delegateHooker.addTarget = target
+    }
+    public var delegatePlugins: [UITableViewDelegate] {
+        get { delegateHooker.plugins }
+        set { delegateHooker.plugins = newValue }
+    }
+}
+extension UITableViewDelegate {
+    func addIn(_ adapter: UITableAdapter_Old) -> Self {
+        if adapter.delegatePlugins.contains(where: {$0 === self}) == false {
+            adapter.delegatePlugins.append(self)
+        }
+        return self
+    }
+}
+
+public protocol TableCellOfLife_Old: TableCellOfLife {
+    func cellShouldHighlight() -> Bool
+    func cellDidSelected()
+    func cellDidDeselected()
+}
+extension AnyTableAdapterItem {
+    var base_old: TableCellOfLife_Old {
+        // swiftlint:disable force_cast
+        self.base as! TableCellOfLife_Old
+    }
+}
+
 extension UITableProxy {
     func tableSection(at section: Int) -> AnyAdapterSection? {
         let sections = adapter.dataSource.snapshot().sectionIdentifiers
@@ -22,8 +75,8 @@ extension UITableProxy {
 }
 
 open class UITableProxy: NSObject, UITableViewDelegate {
-    public private(set) weak var adapter: UITableAdapter!
-    public init(_ adapter: UITableAdapter) {
+    public private(set) weak var adapter: UITableAdapter_Old!
+    public init(_ adapter: UITableAdapter_Old) {
         self.adapter = adapter
     }
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -56,18 +109,18 @@ open class UITableProxy: NSObject, UITableViewDelegate {
     // MARK: -
     open func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         guard let item = tableCellItem(at: indexPath) else { return true }
-        return item.base.cellShouldHighlight()
+        return item.base_old.cellShouldHighlight()
     }
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if adapter.dataSource.autoDeselectRow {
+        if adapter.autoDeselectRow {
             tableView.deselectRow(at: indexPath, animated: true)
         }
         guard let item = tableCellItem(at: indexPath) else { return }
-        item.base.cellDidSelected()
+        item.base_old.cellDidSelected()
     }
     open func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         guard let item = tableCellItem(at: indexPath) else { return }
-        item.base.cellDidDeselected()
+        item.base_old.cellDidDeselected()
     }
     open func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let item = tableCellItem(at: indexPath) else { return }

@@ -1364,6 +1364,7 @@
 		1804366A23CC8791008E19A5 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				632FCC6326CE5384000D286F /* 废弃 */,
 				1804367223CC8791008E19A5 /* Core */,
 				1804366B23CC8791008E19A5 /* RefreshList */,
 				1804367923CC8791008E19A5 /* Plugin */,
@@ -1400,8 +1401,6 @@
 				180436A723CC8792008E19A5 /* TableCellHeight */,
 				1804367023CC8791008E19A5 /* UICollectionAdapter.swift */,
 				1804369A23CC8792008E19A5 /* UITableAdapter.swift */,
-				1804367123CC8791008E19A5 /* UICollectionProxy.swift */,
-				1804369923CC8792008E19A5 /* UITableProxy.swift */,
 				F9A83F27263D699F0041033A /* CollectionViewDataSource.swift */,
 				F9A83F2B263D7B7B0041033A /* TableViewDataSource.swift */,
 			);
@@ -1748,6 +1747,15 @@
 				DEC32B2BBC11B241A6CE4021 /* Pods_Codable.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		632FCC6326CE5384000D286F /* 废弃 */ = {
+			isa = PBXGroup;
+			children = (
+				1804369923CC8792008E19A5 /* UITableProxy.swift */,
+				1804367123CC8791008E19A5 /* UICollectionProxy.swift */,
+			);
+			path = "废弃";
 			sourceTree = "<group>";
 		};
 		C90BCB3021D33F39006FC76D /* BoderView */ = {

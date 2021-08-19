@@ -9,7 +9,6 @@
 import UIKit
 
 open class CollectionViewDataSource: UICollectionViewDiffableDataSource<AnyAdapterSection, AnyCollectionAdapterItem> {
-    public var autoDeselectRow: Bool = true
     public let reloadDataCompletion: CallBackerNoParams = CallBackerNoParams()
 
     public private(set) var collectionView: UICollectionView?

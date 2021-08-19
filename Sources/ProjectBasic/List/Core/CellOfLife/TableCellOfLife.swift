@@ -15,9 +15,6 @@ public protocol TableCellOfLife {
     func cellWillAppear(in cell: UITableViewCell)
 //    func cellDidDisAppear() ///cell消失时 有可能数据源已经丢失
 
-    func cellShouldHighlight() -> Bool
-    func cellDidSelected()
-    func cellDidDeselected()
 }
 extension TableCellOfLife {
     func _createCell<T: UITableViewCell>(in tableView: UITableView, for indexPath: IndexPath, _ reuseIdentifier: String) -> T {
