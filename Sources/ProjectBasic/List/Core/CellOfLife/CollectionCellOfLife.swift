@@ -23,7 +23,7 @@ extension CollectionCellOfLife {
     }
 }
 // MARK: -
-extension CollectionItemModel: CollectionCellOfLife {
+extension CollectionItemModel: CollectionCellOfLifeWithProxy {
     typealias DynamicCell = DynamicCollectionItemCell
     public func createCell(in collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell {
         let reuseIdentifier = cellInfo.reuseIdentifier

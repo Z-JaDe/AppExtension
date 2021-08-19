@@ -14,35 +14,31 @@ import Foundation
  */
 struct Price: Codable {
     typealias ValueType = FloatLiteralType
-    private(set) var strValue: String = ""
-    private(set) var value: ValueType
+    private(set) var stringValue: String = ""
+    private(set) var floatValue: ValueType
     init(value: ValueType?) {
-        if let value = value, value > 0 {
-            self.value = value
-        } else {
-            self.value = 0
-        }
-        self.strValue = valueFormat(2)
+        self.floatValue = value.map({ max($0, 0) }) ?? 0
+        self.stringValue = valueFormat(2)
     }
     init(stringLiteral value: String) {
-        self.value = Double(value) ?? 0
-        self.strValue = value
+        self.floatValue = Double(value) ?? 0
+        self.stringValue = value
     }
 }
 extension Price: Comparable {
     static func == (lhs: Self, rhs: Self) -> Bool {
-        lhs.value == rhs.value
+        lhs.floatValue == rhs.floatValue
     }
     static func < (lhs: Self, rhs: Self) -> Bool {
-        lhs.value < rhs.value
+        lhs.floatValue < rhs.floatValue
     }
 }
 extension Price: CustomStringConvertible, CustomDebugStringConvertible {
     var debugDescription: String {
-        strValue
+        stringValue
     }
     var description: String {
-        strValue
+        stringValue
     }
     var descriptionWithUnit: String {
         let result = valueFormatAutoUnit(0)
@@ -54,8 +50,8 @@ extension Price: CustomStringConvertible, CustomDebugStringConvertible {
     }
 }
 
-// MARK:
-private let priceNumberFormat: NumberFormatter = {
+// MARK: -
+private let numberFormat: NumberFormatter = {
     let format = NumberFormatter()
     format.numberStyle = .decimal
     format.positiveFormat = "#0.##"
@@ -65,22 +61,22 @@ extension Price {
     /// decimal: 保留几位小数, nil保留有效位数, 传整数为保留几位小数
     func valueFormat(_ decimal: UInt?) -> String {
         if let decimal = decimal {
-            return String(format: "%.\(decimal)f", self.value)
+            return String(format: "%.\(decimal)f", self.floatValue)
         } else {
-            return priceNumberFormat.string(from: self.value as NSNumber) ??
-                String(format: "%@", self.value as NSNumber)
+            return numberFormat.string(from: self.floatValue as NSNumber) ??
+                String(format: "%@", self.floatValue as NSNumber)
         }
     }
     func valueFormatAutoUnit(_ decimal: UInt?) -> (value: String, unit: String) {
-        var result = (value: self.value, unit: "")
-        if value >= 10000 {
-            result = (value: value / 10000, unit: "万")
+        var result = (value: self.floatValue, unit: "")
+        if floatValue >= 10000 {
+            result = (value: floatValue / 10000, unit: "万")
         }
         if let decimal = decimal {
             return (String(format: "%.\(decimal)f", result.value), result.unit)
         } else {
-            return (priceNumberFormat.string(from: result.value as NSNumber) ??
-                String(format: "%@", self.value as NSNumber), result.unit)
+            return (numberFormat.string(from: result.value as NSNumber) ??
+                String(format: "%@", self.floatValue as NSNumber), result.unit)
         }
     }
 }

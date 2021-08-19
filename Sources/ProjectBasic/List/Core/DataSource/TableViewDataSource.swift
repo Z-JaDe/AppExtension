@@ -8,7 +8,24 @@
 
 import UIKit
 
+extension AnyTableAdapterItem {
+    fileprivate func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
+        if let _item = self.base as? TableCellHeightProtocol {
+            if _item.cellHeightLayoutType.isNeedLayout {
+                _item.calculateCellHeight(tableView, wait: true)
+            }
+        }
+        return self.base.createCell(in: tableView, for: indexPath)
+    }
+}
+
 open class TableViewDataSource: UITableViewDiffableDataSource<AnyAdapterSection, AnyTableAdapterItem> {
+    public init(tableView: UITableView) {
+        super.init(tableView: tableView) { tableView, indexPath, item in
+            item.createCell(in: tableView, for: indexPath)
+        }
+    }
+
     public let reloadDataCompletion: CallBackerNoParams = CallBackerNoParams()
 
     private lazy var tableHeaderCell: CustomTableItemCell<UIView> = CustomTableItemCell()

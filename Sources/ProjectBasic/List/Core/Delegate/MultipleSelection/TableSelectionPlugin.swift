@@ -12,7 +12,6 @@ public class TableSelectionPlugin: ListSelectionPlugin<TableViewDataSource>, UIT
 
     override func updateAllowsSelection() {
         guard let dataSource = dataSource else { return }
-        dataSource.autoDeselectRow = !useUIKitSectionLogic
         dataSource.tableView?.allowsSelection = true
         dataSource.tableView?.allowsMultipleSelection = true
     }

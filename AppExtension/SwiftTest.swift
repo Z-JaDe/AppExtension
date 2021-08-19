@@ -86,11 +86,11 @@ func mainColor() {
         let view = UIView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
         view.backgroundColor = UIImage(named: "bank_abc")?.mainColor()
         window?.addSubview(view)
-        var _image:UIColor?
+        var _image: UIColor?
         logTimer {
             _image = UIImage(named: "bank_abc")?.mainColor()
         }
-        logDebug(_image)
+        logDebug("\(String(describing: _image))")
 
         let imageView = UIImageView(image: image)
         imageView.left = view.right

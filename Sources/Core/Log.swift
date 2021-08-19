@@ -8,8 +8,9 @@
 
 import Foundation
 import os.log
+import CocoaExtension
 
-//private let dateFormat = "'当前时间: 'HH: mm: ss.SSS"
+// private let dateFormat = "'当前时间: 'HH: mm: ss.SSS"
 public protocol LogUploadProtocol {
     func logUpload(_ level: LogLevel, _ message: String)
 }

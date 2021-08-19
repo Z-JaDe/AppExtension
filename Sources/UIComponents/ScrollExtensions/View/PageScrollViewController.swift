@@ -23,7 +23,7 @@ open class PageScrollViewController: UIViewController, UIScrollViewDelegate {
                 return
             }
             oldValue.forEach { (viewCon) in
-                self.removeAsChildViewController(viewCon)
+                viewCon.removeAsFromParentViewController()
             }
             self.scrollView.cleanCells()
             viewConArr.forEach { (viewCon) in

@@ -19,8 +19,8 @@ open class AdapterCollectionViewController: ListViewController<CollectionView> {
     /// 默认值若有变化 子类可重写
     open var limit: UInt? = 20
 
-    public lazy private(set) var adapter: UICollectionAdapter = UICollectionAdapter()
-
+    public private(set) lazy var dataSource: CollectionViewDataSource = CollectionViewDataSource(collectionView: self.rootView)
+    public private(set) lazy var listProxy: UICollectionProxy = UICollectionProxy(dataSource)
     open override func createView(_ frame: CGRect) -> CollectionView {
         let layout = UICollectionViewFlowLayout()
         return CollectionView(frame: frame, collectionViewLayout: layout)
@@ -28,15 +28,14 @@ open class AdapterCollectionViewController: ListViewController<CollectionView> {
 
     open override func viewDidLoad() {
         super.viewDidLoad()
-        if self.adapter.collectionView == nil {
-            adapter.collectionViewInit(self.rootView)
-        }
+        self.rootView.dataSource = self.dataSource
+        self.rootView.delegate = self.listProxy
     }
 }
 extension AdapterCollectionViewController: RefreshListProtocol {
     public var parser: ResultParser<AdapterCollectionViewController> {
         ResultParser(self) { [weak self] in
-            self?.adapter.dataSource.snapshot().numberOfItems ?? 0
+            self?.dataSource.snapshot().numberOfItems ?? 0
         }
     }
 }

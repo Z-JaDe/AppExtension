@@ -21,7 +21,6 @@ open class TableView: UITableView {
 
     open func configInit() {
         self.backgroundColor = UIColor.clear
-        
         if self.style == .grouped && self.tableHeaderView == nil {
             let view = UIView()
             view.height = 0.1

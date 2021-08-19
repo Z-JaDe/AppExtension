@@ -11,15 +11,17 @@ import Foundation
 public class ListSelectionPlugin<DataSource: ListViewDataSource>: NSObject {
 
     /// ZJaDe: 是否使用UIKit自带的选中逻辑
-    public var useUIKitSectionLogic: Bool = true {
-        didSet { updateAllowsSelection() }
-    }
+    public var useUIKitSectionLogic: Bool = true
 
-    weak var dataSource: DataSource?
-    public init(_ dataSource: DataSource) {
-        self.dataSource = dataSource
+    weak var dataSource: DataSource? {
+        didSet {
+            if let dataSource = dataSource {
+                configInit(dataSource)
+            }
+        }
+    }
+    public override init() {
         super.init()
-        configInit(dataSource)
     }
     public func configInit(_ dataSource: DataSource) {
         updateAllowsSelection()

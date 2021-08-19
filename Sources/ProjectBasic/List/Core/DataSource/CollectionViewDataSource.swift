@@ -9,6 +9,14 @@
 import UIKit
 
 open class CollectionViewDataSource: UICollectionViewDiffableDataSource<AnyAdapterSection, AnyCollectionAdapterItem> {
+    public init(collectionView: UICollectionView) {
+        super.init(collectionView: collectionView) { collectionView, indexPath, item in
+            item.base.createCell(in: collectionView, at: indexPath)
+        }
+        collectionView.register(InternalCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: InternalCollectionReusableView.reuseIdentifier)
+        collectionView.register(InternalCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: InternalCollectionReusableView.reuseIdentifier)
+    }
+
     public let reloadDataCompletion: CallBackerNoParams = CallBackerNoParams()
 
     public private(set) var collectionView: UICollectionView?

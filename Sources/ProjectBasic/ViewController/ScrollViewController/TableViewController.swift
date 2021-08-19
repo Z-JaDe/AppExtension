@@ -21,26 +21,25 @@ open class AdapterTableViewController: ListViewController<TableView> {
     /// 默认值若有变化 子类可重写
     open var limit: UInt? = 20
 
-    public lazy private(set) var adapter: UITableAdapter = UITableAdapter()
+    public private(set) lazy var dataSource: TableViewDataSource = TableViewDataSource(tableView: self.rootView)
+    public private(set) lazy var listProxy: UITableProxy = UITableProxy(dataSource)
 
     /// ZJaDe: view加载之前设置有效
     public var style: UITableView.Style = .plain
-
     open override func createView(_ frame: CGRect) -> TableView {
         TableView(frame: frame, style: self.style)
     }
 
     open override func viewDidLoad() {
         super.viewDidLoad()
-        if self.adapter.tableView == nil {
-            adapter.tableViewInit(self.rootView)
-        }
+        self.rootView.dataSource = self.dataSource
+        self.rootView.delegate = self.listProxy
     }
 }
 extension AdapterTableViewController: RefreshListProtocol {
     public var parser: ResultParser<AdapterTableViewController> {
         ResultParser(self) { [weak self] in
-            self?.adapter.dataSource.snapshot().numberOfItems ?? 0
+            self?.dataSource.snapshot().numberOfItems ?? 0
         }
     }
 }

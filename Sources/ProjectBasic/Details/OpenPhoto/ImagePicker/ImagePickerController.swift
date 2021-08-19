@@ -23,7 +23,7 @@ extension ImagePickerController: UIImagePickerControllerDelegate, UINavigationCo
     open func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         guard let type = info[.mediaType] as? String, type == kUTTypeImage as String else {
             HUD.showError("您选择的不是图片")
-            self.dismissVC()
+            self.dismiss(animated: true, completion: nil)
             return
         }
         if let image = info[.editedImage] as? UIImage {
@@ -31,9 +31,9 @@ extension ImagePickerController: UIImagePickerControllerDelegate, UINavigationCo
         } else {
             HUD.showError("您选择的图片的格式有问题，您可以重新尝试，或换张图片")
         }
-        self.dismissVC()
+        self.dismiss(animated: true, completion: nil)
     }
     open func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.dismissVC()
+        self.dismiss(animated: true, completion: nil)
     }
 }

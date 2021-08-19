@@ -26,17 +26,17 @@ extension ResultModelType {
 public struct ResultModelCodingKeys: CodingKey {
     public let stringValue: String
     public let intValue: Int?
-    public init?(stringValue: String) {
+    public init(stringValue: String) {
         self.stringValue = stringValue
         self.intValue = Int(stringValue)
     }
-    public init?(intValue: Int) {
+    public init(intValue: Int) {
         self.stringValue = "\(intValue)"
         self.intValue = intValue
     }
-    public static var resultCodeKey: ResultModelCodingKeys = ResultModelCodingKeys(stringValue: "e")!
-    public static var messageKey: ResultModelCodingKeys = ResultModelCodingKeys(stringValue: "msg")!
-    public static var dataKey: ResultModelCodingKeys = ResultModelCodingKeys(stringValue: "data")!
+    public static var resultCodeKey: ResultModelCodingKeys = ResultModelCodingKeys(stringValue: "e")
+    public static var messageKey: ResultModelCodingKeys = ResultModelCodingKeys(stringValue: "msg")
+    public static var dataKey: ResultModelCodingKeys = ResultModelCodingKeys(stringValue: "data")
 }
 public struct ResultModel<DataType: Decodable>: Decodable, ResultModelType {
     public let resultCode: ResultCode

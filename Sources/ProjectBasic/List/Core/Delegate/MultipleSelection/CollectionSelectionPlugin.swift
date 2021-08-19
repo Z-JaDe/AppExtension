@@ -12,7 +12,6 @@ public class CollectionSelectionPlugin: ListSelectionPlugin<CollectionViewDataSo
 
     override func updateAllowsSelection() {
         guard let dataSource = dataSource else { return }
-        dataSource.autoDeselectRow = !useUIKitSectionLogic
         dataSource.collectionView?.allowsSelection = true
         dataSource.collectionView?.allowsMultipleSelection = true
     }

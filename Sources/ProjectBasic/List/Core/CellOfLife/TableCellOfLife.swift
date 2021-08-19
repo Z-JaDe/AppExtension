@@ -24,7 +24,7 @@ extension TableCellOfLife {
     }
 }
 // MARK: -
-extension TableItemModel: TableCellOfLife {
+extension TableItemModel: TableCellOfLifeWithProxy {
     typealias DynamicCell = DynamicTableItemCell
     public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
         let reuseIdentifier = cellInfo.reuseIdentifier
@@ -98,7 +98,7 @@ extension TableItemModel {
 }
 
 // MARK: -
-extension StaticTableItemCell: TableCellOfLife {
+extension StaticTableItemCell: TableCellOfLifeWithProxy {
     public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
         let reuseIdentifier = classFullName
         let cell: InternalTableViewCell = _createCell(in: tableView, for: indexPath, reuseIdentifier)
@@ -130,7 +130,7 @@ extension StaticTableItemCell: TableCellOfLife {
 public protocol CellSelectedStateDesignable: AnyObject {
     func didSelectedItem()
 }
-extension TableCellModel: TableCellOfLife {
+extension TableCellModel: TableCellOfLifeWithProxy {
     public func createCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
         let reuseIdentifier = cellInfo.reuseIdentifier
         return _createCell(in: tableView, for: indexPath, reuseIdentifier)
