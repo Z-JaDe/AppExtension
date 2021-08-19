@@ -20,11 +20,13 @@ open class TableView: UITableView {
     }
 
     open func configInit() {
-        if #available(iOS 11.0, *) {
-            self.contentInsetAdjustmentBehavior = .never
+        self.backgroundColor = UIColor.clear
+        
+        if self.style == .grouped && self.tableHeaderView == nil {
+            let view = UIView()
+            view.height = 0.1
+            self.tableHeaderView = view
         }
-        self.separatorStyle = .none
-        self.backgroundColor = Color.clear
     }
 
 }

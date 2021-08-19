@@ -19,10 +19,7 @@ open class AdapterCollectionViewController: ListViewController<CollectionView> {
     /// 默认值若有变化 子类可重写
     open var limit: UInt? = 20
 
-    public lazy private(set) var adapter: UICollectionAdapter = self.loadAdapter()
-    func loadAdapter() -> UICollectionAdapter {
-        UICollectionAdapter()
-    }
+    public lazy private(set) var adapter: UICollectionAdapter = UICollectionAdapter()
 
     open override func createView(_ frame: CGRect) -> CollectionView {
         let layout = UICollectionViewFlowLayout()
@@ -31,10 +28,6 @@ open class AdapterCollectionViewController: ListViewController<CollectionView> {
 
     open override func viewDidLoad() {
         super.viewDidLoad()
-        adapterViewInit()
-    }
-
-    func adapterViewInit() {
         if self.adapter.collectionView == nil {
             adapter.collectionViewInit(self.rootView)
         }

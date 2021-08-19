@@ -9,7 +9,7 @@
 import Foundation
 import os.log
 
-private let dateFormat = "'当前时间: 'HH: mm: ss.SSS"
+//private let dateFormat = "'当前时间: 'HH: mm: ss.SSS"
 public protocol LogUploadProtocol {
     func logUpload(_ level: LogLevel, _ message: String)
 }
@@ -59,11 +59,11 @@ public struct Logger {
     public static let `default`: Logger = Logger("default")
     public static var logLevels: [LogLevel]?
     private let tag: String = jd.appDisplayName ?? "未知App名称"
-    private let timeFormatter: DateFormatter = {
-        let result = DateFormatter()
-        result.dateFormat = dateFormat
-        return result
-    }()
+//    private let timeFormatter: DateFormatter = {
+//        let result = DateFormatter()
+//        result.dateFormat = dateFormat
+//        return result
+//    }()
     private func logMessage(_ level: LogLevel, _ title: String) -> String {
         var str: String = "\(level.iconStr) "
         str.append("\(tag)(\(level.rawValue)) ")
@@ -72,9 +72,7 @@ public struct Logger {
         str.append(title)
         return str
     }
-//    fileprivate func log(_ level: LogLevel, _ message: @escaping @autoclosure () -> String) {
-//        self._log(level, message())
-//    }
+
     fileprivate func log(level: LogLevel, title: String, message: @escaping @autoclosure () -> String) {
         if let logLevels = Logger.logLevels, logLevels.contains(level) == false {
             return

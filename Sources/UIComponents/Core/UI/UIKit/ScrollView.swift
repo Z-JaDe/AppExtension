@@ -20,9 +20,6 @@ open class ScrollView: UIScrollView {
     }
 
     open func configInit() {
-        if #available(iOS 11.0, *) {
-            self.contentInsetAdjustmentBehavior = .never
-        }
-        self.backgroundColor = Color.clear
+        self.backgroundColor = UIColor.clear
     }
 }

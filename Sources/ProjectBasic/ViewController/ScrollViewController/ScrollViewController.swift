@@ -8,13 +8,7 @@
 
 import UIKit
 
-open class GenericsScrollViewController<ScrollViewType>: GenericsViewController<ScrollViewType> where ScrollViewType: UIScrollView {
-    open override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-}
-
-open class ScrollViewContorller: GenericsScrollViewController<ScrollView> {
+open class ScrollViewContorller: GenericsViewController<ScrollView> {
 
     open override func viewDidLoad() {
         super.viewDidLoad()

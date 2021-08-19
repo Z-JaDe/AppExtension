@@ -14,7 +14,7 @@ open class UITableAdapter: NSObject {
     public weak private(set) var tableView: UITableView?
     public var dataSource: TableViewDataSource!
 
-    public func tableViewInit(_ tableView: UITableView) {
+    func tableViewInit(_ tableView: UITableView) {
         self.tableView = tableView
 
         dataSourceDefaultInit(tableView)

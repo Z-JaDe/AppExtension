@@ -18,7 +18,7 @@ open class UICollectionAdapter: NSObject {
     public lazy var collectionProxy: UICollectionProxy = UICollectionProxy(self)
     public var dataSource: CollectionViewDataSource!
 
-    public func collectionViewInit(_ collectionView: UICollectionView) {
+    func collectionViewInit(_ collectionView: UICollectionView) {
         self.collectionView = collectionView
         collectionView.register(InternalCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: InternalCollectionReusableView.reuseIdentifier)
         collectionView.register(InternalCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: InternalCollectionReusableView.reuseIdentifier)

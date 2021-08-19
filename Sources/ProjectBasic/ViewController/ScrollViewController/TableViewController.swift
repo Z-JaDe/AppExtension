@@ -12,13 +12,7 @@ open class NormalTableViewController: ListViewController<TableView> {
     public var style: UITableView.Style = .plain
 
     open override func createView(_ frame: CGRect) -> TableView {
-        let tableView = TableView(frame: frame, style: self.style)
-        if self.style == .grouped && tableView.tableHeaderView == nil {
-            let view = UIView()
-            view.height = 1
-            tableView.tableHeaderView = view
-        }
-        return tableView
+        TableView(frame: frame, style: self.style)
     }
 }
 open class AdapterTableViewController: ListViewController<TableView> {
@@ -27,30 +21,17 @@ open class AdapterTableViewController: ListViewController<TableView> {
     /// 默认值若有变化 子类可重写
     open var limit: UInt? = 20
 
-    public lazy private(set) var adapter: UITableAdapter = self.loadAdapter()
-    func loadAdapter() -> UITableAdapter {
-        UITableAdapter()
-    }
+    public lazy private(set) var adapter: UITableAdapter = UITableAdapter()
 
     /// ZJaDe: view加载之前设置有效
     public var style: UITableView.Style = .plain
 
     open override func createView(_ frame: CGRect) -> TableView {
-        let tableView = TableView(frame: frame, style: self.style)
-        if self.style == .grouped && tableView.tableHeaderView == nil {
-            let view = UIView()
-            view.height = 1
-            tableView.tableHeaderView = view
-        }
-        return tableView
+        TableView(frame: frame, style: self.style)
     }
 
     open override func viewDidLoad() {
         super.viewDidLoad()
-        adapterViewInit()
-    }
-
-    func adapterViewInit() {
         if self.adapter.tableView == nil {
             adapter.tableViewInit(self.rootView)
         }
