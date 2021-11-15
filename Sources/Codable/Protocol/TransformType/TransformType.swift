@@ -25,10 +25,10 @@ extension Int {
     }
 }
 extension String {
-    public var intIfExist: Int? {return Int(self) ?? double.int }
-    public var cgfloatIfExist: CGFloat? {return doubleIfExist?.cgfloat}
-    public var doubleIfExist: Double? {return Double(self)}
-    public var floatIfExist: Float? {return Float(self)}
+    public var intIfExist: Int? { Int(self) ?? double.int }
+    public var cgfloatIfExist: CGFloat? { doubleIfExist?.cgfloat }
+    public var doubleIfExist: Double? { Double(self)}
+    public var floatIfExist: Float? { Float(self) }
     public var nsString: NSString {
         self as NSString
     }
