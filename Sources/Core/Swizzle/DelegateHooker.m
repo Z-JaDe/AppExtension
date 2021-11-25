@@ -38,7 +38,7 @@
         buffer = (void *)malloc(length);
     }
     BOOL isRespondsSelector = false;
-    {
+    @try {
         ///如果target已经实现 则不再执行 defaultTarget
         id target;
         if ([self.target respondsToSelector:invocation.selector]) {
@@ -59,16 +59,22 @@
         if (length > 0 && isRespondsSelector) {
             [invocation getReturnValue:buffer];
         }
-    }
-    [self.plugins enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([obj respondsToSelector:invocation.selector]) {
-            [invocation invokeWithTarget:obj];
+        
+        [self.plugins enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj respondsToSelector:invocation.selector]) {
+                [invocation invokeWithTarget:obj];
+            }
+        }];
+        /// 重设刚才记录的返回值
+        if (length > 0 && isRespondsSelector) {
+            [invocation setReturnValue:buffer];
         }
-    }];
-    /// 重设刚才记录的返回值
-    if (length > 0 && isRespondsSelector) {
-        [invocation setReturnValue:buffer];
-        free(buffer);
+    } @catch (NSException *exception) {
+        
+    } @finally {
+        if (length > 0) {
+            free(buffer);
+        }
     }
 }
 // MARK: -
